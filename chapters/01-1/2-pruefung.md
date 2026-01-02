@@ -1,18 +1,31 @@
 # Prüfung
 
-Abhängig von Ihrem Studienbeginn müssen Sie sich entweder zu den Teil-
-prüfungen „Programmierung“ und „Numerik für Ingenieure“ separat anmelden
-(Variante 1) oder für die Gesamtprüfung „Ingenieurinformatik“ (Variante 2).
-Variante 1, aktuelle Prüfungsordnung (Teilprüfungen „Programmierung“ und „Numerik“)
-• Jede Teilprüfung muss mindestens mit der Note 4.0 bestanden werden.
-• Die Teilprüfungen dürfen in unterschiedlichen Semestern geschrieben werden.
-• Die Endnote ergibt sich aus den Noten der Teilprüfungen „Programmierung“ und „Numerik
-für Ingenieure“ im Verhältnis 60:40 gewichtet.
-Variante 2, alte Prüfungsordnung (Gesamtprüfung „Ingenieurinformatik“)
-• Beide Prüfungsteile müssen im selben Semester geschrieben werden.
-• Aus den Punkten, die in „Programmierung“ und „Numerik für Ingenieure“ erreicht wurden
-wird eine Gesamtpunktzahl ermittelt. Dabei werden die beiden Prüfungsteile im Verhältnis
-60:40 gewichtet. Die Endnote ergibt sich aus der Gesamtpunktzahl.
-• Es muss also nicht jeder Prüfungsteil separat „bestanden“ werden.
+Abhängig von Ihrem Studienbeginn gelten unterschiedliche Prüfungsordnungen. Bitte prüfen Sie, welche Variante für Sie zutrifft:
 
-Was in der Prüfung thematisch geprüft wird, steht im Modulhandbuch.
+## Variante 1: Aktuelle Prüfungsordnung (Teilprüfungen)
+
+Bei dieser Variante melden Sie sich zu zwei **separaten Teilprüfungen** an:
+- **„Programmierung"**
+- **„Numerik für Ingenieure"**
+
+**Wichtige Regelungen:**
+- Jede Teilprüfung muss mindestens mit der Note **4.0** bestanden werden
+- Die Teilprüfungen können in **unterschiedlichen Semestern** geschrieben werden
+- Die Endnote ergibt sich aus den Noten beider Teilprüfungen im Verhältnis **60:40** gewichtet
+  - Programmierung: 60%
+  - Numerik für Ingenieure: 40%
+
+## Variante 2: Alte Prüfungsordnung (Gesamtprüfung)
+
+Bei dieser Variante melden Sie sich zur **Gesamtprüfung „Ingenieurinformatik"** an.
+
+**Wichtige Regelungen:**
+- Beide Prüfungsteile müssen im **selben Semester** geschrieben werden
+- Aus den Punkten beider Prüfungsteile wird eine Gesamtpunktzahl ermittelt
+- Gewichtung: **60:40** (Programmierung : Numerik für Ingenieure)
+- Die Endnote ergibt sich aus der Gesamtpunktzahl
+- Es muss **nicht** jeder Prüfungsteil separat bestanden werden
+
+## Prüfungsinhalte
+
+Was in der Prüfung thematisch geprüft wird, finden Sie im **Modulhandbuch** Ihres Studiengangs (nächster Abschnitt!)
