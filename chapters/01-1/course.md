@@ -1,15 +1,14 @@
-# Inhalt 
+# Kurskonzept
 
-Sie studieren an der FK03 an der Hochschule München und besuchen das Teil-Modul "Programmieren"? Dann sind Sie hier genau richtig. Entweder Sind Sie gerade auf einer interkativen Website unterwegs oder Sie haben ein Skript vor sich liegen. So oder so: Schritt 1 ist geschafft - Sie haben bereits mindestens einen Teil Ihrer Arbeitsmaterialien erfolgreich im Einsatz. Um die Inhalte der Vorlesung möglichst effizient zu konsumieren, empfehle ich Ihnen, dass sie die folgenden Arbeitsmaterialien nutzen: 
+## Empfohlende Arbeitsmaterialien
+Entweder Sind Sie gerade auf einer interkativen Website unterwegs oder Sie haben ein Skript vor sich liegen. So oder so: Schritt 1 ist geschafft - Sie haben bereits mindestens einen Teil Ihrer Arbeitsmaterialien erfolgreich im Einsatz. 
+
+Um die Inhalte der Vorlesung möglichst effizient zu konsumieren, empfehle ich Ihnen, dass sie die folgenden Arbeitsmaterialien nutzen: 
 - die interaktive Website: 
 - das Vorlesungs-Skript (eine PDF-Datei, die Sie in Ihrem Moodle-Kurs finden)
 
-
-## Wie nutzen Sie die Website und das Skript?
 Die Website und das Skript sind thematisch identisch. 
-
 Das Skript dient Ihnen dazu während der Vorlesung Notizen zu machen. 
-
 Die interaktive Website ermöglicht Ihnen die in der Vorlesung gezeigten Programmierbeispiele direkt im Webbrowser auszuführen. So können Sie live während der Vorlesung die Beispiele ausführen oder, falls Ihnen das zu hektisch wird, die Beispiele in Ihrer Nachbereitung in Ruhe von zu Hause aus ausführen, abändern oder auch erweitern. 
 
 ## Welche Themen werden im Modul Programmieren behandelt?
@@ -18,7 +17,7 @@ In diesem Teilmodul lernen Sie Basis-Wissen aus der Informatik und Grundlagen de
 ![Modulhandbuch](../../figs/overview/modulhandbuch-1.png)
 ![Modulhandbuch](../../figs/overview/modulhandbuch-2.png)
 
-Eine aktuelle Version des Modulhandbuchs finden Sie auf der Seite der Fakultät.
+Eine aktuelle Version des Modulhandbuchs finden Sie auf der Website der FK03: 
 
 ### Gliederung der Vorlesung
 
