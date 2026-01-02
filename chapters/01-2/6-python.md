@@ -1,4 +1,4 @@
-# Python - Einordnung
+# Programmiersprache Python
 
 ## Sprachtyp
 

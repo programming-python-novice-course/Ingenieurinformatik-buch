@@ -11,9 +11,9 @@ parts:
       - file: chapters/01-1/3-inhalte
       - file: chapters/01-1/4-concept
       - file: chapters/01-1/5-lesehinweise
-    - file: chapters/01-2/0-ubersicht
+    - file: chapters/01-2/0-uebersicht
       sections:
-      - file: chapters/01-2/1-informatik-und-ct
+      - file: chapters/01-2/1-informatics-and-ct
       - file: chapters/01-2/2-softwaretypen
       - file: chapters/01-2/3-prozesssicht
       - file: chapters/01-2/4-sprachen
