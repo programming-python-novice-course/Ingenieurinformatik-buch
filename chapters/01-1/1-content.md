@@ -1,24 +1,27 @@
 # Inhalt 
 
-Sie studieren an der FK03 an der Hochschule München und besuchen das Teil-Modul "Programmieren"? Dann sind Sie hier genau richtig. 
+Sie studieren an der FK03 an der Hochschule München und besuchen das Teil-Modul "Programmieren"? Dann sind Sie hier genau richtig. Entweder Sind Sie gerade auf einer interkativen Website unterwegs oder Sie haben ein Skript vor sich liegen. So oder so: Schritt 1 ist geschafft - Sie haben bereits mindestens einen Teil Ihrer Arbeitsmaterialien erfolgreich im Einsatz. Um die Inhalte der Vorlesung möglichst effizient zu konsumieren, empfehle ich Ihnen, dass sie die folgenden Arbeitsmaterialien nutzen: 
+- die interaktive Website: 
+- das Vorlesungs-Skript (eine PDF-Datei, die Sie in Ihrem Moodle-Kurs finden)
 
- Die Lerninhalte werden Ihnen über zwei Wege bereitgestellt:
-- als interaktive Website
-- als Skript (PDF-Datei, die Sie in Ihrem Moodle-Kurs finden)
-
-Die Website und das Skript sind vom Inhalt her identisch. 
 
 ## Wie nutze ich die Website und das Skript?
-Das Skript dient Ihnen dazu während der Vorlesung Notizen machen zu können. Die interaktive Website dient Ihnen dazu die gezeigten Programmierbeispiele direkt im Webbrowser ausführen zu können - ohne dass Sie hierfür etwas installieren müssen. Damit können Sie während der Vorlesung die Beispiele live ausführen. In Ihrer Nachbereitung der Vorlesung können Sie die Beispiele noch einmal in Ruhe ausführen, abändern oder erweitern. Warnung hier: Änderungen, die Sie vornehmen, gehen verloren, sobald Sie die Website schließen. 
+Die Website und das Skript sind thematisch identisch. 
 
-## Welche Themen werden behandelt?
-Im Modul "Programmieren" lernen Sie Basis-Wissen zum Thema Programmierung. Ein grober Überblick über die Themenfelder finden Sie im Modulhandbuch Ihres Studiengangs. 
+Das Skript dient Ihnen dazu während der Vorlesung Notizen zu machen. 
+
+Die interaktive Website ermöglicht Ihnen die in der Vorlesung gezeigten Programmierbeispiele direkt im Webbrowser auszuführen. So können Sie live während der Vorlesung die Beispiele ausführen oder, falls Ihnen das zu hektisch wird, die Beispiele in Ihrer Nachbereitung in Ruhe von zu Hause aus ausführen, abändern oder auch erweitern. 
+
+## Welche Themen werden im Modul Programmieren behandelt?
+In diesem Teilmodul lernen Sie Basis-Wissen aus der Informatik und Grundlagen der Programmiersprache Python. Ein grober Überblick über die Inhalte finden Sie - wie immer (!) - im Modulhandbuch Ihres Studiengangs:
+
+![Modulhandbuch](../../figs/overview/modulhandbuch-1.png)
 
 
-Die Vorlesung ist ist in 12 Kapitel unterteilt. Pro Vorlesung werden wir uns jeweils ein Kapitel ansehen. Die Reihenfolge der Kapitel und die Inhalte orientieren sich daran, wie ein Softwareentwickler in der Praxis Software entwickelt. Das ist das Ziel: sie sollen lernen Programme zu entwickeln! 
+Die Vorlesung ist in 12 Kapitel unterteilt. Pro Vorlesung werden wir uns jeweils ein Kapitel ansehen. Die Reihenfolge der Kapitel und die Inhalte orientieren sich daran, wie ein Softwareentwickler in der Praxis Software entwickelt. Einen genauen Fahrplan dazu finden Sie in im Abschnitt XYZ.
 
-Damit Sie gute Programme entwickeln können, ist es notwendig, dass Sie grundsätzlich verstehen wie ein Computer funktioniert, wie Daten darauf verarbeitet werden, etc. etc. - also Basis-Informatik-Wissen. Informatik ist ein weites Feld- wir werden deshalb nur die theoretischen Grundlagen betrachten, die für Sie als Ingenieure in Ihrem Arbeitsalltag wichtig sind. Die theoretischen Inhalte bilden die Basis dafür, dass Sie die Programmierbeispiele verstehen können. 
-Jedes Kapitel setzt sich daher aus aus theoeretischen Inhalten und praktischen Inhalten zusammen. Diese sind wie folgt gekennzeichnet:
+Damit Sie gute Programme entwickeln können, ist es notwendig, dass Sie grundsätzlich verstehen wie ein Computer funktioniert, wie Daten darauf verarbeitet werden, etc. etc. - also Basis-Informatik-Wissen. Informatik ist ein weites Feld- wir werden in diesem Kurs nur die theoretischen Grundlagen betrachten, mit denen Sie als Ingenieure in Ihrem Arbeitsalltag in Berührung kommen.  
+Die einzelnen Kapitel setzen sich daher aus aus theoeretischen Inhalten und praktischen Inhalten zusammen. Zu Beginn eines jedes Kapitels sind die entsprechenden Lernziele definiert. Lernziele, Hinweise und Warnungen sind wie folgt gekennzeichnet: 
 
 
 ```{admonition} Lernziele

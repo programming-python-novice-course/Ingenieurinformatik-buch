@@ -1,24 +1,47 @@
-# Kurskonzept
+# Inhalt 
 
-Dieses interaktive Lehrbuch wurde für Studierende der folgenden Bachelorstudiengänge an der [Hochschule München](https://hm.edu/) konzipiert:
+Sie studieren an der FK03 an der Hochschule München und besuchen das Teil-Modul "Programmieren"? Dann sind Sie hier genau richtig. Entweder Sind Sie gerade auf einer interkativen Website unterwegs oder Sie haben ein Skript vor sich liegen. So oder so: Schritt 1 ist geschafft - Sie haben bereits mindestens einen Teil Ihrer Arbeitsmaterialien erfolgreich im Einsatz. Um die Inhalte der Vorlesung möglichst effizient zu konsumieren, empfehle ich Ihnen, dass sie die folgenden Arbeitsmaterialien nutzen: 
+- die interaktive Website: 
+- das Vorlesungs-Skript (eine PDF-Datei, die Sie in Ihrem Moodle-Kurs finden)
 
-1. [Digital Engineering](https://mucdai.hm.edu/studieninteressierte/bachelor_digital_engineering/index.de.html)
-2. [Informatik und Design](https://mucdai.hm.edu/studieninteressierte/bachelor_informatik_und_design/index.de.html)
-3. [Geodata Science](https://mucdai.hm.edu/studieninteressierte/bachelor_geodata_science/index.de.html)
-4. [Data Science \& Scientific Computing](https://cs.hm.edu/studieninteressierte/studienangebot/bachelor_data_science/index.de.html)
 
-Die genannten Studiengänge setzen unterschiedliche fachliche Schwerpunkte. Deshalb haben wir uns entschieden, ein übergreifendes und modulares Lehrbuch zu entwickeln. Je nach Studiengang werden einzelne Inhalte unterschiedlich tief behandelt.
+## Wie nutzen Sie die Website und das Skript?
+Die Website und das Skript sind thematisch identisch. 
 
-## Lernziele
+Das Skript dient Ihnen dazu während der Vorlesung Notizen zu machen. 
 
-Die übergeordneten Lernziele lassen sich in zwei Hauptkategorien gliedern – mit jeweils konkreten Aspekten:
+Die interaktive Website ermöglicht Ihnen die in der Vorlesung gezeigten Programmierbeispiele direkt im Webbrowser auszuführen. So können Sie live während der Vorlesung die Beispiele ausführen oder, falls Ihnen das zu hektisch wird, die Beispiele in Ihrer Nachbereitung in Ruhe von zu Hause aus ausführen, abändern oder auch erweitern. 
 
-1. **Begreifen der Probleme**
-   1. Wissen über, und begreifen von digitalen Informationsverarbeitungssystemen
-   2. Formulierung und Analyse von Problemen
-   3. Sammlung, Interpretation und Repräsentation relevanter Daten
-2. **Entwicklung von Lösungen** 
-   1. Planung und Bewertung der Lösung
-   2. Entwicklung von Algorithmen
+## Welche Themen werden im Modul Programmieren behandelt?
+In diesem Teilmodul lernen Sie Basis-Wissen aus der Informatik und Grundlagen der Programmiersprache Python. Ein grober Überblick über die Inhalte finden Sie - wie immer (!) - im Modulhandbuch Ihres Studiengangs:
 
-Dieses Buch befindet sich in fortlaufender Entwicklung. Inhalte werden regelmäßig ergänzt, überarbeitet und verbessert.
+![Modulhandbuch](../../figs/overview/modulhandbuch-1.png)
+![Modulhandbuch](../../figs/overview/modulhandbuch-2.png)
+
+Eine aktuelle Version des Modulhandbuchs finden Sie auf der Seite der Fakultät.
+
+### Gliederung der Vorlesung
+
+Die Vorlesung ist in 12 Kapitel unterteilt. Pro Vorlesung werden wir uns jeweils ein Kapitel ansehen. Die Reihenfolge der Kapitel und die Inhalte orientieren sich daran, wie ein Softwareentwickler in der Praxis Software entwickelt. Eine Übersicht dazu finden Sie in Abschnitt 2.
+
+Damit Sie gute Programme entwickeln können, ist es notwendig, dass Sie grundsätzlich verstehen wie ein Computer funktioniert, wie Daten darauf verarbeitet werden, etc. etc. - also Basis-Informatik-Wissen. Informatik ist ein weites Feld- wir werden in diesem Kurs nur die theoretischen Grundlagen betrachten, mit denen Sie als Ingenieure in Ihrem Arbeitsalltag in Berührung kommen.  
+Die einzelnen Kapitel setzen sich daher aus aus theoeretischen Inhalten und praktischen Inhalten zusammen. Zu Beginn eines jedes Kapitels sind die entsprechenden Lernziele definiert. Lernziele, Hinweise und Warnungen sind wie folgt gekennzeichnet: 
+
+
+```{admonition} Lernziele
+:class: learngoals
+Am Anfang eines jedes Kapitels finden Sie die Lernziele für das jeweilige Kapitel. 
+```
+
+```{admonition} Hinweis
+:name: remark-sample
+:class: remark
+Dies ist ein allgemeiner Hinweis.
+```
+
+```{admonition} Warnung
+:class: attention
+:name: attention-sample
+Dies ist ein **wichtiger** Hinweis bzw. eine Warnung.
+```
+
