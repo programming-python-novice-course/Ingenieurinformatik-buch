@@ -9,7 +9,6 @@ Sie werden in Ihrem Ingenieursalltag immer wieder mit Problemen in Berührung ko
 Bevor wir in die fachlichen Inhalten gehen, finden Sie in den folgenden Abschnitten eine Übersicht zu den Kursinhalten und Ihren Arbeitsmaterialien.
 
 
-
 ```{figure} ./figs/logo.png
 ---
 height: 300px
