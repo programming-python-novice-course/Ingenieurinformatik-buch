@@ -1,8 +1,21 @@
 # Kursinhalte
 In diesem Teilmodul lernen Sie Basis-Wissen aus der Informatik und Grundlagen der Programmiersprache Python. Ein grober Überblick über die Inhalte, die in der Prüfung geprüft werden, finden Sie - wie immer (!) - im Modulhandbuch Ihres Studiengangs.
 
-![Modulhandbuch](../../figs/overview/modulhandbuch-1.png)
-![Modulhandbuch](../../figs/overview/modulhandbuch-2.png)
+```{figure} ../../figs/overview/modulhandbuch-1.png
+---
+width: 600px
+name: fig-modulhandbuch-1
+---
+Modulhandbuch - Teil 1.
+```
+
+```{figure} ../../figs/overview/modulhandbuch-2.png
+---
+width: 600px
+name: fig-modulhandbuch-2
+---
+Modulhandbuch - Teil 2.
+```
 
 ```{admonition} Hinweis
 :name: remark-sample

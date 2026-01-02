@@ -1,4 +1,4 @@
-# Informatik, Softwareentwicklung und Programmiersprachen
+# Basiswissen: Angewandte Informatik
 
 
 ```{admonition} Lernziele

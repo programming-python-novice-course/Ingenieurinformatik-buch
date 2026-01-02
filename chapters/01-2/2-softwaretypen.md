@@ -1,9 +1,8 @@
-# Wo kommt Software vor?
+# Softwaretypen
 
 Bild einfügen
 
 
-## Softwaretypen
 Es gibt verschiende Softwaretypen
 -	Eingebette systeme (embedded software) – z.b. flugregelung
 -	Datenerfassungssysteme – beispiel air data system
