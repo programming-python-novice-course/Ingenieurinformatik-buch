@@ -1,13 +1,40 @@
-# Inhalt -TestChristina
+# Inhalt 
 
-In der **EINLEITUNG** definieren wir den vielschichtigen Begriff *[Computational Thinking (CT)](sec-what-is-ct)*. Wir beleuchten seinen Ursprung, seine Bedeutung in der digitalen Welt und veranschaulichen anhand eines Beispiels, wie wir ihn verstehen.
+Sie studieren an der FK03 an der Hochschule München und besuchen das Teil-Modul "Programmieren"? Dann sind Sie hier genau richtig. 
 
-Im Abschnitt **THEORIE** behandeln wir die Grundlagen der Informationsverarbeitung. Dabei gehen wir Fragen nach wie:
-- Wie funktioniert ein Computer, und was kann er leisten?
-- Was ist Information?
-- Wie interpretieren, repräsentieren und verarbeiten wir (und Maschinen) Informationen?
-- Was unterscheidet Soft- von Hardware?
+ Die Lerninhalte werden Ihnen über zwei Wege bereitgestellt:
+- als interaktive Website
+- als Skript (PDF-Datei, die Sie in Ihrem Moodle-Kurs finden)
 
-In **PYTHON** folgt ein Grundlagenkurs zur Programmiersprache ``Python``. Wir konzentrieren uns auf zentrale Sprachkonzepte und verzichten bewusst auf den Einsatz externer Pakete, um algorithmisches Denken unabhängig von spezifischen Bibliotheken zu fördern. Ziel ist es, Gedanken strukturiert und eindeutig in eine formale Sprache zu übersetzen. Computational Thinking ist eng mit der Kunst des Programmierens verknüpft – daher ist das Erlernen einer Programmiersprache ein essenzieller Bestandteil. Gleichzeitig geht Computational Thinking über das reine Programmieren hinaus. Es existieren bereits hervorragende Bücher und Dokumentationen zu ``Python`` – unser Fokus liegt auf den Denkweisen, die zur Entwicklung von Hard- und Software führen. Wir vermitteln die Grundlagen für einen Einstieg in ``Python``, streben jedoch keine vollständige Abdeckung aller Sprachfunktionen an.
+Die Website und das Skript sind vom Inhalt her identisch. 
 
-**Computational Thinking ist eine aktive Tätigkeit – und kann nur durch eigenes Tun erlernt werden.** In **CT IN AKTION** begleiten wir Sie daher vom Verständnis eines Problems bis zur Entwicklung einer Lösung. Dabei analysieren wir praktische Fragestellungen, die uns zu zentralen Algorithmen und Datenstrukturen führen.
+## Wie nutze ich die Website und das Skript?
+Das Skript dient Ihnen dazu während der Vorlesung Notizen machen zu können. Die interaktive Website dient Ihnen dazu die gezeigten Programmierbeispiele direkt im Webbrowser ausführen zu können - ohne dass Sie hierfür etwas installieren müssen. Damit können Sie während der Vorlesung die Beispiele live ausführen. In Ihrer Nachbereitung der Vorlesung können Sie die Beispiele noch einmal in Ruhe ausführen, abändern oder erweitern. Warnung hier: Änderungen, die Sie vornehmen, gehen verloren, sobald Sie die Website schließen. 
+
+## Welche Themen werden behandelt?
+Im Modul "Programmieren" lernen Sie Basis-Wissen zum Thema Programmierung. Ein grober Überblick über die Themenfelder finden Sie im Modulhandbuch Ihres Studiengangs. 
+
+
+Die Vorlesung ist ist in 12 Kapitel unterteilt. Pro Vorlesung werden wir uns jeweils ein Kapitel ansehen. Die Reihenfolge der Kapitel und die Inhalte orientieren sich daran, wie ein Softwareentwickler in der Praxis Software entwickelt. Das ist das Ziel: sie sollen lernen Programme zu entwickeln! 
+
+Damit Sie gute Programme entwickeln können, ist es notwendig, dass Sie grundsätzlich verstehen wie ein Computer funktioniert, wie Daten darauf verarbeitet werden, etc. etc. - also Basis-Informatik-Wissen. Informatik ist ein weites Feld- wir werden deshalb nur die theoretischen Grundlagen betrachten, die für Sie als Ingenieure in Ihrem Arbeitsalltag wichtig sind. Die theoretischen Inhalte bilden die Basis dafür, dass Sie die Programmierbeispiele verstehen können. 
+Jedes Kapitel setzt sich daher aus aus theoeretischen Inhalten und praktischen Inhalten zusammen. Diese sind wie folgt gekennzeichnet:
+
+
+```{admonition} Lernziele
+:class: learngoals
+Am Anfang eines jedes Kapitels finden Sie die Lernziele für das jeweilige Kapitel. 
+```
+
+```{admonition} Hinweis
+:name: remark-sample
+:class: remark
+Dies ist ein allgemeiner Hinweis.
+```
+
+```{admonition} Warnung
+:class: attention
+:name: attention-sample
+Dies ist ein **wichtiger** Hinweis bzw. eine Warnung.
+```
+
