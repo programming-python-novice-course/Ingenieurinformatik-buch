@@ -1,4 +1,4 @@
-## Prüfung
+# Prüfung
 
 Abhängig von Ihrem Studienbeginn müssen Sie sich entweder zu den Teil-
 prüfungen „Programmierung“ und „Numerik für Ingenieure“ separat anmelden

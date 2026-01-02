@@ -1,0 +1,26 @@
+# Python - Einordnung
+
+## Sprachtyp
+
+Python ist eine höhrere Programmiersprache.
+
+...
+
+Python wird oft als Skriptsprache bezeichnet. Um genau zu sein ist eine hybride Sprache!
+
+
+## Paradigma
+
+Es gibt Stile wie man einen Algorithmen implementieren kann. Diese Stile werden in der Fachsprache als "Programmier-Paradigmen"
+bezeichnet. Sie sind unabhängig von einer Programmiersprache!
+Die drei Programmierparadigmen sind:
+- die Strukturierte Programmierung
+- die Funktionale Programmierung
+- die Objektorientiere Programmierung
+
+Python wird oft als objekt-orientierte Sprache bezeichnet. Das ist nicht ganz korrekt: sie ermöglicht objektorientiere Programmierung auf eine sehr effiziente Art. Wie auch viele andere Programmiersprachen, erlaubt auch Python, dass man damit sowohl objekt-orientiert als auch strukturiert als auch funktional programmiert!
+
+Im folgenden Beispiel wird ...
+
+
+
