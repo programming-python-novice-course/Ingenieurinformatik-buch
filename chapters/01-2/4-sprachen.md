@@ -14,15 +14,52 @@ Eine Programmiersprache zu lernen bedeutet, dass wir
 Was versteht man unter Syntax?
 -> Vergleich helloworld in C und HelloWorld in Python
 
-Wir sehen, dass die selbse logik in unterschiedlichen Sprachen unterschiedlich aussieht.
+**Hello World in C:**
+```c
+#include <stdio.h>
+
+int main(void) {
+    printf("Hello World\n");
+    return 0;
+}
+```
+
+**Hello World in Python:**
+```python
+if __name__ == "__main__":
+    print("Hello World")
+```
+
+Wir sehen, dass die selbe Logik in unterschiedlichen Sprachen unterschiedlich aussieht.
 
 Was versteht man unter Semantik?
 
-einmal ein if statement, einmal ohne if statement. falls x= 5: ist der output des programms identisch. falls x=3: unterschiedliches verhalten
+**Programm 1 (mit if-Statement):**
+```python
+if __name__ == "__main__":
+    x = 5
+    if x == 5:
+        print("Hello World")
+```
+
+**Programm 2 (ohne if-Statement):**
+```python
+if __name__ == "__main__":
+    x = 5
+    print("Hello World")
+```
+
+Beide Programme verhalten sich bei `x = 5` identisch - sie geben "Hello World" aus. Bei `x = 3` würde Programm 1 nichts ausgeben, Programm 2 würde weiterhin "Hello World" ausgeben. Die Programme haben also unterschiedliche Semantik, auch wenn sie bei bestimmten Werten das gleiche Verhalten zeigen.
 
 
 Bestimmte "Textbausteine" entscheiden über das Verhalten des Codes.
 
+
+```{admonition} Hinweis
+:name: chatgpt-warning
+:class: remark
+Tipp: Large Language Models (LLMs) unterstützen Sie bei der korrekten Umsetzung des Syntax eine Programmiersprache - normalerweise entwickelen Sie aber in einer IDE. IDEs unterstützen Sie dabei sowieso. Was die Semantik angeht: hier wird es tricky - auch hier können LLMs helfen, aber woher weiß das LLM ob sie Hello World nur printen wollen, falls x den wert 5 annimmt? Die schwierigkeitbesteht besteht darin zu wissen, dass die bedingung notwendig ist (semantik), nicht wie die bedingung syntaktisch in python abgebildet wird (mit "if ... :". Again: den syntax kann chatgpt für sie lösen ;) 
+```
 
 
 Was versteht man unter Konzepten?
