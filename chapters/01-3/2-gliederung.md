@@ -15,6 +15,8 @@ Beispielsweise: Wenn Sie einen Motor entwickeln, ist die Schraube vermutlich ein
 
 In Kapitel 2 ist ein Theoriekapitel, in dem wir auf den syntax, die semantik und die konzepte der programmiersprache eingehen. 
 
+-
+
 --
 
 Kapitel 3: ist dann ein Praxiskapitel: wir sehen uns wann wie man mit "Einkaufsteilen" sehr schnell Programme erstellen kann. Die wichtigste regel in der softwarenentwicklung: Eine Regel in der softwareentwicklung ist: do not reinvent the wheel! Soll heissen: nutze Einkaufsteile, die gut getestet sind und gewartet werden! Eine Sammlung von Einkaufsteile wird in der Softwareentwicklung übrigens als Library bezeichnet. Konkret sehen wir uns an wie Julia das Fallbeispiel mithilfe eine Library lösen kann. 

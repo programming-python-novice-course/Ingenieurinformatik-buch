@@ -50,6 +50,65 @@ Funktionen, welche Funktionen im mathematischen Sinne sind, bezeichnet man als [
 
 ## Unreine Funktionen
 
+
+--
+
+```{admonition} Seiteneffekt
+:name: def-side-effect
+:class: definition
+Übergeben Sie eine Variable oder eine Datenstruktur einer Funktion und verändert diese Funktion jene Variable oder Datenstruktur, dann sprechen wir von einem *Seiteneffekt*.
+```
+
+In imperativen Programmiersprachen (``Python``, ``Java``, ``C#``, ``C++``, ``C``, ``JavaScript``, ...) sind *Seiteneffekte* manchmal erwünscht und auch notwendig.
+Folgender Code zeigt einen Seiteneffekt in ``Python``.
+
+```{code-cell} python3
+y = []
+def sideeffect(x):
+    x += [1,2,3]
+    return x
+
+print(y)
+print(sideeffect(y))
+print(y)
+```
+
+Die Liste ``y`` (Datenstruktur) wird durch die Funktion ``sideeffect`` befüllt.
+
+Dies ist in der funktionalen Programmiersprache ``Haskell`` nicht möglich!
+Wir können den obigen *Seiteneffekt* in ``Python`` wie folgt auflösen.
+
+```{code-cell} python3
+y = [-10]
+def no_sideeffect(x):
+    x = x + [1,2,3]
+    return x
+
+print(y)
+print(no_sideeffect(y))
+print(y)
+```
+
+In diesem Fall bleibt ``y`` unberührt, stattdessen wird eine neue Liste (eine Kopie) von ``y``) befüllt.
+
+Funktionale Sprachen umgehen *Seiteneffekte* indem sie keine Datenstrukturen ändern, sondern stattdessen neu erzeugen.
+Fügt man ein neues Element in eine Liste an, entsteht eine komplett neue Liste.
+Funktionale Sprachen verzichten auf Variablen und realisieren Operationen durch Konstanten und sog. *Pure Functions* (mathematische Funktionen).
+
+```{admonition} Reine Funktion (pure Function)
+:name: def-pure-function
+:class: definition
+
+Eine Funktion nennen wir *reine Funktion* wenn
+1. Der Rückgabewert der Funktion für die gleiche Funktionsargumente stets identisch ist.
+2. Wenn die Funktion keine *Seiteneffekte* hat.
+```
+
+
+---
+
+
+
 Allerdings ist nicht jede ``Python``-Funktion auf eine mathematische Funktion zurückzuführen.
 Eine mathematische Funktion **kennt keinen Zustand**, also keine Dinge die sich ändern können.
 Sie erhält einen oder mehrere Argumente und gibt ein Ergebnis zurück -- das ist alles.
@@ -89,8 +148,62 @@ print(f'returned_list: {returned_list}')
 
 ## Ist rein auch immer besser?
 
+
+```{admonition} Seiteneffekt
+:name: def-side-effect
+:class: definition
+Übergeben Sie eine Variable oder eine Datenstruktur einer Funktion und verändert diese Funktion jene Variable oder Datenstruktur, dann sprechen wir von einem *Seiteneffekt*.
+```
+
+In imperativen Programmiersprachen (``Python``, ``Java``, ``C#``, ``C++``, ``C``, ``JavaScript``, ...) sind *Seiteneffekte* manchmal erwünscht und auch notwendig.
+Folgender Code zeigt einen Seiteneffekt in ``Python``.
+
+```{code-cell} python3
+y = []
+def sideeffect(x):
+    x += [1,2,3]
+    return x
+
+print(y)
+print(sideeffect(y))
+print(y)
+```
+
+Die Liste ``y`` (Datenstruktur) wird durch die Funktion ``sideeffect`` befüllt.
+
+Dies ist in der funktionalen Programmiersprache ``Haskell`` nicht möglich!
+Wir können den obigen *Seiteneffekt* in ``Python`` wie folgt auflösen.
+
+```{code-cell} python3
+y = [-10]
+def no_sideeffect(x):
+    x = x + [1,2,3]
+    return x
+
+print(y)
+print(no_sideeffect(y))
+print(y)
+```
+
+In diesem Fall bleibt ``y`` unberührt, stattdessen wird eine neue Liste (eine Kopie) von ``y``) befüllt.
+
+Funktionale Sprachen umgehen *Seiteneffekte* indem sie keine Datenstrukturen ändern, sondern stattdessen neu erzeugen.
+Fügt man ein neues Element in eine Liste an, entsteht eine komplett neue Liste.
+Funktionale Sprachen verzichten auf Variablen und realisieren Operationen durch Konstanten und sog. *Pure Functions* (mathematische Funktionen).
+
+```{admonition} Reine Funktion (pure Function)
+:name: def-pure-function
+:class: definition
+
+Eine Funktion nennen wir *reine Funktion* wenn
+1. Der Rückgabewert der Funktion für die gleiche Funktionsargumente stets identisch ist.
+2. Wenn die Funktion keine *Seiteneffekte* hat.
+```
+
 Das Wort *rein* ist wertend, was uns, um ehrlich zu sein, nicht sonderlich gefällt.
 Zwar sollten wir, wenn es geht und keine Nachteile entstehen, *reine Funktionen* bevorzugen, doch basiert die [imperative Programmierung]() auf Seiteneffekten und damit auf der *'Unreinheit'*.
+
+
 Diese ist nicht per se schlecht.
 Oftmals ist sie notwendig und wichtig.
 
