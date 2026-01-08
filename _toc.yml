@@ -1,7 +1,7 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Einführung (Vorlesung 1)
+  - caption: Einführung 
     numbered: True
     chapters:
     - file: chapters/01-1/0-uebersicht
@@ -71,85 +71,70 @@ parts:
 #      - file: chapters/02-3/4-language-evolution
 #      - file: chapters/02-3/5-python
 #      - file: chapters/02-3/6-diversity
-#    - file: chapters/02-4/the-art-of-programming
-#      sections:
-#      - file: chapters/02-4/1-algorithms
-#      - file: chapters/02-4/2-programming
-#      - file: chapters/02-4/3-control-structures
-#      - file: chapters/02-4/4-data-structures
-#  - caption: Python
-#    numbered: True
+    - file: chapters/02-4/the-art-of-programming
+      sections:
+      - file: chapters/02-4/1-algorithms
+      - file: chapters/02-4/2-programming
+      - file: chapters/02-4/3-control-structures
+      - file: chapters/02-4/4-data-structures
+  - caption: Python
+    numbered: True
+    chapters:
+    - file: chapters/03-1/introduction
+    - file: chapters/03-2/python-environment
+      sections:
+      - file: chapters/03-2/1-installation
+      - file: chapters/03-2/2-run
+      - file: chapters/03-2/3-notebooks
+      - file: chapters/03-2/4-modules
+    - file: chapters/03-3/intro
+      sections:
+      - file: chapters/03-3/1-variables
+      - file: chapters/03-3/2-expressions
+      - file: chapters/03-3/3-invoking-functions
+    - file: chapters/03-4/intro
+      sections:
+      - file: chapters/03-4/1-data-types
+      - file: chapters/03-4/2-int
+      - file: chapters/03-4/3-float
+      - file: chapters/03-4/4-bool
+      - file: chapters/03-4/5-list
+      - file: chapters/03-4/6-tuple
+      - file: chapters/03-4/7-string
+      - file: chapters/03-4/8-set
+      - file: chapters/03-4/9-dict
+      - file: chapters/03-4/10-range
+      - file: chapters/03-4/11-typing-in-python
+    - file: chapters/03-5/intro
+      sections:
+      - file: chapters/03-5/1-type-systems
+      - file: chapters/03-5/2-why-data-types
+      - file: chapters/03-5/3-change-of-interpretation
+      - file: chapters/03-5/4-kind-of-data-types
+      - file: chapters/03-5/5-primitive-data-types
+    - file: chapters/03-6/intro
+      sections:
+      - file: chapters/03-6/1-purity
+      - file: chapters/03-6/2-definition
+      - file: chapters/03-6/3-namespaces
+      - file: chapters/03-6/4-lambdas
+      - file: chapters/03-6/5-nested-functions
+      - file: chapters/03-6/x-recursion
+      - file: chapters/03-6/6-first-class-functions
+    - file: chapters/03-7/intro
+      sections:
+      - file: chapters/03-7/1-cases
+      - file: chapters/03-7/2-loops
+      - file: chapters/03-7/3-comprehensions
+    - file: chapters/03-8/intro
+      sections:
+      - file: chapters/03-8/1-class-and-objects
+      - file: chapters/03-8/2-inheritance-poly-encap
+  #      - file: chapters/10-8/3-critic
+#  - caption: Trash
 #    chapters:
-#    - file: chapters/03-1/introduction
-#    - file: chapters/03-2/python-environment
-#      sections:
-#      - file: chapters/03-2/1-installation
-#      - file: chapters/03-2/2-run
-#      - file: chapters/03-2/3-notebooks
-#      - file: chapters/03-2/4-modules
-#    - file: chapters/03-3/intro
-#      sections:
-#      - file: chapters/03-3/1-variables
-#      - file: chapters/03-3/2-expressions
-#      - file: chapters/03-3/3-invoking-functions
-#    - file: chapters/03-4/intro
-#      sections:
-#      - file: chapters/03-4/1-data-types
-#      - file: chapters/03-4/2-int
-#      - file: chapters/03-4/3-float
-#      - file: chapters/03-4/4-bool
-#      - file: chapters/03-4/5-list
-#      - file: chapters/03-4/6-tuple
-#      - file: chapters/03-4/7-string
-#      - file: chapters/03-4/8-set
-#      - file: chapters/03-4/9-dict
-#      - file: chapters/03-4/10-range
-#      - file: chapters/03-4/11-typing-in-python
-#    - file: chapters/03-5/intro
-#      sections:
-#      - file: chapters/03-5/1-type-systems
-#      - file: chapters/03-5/2-why-data-types
-#      - file: chapters/03-5/3-change-of-interpretation
-#      - file: chapters/03-5/4-kind-of-data-types
-#      - file: chapters/03-5/5-primitive-data-types
-#    - file: chapters/03-6/intro
-#      sections:
-#      - file: chapters/03-6/1-purity
-#      - file: chapters/03-6/2-definition
-#      - file: chapters/03-6/3-namespaces
-#      - file: chapters/03-6/4-lambdas
-#      - file: chapters/03-6/5-nested-functions
-#      - file: chapters/03-6/x-recursion
-#      - file: chapters/03-6/6-first-class-functions
-#    - file: chapters/03-7/intro
-#      sections:
-#      - file: chapters/03-7/1-cases
-#      - file: chapters/03-7/2-loops
-#      - file: chapters/03-7/3-comprehensions
-#    - file: chapters/03-8/intro
-#      sections:
-#      - file: chapters/03-8/1-class-and-objects
-#      - file: chapters/03-8/2-inheritance-poly-encap
-##      - file: chapters/10-8/3-critic
-#    - file: chapters/03-9/cpython
-#      sections:
-#      - file: chapters/03-9/1-impl
-#      - file: chapters/03-9/2-ref
-#      - file: chapters/03-9/3-interpreter
-#      - file: chapters/03-9/4-disassembly
-#      - file: chapters/03-9/5-extending
-#  - caption: CT in Aktion
-#    numbered: True
-#    chapters:
-#    - file: chapters/04/robo-world
-#    - file: chapters/04/dive-bell
-#    - file: chapters/04/image-representation
-#    - file: chapters/04/memory
-#    - file: chapters/04/name-register
-##  - caption: Trash
-##    chapters:
-##    - file: chapters/12/hardware-abstraction
-##    - file: chapters/12/komplexity
+#    - file: chapters/12/hardware-abstraction
+#    - file: chapters/12/komplexity
   - caption: Appendix
     chapters:
     - file: chapters/misc/bibliography

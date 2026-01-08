@@ -1,6 +1,6 @@
 # Programmiersprache
 
-## Sprachtyp
+## Sprachtypen
 
 Python ist eine höhrere Programmiersprache.
 
