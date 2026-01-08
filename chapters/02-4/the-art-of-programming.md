@@ -1,4 +1,4 @@
-# Die Kunst des Programmierens
+# Basiswissen Informatik
 
 In den Anfängen der Informatik tauchte immer wieder die Frage auf, ob diese Disziplin eine Wissenschaft oder eine Ingenieurskunst sei.
 Der Zweifel an der Wissenschaftlichkeit keimte auf, da sich die Informatik im wesentlichen mit dem Computer, also einer konkreten Konstruktion des Menschen beschäftige und nicht mit dem Wesen der Natur selbst.

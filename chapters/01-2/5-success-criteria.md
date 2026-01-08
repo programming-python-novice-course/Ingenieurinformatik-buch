@@ -149,3 +149,4 @@ Zu bestimmten Zeiten sicherlich.
 Doch kann es auch passieren, dass eine Sprache ganz von der Bildfläche verschwindet, da sie gegenüber neuen Sprachen keine Vorteile mehr mit sich bringt.
 Irgendwann kann die Zeit kommen, die Logik eines alten Programmiercodes, der immernoch erweitert wird, in einer neuen Sprache umzusetzen.
 Es gibt nur noch wenige Entwickler\*innen die heute noch ``Perl``-Skripte schreiben oder ihr Projekt mit ``Fortran`` beginnen.
+

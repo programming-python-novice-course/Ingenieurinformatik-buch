@@ -170,3 +170,4 @@ Neben den angeführten Pluspunkten, entwickelt sich eine solche Gemeinschaft nur
 
 Deshalb ist ``Python`` eine ausgezeichnete Wahl, wenn Sie eine neue Programmiersprache erlernen wollen.
 Wir empfehlen dennoch, im Laufe Ihres Studiums, zusätzlich mindestens eine [statisch getypte](sec-type-systems) [kompilierte](def-compiler) Sprache zu erlernen, da diese weitere wichtige wesentliche Konzepte des digitalen Computers und damit des [Computational Thinkings](sec-what-is-ct) offenlegen.
+

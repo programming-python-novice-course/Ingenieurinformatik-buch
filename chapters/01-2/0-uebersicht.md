@@ -1,4 +1,4 @@
-# Basiswissen: Angewandte Informatik
+# Einführung
 
 
 ```{admonition} Lernziele
