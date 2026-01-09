@@ -66,30 +66,24 @@ parts:
       - file: chapters/08-python-data-types/9-dict
       - file: chapters/08-python-data-types/10-range
       - file: chapters/08-python-data-types/11-typing-in-python
-    - file: chapters/09-type-systems/0-intro
+    - file: chapters/09-functions/0-intro
       sections:
-      - file: chapters/09-type-systems/1-type-systems
-      - file: chapters/09-type-systems/2-why-data-types
-      - file: chapters/09-type-systems/4-kind-of-data-types
-      - file: chapters/09-type-systems/5-primitive-data-types
-    - file: chapters/10-functions/0-intro
+      - file: chapters/09-functions/1-purity
+      - file: chapters/09-functions/2-definition
+      - file: chapters/09-functions/3-namespaces
+      - file: chapters/09-functions/4-lambdas
+      - file: chapters/09-functions/5-nested-functions
+      - file: chapters/09-functions/x-recursion
+      - file: chapters/09-functions/6-first-class-functions
+    - file: chapters/10-control-flow/0-intro
       sections:
-      - file: chapters/10-functions/1-purity
-      - file: chapters/10-functions/2-definition
-      - file: chapters/10-functions/3-namespaces
-      - file: chapters/10-functions/4-lambdas
-      - file: chapters/10-functions/5-nested-functions
-      - file: chapters/10-functions/x-recursion
-      - file: chapters/10-functions/6-first-class-functions
-    - file: chapters/11-control-flow/0-intro
+      - file: chapters/10-control-flow/1-cases
+      - file: chapters/10-control-flow/2-loops
+      - file: chapters/10-control-flow/3-comprehensions
+    - file: chapters/11-object-oriented/0-intro
       sections:
-      - file: chapters/11-control-flow/1-cases
-      - file: chapters/11-control-flow/2-loops
-      - file: chapters/11-control-flow/3-comprehensions
-    - file: chapters/12-object-oriented/0-intro
-      sections:
-      - file: chapters/12-object-oriented/1-class-and-objects
-      - file: chapters/12-object-oriented/2-inheritance-poly-encap
+      - file: chapters/11-object-oriented/1-class-and-objects
+      - file: chapters/11-object-oriented/2-inheritance-poly-encap
   - caption: Appendix
     chapters:
     - file: chapters/misc/bibliography
