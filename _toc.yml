@@ -4,88 +4,88 @@ parts:
   - caption: Einführung 
     numbered: True
     chapters:
-    - file: chapters/01-1/0-uebersicht
+    - file: chapters/01-course-overview/0-uebersicht
       sections:
-      - file: chapters/01-1/1-arbeitsmaterialien
-      - file: chapters/01-1/2-pruefung
-      - file: chapters/01-1/3-inhalte
-      - file: chapters/01-1/5-lesehinweise
-    - file: chapters/01-2/0-uebersicht
+      - file: chapters/01-course-overview/1-arbeitsmaterialien
+      - file: chapters/01-course-overview/2-pruefung
+      - file: chapters/01-course-overview/3-inhalte
+      - file: chapters/01-course-overview/5-lesehinweise
+    - file: chapters/02-course-concept/0-uebersicht
       sections:
-      - file: chapters/01-2/2-softwaretypen
-      - file: chapters/01-2/3-prozesssicht
-      - file: chapters/01-2/4-sprachen
-      - file: chapters/01-2/5-success-criteria
-      - file: chapters/01-2/6-fallbeispiel
-      - file: chapters/01-2/7-gliederung
-    - file: chapters/01-3/0-intro
+      - file: chapters/02-course-concept/2-softwaretypen
+      - file: chapters/02-course-concept/3-prozesssicht
+      - file: chapters/02-course-concept/4-sprachen
+      - file: chapters/02-course-concept/5-success-criteria
+      - file: chapters/02-course-concept/6-fallbeispiel
+      - file: chapters/02-course-concept/7-gliederung
+    - file: chapters/03-computer-sciences-basics/0-intro
       sections:
-      - file: chapters/01-3/1-basics
-      - file: chapters/01-3/1-algorithms
-      - file: chapters/01-3/2-programming
-      - file: chapters/01-3/2-repetition-is-the-key
-      - file: chapters/01-3/3-control-structures
-      - file: chapters/01-3/4-data-structures
+      - file: chapters/03-computer-sciences-basics/1-basics
+      - file: chapters/03-computer-sciences-basics/1-algorithms
+      - file: chapters/03-computer-sciences-basics/2-programming
+      - file: chapters/03-computer-sciences-basics/2-repetition-is-the-key
+      - file: chapters/03-computer-sciences-basics/3-control-structures
+      - file: chapters/03-computer-sciences-basics/4-data-structures
   - caption: Python verstehen
     numbered: True
     chapters:
-    - file: chapters/02-1/0-intro
+    - file: chapters/04-language-properties/0-intro
       sections:
-      - file: chapters/02-1/6-python
-      - file: chapters/02-1/7-python
+      - file: chapters/04-language-properties/6-python
+      - file: chapters/04-language-properties/7-python
   - caption: Python anwenden
    ### here i want some text
     numbered: True
     chapters:
-    - file: chapters/03-1/introduction
-    - file: chapters/03-2/python-environment
+    - file: chapters/05-applying-python-intro/introduction
+    - file: chapters/06-python-ecosystem-and-setup/python-environment
       sections:
-      - file: chapters/03-2/1-installation
-      - file: chapters/03-2/2-run
-      - file: chapters/03-2/3-notebooks
-      - file: chapters/03-2/4-modules
-    - file: chapters/03-3/intro
+      - file: chapters/06-python-ecosystem-and-setup/1-installation
+      - file: chapters/06-python-ecosystem-and-setup/2-run
+      - file: chapters/06-python-ecosystem-and-setup/3-notebooks
+      - file: chapters/06-python-ecosystem-and-setup/4-modules
+    - file: chapters/07-python-basics/0-intro
       sections:
-      - file: chapters/03-3/1-variables
-      - file: chapters/03-3/2-expressions
-      - file: chapters/03-3/3-invoking-functions
-    - file: chapters/03-4/intro
+      - file: chapters/07-python-basics/1-variables
+      - file: chapters/07-python-basics/2-expressions
+      - file: chapters/07-python-basics/3-invoking-functions
+    - file: chapters/08-python-data-types/0-intro
       sections:
-      - file: chapters/03-4/1-data-types
-      - file: chapters/03-4/2-int
-      - file: chapters/03-4/3-float
-      - file: chapters/03-4/4-bool
-      - file: chapters/03-4/5-list
-      - file: chapters/03-4/6-tuple
-      - file: chapters/03-4/7-string
-      - file: chapters/03-4/8-set
-      - file: chapters/03-4/9-dict
-      - file: chapters/03-4/10-range
-      - file: chapters/03-4/11-typing-in-python
-    - file: chapters/03-5/intro
+      - file: chapters/08-python-data-types/1-data-types
+      - file: chapters/08-python-data-types/2-int
+      - file: chapters/08-python-data-types/3-float
+      - file: chapters/08-python-data-types/4-bool
+      - file: chapters/08-python-data-types/5-list
+      - file: chapters/08-python-data-types/6-tuple
+      - file: chapters/08-python-data-types/7-string
+      - file: chapters/08-python-data-types/8-set
+      - file: chapters/08-python-data-types/9-dict
+      - file: chapters/08-python-data-types/10-range
+      - file: chapters/08-python-data-types/11-typing-in-python
+    - file: chapters/09-type-systems/0-intro
       sections:
-      - file: chapters/03-5/1-type-systems
-      - file: chapters/03-5/2-why-data-types
-      - file: chapters/03-5/4-kind-of-data-types
-      - file: chapters/03-5/5-primitive-data-types
-    - file: chapters/03-6/intro
+      - file: chapters/09-type-systems/1-type-systems
+      - file: chapters/09-type-systems/2-why-data-types
+      - file: chapters/09-type-systems/4-kind-of-data-types
+      - file: chapters/09-type-systems/5-primitive-data-types
+    - file: chapters/10-functions/0-intro
       sections:
-      - file: chapters/03-6/1-purity
-      - file: chapters/03-6/2-definition
-      - file: chapters/03-6/3-namespaces
-      - file: chapters/03-6/4-lambdas
-      - file: chapters/03-6/5-nested-functions
-      - file: chapters/03-6/x-recursion
-      - file: chapters/03-6/6-first-class-functions
-    - file: chapters/03-7/intro
+      - file: chapters/10-functions/1-purity
+      - file: chapters/10-functions/2-definition
+      - file: chapters/10-functions/3-namespaces
+      - file: chapters/10-functions/4-lambdas
+      - file: chapters/10-functions/5-nested-functions
+      - file: chapters/10-functions/x-recursion
+      - file: chapters/10-functions/6-first-class-functions
+    - file: chapters/11-control-flow/0-intro
       sections:
-      - file: chapters/03-7/1-cases
-      - file: chapters/03-7/2-loops
-      - file: chapters/03-7/3-comprehensions
-    - file: chapters/03-8/intro
+      - file: chapters/11-control-flow/1-cases
+      - file: chapters/11-control-flow/2-loops
+      - file: chapters/11-control-flow/3-comprehensions
+    - file: chapters/12-object-oriented/0-intro
       sections:
-      - file: chapters/03-8/1-class-and-objects
-      - file: chapters/03-8/2-inheritance-poly-encap
+      - file: chapters/12-object-oriented/1-class-and-objects
+      - file: chapters/12-object-oriented/2-inheritance-poly-encap
   - caption: Appendix
     chapters:
     - file: chapters/misc/bibliography
