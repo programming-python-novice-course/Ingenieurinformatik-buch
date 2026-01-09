@@ -13,6 +13,12 @@ kernelspec:
 (sec-algorithms)=
 # Algorithmen
 
+```{remark??} Berechenbarkeit
+:name: def-computable-gen
+:class: definition
+Eine Teildisziplin der Informatik, die theoretische Informatik, beschäftigt sich unter anderem mit der Berechenbarkeit von Problemen. Beispielsweise gilt ein Problem ist *allgemein berechenbar*, wenn für jenes Problem eine Lösung berechnet werden kann. Das klingt erst einmal theoretisch, hat aber für die Praxis ganz erhebliche Auswirkungen. ..todo
+```
+
 Der Ursprungs des Begriffs *Algorithmus* war lange Zeit ungeklärt.
 Erst recht spät fanden Historiker\*innen heraus, dass der Begriff von der leichten Veränderung des Namens des berühmten persischen Autors *Abu Dschaʿfar Muhammad ibn Musa al-Chwārizmī* stammt.
 Der Begriff wurde dann durch *Algorismi* latinisiert und durch *Algorismus* ins mittelhochdeutsch übersetzt.

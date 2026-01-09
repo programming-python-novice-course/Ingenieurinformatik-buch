@@ -17,30 +17,25 @@ parts:
       - file: chapters/01-2/3-prozesssicht
       - file: chapters/01-2/4-sprachen
       - file: chapters/01-2/5-success-criteria
-      - file: chapters/01-2/6-python
-      - file: chapters/01-2/7-python
     - file: chapters/01-3/0-uebersicht
       sections:
       - file: chapters/01-3/1-fallbeispiel
       - file: chapters/01-3/2-gliederung
-#  - caption: Theorie
-#    numbered: True
-#    chapters:
-#    - file: chapters/02-1/information-processing
-#      sections:
-#      - file: chapters/02-1/1-basics
-#      - file: chapters/02-1/2-interpretation
-#      - file: chapters/02-1/2-representation
-#      - file: chapters/02-1/3-manipulation
-#      - file: chapters/02-1/4-information-flow
-#      - file: chapters/02-1/5-hardware-equals-software
     - file: chapters/02-4/the-art-of-programming
       sections:
+      - file: chapters/02-1/1-basics 
       - file: chapters/02-4/1-algorithms
       - file: chapters/02-4/2-programming
       - file: chapters/02-4/3-control-structures
       - file: chapters/02-4/4-data-structures
-  - caption: Python
+  - caption: Python verstehen
+    numbered: True
+    chapters:
+    - file: chapters/02-1/information-processing
+      sections:
+      - file: chapters/02-1/6-python
+      - file: chapters/02-1/7-python
+  - caption: Python anwenden
     numbered: True
     chapters:
     - file: chapters/03-1/introduction

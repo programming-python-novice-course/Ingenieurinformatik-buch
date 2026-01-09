@@ -18,28 +18,7 @@ Bevor wir genauer darauf eingehen wie der Informationskreislauf vollzogen wird, 
 (sec-binary-system)=
 ## Das Binärsystem
 
-Computer arbeiten auf der Basis von zwei Zuständen (0 und 1).
-Salopp sagt man auch, dass sie die Binärsprache "sprechen".
-Da die kleinste Informationseinheit, das [Bit](def-bit), nur zwei Zustände annehmen kann, sind die Operationen äußerst simpel.
-Die Komplexität und die damit einhergehende Rechenfähigkeit entsteht durch das Kombinieren und Hintereinanderschalten von Millionen dieser Operationen.
 
-Als *Computational Thinker\*innen* kümmern wir uns kaum um die genaue Manipulation der [Bits](def-bit) und [Bytes](def-byte).
-Wir Abstrahieren diese Aufgabe durch [Programmiersprachen](sec-programming-languages), die uns weitaus komfortablere Möglichkeiten bieten.
-Dennoch sind diese Informationseinheiten und deren [Manipulation](sec-manipulation) von wesentlicher Bedeutung, um die Funktionsweise eines Computers zu verstehen.
-
-In einem Computer befinden sich mikroskopisch kleine Leitungen und Schaltkreise, welche alle Informationen eines Computers speichern, übertragen und verarbeiten.
-Anstatt 0 und 1 verwendet der Computer also eigentlich elektrische Signale bzw. Spannungen, gespeichert in Milliarden von Transistoren und übertragen durch sog. [Bus-Systeme](def-bus) (Leitungen/Kabel).
-
-Wie aber lassen sich Informationen mit solchen elektrischen Signalen darstellen?
-Stellen wir uns eine Lampe mit zwei Zustände vor.
-Die Lampe ist entweder aus (0) oder sie ist an (1).
-
-```{figure} ../../figs/digital-computer/representation/lamps.png
----
-width: 200px
-name: fig-lamps
----
-Eine Lampe die entweder aus (links) oder an (rechts) geschaltet sein kann.
 ```
 
 Entweder es **fließt Strom hindurch**, was dem Zustand 1 entspricht, oder es **fließt kein Strom hindurch**, was den Zustand 0 darstellt.

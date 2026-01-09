@@ -1,3 +1,0 @@
-(sec-computer-basics)=
-
-# 
