@@ -31,8 +31,12 @@ parts:
     chapters:
     - file: chapters/04-language-properties/0-intro
       sections:
-      - file: chapters/04-language-properties/6-python
-      - file: chapters/04-language-properties/7-python
+      - file: chapters/04-language-properties/1-interpretation
+      - file: chapters/04-language-properties/2-paradigma
+      - file: chapters/04-language-properties/3-syntax
+      - file: chapters/04-language-properties/4-references
+      - file: chapters/04-language-properties/5-typing
+      - file: chapters/04-language-properties/6-primitive-data
   - caption: Python anwenden
    ### here i want some text
     numbered: True
