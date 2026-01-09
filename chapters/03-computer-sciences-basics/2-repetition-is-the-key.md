@@ -12,8 +12,8 @@ kernelspec:
 
 # Wiederholung als Grundlage
 
-[Computational Thinking](sec-what-is-ct) beginnt normalerweise dort wo alle Denkprozesse beginnen: In den Köpfen der Menschen.
-Der Computer ist sekundäres Werkzeug um das Resultat des Denkprozesses niederzuschreiben und schlussendlich auszuführen.
+Problemlösung beginnt normalerweise dort wo alle Denkprozesse beginnen: In den Köpfen der Menschen.
+Der Computer ist ein Werkzeug um das Resultat des Denkprozesses niederzuschreiben und schlussendlich auszuführen.
 Wir können eine Musikkomposition als jene Niederschrift und dessen Aufführung als Ausführung interpretieren.
 Schließlich ist eine Musikkomposition nichts anderes als ein [Algorithmus](def-algorithm), beschrieben durch eine endliche Folge von Noten.
 Wie bei einer Niederschrift eines Algorithmus in Form von Quellcode können wir zwischen

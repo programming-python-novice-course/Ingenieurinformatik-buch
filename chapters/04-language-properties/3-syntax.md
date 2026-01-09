@@ -1,28 +1,11 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
+# Formatierungszwang
 
-(sec-python)=
+In Python entscheidet die **Einrückung** über die Struktur des Codes. Im Gegensatz zu vielen anderen Programmiersprachen gibt es keine geschweiften Klammern `{}` oder Schlüsselwörter wie `begin`/`end` zur Strukturierung.
 
+**Sinn dahinter:** Lesbarer Code. Die Einrückung zwingt Programmierer\*innen dazu, Code übersichtlich zu strukturieren.
 
-## Formatierungszwang
+**Heute:** Moderne IDEs, Linter und Formatter unterstützen dabei, Code automatisch korrekt zu formatieren. Linter prüfen Code auf Fehler und Stilprobleme, Formatter passen die Formatierung automatisch an.
 
-In Python entscheidet die Einrückung ...
-es gibt keine klammern. sinn dahinter: lesbarer code. 
-
-heute ist das vllt ein wenig übertrieben, da es linter und formater gibt.
-Was machen linter und formater?
-
-Als die Unterstützung von IDEs noch nicht so weit fortgrschritten war, war das sinnvoll. 
-
-wir müssen heute damit leben!
+**Historischer Kontext:** Als die Unterstützung von IDEs noch nicht so weit fortgeschritten war, war die Einrückungspflicht ein wichtiges Mittel zur Codequalität. Heute müssen wir damit leben, aber moderne Werkzeuge erleichtern den Umgang damit.
 
 

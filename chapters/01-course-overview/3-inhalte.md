@@ -1,5 +1,9 @@
 # Kursinhalte
-In diesem Teilmodul lernen Sie Basis-Wissen aus der Informatik und Grundlagen der Programmiersprache Python. Ein grober Überblick über die Inhalte, die in der Prüfung geprüft werden, finden Sie - wie immer (!) - im Modulhandbuch Ihres Studiengangs.
+
+
+In diesem Teilmodul lernen Sie Basis-Wissen aus der Informatik und Grundlagen der Programmiersprache Python. 
+
+Ein grober Überblick über die Inhalte, die in der Prüfung geprüft werden, finden Sie im Modulhandbuch Ihres Studiengangs. Wie die Inhalte im Rahmen dieser Vorlesung umgesetzt werden, finden Sie im Kapitel [Kurskonzept](chapters/02-course-concept/0-uebersicht). 
 
 ```{figure} ../../figs/overview/modulhandbuch-1.png
 ---

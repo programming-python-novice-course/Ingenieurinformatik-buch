@@ -52,18 +52,25 @@ Auch dieses Konzept gab es bereits durch ``Mathematica``, doch ist diese Sprache
 Gute Skripte zu schreiben ist zudem nicht nur für Wissenschaftler\*innen sondern auch für Systemadministrator\*innen und DevOps wichtig.
 Deshalb trat auch in diesem Bereich ``Python`` einen Siegeszug an.
 
-Wichtig: es gibt nicht die eine beste Programmiersprache!
-Unterschiedliche Sprachen eigenen sich für unterschiedliche Aufgaben, Anwendungsbereiche und folgen subjektiven Vorlieben.
-Die wesentlichen Teile die wir bei einer Sprache beurteilen können sind:
-1. ihre **Syntax**
-2. ihr **Ökosystem** (vorhandene Bibliotheken, Tutorials, Dokumentationen, Lehrvideos, eine starke offene und diverse Gemeinschaft)
-3. ihre **Anwendungsbereiche**
-4. ihre **Performance** (Laufzeit des Programmcodes)
+```{admonition} Hinweis
+:class: remark
+:name: remark-no-best-language
+Es gibt nicht die eine beste Programmiersprache! Unterschiedliche Sprachen eignen sich für unterschiedliche Aufgaben, Anwendungsbereiche und folgen subjektiven Vorlieben.
+
+Die wesentlichen Kriterien zur Beurteilung einer Programmiersprache sind:
+
+1. **Syntax** - Die Grammatik der Sprache
+2. **Ökosystem** - Vorhandene Bibliotheken, Tutorials, Dokumentationen, Lehrvideos, eine starke offene und diverse Gemeinschaft
+3. **Anwendungsbereiche** - Für welche Aufgaben die Sprache geeignet ist
+4. **Performance** - Laufzeit des Programmcodes
+```
 
 
-
-Hinweis:
-Wir empfehlen, im Laufe Ihres Studiums, zusätzlich zu Python mindestens eine [statisch getypte](sec-type-systems) [kompilierte](def-compiler) Sprache zu erlernen, da sie in Ihrem Berufsalltag vermutlich auf interpretierte Sprachen (Python, Octave) als auch auf kompilierte Sprachen (C++, Java, ..) treffen werden.
+```{admonition} Hinweis
+:class: remark
+:name: remark-learn-multiple-languages
+Wir empfehlen, im Laufe Ihres Studiums zusätzlich zu Python mindestens eine statisch getypte, kompilierte Sprache zu erlernen, da Sie in Ihrem Berufsalltag vermutlich auf interpretierte Sprachen (Python, Octave) als auch auf kompilierte Sprachen (C++, Java, etc.) treffen werden.
+```
 
 
 

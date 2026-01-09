@@ -2,7 +2,7 @@
 
 # Datentypen
 
-Wir wir im beispiel mit der potenzierung der zahl gesehen haben,  macht nichr jede funktionalität macht für jeden datentypen sinn. Die potenz einer zahl macht sinn, unabhängig davon ob es eine ganze oder eine kommazahl ist. die potenz eines textes mache keinen sinn. deshalb kommen wir nicht darum herum uns damit zu besschäftigen was es denn für datentypen gibt, wie sich unterscheiden und wie ich sie in python nutze. Wir werden uns im part Python anwenden genauer mit Datentypen beschäftigen. 
+Wie wir im Beispiel mit der Potenzierung der Zahl gesehen haben, macht nicht jede Funktionalität für jeden Datentypen Sinn. Die Potenz einer Zahl macht Sinn, unabhängig davon, ob es eine ganze oder eine Kommazahl ist. Die Potenz eines Textes macht keinen Sinn. Deshalb kommen wir nicht darum herum, uns damit zu beschäftigen, was es denn für Datentypen gibt, wie sie sich unterscheiden und wie ich sie in Python nutze. Wir werden uns im Part "Python anwenden" genauer mit Datentypen beschäftigen. 
 
 An dieser Stelle möchten wir kurz eine Besonderheit von Python ansprechen: In Python gibt es im Gegensatz zu anderen Programmiersprachen keine primitiven Datentypen. 
 

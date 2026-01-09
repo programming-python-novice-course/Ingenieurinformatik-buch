@@ -38,7 +38,6 @@ parts:
       - file: chapters/04-language-properties/5-typing
       - file: chapters/04-language-properties/6-primitive-data
   - caption: Python anwenden
-   ### here i want some text
     numbered: True
     chapters:
     - file: chapters/05-applying-python-intro/introduction
@@ -84,6 +83,7 @@ parts:
       sections:
       - file: chapters/11-object-oriented/1-class-and-objects
       - file: chapters/11-object-oriented/2-inheritance-poly-encap
+    - caption: Fallbeispiel
   - caption: Appendix
     chapters:
     - file: chapters/misc/bibliography

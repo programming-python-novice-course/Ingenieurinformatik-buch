@@ -1,7 +1,7 @@
 (sec-programming)=
 # Programmieren
 
-Programmieren ist eine Tätigkeit bei der wir unsere Ideen und Konzepte, d.h. das was wir beim [Computational Thinking](sec-what-is-ct) mental zustande bekommen haben, in Text überzuführen.
+Programmieren ist eine Tätigkeit bei der wir unsere Ideen und Konzepte in Text überführen.
 Ob das Programmieren nun wirklich mit dem Schreiben des Codes beginnt oder wir den ganzen Prozess der Softwareentwicklung als das Programmieren betrachten sei dahingestellt.
 Auch ist klar, dass geschriebener Code wie auch die Betrachtung von Code neue Ideen hervorrufen wird und zu neuen Lösungen führen wird.
 
@@ -45,7 +45,7 @@ Ein *Programm* ist im Gegensatz dazu in einer Programmiersprache wie ``Python`` 
 *Programmiercode* auch genannt *Quellcode*, *Source Code* oder kurz *Code*, ist das Resultat der *Programmierung* und teil eines *Programms*.
 Das heißt zur Ausführung des *Quellcodes* fehlt möglicherweise ein Teil des gesamten Codes.
 
-*Pseudocode*, *Quellcode* *Programme* und *Algorithmen* sind Manifestation des [Computational Thinkings](sec-what-is-ct) in Form von endlichem Text.
+*Pseudocode*, *Quellcode*, *Programme* und *Algorithmen* sind verschiedene Formen, um Problemlösungen in endlichem Text zu beschreiben.
 
 Ein *Algorithmus* kann auch in einer Programmiersprache niedergeschrieben werden.
 Dies werden wir in diesem Kurs bevorzugen und den Umweg über *Pseudocode* weitestgehend vermeiden.
@@ -59,8 +59,8 @@ Oftmals, gerade bei einfachen Problemen, entwerfen Sie ihren Algorithmus indem S
 Bei komplexeren Problemen ist es jedoch oft ratsam zu Stift und Papier zu greifen durch Skizzen und Mitschriften zu unterstützen.
 
 
-Ein wesentliche Teil des Computational Thinkings findet vor dem Programmieren statt.
-Das Programmieren ist dann eine Frage der Realisierung.
+Ein wesentlicher Teil der Problemlösung findet vor dem Programmieren statt.
+Das Programmieren ist dann die Realisierung der Lösung.
 Ist Ihr Algorithmus, den Sie programmieren möchten, gut durchdacht und kennen Sie Ihren *Kontext* gut genug, dann ist das schreiben des Programmcodes oft keine allzu große Herausforderung mehr.
 
 Wenn wir vom Programmieren sprechen, meinen wir oft beides:

@@ -8,15 +8,17 @@ Ein guter Softwareentwickler kennt viele Programmiersprachen und entscheidet abh
 
 
 
-Was heisst es eine Programmiersprache zu lernen?
+Was heißt es, eine Programmiersprache zu lernen?
 
-Eine Programmiersprache zu lernen bedeutet, dass wir 
-- den Syntax der Sprache ("die Grammatik") und deren Semantik ("die Bedeutung") verstehen (da hilft Ihnen ChatGPT)
-- und deren Konzepte kennen und anwenden. (da hilft Ihnen ChatGPT nur wenn Sie die Konzepte kennen und wenn Sie das kennen, dann ist zweifelhaft ob sie ChatGPT noch nutzen)
+Eine Programmiersprache zu lernen bedeutet, dass wir:
+
+- den **Syntax** der Sprache ("die Grammatik") und deren **Semantik** ("die Bedeutung") verstehen
+- deren **Konzepte** kennen und anwenden können
 
 
-Was versteht man unter Syntax?
--> Vergleich helloworld in C und HelloWorld in Python
+## Syntax
+
+Die Syntax einer Programmiersprache beschreibt die Regeln, wie Code geschrieben werden muss. Ein Vergleich zwischen "Hello World" in C und Python zeigt die Unterschiede:
 
 **Hello World in C:**
 ```c
@@ -36,7 +38,9 @@ if __name__ == "__main__":
 
 Wir sehen, dass die selbe Logik in unterschiedlichen Sprachen unterschiedlich aussieht.
 
-Was versteht man unter Semantik?
+## Semantik
+
+Die Semantik beschreibt die Bedeutung des Codes. Zwei Programme können syntaktisch unterschiedlich sein, aber bei bestimmten Eingaben das gleiche Ergebnis liefern. Dennoch können sie unterschiedliche Semantik haben:
 
 **Programm 1 (mit if-Statement):**
 ```python
@@ -56,34 +60,40 @@ if __name__ == "__main__":
 Beide Programme verhalten sich bei `x = 5` identisch - sie geben "Hello World" aus. Bei `x = 3` würde Programm 1 nichts ausgeben, Programm 2 würde weiterhin "Hello World" ausgeben. Die Programme haben also unterschiedliche Semantik, auch wenn sie bei bestimmten Werten das gleiche Verhalten zeigen.
 
 
-Bestimmte "Textbausteine" entscheiden über das Verhalten des Codes.
+Bestimmte "Textbausteine" entscheiden über das Verhalten des Codes. Die Semantik bestimmt, was der Code tatsächlich tut, nicht nur wie er aussieht.
 
 
 ```{admonition} Hinweis
-:name: chatgpt-warning
+:name: syntax-semantik
 :class: remark
-Tipp: Large Language Models (LLMs) unterstützen Sie bei der korrekten Umsetzung des Syntax eine Programmiersprache - normalerweise entwickelen Sie aber in einer IDE. IDEs unterstützen Sie dabei sowieso. Was die Semantik angeht: hier wird es tricky - auch hier können LLMs helfen, aber woher weiß das LLM ob sie Hello World nur printen wollen, falls x den wert 5 annimmt? Die schwierigkeitbesteht besteht darin zu wissen, dass die bedingung notwendig ist (semantik), nicht wie die bedingung syntaktisch in python abgebildet wird (mit "if ... :". Again: den syntax kann chatgpt für sie lösen ;) 
+Syntax-Fehler werden von der IDE oder dem Interpreter sofort erkannt. Semantik-Fehler sind schwieriger zu finden: Der Code ist syntaktisch korrekt, tut aber nicht das, was beabsichtigt war. Die Unterscheidung zwischen Syntax (wie schreibe ich es?) und Semantik (was tut es?) ist fundamental für das Verständnis von Programmiersprachen.
 ```
 
 
-Was versteht man unter Konzepten?
-je nachdem welche Programmiersprache ich verwende, muss ich mich um bestimmte "Probleme" selbst kümmern oder nicht. 
-Beispiel: Speicherplatz reservieren und freigeben. 
+## Konzepte
 
-Warum will ich mich selbst darum kümmern?
-Weil ich damit eine hohe Kontrolle über das Programm habe.
+Programmiersprachen unterscheiden sich nicht nur in Syntax und Semantik, sondern auch in den **Konzepten**, die sie bereitstellen. Konzepte sind Lösungsansätze für wiederkehrende Probleme in der Programmierung.
 
-Warum will ich mich nicht selbst darum kümmern?
-Weil es aufwändig ist das zu lernen! 
+**Beispiel: Speicherverwaltung**
 
-Je nachdem was ich brauche (hohe Konrolle oder schneller Einstieg) wähle ich eine Programmiersprache die mir für das entsprechende Problem eine Lösung bereitstellt (ein Konzept), sodass ich mich nicht selbst drum kümmern darf oder nicht kümmern muss.
+In einigen Programmiersprachen (z.B. C, C++) müssen Programmierer\*innen explizit Speicherplatz reservieren und wieder freigeben. In anderen Sprachen (z.B. Python, Java) übernimmt dies die Sprache automatisch.
 
+**Abwägung:**
+- **Manuelle Speicherverwaltung:** Hohe Kontrolle über Ressourcen, aber komplexer und fehleranfälliger
+- **Automatische Speicherverwaltung:** Einfacher zu erlernen und weniger fehleranfällig, aber weniger Kontrolle
 
-```{admonition} Warnung
-:class: attention
-:name: attention-sample
-Konzeptwissen ist unerlässlich. Nur weil Sie sich in Python die meiste Zeit nicht um Speicherplatzalloierung kümmern müssen, heisst das nicht, dass das Problem nicht da ist. Sie sehen es einfach nicht. Steigen Sie auf eine andere Programmiersprache um, müssen Sie sich darum kümmern! Und im schlimmsten Fall legen Sie eine Firma lahm!  Meine Empfehlung: lernen Sie zunächst die Konzepte eine Programmiersprache und dann den Syntax und die Semantik!
+**Entscheidungskriterium:** Je nach Anforderung (hohe Kontrolle vs. schneller Einstieg) wählt man eine Programmiersprache, die passende Konzepte bereitstellt.
 
+Die Eigenschaften der Programmiersprache Python, einschließlich ihrer Konzepte, werden im Kapitel [Spracheigenschaften](chapters/04-language-properties/0-intro) detailliert behandelt.
+
+```{admonition} Tipp
+:class: tip
+:name: tip-learning-order
+**Lernreihenfolge:** Lernen Sie zunächst die Konzepte einer Programmiersprache kennen, bevor Sie Syntax und Semantik anwenden. 
+
+In dieser Vorlesung finden Sie:
+- **Konzepte** im Teil "Python verstehen" 
+- **Programmiertechniken** (Anwendung von Syntax und Semantik zur Umsetzung von Logik) im Teil "Python anwenden"
 ```
 
 

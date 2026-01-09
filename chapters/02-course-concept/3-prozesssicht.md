@@ -30,15 +30,15 @@ Das Software Engineering Compentency Model (SWECOM) der IEEE Computer Society be
 
 ## Fokus dieser Vorlesung
 
-Softwareentwicklung beinhaltet viele Aspekte. Im Rahmen dieser Vorlesung können wir nicht auf alle eingehen. Wie nehmen an dass
+Softwareentwicklung beinhaltet viele Aspekte. Im Rahmen dieser Vorlesung können wir nicht auf alle eingehen. Wir nehmen an, dass:
 
 - das Problem ("Die Aufgabe") bekannt ist (Anforderungsdefinition erledigt)
-- dass Ihr Programm von keinem anderen menschen oder keiner andere Software benutzt werden muss (Systemplanung und Integration entfällt)
-- dass Ihr Programm nur auf dem Rechner laufen muss, auf dem er entwickelt wurde (Systemplanung- und Systemintegration, Betrieb und Wartung entfällt)
-- dass Sie den Algorithmus nur über einen begrezten Zeitraum nutzen wollen  (keine Softwareupdates!)
+- Ihr Programm von keinem anderen Menschen oder keiner anderen Software benutzt werden muss (Systemplanung und Integration entfällt)
+- Ihr Programm nur auf dem Rechner laufen muss, auf dem es entwickelt wurde (Systemplanung und Systemintegration, Betrieb und Wartung entfällt)
+- Sie den Algorithmus nur über einen begrenzten Zeitraum nutzen wollen (keine Softwareupdates!)
 
 Im Rahmen dieser Vorlesung liegt der Fokus auf den Grundlagen des Programmierens, was der Phase "Implementierung und Modultests" entspricht.
-Dabei lernen Sie wie man einen Algorithmus entwickelt, in einem Computerprogramm umsetzte ("implementiert") und testet. 
+Dabei lernen Sie, wie man einen Algorithmus entwickelt, in einem Computerprogramm umsetzt ("implementiert") und testet. 
 
 
 ```{admonition} Hinweis

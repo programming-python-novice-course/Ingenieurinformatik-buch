@@ -45,13 +45,23 @@ Sowohl bei Skriptsprachen als auch komipilierten Sprachen muss an irgeneiner Ste
 
 ## Was ist nun Python??
 
-Python ... 
+## Was ist nun Python?
 
+Python ist eine **hybride Sprache**: Sie wird sowohl kompiliert als auch interpretiert. Der Python-Interpreter (z.B. CPython) kompiliert den Quellcode zunächst in Bytecode (eine Zwischenform), der dann von der Python Virtual Machine (PVM) interpretiert wird.
 
-Hinweis: 
-Manchmal wird die Sprache ``Python`` als langsame Sprache bezeichnet.
-Präzise ausgedrückt müsste man jedoch sagen dass:
->Die ``Python``-Implementierungen (Interpreter/Übersetzer) üblicherweise zu einer langsamen Ausführung von ``Python``-Programmen führen.
-Oftmals gibt es verschiedene [Interpreter](def-interpreter) oder [Übersetzer](def-compiler) für ein und dieselbe Sprache.
-Wie effizient ein Programm läuft hängt von der konkreten Maschine und den Maschinenbefehlen in die das Programm übersetzt oder interpretiert wird ab.
-Verwenden wir zwei unterschiedliche Übersetzer für den gleichen Code und lassen den übersetzten Code auf der gleichen Maschine laufen, kann die Laufzeit sehr unterschiedlich sein. Der Standardinterpreter von Python is in C geschrieben (CPython)
+**Vorteile dieser Hybridform:**
+- Portabilität: Der Bytecode kann auf verschiedenen Plattformen ausgeführt werden
+- Schnellere Ausführung als reine Interpretation (Bytecode ist optimiert)
+- Flexibilität: Code kann zur Laufzeit geändert werden
+
+```{admonition} Hinweis
+:name: python-performance
+:class: remark
+Manchmal wird die Sprache Python als langsame Sprache bezeichnet.
+Präzise ausgedrückt müsste man jedoch sagen, dass:
+>Die Python-Implementierungen (Interpreter/Übersetzer) üblicherweise zu einer langsamen Ausführung von Python-Programmen führen.
+
+Oftmals gibt es verschiedene Interpreter oder Übersetzer für ein und dieselbe Sprache.
+Wie effizient ein Programm läuft, hängt von der konkreten Maschine und den Maschinenbefehlen ab, in die das Programm übersetzt oder interpretiert wird.
+Verwenden wir zwei unterschiedliche Übersetzer für den gleichen Code und lassen den übersetzten Code auf der gleichen Maschine laufen, kann die Laufzeit sehr unterschiedlich sein. Der Standardinterpreter von Python ist in C geschrieben (CPython).
+```

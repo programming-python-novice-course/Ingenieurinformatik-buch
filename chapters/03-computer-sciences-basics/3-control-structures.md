@@ -72,7 +72,7 @@ Für ``Python`` besprechen wir alle Möglichkeiten im Teil **PYTHON** in [Kontro
 (sec-repetition-and-recursion)=
 ## Wiederholung
 
-Das fundamentale Prinzip der *Wiederholung* ist zentraler Bestandteil des [Computational Thinkings](sec-what-is-ct).
+Das fundamentale Prinzip der *Wiederholung* ist zentraler Bestandteil der Programmierung.
 Blicken wir in den Werkzeugkasten der Algorithmen so finden wir die Wiederholung überall.
 Sortieralgorithmen, die Berechnung eines Gleichungssystems, das Verarbeiten eines Bildes, die Schaltflächen einer App, überall finden wir Schleifen, die unsere Informationen *iterativ* verarbeiten.
 

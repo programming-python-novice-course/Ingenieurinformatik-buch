@@ -353,7 +353,7 @@ Wir sprechen hier von zwei verschiedenen Welten, der Welt der elektrischen Schal
 Programmiersprachen katapultieren uns in eine **abstrakte Welt** mit der wir eine konkrete Welt **modellieren** können.
 Das Modell wird durch die konkrete **Computerwelt** schlussendlich berechnet.
 Vergleichen Sie hierzu die {numref}`Abbildung {number} <fig-world-code-computer>`.
-Als Computational Thinker\*innen halten wir uns meist zwischen der Welt die wir modellieren wollen und der abstrakten Welt (Code) auf.
+Als Programmierer\*innen halten wir uns meist zwischen der Welt die wir modellieren wollen und der abstrakten Welt (Code) auf.
 
 Wie wir uns von der Maschine wegbewegen und so an Abstraktheit gewinnen, hat wiederum mit der von uns bereits diskutierten [Interpretation](sec-interpretation) $I$ zu tun.
 Die oben beschriebene Funktion ``min_and_max`` führt zu einer neuen Interpretation in welcher ``min_and_max`` ein Repräsentant ist.
@@ -363,7 +363,7 @@ Gleichzeitig sind diese Anweisungen wiederum Repräsentanten einer weiteren Inte
 
 Sogenannte Hochsprachen wie ``Python``, ``Java``, ``C#`` abstrahieren die Welt der elektrischen Schaltkreise in eine phantastische Welt aus Datenstrukturen, Variablen, Funktionen, Klassen und Objekte.
 Pakete und Bibliotheken reichern diese Welt mit weiteren Algorithmen und Datenstrukturen an.
-Diese Pakete und Bibliotheken werden unentwegt von Programmierer\*innen durch [Computational Thinking](sec-what-is-ct) erschaffen.
+Diese Pakete und Bibliotheken werden unentwegt von Programmierer\*innen entwickelt und erweitert.
 Durch die Abstraktion wird es möglich, dass elektrische Schaltkreise ganze Galaxien simulieren, Fahrzeuge bewegen oder Transaktionen durchführen.
 Schlussendlich basiert jedoch alles auf zwei Zuständen, 0 und 1, unvorstellbar vieler winziger elektrischer Bauteile.
 
