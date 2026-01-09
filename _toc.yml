@@ -16,16 +16,16 @@ parts:
       - file: chapters/01-2/3-prozesssicht
       - file: chapters/01-2/4-sprachen
       - file: chapters/01-2/5-success-criteria
-      - file: chapters/01-3/1-fallbeispiel
-      - file: chapters/01-3/2-gliederung
-    - file: chapters/02-4/the-art-of-programming
+      - file: chapters/01-2/6-fallbeispiel
+      - file: chapters/01-2/7-gliederung
+    - file: chapters/01-3/the-art-of-programming
       sections:
-      - file: chapters/02-4/1-basics
-      - file: chapters/02-4/1-algorithms
-      - file: chapters/02-4/2-programming
-      - file: chapters/02-4/2-repetition-is-the-key
-      - file: chapters/02-4/3-control-structures
-      - file: chapters/02-4/4-data-structures
+      - file: chapters/01-3/1-basics
+      - file: chapters/01-3/1-algorithms
+      - file: chapters/01-3/2-programming
+      - file: chapters/01-3/2-repetition-is-the-key
+      - file: chapters/01-3/3-control-structures
+      - file: chapters/01-3/4-data-structures
   - caption: Python verstehen
     numbered: True
     chapters:
