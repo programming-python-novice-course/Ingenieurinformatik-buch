@@ -1,6 +1,6 @@
-title: Ingeniuerinformatik 1 - test
+title: Ingenieurinformatik 1 
 logo: figs/logo-HM-small.png
-author: "" #
+author: "Dr. Christina Maria Mayr" #
 email: christina_maria.mayr@hm.edu
 exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", "de_computational-thinking.md", "Planung-Computational-Thinking-ALLGEMEIN.md", "README.md"]
 only_build_toc_files: true
