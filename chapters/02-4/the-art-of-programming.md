@@ -1,15 +1,17 @@
 # Basiswissen Informatik
 
+*Informatik* ist die Wissenschaft der Algorithmen, Rechenmaschinen und der Darstellung, Speicherung, Verarbeitung und Übertragung von Informationen.
+In Deutschland nahm sie erst Mitte der 50er Jahre an Fahrt auf, doch ihre Grundlagen gehen Jahrhunderte zurück. 
+Trotz ihrer immensen Präsenz kann sie noch immer als junge Wissenschaft bezeichnet werden.
+Ihre Erfolgsgeschichte lässt sich vor allem durch ihre ökonomische Nützlichkeit erklären.
 
-```{admonition} Lernziel
-:class: learngoals
+In der Vergangenheit trugen derartige ökonomische Leitmotive in der Entwicklung akademischer Disziplinen oft eine entscheidende Rolle.
+So hat unser Hunger nach der *Energie als Wirtschaftsgut* wesentlich die Entwicklung neuer Maschinen, Endgeräte aber auch die Forschung angetrieben.
+Heute ist *Information als Wirtschaftsgut* eine der großen Antriebe für Innovation, Weiterentwicklungen und Forschung im Bereich der Informatik.
 
-Was genau ist ein *Algorithmus*, *Programmcode*, *Pseudocode* und ein *Programm*?
-Welche wesentlichen [Programmierkonstrukte](sec-control-structures) und [Datenstrukturen](sec-data-structures) verwenden wir beim Einsatz von (imperativen) Programmiersprachen?
-Und weshalb reichen diese Kenntnisse nicht aus? 
-Weshalb braucht es Übung um meisterhaft zu Programmieren?
+Jedoch ist die Informatik nicht nur eine Ingenieursdisziplin (Entwicklung, Konstruktion, Betrieb von Maschinen) sondern auch Grundlagen- (Was sind überhaupt Berechnungen und was können wir in welcher Zeit berechnen?) und Formalwissenschaft (Was können wir wie ausdrücken?).
 
-```
+
 
 Die *Informatik als Strukturwissenschaft* bezieht sich hauptsächlich auf die theoretische Informatik (formale Methoden, Komplexitätstheorie, Berechenbarkeit, Automaten, usw.).
 Dort beschäftigen wir uns mit Fragen wie:
@@ -29,13 +31,15 @@ Von Außen betrachtet wirkt das Programmieren wie die vielleicht langweiligste T
 Diese Einschätzung ist nach unserer Auffassung natürlich vollkommen falsch.
 
 
-Bei genauer Betrachtung endet alles bei der simplen Manipulation von Symbolen, die wir als Informationsverarbeitung bezeichnen.
-Softwareentwickler\*innen schöpfen, formen und verwenden [Informationen](sec-information).
-Sie bauen [Datenstrukturen](sec-data-structures) und [Algorithmen](sec-algorithms) ganz so wie Architekt\*innen Baupläne und Gebäude entwerfen.
-Anders als der Baustoff der Architekt\*innen, können Softwareentwickler\*innen ihre Bauwerke der strukturierten Information nicht nur erschaffen, sondern verändern, kombinieren, wiederverwenden und erweitern.
-Sie steuern eine Maschine die sich ihnen vollständig ergibt.
-Dieser immense Grad der Kontrolle hat etwas selbstbestimmtes, etwas das wir in der echten Welt manchmal vermissen.
+In diesem Kapitel lernen wir Basiswissen.
 
-Enden wollen wir diesen, hoffentlich motivierenden Abschnitt, mit den Worten des Erfinders von Linux, Linus Torvalds.
 
->[Phyisics and computer science] are about how the world works at a rather fundamental level. The difference, of course, is that while in physics, you are supposed to figure out how the world is made up, in computer science, you create the world. Within the confines of the computer, you are the creator. You get ultimate control over everything that happens. If you are good enough, you can be God on a small scale. -- Linus Torvalds
+```{admonition} Lernziel
+:class: learngoals
+
+Was genau ist ein *Algorithmus*, *Programmcode*, *Pseudocode* und ein *Programm*?
+Welche wesentlichen [Programmierkonstrukte](sec-control-structures) und [Datenstrukturen](sec-data-structures) verwenden wir beim Einsatz von (imperativen) Programmiersprachen?
+Und weshalb reichen diese Kenntnisse nicht aus? 
+Weshalb braucht es Übung um meisterhaft zu Programmieren?
+
+```

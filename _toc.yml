@@ -12,13 +12,10 @@ parts:
       - file: chapters/01-1/5-lesehinweise
     - file: chapters/01-2/0-uebersicht
       sections:
-      - file: chapters/01-2/1-informatics-and-ct
       - file: chapters/01-2/2-softwaretypen
       - file: chapters/01-2/3-prozesssicht
       - file: chapters/01-2/4-sprachen
       - file: chapters/01-2/5-success-criteria
-    - file: chapters/01-3/0-uebersicht
-      sections:
       - file: chapters/01-3/1-fallbeispiel
       - file: chapters/01-3/2-gliederung
     - file: chapters/02-4/the-art-of-programming
@@ -26,6 +23,7 @@ parts:
       - file: chapters/02-4/1-basics
       - file: chapters/02-4/1-algorithms
       - file: chapters/02-4/2-programming
+      - file: chapters/02-4/2-repetition-is-the-key
       - file: chapters/02-4/3-control-structures
       - file: chapters/02-4/4-data-structures
   - caption: Python verstehen
