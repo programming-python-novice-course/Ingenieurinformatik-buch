@@ -23,7 +23,7 @@ parts:
       - file: chapters/01-3/2-gliederung
     - file: chapters/02-4/the-art-of-programming
       sections:
-      - file: chapters/02-1/1-basics 
+      - file: chapters/02-4/1-basics
       - file: chapters/02-4/1-algorithms
       - file: chapters/02-4/2-programming
       - file: chapters/02-4/3-control-structures
