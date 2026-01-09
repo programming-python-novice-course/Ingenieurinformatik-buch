@@ -83,7 +83,13 @@ parts:
       sections:
       - file: chapters/11-object-oriented/1-class-and-objects
       - file: chapters/11-object-oriented/2-inheritance-poly-encap
-    - caption: Fallbeispiel
+  - caption: Fallbeispiel
+    numbered: True
+    chapters:
+    - file: chapters/12-fallbeispiel/0-intro
+      sections:
+      - file: chapters/12-fallbeispiel/1-lib-solution
+      - file: chapters/12-fallbeispiel/2-eigenentwicklung
   - caption: Appendix
     chapters:
     - file: chapters/misc/bibliography
