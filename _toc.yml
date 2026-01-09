@@ -18,7 +18,7 @@ parts:
       - file: chapters/01-2/5-success-criteria
       - file: chapters/01-2/6-fallbeispiel
       - file: chapters/01-2/7-gliederung
-    - file: chapters/01-3/the-art-of-programming
+    - file: chapters/01-3/0-intro
       sections:
       - file: chapters/01-3/1-basics
       - file: chapters/01-3/1-algorithms
@@ -29,7 +29,7 @@ parts:
   - caption: Python verstehen
     numbered: True
     chapters:
-    - file: chapters/02-1/information-processing
+    - file: chapters/02-1/0-intro
       sections:
       - file: chapters/02-1/6-python
       - file: chapters/02-1/7-python

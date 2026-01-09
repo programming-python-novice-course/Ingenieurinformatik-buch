@@ -13,6 +13,7 @@ Jedoch ist die Informatik nicht nur eine Ingenieursdisziplin (Entwicklung, Konst
 
 
 
+
 Die *Informatik als Strukturwissenschaft* bezieht sich hauptsächlich auf die theoretische Informatik (formale Methoden, Komplexitätstheorie, Berechenbarkeit, Automaten, usw.).
 Dort beschäftigen wir uns mit Fragen wie:
 
