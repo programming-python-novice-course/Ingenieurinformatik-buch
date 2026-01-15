@@ -72,8 +72,8 @@ parts:
         - file: chapters/08-python-data-types/2-sequenzen/4-string
       - file: chapters/08-python-data-types/3-mengen/0-intro
         sections:
-      - file: chapters/08-python-data-types/3-mengen/1-set
-      - file: chapters/08-python-data-types/3-mengen/2-dict
+        - file: chapters/08-python-data-types/3-mengen/1-set
+        - file: chapters/08-python-data-types/3-mengen/2-dict
     - file: chapters/09-eingaben-und-ausgaben/0-intro
       sections:
       - file: chapters/09-eingaben-und-ausgaben/1-eingaben
