@@ -39,10 +39,12 @@ Eine genauere Beschreibung des Roboters und seiner Welt finden Sie in der Übung
 Die folgende Welt enthält unseren Roboter (türkis), das Ziel (gelb), begehbare Zellen (lila) und unbegehbare Hindernisse (blau).
 
 ```{code-cell} python3
+:tags: [skip-execution]
+
 import roboworld as rw
 
 world = rw.complex_maze(nrows=5, ncols=7)
-#world.show()
+world.show()
 ```
 
 Wir sollen nun einen Algorithmus entwerfen, welcher den Roboter zum Ziel führt (sofern dies möglich ist).
@@ -74,6 +76,8 @@ def random_move(robo):
 Dann nutzten wir die Wiederholung und bewegen den Roboter immer weiter auf zufällige Nachbargitterpunkte bis er am Ziel angekommen ist:
 
 ```{code-cell} python3
+:tags: [skip-execution]
+
 robo = world.get_robo()
 robo.disable_print()
 while not robo.is_at_goal():
@@ -83,7 +87,19 @@ while not robo.is_at_goal():
 Lassen Sie uns die sog. *Zufallsfahrt* des Roboters ansehen:
 
 ```{code-cell} python3
-# rw.animate(world) ## uncomment this command!
+:tags: [skip-execution]
+
+rw.animate(world)
+```
+
+```{only} latex
+```{figure} ../../figs/roboworld/loops-screenshot.png
+---
+width: 600px
+name: fig-loops-screenshot
+---
+Screenshot der Roboterwelt-Visualisierung
+```
 ```
 
 Ist dieser Algorithmus besonders klever?
