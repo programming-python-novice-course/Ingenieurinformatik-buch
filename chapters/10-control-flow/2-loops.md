@@ -38,17 +38,11 @@ Eine genauere Beschreibung des Roboters und seiner Welt finden Sie in der Übung
 
 Die folgende Welt enthält unseren Roboter (türkis), das Ziel (gelb), begehbare Zellen (lila) und unbegehbare Hindernisse (blau).
 
-```{only} html
 ```{code-cell} python3
 import roboworld as rw
 
 world = rw.complex_maze(nrows=5, ncols=7)
-world.show()
-```
-```
-
-```{only} latex
-Bitte auf der Website anschauen.
+#world.show()
 ```
 
 Wir sollen nun einen Algorithmus entwerfen, welcher den Roboter zum Ziel führt (sofern dies möglich ist).
@@ -79,29 +73,17 @@ def random_move(robo):
 
 Dann nutzten wir die Wiederholung und bewegen den Roboter immer weiter auf zufällige Nachbargitterpunkte bis er am Ziel angekommen ist:
 
-```{only} html
 ```{code-cell} python3
 robo = world.get_robo()
 robo.disable_print()
 while not robo.is_at_goal():
     random_move(robo)
 ```
-```
-
-```{only} latex
-Bitte auf der Website anschauen.
-```
 
 Lassen Sie uns die sog. *Zufallsfahrt* des Roboters ansehen:
 
-```{only} html
 ```{code-cell} python3
-rw.animate(world)
-```
-```
-
-```{only} latex
-Bitte auf der Website anschauen.
+# rw.animate(world) ## uncomment this command!
 ```
 
 Ist dieser Algorithmus besonders klever?
@@ -191,9 +173,9 @@ def is_prime(n):
     return prime
 
 print(is_prime(2))
-print(is_prime(13))
-print(is_prime(25))
-print(is_prime(83))
+#print(is_prime(13))
+#print(is_prime(25))
+#print(is_prime(83))
 ```
 
 Um die ``for``-Schleife frühzeitig zu beenden verwenden wir ``break``.
@@ -208,9 +190,9 @@ def is_prime(n):
     return True
 
 print(is_prime(2))
-print(is_prime(13))
-print(is_prime(25))
-print(is_prime(83))
+#print(is_prime(13))
+#print(is_prime(25))
+#print(is_prime(83))
 ```
 
 Eine weitere Steuermöglichkeit bietet ``continue``.
@@ -361,34 +343,4 @@ for i in range(1,10,2):
 :class: remark
 :name: remark-avoid-endless-loop
 Prüfen Sie immer ob Ihre Bedingung ``P`` durch den Schleifenrumpf garantiert irgendwann ``False`` ergibt!
-```
-
-## Beispiel (ggT)
-
-Lassen Sie uns [Euklid's Algorithmus](sec-euclid-alg) ``gcd(m,n)`` zum finden des Größter gemeinsamer Teiler (ggT) zweier ganzer Zahlen von $m$ und $n$ erneut implementieren.
-
-Euklid's Algorithmus geht wie folgt vor:
-
-1. Berechne den Restwert der Division $m / n$ (Modulodivision). Sei dieser gleich $r$.
-2. Setze $m \leftarrow n$, $n \leftarrow r$ und gehe zurück zu Schritt 1.
-3. Falls $r = 0$ (und somit $n = 0$), so ist der Algorithmus beendet. Das Ergebnis (ggT) ist $m$. Ansonsten fahre fort.
-
-```{code-cell} python3
-def gcd(m, n):
-    while n != 0:
-        r = m % n
-        m = n
-        n = r
-    return m
-gcd(36, 24)
-```
-
-Durch das packing bzw. unpacking (siehe [Tupel](sec-tuple)) können wir den Code noch verkürzen:
-
-```{code-cell} python3
-def gcd(m, n):
-    while n != 0:
-        m, n = n, m % n
-    return m
-gcd(36, 24)
 ```
