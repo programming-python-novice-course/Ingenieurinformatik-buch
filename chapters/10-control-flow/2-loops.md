@@ -92,26 +92,20 @@ Lassen Sie uns die sog. *Zufallsfahrt* des Roboters ansehen:
 rw.animate(world)
 ```
 
-```{only} latex
-```{figure} ../../figs/roboworld/loops-screenshot.png
----
-width: 600px
-name: fig-loops-screenshot
----
-Screenshot der Roboterwelt-Visualisierung
-```
-```
 
 Ist dieser Algorithmus besonders klever?
 Nein!
 Der Algorithmus ist sehr einfach und benötigt unter Umständen sehr viel Rechenzeit.
 Dennoch zeigt dieses Beispiel, dass die Wiederholung von einfachen Befehlen zu komplexen Lösungen führen können!
 
-```{admonition} Wiederholung und Codekomplexität
-:class: remark
-:name: remark-complexity-of-repetition
-*Wiederholung* trennt den Aufwand zum Lösen einer Aufgabe von der Komplexität des Codes.
-Eine Berechnung kann enorm aufwendig sein und dennoch benötigen wir wenig Denkarbeit (wenig Code) um einen Algorithmus für die Lösung zu entwerfen!
+```{only} latex
+
+```{figure} ../../figs/roboworld/loops-screenshot.png
+---
+width: 600px
+name: fig-loops-screenshot
+---
+Screenshot der Roboterwelt-Visualisierung
 ```
 
 (sec-for)=
