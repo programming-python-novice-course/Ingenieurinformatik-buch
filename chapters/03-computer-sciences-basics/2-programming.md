@@ -153,56 +153,13 @@ Für das **Basiswissen** reicht hier die Idee: Ein Projekt trennt typischerweise
 
 Die ausführliche Praxis (typischer Projektbaum, `__main__`-Guard, „Skripten vs. Programmieren“) behandeln wir im Teil **Python anwenden** in: [Python-Skripte](sec-python-scripts).
 
-## Was sehe ich typischerweise in einem GitHub-Repository?
+## Was ist ein Repository?
 
-Wenn Sie ein Softwareprojekt auf GitHub öffnen, sehen Sie häufig deutlich mehr als „nur Code“. Das ist normal: Ein Repository enthält nicht nur das Programm selbst, sondern auch alles, was es **nutzbar, wartbar und reproduzierbar** macht.
+Ein repository ist ein ablage für software in form von dateien und ordnern. der inhalt ist üblicherweise mit einem versionskontroll versehen.
 
-- **README / Doku**: Was ist das? Wie installiert/benutzt man es?
-- **Quellcode** (z. B. `src/`): Wiederverwendbare Bausteine (Module) und Programme/Workflows.
-- **Entrypoints** (z. B. `bin/`, `cli/`, `app/`): Startskripte/Kommandos.
-- **Tests** (z. B. `tests/`): Automatische Prüfungen gegen Regressionen.
-- **Konfiguration** (z. B. `configs/`): Default-Einstellungen, Profile, Parameter.
-- **Daten/Beispiele** (z. B. `data/`): Beispielinput, kleine Demo-Datensätze (nicht immer).
-- **Abhängigkeiten/Packaging** (z. B. `pyproject.toml`, `requirements.txt`): Welche Bibliotheken werden benötigt?
-- **CI** (z. B. GitHub Actions unter `.github/workflows/`): Tests/Checks laufen automatisch bei Änderungen.
+Um repositories zu teilen werden sie in einem hub abgelegt. github als beispiel. wir an der hoschhule münchen nutzen gitlab lrz:
+schauen sie mal rein.
 
-Wichtig: Viele dieser Dinge sind *kein* „unnötiger Ballast“, sondern helfen Teams, Software über längere Zeit stabil weiterzuentwickeln.
-
-**Fokus dieser Veranstaltung**
-
-In der Vorlesung (und im Praktikum) arbeiten wir an vielen Stellen bewusst mit **nur einer Python-Datei**. Das reduziert die Komplexität am Anfang: Sie müssen weniger „Projektstruktur“ lernen und können sich auf Konzepte und Programmierkonstrukte konzentrieren.
-
-Wichtig ist aber: Auch wenn alles in *einer* Datei steht, steckt darin oft schon die gleiche Aufteilung wie in einem größeren Projekt:
-
-- **Entrypoint (Startpunkt)**: Wo startet das Programm?
-- **Geschäftslogik / Ablauf (Workflow)**: Welche Schritte passieren in welcher Reihenfolge?
-- **Bausteine (Funktionalitäten)**: z. B. Rechenkern/Simulation, Einlesen/Schreiben von Daten, kleine Hilfsfunktionen.
-
-In Python sieht das häufig so aus:
-
-```python
-def load_inputs(path: str):
-    # Baustein: Eingaben laden
-    ...
-
-def simulate(inputs):
-    # Baustein: gemeinsamer Rechenkern / Algorithmus
-    ...
-
-if __name__ == "__main__": # Entrypoint
-    
-    # Geschäftslogik/Ablauf: welche Schritte in welcher Reihenfolge?
-    inputs = load_inputs("data/input.csv")
-    results = simulate(inputs)
-    # ... Ergebnisse weiterverarbeiten / speichern ...
-
-```
-
-Hinweis: Wenn Sie eine Datei **direkt ausführen**, läuft auch Code *ohne* den *Guard* `if __name__ == "__main__":` – Python arbeitet die Datei von oben nach unten ab. Der Guard ist trotzdem hilfreich, weil er verhindert, dass der Ablauf automatisch startet, wenn die Datei später **importiert** und als Modul wiederverwendet wird.
-
-```{admonition} Hinweis: Was ist ein „Guard“?
-Ein *Guard* (wörtlich „Schutz/Schranke“) ist eine **Bedingung**, die Code „abschirmt“: Der eingerückte Block darunter wird nur ausgeführt, wenn die Datei als **Hauptprogramm** gestartet wurde. Wird die Datei dagegen nur importiert (um z. B. `simulate(...)` wiederzuverwenden), wird der Guard-Block übersprungen.
-```
 
 
 Im Rahmen dieser Vorlesung programmieren wir überwiegend **headless** Anwendungen (ohne grafische Benutzeroberfläche) und konzentrieren uns auf saubere Programmstruktur:

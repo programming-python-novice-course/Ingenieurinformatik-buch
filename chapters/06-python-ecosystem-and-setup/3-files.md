@@ -1,13 +1,16 @@
-# Python-Skripte
+# Python-Skripte: Entrypoint, Geschäftslogik, Bausteine
 
 (sec-python-scripts)=
 
-Die wohl gängigste Technik ``Python``-Anwendungen zu entwickeln ist es den Code in Dateien abzulegen und dieses Datei dann [interpretieren](def-interpreter) zu lassen, d.h., auszuführen.
-Insbesondere für die Entwicklung großer Anwendungen (z.B. auch Webseiten) oder Pakete, wie etwa [roboworld](https://github.com/BZoennchen/robo-world), und Skripte, ist diese Methode geeignet.
+Die wohl gängigste Technik, Python-Anwendungen zu entwickeln, ist es, Code in **Dateien** abzulegen und diese dann vom Python-[Interpreter](def-interpreter) ausführen zu lassen.
 
-Wir haben in [Programmieren](sec-programming) darüber gesprochen, dass **Software** aus mehreren Programmen bestehen kann. Über die **Entrypoints** werden verschiedene geschäftslogiken (<"Abläufe") gestartet, die verschiedene "bausteine" ausführen.
+Python-Projekte (klein wie groß) trennen typischerweise drei Dinge:
 
-In großen Softwareprojekten mit mehreren Programmen werden die **Entrypoints**, die **Abläufe (Workflows)** und die **Bausteine** meist in einer klaren Struktur abgelegt. Hier ein typisches Beispiel:
+- **Entrypoint (Startpunkt)**: *Wie* wird ein Programm gestartet? (z. B. `python ...`, ein CLI-Kommando, ein GUI-Button)
+- **Geschäftslogik / Workflow**: *Welche Schritte passieren in welcher Reihenfolge?* (A → B → C)
+- **Bausteine (Funktionen/Module)**: wiederverwendbare Teile, die die Geschäftslogik aufruft
+
+In großen Softwareprojekten werden diese Dinge oft auf **Unterordner und Dateien** verteilt. In dieser Vorlesung halten wir die Struktur bewusst klein – aber die Problemstellung bleibt dieselbe: Wir müssen festlegen, **wo der Startpunkt ist**, **wo der Ablauf steht** und **wo Bausteine liegen**, damit wir sie später wiederverwenden können.
 
 ```text
 my_app/
@@ -31,106 +34,134 @@ my_app/
    └─ output.csv               # Ergebnisdaten (z. B. vom Batch-Lauf erzeugt)
 ```
 
-So lesen Sie diese Struktur:
+- **`bin/`**: enthält *Entrypoints* (oft kleine Startskripte)
+- **`src/my_app/`**: enthält *Bausteine* und ggf. mehrere *Workflows/Programme*
+- **`configs/`**, **`data/`**, **`results/`**: trennen Konfiguration, Input und Output
 
-- **`bin/`**: Enthält die *Startpunkte*. Diese Dateien sind meist klein und rufen nur die eigentliche Geschäftslogik auf.
-- **`src/my_app/`**: Enthält die *Bausteine* (wiederverwendbare Funktionen/Klassen) und ggf. mehrere *Workflows/Programme*.
-- **`configs/`**, **`data/`**, **`results/`**: Trennen Konfiguration, Eingabedaten und Ergebnisse (je nach Projektgröße/Team sehr hilfreich).
+## Was wir im Kurs machen (vereinfacht: eine Datei)
 
-Wichtig: das ganze ist nur ein beispiel, das ihnen verdeutlichen soll, dann unterschiedliche funktionalitäten einer software üblicherweise an unterschiedlichen stellen (also in unterschiedlichen dateien) abgelegt werden. Wo was wie am besten abgelegt wird - damit beschäftigt siche softwarearchitekten!!
+Damit Sie sich auf Programmierkonzepte konzentrieren können, arbeiten wir häufig mit **einer Python-Datei**.
+Auch in einer Datei können (und sollten) Sie gedanklich trennen:
 
-## Was wir machen werden im Rahmen der Vorlesung
+- **Entrypoint**: *wo startet der Ablauf?*
+- **Workflow/Geschäftslogik**: A → B → C
+- **Bausteine**: z. B. kleine Hilfsfunktionen
 
-In der Vorlesung/Übung wollen wir uns auf Konzepte der Porgroammierung anhand von Python kverstehen. Damit Sie sich darauf konzentrieren können, verzichten wir bewusst auf eine  komplexe ordnerstruktur und arbeiten stattdessen mit einer python-datei. Diese enthält sowohl:
-- einen **Entrypoint** 
-- eine **Workflow/Geschäftslogik** (A → B → C) 
-- alsu auch **Bausteine** (Funktionen/Module) auf.
+Wichtig: Wenn Sie eine Datei direkt ausführen (`python mein_script.py`), arbeitet Python sie **von oben nach unten** ab.
 
-Wichtig ist zu wissen: Wenn Sie eine Datei direkt ausführen, arbeitet Python sie **von oben nach unten** ab (Top-Level-Code).
-Der *Entrypoint* ist dabei **nicht** „die erste Zeile“, sondern der **Start des Programms** (z. B. der Aufruf `python mein_script.py`).
-Praktisch bedeutet das: Alles, was auf oberster Ebene steht, wird beim Start einmal ausgeführt (Imports, Variablenzuweisungen, `print(...)`, usw.). Funktionsdefinitionen werden dabei *angelegt*, aber nicht automatisch *ausgeführt*.
+Der *Entrypoint* ist dabei **nicht** „die erste Zeile“, sondern der **Programmstart** (der Aufruf in der Konsole: `python mein_script.py`).
 
-### Beispiel: Skript ohne Funktionen (Top-Level-Workflow)
+### Einfaches Skript 
+
+Im folgenden Beispiel wird..  Die Pythonbefehle werden in der datei main_script.py abgespeichert. Wir können das skript ausführen über `python mein_script.py` (entweder in der console oder über einen button in der IDE, der den consolenaufruf für Sie übernimmt)
 
 ```python
 # Datei: mein_script.py
-# Entrypoint: Sie starten dieses Programm mit: python mein_script.py
+# Entrypoint: Start mit: python mein_script.py
 
-print("Programm startet")      # wird beim Start ausgeführt (Top-Level)
-
-# Workflow/Geschäftslogik (A → B → C) als einfacher Ablauf:
-x = 10                         # A
-y = x * 2                      # B
-
-x2 = 11                         #C
-y2 = x2 * 2                     # D
-
-x3 = 14                        #E 
-y3 = x3 * 2                     # F
-
-ergebnis = y + y2 + y3
-
-print("Ergebnis:", ergebnis)          # C
-```
-
-## Beispiel Skript mit Funktionen:
-
-Wie sie sehen wird in Schritt B und D und F die gleiche Logik (mal zwei nehmen) ausgeführt. das ist blöd weill 
-
-Deshalb können wir das umschreiben:
-```python
-# Datei: mein_script.py
-# Entrypoint: Sie starten dieses Programm mit: python mein_script.py
-
-print("Programm startet")      # wird beim Start ausgeführt (Top-Level)
+print("Programm startet")
 
 # Workflow/Geschäftslogik (A → B → C) als einfacher Ablauf:
-der mal_zwei(zahl):
-    zwischenergebnis = zahl * 2
-    return zwischenergebnis
-
 x = 10
-y = zwischenergebnis(x)
+y = x * 2
 
 x2 = 11
-y2 = zwischenergebnis(x2)
+y2 = x2 * 2
 
 x3 = 14
-y3 = zwischenergebnis(x3)
+y3 = x3 * 2
 
 ergebnis = y + y2 + y3
-
-print("Ergebnis:", ergebnis)          
+print("Ergebnis:", ergebnis)
 ```
+Sie sehen, dass im Skript die Logik „mal zwei nehmen“  mehrfach kopiert ist.
 
-## Skript mit Funktionen und Guard 
+### Beispiel 2: Skript mit Funktion (Baustein)
 
-So werden unsere skripte im praktkum standardmäßig aufgebaut sein!!!
+Wir wollen den Code nicht kopieren, weil ...
+Deshalb lagern wir ihn in eine funktion aus.
 
-Auch wenn wir in der vorlesung keine komplexen softwarestrukturen bauen wollen, kann es vorkommen, dass sie ein skript erstellt haben mit einer funktion, die sie nun in einem anderen skript nutzen möchten. das problem ist, dass python ja immer jede zeile ausführt. was sie möchten: sie möchten die funktion nutzen ohne dass der restliche Ablauf „automatisch“ der in dem skript enthalten ist.
-
-wir müssen also sicherstellen dass der "entrypoint" korrekt ist:
-
-- entrypoint: skript2 -> skript 2 ruft funktion aus skript 1 auf.
-
-
-das erreichehn wir über den guard `if __name__ == "__main__":`-Block zu legen (siehe nächster Abschnitt).
-
-
-## `if __name__ == "__main__":` (Guard)
-
-Häufig möchten Sie Funktionen aus einer Datei **importieren und wiederverwenden**, 
-Dafür nutzt man einen Guard:
 
 ```python
-def simulate(...):
-    ...
+# Datei: mein_script.py
+# Entrypoint: Start mit: python mein_script.py
 
-if __name__ == "__main__":
-    # nur ausführen, wenn die Datei als Programm gestartet wurde
-    ...
+def mal_zwei(zahl: int) -> int:
+    """Baustein: wiederverwendbare Funktion."""
+    return zahl * 2
+
+print("Programm startet")
+
+# Workflow/Geschäftslogik:
+y = mal_zwei(10)
+y2 = mal_zwei(11)
+y3 = mal_zwei(14)
+
+ergebnis = y + y2 + y3
+print("Ergebnis:", ergebnis)
 ```
 
-So bleibt die Datei sowohl als **Modul** (importierbar) als auch als **Programm** (direkt ausführbar) nutzbar.
+Die Funktion ein **Baustein** und der restliche Code ist der **Workflow**.
+
+
+## Empfohlene Datei-Struktur
+
+
+
+Sobald Sie Bausteine aus einer Datei in einer anderen Datei wiederbenutzen möchten, verwenden Sie in Python typischerweise einen **Import**.
+Ein *Import* bedeutet: Code aus einer anderen Datei (z. B. eine Funktion) wird in der aktuellen Datei verfügbar gemacht.
+Wichtig dabei: Beim Import wird die andere Datei einmal **geladen** – und dabei wird ihr **Top-Level-Code** ausgeführt.
+
+Damit beim Importieren nicht automatisch der ganze Workflow startet, nutzen wir einen Guard:
+
+ `if __name__ == "__main__":` 
+
+Wie sieht das in einem Skript aus?
+
+```python
+# Datei: skript1.py
+
+def mal_zwei(zahl: int) -> int:
+    return zahl * 2
+
+def main() -> None:
+    # Workflow/Geschäftslogik:
+    ergebnis = mal_zwei(10) + mal_zwei(11) + mal_zwei(14)
+    print("Ergebnis:", ergebnis)
+
+if __name__ == "__main__":  # Entrypoint für dieses Skript
+    main()
+
+```
+
+Wenn wir `skript1.py` direkt aufrufen (Entrypoint = `skript1.py`), wird `main()` ausgeführt und das Ergebnis ausgegeben.
+
+Ein anderes Skript (`skript2.py`) kann den Baustein importieren, ohne die Geschäftslogik auszulösen:
+
+```python
+# Datei: skript2.py
+from skript1 import mal_zwei
+
+print(mal_zwei(7))
+```
+Warum? Wir rufen `skript2.py` auf (Entrypoint = `skript2.py`). Dabei wird `skript1.py` importiert, aber `main()` in `skript1.py` wird **nicht** ausgeführt, weil der Guard `if __name__ == "__main__":` nur beim direkten Start von `skript1.py` greift.
+
+## Merksatz fürs Praktikum (empfohlenes Muster)
+
+- Schreiben Sie Bausteine als **Funktionen** (und später ggf. als Module).
+- Schreiben Sie den Ablauf in eine Funktion `main()`.
+- Nutzen Sie am Ende den Guard:
+
+```python
+
+## hier bausteine
+
+# ------- ###
+if __name__ == "__main__":
+    # Geschäftslogik:
+    # Schritt 1
+    # Schritt 2
+    #Schritt 3
+```
 
 
