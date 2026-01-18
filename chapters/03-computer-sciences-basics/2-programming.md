@@ -130,9 +130,92 @@ name: fig-software-vs-program
 Anwendungs-Software besteht meist aus mehreren Programmen, die sowohl programmspezifischen Code enthalten als auch gemeinsamen Code nutzen. Häufig greifen Programme dabei auf extern entwickelte Bibliotheken oder Frameworks zurück.
 ```
 
-Im Rahmen dieser Vorlesung beschäftigen wir uns vor allem damit, *Geschäftslogik* zu entwickeln, die sich aus verschiedenen Funktionalitäten zusammensetzt. Eine Funktionalität kann zum Beispiel ein Algorithmus sein, eine andere die Auswahl eines passenden Algorithmus auf Basis einer Nutzereingabe. Da wir nicht alles selbst programmieren können, besprechen wir außerdem, wie wir auf bereits implementierte Funktionalitäten (z. B. *Bibliotheken*) zurückgreifen können – vergleichbar mit einem fertigen „Zukaufteil“. 
+**Geschäftslogik (Anwendungslogik)** bezeichnet den Teil eines Programms, der die fachlichen Regeln und Abläufe beschreibt: *Was* soll passieren – und *in welcher Reihenfolge*? Geschäftslogik setzt sich in der Regel aus mehreren Funktionalitäten zusammen, z. B. einem Algorithmus, der eigentlichen Datenverarbeitung und der Auswahl eines passenden Algorithmus auf Basis einer Eingabe.
+
+Ein *Entrypoint* ist dabei **nicht** die Geschäftslogik selbst, sondern ein Startpunkt, der die Geschäftslogik aufruft (z. B. über eine GUI oder „headless“ ohne Oberfläche).
+
+Wie sieht so etwas in der Praxis (z. B. in Python) aus?
+
+Ein typisches Projekt besteht aus mehreren Ordnern. Häufig gibt es einen Ordner mit *Entrypoints* (Startpunkten) – und einen Ordner mit Quellcode, in dem
+
+- **gemeinsame Bausteine** liegen (z. B. Datenmodelle, Simulation/Algorithmen, Ein-/Ausgabe) und
+- **mehrere Geschäftslogiken** (Programme/Workflows) implementiert sind, die diese Bausteine auf unterschiedliche Weise nutzen.
+
+```text
+my_app/
+├─ bin/                      # Entrypoints (Startskripte)
+│  ├─ run_design_gui.py      # startet Programm A (interaktiv, ggf. GUI)
+│  └─ run_optimize.py        # startet Programm B (Batch/Optimierung, ohne GUI)
+├─ src/
+│  └─ my_app/                # Python-Paket (gemeinsamer Quellcode)
+│     ├─ __init__.py
+│     ├─ shared_logic/
+│     │  └─ simulator.py     # geteilter Kern: Simulation/Berechnung
+│     ├─ programs/
+│     │  ├─ design.py        # Geschäftslogik A: „Auslegung/Interaktion“
+│     │  └─ optimize.py      # Geschäftslogik B: „Optimierung/Batch“
+├─ configs/
+│  └─ default.yaml           # Konfiguration (z. B. Simulationsparameter)
+├─ data/
+│  └─ input.csv              # Beispieldaten
+└─ results/
+   └─ output.csv             # Ergebnisdaten (z. B. vom Batch-Lauf erzeugt)
+```
+
+- **Programm A (`run_design_gui.py`)**: Startet eine interaktive Auslegung. Die Geschäftslogik in `programs/design.py` nimmt Eingaben entgegen, setzt Parameter und ruft den gemeinsamen Simulator (`shared_logic/simulator.py`) auf.
+- **Programm B (`run_optimize.py`)**: Startet einen Batch-Lauf (z. B. für eine Optimierung). Die Geschäftslogik in `programs/optimize.py` führt viele Simulationen automatisiert aus und schreibt die Ergebnisse z. B. nach `results/`.
+
+Beide Programme teilen sich dabei den Simulator in `shared_logic/simulator.py`, während die unterschiedlichen **Geschäftslogiken** in `programs/design.py` und `programs/optimize.py` liegen.
+
+Generell gilt in jeder Programmiersprache und in jedem Softwareprojekt: Funktionalitäten sollen so abgelegt sein, dass sie von mehreren Programmen genutzt werden können. Ungünstig wäre zum Beispiel, wenn die gleiche Kernlogik mehrfach kopiert wird:
+
+```text
+ordner_1/
+├─ run_gui
+└─ simulator_gui (Code-Duplikat)
+ordner_2/
+├─ run_batch
+└─ simulator_batch (Code-Duplikat)
+```
+
+**Fokus dieser Veranstaltung**
+
+In der Vorlesung (und im Praktikum) arbeiten wir an vielen Stellen bewusst mit **nur einer Python-Datei**. Das reduziert die Komplexität am Anfang: Sie müssen weniger „Projektstruktur“ lernen und können sich auf Konzepte und Programmierkonstrukte konzentrieren.
+
+Wichtig ist aber: Auch wenn alles in *einer* Datei steht, steckt darin oft schon die gleiche Aufteilung wie in einem größeren Projekt:
+
+- **Entrypoint (Startpunkt)**: Wo startet das Programm?
+- **Geschäftslogik / Ablauf (Workflow)**: Welche Schritte passieren in welcher Reihenfolge?
+- **Bausteine (Funktionalitäten)**: z. B. Rechenkern/Simulation, Einlesen/Schreiben von Daten, kleine Hilfsfunktionen.
+
+In Python sieht das häufig so aus:
+
+```python
+def load_inputs(path: str):
+    # Baustein: Eingaben laden
+    ...
+
+def simulate(inputs):
+    # Baustein: gemeinsamer Rechenkern / Algorithmus
+    ...
+
+if __name__ == "__main__": # Entrypoint
+    
+    # Geschäftslogik/Ablauf: welche Schritte in welcher Reihenfolge?
+    inputs = load_inputs("data/input.csv")
+    results = simulate(inputs)
+    # ... Ergebnisse weiterverarbeiten / speichern ...
+
+```
+
+Hinweis: Wenn Sie eine Datei **direkt ausführen**, läuft auch Code *ohne* den *Guard* `if __name__ == "__main__":` – Python arbeitet die Datei von oben nach unten ab. Der Guard ist trotzdem hilfreich, weil er verhindert, dass der Ablauf automatisch startet, wenn die Datei später **importiert** und als Modul wiederverwendet wird.
+
+```{admonition} Hinweis: Was ist ein „Guard“?
+Ein *Guard* (wörtlich „Schutz/Schranke“) ist eine **Bedingung**, die Code „abschirmt“: Der eingerückte Block darunter wird nur ausgeführt, wenn die Datei als **Hauptprogramm** gestartet wurde. Wird die Datei dagegen nur importiert (um z. B. `simulate(...)` wiederzuverwenden), wird der Guard-Block übersprungen.
+```
 
 
+Im Rahmen dieser Vorlesung programmieren wir überwiegend **headless** Anwendungen (ohne grafische Benutzeroberfläche) und konzentrieren uns auf saubere Programmstruktur:
 
 
 
