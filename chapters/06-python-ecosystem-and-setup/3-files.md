@@ -1,8 +1,11 @@
-# Python-Skripte: Entrypoint, Geschäftslogik, Bausteine
+# Datei / Skripte (Details)
 
 (sec-python-scripts)=
 
-Die wohl gängigste Technik, Python-Anwendungen zu entwickeln, ist es, Code in **Dateien** abzulegen und diese dann vom Python-[Interpreter](def-interpreter) ausführen zu lassen.
+Im vorherigen Abschnitt haben wir eine python-Datei erzeugt und ausgeführt.
+Wir haben also "ein Programm" ausgeführt. Im Kapitel chapters/03-computer-sciences-basics/2-programming.md haben wir bereits gelernt, dass software meistens mehrere programme enthalten und auch wir werden im Laufe der vorlesung und des praktikums mehrere programme schreiben, die unterschiedliche dinge tun. 
+
+## Wo und wie legen wir Python-Dateien ab? 
 
 Python-Projekte (klein wie groß) trennen typischerweise drei Dinge:
 
@@ -149,8 +152,7 @@ Warum? Wir rufen `skript2.py` auf (Entrypoint = `skript2.py`). Dabei wird `skrip
 ## Merksatz fürs Praktikum (empfohlenes Muster)
 
 - Schreiben Sie Bausteine als **Funktionen** (und später ggf. als Module).
-- Schreiben Sie den Ablauf in eine Funktion `main()`.
-- Nutzen Sie am Ende den Guard:
+- Schreiben Sie den Ablauf unter if __name__ == "__main__":
 
 ```python
 

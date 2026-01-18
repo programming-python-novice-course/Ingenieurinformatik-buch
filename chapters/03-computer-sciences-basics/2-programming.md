@@ -139,19 +139,21 @@ name: fig-software-vs-program
 Anwendungs-Software besteht meist aus mehreren Programmen, die sowohl programmspezifischen Code enthalten als auch gemeinsamen Code nutzen. Häufig greifen Programme dabei auf extern entwickelte Bibliotheken oder Frameworks zurück.
 ```
 
-**Geschäftslogik (Anwendungslogik)** bezeichnet den Teil eines Programms, der die fachlichen Regeln und Abläufe beschreibt: *Was* soll passieren – und *in welcher Reihenfolge*? Geschäftslogik setzt sich in der Regel aus mehreren Funktionalitäten zusammen, z. B. einem Algorithmus, der eigentlichen Datenverarbeitung und der Auswahl eines passenden Algorithmus auf Basis einer Eingabe.
+**Geschäftslogik (Anwendungslogik)** bezeichnet den Teil eines Programms, der die fachlichen Regeln und Abläufe beschreibt: *Was* soll passieren – und *in welcher Reihenfolge*? 
+
+
+Geschäftslogik setzt sich in der Regel aus mehreren Funktionalitäten zusammen, z. B. einem Algorithmus, der eigentlichen Datenverarbeitung und der Auswahl eines passenden Algorithmus auf Basis einer Eingabe.
 
 Ein *Entrypoint* ist dabei **nicht** die Geschäftslogik selbst, sondern ein Startpunkt, der die Geschäftslogik aufruft (z. B. über eine GUI oder „headless“ ohne Oberfläche).
 
-Wie sieht so etwas in der Praxis (z. B. in Python) aus?
+#TODO add picture 
 
-Für das **Basiswissen** reicht hier die Idee: Ein Projekt trennt typischerweise
 
-- **Entrypoints** (Startpunkte) von
-- **Geschäftslogik/Workflow** (Ablauf) und
-- **wiederverwendbaren Bausteinen** (Module/Funktionen).
+Beim *Skripten* schreiben wir oft vor allem den **Workflow** (A → B → C) und verwenden vorhandene Bibliotheken als Bausteine.
 
-Die ausführliche Praxis (typischer Projektbaum, `__main__`-Guard, „Skripten vs. Programmieren“) behandeln wir im Teil **Python anwenden** in: [Python-Skripte](sec-python-scripts).
+Beim *Programmieren* entwickeln wir zusätzlich (oder vor allem) die Bausteine selbst (A/B/C), sodass sie sauber strukturiert und wiederverwendbar sind.
+
+
 
 ## Was ist ein Repository?
 
@@ -162,10 +164,6 @@ schauen sie mal rein.
 
 
 
-Im Rahmen dieser Vorlesung programmieren wir überwiegend **headless** Anwendungen (ohne grafische Benutzeroberfläche) und konzentrieren uns auf saubere Programmstruktur:
-
-Beim *Skripten* schreiben wir oft vor allem den **Workflow** (A → B → C) und verwenden vorhandene Bibliotheken als Bausteine.
-Beim *Programmieren* entwickeln wir zusätzlich (oder vor allem) die Bausteine selbst (A/B/C), sodass sie sauber strukturiert und wiederverwendbar sind.
 
 
 
@@ -180,16 +178,10 @@ Beispiel: Wenn Sie ein Bauteil in CATIA als `.CATPart` speichern, können Sie di
 Das heißt zur Ausführung des *Quellcodes* fehlt möglicherweise ein Teil des gesamten Codes.
 
 
-
 ## Teaser: Was kann man (nicht) berechnen?
 
 Die Frage „Was kann man überhaupt berechnen?“ ist ein wichtiges Fundament der theoretischen Informatik (z. B. Halteproblem, Turingmaschine, Turing-Vollständigkeit). Für das praktische Programmieren in dieser Vorlesung ist das spannend – aber **nicht Kernstoff** dieses Kapitels.
 
 Wenn Sie tiefer einsteigen möchten, finden Sie den Hintergrund im Expertenwissen: [Berechenbarkeit & Turing-Vollständigkeit](sec-expert-berechenbarkeit).
 
-## Selbstcheck
-
-- Was ist der Unterschied zwischen **Programm** und **Software** (nenne mindestens 2 Bestandteile von Software neben dem Code)?
-- Wo liegt in einem Projekt typischerweise die **Geschäftslogik** – und wo die **Entrypoints**?
-- Warum ist `if __name__ == "__main__":` hilfreich, wenn man Funktionen später importieren will?
 
