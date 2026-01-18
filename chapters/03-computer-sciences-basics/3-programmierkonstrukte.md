@@ -185,10 +185,14 @@ Programmiersprachen bieten die Mittel um Zeiger *aufzulösen*, was den Zugriff a
 
 ### Überblick über wichtige Datenstrukturen
 
-#todo hier ist ein mix aus abstrakten datenstrukturen wie queue und konkreten datenstrukturen wie linked list. das müsste man eigentlich aufteilen und eklären warum dass man das überhaupt unterscheidet und warum das später für python überhaupt wichtig ist.
+In diesem Abschnitt unterscheiden wir zwei Perspektiven:
 
-Das folgende Bild gibt einen Überblick über die Klassifikation von Datenstrukturen.
-Datenstrukturen werden zunächst in **lineare** und **nicht-lineare** Strukturen unterteilt:
+- **Abstrakte Datentypen (ADT)** beschreiben *das Verhalten* einer Sammlung: welche Operationen erlaubt sind und in welcher Reihenfolge (z. B. FIFO/LIFO).
+- **Implementierungen** beschreiben *die Realisierung im Speicher*: liegen Elemente zusammenhängend oder verkettet, statisch oder dynamisch?
+
+Wichtig: **Ein ADT kann durch verschiedene Implementierungen realisiert werden** (z. B. eine Queue als verkettete Liste *oder* auf Basis eines Arrays).
+
+Das folgende Bild gibt einen Überblick über eine **strukturelle** Klassifikation (z. B. linear vs. nicht-linear). Diese Einordnung ist **unabhängig** von der Unterscheidung ADT vs. Implementierung.
 
 - **Lineare Datenstrukturen**: Die Elemente sind in einer bestimmten Reihenfolge angeordnet.
   - **Statische lineare Strukturen**: Die Größe ist fest und kann sich nicht ändern.
@@ -203,6 +207,8 @@ Datenstrukturen werden zunächst in **lineare** und **nicht-lineare** Strukturen
 Überblick über wichtige Datenstrukturen
 ```
 
+#### Abstrakte Datentypen (ADT)
+
 (sec-stack)=
 Der *Stapel* (engl. *Stack*) oder auch *Stapelspeicher/Keller* ist einer der einfachsten [dynamischen Sammlungen](def-dynamic-ds), welche dem *Last-In-First-Out (LIFO)* Prinzip folgt.
 LIFO bedeutet soviel wie: *zuletzt hinein - zuerst heraus*.
@@ -210,12 +216,20 @@ Das was zuletzt hinein gekommen ist, wird auch als erstes herausgenommen.
 Stellen Sie sich einen Stapel aus Büchern vor.
 Das Buch was Sie zuletzt auf den Bücherstapel gelegt haben liegt zugriffsbereit ganz oben.
 
+Typische Operationen sind: **push** (ablegen), **pop** (entnehmen) und **top/peek** (oberstes Element ansehen).
+Ein Stack kann z. B. als Array/dynamisches Array oder als verkettete Liste implementiert werden.
+
 (sec-queue)=
 Die *Warteschlange* (engl. *Queue*) ist eine [dynamische Sammlung](def-dynamic-ds) und folgt dem sog. *First-In-First-Out (FIFO)* Prinzip.
 FIFO bedeutet soviel wie: *zuerst hinein - zuerst hinaus*.
 Das was zuerst hinein gekommen ist, wird auch als erstes herausgenommen.
 Der Name rührt daher, dass die Datenstruktur wie eine Warteschlange an der Kasse funktioniert.
 Kunden die sich zuerst in die Schlange einreihen, werden auch zuerst bedient.
+
+Typische Operationen sind: **enqueue** (hinten anstellen), **dequeue** (vorne entnehmen) und **front/peek** (vorderstes Element ansehen).
+Auch eine Queue kann auf unterschiedliche Weise implementiert werden (z. B. verkettet oder als Ringpuffer auf Basis eines Arrays).
+
+#### Implementierungen (Speicherrepräsentationen)
 
 (sec-array)=
 Ein *Array* ist eine [statische Sammlung](def-static-ds) mit direktem Indexzugriff.
