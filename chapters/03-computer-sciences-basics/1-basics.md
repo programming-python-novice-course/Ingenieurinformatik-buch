@@ -2,6 +2,9 @@
 
 # Computer
 
+Ein *Computer* ist die konkrete technische Realisierung eines **Informationsverarbeitungssystems** (Hardware + Software). Um Programme zu verstehen (und später selbst zu schreiben), hilft es, ein klares Modell davon zu haben, **wie** ein Computer Informationen einliest, speichert, verarbeitet und ausgibt.
+
+
 Alle Computer basieren auf diesen vier grundlegenden Aufgaben:
 
 1. Informationen **einlesen**

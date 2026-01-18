@@ -127,10 +127,13 @@ Bei Programmen mit *grafischer Benutzeroberfläche (GUI)* werden solche Konfigur
 width: 700px
 name: fig-software-vs-program
 ---
-Software besteht meist aus mehreren Programmen, die sowohl programmspezifischen Code enthalten als auch gemeinsamen Code nutzen. Häufig greifen Programme dabei auf extern entwickelte Bibliotheken oder Frameworks zurück.
+Anwendungs-Software besteht meist aus mehreren Programmen, die sowohl programmspezifischen Code enthalten als auch gemeinsamen Code nutzen. Häufig greifen Programme dabei auf extern entwickelte Bibliotheken oder Frameworks zurück.
 ```
 
 Im Rahmen dieser Vorlesung beschäftigen wir uns vor allem damit, *Geschäftslogik* zu entwickeln, die sich aus verschiedenen Funktionalitäten zusammensetzt. Eine Funktionalität kann zum Beispiel ein Algorithmus sein, eine andere die Auswahl eines passenden Algorithmus auf Basis einer Nutzereingabe. Da wir nicht alles selbst programmieren können, besprechen wir außerdem, wie wir auf bereits implementierte Funktionalitäten (z. B. *Bibliotheken*) zurückgreifen können – vergleichbar mit einem fertigen „Zukaufteil“. 
+
+
+
 
 
 ```{admonition} Hinweis

@@ -147,6 +147,7 @@ Für die konkrete Implementierung rekursiver Funktionen in ``Python`` verweisen 
 
 ## Datenstrukturen
 
+
 Da sich alle Daten (Programm und dessen Eingabe/Ausgabe) im [Arbeitsspeicher](def-main-memory) befinden, müssen wir begreifen welche Funktionalität diese *konkrete* Datenstruktur bietet.
 Alle weiteren *abstrakten* Datenstrukturen bauen auf diesen Möglichkeiten auf.
 
@@ -183,6 +184,8 @@ Programmiersprachen bieten die Mittel um Zeiger *aufzulösen*, was den Zugriff a
 
 
 ### Überblick über wichtige Datenstrukturen
+
+#todo hier ist ein mix aus abstrakten datenstrukturen wie queue und konkreten datenstrukturen wie linked list. das müsste man eigentlich aufteilen und eklären warum dass man das überhaupt unterscheidet und warum das später für python überhaupt wichtig ist.
 
 Das folgende Bild gibt einen Überblick über die Klassifikation von Datenstrukturen.
 Datenstrukturen werden zunächst in **lineare** und **nicht-lineare** Strukturen unterteilt:

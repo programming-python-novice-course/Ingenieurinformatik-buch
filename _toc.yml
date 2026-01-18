@@ -23,6 +23,7 @@ parts:
     - file: chapters/03-computer-sciences-basics/0-intro
       sections:
       - file: chapters/03-computer-sciences-basics/1-basics
+      - file: chapters/03-computer-sciences-basics/1-aInformatik
       - file: chapters/03-computer-sciences-basics/1-codierung
       - file: chapters/03-computer-sciences-basics/1-zahlensysteme
       - file: chapters/03-computer-sciences-basics/2-programming

@@ -94,6 +94,13 @@ Struktogramme sind weniger geeignet für:
 - Sehr komplexe, tief verschachtelte Algorithmen (werden schnell unübersichtlich)!!
 ```
 
+```{admonition} Achtung
+:name: warning-struktogramme
+:class: warning
+
+Struktogramme sind prüfungsrelevant!
+```
+
 
 ## Pseudocode
 
