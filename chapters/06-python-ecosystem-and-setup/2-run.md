@@ -1,7 +1,20 @@
 # Python ausführen
 
-In diesem Kurs verwenden wir Jupyter Notebooks, welche wir im gleichnamigen [Abschnitt](sec-jupyter-notebooks) genauer Besprechen.
-Diese Notebooks gibt es noch nicht so lange und sie eigenen sich auch nur für bestimmte Zwecke.
+Es gibt verschiedene Möglichkeiten Python-Code auszuführen. 
+- einen python interpreter DIREKT starten, wenn wir commandos einmalig ausführen wollen - das machen wir typischerweise wenn wir KEIN Programm entwickeln wollen
+-- python -> startet einen consolenanwendung  -> startet eine consolenanwendung, in der sie python befehle eingeben können
+-- ipython -> startet ebenfalls eine consolenanwendung, in der sie python befehle eingeben können (aber ist besser weil..)
+
+- ein reines python-Programm an den python interpreter übergeben
+-- python2 meinprogramm.py -> übergibt ein reinen Python-programm das in der datei meinprogramm.py abgelegt ist an den pythoninterpreter. der interpreter führt zeile für zeile aus. -> DAS WIRD üblierweise gemacht wenn sie software entwickeln  ("Programmieren")
+
+- ein python-programm starten wollen, bei dem neben echtem python-commandos auch nicht-python-commandos enthalten sind, die zur erklärung oder visualsierung dienen.
+--  jupyterlab meinnotebook.oy -> übergibt.. -> DAS wird üblicherweise genutzt wenn sie existierende software nur anwenden ("Skripten")
+
+
+
+
+
 
 Die wohl gängigste Technik ``Python``-Anwendungen zu entwickeln ist es den Code in Dateien abzulegen und dieses Datei dann [interpretieren](def-interpreter) zu lassen, d.h., auszuführen.
 Insbesondere für die Entwicklung großer Anwendungen (z.B. auch Webseiten) oder Pakete, wie etwa [roboworld](https://github.com/BZoennchen/robo-world), und Skripte, ist diese Methode geeignet.
@@ -55,7 +68,9 @@ Mit ``quit()`` oder ``ctrl + D`` bzw. ``Strg + D`` beenden Sie den Kommandozeile
 ### IPython
 
 Mit dem Befehl ``ipython`` starten Sie einen anderen Kommandozeileninterpreter zum interaktiven Arbeiten.
-Auf diesem basieren die Jupyter Notebooks und Sie müssen das ``jupyterlab`` Modul dazu installiert haben.
+Im Unterschied zu ``python`` (Standard-Interpreter) bietet IPython viele Komfortfunktionen für die REPL, z. B. bessere Fehlermeldungen, Autovervollständigung, Command-History, magische Befehle (z. B. ``%time``) und ein angenehmeres interaktives Arbeiten.
+
+Jupyter Notebooks verwenden im Hintergrund einen **IPython-Kernel** (``ipykernel``). Dafür benötigen Sie nicht zwingend ``jupyterlab`` – je nach Setup reicht auch ``jupyter``/``notebook`` bzw. die Installation von ``ipykernel``.
 
 ```sh
 ipython
@@ -96,38 +111,9 @@ Wir speichern die Datei unter dem Namen ``square_sum.py`` im aktuellen Verzeichn
 python square_square.py 100
 ```
 
-und erhalten als Ausgabe die Summe aller Quadratzahlen von 1 bis einschließlich 100.
+und erhalten als Ausgabe die Summe aller Quadratzahlen von 1 bis einschließlich 100. 
 
-Damit Ihr Code nicht ausgeführt wird, wenn Sie Ihn als Modul importieren, sondern nur wenn Sie Ihn direkt aufrufen, verwendet man eine Bedingung der folgenden Form:
-
-```python
-if __name__ == '__main__':
-    # Execute when the module is not initialized from an import statement.
-    ...
-```
-
-und es ist gute Praxis anstatt des obigen Codes, folgendes zu schreiben:
-
-```python
-import sys
-
-if __name__ == '__main__':
-    n = int(sys.argv[1])
-    square_sum = 0
-
-    for i in range(n):
-        square_sum += (i+1)**2
-
-    print(square_sum)
-```
-
-Der Aufruf 
-
-```sh
-python square_square.py 100
-```
-
-funktioniert nach wie vor!
+Diese besprechen wir im Abschnitt #todo add link to chapters/06-python-ecosystem-and-setup/3-files.md here noch weiter. 
 
 ## Jupyter Notebook
 

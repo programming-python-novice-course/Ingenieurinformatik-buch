@@ -16,6 +16,15 @@ kernelspec:
 In diesem Kapitel lernen wir die fundamentalen Bausteine der Programmierung kennen: *Kontrollstrukturen* und *Datenstrukturen*.
 Diese beiden Konzepte bilden zusammen die Grundlage für alle Algorithmen und Programme.
 
+## Lernziele
+
+Nach diesem Kapitel können Sie …
+
+- erklären, was **Kontrollstrukturen** sind und wozu man **Fallunterscheidungen** und **Wiederholungen** braucht.
+- den Unterschied zwischen **Iteration** und **Rekursion** beschreiben und typische Einsatzideen nennen.
+- zentrale **Datenstrukturen** (z. B. Stack, Queue, Array, dynamisches Array, verkettete Liste) einordnen und Grundoperationen benennen.
+- unterscheiden zwischen **Abstraktem Datentyp (ADT)** und **Implementierung im Speicher**.
+
 ## Kontrollstrukturen
 
 Durch [Wiederholung](sec-repetition-and-recursion) in Form von *Schleifen* und *(rekursiven) Funktionen* vermeiden wir es Anweisungen, die wir mehrfach ausführen wollen, auch mehrfach niederzuschreiben.
@@ -39,7 +48,7 @@ Zusammenfassend konzentrieren wir uns auf:
 2. Schleifen (Wiederholung)
 3. Funktionen (Wiederholung)
 
-Wie bereits erwähnt, muss eine Programmiersprache nur sehr wenige und auch nur sehr primitive Kontrollstrukturen anbieten damit diese als [Turing-vollständig](def-turing-complete) gilt.
+Hinweis: Schon wenige Kontrollstrukturen reichen aus, um sehr viele Programme auszudrücken. Die formale Einordnung (Berechenbarkeit, Turing-Vollständigkeit) ist spannend, aber **nicht Kernstoff** dieses Kapitels.
 Theoretisch ist es bereits ausreichend wenn eine Programmiersprache 
 
 1. Variablen unterstützt, auf die wir einen konstanten Wert addieren oder subtrahieren können und
@@ -67,14 +76,11 @@ Das fundamentale Prinzip der *Wiederholung* ist zentraler Bestandteil der Progra
 Blicken wir in den Werkzeugkasten der Algorithmen so finden wir die Wiederholung überall.
 Sortieralgorithmen, die Berechnung eines Gleichungssystems, das Verarbeiten eines Bildes, die Schaltflächen einer App, überall finden wir Schleifen, die unsere Informationen *iterativ* verarbeiten.
 
-Nach der Definition eines Algorithmus, muss dieser aus endlich vielen Anweisungen bestehen.
-Will man jedoch eine variable Menge an Information verarbeiten, so muss ein Algorithmus, abhängig von der Eingabegröße, unterschiedlich viele Anweisungen ausführen.
-Das bedeutet, dass die Länge des Algorithmus (Textlänge) unabhängig von der Anzahl der auszuführenden Anweisungen (für eine gegebenen Eingabe) sein muss!
-Nach dem Schubfachprinzip bedeutet dies wiederum, dass in diesem Fall Teile des Algorithmus öfters durchlaufen werden - Wiederholung muss also in irgendeiner Form stattfinden.
+Nach der Definition eines Algorithmus muss dieser aus endlich vielen Anweisungen bestehen.
+Wenn wir jedoch eine variable Menge an Information verarbeiten wollen, muss ein Algorithmus – abhängig von der Eingabe – unterschiedlich viele Schritte ausführen.
+Das erreichen wir durch **Wiederholung**: Wir formulieren einen Teilablauf einmal und lassen ihn (konzeptionell) mehrfach laufen.
 
-Überraschenderweise hat sich herausgestellt, dass *Wiederholung* in Kombination mit der *Fallunterscheidung* ausreicht, um alles berechnen zu können was wir bisher als natürlich [berechenbar](def-turing-computable) ansehen.
-Nach der unbeweisbaren [Church-Turing-These](def-church-these) werden wir kein Problem finden, welches natürlich berechenbar aber nicht durch einen Computer berechnet werden kann.
-Die Fallunterscheidung in Kombination mit der Wiederholung ist scheinbar ausreichend.
+In der Praxis ist die Kombination aus **Fallunterscheidung** (Bedingung) und **Wiederholung** der Kern vieler Programme. Die theoretischen Hintergründe dazu sind optional und werden hier nicht weiter vertieft.
 
 Nun haben Sie vielleicht die Hoffnung, Sie müssten nur die [Wiederholung](sec-repetition-and-recursion) und die [Fallunterscheidungen](sec-if-else) beherrschen und können dann jedes Problem lösen.
 Leider sind diese beiden Techniken derart grundlegend, dass sie eine notwendige nicht aber ausreichende Bedingung für die Entwicklung von Algorithmen darstellen.
@@ -265,3 +271,9 @@ Haben wir direkten Zugriff auf einen Knoten so können wir in die *verkettete Li
 :class: note
 Mehr Hintergrund zum Thema Speichern von Datenstrukturen finden Sie im [Expertenwissen: Speicherlayout von Datenstrukturen](sec-memory-layout).
 ```
+
+## Selbstcheck
+
+- Nennen Sie je ein Beispiel für eine **Fallunterscheidung** und eine **Wiederholung** (konzeptionell, ohne Python-Syntax).
+- Welche Operationen sind typisch für **Stack** und **Queue**?
+- Was bedeutet **ADT** – und warum kann derselbe ADT unterschiedlich implementiert sein?

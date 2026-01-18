@@ -1,12 +1,21 @@
 (sec-programming)=
 # Programmieren
-Programmieren ist eine Tätigkeit bei der wir unsere Ideen und Konzepte in Text überführen.
-Ob das Programmieren nun wirklich mit dem Schreiben des Codes beginnt oder wir den ganzen Prozess der Softwareentwicklung als das Programmieren betrachten sei dahingestellt.
-Wenn wir vom Programmieren sprechen, meinen wir oft beides:
+Programmieren ist eine Tätigkeit, bei der wir Ideen und Konzepte in eine **präzise, ausführbare Beschreibung** überführen – meist als Quellcode.
+Oft meinen wir damit zwei Dinge:
 
-1. Das Entwerfen eines Algorithmus und
-2. dessen Realisierung (*Implementierung*) durch eine Programmiersprache.
+- das Entwerfen eines **Algorithmus** (die Idee / Vorgehensweise) und
+- die **Implementierung** in einer Programmiersprache (z. B. Python).
 
+Dabei ist Programmieren immer auch **Kommunikation**: Sie müssen sich selbst (in zwei Wochen) und anderen (im Team) erklären können, *was* der Code tut und *wie* er strukturiert ist.
+
+## Lernziele
+
+Nach diesem Abschnitt können Sie …
+
+- die Begriffe **Algorithmus**, **Programm**, **Quellcode** und **Software** unterscheiden.
+- erklären, wie Anwendungssoftware typischerweise strukturiert ist (**Entrypoint**, **Workflow/Geschäftslogik**, **wiederverwendbare Bausteine**).
+- erklären, warum ein GitHub-Repository oft nach „mehr“ aussieht als eine einzelne Python-Datei (Tests, Konfiguration, Doku, Abhängigkeiten, CI).
+- den Zweck von `if __name__ == "__main__":` als **Guard** erklären (direkt ausführen vs. importieren).
 
 Als gute Programmierer\*innen müssen wir 
 
@@ -22,7 +31,7 @@ Im Folgenden wollen wir eine gemeinsame Sprache schaffen und festlegen, was unte
 
 ## Algorithmus
 
-Ein *Algorithmus* ist eine wohldefinierte Sequenz von Anweisungen, welche eine Lösung für ein bestimmtes Problem berechnet. oder auch: Ein *Algorithmus* ist eine endliche Folge von unmissverständlich beschriebenen ausführbaren Anweisung (z.B. Text/Programmcode), um für eine bestimmte endliche Eingabe in endlich vielen Schritten eine endliche Ausgabe zu erzeugen, wobei zu jeder Zeit der Ausführung nur endlich viel Speicherplatz verwendet wird. #todo: cite donald e. knuth.
+Ein *Algorithmus* ist eine wohldefinierte Sequenz von Anweisungen, die zu einer (endlichen) Eingabe in endlich vielen Schritten eine (endliche) Ausgabe berechnet – und dabei nur endlich viel Speicher verwendet {cite}`knuth:1997`.
 
 
 ```{exercise} Beispiel: Euklidischer Algorithmus
@@ -136,47 +145,28 @@ Ein *Entrypoint* ist dabei **nicht** die Geschäftslogik selbst, sondern ein Sta
 
 Wie sieht so etwas in der Praxis (z. B. in Python) aus?
 
-Ein typisches Projekt besteht aus mehreren Ordnern. Häufig gibt es einen Ordner mit *Entrypoints* (Startpunkten) – und einen Ordner mit Quellcode, in dem
+Für das **Basiswissen** reicht hier die Idee: Ein Projekt trennt typischerweise
 
-- **gemeinsame Bausteine** liegen (z. B. Datenmodelle, Simulation/Algorithmen, Ein-/Ausgabe) und
-- **mehrere Geschäftslogiken** (Programme/Workflows) implementiert sind, die diese Bausteine auf unterschiedliche Weise nutzen.
+- **Entrypoints** (Startpunkte) von
+- **Geschäftslogik/Workflow** (Ablauf) und
+- **wiederverwendbaren Bausteinen** (Module/Funktionen).
 
-```text
-my_app/
-├─ bin/                      # Entrypoints (Startskripte)
-│  ├─ run_design_gui.py      # startet Programm A (interaktiv, ggf. GUI)
-│  └─ run_optimize.py        # startet Programm B (Batch/Optimierung, ohne GUI)
-├─ src/
-│  └─ my_app/                # Python-Paket (gemeinsamer Quellcode)
-│     ├─ __init__.py
-│     ├─ shared_logic/
-│     │  └─ simulator.py     # geteilter Kern: Simulation/Berechnung
-│     ├─ programs/
-│     │  ├─ design.py        # Geschäftslogik A: „Auslegung/Interaktion“
-│     │  └─ optimize.py      # Geschäftslogik B: „Optimierung/Batch“
-├─ configs/
-│  └─ default.yaml           # Konfiguration (z. B. Simulationsparameter)
-├─ data/
-│  └─ input.csv              # Beispieldaten
-└─ results/
-   └─ output.csv             # Ergebnisdaten (z. B. vom Batch-Lauf erzeugt)
-```
+Die ausführliche Praxis (typischer Projektbaum, `__main__`-Guard, „Skripten vs. Programmieren“) behandeln wir im Teil **Python anwenden** in: [Python-Skripte](sec-python-scripts).
 
-- **Programm A (`run_design_gui.py`)**: Startet eine interaktive Auslegung. Die Geschäftslogik in `programs/design.py` nimmt Eingaben entgegen, setzt Parameter und ruft den gemeinsamen Simulator (`shared_logic/simulator.py`) auf.
-- **Programm B (`run_optimize.py`)**: Startet einen Batch-Lauf (z. B. für eine Optimierung). Die Geschäftslogik in `programs/optimize.py` führt viele Simulationen automatisiert aus und schreibt die Ergebnisse z. B. nach `results/`.
+## Was sehe ich typischerweise in einem GitHub-Repository?
 
-Beide Programme teilen sich dabei den Simulator in `shared_logic/simulator.py`, während die unterschiedlichen **Geschäftslogiken** in `programs/design.py` und `programs/optimize.py` liegen.
+Wenn Sie ein Softwareprojekt auf GitHub öffnen, sehen Sie häufig deutlich mehr als „nur Code“. Das ist normal: Ein Repository enthält nicht nur das Programm selbst, sondern auch alles, was es **nutzbar, wartbar und reproduzierbar** macht.
 
-Generell gilt in jeder Programmiersprache und in jedem Softwareprojekt: Funktionalitäten sollen so abgelegt sein, dass sie von mehreren Programmen genutzt werden können. Ungünstig wäre zum Beispiel, wenn die gleiche Kernlogik mehrfach kopiert wird:
+- **README / Doku**: Was ist das? Wie installiert/benutzt man es?
+- **Quellcode** (z. B. `src/`): Wiederverwendbare Bausteine (Module) und Programme/Workflows.
+- **Entrypoints** (z. B. `bin/`, `cli/`, `app/`): Startskripte/Kommandos.
+- **Tests** (z. B. `tests/`): Automatische Prüfungen gegen Regressionen.
+- **Konfiguration** (z. B. `configs/`): Default-Einstellungen, Profile, Parameter.
+- **Daten/Beispiele** (z. B. `data/`): Beispielinput, kleine Demo-Datensätze (nicht immer).
+- **Abhängigkeiten/Packaging** (z. B. `pyproject.toml`, `requirements.txt`): Welche Bibliotheken werden benötigt?
+- **CI** (z. B. GitHub Actions unter `.github/workflows/`): Tests/Checks laufen automatisch bei Änderungen.
 
-```text
-ordner_1/
-├─ run_gui
-└─ simulator_gui (Code-Duplikat)
-ordner_2/
-├─ run_batch
-└─ simulator_batch (Code-Duplikat)
-```
+Wichtig: Viele dieser Dinge sind *kein* „unnötiger Ballast“, sondern helfen Teams, Software über längere Zeit stabil weiterzuentwickeln.
 
 **Fokus dieser Veranstaltung**
 
@@ -217,6 +207,9 @@ Ein *Guard* (wörtlich „Schutz/Schranke“) ist eine **Bedingung**, die Code �
 
 Im Rahmen dieser Vorlesung programmieren wir überwiegend **headless** Anwendungen (ohne grafische Benutzeroberfläche) und konzentrieren uns auf saubere Programmstruktur:
 
+Beim *Skripten* schreiben wir oft vor allem den **Workflow** (A → B → C) und verwenden vorhandene Bibliotheken als Bausteine.
+Beim *Programmieren* entwickeln wir zusätzlich (oder vor allem) die Bausteine selbst (A/B/C), sodass sie sauber strukturiert und wiederverwendbar sind.
+
 
 
 ```{admonition} Hinweis
@@ -231,38 +224,15 @@ Das heißt zur Ausführung des *Quellcodes* fehlt möglicherweise ein Teil des g
 
 
 
-## Berechenbarkeit und Turing-Complete
+## Teaser: Was kann man (nicht) berechnen?
 
-Eine Teildisziplin der Informatik, die theoretische Informatik, beschäftigt sich unter anderem mit der Berechenbarkeit von Problemen.
-Die Frage "Was können wir überhaupt mit einem Computer berechnen?" mag zunächst theoretisch klingen, hat aber für die Praxis ganz erhebliche Auswirkungen.
+Die Frage „Was kann man überhaupt berechnen?“ ist ein wichtiges Fundament der theoretischen Informatik (z. B. Halteproblem, Turingmaschine, Turing-Vollständigkeit). Für das praktische Programmieren in dieser Vorlesung ist das spannend – aber **nicht Kernstoff** dieses Kapitels.
 
-```{admonition} Berechenbarkeit
-:name: def-turing-computable
-:class: definition
+Wenn Sie tiefer einsteigen möchten, finden Sie den Hintergrund im Expertenwissen: [Berechenbarkeit & Turing-Vollständigkeit](sec-expert-berechenbarkeit).
 
-Ein Problem ist *allgemein berechenbar*, wenn es einen Algorithmus gibt, der für jede gültige Eingabe eine Lösung berechnen kann.
-```
+## Selbstcheck
 
-Das *Halteproblem* ist das bekannteste Beispiel für ein nicht berechenbares Problem: Es gibt keinen Algorithmus, der für ein beliebiges Programm und eine beliebige Eingabe entscheiden kann, ob das Programm mit dieser Eingabe jemals terminiert (anhält) oder in einer Endlosschleife läuft.
-
-**Wann können wir ein Problem auf einem Computer lösen?**
-
-Nehmen Sie Ihren Taschenrechner: Wie unterscheidet sich dieser von Ihrem Computer?
-Ein Taschenrechner kann nur eine begrenzte Menge von Operationen ausführen, wie Addition, Subtraktion, Multiplikation, Division oder das Berechnen von Wurzeln und trigonometrischen Funktionen.
-Er ist jedoch nicht in der Lage, beliebige Algorithmen (wie den euklidischen Algorithmus oben) zu implementieren—beispielsweise können Sie auf einem Taschenrechner keine Schleifen programmieren, keine bedingten Verzweigungen definieren oder komplexe Datenstrukturen verwalten.
-Ein Computer hingegen kann prinzipiell alle berechenbaren Probleme lösen, da er über die notwendigen Operationen verfügt, um beliebige Algorithmen auszuführen.
-
-```{admonition} Turing-Vollständigkeit
-:name: def-turing-complete
-:class: definition
-
-Ein System oder eine Programmiersprache ist *Turing-vollständig* (engl. *Turing-complete*), wenn sie all das berechnen kann, was eine [Turingmaschine](info-universal-turing-machine) berechnen kann.
-Einfach gesprochen bedeutet dies, dass sie sämtliche Operationen zulässt, sodass prinzipiell jedes berechenbare Problem gelöst werden kann.
-Die genaue mathematische Definition ist etwas komplexer und basiert auf dem Konzept der Turingmaschine, einem theoretischen Modell der Berechnung.
-```
-
-Moderne Computer und die meisten Programmiersprachen sind Turing-vollständig.
-Beispiele für Turing-vollständige Programmiersprachen sind ``Python``, ``Java``, ``C``, ``C++``, ``JavaScript``, ``Ruby`` und viele weitere.
-Das bedeutet, dass alle diese Sprachen prinzipiell dieselben Probleme lösen können—der Unterschied liegt lediglich in der Art und Weise, wie wir die Lösung formulieren, und in praktischen Aspekten wie Ausführungsgeschwindigkeit oder Speicherverbrauch.
-Im Gegensatz dazu sind einfache Taschenrechner oder sehr eingeschränkte Sprachen wie HTML (ohne JavaScript) oder CSS nicht Turing-vollständig.
+- Was ist der Unterschied zwischen **Programm** und **Software** (nenne mindestens 2 Bestandteile von Software neben dem Code)?
+- Wo liegt in einem Projekt typischerweise die **Geschäftslogik** – und wo die **Entrypoints**?
+- Warum ist `if __name__ == "__main__":` hilfreich, wenn man Funktionen später importieren will?
 
