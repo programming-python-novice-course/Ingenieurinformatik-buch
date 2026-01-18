@@ -14,7 +14,6 @@ Im Rahmen dieser Vorlesung konzentrieren wir uns auf den **Computer** als Refere
 
 Konkret sehen wir uns an: Was macht ein Computer eigentlich, wie werden Informationen verarbeitet, und welches Vokabular brauchen wir, um über Programme sauber zu sprechen.
 
-## Was Sie in diesem Kapitel lernen (Roadmap)
 
 Dieses Kapitel gibt Ihnen das gemeinsame **Grundvokabular** für die restliche Veranstaltung. Wir verbinden dabei drei Blickwinkel:
 
@@ -22,7 +21,6 @@ Dieses Kapitel gibt Ihnen das gemeinsame **Grundvokabular** für die restliche V
 - **Darstellung & Codierung**: Wie werden Zahlen, Text und andere Informationen als Bits repräsentiert?
 - **Software Engineering (Praxisbezug)**: Wie ist Anwendungssoftware typischerweise aufgebaut – und warum sieht ein GitHub-Projekt anders aus als eine einzelne Python-Datei?
 
-## Lernziele
 
 Nach diesem Kapitel können Sie …
 
@@ -34,11 +32,5 @@ Nach diesem Kapitel können Sie …
 - den Zweck von `if __name__ == "__main__":` als **Guard** erklären und den Unterschied **direkt ausführen** vs. **importieren** beschreiben.
 - die Konzepte **Kontrollstrukturen** und **Datenstrukturen** als Bausteine von Programmen benennen (ohne Python-Syntax zu wiederholen).
 - Softwareideen zielgruppengerecht kommunizieren, z. B. durch **Pseudocode** oder **Struktogramme**, und das passende Medium auswählen.
-
-## Selbstcheck
-
-- Welche Teile eines Programms sind **Ablauf/Workflow**, welche sind **Bausteine**, und wo liegt der **Startpunkt**?
-- Warum ist „Hexadezimal“ in Debug-Ausgaben so häufig?
-- Was ist der wichtigste Unterschied zwischen „Datei ausführen“ und „Datei importieren“ in Python?
 
 
