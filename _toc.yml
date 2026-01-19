@@ -1,7 +1,7 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Einführung 
+  - caption: Übersicht
     numbered: True
     chapters:
     - file: chapters/01-course-overview/0-uebersicht

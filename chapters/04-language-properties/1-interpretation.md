@@ -70,7 +70,6 @@ In der Praxis heißt es oft „entweder kompiliert oder interpretiert“. Streng
 ```
 
 
-
 ```{admonition} Klarstellung
 :class: note
 „Python ist langsam“ ist weder komplett richtig noch komplett falsch.
@@ -79,4 +78,31 @@ In der Praxis heißt es oft „entweder kompiliert oder interpretiert“. Streng
 - Wenn ein Programm vor allem wartet (z.B. Datei lesen/schreiben, Netzwerk), ist es häufig nicht durch Python selbst limitiert.
 - Viele Python‑Workflows sind schnell, weil sie Bibliotheken verwenden, die intern hochoptimiert sind.
 - „Python‑Performance“ hängt auch von der Implementierung ab: Verschiedene Interpreter/Übersetzer können denselben Code unterschiedlich schnell ausführen (Standard: CPython, in C implementiert).
+```
+
+```{admonition} Exkurs: Performance messen (Profiling)
+:class: tip
+„Performance“ kann sich auf verschiedene Dinge beziehen – z.B. **Laufzeit**, **Speicherverbrauch (RAM)** oder **I/O-Verhalten** (Warten auf Dateien/Netzwerk). Welche Kennzahl relevant ist, hängt vom Programm ab.
+
+**Einfache Zeitmessung in Python**
+
+```python
+import time
+
+start = time.perf_counter()   # alternativ: time.time()
+# ... Code, den Sie messen wollen ...
+dauer = time.perf_counter() - start
+print(f"{dauer:.3f}s")
+```
+
+**Profiling**
+Profiling ist mehr als eine einzelne Zeitmessung: Es hilft Ihnen zu verstehen, **welche Funktionen** wie viel Zeit (oder Speicher) verbrauchen – also **wo** der Engpass wirklich liegt. 
+
+- **CPU-Profiling (Standardbibliothek)**: `cProfile` (+ Auswertung mit `pstats`)
+- **Visualisierung**: z.B. `snakeviz` (zeigt `cProfile`-Ausgaben grafisch)
+- **Sampling-Profiler (geringer Overhead)**: z.B. `py-spy` (läuft auch an laufenden Prozessen)
+- **Line-by-line**: z.B. `line_profiler` (sehr konkret, aber mehr Overhead)
+- **Speicher/Allokationen**: `tracemalloc` (Standardbibliothek), optional `memory_profiler`
+
+Tipp: Messen Sie mit **realistischen Eingaben** und achten Sie darauf, ob Ihr Programm eher **CPU-bound** (Rechnung) oder **I/O-bound** (Warten) ist.
 ```

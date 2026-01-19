@@ -15,13 +15,6 @@ execute:
 bibtex_bibfiles: 
  - references.bib
 
-# Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: book.tex
-
-
-
 sphinx:
   language: de
   extra_extensions:
@@ -29,6 +22,12 @@ sphinx:
   - sphinx_inline_tabs
   - sphinx_proof
   config:
+    latex_documents:
+      - - intro
+        - book.tex
+        - "Ingenieurinformatik 1"
+        - "Dr. rer. nat. Christina Maria Mayr"
+        - "manual"
     version: "1.4"  # The short X.Y version
     release: "1.4.0"  # The full version, including alpha/beta/rc tags
     myst_enable_extensions: ["dollarmath", "amsmath", "colon_fence", "deflist"]
@@ -98,7 +97,7 @@ html:
     <div class="container">
     <div class="col1">
       <a href="https://hm.edu/">
-      <img style="width:50px;float:right;"" src="/ct-book/_static/img/hm-logo.png" alt="Logo">
+      <img style="width:50px;float:right;" src="/ct-book/_static/img/hm-logo.png" alt="Logo">
       </a>
     <div>
     <div class="col1">

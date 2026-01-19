@@ -2,7 +2,7 @@
 
 ```{admonition} Behauptung
 :class: remark
-In Python muss ich mich nicht darum kümmern, wie groß meine Zahlen sind.
+In Python muss ich mich nicht darum kümmern, wie groß meine Zahlen sind: 10 oder 100000000000. Das macht keinen Unterschied.
 ```
 
 Diese Aussage ist **in vielen Fällen richtig** – und sie erklärt, warum Python sich oft „komfortabel“ anfühlt.
