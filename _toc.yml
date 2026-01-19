@@ -36,13 +36,12 @@ parts:
       sections:
       - file: chapters/04-language-properties/1-interpretation
       - file: chapters/04-language-properties/2-paradigma
-      - file: chapters/04-language-properties/11-speicherverwaltung
-      - file: chapters/04-language-properties/21-seiteneffekte
-      - file: chapters/04-language-properties/3-references
-      - file: chapters/04-language-properties/4-syntax
-      - file: chapters/04-language-properties/5-typing
-      - file: chapters/04-language-properties/6-primitive-data
-      - file: chapters/04-language-properties/7-speicherverwaltung
+      - file: chapters/04-language-properties/3-speicherverwaltung
+      - file: chapters/04-language-properties/4-seiteneffekte
+      - file: chapters/04-language-properties/5-references
+      - file: chapters/04-language-properties/6-syntax
+      - file: chapters/04-language-properties/7-typing
+      - file: chapters/04-language-properties/8-primitive-data
   - caption: Python anwenden
     numbered: True
     chapters:
