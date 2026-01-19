@@ -1,4 +1,9 @@
-# „In Python verhalten sich Funktionen immer gleich.“
+# Seiteneffekt
+
+```{admonition} Behauptung
+:class: remark
+In Python verhalten sich Funktionen immer gleich.
+```
 
 Eine *Funktion* ist ein benannter Codeblock, den Sie aufrufen können. Typischerweise bekommt sie **Eingaben** (Parameter) und liefert einen **Rückgabewert** zurück. 
 
@@ -21,8 +26,6 @@ In Python kann es jetzt zusätzlich vorkommen, dass eine Funktion \(x\) mitverä
 Ein *Seiteneffekt* liegt vor, wenn die Ausführung einer isolierten Funktionalität (einer Funktion) neben der Berechnung des Rückgabewerts einen Zustand außerhalb ihres Gültigkeitsbereichs verändert und/oder von einem solchen Zustand abhängt.
 ```
 
-## Warum ist das so?
-
 Python übergibt beim Funktionsaufruf **keine Kopien von Objekten**, sondern **Referenzen auf Objekte** (auch: *call‑by‑sharing*, *object references*).
 Das heißt: Parameter sind **neue Namen**, die auf **dieselben Objekte** gebunden werden können wie beim Aufrufer. Der Grund dafür wiederum liegt im Python‑Datenmodell: **Namen referenzieren Objekte** und Funktionsaufrufe übergeben nicht die Objekte selbst sondern ebeen die Referenz.
 
@@ -34,9 +37,9 @@ Neben Python‑„object references“ gibt es in anderen Sprachen:
 - **Pass by Reference (Referenzübergabe)**: Eine Referenz/Adresse wird so übergeben, dass die Funktion auch den *Aufrufer‑Bezug* direkt verändern kann (z.B. C++ mit `&`).
 ```
 
-## Zwei Mini-Beispiele
+Zwei Mini‑Beispiele:
 
-Funktion **mit** Seiteneffekt (mutiert das Argument)
+Funktion mit Seiteneffekt (mutiert das Argument)
 
 ```{code-cell} python
 meine_liste = [1, 2, 3]  # Liste außerhalb der Funktion
@@ -51,7 +54,7 @@ print("Ergebnis:", ergebnis)  # Ausgabe: [1, 2, 3, 4]
 print("Originale Liste:", meine_liste)  # Ausgabe: [1, 2, 3, 4] - wurde verändert!
 ```
 
-Funktion **ohne** Seiteneffekt (arbeitet mit Kopie)
+Funktion ohne Seiteneffekt (arbeitet mit Kopie)
 
 ```{code-cell} python
 meine_liste = [1, 2, 3]  # Liste außerhalb der Funktion
@@ -67,11 +70,11 @@ print("Ergebnis:", ergebnis)  # Ausgabe: [1, 2, 3, 4]
 print("Originale Liste:", meine_liste)  # Ausgabe: [1, 2, 3] - unverändert!
 ```
 
-In diesem Fall bleibt der Zustand außerhalb der Funktion unverändert – es liegt **kein** Seiteneffekt vor. In der Informatik spricht man hier auch von **reinen** (ohne Seiteneffekt) bzw. **unreinen** Funktionen (mit Seiteneffekt).
+In diesem Fall bleibt der Zustand außerhalb der Funktion unverändert – es liegt kein Seiteneffekt vor. In der Informatik spricht man hier auch von reinen (ohne Seiteneffekt) bzw. unreinen Funktionen (mit Seiteneffekt).
 
-## Wann tritt ein Seiteneffekt ein?
+Wann tritt ein Seiteneffekt ein?
 
-**Drei Voraussetzungen** müssen erfüllt sein, damit ein Seiteneffekt entstehen kann:
+Drei Voraussetzungen müssen erfüllt sein, damit ein Seiteneffekt entstehen kann:
 
 1. Es gibt einen Zustand (Speicher, Datei, Objekt)
 2. Der Zustand kann verändert werden - ob das möglich ist hängt von den Eigenschaften ihres \(x\) ab! 
@@ -101,9 +104,10 @@ print("Nachher - Hannes sieht:", zettel_hannes)  # Hannes sieht die Änderung au
 print("\nBeide zeigen auf dasselbe Objekt:", zettel_julia is zettel_hannes)
 ```
 
-## Takeaways
-
-- **Funktionen in Python können Seiteneffekte haben** – das ist erlaubt und oft gewollt.
-- Seiteneffekte entstehen bei **mutierbaren Objekten** (z.B. `list`, `dict`). Mehr dazu im Kapitel [Datentypen](../08-python-data-types/0-intro.md).
-- Wenn Sie keine Seiteneffekte wollen, arbeiten Sie z.B. mit **Kopien**!
+```{admonition} Klarstellung
+:class: note
+- Funktionen in Python können Seiteneffekte haben – das ist erlaubt und oft gewollt.
+- Seiteneffekte entstehen bei mutierbaren Objekten (z.B. `list`, `dict`). Mehr dazu im Kapitel [Datentypen](../08-python-data-types/0-intro.md).
+- Wenn Sie keine Seiteneffekte wollen, arbeiten Sie z.B. mit Kopien.
+```
 

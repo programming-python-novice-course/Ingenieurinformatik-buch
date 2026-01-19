@@ -1,11 +1,16 @@
-# „In Python muss ich mir keine Gedanken machen, welche Daten ich verarbeite.“
+# Typing
 
-Python nimmt Ihnen viel Arbeit ab – aber die **Typinformation** ist trotzdem immer da, weil sie bestimmt, **wie Bits zu interpretieren sind** und welche Operationen erlaubt sind.
-Dieses Kapitel ergänzt den Abschnitt [Python‑Datenmodell: Objekte, Namen und Referenzen](sec-object-model): Dort ging es um **Bindings** (Namen → Objekte), hier geht es um den **Typ der Objekte**.
+```{admonition} Behauptung
+:class: remark
+In Python muss ich mir keine Gedanken machen, wie die Daten aussehen, die ich verarbeite: 0, 1.23 oder "abvcs" - Python macht schon was damit.
+```
 
-## 2) Typen in Python: Typ des Objekts, nicht Typ des Namens
+Python nimmt Ihnen viel Arbeit ab – aber Typinformation ist trotzdem immer da: Sie bestimmt, wie Bits zu interpretieren sind und welche Operationen erlaubt sind.
+Dieses Kapitel ergänzt den Abschnitt [Python‑Datenmodell: Objekte, Namen und Referenzen](sec-object-model): Dort ging es um Namen/Bindings (Namen → Objekte), hier geht es um den Typ der Objekte.
 
-- In Python hat **das Objekt** einen Typ (`int`, `str`, `list`, ...).
+Typen in Python sind Eigenschaften von Objekten, nicht von Namen.
+
+- In Python hat das Objekt einen Typ (`int`, `str`, `list`, ...).
 - Ein Variablenname kann im Laufe des Programms auf Objekte unterschiedlicher Typen zeigen.
 
 ```python
@@ -14,9 +19,7 @@ x = "hi"   # x zeigt jetzt auf ein str-Objekt
 x = 4      # x zeigt jetzt auf ein int-Objekt
 ```
 
-Das ist eine direkte Konsequenz aus dem Objektmodell: Der Name wird **neu gebunden**, das Objekt trägt den Typ (siehe [Python‑Datenmodell](sec-object-model)).
-
-## 3) Dynamische Typisierung
+Das ist eine direkte Konsequenz aus dem Objektmodell: Der Name wird neu gebunden, das Objekt trägt den Typ (siehe [Python‑Datenmodell](sec-object-model)).
 
 Python ist **dynamisch typisiert**: Welche Operation möglich ist, wird zur Laufzeit entschieden.
 
@@ -42,8 +45,6 @@ def potenz(basis: float, exponent: float) -> float:
 ```
 
 
-## 4) Starke Typisierung
-
 Python ist außerdem **stark typisiert**: Es führt nicht automatisch „magische“ Typumwandlungen durch.
 
 ```python
@@ -59,9 +60,10 @@ x = "5"
 y = 2 + x   // ergibt "25"
 ```
 
-## Richtigstellung (Takeaways)
-
-- Python nimmt Ihnen viel Typ‑Arbeit ab, aber **Typen sind trotzdem zentral**.
-- Python ist **dynamisch typisiert** (Prüfung zur Laufzeit) und **stark typisiert** (wenig implizite Konvertierung).
-- Type Hints sind ein **Werkzeug**: besseres Verständnis, bessere IDE‑Hinweise, früheres Finden von Fehlern.
-- Performance: Python ist häufig dann schnell, wenn zeitkritische Arbeit in **optimiertem, statisch typisiertem Code** (Bibliotheken) passiert.
+```{admonition} Klarstellung
+:class: note
+- Python nimmt Ihnen viel Typ‑Arbeit ab, aber Typen sind trotzdem zentral.
+- Python ist dynamisch typisiert (Prüfung zur Laufzeit) und stark typisiert (wenig implizite Konvertierung).
+- Type Hints sind ein Werkzeug: besseres Verständnis, bessere IDE‑Hinweise, früheres Finden von Fehlern.
+- Performance: Python ist häufig dann schnell, wenn zeitkritische Arbeit in optimiertem, statisch typisiertem Code (Bibliotheken) passiert.
+```

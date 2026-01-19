@@ -1,6 +1,12 @@
-# „In Python muss ich mich nicht darum kümmern, wie groß meine Zahlen sind.“
+# Zahlen
+
+```{admonition} Behauptung
+:class: remark
+In Python muss ich mich nicht darum kümmern, wie groß meine Zahlen sind.
+```
 
 Diese Aussage ist **in vielen Fällen richtig** – und sie erklärt, warum Python sich oft „komfortabel“ anfühlt.
+
 Denn grundsätzlich gilt in der Informatik: Zahlen müssen als **Bits** gespeichert werden. Wenn die Bitbreite **fest** ist (z.B. 32‑Bit oder 64‑Bit), ist auch der **Wertebereich** fest – und es kann zu **Überlauf** kommen.
 
 **Was bedeutet Überlauf?** Stellen Sie sich vor, Sie speichern eine Zahl mit nur **4 Bits**. Dann können Sie nur Werte von `0000` (0) bis `1111` (15) darstellen.
@@ -19,12 +25,12 @@ Wenn Sie bei `1111` (15) noch 1 addieren, passt das Ergebnis nicht mehr in 4 Bit
                  ^ der linke Übertrag passt nicht mehr in 4 Bits → Ergebnis: 0000 
 ```
 
-Python löst das für **ganze Zahlen** elegant: Eine Ganzzahl (`int`) kann (praktisch) **beliebig groß** werden, weil die Python‑Implementierung intern bei Bedarf mehr Speicher reserviert.
+Python löst das für ganze Zahlen elegant: Eine Ganzzahl (`int`) kann (praktisch) beliebig groß werden, weil die Python‑Implementierung intern bei Bedarf mehr Speicher reserviert.
 
 Warum das geht: Python nutzt **Arbitrary‑Precision Integer Arithmetic** (Ganzzahlen mit variabler Länge). Praktisch heißt das: Der Wert wird intern in „Ziffernblöcken“ gespeichert, und wenn die Zahl wächst, werden einfach mehr Blöcke verwendet.
 Das ist sehr komfortabel, denn Sie müssen sich nicht um einen Überlauf kümmern. 
 
-## Wenn Sie die Bitbreite festlegen: Überlauf (z.B. `numpy.int32`)
+Wenn Sie die Bitbreite festlegen (z.B. `numpy.int32`)
 
 Wenn Sie Speicherrepräsentation/Bitbreite bewusst vorgeben wollen, passiert das in Python typischerweise über spezialisierte Bibliotheken (z.B. `numpy`) oder über Schnittstellen zu C/C++.
 
@@ -52,7 +58,8 @@ print("dtype:", a.dtype, "nbytes:", a.nbytes)
 Wenn Sie z.B. in `numpy` einen Datentyp wie `int32` vorgeben, arbeiten Sie mit einem **festen Wertebereich**. Ergebnisse außerhalb dieses Bereichs können zu **Überlauf** führen (z.B. Wrap‑around statt Fehlermeldung). Prüfen Sie deshalb Wertebereiche und Grenzfälle gezielt.
 ```
 
-## Takeaways
-
-- `int` ist in Python (praktisch) **beliebig groß** (dynamischer Speicher), `float` hat typischerweise **endliche Präzision**.
-- Wenn Sie feste Bitbreiten nutzen (z.B. `numpy.int32`), müssen Sie **Wertebereich** und **Überlauf** aktiv im Blick behalten.
+```{admonition} Klarstellung
+:class: note
+- `int` ist in Python (praktisch) beliebig groß (dynamischer Speicher), `float` hat typischerweise endliche Präzision.
+- Wenn Sie feste Bitbreiten nutzen (z.B. `numpy.int32`), müssen Sie Wertebereich und Überlauf aktiv im Blick behalten.
+```

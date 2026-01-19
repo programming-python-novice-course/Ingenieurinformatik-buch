@@ -1,18 +1,19 @@
-# „Python ist langsam.“
+# Performance
+
+```{admonition} Behauptung
+:class: remark
+„Python ist langsam.“
+```
 
 Diese Aussage taucht in der Praxis häufig auf – und führt schnell zu Missverständnissen. Denn: Ob „Python langsam“ ist, hängt davon ab, **was** Ihr Programm macht und **wie** der Python-Code ausgeführt wird.
 
-## Stimmt das?
+Reiner Python-Code (z.B. Schleifen, viele kleine Funktionsaufrufe, dynamische Typprüfungen) ist oft langsamer als nativer Maschinencode aus einer kompilierten Sprache wie C/C++. Gleichzeitig laufen viele „Python‑Programme“ schnell, weil sie intern hochoptimierte Bibliotheken nutzen, die wiederum in C/C++ (oder ähnlichen Sprachen) implementiert sind.
 
-**Kommt darauf an.** Reiner Python-Code (z.B. Schleifen, viele kleine Funktionsaufrufe, dynamische Typprüfungen) ist oft langsamer als nativer Maschinencode aus einer kompilierten Sprache wie C/C++. Gleichzeitig laufen viele „Python-Programme“ schnell, weil sie intern hochoptimierte Bibliotheken nutzen, die wiederum in C/C++ (oder ähnlichen Sprachen) implementiert sind.
+**Was steckt dahinter?**
 
-## Was steckt dahinter?
+Ein Computer führt am Ende Maschinencode aus (0 und 1). Quellcode in einer höheren Programmiersprache muss daher in eine ausführbare Form übersetzt werden. Dieses Grundprinzip ist bei allen Sprachen gleich {cite}`sommerville`. Der Unterschied liegt darin, wann und wo diese Übersetzung passiert – nicht darin, ob sie passiert.
 
-### 1) Jede Programmiersprache muss „übersetzt“ werden
-
-Ein Computer führt am Ende **Maschinencode** aus (0 und 1). Quellcode in einer höheren Programmiersprache muss daher in eine ausführbare Form übersetzt werden. Dieses Grundprinzip ist bei allen Sprachen gleich {cite}`sommerville`. Der Unterschied liegt darin, **wann** und **wo** diese Übersetzung passiert – nicht darin, **ob** sie passiert.
-
-### 2) Kompiliert vs. „Skript“: Wo liegt der Maschinencode?
+Kompiliert vs. „Skript“: Wo liegt der Maschinencode?
 
 Wenn ein Programm in einer kompilierten Sprache erstellt wurde, erhalten Sie typischerweise eine ausführbare Datei:
 
@@ -26,7 +27,10 @@ Bei einer „Skriptsprache“ starten Sie Quelltext üblicherweise über ein Aus
 python3 meine-anwendung.py
 ```
 
-Der wichtige Unterschied ist dabei: **Bei kompilierten Programmen liegt der Maschinencode in der erzeugten Binärdatei**, bei Skript-/Interpreter-Setups steckt ein großer Teil der Ausführung in `python3` (dem Interpreter), während Ihr `.py`-File als Quelltext bestehen bleibt.
+Der wichtige Unterschied ist dabei: 
+- Bei kompilierten Programmen liegt der Maschinencode in der erzeugten Binärdatei**
+- bei Skript-/Interpreter-Setups steckt ein großer Teil der Ausführung in `python3` (dem Interpreter), während Ihr `.py`-File als Quelltext bestehen bleibt.
+
 
 ```{figure} ../../figs/overview/interpretationcompilation.png
 ---
@@ -36,9 +40,9 @@ name: fig-interpretationcompilation
 Vergleich zwischen Kompilierung und Interpretation
 ```
 
-### 3) Was passiert bei Python konkret?
+**Was passiert bei Python konkret?**
 
-Die Aussage „Python wird interpretiert“ ist als Vereinfachung verbreitet – technisch ist es besser, Python als **Hybrid** zu verstehen:
+Die Aussage „Python wird interpretiert“ ist als Vereinfachung weit verbreitet – technisch ist es besser, Python als **Hybrid** zu verstehen:
 
 - Der **Python-Interpreter** (z.B. CPython) enthält eine Compiler-Komponente, die Quelltext in **Bytecode** übersetzt (Zwischenform).
 - Eine Ausführungs-Komponente (oft als **Python Virtual Machine / PVM** beschrieben) führt diesen Bytecode aus.
@@ -66,15 +70,13 @@ In der Praxis heißt es oft „entweder kompiliert oder interpretiert“. Streng
 ```
 
 
-- **Warum brauche ich überhaupt `python3`?** Weil Ihr `.py`‑Code nicht direkt als Maschinencode vorliegt; die Ausführung passiert über den Interpreter.
-- **Warum kann gleicher Python-Code je nach Umgebung schneller/langsamer sein?** Weil es unterschiedliche Python‑Implementierungen gibt (z.B. CPython, PyPy) und weil Bibliotheken sehr unterschiedliche Optimierungen mitbringen.
-- **Warum ist `numpy` oft schnell, obwohl „Python langsam“ ist?** Weil die zeitkritische Arbeit meist in optimiertem, statisch typisiertem Code (z.B. C/C++) läuft – Python „steuert“ nur.
 
-## Takeaways
-
+```{admonition} Klarstellung
+:class: note
 „Python ist langsam“ ist weder komplett richtig noch komplett falsch.
 
-- **Wenn ein Programm vor allem rechnet** (z.B. viele Schleifen, viele kleine Operationen in reinem Python), ist es im Vergleich zu nativ kompiliertem Code (z.B. C/C++) oft langsamer.
-- **Wenn ein Programm vor allem wartet** (z.B. Datei lesen/schreiben, Netzwerk), ist es häufig nicht durch Python selbst limitiert.
-- **Viele Python‑Workflows sind schnell**, weil sie Bibliotheken verwenden, die intern hochoptimiert sind.
-- **„Python‑Performance“ hängt auch von der Implementierung ab**: Verschiedene Interpreter/Übersetzer können denselben Code unterschiedlich schnell ausführen (Standard: CPython, in C implementiert).
+- Wenn ein Programm vor allem rechnet (z.B. viele Schleifen, viele kleine Operationen in reinem Python), ist es im Vergleich zu nativ kompiliertem Code (z.B. C/C++) oft langsamer.
+- Wenn ein Programm vor allem wartet (z.B. Datei lesen/schreiben, Netzwerk), ist es häufig nicht durch Python selbst limitiert.
+- Viele Python‑Workflows sind schnell, weil sie Bibliotheken verwenden, die intern hochoptimiert sind.
+- „Python‑Performance“ hängt auch von der Implementierung ab: Verschiedene Interpreter/Übersetzer können denselben Code unterschiedlich schnell ausführen (Standard: CPython, in C implementiert).
+```

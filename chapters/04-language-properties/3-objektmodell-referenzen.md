@@ -1,25 +1,17 @@
 # Python-Datenmodell
 (sec-object-model)=
 
-Zahlreiche Eigenschaften von Python – z.B. wie Daten als Zahl oder Text interpretiert werden, warum Funktionen Seiteneffekte haben können oder warum Sie Speicher nicht manuell verwalten – sind direkte Folgen des Datenmodells.
+Zahlreiche Eigenschaften von Python sind direkte Folgen des Datenmodells.
+In den kommenden Abschnitten werden wir uns mit den Folgen auseinandersetzen. 
+Davor lernen wir das Datenmodell kurz kennen.
 
-In den kommenden Abschnitten werden wir uns damit auseinandersetzen, **was dieses Modell für uns in der Praxis bedeutet** – ein kurzer Vorausblick:
-
-- **Typing**: Typ ist Eigenschaft des **Objekts**, nicht des **Namens** → [Typing](./7-typing.md)
-- **Seiteneffekte**: möglich bei **geteilten, mutierbaren Objekten** → [Seiteneffekte](./4-seiteneffekte.md)
-- **Speicherverwaltung**: keine manuelle Allokation/Freigabe; Runtime/GC macht das → [Speicherverwaltung](./3-speicherverwaltung.md)
-- **(Keine) Primitives**: eingebaute Typen sind (meist) **Objekte** → Overhead, z.B. große `int` möglich → [(keine) Primitives](./8-primitive-data.md)
-
-Damit Sie diese Konsequenzen wirklich verstehen, müssen Sie zuerst die **Ursache** kennen: das Datenmodell.
-
-
-## Wie sieht das Datenmodell in Python aus?
+**Hintergrund**
 
 Für den Computer sind Daten immer **Bits**. Ob eine Bitfolge „eine Zahl“ oder „Text“ bedeutet, hängt von ihrer **Interpretation** ab.
 In Python übernimmt diese Interpretation das Laufzeitsystem – aber nur, weil zu jedem Wert **Typinformationen** existieren.
 
-Genau hier kommt das **Datenmodell** ins Spiel: In Python werden Werte als **Objekte** modelliert. Ein Objekt hat (mindestens) **einen Wert**, **einen Typ** und eine **Identität**.
-Variablennamen sind dann keine „Speicherzellen“, sondern **Bindungen** auf solche Objekte. Der Typ des Objekts bestimmt, **wie die zugrunde liegenden Bits zu interpretieren sind** (z.B. als `int` oder als `str`).
+Genau hier kommt das Datenmodell ins Spiel: In Python werden Werte als Objekte modelliert. Ein Objekt hat (mindestens) einen Wert, einen Typ und eine Identität.
+Variablennamen sind dann keine „Speicherzellen“, sondern Bindungen auf solche Objekte. Der Typ des Objekts bestimmt, wie die zugrunde liegenden Bits zu interpretieren sind (z.B. als `int` oder als `str`).
 
 Sehen wir uns hierzu das folgende Code‑Beispiel an:
 
@@ -32,7 +24,7 @@ print("x:", x)               # Wert
 
 Auf den ersten Blick wirkt es so, als würde der Zahlenwert *100* „in“ der Variable `x` abgespeichert werden.
 Unter der Haube passiert aber etwas anderes: `x` ist **nur ein Name**, der an ein `int`‑Objekt **gebunden** wird.
-Dieses Objekt hat einen Wert („100“), einen Typ (`int`) und eine Identität („dieses konkrete Objekt“). Diese Identität können Sie mit `id(...)` sichtbar machen (in CPython ist das meist die Speicheradresse).
+Dieses Objekt hat einen Wert („100“), einen Typ (`int`) und eine Identität („dieses konkrete Objekt“). Diese Identität können Sie mit `id(...)` sichtbar machen (in CPython ist das oft die Speicheradresse).
 
 - Ein **Objekt** ist ein Wert *mit Identität* (und Typ).
 - Ein **Name** (Variablenname) ist eine **Bindung** auf ein Objekt.
@@ -79,7 +71,7 @@ name: fig-variable-language-properties
 Eine Variable ist ein Name, der auf einen Speicherbereich (und damit auf ein Objekt) zeigt.
 ```
 
-## Identität vs. Gleichheit: `is` und `==`
+Identität vs. Gleichheit: `is` und `==`
 
 Zwei Namen können auf **dasselbe Objekt** zeigen (gleiche Identität) oder auf **zwei verschiedene Objekte**, die zufällig gleich aussehen (gleicher Wert).
 
@@ -95,9 +87,9 @@ print(a == c, a is c)  # gleicher Inhalt, aber andere Identität
 - `==` prüft (typischerweise) **Wert/Gleichheit**.
 - `is` prüft **Identität** („ist es wirklich dasselbe Objekt?“).
 
-## Takeaways
-
-- **Namen (Variablen) referenzieren Objekte** (Binding), Python ist nicht „Variablen = Speicherzellen“.
-- Mit `is` prüfen Sie **Identität** (dasselbe Objekt), mit `==` **Gleichheit** (gleicher Wert).
-- Warum daraus bei Funktionsaufrufen **Seiteneffekte** entstehen können (call‑by‑sharing, Mutation vs. Rebinding), sehen wir im Abschnitt [Seiteneffekte](./4-seiteneffekte.md).
+```{admonition} Klarstellung
+:class: note
+- Namen (Variablen) referenzieren Objekte (Binding), Python ist nicht „Variablen = Speicherzellen“.
+- Mit `is` prüfen Sie Identität (dasselbe Objekt), mit `==` Gleichheit (gleicher Wert).
+```
 
