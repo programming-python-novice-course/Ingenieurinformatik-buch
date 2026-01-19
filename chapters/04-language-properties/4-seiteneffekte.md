@@ -13,22 +13,25 @@ print("Rückgabewert:", x)
 ```
 In dem Beispiel wird die Funktion `addiere` aufgerufen. Die Werte werden addiert und dann zurückgegeben. Das entspricht im Prinzip der Vorstellung einer mathematischen Funktion: Ich gebe \(x\) hinein und erhalte \(y\) zurück.
 
-
-In Python kann es jetzt zusätzlich vorkommen, dass eine Funktion \(x\) mitverändert. Man spricht davon dass ein Zustand (\(x\) ) außerhalb der Funktion geändert wird. Das passiert aber nur dann, wenn Sie **veränderliche (mutierbare)** Objekte als \(x\) haben. 
-
-## Warum ist das so?
-
-Python erlaubt Seiteneffekte. Der Grund liegt in der Art, wie Python mit Objekten und Referenzen arbeitet (siehe [Speicherverwaltung in Python](sec-memory-management) und das Kapitel zu [Referenzen](./5-references.md)).
-
-
-- Variablennamen sind **Referenzen** auf Objekte.
-- Wenn Sie ein Objekt (z.B. eine Liste) an eine Funktion übergeben, bekommt die Funktion ebenfalls eine Referenz auf **dasselbe** Objekt.
-- Bei **veränderlichen (mutierbaren)** Objekten kann die Funktion das Objekt direkt verändern. Das sieht man dann auch außerhalb der Funktion.
+In Python kann es jetzt zusätzlich vorkommen, dass eine Funktion \(x\) mitverändert. Man spricht davon dass ein Zustand (\(x\) ) außerhalb der Funktion geändert wird ("Es gibt einen Seiteneffekt"). Das passiert aber nur dann, wenn Sie **veränderliche (mutierbare)** Objekte als \(x\) haben. 
 
 ```{admonition} Seiteneffekt
 :name: def-side-effect
 :class: definition
 Ein *Seiteneffekt* liegt vor, wenn die Ausführung einer isolierten Funktionalität (einer Funktion) neben der Berechnung des Rückgabewerts einen Zustand außerhalb ihres Gültigkeitsbereichs verändert und/oder von einem solchen Zustand abhängt.
+```
+
+## Warum ist das so?
+
+Python übergibt beim Funktionsaufruf **keine Kopien von Objekten**, sondern **Referenzen auf Objekte** (auch: *call‑by‑sharing*, *object references*).
+Das heißt: Parameter sind **neue Namen**, die auf **dieselben Objekte** gebunden werden können wie beim Aufrufer. Der Grund dafür wiederum liegt im Python‑Datenmodell: **Namen referenzieren Objekte** und Funktionsaufrufe übergeben nicht die Objekte selbst sondern ebeen die Referenz.
+
+```{admonition} Profiwissen
+:name: uebergabemechanismen
+:class: tip
+Neben Python‑„object references“ gibt es in anderen Sprachen:
+- **Pass by Value (Wertübergabe)**: Kopie wird übergeben; Änderungen in der Funktion betreffen das Original nicht.
+- **Pass by Reference (Referenzübergabe)**: Eine Referenz/Adresse wird so übergeben, dass die Funktion auch den *Aufrufer‑Bezug* direkt verändern kann (z.B. C++ mit `&`).
 ```
 
 ## Zwei Mini-Beispiele
@@ -66,27 +69,12 @@ print("Originale Liste:", meine_liste)  # Ausgabe: [1, 2, 3] - unverändert!
 
 In diesem Fall bleibt der Zustand außerhalb der Funktion unverändert – es liegt **kein** Seiteneffekt vor. In der Informatik spricht man hier auch von **reinen** (ohne Seiteneffekt) bzw. **unreinen** Funktionen (mit Seiteneffekt).
 
-## Aber warum hat Python Seiteneffekte?
-
-Auf den ersten Blick wirken Seiteneffekte gefährlich: Eine Funktion verändert etwas außerhalb ihres Gültigkeitsbereichs - das kann unerwartet sein und zu Fehlern führen. Warum erlaubt Python sie dann?
-
-**Seiteneffekte sind praktisch, weil:**
-
-1. **Effizienz**: Statt große Datenstrukturen zu kopieren, können wir direkt auf das Original zugreifen und es modifizieren. Das spart Speicher und Rechenzeit.
-
-2. **Natürliche Modellierung**: Viele reale Probleme haben Zustände, die sich ändern (z.B. ein Bankkonto, eine Einkaufsliste, eine Datenbank). Seiteneffekte erlauben es, diese Zustandsänderungen direkt zu modellieren.
-
-
-**Der Kompromiss:** Python wählt bewusst Flexibilität und Praktikabilität über strikte Reinheit. Sie als Programmierer müssen darauf achten, wann Seiteneffekte auftreten können, um unerwartete Verhaltensweisen zu vermeiden.
-
-Dass Python Seiteneffekte zulässt, ist also eine bewusste Designentscheidung der Entwickler der Programmiersprache. 
-
 ## Wann tritt ein Seiteneffekt ein?
 
 **Drei Voraussetzungen** müssen erfüllt sein, damit ein Seiteneffekt entstehen kann:
 
 1. Es gibt einen Zustand (Speicher, Datei, Objekt)
-2. Der Zustand kann verändert werden - ob das möglich sit hängt von den Eigenschaften ihres \(x\) ab! 
+2. Der Zustand kann verändert werden - ob das möglich ist hängt von den Eigenschaften ihres \(x\) ab! 
 3. Der Zustand ist geteilt - mehr als ein Programmteil kann denselben Zustand beobachten oder verändern
 
 Stellen Sie sich vor: Wir haben ein Haus (Objekt) in einer Stadt (Speicher). Julia und Hannes haben jeweils einen Zettel, auf dem die Adresse zum Haus steht. Sowohl Julias Zettel (`zettel_julia`) als auch Hannes' Zettel (`zettel_hannes`) referenzieren auf dasselbe Haus. Julia baut das Erdgeschoss um (Seiteneffekt). Hannes kommt zurück und wundert sich, was da passiert ist.
@@ -116,6 +104,6 @@ print("\nBeide zeigen auf dasselbe Objekt:", zettel_julia is zettel_hannes)
 ## Takeaways
 
 - **Funktionen in Python können Seiteneffekte haben** – das ist erlaubt und oft gewollt.
-- Seiteneffekte entstehen  bei **mutierbaren Objekten** (z.B. `list`, `dict`). Mehr dazu im Kapitel chapters/08-python-data-types
+- Seiteneffekte entstehen bei **mutierbaren Objekten** (z.B. `list`, `dict`). Mehr dazu im Kapitel [Datentypen](../08-python-data-types/0-intro.md).
 - Wenn Sie keine Seiteneffekte wollen, arbeiten Sie z.B. mit **Kopien**!
 

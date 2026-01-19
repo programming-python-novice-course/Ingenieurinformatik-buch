@@ -11,70 +11,42 @@ kernelspec:
 ---
 
 (sec-memory-management)=
-# „In Python gibt es keine Zeiger – Speicher ist kein Thema.“
+# Speicherverwaltung in Python: Referenzen und Garbage Collection
 
 Im Kapitel [`chapters/03-computer-sciences-basics/3-programmierkonstrukte.md`](../03-computer-sciences-basics/3-programmierkonstrukte.md) haben wir *Zeiger* schon kurz erwähnt.
 Vereinfacht gesagt: Ein Zeiger ist **eine Adresse im Speicher** – also ein Wert, der angibt, *wo* ein Objekt liegt.
 
-Zurück zur Aussage: „In Python gibt es keine Zeiger – Speicher ist kein Thema.“
+Zurück zur typischen Aussage: „In Python gibt es keine Zeiger – Speicher ist kein Thema.“
 
-Sie müssen in Python tatsächlich **keinen Speicher manuell reservieren oder freigeben** (wie z.B. in C mit `malloc`/`free`). Diese Aufgabe übernimmt ein *Garbage Collector* (GC). Ein Garbage Collector erkennt Objekte, die nicht mehr verwendet werden, und gibt deren Speicher automatisch frei.
+Sie müssen in Python tatsächlich **keinen Speicher manuell reservieren oder freigeben** (wie z.B. in C mit `malloc`/`free`). Diese Aufgabe übernimmt die Python‑Runtime (inklusive Garbage Collection).
 
 
 Zur Aussage „In Python gibt es keine Zeiger“:
-Python arbeitet intern mit Speicheradressen. Für Sie erscheinen sie als **Referenzen** – Variablennamen „zeigen“ auf Objekte.
-Sie merken das im Alltag meist nicht an einer speziellen Pointer-Syntax, aber Sie merken es am Verhalten (z.B. bei Referenzen und Seiteneffekten).
+Python arbeitet intern natürlich mit Speicheradressen. Für Sie erscheinen sie als **Referenzen** – Namen „zeigen“ auf Objekte.
+Wie dieses Referenz‑/Objektmodell funktioniert, steht im Kernabschnitt [Python‑Datenmodell: Objekte, Namen und Referenzen](sec-object-model).
 
-## Was heißt das im Detail?
+## Was bedeutet „Python verwaltet Speicher automatisch“ konkret?
 
-### Was ist eine Variable?
+In der Praxis heißt das:
 
-Eine *Variable* ist (vereinfacht) ein **Name**, mit dem Sie ein Objekt wiederfinden können. Mit dem Zuweisungszeichen `=` wird der Name an ein Objekt „gebunden“ (der Name zeigt auf das Objekt). 
+- **Allokation**: Wenn neue Objekte entstehen, reserviert die Runtime Speicher dafür.
+- **Freigabe**: Wenn Objekte nicht mehr erreichbar sind, kann ihr Speicher wieder freigegeben werden.
 
-Durch das ``=`` Zeichen weisen wir einer *Variablen* (auf der linken Seite) den Wert des *Ausdrucks* (auf der rechten Seite) zu.
-Zum Beispiel, weist
+Wie genau das passiert, hängt von der Python‑Implementierung ab.
+In **CPython** (der üblichsten Implementierung) passiert das grob so:
 
-```{code-cell} ipython3
-x = 3 + 10
-```
+- **Referenzzählung (reference counting)**: Jedes Objekt weiß, wie viele Referenzen auf es zeigen. Fällt der Zähler auf 0, kann das Objekt sofort freigegeben werden.
+- **Zyklus‑Garbage‑Collector**: Referenzzählung allein findet *Zyklen* nicht (Objekte, die sich gegenseitig referenzieren). Ein zusätzlicher GC erkennt solche Zyklen und räumt sie auf.
 
-den ausgewerteten Wert ``3 + 10`` also ``13`` der Variablen ``x`` zu.
-Es ist äußerst wichtig, dass Sie zwischen dem ``=`` und dem mathematischen $=$ unterscheiden.
+## Warum merkt man das im Code trotzdem?
 
-$$x = 13$$
+Auch wenn Sie Speicher nicht manuell verwalten, beeinflusst das Modell Ihr Programmierverhalten:
 
-bedeutet, dass $x$ gleich $13$ ist, wohingegen
-
-```{code-cell} ipython3
-x = 13
-```
-
-den Wert der Variablen ``x`` auf ``13`` setzt bzw. die Variable auf einen Speicherbereich verweisen lässt, welcher den Wert ``13`` enthält.
-
-
-
-```{figure} ../../figs/python-tutorial/variables/ram.png
----
-width: 400px
-name: fig-ram-language-properties
----
-Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus Bits.
-```
-
-```{figure} ../../figs/python-tutorial/variables/variable.png
----
-width: 800px
-name: fig-variable-language-properties
----
-Eine Variable ist ein Name, der auf einen Speicherbereich (und damit auf ein Objekt) zeigt.
-```
-
-Hinweis:
-Python verwaltet viele Daten als dynamische Strukturen. Solche Strukturen wachsen/schrumpfen zur Laufzeit und enthalten intern Referenzen auf ihre Elemente.
-
-
+- Viele Datenstrukturen sind **dynamisch** (wachsen/schrumpfen zur Laufzeit) und enthalten intern **Referenzen** auf ihre Elemente.
+- Teilen mehrere Namen/Programmteile dieselben Objekte, werden Themen wie **Mutabilität** und **Seiteneffekte** relevant.
 
 ## Takeaways
 
 - **Sie müssen Speicher nicht manuell verwalten**, aber Python verwaltet ihn natürlich trotzdem.
-- **Variablennamen sind Referenzen auf Objekte** – welche Auswirkung das auf die Programmierung hat, sehen wir uns im folgenden Abschnitt an.
+- In CPython: **Referenzzählung + Zyklus‑GC**.
+- Das Referenz‑/Objektmodell ist die Basis dafür, dass **geteilte, mutierbare Objekte** Seiteneffekte ermöglichen (siehe [Seiteneffekte](./4-seiteneffekte.md)).

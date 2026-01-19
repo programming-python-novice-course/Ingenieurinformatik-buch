@@ -1,9 +1,9 @@
-# „In Python muss ich mir keine Gedanken machen, welche Daten ich verarbeite.
+# „In Python muss ich mir keine Gedanken machen, welche Daten ich verarbeite.“
 
+Python nimmt Ihnen viel Arbeit ab – aber die **Typinformation** ist trotzdem immer da, weil sie bestimmt, **wie Bits zu interpretieren sind** und welche Operationen erlaubt sind.
+Dieses Kapitel ergänzt den Abschnitt [Python‑Datenmodell: Objekte, Namen und Referenzen](sec-object-model): Dort ging es um **Bindings** (Namen → Objekte), hier geht es um den **Typ der Objekte**.
 
-Für den Computer sind Daten immer Bits. Ob eine Bitfolge „eine Zahl“ oder „Text“ bedeutet, hängt von einer Interpretation/Struktur ab (z.B. Zahlendarstellung, Zeichenkodierung). In Python erledigt diese Interpretation das Laufzeitsystem für Sie – aber es braucht dafür **Typinformationen**.
-
-### 2) Typen in Python: Typ des Objekts, nicht Typ des Namens
+## 2) Typen in Python: Typ des Objekts, nicht Typ des Namens
 
 - In Python hat **das Objekt** einen Typ (`int`, `str`, `list`, ...).
 - Ein Variablenname kann im Laufe des Programms auf Objekte unterschiedlicher Typen zeigen.
@@ -11,9 +11,12 @@ Für den Computer sind Daten immer Bits. Ob eine Bitfolge „eine Zahl“ oder �
 ```python
 x = 3      # x zeigt auf ein int-Objekt
 x = "hi"   # x zeigt jetzt auf ein str-Objekt
+x = 4      # x zeigt jetzt auf ein int-Objekt
 ```
 
-### 3) Dynamische Typisierung
+Das ist eine direkte Konsequenz aus dem Objektmodell: Der Name wird **neu gebunden**, das Objekt trägt den Typ (siehe [Python‑Datenmodell](sec-object-model)).
+
+## 3) Dynamische Typisierung
 
 Python ist **dynamisch typisiert**: Welche Operation möglich ist, wird zur Laufzeit entschieden.
 
@@ -26,7 +29,20 @@ print(potenz(3.0, 2.0))    # 9.0
 print(potenz("a", "b"))    # TypeError zur Laufzeit
 ```
 
-### 4) Starke Typisierung
+```{admonition} Hinweis: Type Hints
+:class: note
+Softwareentwickler können anderen Entwicklern mithilfe von *Type Hints* einen Hinweis darauf geben, welche Typen hier erwartet sind (z.B. Zahl, Text).
+Diese Hinweise ändern (standardmäßig) nicht das Laufzeitverhalten, sondern dienen der Dokumentation und Werkzeugunterstützung (IDE, Linter).
+
+```python
+def potenz(basis: float, exponent: float) -> float:
+    """Berechnet basis^exponent (nur Zahlen)."""
+    return basis ** exponent
+```
+```
+
+
+## 4) Starke Typisierung
 
 Python ist außerdem **stark typisiert**: Es führt nicht automatisch „magische“ Typumwandlungen durch.
 
@@ -41,22 +57,6 @@ Zum Vergleich (vereinfachtes Beispiel) in JavaScript:
 x = "5"
 // je nach Kontext entstehen implizite Umwandlungen
 y = 2 + x   // ergibt "25"
-```
-
-## Typische Stolperstelle / „Warum passiert das?“
-
-- **„Warum sehe ich den Fehler erst beim Ausführen?“** Weil Python viele Typ-/Operator‑Checks zur Laufzeit macht.
-- **„Warum warnt mich meine IDE?“** Weil Tools aus optionalen Typangaben (Type Hints) Schlüsse ziehen können.
-- **„Warum ist Python manchmal langsam?“** Dynamische Typ‑Checks und Dispatch kosten Zeit – besonders in engen Schleifen im „reinen Python“.
-
-## Type Hints (optional, aber sehr hilfreich)
-
-Type Hints ändern (standardmäßig) nicht das Laufzeitverhalten, helfen aber bei Dokumentation und Werkzeugunterstützung:
-
-```python
-def potenz(basis: float, exponent: float) -> float:
-    """Berechnet basis^exponent (nur Zahlen)."""
-    return basis ** exponent
 ```
 
 ## Richtigstellung (Takeaways)

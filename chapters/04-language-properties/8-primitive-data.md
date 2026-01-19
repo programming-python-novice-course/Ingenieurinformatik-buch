@@ -1,43 +1,58 @@
-# „In Python kann ich festlegen, wie meine Daten abgespeichert werden.“
+# „In Python muss ich mich nicht darum kümmern, wie groß meine Zahlen sind.“
 
+Diese Aussage ist **in vielen Fällen richtig** – und sie erklärt, warum Python sich oft „komfortabel“ anfühlt.
+Denn grundsätzlich gilt in der Informatik: Zahlen müssen als **Bits** gespeichert werden. Wenn die Bitbreite **fest** ist (z.B. 32‑Bit oder 64‑Bit), ist auch der **Wertebereich** fest – und es kann zu **Überlauf** kommen.
 
-**Im Normalfall: nein.** In Python legen Sie meist **nicht** fest, ob ein Zahl (`int`) 32 Bit oder 64 Bit hat oder wie ein Objekt exakt im Speicher layoutet ist. Sie wählen *Datentypen*, und Python (bzw. die konkrete Python‑Implementierung) kümmert sich um die interne Speicherung.
+**Was bedeutet Überlauf?** Stellen Sie sich vor, Sie speichern eine Zahl mit nur **4 Bits**. Dann können Sie nur Werte von `0000` (0) bis `1111` (15) darstellen.
+Wenn Sie bei `1111` (15) noch 1 addieren, passt das Ergebnis nicht mehr in 4 Bits. Bei vielen Systemen passiert dann ein **Wrap‑around**: Es „springt“ zurück auf `0000`.
 
-**Ausnahmen gibt es – aber gezielt.** Wenn Sie sehr genau wissen, **auf welcher Hardware** Ihr Code läuft und **wie Ihre Eingabedaten aussehen** (Größenordnung, Wertebereich, Format), dann kann es sinnvoll sein, Speicherrepräsentationen bewusst vorzugeben.
-Das passiert in Python typischerweise über spezialisierte Werkzeuge/Bibliotheken (z.B. `numpy`, `array`, `struct`) oder über Schnittstellen zu C/C++.
-Für **generische Anwendungen** ist das jedoch unüblich: Dort möchten Sie Portabilität und einfache Wartbarkeit – und überlassen die Details bewusst Python.
+```text
+0000 (0)
+0001 (1)
+0010 (2)
+0011 (3)
+...
+1110 (14)
+1111 (15)
 
-## Was steckt dahinter?
+1111 (15) + 0001 (1) = 1 0000 (16)
+                 ^ der linke Übertrag passt nicht mehr in 4 Bits → Ergebnis: 0000 
+```
 
-1) Python arbeitet (meist) mit Objekten statt primitiven Werten
+Python löst das für **ganze Zahlen** elegant: Eine Ganzzahl (`int`) kann (praktisch) **beliebig groß** werden, weil die Python‑Implementierung intern bei Bedarf mehr Speicher reserviert.
 
-In vielen Sprachen gibt es „primitive“ Typen mit fester Größe (z.B. `int32`). In Python sind Werte wie `int`, `float`, `bool`, `str` **Objekte** mit Metadaten. Das ist bequem – kostet aber Overhead.
+Warum das geht: Python nutzt **Arbitrary‑Precision Integer Arithmetic** (Ganzzahlen mit variabler Länge). Praktisch heißt das: Der Wert wird intern in „Ziffernblöcken“ gespeichert, und wenn die Zahl wächst, werden einfach mehr Blöcke verwendet.
+Das ist sehr komfortabel, denn Sie müssen sich nicht um einen Überlauf kümmern. 
 
-2) Konsequenz: `int` hat keine feste Größe
+## Wenn Sie die Bitbreite festlegen: Überlauf (z.B. `numpy.int32`)
 
-In Python kann eine ganze Zahl unterschiedlich viel Speicher belegen, abhängig von ihrer Größe. Dadurch sind sehr große Integer möglich (arbitrary precision).
+Wenn Sie Speicherrepräsentation/Bitbreite bewusst vorgeben wollen, passiert das in Python typischerweise über spezialisierte Bibliotheken (z.B. `numpy`) oder über Schnittstellen zu C/C++.
 
-3) „Aber Python ist doch schnell – wie passt das zusammen?“
+Beispiel mit `numpy` (feste Bitbreite + Überlauf):
 
-Viele Python‑Programme sind schnell, weil sie intern Bibliotheken nutzen, die in C/C++ (oder ähnlich) implementiert sind. Python ist dann die „Steuerlogik“.
+```{code-cell} python
+import numpy as np
 
-## Typische Stolperstelle / „Warum passiert das?“
+# feste Bitbreite: 32-bit signed integer
+info = np.iinfo(np.int32)
+print("int32 range:", info.min, "bis", info.max)
 
-- **„Warum sind Python‑Objekte so speicherhungrig?“** Weil Objekte neben dem „Wert“ auch Typ-/Verwaltungsdaten enthalten.
-- **„Warum ist `int` in Python nicht wie `int` in C?“** Weil Python Ihnen die feste Bitbreite abnimmt und dafür flexible, sichere Objekte bereitstellt.
-- **„Kann ich es doch kontrollieren?“** Ja, aber bewusst über spezielle Werkzeuge (z.B. `array`, `struct`, `numpy`) – nicht als Standard‑`int`.
+x = np.int32(info.max)
+print("x:", x)
+print("x+1:", x + np.int32(1))  # Überlauf / Wrap-around
+print("x+2:", x + np.int32(2))
 
-## (Optional) Blick unter die Haube: CPython
+# Speicherbedarf ist dann ebenfalls fest pro Wert:
+a = np.array([1, 2, 3], dtype=np.int32)
+print("dtype:", a.dtype, "nbytes:", a.nbytes)
+```
 
-In CPython ist `int` in C implementiert. Die Implementierung findet sich z.B. hier (**Sie müssen das nicht lesen/verstehen**):
+```{admonition} Achtung
+:class: warning
+Wenn Sie z.B. in `numpy` einen Datentyp wie `int32` vorgeben, arbeiten Sie mit einem **festen Wertebereich**. Ergebnisse außerhalb dieses Bereichs können zu **Überlauf** führen (z.B. Wrap‑around statt Fehlermeldung). Prüfen Sie deshalb Wertebereiche und Grenzfälle gezielt.
+```
 
-+ [longobject.c](https://github.com/python/cpython/blob/main/Objects/longobject.c)
-+ [longintrepr.h](https://github.com/python/cpython/blob/main/Include/longintrepr.h)
-+ [longobject.h](https://github.com/python/cpython/blob/main/Include/longobject.h)
+## Takeaways
 
-## Richtigstellung (Takeaways)
-
-- In Python wählen Sie **Datentypen**, aber Sie kontrollieren die **Speicherrepräsentation** im Normalfall nicht direkt.
-- Python hat (praktisch) keine „primitiven“ Typen wie C; vieles sind **Objekte**.
-- `int` ist **variabel groß** → sehr große Zahlen sind möglich.
-- Wenn Sie Speicherlayout wirklich kontrollieren müssen, nutzen Sie dafür spezielle Bibliotheken/Datentypen.
+- `int` ist in Python (praktisch) **beliebig groß** (dynamischer Speicher), `float` hat typischerweise **endliche Präzision**.
+- Wenn Sie feste Bitbreiten nutzen (z.B. `numpy.int32`), müssen Sie **Wertebereich** und **Überlauf** aktiv im Blick behalten.
