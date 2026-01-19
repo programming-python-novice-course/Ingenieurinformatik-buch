@@ -1,14 +1,29 @@
-# Seiteneffekte
+# „In Python verhalten sich Funktionen immer gleich.“
 
-Wie wir im Kapitel [Speicherverwaltung in Python](sec-memory-management) gesehen haben, verwendet ``Python`` Zeiger (Referenzen) für die Speicherverwaltung.
-Wenn Sie eine Variable erstellen, zeigt diese Variable auf einen Speicherbereich, in dem der Wert gespeichert ist.
-Das bedeutet aber auch, dass mehrere Variablen auf denselben Wert zeigen können.
+Eine *Funktion* ist ein benannter Codeblock, den Sie aufrufen können. Typischerweise bekommt sie **Eingaben** (Parameter) und liefert einen **Rückgabewert** zurück. 
 
-Diese Eigenschaft hat eine wichtige Konsequenz: Wenn mehrere Variablen auf dasselbe Objekt im Speicher zeigen, können alle diese Variablen den Wert unter bestimmten Umständen ändern.
-Wenn Sie beispielsweise eine Liste an eine Funktion übergeben, zeigt der Funktionsparameter auf dasselbe Objekt im Speicher wie die ursprüngliche Variable.
-Änderungen an der Liste innerhalb der Funktion wirken sich daher auch auf die ursprüngliche Liste aus - dies nennt man einen *Seiteneffekt*.
+Sehen Sie sich das folgende Beispiel an:
 
-Python erlaubt Seiteneffekte - im Gegensatz zu Sprachen wie Haskell. Deshalb gehen wir im Folgenden kurz auf dieses wichtige Prinzip ein.
+```{code-cell} python
+def addiere(a, b):
+    return a + b  
+
+x = addiere(2, 3)
+print("Rückgabewert:", x)
+```
+In dem Beispiel wird die Funktion `addiere` aufgerufen. Die Werte werden addiert und dann zurückgegeben. Das entspricht im Prinzip der Vorstellung einer mathematischen Funktion: Ich gebe \(x\) hinein und erhalte \(y\) zurück.
+
+
+In Python kann es jetzt zusätzlich vorkommen, dass eine Funktion \(x\) mitverändert. Man spricht davon dass ein Zustand (\(x\) ) außerhalb der Funktion geändert wird. Das passiert aber nur dann, wenn Sie **veränderliche (mutierbare)** Objekte als \(x\) haben. 
+
+## Warum ist das so?
+
+Python erlaubt Seiteneffekte. Der Grund liegt in der Art, wie Python mit Objekten und Referenzen arbeitet (siehe [Speicherverwaltung in Python](sec-memory-management) und das Kapitel zu [Referenzen](./5-references.md)).
+
+
+- Variablennamen sind **Referenzen** auf Objekte.
+- Wenn Sie ein Objekt (z.B. eine Liste) an eine Funktion übergeben, bekommt die Funktion ebenfalls eine Referenz auf **dasselbe** Objekt.
+- Bei **veränderlichen (mutierbaren)** Objekten kann die Funktion das Objekt direkt verändern. Das sieht man dann auch außerhalb der Funktion.
 
 ```{admonition} Seiteneffekt
 :name: def-side-effect
@@ -16,7 +31,9 @@ Python erlaubt Seiteneffekte - im Gegensatz zu Sprachen wie Haskell. Deshalb geh
 Ein *Seiteneffekt* liegt vor, wenn die Ausführung einer isolierten Funktionalität (einer Funktion) neben der Berechnung des Rückgabewerts einen Zustand außerhalb ihres Gültigkeitsbereichs verändert und/oder von einem solchen Zustand abhängt.
 ```
 
-**Beispiel 1: Funktion MIT Seiteneffekt (Standard-Verhalten)**
+## Zwei Mini-Beispiele
+
+Funktion **mit** Seiteneffekt (mutiert das Argument)
 
 ```{code-cell} python
 meine_liste = [1, 2, 3]  # Liste außerhalb der Funktion
@@ -30,24 +47,15 @@ ergebnis = erweitere_liste_mit_seiteneffekt(meine_liste, 4)
 print("Ergebnis:", ergebnis)  # Ausgabe: [1, 2, 3, 4]
 print("Originale Liste:", meine_liste)  # Ausgabe: [1, 2, 3, 4] - wurde verändert!
 ```
-Damit können wir beliebig oft die Liste erweitern. Wenn wir das wollen sind wir fertig.
 
-**Beispiel 2: Funktion OHNE Seiteneffekt**
-
-Was wir damit aber nicht können sind zwei voneinander unabhängige Listen erstellen:
-
-liste1 = 1 2 3 4
-liste2 = 1 2 3 5
-
-Um das zu realisieren müssten wir erreichen, dass die ursprüngliche liste verwendet wird, nicht die bereits erweiterte. Auch das ist in python möglich, indem wir eine copy anlegen.
-
+Funktion **ohne** Seiteneffekt (arbeitet mit Kopie)
 
 ```{code-cell} python
 meine_liste = [1, 2, 3]  # Liste außerhalb der Funktion
 
 def erweitere_liste_ohne_seiteneffekt(liste, element):
     """Erstellt eine neue Liste mit dem zusätzlichen Element"""
-    neue_liste = liste.copy()  # Erstellt eine Kopie der ursprünglichen Liste
+    neue_liste = liste.copy()  # Kopie der ursprünglichen Liste
     neue_liste.append(element)  # Fügt das Element zur Kopie hinzu
     return neue_liste
 
@@ -56,14 +64,9 @@ print("Ergebnis:", ergebnis)  # Ausgabe: [1, 2, 3, 4]
 print("Originale Liste:", meine_liste)  # Ausgabe: [1, 2, 3] - unverändert!
 ```
 
-In diesem Fall lässt die Funktion die Ausgangsliste unverändert. In Fachsprache spricht man davon, dass hier kein Seiteneffekt vorliegt.
+In diesem Fall bleibt der Zustand außerhalb der Funktion unverändert – es liegt **kein** Seiteneffekt vor. In der Informatik spricht man hier auch von **reinen** (ohne Seiteneffekt) bzw. **unreinen** Funktionen (mit Seiteneffekt).
 
-Anmerkung: In funktionalen Programmiersprachen wie Haskell sind Seiteneffekte nicht erlaubt. Hier sind nur Funktionen ohne Seiteneffekte erlaubt. 
-
-Hinweis:
-Funktionen die Seiteneffekt zulassen werde in der Informatik als unreine Funktionen bezeichnet. Funktionen ohne Seiteneffekt als rein.
-
-## Aber warum wollen wir Python Seiteneffekte?
+## Aber warum hat Python Seiteneffekte?
 
 Auf den ersten Blick wirken Seiteneffekte gefährlich: Eine Funktion verändert etwas außerhalb ihres Gültigkeitsbereichs - das kann unerwartet sein und zu Fehlern führen. Warum erlaubt Python sie dann?
 
@@ -78,12 +81,12 @@ Auf den ersten Blick wirken Seiteneffekte gefährlich: Eine Funktion verändert 
 
 Dass Python Seiteneffekte zulässt, ist also eine bewusste Designentscheidung der Entwickler der Programmiersprache. 
 
-## Warum geht das überhaupt in Python?
+## Wann tritt ein Seiteneffekt ein?
 
 **Drei Voraussetzungen** müssen erfüllt sein, damit ein Seiteneffekt entstehen kann:
 
 1. Es gibt einen Zustand (Speicher, Datei, Objekt)
-2. Der Zustand kann verändert werden
+2. Der Zustand kann verändert werden - ob das möglich sit hängt von den Eigenschaften ihres \(x\) ab! 
 3. Der Zustand ist geteilt - mehr als ein Programmteil kann denselben Zustand beobachten oder verändern
 
 Stellen Sie sich vor: Wir haben ein Haus (Objekt) in einer Stadt (Speicher). Julia und Hannes haben jeweils einen Zettel, auf dem die Adresse zum Haus steht. Sowohl Julias Zettel (`zettel_julia`) als auch Hannes' Zettel (`zettel_hannes`) referenzieren auf dasselbe Haus. Julia baut das Erdgeschoss um (Seiteneffekt). Hannes kommt zurück und wundert sich, was da passiert ist.
@@ -110,5 +113,9 @@ print("Nachher - Hannes sieht:", zettel_hannes)  # Hannes sieht die Änderung au
 print("\nBeide zeigen auf dasselbe Objekt:", zettel_julia is zettel_hannes)
 ```
 
-In diesem Beispiel haben wir einen Zustand, ein veränderliches object (warum das veränderlich ist lernen Sie im Kapitel Datentypen) + unterschiedliche programmteile die darauf zugreifen können.
+## Takeaways
+
+- **Funktionen in Python können Seiteneffekte haben** – das ist erlaubt und oft gewollt.
+- Seiteneffekte entstehen  bei **mutierbaren Objekten** (z.B. `list`, `dict`). Mehr dazu im Kapitel chapters/08-python-data-types
+- Wenn Sie keine Seiteneffekte wollen, arbeiten Sie z.B. mit **Kopien**!
 

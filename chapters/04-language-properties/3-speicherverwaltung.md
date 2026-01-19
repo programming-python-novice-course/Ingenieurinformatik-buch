@@ -11,60 +11,70 @@ kernelspec:
 ---
 
 (sec-memory-management)=
-# Speicherverwaltung in Python
+# „In Python gibt es keine Zeiger – Speicher ist kein Thema.“
 
-In ``Python`` müssen sich Programmierer\*innen um Speicheradressen, das Reservieren und Freigeben von Speicher nicht kümmern! 
-Das übernimmt der sog. [Garbage Collector](def-garbage-collector). 
+Im Kapitel [`chapters/03-computer-sciences-basics/3-programmierkonstrukte.md`](../03-computer-sciences-basics/3-programmierkonstrukte.md) haben wir *Zeiger* schon kurz erwähnt.
+Vereinfacht gesagt: Ein Zeiger ist **eine Adresse im Speicher** – also ein Wert, der angibt, *wo* ein Objekt liegt.
 
-Aber wie funktioniert das eigentlich? Und was bedeutet das für Sie als Programmierer\*in?
+Zurück zur Aussage: „In Python gibt es keine Zeiger – Speicher ist kein Thema.“
 
-## Dynamische Speicherverwaltung
+Sie müssen in Python tatsächlich **keinen Speicher manuell reservieren oder freigeben** (wie z.B. in C mit `malloc`/`free`). Diese Aufgabe übernimmt ein *Garbage Collector* (GC). Ein Garbage Collector erkennt Objekte, die nicht mehr verwendet werden, und gibt deren Speicher automatisch frei.
 
-``Python`` verwendet das Konzept der *[dynamischen Sammlungen](def-dynamic-ds)* für die Speicherverwaltung.
-Das bedeutet, dass Datenstrukturen in ``Python`` (wie Listen, Tupel, Dictionaries, etc.) nicht als zusammenhängende Speicherbereiche im Arbeitsspeicher abgelegt werden müssen, sondern dass ihre Elemente an verschiedenen Stellen im Speicher liegen können.
 
-### Zeiger und Referenzen
+Zur Aussage „In Python gibt es keine Zeiger“:
+Python arbeitet intern mit Speicheradressen. Für Sie erscheinen sie als **Referenzen** – Variablennamen „zeigen“ auf Objekte.
+Sie merken das im Alltag meist nicht an einer speziellen Pointer-Syntax, aber Sie merken es am Verhalten (z.B. bei Referenzen und Seiteneffekten).
 
-Damit diese fragmentierten Speicherbereiche als zusammenhängende Datenstruktur funktionieren können, verwendet ``Python`` *[Zeiger](def-pointer)* (auch *Referenzen* genannt).
+## Was heißt das im Detail?
 
-```{admonition} Zeiger
-:name: def-pointer
-:class: definition
-Ein *Zeiger* ist ein Objekt welches eine Speicheradresse repräsentiert.
-Programmiersprachen bieten die Mittel um Zeiger *aufzulösen*, was den Zugriff auf das Objekt auf das sie verweisen ermöglicht.
+### Was ist eine Variable?
+
+Eine *Variable* ist (vereinfacht) ein **Name**, mit dem Sie ein Objekt wiederfinden können. Mit dem Zuweisungszeichen `=` wird der Name an ein Objekt „gebunden“ (der Name zeigt auf das Objekt). 
+
+Durch das ``=`` Zeichen weisen wir einer *Variablen* (auf der linken Seite) den Wert des *Ausdrucks* (auf der rechten Seite) zu.
+Zum Beispiel, weist
+
+```{code-cell} ipython3
+x = 3 + 10
 ```
 
-```{admonition} Wichtig: Variablen als Zeiger
-:name: remark-variables-as-pointers
-:class: attention
+den ausgewerteten Wert ``3 + 10`` also ``13`` der Variablen ``x`` zu.
+Es ist äußerst wichtig, dass Sie zwischen dem ``=`` und dem mathematischen $=$ unterscheiden.
 
-In ``Python`` werden Variablen durch Zeiger realisiert.
-Wenn Sie eine Variable erstellen, zeigt diese Variable auf einen Speicherbereich, in dem der Wert gespeichert ist.
-Das bedeutet, dass mehrere Variablen auf denselben Wert zeigen können. 
+$$x = 13$$
+
+bedeutet, dass $x$ gleich $13$ ist, wohingegen
+
+```{code-cell} ipython3
+x = 13
 ```
 
-### Was bedeutet das für uns Programmierer?
-
-**Vorteile:**
-
-1. **Automatische Speicherverwaltung**: Sie müssen sich nicht darum kümmern, Speicher zu reservieren oder freizugeben.
-   Der Garbage Collector erkennt automatisch, wenn ein Objekt nicht mehr verwendet wird und gibt den Speicher frei.
-
-2. **Flexible Datenstrukturen**: Datenstrukturen können zur Laufzeit wachsen und schrumpfen, ohne dass Sie sich um die Speicherverwaltung kümmern müssen.
-   Eine Liste kann z.B. dynamisch Elemente hinzufügen oder entfernen.
-
-3. **Einfache Syntax**: Sie müssen keine expliziten Zeigeroperationen durchführen.
-   ``Python`` kümmert sich automatisch um die Verwaltung der Zeiger.
-
-**Was Sie beachten sollten:**
-
-1. **Speicherverbrauch**: Dynamische Sammlungen benötigen zusätzlichen Speicher für die Zeiger.
-   Bei sehr großen Datenmengen kann dies relevant sein.
-
-2. **Performance**: Der Zugriff über Zeiger kann etwas langsamer sein als direkter Zugriff auf zusammenhängende Speicherbereiche.
-   In der Praxis ist dieser Unterschied jedoch meist vernachlässigbar.
-
-1. **Referenzen vs. Kopien**: Da Variablen in ``Python`` Zeiger sind, bedeutet das Zuweisen einer Liste zu einer neuen Variable nicht automatisch eine Kopie. Welche Auswirkung das hat besprechen wir in den kommenden Abschnitten. 
+den Wert der Variablen ``x`` auf ``13`` setzt bzw. die Variable auf einen Speicherbereich verweisen lässt, welcher den Wert ``13`` enthält.
 
 
 
+```{figure} ../../figs/python-tutorial/variables/ram.png
+---
+width: 400px
+name: fig-ram-language-properties
+---
+Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus Bits.
+```
+
+```{figure} ../../figs/python-tutorial/variables/variable.png
+---
+width: 800px
+name: fig-variable-language-properties
+---
+Eine Variable ist ein Name, der auf einen Speicherbereich (und damit auf ein Objekt) zeigt.
+```
+
+Hinweis:
+Python verwaltet viele Daten als dynamische Strukturen. Solche Strukturen wachsen/schrumpfen zur Laufzeit und enthalten intern Referenzen auf ihre Elemente.
+
+
+
+## Takeaways
+
+- **Sie müssen Speicher nicht manuell verwalten**, aber Python verwaltet ihn natürlich trotzdem.
+- **Variablennamen sind Referenzen auf Objekte** – welche Auswirkung das auf die Programmierung hat, sehen wir uns im folgenden Abschnitt an.

@@ -1,40 +1,42 @@
+# „In Python kann ich festlegen, wie meine Daten abgespeichert werden.“
 
+Diese Aussage klingt nach „Low‑Level‑Kontrolle“ wie in C/C++. In Python ist die Realität anders: Python abstrahiert Speicherrepräsentation bewusst weg – zugunsten von Sicherheit und Komfort.
 
-# Datentypen
+## Stimmt das?
 
-Wie wir im Beispiel mit der Potenzierung der Zahl gesehen haben, macht nicht jede Funktionalität für jeden Datentypen Sinn. Die Potenz einer Zahl macht Sinn, unabhängig davon, ob es eine ganze oder eine Kommazahl ist. Die Potenz eines Textes macht keinen Sinn. Deshalb kommen wir nicht darum herum, uns damit zu beschäftigen, was es denn für Datentypen gibt, wie sie sich unterscheiden und wie ich sie in Python nutze. Wir werden uns im Part "Python anwenden" genauer mit Datentypen beschäftigen. 
+**Im Normalfall: nein.** In Python legen Sie meist **nicht** fest, ob ein `int` 32 Bit oder 64 Bit hat oder wie ein Objekt exakt im Speicher layoutet ist. Sie wählen *Datentypen*, und Python (bzw. die konkrete Python‑Implementierung) kümmert sich um die interne Speicherung.
 
-An dieser Stelle möchten wir kurz eine Besonderheit von Python ansprechen: In Python gibt es im Gegensatz zu anderen Programmiersprachen keine primitiven Datentypen. 
+## Was steckt dahinter?
 
-Es gibt grundsätzlich 5 Arten von Datentypen:
+### 1) Python arbeitet (meist) mit Objekten statt primitiven Werten
 
-1. **Primitive Datentypen**: Zeichnen sich dadurch aus, dass sie direkt vom Betriebssystem unterstützt werden und eine feste Speichergröße haben. Diese existieren in Python nicht direkt (siehe Erklärung unten). Deshalb hier ein Beispiel in der Sprache C/C++: ein `int` belegt immer 4 Bytes (32 Bit), unabhängig vom Wert.
+In vielen Sprachen gibt es „primitive“ Typen mit fester Größe (z.B. `int32`). In Python sind Werte wie `int`, `float`, `bool`, `str` **Objekte** mit Metadaten. Das ist bequem – kostet aber Overhead.
 
-2. **Atomare Datentypen**: Zeichnen sich dadurch aus, dass sie unteilbare Werte repräsentieren - sie können nicht in kleinere Bestandteile zerlegt werden. Beispiel in Python: `int` (5), `float` (3.14), `bool` (True).
+### 2) Konsequenz: `int` hat keine feste Größe
 
-3. **Zusammengesetzte Datentypen**: Zeichnen sich dadurch aus, dass sie mehrere Werte in einer Struktur zusammenfassen. Beispiel in Python: `str` ("Hello" - eine Sequenz von Zeichen), `list` ([1, 2, 3]), `tuple` ((1, 2, 3)), `dict` ({"name": "Alice"}), `set` ({1, 2, 3}).
+In Python kann eine ganze Zahl unterschiedlich viel Speicher belegen, abhängig von ihrer Größe. Dadurch sind sehr große Integer möglich (arbitrary precision).
 
-4. **Built-in Datentypen**: Zeichnen sich dadurch aus, dass sie direkt in der Programmiersprache verfügbar sind, ohne dass sie importiert oder definiert werden müssen. Beispiel in Python: alle oben genannten Typen (`int`, `float`, `list`, `dict`, etc.) sind built-in.
+### 3) „Aber Python ist doch schnell – wie passt das zusammen?“
 
-5. **Eigens definierte Datentypen**: Zeichnen sich dadurch aus, dass sie vom Programmierer selbst erstellt werden. Beispiel in Python: eigene Klassen wie `class Person:` mit eigenen Attributen und Methoden.
+Viele Python‑Programme sind schnell, weil sie intern Bibliotheken nutzen, die in C/C++ (oder ähnlich) implementiert sind. Python ist dann die „Steuerlogik“.
 
+## Typische Stolperstelle / „Warum passiert das?“
 
+- **„Warum sind Python‑Objekte so speicherhungrig?“** Weil Objekte neben dem „Wert“ auch Typ-/Verwaltungsdaten enthalten.
+- **„Warum ist `int` in Python nicht wie `int` in C?“** Weil Python Ihnen die feste Bitbreite abnimmt und dafür flexible, sichere Objekte bereitstellt.
+- **„Kann ich es doch kontrollieren?“** Ja, aber bewusst über spezielle Werkzeuge (z.B. `array`, `struct`, `numpy`) – nicht als Standard‑`int`.
 
-## Besonderheit in Python
+## (Optional) Blick unter die Haube: CPython
 
-In ``Python`` gibt es keine primitiven Datentypen. ``Python`` kapselt die primitiven Datentypen für uns Programmierer*innen.
-Zu unserem eigenen Schutz können wir auf diese nicht direkt zugreifen und mit ihnen nicht direkt arbeiten.
-Hinter dem Datentyp ``int`` verbirgt sich ein [atomarer Datentyp](def-atomare-data-types), der es uns leichter macht mit ganzen Zahlen umzugehen.
-Implementiert ist dieser Datentyp in der Programmiersprache ``C++``.
-``Python`` ruft am Ende des Tages ``C++``-Code auf.
-Die Implementierung von ``int`` findet sich in den folgenden Dateien (**bitte lassen Sie sich davon nicht abschrecken, Sie müssen diesen Code nicht verstehen!**)
+In CPython ist `int` in C implementiert. Die Implementierung findet sich z.B. hier (**Sie müssen das nicht lesen/verstehen**):
 
 + [longobject.c](https://github.com/python/cpython/blob/main/Objects/longobject.c)
 + [longintrepr.h](https://github.com/python/cpython/blob/main/Include/longintrepr.h)
 + [longobject.h](https://github.com/python/cpython/blob/main/Include/longobject.h)
 
+## Richtigstellung (Takeaways)
 
-Wichtig:
-In ``Python`` benötigt eine ganze Zahl ``int`` nicht immer den gleichen Speicherbereich!
-Deshalb ist es, anders als in vielen anderen Sprachen, in ``Python`` möglich mit sehr großen ganzen Zahlen zu rechnen!!!
-Wäre ``int`` ein primitiver Datentyp, wie etwa in ``Java``, ``C/C++``, so würde ein ``int`` Wert immer gleich viel Speicherplatz belegen.
+- In Python wählen Sie **Datentypen**, aber Sie kontrollieren die **Speicherrepräsentation** im Normalfall nicht direkt.
+- Python hat (praktisch) keine „primitiven“ Typen wie C; vieles sind **Objekte**.
+- `int` ist **variabel groß** → sehr große Zahlen sind möglich.
+- Wenn Sie Speicherlayout wirklich kontrollieren müssen, nutzen Sie dafür spezielle Bibliotheken/Datentypen.
