@@ -1,10 +1,8 @@
 # „In Python bestimmt die Formatierung, was passiert.“
 
-Diese Aussage klingt nach „Style‑Diskussion“ – ist in Python aber tatsächlich eine **Syntax‑Eigenschaft**: Einrückung ist nicht nur hübsch, sie ist Teil der Sprache.
+In Python bestimmt die Formatierung die Logik. Einrückung ist nicht nur hübsch, sie ist Teil der Sprache.
 
-## Stimmt das?
-
-**Teilweise.** Die **Einrückung** (Indentation) bestimmt Blöcke und damit Kontrollfluss. Andere „Formatierung“ (z.B. Leerzeichen um Operatoren) ist dagegen meist **egal** und nur Stil.
+ Die **Einrückung** (Indentation) bestimmt Blöcke und damit Kontrollfluss. Andere „Formatierung“ (z.B. Leerzeichen um Operatoren) ist dagegen meist **egal** und nur Stil.
 
 ## Was steckt dahinter?
 

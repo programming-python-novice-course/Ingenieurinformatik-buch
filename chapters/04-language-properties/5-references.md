@@ -1,10 +1,7 @@
-# „Python ist pass-by-reference.“
+# „Python ist object-by-reference.“
 
-Diese Aussage ist weit verbreitet – und führt in Python schnell zu falschen Erwartungen. Python verhält sich **ähnlich wie pass-by-reference**, ist aber nicht dasselbe.
 
-## Stimmt das?
-
-**Nein (nicht im C++‑Sinne).** Python nutzt einen Übergabemechanismus, den man oft als **object references** oder **call-by-sharing** bezeichnet: Funktionsparameter bekommen eine Referenz auf ein Objekt. Entscheidend ist dann, ob Sie das Objekt **mutieren** oder ob Sie den Namen **neu binden**.
+Python nutzt einen Übergabemechanismus, den man als **object references** oder **call-by-sharing** bezeichnet: Funktionsparameter bekommen eine Referenz auf ein Objekt. Entscheidend ist dann, ob Sie das Objekt **mutieren** oder ob Sie den Namen **neu binden**.
 
 ## Was steckt dahinter?
 

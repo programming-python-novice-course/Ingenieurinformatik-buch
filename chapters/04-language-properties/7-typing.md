@@ -1,14 +1,5 @@
-# „In Python muss ich mir keine Gedanken machen, welche Daten ich verarbeite.“
+# „In Python muss ich mir keine Gedanken machen, welche Daten ich verarbeite.
 
-Python fühlt sich oft so an: Sie schreiben Code, übergeben irgendetwas – und es „funktioniert schon“. Genau das ist der Komfort dynamischer Sprachen. Aber: Spätestens bei Fehlern („Warum passiert das?“) ist es entscheidend zu wissen, wie Python mit Typen umgeht.
-
-## Stimmt das?
-
-**Nein.** Sie *müssen* nicht immer vorher über Typen nachdenken – aber Python denkt trotzdem darüber nach. Der Unterschied ist: Python prüft viele Dinge **zur Laufzeit** (runtime), nicht beim Übersetzen (compile time).
-
-## Was steckt dahinter?
-
-### 1) Der Computer braucht Repräsentationen
 
 Für den Computer sind Daten immer Bits. Ob eine Bitfolge „eine Zahl“ oder „Text“ bedeutet, hängt von einer Interpretation/Struktur ab (z.B. Zahlendarstellung, Zeichenkodierung). In Python erledigt diese Interpretation das Laufzeitsystem für Sie – aber es braucht dafür **Typinformationen**.
 
