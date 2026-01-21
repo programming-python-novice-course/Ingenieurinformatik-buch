@@ -84,7 +84,7 @@ deploy_notebooks_in_github:
     - mkdir -p "$TARGET_DIR"
     - cp -a "../${SOURCE_DIR}/." "$TARGET_DIR/"
     - |
-      printf "%s\n" "Diese notebooks wurden automatisiert erzeugt. Der dazugehörige git commit hash im gitlab LRZ repository https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch ist: ${CI_COMMIT_SHA}" > "$TARGET_DIR/Version.md"
+      printf "%s\n" "Diese notebooks wurden automatisiert erzeugt. Der dazugehörige commit ist: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/commit/${CI_COMMIT_SHA}" > "$TARGET_DIR/Version.md"
     - git add -A
     - git -c user.name="gitlab-ci" -c user.email="gitlab-ci@localhost" commit -m "Update executed notebooks from ${CI_PROJECT_PATH}@${CI_COMMIT_SHA}"
     - echo "Pushing to GitHub..."
