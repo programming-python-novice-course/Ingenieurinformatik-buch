@@ -20,7 +20,6 @@ Damit Sie die Inhalte der Vorlesung möglichst effizient bearbeiten können, emp
 
 
 
-
 ```{admonition} Hinweis
 :name: remark-sample
 :class: remark

@@ -2,10 +2,7 @@
 
 % diese Seite ist finalisiert und soll nicht mehr verändert werden. 
 
-In diesem Teilmodul lernen Sie Programmieren anhand der Programmiersprache Python. Ziel ist nicht, die Syntax von Python „auswendig zu lernen“, sondern Probleme systematisch in Programme zu übersetzen.
-
-Das Modul ist in vier Teile gegliedert.
-Zur Erinnerung an die Metapher aus der Einleitung (siehe {ref}`sec-intro`): Die vier Teile können Sie als Etappen einer Autofahrt lesen – von der „Verkehrsinfrastruktur“ (Teil 1) über das konkrete „Auto“ (Teil 2) und das Üben der Bedienung (Teil 3) bis zur längeren „Fahrt“ (Teil 4).
+In diesem Teilmodul lernen Sie Programmieren anhand der Programmiersprache Python. Ziel ist nicht, die Syntax von Python „auswendig zu lernen“, sondern Probleme systematisch in Programme zu übersetzen. Das Modul ist daher in vier Teile gegliedert. Zur Erinnerung an die Metapher aus der Einleitung (siehe {ref}`sec-intro`): Die vier Teile können Sie als Etappen einer Autofahrt lesen – von der „Verkehrsinfrastruktur“ (Teil 1) über das konkrete „Auto“ (Teil 2) und das Üben der Bedienung (Teil 3) bis zur längeren „Fahrt“ (Teil 4).
 
 Konkret bedeutet das:
 
