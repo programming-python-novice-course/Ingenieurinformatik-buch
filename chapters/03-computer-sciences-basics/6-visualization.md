@@ -148,7 +148,7 @@ ENDE FUNKTION
 
 ```{figure} ../../figs/03-computer-sciences-basics/struktogramm-example.png
 ---
-width: 600px
+width: 350px
 name: fig-struktogramm-example
 ---
 Struktogramm für den Algorithmus zur Bestimmung des Maximums einer Liste.
