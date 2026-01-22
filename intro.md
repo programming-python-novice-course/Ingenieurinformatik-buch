@@ -10,7 +10,7 @@ In Ihrem Ingenieursalltag werden Sie immer wieder auf Aufgaben stoßen, bei dene
 Im Teilmodul „Programmieren“ lernen Sie Programmieren anhand der **Programmiersprache Python**. Als Leitbild nutzen wir eine Metapher: Programmieren lernen ist ein wenig wie Autofahren lernen. Python ist das konkrete Auto (mit „Gangschaltung“), Programmieren ist die Fähigkeit, damit sicher von A nach B zu kommen.
 
 
-```{figure} ./figs/landingpage/journey.png
+```{figure} ./figs/00-general/landing-page.png
 ---
 height: 300px
 name: journey

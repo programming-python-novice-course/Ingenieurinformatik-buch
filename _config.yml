@@ -2,7 +2,7 @@
 # Basis-Metadaten
 # --------------------------------------------------
 title: Ingenieurinformatik 1
-logo: figs/logo-HM-small.png
+logo: figs/00-general/logo-cardrive.png
 author: ""
 email: christina_maria.mayr@hm.edu
 
@@ -146,7 +146,7 @@ html:
     <div class="container">
       <div class="col1">
         <a href="https://hm.edu/">
-          <img style="width:50px;float:right;" src="/ct-book/_static/img/hm-logo.png" alt="Logo">
+          <img style="width:50px;float:right;" src="/_static/img/hm-logo.png" alt="Logo">
         </a>
       </div>
       <div class="col1">
