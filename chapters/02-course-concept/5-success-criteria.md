@@ -55,7 +55,7 @@ Deshalb trat auch in diesem Bereich ``Python`` einen Siegeszug an.
 ```{admonition} Hinweis
 :class: remark
 :name: remark-no-best-language
-Es gibt nicht die eine beste Programmiersprache! Unterschiedliche Sprachen eignen sich für unterschiedliche Aufgaben, Anwendungsbereiche und folgen subjektiven Vorlieben.
+Es gibt nicht die eine beste Programmiersprache! Unterschiedliche Sprachen eignen sich für unterschiedliche Aufgaben, Anwendungsbereiche und folgen subjektiven Vorlieben. Softwareentwicklerinnen kennen meiste mehrere Programmiersprachen und wenden diese problem-abhängig an. 
 
 Die wesentlichen Kriterien zur Beurteilung einer Programmiersprache sind:
 
