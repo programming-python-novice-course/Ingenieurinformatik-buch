@@ -23,7 +23,7 @@ Konkret bedeutet das:
 
 ## Einführung (Teil 1)
 
-```{figure} ../../figs/overview/infrastructer-metaphor.png
+```{figure} ../../figs/02-course-concept/overview/infrastructer-metaphor.png
 ---
 height: 320px
 name: infrastructer-metaphor
@@ -46,7 +46,7 @@ In der Regel nicht direkt prüfungsrelevant (außer, wir weisen ausdrücklich da
 
 ## Python verstehen (Teil 2)
 
-```{figure} ../../figs/overview/motorhaube.png
+```{figure} ../../figs/02-course-concept/overview/motorhaube.png
 ---
 height: 320px
 name: motorhaube
@@ -75,7 +75,7 @@ Für die Prüfung meist nicht direkt abgefragt – aber sehr wertvoll: Konzeptwi
 
 ## Python anwenden (Teil 3)
 
-```{figure} ../../figs/overview/bedienung.png
+```{figure} ../../figs/02-course-concept/overview/bedienung.png
 ---
 height: 320px
 name: bedienung
@@ -100,7 +100,7 @@ Sehr prüfungsrelevant: Hier prüfen wir, ob Sie „fahren können“ – also e
 
 ## Anwendungsfall (Teil 4)
 
-```{figure} ../../figs/overview/fahrt.png
+```{figure} ../../figs/02-course-concept/overview/fahrt.png
 ---
 height: 320px
 name: fahrt
