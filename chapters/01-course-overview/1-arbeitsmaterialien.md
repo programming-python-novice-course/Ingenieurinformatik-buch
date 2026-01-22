@@ -96,7 +96,7 @@ Sie starten den JupyterHub über die Rakete, indem Sie „JupyterHub“ auswähl
 
 ```{figure} ../../figs/01-course-overview/fallback.png
 ---
-width: 550px
+width: 400px
 name: fig-jupyterhub-fallback
 ---
 Notfall-Variante, wenn „Live Code“ nicht funktioniert.

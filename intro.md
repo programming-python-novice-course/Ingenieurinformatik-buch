@@ -1,5 +1,5 @@
 (sec-intro)=
-# Ingenieurinformatik 1 - Teilmodul Programmieren
+# Ingenieurinformatik 1 - Programmieren (Python)
 
 % diese Seite ist finalisiert und soll nicht mehr verändert werden. 
 
