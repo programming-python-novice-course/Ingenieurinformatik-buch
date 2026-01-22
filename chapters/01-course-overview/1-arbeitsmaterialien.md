@@ -77,9 +77,28 @@ Am besten testen Sie es gleich hier auf dieser Seite: Aktivieren Sie „Live Cod
 
 
 ```{code-cell} python3
+:tags: [skip-execution]
 myname = "Christina"
 print("hello")
 print(myname)
 ```
+
+## Notfalllösung (JupyterHub)
+
+Falls die Einrichtung von „Live Code“ einmal fehlschlägt, können Sie die Beispiele alternativ im **JupyterHub der Hochschule München** ausführen. Die Oberfläche sieht dort etwas anders aus, aber das Prinzip ist identisch: Sie arbeiten mit Zellen, die Sie ausführen können.
+
+Eine kurze Anleitung finden Sie im Expertenwissen unter [Jupyter Notebooks](../misc/Expertenwissen/jupyter-notebooks.html).
+
+Sie starten den JupyterHub über die Rakete, indem Sie „JupyterHub“ auswählen:
+
+```{figure} ../../figs/01-course-overview/fallback.png
+---
+width: 300px
+name: fig-jupyterhub-fallback
+---
+Notfall-Variante, wenn „Live Code“ nicht funktioniert.
+```
+
+
 
 
