@@ -76,15 +76,6 @@ name: fig-code-ausfuehren4
 Über das Zellen-Menü können Sie Code ausführen („Run“) und erneut starten.
 ```
 
-Am besten testen Sie es gleich hier auf dieser Seite: Aktivieren Sie „Live Code“ über die Rakete, ändern Sie die folgende Code-Zelle ab, und führen Sie sie über „Run“ aus.
-
-
-```{code-cell} python3
-:tags: [skip-execution]
-myname = "Christina"
-print("hello")
-print(myname)
-```
 
 ## Notfalllösung (JupyterHub)
 
