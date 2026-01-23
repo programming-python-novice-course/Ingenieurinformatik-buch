@@ -9,22 +9,16 @@ kernelspec:
   name: python3
 ---
 
-```{code-cell} python3
-:tags: [hide-cell, thebe-init]
-%matplotlib inline
-import matplotlib as mpl
-mpl.rcParams["animation.html"] = "jshtml"
-mpl.rcParams["animation.embed_limit"] = 50
-```
+
 
 # Python-Beispiele
 
-
-Am besten testen Sie den Live-Code gleich selbst aus! Aktivieren Sie „Live Code“ über die Rakete und  führen Sie „Run“ aus.
+Am besten testen Sie den Live-Code gleich selbst aus! Aktivieren Sie „Live Code“ über die Rakete und führen Sie „Run“ aus.
 
 
 ```{code-cell} python3
 :tags: [skip-execution]
+
 myname = "Christina"
 print("hello")
 print(myname)
@@ -35,20 +29,26 @@ Wie der Live-Code funktioniert, wieso man auf einer Website Python-Code ausführ
 
 Wichtig für Sie ist zu wissen, was Sie hier auf der Website alles tun können. Wie Sie bereits gesehen haben, können ein Python-Programm ausführen, aber auch verändern. 
 
+**Installieren von Paketen**
+
 Zusätzlich dazu können Sie Python-Pakete installieren und nutzen. Pakete, einfach gesprochen, stellen Ihnen Funktionalitäten bereit, sodass Sie selbst nicht so viel programmieren müssen.  Zum Beispiel ermöglicht das Python-Paket pyfiglet Schriftbanner zu erstellen. Wenn Sie die folgende Code-Zelle ausführen, wird das Paket installiert. Anschließend sagen wir Python dass wir es nutzen möchten ("importiert") und dann nutzen wir die Schritft-Banner-Funktionalität.
 
 
 ```{code-cell} python3
 :tags: [skip-execution]
-!pip install pyfiglet
 
+!pip install pyfiglet
 import pyfiglet
 
 myname = "Christina"
 print(pyfiglet.figlet_format(f"Hello {myname}"))
 ```
 
-Sie können im Live-Code auch Animationen erstellen und ausführen:
+Wichtig: Sie müssen in diesem Beispiel und den folgenden beispielen den programmcode nicht verstehen. Es geht nur darum zu zeigen, was wir auf der website möglich ist. einiges davon werden wir im laufe der vorlesung nutzen, wie zum beispiel dass wir Animationen programmieren und hier direkt auf der website ausführen.
+
+**Programmierte Animationen**
+
+Sie können im Live-Code auch Animationen erstellen und ausführen. 
 
 ```{code-cell} python3
 :tags: [skip-execution]
@@ -133,6 +133,7 @@ ani = FuncAnimation(
 plt.close(fig)
 ani
 ```
+**Komplexere Animationen**
 
 Oder falls ihnen das immer noch zu langweilig ist: einen Robotor den Ausweg aus einem Labyrinth finden lassen. 
 
@@ -156,8 +157,9 @@ world.show()
 Der Roboter kann nur nach vorne laufen und sich nach links um 90 Grad drehen.
 
 ```{code-cell} python3
-import random as rnd
 :tags: [skip-execution]
+
+import random as rnd
 
 %matplotlib inline
 import matplotlib as mpl

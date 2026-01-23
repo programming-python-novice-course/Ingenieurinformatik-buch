@@ -8,10 +8,3 @@ Darin wird beantwortet:
 - Welche Inhalte werden in der Prüfung abgeprüft?
 - Wie läuft das Praktikum ab?
 
-```{figure} ../../figs/01-course-overview/qr-website.png
----
-width: 300px
-name: fig-qr-interaktive-website
----
-Interaktive Website
-```
