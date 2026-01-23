@@ -24,7 +24,7 @@ print(myname)
 Das ist nicht Ihr Name? Dann ändern Sie den Namen einfach ab und führen erneut „Run“ aus.
 
 ```{admonition} Mini-Aufgabe
-:class: hint
+:label: namechange
 
 - Ändern Sie `myname` und führen Sie die Zelle erneut aus.
 - Fügen Sie eine weitere Zeile `print(...)` hinzu (z. B. Ihren Studiengang oder ein Emoji als Text) und beobachten Sie den Unterschied.
@@ -51,7 +51,7 @@ print(pyfiglet.figlet_format(f"Hello {myname}"))
 ```
 
 ```{admonition} Mini-Aufgabe
-:class: hint
+:label: hellobanner
 
 - Ändern Sie den Text im Banner (z. B. „Hello“ → „Willkommen“).
 - Bonus: Probieren Sie einen Namen mit Umlaut (z. B. „Jörg“) und schauen Sie, wie die Ausgabe aussieht.
@@ -79,6 +79,11 @@ random_colors = True         # True = zufällige Farben, False = schwarz
 # -----------------------------
 # Programm
 # -----------------------------
+
+%matplotlib inline
+import matplotlib as mpl
+mpl.rcParams["animation.html"] = "jshtml"
+mpl.rcParams["animation.embed_limit"] = 50
 
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -157,7 +162,7 @@ ani
 
 Oder, falls Ihnen das immer noch zu langweilig ist: Lassen Sie einen Roboter den Ausweg aus einem Labyrinth finden.
 
-Die folgende Welt enthält unseren Roboter (türkis), das Ziel (gelb), begehbare Zellen (lila) und unbegehbare Hindernisse (blau). Wenn Sie auf „Run“ klicken, erzeugen Sie erst einmal nur die Umgebung des Roboters: eine Welt, die aus 5×7 Kacheln besteht.
+Die folgende Welt enthält unseren Roboter (blau), das Ziel (lila), begehbare Zellen (hellgrau) und unbegehbare Hindernisse (dunkelgrau). Wenn Sie auf „Run“ klicken, erzeugen Sie erst einmal nur die Umgebung des Roboters: eine Welt, die aus 5×7 Kacheln besteht.
 
 ```{code-cell} python3
 :tags: [skip-execution]
@@ -175,7 +180,7 @@ world.show()
 ```
 
 ```{admonition} Mini-Aufgabe
-:class: hint
+:label: nrows
 
 - Ändern Sie `nrows` und `ncols` (z. B. 8×10) und erzeugen Sie eine größere/kleinere Welt.
 ```
