@@ -179,11 +179,7 @@ world = rw.complex_maze(nrows=5, ncols=7)
 world.show()
 ```
 
-```{admonition} Mini-Aufgabe
-:label: nrows
 
-- Ändern Sie `nrows` und `ncols` (z. B. 8×10) und erzeugen Sie eine größere/kleinere Welt.
-```
 
 Führen Sie die folgende Code-Zelle aus, um den Roboter laufen zu lassen. Hinweis: Der Roboter kann nur nach vorne laufen und sich nach links um 90 Grad drehen. Können Sie die Zeile im Code identifizieren, die dafür verantwortlich ist?
 
@@ -215,4 +211,13 @@ while not robo.is_at_goal():
     random_move(robo)
 
 rw.animate(world)
+```
+
+```{admonition} Mini-Aufgabe
+:label: nrows
+
+- Ändern Sie `nrows` und `ncols` und erzeugen Sie eine kleinere Welt (z. B. 4×6).
+- Hinweis: Die Code-Zellen bauen aufeinander auf. Die Animation nutzt die zuvor erzeugte Welt. Gehen Sie daher so vor:
+  - Führen Sie zuerst die **Welt-Zelle** (oben, `complex_maze(...)`) mit „Run“ aus.
+  - Starten Sie danach die **Animations-Zelle** (hier) mit „Run“.
 ```

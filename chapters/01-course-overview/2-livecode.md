@@ -2,7 +2,9 @@
 
 Die interaktive Website ist so aufgebaut, dass Sie darin direkt Python-Code erstellen, verändern und ausführen können. Damit haben Sie Ihr Skript und ihre Programmier-Werkgzeug an einer Stelle!
 
-Einige Seiten auf dieser Website enthalten theoretische Inhalte. Einige Seiten auf dieser Website enthalten theoertische Inhalte und Python-Code.
+- Einige Seiten auf dieser Website enthalten nur theoretische Inhalte
+- Einige Seiten auf dieser Website enthalten theoretische Inhalte und Python-Code!
+
 Ob eine Seite ausführbaren Code enthält, erkennen Sie daran, ob auf der entsprechenden Webpage im Menü oben eine Rakete angezeigt wird.
 
 ```{figure} ../../figs/01-course-overview/code-ausfuehren1.png
