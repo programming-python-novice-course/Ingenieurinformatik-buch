@@ -162,7 +162,7 @@ ani
 
 Oder, falls Ihnen das immer noch zu langweilig ist: Lassen Sie einen Roboter den Ausweg aus einem Labyrinth finden.
 
-Die folgende Welt enthält unseren Roboter (blau), das Ziel (lila), begehbare Zellen (hellgrau) und unbegehbare Hindernisse (dunkelgrau). Wenn Sie auf „Run“ klicken, erzeugen Sie erst einmal nur die Umgebung des Roboters: eine Welt, die aus 5×7 Kacheln besteht.
+Die folgende Welt enthält unseren Roboter (blau), das Ziel (lila), begehbare Zellen (hellgrau) und unbegehbare Hindernisse (dunkelgrau). Wenn Sie auf „Run“ klicken, werden Roboter und Ziel zufällig in einer Umgebung platziert – einem Raster aus 5×7 Kacheln.
 
 ```{code-cell} python3
 :tags: [skip-execution]
@@ -179,12 +179,20 @@ world = rw.complex_maze(nrows=5, ncols=7)
 world.show()
 ```
 
+```{admonition} Mini-Aufgabe
+:label: change
 
+Die Position der Hindernisse, des Roboters und des Ziels wird per Zufall bestimmt. Testen Sie das, indem Sie die Zelle erneut mit „Run“ ausführen.
+```
+Jetzt möchten wir beobachten, wie der Roboter (irgendwann) ans Ziel kommt.
 
-Führen Sie die folgende Code-Zelle aus, um den Roboter laufen zu lassen. Hinweis: Der Roboter kann nur nach vorne laufen und sich nach links um 90 Grad drehen. Können Sie die Zeile im Code identifizieren, die dafür verantwortlich ist?
+In den folgenden Code-Zellen wird festgelegt, dass der Roboter nur **nach vorne laufen** und sich **um 90° nach links drehen** kann. Wie oft er sich vor dem nächsten Schritt nach links dreht, entscheidet der Zufall:
+- **0× links**: geradeaus weiter
+- **1× links**: nach links
+- **2× links**: umdrehen
+- **3× links**: nach rechts (dreimal links ist einmal rechts)
 
-Sie müssen noch nicht verstehen, was genau passiert – es reicht fürs Erste, neugierig zu sein.
-
+Führen Sie die folgende Code-Zelle aus, um den Zufallslauf (*random walk*) des Roboters zu beobachten.
 
 ```{code-cell} python3
 :tags: [skip-execution]
@@ -198,9 +206,9 @@ mpl.rcParams["animation.embed_limit"] = 50
 
 
 def random_move(robo):
-    turns = rnd.choice([0,1,2,3])
+    turns = rnd.choice([0,1,2,3]) # zufällig 0 ... 3 mal nach links drehen
     for _ in range(turns):
-        robo.turn_left()
+        robo.turn_left() # so oft nach links drehen wie oben gewählt
     if not robo.is_wall_in_front():
         robo.move()
 
