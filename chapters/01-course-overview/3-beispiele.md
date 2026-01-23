@@ -9,11 +9,9 @@ kernelspec:
   name: python3
 ---
 
-
-
 # Python-Beispiele
 
-Am besten testen Sie den Live-Code gleich selbst aus! Aktivieren Sie „Live Code“ über die Rakete und führen Sie „Run“ aus.
+Am besten testen Sie den Live-Code gleich selbst aus: Aktivieren Sie „Live Code“ über die Rakete und klicken Sie anschließend auf „Run“.
 
 
 ```{code-cell} python3
@@ -23,15 +21,23 @@ myname = "Christina"
 print("hello")
 print(myname)
 ```
-Das ist nicht ihr Name? Dann ändern sie den Namen einfach ab und führen erneut "Run" aus.
+Das ist nicht Ihr Name? Dann ändern Sie den Namen einfach ab und führen erneut „Run“ aus.
 
-Wie der Live-Code funktioniert, wieso man auf einer Website Python-Code ausführen kann, ist technisch relativ komplex - auch wenn es für Sie nicht so aussieht. Aber im Hintergrund laufen viele Prozesse ab, von denen wir einen Teil in dieser Vorlesung auch besprechen werden.
+```{admonition} Mini-Aufgabe
+:class: hint
 
-Wichtig für Sie ist zu wissen, was Sie hier auf der Website alles tun können. Wie Sie bereits gesehen haben, können ein Python-Programm ausführen, aber auch verändern. 
+- Ändern Sie `myname` und führen Sie die Zelle erneut aus.
+- Fügen Sie eine weitere Zeile `print(...)` hinzu (z. B. Ihren Studiengang oder ein Emoji als Text) und beobachten Sie den Unterschied.
+- Bonus: Machen Sie absichtlich einen kleinen Tippfehler und beheben Sie ihn wieder – Fehlermeldungen sind hier Teil des Lernens.
+```
+
+Wie der Live-Code funktioniert und warum man auf einer Website überhaupt Python-Code ausführen kann, ist technisch relativ komplex, auch wenn es auf den ersten Blick nicht so aussieht. Im Hintergrund laufen viele Prozesse ab. Einen Teil davon werden wir in dieser Vorlesung kennenlernen.
+
+Wichtig ist vor allem, was Sie auf der Website konkret tun können: Sie können Python-Programme ausführen und sie direkt verändern.
 
 **Installieren von Paketen**
 
-Zusätzlich dazu können Sie Python-Pakete installieren und nutzen. Pakete, einfach gesprochen, stellen Ihnen Funktionalitäten bereit, sodass Sie selbst nicht so viel programmieren müssen.  Zum Beispiel ermöglicht das Python-Paket pyfiglet Schriftbanner zu erstellen. Wenn Sie die folgende Code-Zelle ausführen, wird das Paket installiert. Anschließend sagen wir Python dass wir es nutzen möchten ("importiert") und dann nutzen wir die Schritft-Banner-Funktionalität.
+Zusätzlich können Sie Python-Pakete installieren und nutzen. Pakete stellen Ihnen zusätzliche Funktionalitäten bereit, sodass Sie viele Dinge nicht komplett selbst programmieren müssen. Ein Beispiel ist `pyfiglet`. Damit können Sie Schriftbanner erzeugen. Wenn Sie die folgende Code-Zelle ausführen, wird das Paket installiert. Anschließend „importieren“ wir es und nutzen dann die Banner-Funktion.
 
 
 ```{code-cell} python3
@@ -44,11 +50,18 @@ myname = "Christina"
 print(pyfiglet.figlet_format(f"Hello {myname}"))
 ```
 
-Wichtig: Sie müssen in diesem Beispiel und den folgenden beispielen den programmcode nicht verstehen. Es geht nur darum zu zeigen, was wir auf der website möglich ist. einiges davon werden wir im laufe der vorlesung nutzen, wie zum beispiel dass wir Animationen programmieren und hier direkt auf der website ausführen.
+```{admonition} Mini-Aufgabe
+:class: hint
+
+- Ändern Sie den Text im Banner (z. B. „Hello“ → „Willkommen“).
+- Bonus: Probieren Sie einen Namen mit Umlaut (z. B. „Jörg“) und schauen Sie, wie die Ausgabe aussieht.
+```
+
+Wichtig: Sie müssen den Programmcode in diesem Beispiel und in den folgenden Beispielen noch nicht verstehen. Es geht hier nur darum zu zeigen, was auf der Website möglich ist. Einige dieser Dinge werden wir im Laufe der Vorlesung aufgreifen. Dazu gehört zum Beispiel, wie man Animationen programmiert und direkt auf der Website ausführt.
 
 **Programmierte Animationen**
 
-Sie können im Live-Code auch Animationen erstellen und ausführen. 
+Sie können im Live-Code Animationen erstellen und ausführen.
 
 ```{code-cell} python3
 :tags: [skip-execution]
@@ -133,11 +146,18 @@ ani = FuncAnimation(
 plt.close(fig)
 ani
 ```
+
+```{admonition} Mini-Aufgabe
+:class: hint
+
+- Ändern Sie im Block „Einstellungen“ `fontsize` und `frame_interval` und lassen Sie die Zelle erneut laufen.
+- Schalten Sie `random_colors` auf `False` (oder wieder auf `True`) und beobachten Sie den Effekt.
+```
 **Komplexere Animationen**
 
-Oder falls ihnen das immer noch zu langweilig ist: einen Robotor den Ausweg aus einem Labyrinth finden lassen. 
+Oder, falls Ihnen das immer noch zu langweilig ist: Lassen Sie einen Roboter den Ausweg aus einem Labyrinth finden.
 
-Die folgende Welt enthält unseren Roboter (türkis), das Ziel (gelb), begehbare Zellen (lila) und unbegehbare Hindernisse (blau).
+Die folgende Welt enthält unseren Roboter (türkis), das Ziel (gelb), begehbare Zellen (lila) und unbegehbare Hindernisse (blau). Wenn Sie auf „Run“ klicken, erzeugen Sie erst einmal nur die Umgebung des Roboters: eine Welt, die aus 5×7 Kacheln besteht.
 
 ```{code-cell} python3
 :tags: [skip-execution]
@@ -154,7 +174,16 @@ world = rw.complex_maze(nrows=5, ncols=7)
 world.show()
 ```
 
-Der Roboter kann nur nach vorne laufen und sich nach links um 90 Grad drehen.
+```{admonition} Mini-Aufgabe
+:class: hint
+
+- Ändern Sie `nrows` und `ncols` (z. B. 8×10) und erzeugen Sie eine größere/kleinere Welt.
+```
+
+Führen Sie die folgende Code-Zelle aus, um den Roboter laufen zu lassen. Hinweis: Der Roboter kann nur nach vorne laufen und sich nach links um 90 Grad drehen. Können Sie die Zeile im Code identifizieren, die dafür verantwortlich ist?
+
+Sie müssen noch nicht verstehen, was genau passiert – es reicht fürs Erste, neugierig zu sein.
+
 
 ```{code-cell} python3
 :tags: [skip-execution]
