@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1200" viewBox="0 0 1400 1200">
+  <defs>
+    <style>
+      .box { fill:#ffffff; stroke:#111; stroke-width:2; }
+      .term { fill:#ffffff; stroke:#111; stroke-width:2; }
+      .diamond { fill:#ffffff; stroke:#111; stroke-width:2; }
+      .label {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        font-size:18px;
+        fill:#111;
+      }
+      .small { font-size:16px; }
+      .tiny { font-size:14px; }
+      .arrow { stroke:#111; stroke-width:2.5; fill:none; }
+    </style>
+
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#111"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="700" y="40" text-anchor="middle" class="label" style="font-size:22px; font-weight:600;">
+    Software-Entwicklungs-Flow (Build vs. Buy, großzügige Abstände)
+  </text>
+
+  <!-- START -->
+  <rect x="520" y="80" width="360" height="80" rx="20" class="term"/>
+  <text x="700" y="130" text-anchor="middle" class="label">Problem / Aufgabe</text>
+
+  <!-- Global research -->
+  <rect x="430" y="210" width="540" height="100" rx="16" class="box"/>
+  <text x="700" y="250" text-anchor="middle" class="label">
+    Recherche: Bibliotheken / Frameworks
+  </text>
+  <text x="700" y="280" text-anchor="middle" class="label small">
+    für das gesamte Problem
+  </text>
+
+  <!-- Decision global -->
+  <polygon class="diamond" points="700,350 860,430 700,510 540,430"/>
+  <text x="700" y="425" text-anchor="middle" class="label">Gefunden?</text>
+
+  <!-- Use global lib -->
+  <rect x="960" y="390" width="360" height="100" rx="16" class="box"/>
+  <text x="1140" y="435" text-anchor="middle" class="label">
+    Bibliothek einbinden
+  </text>
+  <text x="1140" y="465" text-anchor="middle" class="label small">
+    → Ziel erreicht
+  </text>
+
+  <!-- Decompose -->
+  <rect x="80" y="390" width="420" height="110" rx="16" class="box"/>
+  <text x="290" y="435" text-anchor="middle" class="label">
+    Problem zerlegen
+  </text>
+  <text x="290" y="465" text-anchor="middle" class="label small">
+    in Teilprobleme (x)
+  </text>
+
+  <!-- Subproblem research -->
+  <rect x="80" y="560" width="420" height="110" rx="16" class="box"/>
+  <text x="290" y="605" text-anchor="middle" class="label">
+    Für jedes Teilproblem:
+  </text>
+  <text x="290" y="635" text-anchor="middle" class="label small">
+    Recherche nach Bibliotheken / Frameworks
+  </text>
+
+  <!-- Decision subproblem -->
+  <polygon class="diamond" points="290,710 430,780 290,850 150,780"/>
+  <text x="290" y="775" text-anchor="middle" class="label">Gefunden?</text>
+
+  <!-- Use sub-lib -->
+  <rect x="520" y="740" width="360" height="110" rx="16" class="box"/>
+  <text x="700" y="785" text-anchor="middle" class="label">
+    Nutze Teilfunktionalität
+  </text>
+  <text x="700" y="815" text-anchor="middle" class="label small">
+    (fremd)
+  </text>
+
+  <!-- Implement -->
+  <rect x="80" y="900" width="420" height="120" rx="16" class="box"/>
+  <text x="290" y="950" text-anchor="middle" class="label">
+    Implementiere Teilfunktionalität
+  </text>
+  <text x="290" y="980" text-anchor="middle" class="label small">
+    (eigene Implementierung)
+  </text>
+
+  <!-- Test -->
+  <rect x="520" y="900" width="360" height="120" rx="16" class="box"/>
+  <text x="700" y="950" text-anchor="middle" class="label">
+    Teste Teilfunktionalität
+  </text>
+  <text x="700" y="980" text-anchor="middle" class="label small">
+    (Unit / Komponententest)
+  </text>
+
+  <!-- All parts ready -->
+  <rect x="960" y="740" width="360" height="120" rx="16" class="box"/>
+  <text x="1140" y="790" text-anchor="middle" class="label">
+    Alle Teilfunktionalitäten
+  </text>
+  <text x="1140" y="820" text-anchor="middle" class="label small">
+    vorhanden?
+  </text>
+
+  <!-- Integration -->
+  <rect x="960" y="900" width="360" height="100" rx="16" class="box"/>
+  <text x="1140" y="955" text-anchor="middle" class="label">
+    Integration
+  </text>
+
+  <!-- Integration test -->
+  <rect x="960" y="1040" width="360" height="100" rx="16" class="box"/>
+  <text x="1140" y="1095" text-anchor="middle" class="label">
+    Integrationstest
+  </text>
+
+  <!-- END -->
+  <rect x="520" y="1040" width="360" height="100" rx="20" class="term"/>
+  <text x="700" y="1095" text-anchor="middle" class="label">
+    Fertig
+  </text>
+
+  <!-- ARROWS -->
+  <path class="arrow" marker-end="url(#arrowhead)" d="M700,160 L700,210"/>
+  <path class="arrow" marker-end="url(#arrowhead)" d="M700,310 L700,350"/>
+
+  <!-- Global decision -->
+  <path class="arrow" marker-end="url(#arrowhead)" d="M860,430 L960,440"/>
+  <text x="900" y="415" class="label tiny">Ja</text>
+
+  <path class="arrow" marker-end="url(#arrowhead)" d="M540,430 L500,430"/>
+  <text x="515" y="415" class="label tiny">Nein</text>
+
+  <!-- Decompose flow -->
+  <path class="arrow" marker-end="url(#arrowhead)" d="M290,500 L290,560"/>
+  <path class="arrow" marker-end="url(#arrowhead)" d="M290,670 L290,710"/>
+
+  <!-- Subproblem decision -->
+  <path class="arrow" marker-end="url(#arrowhead)" d="M430,780 L520,795"/>
+  <text x="455" y="760" class="label tiny">Ja</text>
+
+  <path class="arrow" marker-end="url(#arrowhead)" d="M290,850 L290,900"/>
+  <text x="305" y="875" class="label tiny">Nein</text>
+
+  <!-- Implement/test loop -->
+  <path class="arrow" marker-end="url(#arrowhead)" d="M500,960 L520,960"/>
+  <path class="arrow" marker-end="url(#arrowhead)"
+        d="M700,1020 L700,1080 L920,1080 L920,800 L960,800"/>
+
+  <!-- Use sub-lib to readiness -->
+  <path class="arrow" marker-end="url(#arrowhead)" d="M880,795 L960,800"/>
+
+  <!-- Integration -->
+  <path class="arrow" marker-end="url(#arrowhead)" d="M1140,860 L1140,900"/>
+  <path class="arrow" marker-end="url(#arrowhead)" d="M1140,1000 L1140,1040"/>
+
+  <!-- Done -->
+  <path class="arrow" marker-end="url(#arrowhead)" d="M960,1090 L880,1090"/>
+</svg>
