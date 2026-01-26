@@ -30,8 +30,11 @@ Im Folgenden unterscheiden wir drei typische Ausprägungen dieses Vorgehens:
    Fremdsoftware: **partiell**, Eigenimplementierung: **partiell**  
    Dieser Fall tritt in der Praxis am häufigsten auf: Ein Teil der Funktionalität wird durch Fremdsoftware abgedeckt, während fehlende oder projektspezifische Aspekte selbst implementiert werden. Neben den Tests der eigenen Komponenten entsteht zusätzlicher Aufwand durch Integration und Integrationstests.
 
-```{admonition} Hinweis
+   
+Im Folgenden spielen wir die Fälle (1) und (2) anhand des Praxisbeispiels durch. Das Praxisbeispiel ist entsprechend so gestaltet, dass beide Pfade exemplarisch durchlaufen werden können.
+
+```{admonition} Hinweis: SBOM (Software Bill of Materials)
 :class: remark
 
-Im folgenden spielen wir die Fälle (1) und (2) anhand des Praxisbeispiels durch. Das Praxisbeispiel ist entsprechend so gestaltet, dass beide Pfade exemplarisch durchlaufen werden können.
+Sobald Sie im „Buy“-Pfad Bibliotheken oder Frameworks einbinden, wird Ihre Software zu einem **Produkt aus eigenen und fremden Bausteinen**. Eine *Software Bill of Materials* (SBOM) ist eine Art „Stückliste“ dieser Bausteine: Sie dokumentiert u. a. verwendete Komponenten (und häufig deren Versionen/Lizenzen). Das hilft insbesondere bei **Bewertung und Wartung**: Welche Abhängigkeiten stecken im Produkt? Welche Updates sind relevant? Welche Risiken oder Lizenzpflichten könnten entstehen? (vgl. {cite}`bsi:cra:2024`).
 ```

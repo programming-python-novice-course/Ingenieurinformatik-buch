@@ -106,8 +106,9 @@ parts:
     chapters:
     - file: chapters/13-fallbeispiel/0-intro
       sections:
-      - file: chapters/13-fallbeispiel/1-lib-solution
-      - file: chapters/13-fallbeispiel/2-eigenentwicklung
+      - file: chapters/13-fallbeispiel/1-se-Prozess
+      - file: chapters/13-fallbeispiel/2-lib-solution
+      - file: chapters/13-fallbeispiel/3-eigenentwicklung
   - caption: Appendix
     chapters:
     - file: chapters/misc/contributors
