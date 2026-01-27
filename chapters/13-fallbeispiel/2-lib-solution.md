@@ -17,8 +17,11 @@ Wir sehen uns an, wie man mit "Einkaufsteilen" (Bibliotheken) sehr schnell Progr
 ```{admonition} Hinweis
 :class: remark
 
-Sie führen den Code gerade auf einem Server aus. Deshalb können Sie **nicht** einfach Dateien von Ihrem Rechner hochladen oder von Ihrem Rechner-Pfad einlesen. Die Messdaten sind bereits auf dem Server vorhanden. Der folgende (versteckte) Code sucht die Datei und speichert den gefundenen Pfad in der Variable `csv_file_path`. Sie verwenden die Variable `csv_file_path` um auf die Datei zuzugreifen.
+Sie führen den Code gerade auf einem Server aus. Deshalb können Sie **nicht** einfach Dateien von Ihrem Rechner hochladen oder von Ihrem Rechner-Pfad einlesen. Die Messdaten sind bereits auf dem Server vorhanden. 
 ```
+
+Bitte führen Sie den folgendenen Code nochmals aus, um in Ihrem Setup die korrekte Datei zu identifizieren. Verwenden Sie die Variable `csv_file_path` um auf die Datei zuzugreifen:
+
 
 ```{code-cell} python3
 :tags: [hide-input]
@@ -42,6 +45,14 @@ import pandas as pd
 df = pd.read_csv(
     csv_file_path,
     parse_dates=["datetime"]
+)
+
+df = df.rename(
+    columns={
+        "station_antwerp": "Antwerp",
+        "station_paris": "Paris",
+        "station_london": "London",
+    }
 )
 
 df.head()
@@ -75,6 +86,9 @@ axs = df.hist()
 for ax in axs.ravel():
     ax.set_xlabel("NO₂-Konzentration (µg/m³)")
     ax.set_ylabel("Häufigkeit")
+
+# Mehr Abstand zwischen den Subplots (vertikal/horizontal)
+plt.tight_layout(h_pad=2.0, w_pad=1.0)
 plt.show()
 ```
 
