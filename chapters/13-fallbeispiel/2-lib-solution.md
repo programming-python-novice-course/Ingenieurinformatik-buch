@@ -17,18 +17,41 @@ Wir sehen uns an, wie man mit "Einkaufsteilen" (Bibliotheken) sehr schnell Progr
 ```{admonition} Hinweis
 :class: remark
 
-Sie können im interaktiven Modus keine lokalen Dateien einlesen, da der Code auf einem Server ausgeführt wird, auf den Sie keinen direkten Zugriff haben. Die Datei liegt bereits auf dem Server unter dem Pfad `/home/jovyan/data/air_quality_no2.csv`.
+Sie führen den Code gerade auf einem Server aus. Deshalb können Sie **nicht** einfach Dateien von Ihrem Rechner hochladen oder von Ihrem Rechner-Pfad einlesen. Die Messdaten sind bereits auf dem Server vorhanden. Der folgende (versteckte) Code sucht die Datei und speichert den gefundenen Pfad in der Variable `csv_file_path`.
 ```
 
-Als erstes lesen wir die Messdaten aus der CSV-Datei ein und werfen einen ersten Blick auf die Tabelle.
+```{code-cell} python3
+:tags: [remove-cell]
+
+from pathlib import Path
+
+matches = list(Path("/home/jovyan").glob("**/data/air_quality_no2.csv"))
+if not matches:
+    raise FileNotFoundError("Keine passende Datei unter /home/jovyan/**/data/ gefunden")
+
+if len(matches) > 1:
+    matches = sorted(matches)
+    raise RuntimeError(
+        "Mehr als eine passende Datei gefunden. Bitte Pfad eindeutig machen. "
+        f"Gefunden: {matches}"
+    )
+
+csv_file_path = matches[0]
+```
+Der Pfad zur csv-Datei lautet:
 
 ```{code-cell} python3
-:tags: [skip-execution]
+print(f"Pfad: {csv_file_path}")
+```
 
+Als erstes lesen wir die Messdaten aus der CSV-Datei ein und werfen einen Blick auf die Tabelle.
+
+
+```{code-cell} python3
 import pandas as pd
 
 df = pd.read_csv(
-    "/home/jovyan/data/air_quality_no2.csv",
+    csv_file_path,
     parse_dates=["datetime"]
 )
 
@@ -47,7 +70,6 @@ df.head()
 Nun lassen wir uns zentrale Kennwerte (z. B. Mittelwert, Standardabweichung und Perzentile) automatisch berechnen.
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 stats = df.describe().T
 stats
@@ -56,10 +78,14 @@ stats
 Zum Abschluss visualisieren wir die Verteilung der Messwerte als Histogramm.
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 import matplotlib.pyplot as plt  # pandas uses matplotlib!
 
-ax = df.hist()
+axs = df.hist()
+
+# Achsentitel für alle Teilplots setzen
+for ax in axs.ravel():
+    ax.set_xlabel("NO₂-Konzentration (µg/m³)")
+    ax.set_ylabel("Häufigkeit")
 plt.show()
 ```
