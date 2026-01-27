@@ -21,7 +21,7 @@ Sie führen den Code gerade auf einem Server aus. Deshalb können Sie **nicht** 
 ```
 
 ```{code-cell} python3
-:tags: [hide-input]
+:tags: [hide-input,skip-execution]
 
 from pathlib import Path
 
@@ -37,11 +37,14 @@ if len(matches) > 1:
     )
 
 csv_file_path = matches[0]
-
 ```
+
+
 Der Pfad zur csv-Datei lautet:
 
 ```{code-cell} python3
+:tags: [skip-execution]
+
 print(f"Pfad: {csv_file_path}")
 ```
 
@@ -49,6 +52,8 @@ Als erstes lesen wir die Messdaten aus der CSV-Datei ein und werfen einen Blick 
 
 
 ```{code-cell} python3
+:tags: [skip-execution]
+
 import pandas as pd
 
 df = pd.read_csv(
@@ -71,6 +76,7 @@ df.head()
 Nun lassen wir uns zentrale Kennwerte (z. B. Mittelwert, Standardabweichung und Perzentile) automatisch berechnen.
 
 ```{code-cell} python3
+:tags: [skip-execution]
 
 stats = df.describe().T
 stats
@@ -79,6 +85,7 @@ stats
 Zum Abschluss visualisieren wir die Verteilung der Messwerte als Histogramm.
 
 ```{code-cell} python3
+:tags: [skip-execution]
 
 import matplotlib.pyplot as plt  # pandas uses matplotlib!
 

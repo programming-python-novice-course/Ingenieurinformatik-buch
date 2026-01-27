@@ -16,7 +16,6 @@ datetime,station_antwerp,station_paris,station_london
 Ziel-Datenstruktur: Für jede Station speichert sie die Zeitpunkte und die zugehörigen NO₂-Werte. Fehlende Messwerte (leere Felder) lässt sie weg.  - Das ist eine Design Entscheidung. Genauso gut hätte sie NaN Werte oder leere Felder verwenden können - vgl. dazu die Tabelle von vorher: diese hatte leere Felder!
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 def parse_air_quality_csv(csv_text):
     """
@@ -93,7 +92,6 @@ ipytest.autoconfig()
 ```
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 def _sample_csv_comma():
     return """\

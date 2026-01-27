@@ -15,7 +15,6 @@ Nicht IPython entscheidet das, sondern **`pytest`**. `ipytest` ist nur die „Br
 `pytest` findet Tests über **Konventionen**, z. B. Funktionen, deren Name mit `test_` beginnt.
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 # `ipytest` integriert `pytest` in Jupyter-Notebooks.
 # `autoconfig()` richtet die Ausgabe/Ergebnisdarstellung ein,
@@ -25,7 +24,6 @@ ipytest.autoconfig()
 ```
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 # Beispiel-Funktion (das wäre "Produktionscode", den wir testen wollen)
 def mean(values):
