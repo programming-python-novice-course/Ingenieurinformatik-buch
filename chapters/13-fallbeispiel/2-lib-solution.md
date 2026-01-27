@@ -21,7 +21,7 @@ Sie führen den Code gerade auf einem Server aus. Deshalb können Sie **nicht** 
 ```
 
 ```{code-cell} python3
-:tags: [remove-cell]
+:tags: [hide-input]
 
 from pathlib import Path
 
@@ -37,6 +37,7 @@ if len(matches) > 1:
     )
 
 csv_file_path = matches[0]
+
 ```
 Der Pfad zur csv-Datei lautet:
 
