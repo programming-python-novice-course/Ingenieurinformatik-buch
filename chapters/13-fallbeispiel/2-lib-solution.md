@@ -17,7 +17,7 @@ Wir sehen uns an, wie man mit "Einkaufsteilen" (Bibliotheken) sehr schnell Progr
 ```{admonition} Hinweis
 :class: remark
 
-Sie führen den Code gerade auf einem Server aus. Deshalb können Sie **nicht** einfach Dateien von Ihrem Rechner hochladen oder von Ihrem Rechner-Pfad einlesen. Die Messdaten sind bereits auf dem Server vorhanden. Der folgende (versteckte) Code sucht die Datei und speichert den gefundenen Pfad in der Variable `csv_file_path`.
+Sie führen den Code gerade auf einem Server aus. Deshalb können Sie **nicht** einfach Dateien von Ihrem Rechner hochladen oder von Ihrem Rechner-Pfad einlesen. Die Messdaten sind bereits auf dem Server vorhanden. Der folgende (versteckte) Code sucht die Datei und speichert den gefundenen Pfad in der Variable `csv_file_path`. Sie verwenden die Variable `csv_file_path` um auf die Datei zuzugreifen.
 ```
 
 ```{code-cell} python3
@@ -30,13 +30,6 @@ if not matches:
     csv_file_path = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/refs/heads/master/data/air_quality_no2.csv"
 else:
     csv_file_path = matches[0]
-```
-
-Der Pfad zur csv-Datei lautet:
-
-```{code-cell} python3
-
-print(f"Wert der Variable csv_file_path: {csv_file_path}")
 ```
 
 Als erstes lesen wir die Messdaten aus der CSV-Datei ein und werfen einen Blick auf die Tabelle.
@@ -73,7 +66,6 @@ stats
 Zum Abschluss visualisieren wir die Verteilung der Messwerte als Histogramme.
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 import matplotlib.pyplot as plt  # pandas uses matplotlib!
 
@@ -85,3 +77,5 @@ for ax in axs.ravel():
     ax.set_ylabel("Häufigkeit")
 plt.show()
 ```
+
+Und wir sind fertig!
