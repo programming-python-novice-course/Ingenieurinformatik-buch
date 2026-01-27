@@ -21,38 +21,28 @@ Sie führen den Code gerade auf einem Server aus. Deshalb können Sie **nicht** 
 ```
 
 ```{code-cell} python3
-:tags: [hide-input,skip-execution]
+:tags: [hide-input]
 
 from pathlib import Path
 
 matches = list(Path("/home/jovyan").glob("**/data/air_quality_no2.csv"))
 if not matches:
-    raise FileNotFoundError("Keine passende Datei unter /home/jovyan/**/data/ gefunden")
-
-if len(matches) > 1:
-    matches = sorted(matches)
-    raise RuntimeError(
-        "Mehr als eine passende Datei gefunden. Bitte Pfad eindeutig machen. "
-        f"Gefunden: {matches}"
-    )
-
-csv_file_path = matches[0]
+    csv_file_path = "https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/blob/master/data/air_quality_no2.csv"
+else:
+    csv_file_path = matches[0]
 ```
-
 
 Der Pfad zur csv-Datei lautet:
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
-print(f"Pfad: {csv_file_path}")
+print(f"Wert der Variable csv_file_path: {csv_file_path}")
 ```
 
 Als erstes lesen wir die Messdaten aus der CSV-Datei ein und werfen einen Blick auf die Tabelle.
 
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 import pandas as pd
 
@@ -67,7 +57,6 @@ df.head()
 Als Nächstes bereiten wir die Daten so vor, dass Zeitpunkte bequem als Index genutzt werden können.
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 df = df.set_index("datetime")
 df.head()
@@ -76,13 +65,12 @@ df.head()
 Nun lassen wir uns zentrale Kennwerte (z. B. Mittelwert, Standardabweichung und Perzentile) automatisch berechnen.
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 stats = df.describe().T
 stats
 ```
 
-Zum Abschluss visualisieren wir die Verteilung der Messwerte als Histogramm.
+Zum Abschluss visualisieren wir die Verteilung der Messwerte als Histogramme.
 
 ```{code-cell} python3
 :tags: [skip-execution]
