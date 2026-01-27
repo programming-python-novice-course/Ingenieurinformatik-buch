@@ -1,3 +1,14 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Parsing
 
 Julia startet im „Build“-Pfad ganz unten Sie liest die CSV-Daten selbst ein und legen sie in einer Datenstruktur ab, die sie später leicht testen und weiterverarbeiten können.

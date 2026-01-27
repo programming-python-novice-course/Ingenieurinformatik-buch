@@ -17,15 +17,13 @@ Wir sehen uns an, wie man mit "Einkaufsteilen" (Bibliotheken) sehr schnell Progr
 ```{admonition} Hinweis
 :class: remark
 
-Sie führen den Code gerade auf einem Server aus. Deshalb können Sie **nicht** einfach Dateien von Ihrem Rechner hochladen oder von Ihrem Rechner-Pfad einlesen. Die Messdaten sind bereits auf dem Server vorhanden. 
+Sie führen den Code gerade auf einem Server aus. Deshalb können Sie **nicht** einfach Dateien von Ihrem Rechner hochladen oder von Ihrem Rechner-Pfad einlesen. Die Messdaten-Datei ist bereits auf dem Server für Sie abgelegt. 
 ```
 
-Bitte führen Sie den folgendenen Code nochmals aus, um in Ihrem Setup die korrekte Datei zu identifizieren. Verwenden Sie die Variable `csv_file_path` um auf die Datei zuzugreifen:
+Bitte führen Sie den folgendenen Code nochmals aus, um in Ihrem Setup den Pfad zur Datei zu identifizieren. Verwenden Sie die Variable `csv_file_path` um auf die Datei zuzugreifen:
 
 
 ```{code-cell} python3
-:tags: [hide-input]
-
 from pathlib import Path
 
 matches = list(Path("/home/jovyan").glob("**/data/air_quality_no2.csv"))
@@ -35,7 +33,7 @@ else:
     csv_file_path = matches[0]
 ```
 
-Als erstes lesen wir die Messdaten aus der CSV-Datei ein und werfen einen Blick auf die Tabelle.
+Als erstes liest Julia die Messdaten aus der CSV-Datei ein und werfen einen Blick auf die Tabelle.
 
 
 ```{code-cell} python3
