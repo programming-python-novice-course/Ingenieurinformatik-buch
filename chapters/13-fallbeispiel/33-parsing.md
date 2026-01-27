@@ -98,7 +98,6 @@ Wir sichern das Verhalten mit ein paar Unit Tests ab. In Notebooks nutzen wir da
 
 
 ```{code-cell} python3
-!pip install ipytest
 import ipytest
 ipytest.autoconfig()
 ```

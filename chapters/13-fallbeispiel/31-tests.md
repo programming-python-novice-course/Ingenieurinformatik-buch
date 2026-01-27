@@ -25,9 +25,6 @@ Nicht IPython entscheidet das, sondern **`pytest`**. `ipytest` ist nur die „Br
 `pytest` findet Tests über **Konventionen**, z. B. Funktionen, deren Name mit `test_` beginnt.
 
 ```{code-cell} python3
-# `ipytest` integriert `pytest` in Jupyter-Notebooks.
-!pip install ipytest
-
 # `autoconfig()` richtet die Ausgabe/Ergebnisdarstellung ein,
 import ipytest
 ipytest.autoconfig()
