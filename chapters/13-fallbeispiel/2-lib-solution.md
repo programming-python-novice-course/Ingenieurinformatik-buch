@@ -27,7 +27,7 @@ from pathlib import Path
 
 matches = list(Path("/home/jovyan").glob("**/data/air_quality_no2.csv"))
 if not matches:
-    csv_file_path = "https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/blob/master/data/air_quality_no2.csv"
+    csv_file_path = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/refs/heads/master/data/air_quality_no2.csv"
 else:
     csv_file_path = matches[0]
 ```
