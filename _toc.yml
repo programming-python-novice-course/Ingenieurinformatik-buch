@@ -113,6 +113,7 @@ parts:
         - file: chapters/13-fallbeispiel/31-tests
         - file: chapters/13-fallbeispiel/32-problem-zerlegung
         - file: chapters/13-fallbeispiel/33-parsing
+        - file: chapters/13-fallbeispiel/34-histogram
   - caption: Appendix
     chapters:
     - file: chapters/misc/contributors
