@@ -11,7 +11,7 @@ kernelspec:
 
 # Parsing
 
-Julia startet im „Build“-Pfad ganz unten Sie liest die CSV-Daten selbst ein und legen sie in einer Datenstruktur ab, die sie später leicht testen und weiterverarbeiten können.
+Julia startet im „Build“-Pfad ganz unten: Sie liest die CSV-Daten selbst ein und legt sie in einer Datenstruktur ab, die sie später leicht testen und weiterverarbeiten kann.
 
 
 Beispieldaten (CSV-Ausschnitt):
@@ -25,11 +25,11 @@ datetime,station_antwerp,station_paris,station_london
 ...
 ```
 
-Ziel-Datenstruktur: Für jede Station speichert sie die Zeitpunkte und die zugehörigen NO₂-Werte. Fehlende Messwerte (leere Felder) lässt sie weg.  - Das ist eine Design Entscheidung. Genauso gut hätte sie NaN Werte oder leere Felder verwenden können - vgl. dazu die Tabelle von vorher: diese hatte leere Felder!
+Ziel-Datenstruktur: Für jede Station speichert sie die Zeitpunkte und die zugehörigen NO₂-Werte. Fehlende Messwerte (leere Felder) lässt sie weg. Das ist eine **Designentscheidung**: Genauso gut hätte sie `NaN`-Werte oder Platzhalter (z. B. leere Strings) speichern können – vgl. die Tabelle im vorherigen Abschnitt; dort waren fehlende Werte als leere Felder dargestellt.
 
 ```{code-cell} python3
 
-def parse_air_quality_csv(csv_text):
+def parse_air_quality_csv_v2(csv_text):
     """
     Sehr einfacher CSV-Parser.
 
@@ -88,21 +88,18 @@ datetime,station_antwerp,station_paris,station_london
 2019-05-07 05:00:00,,50.4,16.0
 """
 
-data = parse_air_quality_csv(sample)
+data = parse_air_quality_csv_v2(sample)
 list(data.keys())
 ```
 
-## Testing 
+## Testing
 
-Wir sichern das Verhalten mit ein paar Unit Tests ab. In Notebooks nutzen wir dafür `ipytest`, das `pytest` in Zellen ausführbar macht (siehe auch das Test-Kapitel).
-
+Julia sichert das Verhalten mit ein paar Unit-Tests ab. Da sie- wie wir hier - Notebooks nutzt, greift sie dafür auf `ipytest` zurück (siehe auch das Test-Kapitel).
 
 ```{code-cell} python3
 import ipytest
 ipytest.autoconfig()
-```
-
-```{code-cell} python3
+ipytest.clean()
 
 def _sample_csv_comma():
     return """\
@@ -115,12 +112,12 @@ datetime,station_antwerp,station_paris,station_london
 
 
 def test_parse_returns_all_stations():
-    data = parse_air_quality_csv(_sample_csv_comma())
+    data = parse_air_quality_csv_v2(_sample_csv_comma())
     assert set(data.keys()) == {"station_antwerp", "station_paris", "station_london"}
 
 
 def test_parse_ignores_missing_values():
-    data = parse_air_quality_csv(_sample_csv_comma())
+    data = parse_air_quality_csv_v2(_sample_csv_comma())
     # In der ersten Zeile (02:00) hat nur London einen Wert.
     assert data["station_antwerp"]["time"][0] != "2019-05-07 02:00:00"
     assert data["station_paris"]["time"][0] != "2019-05-07 02:00:00"
@@ -128,13 +125,17 @@ def test_parse_ignores_missing_values():
 
 
 def test_parse_converts_values_to_float():
-    data = parse_air_quality_csv(_sample_csv_comma())
+    data = parse_air_quality_csv_v2(_sample_csv_comma())
     assert isinstance(data["station_london"]["no2"][0], float)
 
 ipytest.run()
 ```
 
-Jetzt kommt ein Test, der zeigt, wo es mit einem anderen Trennzeichen hakt. Dieser Test ist **absichtlich rot** (Fail), weil unser Parser (noch) nicht mit `;` umgehen kann.
+Auf einem Laufwerk entdeckt Julia weitere Messdateien. Dort sind die Werte allerdings nicht durch `,`, sondern durch `;` getrennt.
+
+Sie schreibt einen zusätzlichen Test, um zu prüfen, wie **generisch** ihr Code ist – also wie viele ähnliche Eingabeformate er abdecken kann.
+
+Wie erwartet ist der Code noch wenig generisch: Der Test ist **rot** (Fail), weil der Parser (noch) nicht mit `;` umgehen kann.
 
 ```{code-cell} python3
 def _sample_csv_semicolon():
@@ -148,27 +149,28 @@ datetime;station_antwerp;station_paris;station_london
 def test_parse_with_semicolon_delimiter_should_work():
     # Erwartung (aus Nutzersicht): Semikolon funktioniert genauso.
     # Realität: unser Parser ist (noch) auf Komma fest verdrahtet -> der Test scheitert.
-    data = parse_air_quality_csv(_sample_csv_semicolon())
+    data = parse_air_quality_csv_v2(_sample_csv_semicolon())
     assert "station_london" in data
 
 ipytest.run()
 ```
 
-
 ## Error handling
 
-Julia fällt durch die unittests auf dass ihr parser nicht wirklich generisch aufgebaut ist: sobald das Trennzeichen anders aussieht,funktioniert das parsing nicht mehr. sie hat zwei Möglichkeiten: 
-- 1 entweder macht sie ihren code generischer, d.h. dass mehr trennzeichen erkannt und verarbeitet werden 
-- 2 ODER sie weisst den nutzer darauf hin, dass seine eingabe nicht korrekt ist
-sie hat nicht mehr viel zeit. variante 1 ist daher nicht möglich. . sie muss variante 2. 
+Wie soll Julia mit dieser Erkenntnis umgehen, dass das Parsing nicht mehr funktioniert sobald das Trennzeichen anders ist? 
 
-## Überarbeiteter Parser - variante 2
+Sie hat zwei Möglichkeiten:
 
-nehmen: sie implementiert die funktion erneut und sagt dem nutzer aber was er falsch gemacht hat. und was der code erwartet. 
+- Entweder macht sie ihren Code generischer, d. h. sie erkennt und verarbeitet mehrere Trennzeichen.
+- Oder sie weist den Nutzer darauf hin, dass die Eingabe nicht dem erwarteten Format entspricht.
+
+Julia hat nicht mehr viel Zeit. Variante 1 ist für heute zu groß – also entscheidet sie sich für Variante 2.
+
+Sie implementiert die Funktion erneut, bleibt aber bei Komma als einzig unterstütztem Trennzeichen. Dafür liefert sie bei „Semikolon-CSV“ eine klare, hilfreiche Fehlermeldung. Julia nennt diese Zwischenlösung `parse_air_quality_csv_v2_strict`.
 
 ```{code-cell} python3
 
-def parse_air_quality_csv(csv_text):
+def parse_air_quality_csv_v2_strict(csv_text):
     """
     Sehr einfacher CSV-Parser (Zwischenlösung).
 
@@ -229,40 +231,32 @@ def parse_air_quality_csv(csv_text):
     return result
 ```
 
-Und jetzt passen wir die Tests an: Semikolon-Eingaben sollen **nicht** „irgendwie“ geparst werden, sondern mit einer klaren Fehlermeldung abbrechen.
+Dann passt Julia die Tests an: Semikolon-Eingaben sollen **nicht** „irgendwie“ geparst werden, sondern mit einer klaren Fehlermeldung abbrechen.
 
 ```{code-cell} python3
 
+ipytest.clean()
+
 import pytest
 
-
 def test_parse_still_works_with_comma_csv():
-    data = parse_air_quality_csv(_sample_csv_comma())
+    data = parse_air_quality_csv_v2_strict(_sample_csv_comma())
     assert set(data.keys()) == {"station_antwerp", "station_paris", "station_london"}
 
 
 def test_parse_raises_on_semicolon_delimiter():
     with pytest.raises(ValueError, match=r"Trennzeichen.*';'.*Komma"):
-        parse_air_quality_csv(_sample_csv_semicolon())
-
-
-# Wir überschreiben absichtlich den zuvor roten Test (gleicher Name),
-# damit der Notebook-Testlauf nach der Korrektur wieder grün wird.
-def test_parse_with_semicolon_delimiter_should_work():
-    with pytest.raises(ValueError, match=r"Trennzeichen.*';'.*Komma"):
-        parse_air_quality_csv(_sample_csv_semicolon())
+        parse_air_quality_csv_v2_strict(_sample_csv_semicolon())
 
 ipytest.run()
 ```
-Wirklich zufrieden ist Julia auch weiterhin nicht: was ist wenn jemand ein weiteres trennzeichen wie | eingibt. oder wenn gar kein trennzeichen vorhanden ist weil die tabelle nur eine spalte hat?
-
-das ist eine zwischenlösung mit der sie fürs erste leben kann. das weiterhin keine andereren trennzeichen verarbeitet werden können, schreibt sie in die Doku und macht ein internes Ticket auf. 
-
-Das größerere problem das julia noch hat ist, ist dass aktuell alle funktionaliäten in einer funktion enthalten sind. ob werte in floats geparsed werden können, kann nicht unabhängig davon getestet werden mit dem einlesen .. 
-
-Sie entscheidet sich daher nochmal den code umzuschreiben:
+Ganz zufrieden ist Julia noch nicht: Andere Trennzeichen (z. B. `|`) werden weiterhin nicht unterstützt. Deshalb dokumentiert sie die Einschränkung und erstellt ein internes Ticket für eine generische Lösung.
 
 ## Refactoring: kleine, testbare Funktionen
+
+Das größere Problem ist aber: Aktuell steckt (fast) die gesamte Logik in einer einzigen Funktion. Zum Beispiel kann sie das Parsen einzelner Messwerte (String → `float`) nicht unabhängig vom gesamten CSV-Einlesen testen.
+
+Sie entscheidet sich daher für ein Refactoring: Die **Funktionalität bleibt gleich**, aber der Code wird in kleine, klar abgegrenzte Funktionen zerlegt. So kann sie einzelne Schritte gezielt testen und der Code wird leichter zu warten.
 
 Julia trennt die Verantwortlichkeiten:
 - **Text → Zeilen** (leere Zeilen ignorieren)
@@ -322,7 +316,7 @@ def _parse_no2_value(value, station, line):
         ) from e
 
 
-def parse_air_quality_csv(csv_text):
+def parse_air_quality_csv_v3(csv_text):
     lines = _non_empty_lines(csv_text)
     _ensure_comma_delimiter(lines)
 
@@ -354,9 +348,64 @@ def parse_air_quality_csv(csv_text):
     return result
 ```
 
+Tests für den refaktorierten Parser:
+
+```{code-cell} python3
+ipytest.clean()
+
+import pytest
+
+def test_parse_v3_parses_comma_csv():
+    data = parse_air_quality_csv_v3(_sample_csv_comma())
+    assert set(data.keys()) == {"station_antwerp", "station_paris", "station_london"}
+    assert data["station_london"]["time"][0] == "2019-05-07 02:00:00"
+
+
+def test_parse_v3_raises_on_semicolon_delimiter_in_header():
+    with pytest.raises(ValueError, match=r"Trennzeichen.*';'.*Komma"):
+        parse_air_quality_csv_v3(_sample_csv_semicolon())
+
+
+def test_parse_v3_raises_on_semicolon_delimiter_in_data_lines():
+    bad = """\
+datetime,station_london
+2019-05-07 02:00:00;23.0
+"""
+    with pytest.raises(ValueError, match=r"Trennzeichen.*';'.*Komma"):
+        parse_air_quality_csv_v3(bad)
+
+
+def test_parse_v3_raises_on_too_many_columns():
+    bad = """\
+datetime,station_london
+2019-05-07 02:00:00,23.0,EXTRA
+"""
+    with pytest.raises(ValueError, match=r"Zu viele Spalten"):
+        parse_air_quality_csv_v3(bad)
+
+
+def test_parse_v3_raises_on_invalid_number():
+    bad = """\
+datetime,station_london
+2019-05-07 02:00:00,abc
+"""
+    with pytest.raises(ValueError, match=r"Ungültiger Messwert"):
+        parse_air_quality_csv_v3(bad)
+
+
+def test_parse_v3_raises_on_empty_csv():
+    with pytest.raises(ValueError, match=r"CSV ist leer"):
+        parse_air_quality_csv_v3("")
+
+ipytest.run()
+```
+
 Jetzt kann Julia z. B. das Float-Parsing unabhängig testen (ohne komplettes CSV zu bauen):
 
 ```{code-cell} python3
+ipytest.clean()
+
+import pytest
 
 def test_parse_no2_value_empty_is_none():
     assert _parse_no2_value("", "station_x", "dummy") is None
@@ -367,8 +416,6 @@ def test_parse_no2_value_parses_float():
 
 
 def test_parse_no2_value_raises_on_invalid_number():
-    import pytest
-
     with pytest.raises(ValueError, match=r"Ungültiger Messwert"):
         _parse_no2_value("abc", "station_x", "dummy")
 
