@@ -51,6 +51,14 @@ Um die Website oder das PDF lokal zu bauen, schauen Sie am besten in die CI-Konf
 - Docker muss installiert sein, um den Docker-Container lokal auszuführen
 - Das verwendete Docker-Image: `gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest`
 
+### Build dependencies
+
+Das Docker image kann gebaut werden über:
+```bash
+docker build --platform linux/amd64 -t gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest .
+docker push gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest
+```
+
 **Beispiel für lokalen Build:**
 
 ```bash
