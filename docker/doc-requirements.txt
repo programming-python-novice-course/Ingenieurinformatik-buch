@@ -1,16 +1,18 @@
-numpy
-matplotlib
-seaborn
-ipywidgets
-pandas
-sphinx-exercise
-sphinx-inline-tabs
-sphinx-proof
-names
-roboworld
-jupyter-book<2.0.0
-ghp-import
-jupyterquiz
+numpy==2.4.0
+matplotlib==3.10.8
+seaborn==0.13.2
+ipywidgets==8.1.8
+pandas==2.3.3
+
+sphinx-exercise==1.0.1
+sphinx-inline-tabs==2025.12.21.14
+sphinx-proof==0.3.0
+
+names==0.3.0
+roboworld==0.1.7
+
+jupyter-book==1.0.3      # erfüllt <2.0.0
+ghp-import==2.1.0
+JupyterQuiz==2.9.6.2     # Achtung: Paketname im pip list ist groß geschrieben, in requirements meist "jupyterquiz"
 docutils==0.17.1
-mdit-py-plugins~=0.3.1
-ipytest
+ipytest==0.14.2
