@@ -1,3 +1,14 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Histogram
 
 Nachdem Julia nun mithilfe ihres neuen Parsers die Daten auslesen kann, macht sie sich an die Visualisierung der Histogramme.
