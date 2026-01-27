@@ -24,13 +24,9 @@ Bitte führen Sie den folgendenen Code nochmals aus, um in Ihrem Setup den Pfad 
 
 
 ```{code-cell} python3
-from pathlib import Path
+csv_file_path = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/refs/heads/master/data/air_quality_no2.csv"
 
-matches = list(Path("/home/jovyan").glob("**/data/air_quality_no2.csv"))
-if not matches:
-    csv_file_path = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/refs/heads/master/data/air_quality_no2.csv"
-else:
-    csv_file_path = matches[0]
+print(f"Die Datei wird bezogen über: {csv_file_path}")
 ```
 
 Als erstes liest Julia die Messdaten aus der CSV-Datei ein und werfen einen Blick auf die Tabelle.
@@ -75,17 +71,13 @@ stats
 Zum Abschluss visualisieren wir die Verteilung der Messwerte als Histogramme.
 
 ```{code-cell} python3
-
-import matplotlib.pyplot as plt  # pandas uses matplotlib!
+import matplotlib.pyplot as plt
 
 axs = df.hist()
-
-# Achsentitel für alle Teilplots setzen
 for ax in axs.ravel():
     ax.set_xlabel("NO₂-Konzentration (µg/m³)")
     ax.set_ylabel("Häufigkeit")
 
-# Mehr Abstand zwischen den Subplots (vertikal/horizontal)
 plt.tight_layout(h_pad=2.0, w_pad=1.0)
 plt.show()
 ```
