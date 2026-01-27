@@ -134,7 +134,37 @@ print(json.dumps(_preview_data(data, n=5), indent=2, ensure_ascii=False))
 
 Dann schreibt Julia eine Funktion, die ein Histogramm ausgeben soll. Da sie keine externen Bibliotheken einbinden kann, bleibt nur die Konsole. Sie entscheidet sich für eine einfache Darstellung: **Für jede Zählung wird ein `|` gezeichnet**.
 
+
 ```{code-cell} python3
+def _histogram_counts(values, bins=8):
+    """
+    Hilfsfunktion: berechnet Bin-Grenzen und Counts.
+
+    Rückgabe:
+      edges:  Liste mit Länge bins+1
+      counts: Liste mit Länge bins, Summe(counts) == len(values)
+    """
+    if not values:
+        return [], []
+
+    vmin = min(values)
+    vmax = max(values)
+    if vmin == vmax:
+        # Ein einziges Intervall (degenerierter Fall)
+        return [vmin, vmax], [len(values)]
+
+    step = (vmax - vmin) / bins
+    edges = [vmin + i * step for i in range(bins + 1)]
+    counts = [0] * bins
+
+    for v in values:
+        # letztes Intervall inklusive rechter Kante
+        idx = bins - 1 if v == vmax else int((v - vmin) / step)
+        counts[idx] += 1
+
+    return edges, counts
+
+
 def histogram(station_dict, bins=8):
     """
     Einfaches ASCII-Histogramm für EINE Station.
@@ -147,20 +177,12 @@ def histogram(station_dict, bins=8):
         print("(keine Werte)")
         return
 
-    vmin = min(values)
-    vmax = max(values)
-    if vmin == vmax:
-        print(f"{vmin:.1f}–{vmax:.1f}: " + "|" * len(values))
+    edges, counts = _histogram_counts(values, bins=bins)
+    # Sonderfall: alle Werte gleich → ein einziger Balken
+    if len(counts) == 1 and len(edges) == 2 and edges[0] == edges[1]:
+        v = edges[0]
+        print(f"{v:.1f}–{v:.1f}: " + "|" * counts[0])
         return
-
-    step = (vmax - vmin) / bins
-    edges = [vmin + i * step for i in range(bins + 1)]
-    counts = [0] * bins
-
-    for v in values:
-        # letztes Intervall inklusive rechter Kante
-        idx = bins - 1 if v == vmax else int((v - vmin) / step)
-        counts[idx] += 1
 
     for i, c in enumerate(counts):
         a, b = edges[i], edges[i + 1]
@@ -188,19 +210,13 @@ def histogram_scaled(station_dict, bins=8, width=50):
         print("(keine Werte)")
         return
 
-    vmin = min(values)
-    vmax = max(values)
-    if vmin == vmax:
-        print(f"{vmin:.1f}–{vmax:.1f}: " + "|" * min(width, len(values)) + f" ({len(values)})")
+    edges, counts = _histogram_counts(values, bins=bins)
+    # Sonderfall: alle Werte gleich → ein einziger Balken (skaliert)
+    if len(counts) == 1 and len(edges) == 2 and edges[0] == edges[1]:
+        v = edges[0]
+        bar = "|" * min(width, counts[0])
+        print(f"{v:.1f}–{v:.1f}: {bar} ({counts[0]})")
         return
-
-    step = (vmax - vmin) / bins
-    edges = [vmin + i * step for i in range(bins + 1)]
-    counts = [0] * bins
-
-    for v in values:
-        idx = bins - 1 if v == vmax else int((v - vmin) / step)
-        counts[idx] += 1
 
     max_count = max(counts) or 1
     for i, c in enumerate(counts):
@@ -216,4 +232,39 @@ for station in data:
     histogram_scaled(data[station], width=50)
 ```
 
-Julia ist mit ihrer Lösung zufrieden und macht sich nun an die Statistiken.
+Julia ist mit ihrer Lösung zufrieden und macht sich nun an das Testing. Auf Unit-Tests für die **Darstellung** (also die genaue ASCII-Ausgabe) verzichtet sie an dieser Stelle: Schon kleine Änderungen in der Konsole (Abstände, Rundung, Zeilenumbrüche) können die Ausgabe verändern – Tests auf exakte Strings wären dadurch schnell fragil.
+
+Glücklicherweise hat Julia den Code bereits sauber getrennt:
+
+- **Logik**: Bin-Grenzen und Counts berechnen (`_histogram_counts(...)`)
+- **Darstellung**: daraus eine ASCII-Ausgabe erzeugen (`histogram(...)`, `histogram_scaled(...)`)
+
+Die **Logik** kann sie mit Unit-Tests zuverlässig prüfen:
+
+```{code-cell} python3
+import ipytest
+ipytest.autoconfig()
+ipytest.clean()
+
+def test_histogram_counts_sum_matches_input_length():
+    values = [1.0, 1.2, 1.9, 2.0, 2.1, 2.9]
+    edges, counts = _histogram_counts(values, bins=3)
+    assert len(edges) == 4
+    assert len(counts) == 3
+    assert sum(counts) == len(values)
+    assert all(c >= 0 for c in counts)
+
+
+def test_histogram_counts_empty_input():
+    edges, counts = _histogram_counts([], bins=5)
+    assert edges == []
+    assert counts == []
+
+
+def test_histogram_counts_all_equal_values():
+    edges, counts = _histogram_counts([2.0, 2.0, 2.0], bins=4)
+    assert edges == [2.0, 2.0]
+    assert counts == [3]
+
+ipytest.run()
+```
