@@ -25,13 +25,18 @@ Nicht IPython entscheidet das, sondern **`pytest`**. `ipytest` ist nur die „Br
 `pytest` findet Tests über **Konventionen**, z. B. Funktionen, deren Name mit `test_` beginnt.
 
 ```{code-cell} python3
-
 # `ipytest` integriert `pytest` in Jupyter-Notebooks.
+!pip install ipytest
+
 # `autoconfig()` richtet die Ausgabe/Ergebnisdarstellung ein,
-# so dass `ipytest.run()` gleich funktioniert.
 import ipytest
 ipytest.autoconfig()
 ```
+
+Im folgenden soll die Funktion mean() getestet werden. Es werden zwei Tests erstellt:
+- test_mean_of_three_values
+- test_mean_raises_on_empty_list
+In den Tests wird kurz beschrieben, was die Tests beabsichtigen.
 
 ```{code-cell} python3
 
@@ -44,6 +49,7 @@ def mean(values):
 # WICHTIG: pytest erkennt Tests u. a. an Namen, die mit `test_` beginnen.
 # Diese Funktion wird daher als Test gesammelt und ausgeführt.
 def test_mean_of_three_values():
+    # einfaches Zahlenbespiel dessen Ergebnis wir kennen
     assert mean([1, 2, 3]) == 2
 
 
@@ -51,13 +57,9 @@ def test_mean_of_three_values():
 # `pytest.raises(...)` prüft, ob beim Aufruf die erwartete Exception entsteht.
 def test_mean_raises_on_empty_list():
     import pytest # nur in dieser Funktion benötigt
-
+    # Soll sicherstellen, dass im Fall der leeren Liste der korrekte Fehler zurückgegeben wird. 
     with pytest.raises(ZeroDivisionError):
         mean([])
-```
-
-```{code-cell} python3
-:tags: [skip-execution]
 
 # Startet `pytest` und lässt alle gefundenen Tests laufen.
 # (ipytest sammelt den Code aus dem Notebook-Kontext und ruft dann pytest auf.)

@@ -13,6 +13,7 @@ kernelspec:
 
 Julia startet im „Build“-Pfad ganz unten Sie liest die CSV-Daten selbst ein und legen sie in einer Datenstruktur ab, die sie später leicht testen und weiterverarbeiten können.
 
+
 Beispieldaten (CSV-Ausschnitt):
 
 ```text
@@ -95,9 +96,9 @@ list(data.keys())
 
 Wir sichern das Verhalten mit ein paar Unit Tests ab. In Notebooks nutzen wir dafür `ipytest`, das `pytest` in Zellen ausführbar macht (siehe auch das Test-Kapitel).
 
-```{code-cell} python3
-:tags: [skip-execution]
 
+```{code-cell} python3
+!pip install ipytest
 import ipytest
 ipytest.autoconfig()
 ```
@@ -130,10 +131,6 @@ def test_parse_ignores_missing_values():
 def test_parse_converts_values_to_float():
     data = parse_air_quality_csv(_sample_csv_comma())
     assert isinstance(data["station_london"]["no2"][0], float)
-```
-
-```{code-cell} python3
-:tags: [skip-execution]
 
 ipytest.run()
 ```
@@ -141,8 +138,6 @@ ipytest.run()
 Jetzt kommt ein Test, der zeigt, wo es mit einem anderen Trennzeichen hakt. Dieser Test ist **absichtlich rot** (Fail), weil unser Parser (noch) nicht mit `;` umgehen kann.
 
 ```{code-cell} python3
-:tags: [skip-execution]
-
 def _sample_csv_semicolon():
     return """\
 datetime;station_antwerp;station_paris;station_london
@@ -156,10 +151,6 @@ def test_parse_with_semicolon_delimiter_should_work():
     # Realität: unser Parser ist (noch) auf Komma fest verdrahtet -> der Test scheitert.
     data = parse_air_quality_csv(_sample_csv_semicolon())
     assert "station_london" in data
-```
-
-```{code-cell} python3
-:tags: [skip-execution]
 
 ipytest.run()
 ```
@@ -177,7 +168,6 @@ sie hat nicht mehr viel zeit. variante 1 ist daher nicht möglich. . sie muss va
 nehmen: sie implementiert die funktion erneut und sagt dem nutzer aber was er falsch gemacht hat. und was der code erwartet. 
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 def parse_air_quality_csv(csv_text):
     """
@@ -243,7 +233,6 @@ def parse_air_quality_csv(csv_text):
 Und jetzt passen wir die Tests an: Semikolon-Eingaben sollen **nicht** „irgendwie“ geparst werden, sondern mit einer klaren Fehlermeldung abbrechen.
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 import pytest
 
@@ -263,10 +252,6 @@ def test_parse_raises_on_semicolon_delimiter():
 def test_parse_with_semicolon_delimiter_should_work():
     with pytest.raises(ValueError, match=r"Trennzeichen.*';'.*Komma"):
         parse_air_quality_csv(_sample_csv_semicolon())
-```
-
-```{code-cell} python3
-:tags: [skip-execution]
 
 ipytest.run()
 ```
@@ -288,7 +273,6 @@ Julia trennt die Verantwortlichkeiten:
 - **Gesamtes CSV parsen** (setzt die Bausteine zusammen)
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 def _non_empty_lines(text):
     return [ln.strip() for ln in text.strip().splitlines() if ln.strip()]
@@ -374,7 +358,6 @@ def parse_air_quality_csv(csv_text):
 Jetzt kann Julia z. B. das Float-Parsing unabhängig testen (ohne komplettes CSV zu bauen):
 
 ```{code-cell} python3
-:tags: [skip-execution]
 
 def test_parse_no2_value_empty_is_none():
     assert _parse_no2_value("", "station_x", "dummy") is None
@@ -389,10 +372,6 @@ def test_parse_no2_value_raises_on_invalid_number():
 
     with pytest.raises(ValueError, match=r"Ungültiger Messwert"):
         _parse_no2_value("abc", "station_x", "dummy")
-```
-
-```{code-cell} python3
-:tags: [skip-execution]
 
 ipytest.run()
 ```
