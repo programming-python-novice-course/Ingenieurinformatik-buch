@@ -114,6 +114,7 @@ parts:
         - file: chapters/13-fallbeispiel/32-problem-zerlegung
         - file: chapters/13-fallbeispiel/33-parsing
         - file: chapters/13-fallbeispiel/34-histogram
+        - file: chapters/13-fallbeispiel/35-statistics
   - caption: Appendix
     chapters:
     - file: chapters/misc/contributors
