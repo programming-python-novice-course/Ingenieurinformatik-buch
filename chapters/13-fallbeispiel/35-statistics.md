@@ -158,26 +158,26 @@ Wir sortieren sie:
 ```
 
 
-Es gibt verschiedene Quantil-Definitionen. In diesem Kapitel nutzen wir die Nearest-Rank-Definition:
-
-- Idee: „Es gibt keinen halben Wert – wir nehmen den nächsten sinnvollen Messwert.“
-- Regel: Nimm das **kleinste Element**, bei dem „mindestens \(q\) %“ erreicht sind.
-
-Für \(n\) Werte ist der (1-basierte) Rang:
-\[
-k = \lceil q \cdot n \rceil
-\]
-Das Quantil ist dann das Element an Position \(k\).
-
 **25 %-Quantil (Q1)**
 
 25% heißt: „Ein Viertel der Werte soll links davon liegen.“
-In unserem Zahlenbeispiel mit 10 Zahlenwerten, wäre das der 2,5. Werte → Nearest-Rank nimmt den nächsten ganzen Rang: \(k = \lceil 0{,}25 \cdot 10 \rceil = 3\).
+In unserem Zahlenbeispiel mit 10 Zahlenwerten, wäre das der 2,5. Wert. Den gibt es aber leider nicht. Also was sollen wir tun? Julia entscheidet sich einfach die Zahl an der 3. Position zu nehmen. In der Literatur ist diese Verfahren, bei dem also die nächst höhere Position verwendet wird, als Nearest-Rank-Verfahren bekannt. Es gibt auch andere Strategien.
 
 ```text
 9, 12, [28], 55, 63, 82, 91, 92, 96, 97
 ```
 In unserem Beispiel ist das 25 %-Quantil = 28.
+
+
+```{admonition} Hinweis
+:class: remark
+
+Es gibt verschiedene Quantil-Definitionen. Je nach Definition bekommt man auch andere Ergebnisse. Die Idee der Nearest-Rank-Definition ist:
+- Idee: „Es gibt keine halbe Position – wir nehmen den nächsten sinnvollen Messwert.“
+- Regel: Nimm das **kleinste Element**, bei dem „mindestens \(q\) %“ erreicht sind.
+Im Zweifel: fragen Sie immer nach, mit welchem Verfahren die Ergebnisse bestimmt wurden.
+```
+
 
 **50 %-Quantil (Median)**
 
@@ -249,7 +249,7 @@ print("75%:", nearest_rank_quantile(sv, 0.75))
 
 ## Berechnung
 
-Die Herausforderung ist es nun die Messwerte zu sortieren. Julia ist ganz Feuer und Flamme, da sie im Studium viel über Sortieralgorithmen gelernt hat.
+Zur Ermittlung der Quantile muss Julia also zunächst einmal die  Messwerte sortieren. Julia ist ganz Feuer und Flamme, da sie im Studium viel über Sortieralgorithmen gelernt hat.
 
 Sie erinnert sich noch dass es zum Sortieren unterschiedliche Algorithmen gibt und findet eine Übersichtstabelle:
 
@@ -378,9 +378,9 @@ Julia entscheidet sich: **Für reale Daten nutzt sie die Python-Implementierung*
 
 ## Standardbibliothek `statistics`
 
-Dann kommt plötzlich Julias Kollegin vorbei und meint, dass sie bereits sehr gute Erfahrung mit der Python-Bibliothek `statistics` gemacht hat - auch eine native Bib. Also nichts muss installiert werden. Julia ärgert sich ein wenig, dass sie nicht ordentlich rechechiert hat. Die ganze Arbeit mit dem Sortieren hat nur unnötige Zeilen Code erzeugt - und die Tests fehlen ja auch noch. 
+Dann kommt plötzlich Julias Kollegin vorbei und meint, dass sie bereits sehr gute Erfahrung mit der Python-Bibliothek `statistics` gemacht hat - auch eine native Bib. Die Bibliothek liefert nicht nur Mittelwerte und Standardabweichung sondern auch schon Quantile. Das ganze Sortieren, das Julia bereits angefangen hat, war also gar nicht notwendig.
 
-Julia ist also doch ganz froh, dass sie auf die Bibliothek zurückgreifen kann. Auch die Quartile kann sie über `statistics.quantiles(...)` bestimmen.
+Julia ärgert sich ein wenig, dass sie nicht ordentlich rechechiert hat und entscheidet sich die Bibliothek zu nutzen - damit muss sie auch keine Tests implementieren, was ja auch noch ausstehen würde.
 
 
 ```{code-cell} python3
