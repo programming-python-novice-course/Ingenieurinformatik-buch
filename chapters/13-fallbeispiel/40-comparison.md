@@ -1,39 +1,42 @@
 # Abstraktionsgrad
 
+Wir haben uns angesehen, wie Julia das Problem mithilfe von **High-Level-Funktionen** aus der Fremdbibliothek `pandas` gelöst hat. Diese Funktionen kapseln komplexe Datenstrukturen und statistische Auswertungen – und ermöglichen dadurch eine sehr kompakte Implementierung.
 
-Wir haben uns angesehen, wie Julia das Problem mithilfe von **High-Level-Funktionen** aus der Fremdbibliothek pandas gelöst hat. Diese Funktionen kapseln komplexe Datenstrukturen und statistische Auswertungen und ermöglichen eine sehr kompakte Implementierung.
-
-Anschließend wurde betrachtet, wie Julia das Problem mit eigenen Lösungen umgesetzt hat. Dabei kamen überwiegend **Low-Level-Funktionen** zum Einsatz, bei denen einzelne Berechnungsschritte explizit implementiert wurden. Am Ende wurden hierfür native Python-Bibliotheken wie statistics genutzt, die elementare statistische Funktionen bereitstellen und damit eine feinere Kontrolle über den Berechnungsprozess erlauben.
-
-Definition
-High-Level-Funktionen sagen was berechnet wird,
-Low-Level-Funktionen bestimmen wie es berechnet wird.
-
-Beispiele
-pandas.describe -> liefert eine komplette statistische analyse (high)
-stats.median() -> liefert eine statistische größe, die teil einer statistischen analyse sein kann (high/low .. depends)
+Anschließend wurde betrachtet, wie Julia das Problem mit eigenen Lösungen umgesetzt hat. Dabei kamen überwiegend **Low-Level-Funktionen** zum Einsatz, bei denen einzelne Schritte explizit implementiert wurden. Am Ende wurden hierfür Standardbibliotheken wie `statistics` genutzt, die elementare statistische Funktionen bereitstellen.
 
 
+```{admonition} Definition
+:class: definition
 
-#todo add figure
-figs/13-fallbeispiel/abstraction-degress.png
+High-Level-Funktionen beschreiben primär, was berechnet werden soll (z. B. „gib mir eine statistische Zusammenfassung“).
+Low-Level-Funktionen legen fest, wie etwas berechnet wird (z. B. Schleifen, Zwischenspeicher, Einzelschritte).
 
-Kernaussage: Sie müssen Pakete kennen und Sie müssen erkennen können, auf welchem Level Sie programmieren. Auf welchem Abstraktionsgrad sind Sie unterwegs? 
-
-
-
-Wir haben beim Parsing-Teil gesehen wie wenig generisch eigenen Quellcode sein kann. Wir haben beim Sortieren der Listen gesehen, dass Built-In-Funktionalitäten (sort()) ein Vielfaches schneller sein können - das kann daran liegen dass der Quellcode in CPython direkt implementiert ist, sodass eine Interpretation nicht mehr notwendig ist, ABER auch am ALgorithmus selbst, der dabei genutzt wird.
-
-Wir haben gesehen wie viele Zeilen Code Julia produziert hat und wie viele Zeilen mehr Code notwendig sind um diesen Code zu testen. Dass wir uns umfangreiche tests immer dann sparen können, wenn wir gut geteste Biblgiotheken wie pandas verwenden.
-
-Sie stehen, wenn Sie Software entwickeln, immer vor der Herausforderung:
-was kann ich beziehen und was muss ich selbst implementieren? und wenn ich mehrere implementierungen zur auswahl habe: wie finden sie heraus welche davon in ihrem softwareprodukt am besten geeignet ist bzgl. arbeitsspeicher, zeit,..
-
-Was wir die ganze Zeit über aussen vor gelassen haben ist das Thema Sicherheit. 
-
-```{admonition} Hinweis: CVE
-:class: remark
-
-Common Vulnerabilities and Exposures (CVE) ist ein öffentliches Referenzsystem zur eindeutigen Identifikation bekannter Sicherheitslücken in Software und Hardware. Jede CVE erhält eine standardisierte Kennung (z. B. CVE-2024-12345), die eine konsistente Kommunikation über Schwachstellen zwischen Herstellern, Sicherheitstools und Organisationen ermöglicht. CVEs bilden die Grundlage für viele Vulnerability-Scanner, Patch-Management-Prozesse und Risikobewertungen. Die offizielle CVE-Datenbank wird von der MITRE Corporation gepflegt und ist unter [cve.org](https://www.cve.org) abrufbar.
+Wichtig: Das ist kein Entweder-oder, sondern eher ein Kontinuum – viele Funktionen liegen „dazwischen“.
 ```
+
+**Beispiele**
+
+- **High-Level**: `DataFrame.describe()` liefert eine komplette statistische Analyse „in einem Aufruf“.
+- **Zwischenstufe**: `statistics.median()` liefert eine einzelne Kenngröße – sie ist Baustein einer Analyse, aber nicht die ganze Analyse.
+- **Low-Level**: eine eigene Median-/Quartilsberechnung per Sortieren/Indexieren/Schleifen legt die Rechenschritte selbst fest.
+
+
+
+Sie müssen Pakete kennen – und Sie müssen erkennen können, **auf welchem Abstraktionsgrad** Sie gerade programmieren: Verwenden Sie Bausteine, die viel „für Sie erledigen“, oder implementieren Sie die einzelnen Schritte selbst?
+
+In der Vorlesung und den Praktika sind Ihnen verschiedenen Python-Bibliotheken begegnet, die sich im Abstraktionsgrad und in ihrem Einsatzzweck unterscheiden. Die Grafik soll Sie dabei unterstützen, diese Bibliotheken einzuordnen und ihre Beziehungen zueinander zu verstehen.
+
+```{figure} ../../figs/13-fallbeispiel/abstraction-degress.png
+---
+width: 900px
+---
+Abstraktionsgrad: High-Level beschreibt *was*, Low-Level beschreibt *wie*.
+```
+
+
+Auf der vertikalen Achse ist der Abstraktionsgrad dargestellt: Weiter oben stehen High-Level-Bibliotheken, die viele Details verbergen und schnelle Ergebnisse ermöglichen. Weiter unten befinden sich Low-Level-Bibliotheken, die näher an den grundlegenden Rechenoperationen arbeiten und mehr Kontrolle, aber auch mehr Eigenarbeit erfordern.
+Im Bereich Daten / Numerik (links) haben wir in Julias Programmieraufgabe mit pandas auf der höchsten Ebene gearbeitet. Pandas stellt komfortable Datenstrukturen wie DataFrame und Series bereit und eignet sich besonders für Datenanalyse und Auswertung. Intern nutzt pandas NumPy, das eine niedrigere Abstraktionsebene bildet und effiziente numerische Arrays bereitstellt. Noch weiter unten befinden sich die Module statistics und math aus der Python-Standardbibliothek: statistics bietet grundlegende statistische Funktionen für einfache Datenlisten und greift dabei intern auf elementare mathematische Funktionen aus math zurück.
+Im Bereich Visualisierung (rechts) haben Sie bereits matplotlib kennengelernt. seaborn kennen Sie noch nicht. seaborn ist eine High-Level-Bibliothek für statistische Visualisierungen und baut direkt auf matplotlib auf. Matplotlib selbst arbeitet auf einer niedrigeren Ebene und bietet feinere Kontrolle über Achsen, Linien und Layouts. Häufig werden dabei pandas-Daten oder NumPy-Arrays als Eingabe verwendet, was in der Grafik durch gestrichelte Pfeile dargestellt ist.
+
+Insgesamt zeigt die Grafik: Die Bibliotheken stehen nicht isoliert nebeneinander, sondern bauen logisch und technisch aufeinander auf. Je höher der Abstraktionsgrad, desto einfacher ist die Nutzung – je niedriger, desto mehr Kontrolle. 
 
