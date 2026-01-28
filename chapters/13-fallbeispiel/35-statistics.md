@@ -9,10 +9,11 @@ kernelspec:
   name: python3
 ---
 
-# Statisken
+# Statistiken
 
-Zum Schluss macht sich Julia noch an die Berechnung der Statistiken:
-die Berechnung des Standardabweichung und 
+Zum Schluss macht sich Julia an den letzten Baustein des Fallbeispiels: **die statistische Auswertung** der NO₂-Messwerte.
+
+Ziel ist eine tabellarische Übersicht *ähnlich zu* `pandas.describe()` – aber ohne Pandas (also ohne externe Bibliotheken): Anzahl, Mittelwert, Standardabweichung, Minimum/Maximum sowie Quartile (25 %, Median, 75 %).
 
 ```{code-cell} python3
 ---
@@ -99,8 +100,9 @@ def parse_air_quality_csv_v3(csv_text):
 
     return result
 ```
+## Daten einlesen
 
-Zunächst liest Julia wieder die Datei ein:
+Wie in den vorherigen Teilkapiteln liest Julia die CSV-Datei direkt aus dem Internet ein. Dafür reicht `urllib` aus der Standardbibliothek – es muss nichts installiert werden.
 
 ```{code-cell} python3
 from urllib.request import urlopen
@@ -113,55 +115,141 @@ data = parse_air_quality_csv_v3(csv_text)
 
 ```
 
+Damit die Ausgabe später hübscher aussieht, entfernt Julia noch das Präfix `station_` aus den Stationsnamen (wie schon im Histogramm-Kapitel).
+
+```{code-cell} python3
+data = {k.replace("station_", "").title(): v for k, v in data.items()}
+sorted(data.keys())
+```
+
+Zur Erinnerung: Die Daten liegen als Dictionary vor, pro Station jeweils die Zeitstempel und die NO₂-Werte.
+
+Wenn Julia kurz prüfen möchte, ob alles passt, gibt sie eine kleine Vorschau aus (statt das komplette Dictionary in den Text zu kopieren).
+
+```{code-cell} python3
+import json
+
+def preview_data(data, n=5):
+    return {
+        station: {"time": d["time"][:n], "no2": d["no2"][:n], "total": len(d["no2"])}
+        for station, d in data.items()
+    }
+
+print(json.dumps(preview_data(data, n=5), indent=2, ensure_ascii=False))
+```
 
 ## Quantile
+Julia startet mit der Berechnung der Quantile. Grundsätzlich teilen Quantile eine (aufsteigend) **sortierte** Zahlenliste in Abschnitte.
 
-Was sind quantile? Grundsätzlich..
+- **25 %-Quantil (Q1)**: 25 % der Werte liegen links davon (oder sind kleiner/gleich).
+- **50 %-Quantil (Median)**: „mittlerer“ Wert (bzw. bei gerader Anzahl der Mittelwert der zwei mittleren Werte).
+- **75 %-Quantil (Q3)**: 75 % der Werte liegen links davon.
 
-Beispiel: 
-Wir haben 10 Werte
+**Beispiel**
+
+Wir haben 10 Werte:
+```text
 82, 91, 12, 92, 63, 9, 28, 55, 96, 97
+```
 
 Wir sortieren sie:
+```text
 9, 12, 28, 55, 63, 82, 91, 92, 96, 97
+```
 
 
-Was bedeutet „25 %-Quantil“?
-25 % heißt: „Ein Viertel der Werte soll links davon liegen.“
-Ein Viertel von 10 sind 2,5 Werte.
+Es gibt verschiedene Quantil-Definitionen. In diesem Kapitel nutzen wir die Nearest-Rank-Definition:
 
-Und jetzt gibt es veschiedenen Verfahren, die sich dadurch unterscheiden was wir jetzt machen: rechnen wie den 2. und 3. wert zusammen? nehmen wir den 3. wert? 
+- Idee: „Es gibt keinen halben Wert – wir nehmen den nächsten sinnvollen Messwert.“
+- Regel: Nimm das **kleinste Element**, bei dem „mindestens \(q\) %“ erreicht sind.
 
--> wir verwenden hier das "Nearest-Rank Quantile"
+Für \(n\) Werte ist der (1-basierte) Rang:
+\[
+k = \lceil q \cdot n \rceil
+\]
+Das Quantil ist dann das Element an Position \(k\).
 
-Nearest-Rank Quantile:
+**25 %-Quantil (Q1)**
 
-Es gibt keinen halben Wert, also nehmen wir den nächsten ganzen Wert, bei dem man sagen kann:
-„Jetzt sind mindestens 25 % erreicht.“
-Das ist:
+25% heißt: „Ein Viertel der Werte soll links davon liegen.“
+In unserem Zahlenbeispiel mit 10 Zahlenwerten, wäre das der 2,5. Werte → Nearest-Rank nimmt den nächsten ganzen Rang: \(k = \lceil 0{,}25 \cdot 10 \rceil = 3\).
+
+```text
 9, 12, [28], 55, 63, 82, 91, 92, 96, 97
--> 25 %-Quantil = 28
+```
+In unserem Beispiel ist das 25 %-Quantil = 28.
 
-Was bedeutet der Median (50 %)?
-50 % heißt:
-„Die Hälfte der Werte liegt links, die Hälfte rechts.“
-Bei 10 Werten gibt es keinen einzelnen mittleren Wert, sondern zwei in der Mitte:
+**50 %-Quantil (Median)**
+
+50 % heißt: „Die Hälfte der Werte liegt links, die Hälfte rechts.“
+Bei 10 Werten gibt es keinen einzelnen mittleren Wert, sondern zwei in der Mitte.
+
+```text
 9, 12, 28, 55, [63, 82], 91, 92, 96, 97
+```
+
 Der Median liegt zwischen diesen beiden:
 (63 + 82) / 2 = 72,5
--> 50% Quantil = 72,5
 
-75 % heißt:
-„Drei Viertel der Werte sollen links davon liegen.“
-Drei Viertel von 10 sind 7½ Werte.
+In unserem Beispiel ist das 50 %-Quantil (Median) = 72,5.
 
-Wieder: kein halber Wert → nächster sinnvoller Messwert:
+**75 %-Quantil (Q3)**
+
+75 % heißt: „Drei Viertel der Werte sollen links davon liegen.“
+Drei Viertel von 10 sind 7,5 Werte → Nearest-Rank nimmt den nächsten ganzen Rang: \(k = \lceil 0{,}75 \cdot 10 \rceil = 8\).
+
+```text
 9, 12, 28, 55, 63, 82, 91, [92], 96, 97
--> 75 %-Quantil = 92
+```
+
+In unserem Beispiel ist das 75 %-Quantil = 92.
+
+Jetzt setzt Julia das in Code um.
+
+```{code-cell} python3
+---
+tags: [hide-input]
+---
+import math
+
+def nearest_rank_quantile(sorted_values, q):
+    """
+    Nearest-Rank-Quantil für q in [0, 1].
+    Erwartet: sorted_values ist aufsteigend sortiert.
+    """
+    if not sorted_values:
+        raise ValueError("Leere Liste.")
+    if not (0 <= q <= 1):
+        raise ValueError("q muss zwischen 0 und 1 liegen.")
+
+    n = len(sorted_values)
+    k = max(1, math.ceil(q * n))  # 1..n
+    return sorted_values[k - 1]   # 0-basiert
+
+
+def median(sorted_values):
+    if not sorted_values:
+        raise ValueError("Leere Liste.")
+    n = len(sorted_values)
+    mid = n // 2
+    if n % 2 == 1:
+        return sorted_values[mid]
+    return (sorted_values[mid - 1] + sorted_values[mid]) / 2
+```
+
+```{code-cell} python3
+values = [82, 91, 12, 92, 63, 9, 28, 55, 96, 97]
+sv = sorted(values)
+
+print("sortiert:", sv)
+print("25%:", nearest_rank_quantile(sv, 0.25))
+print("50% (Median):", median(sv))
+print("75%:", nearest_rank_quantile(sv, 0.75))
+```
 
 ## Berechnung
 
-Die Herausforderung ist es nun die Liste an Zahlen zu sortieren. Julia ist ganz Feuer und Flamme, da sie im Studium viel über Sortieralgorithmen gelernt hat.
+Die Herausforderung ist es nun die Messwerte zu sortieren. Julia ist ganz Feuer und Flamme, da sie im Studium viel über Sortieralgorithmen gelernt hat.
 
 Sie erinnert sich noch dass es zum Sortieren unterschiedliche Algorithmen gibt und findet eine Übersichtstabelle:
 
@@ -179,70 +267,156 @@ Sie erinnert sich noch dass es zum Sortieren unterschiedliche Algorithmen gibt u
 | PowerSort (Merge-Policy) | Nahezu optimale Merge-Reihenfolge | O(n) | O(n log n) | O(n log n) | O(n) | Ja | Nein | CPython ≥ 3.11 |
 
 
-Sie recherchiert weiter und findet heraus, dass in Python bis Python3.10 TimSort zum Sortieren von Listen verwendet. Ab 3.11 wurde die Merge- ..  geändert: jetzt wird PowerSort  verwendet. #todo: beschreibe was ist damit gemeint?? Quelle: https://www.i-programmer.info/news/216-python/15954-python-now-uses-powersort.html
+Sie recherchiert weiter und findet heraus: Python sortiert Listen seit Jahren mit einer sehr ausgefeilten, stabilen Merge-Sort-Familie (Timsort). Ab Python 3.11 wurde vor allem die *Merge-Strategie* verbessert (PowerSort). 
 
-Julia würde allerdings gerne selbst bestimmen können, welcher Algorithmus verwendet wird. Also implementiert sie ein Strategiepattern:
+Julia würde trotzdem gerne selbst bestimmen können, welcher Algorithmus verwendet wird. Also implementiert sie ein kleines Strategie-Pattern: „Sortieren“ ist austauschbar – der Rest des Programms bleibt gleich.
 
-#todo implementiere bubble sort und selection sort beispielhaft.
+```{code-cell} python3
+---
+tags: [hide-input]
+---
+from dataclasses import dataclass
 
-
-
-#Dann macht sie einen performance test. und vergleicht ihre beiden algorithmen mit dem Python default.
-
-
-Julia entscheidet sich aufgrund des Performance unterschieds, der bei großen datenmengen ja noch größer wird, deshalb nun das sortieren doch mithilfe der python implementierung zu implementieren
-
-#todo add implementierung
-data_temp = data.copy()
-for station in data_temp:
-    _result = describe(data_temp[station]["no2"])
-    cols.append(station)
-    results_dict.append(_result)
+class SortStrategy:
+    def sort(self, values):
+        raise NotImplementedError
 
 
-## statistics
+@dataclass(frozen=True)
+class BubbleSort(SortStrategy):
+    def sort(self, values):
+        a = list(values)  # kopieren, Input nicht verändern
+        n = len(a)
+        for i in range(n):
+            swapped = False
+            for j in range(0, n - i - 1):
+                if a[j] > a[j + 1]:
+                    a[j], a[j + 1] = a[j + 1], a[j]
+                    swapped = True
+            if not swapped:
+                break
+        return a
 
-Dann kommt Julias Kollegin vorbei und meint dass es für die ganzen Berechnungen auch eine native Python-Bibliothek gibt: statistics.
-Julia hofft, dass ihre Implementierung deutlich schneller ist als die native. Falls das der Fall wäre, hat ihre Implementierung immer noch Bestand. Falls nicht, macht es Sinn umzusteigen und ihre Implementierung zu löschen.
+
+@dataclass(frozen=True)
+class SelectionSort(SortStrategy):
+    def sort(self, values):
+        a = list(values)
+        n = len(a)
+        for i in range(n):
+            min_idx = i
+            for j in range(i + 1, n):
+                if a[j] < a[min_idx]:
+                    min_idx = j
+            if min_idx != i:
+                a[i], a[min_idx] = a[min_idx], a[i]
+        return a
+
+
+@dataclass(frozen=True)
+class PythonSort(SortStrategy):
+    def sort(self, values):
+        return sorted(values)
+```
+
+Mini-Demo: Alle Strategien liefern dasselbe Ergebnis.
+
 
 
 ```{code-cell} python3
-import statistics as stats
-sample = [2,1,4,66,2,3,6,4,3,8,12,124]
-quantiles = stats.quantiles(sample, n=4) 
+values = [82, 91, 12, 92, 63, 9, 28, 55, 96, 97]
 
-print.. 
+strategies = [BubbleSort(), SelectionSort(), PythonSort()]
+for s in strategies:
+    print(type(s).__name__, "->", s.sort(values))
+```
 
+## Performance: Lernalgorithmen vs. Python-Sort
+
+Julia muss sich entscheiden, welchen Algorithmus sie jetzt verwendet. Deshalb führt sie einen einfachen Performance-Test durch, indem sie die Zeit misst, die die jeweiligen Sortierungen benötigen.
+
+
+```{code-cell} python3
+import time
+
+def time_sort(strategy, values, repeats=3):
+    best = None
+    for _ in range(repeats):
+        # Achtung: Listen sind mutable -> jede Messung auf einer frischen Kopie
+        sample = list(values)
+        t0 = time.perf_counter()
+        strategy.sort(sample)
+        dt = time.perf_counter() - t0
+        best = dt if best is None else min(best, dt)
+    return best
+
+# Reale Messdaten: wir vergleichen auf der Station Paris.
+paris_no2 = data["Paris"]["no2"]
+
+strategies = [BubbleSort(), SelectionSort(), PythonSort()]
+
+print(f"Station: Paris | Größe n={len(paris_no2)}")
+for s in strategies:
+    dt = time_sort(s, paris_no2, repeats=3)
+    print(f"  {type(s).__name__:>12}: {dt*1000:8.2f} ms")
+```
+
+```{exercise} Aufgabe
+
+Implementieren Sie einen weiteren Sortieralgorithmus selbst und fügen Sie ihn dem Performance-Test hinzu.
+```
+
+```{admonition} Wichtig
+:class: warning
+
+Sortieralgorithmen können prüfungsrelevant sein. Sie müssen die Algorithmen nicht alle lernen, aber Sie sollten in der Lage sein, mindestens einen Algorithmus selbstständig (also **ohne** `list.sort()` oder `sorted()`) zu implementieren.
 ```
 
 
+Julia entscheidet sich: **Für reale Daten nutzt sie die Python-Implementierung** (schnell, getestet, robust). Ihre Implementierungen behält sie - vielleicht sind diese ja später noch irgendwann nutzbar.
 
 
-## Finale Implementierung
+## Standardbibliothek `statistics`
+
+Dann kommt plötzlich Julias Kollegin vorbei und meint, dass sie bereits sehr gute Erfahrung mit der Python-Bibliothek `statistics` gemacht hat - auch eine native Bib. Also nichts muss installiert werden. Julia ärgert sich ein wenig, dass sie nicht ordentlich rechechiert hat. Die ganze Arbeit mit dem Sortieren hat nur unnötige Zeilen Code erzeugt - und die Tests fehlen ja auch noch. 
+
+Julia ist also doch ganz froh, dass sie auf die Bibliothek zurückgreifen kann. Auch die Quartile kann sie über `statistics.quantiles(...)` bestimmen.
+
 
 ```{code-cell} python3
-import statistics as stats
+import statistics as st
 
-def describe(data):
+def describe(values):
+    """
+    Ähnlich zu pandas.describe(), aber:
+    - ohne externe Bibliotheken
+    - Quartile über `statistics.quantiles(...)` (Nearest-Rank war oben nur ein didaktisches Beispiel)
+    """
+    if not values:
+        raise ValueError("Leere Liste.")
 
-    quantiles = stats.quantiles(data, n=4)
+    # quantiles(...) gibt für n=4 drei Werte zurück: [25%, 50%, 75%]
+    # Wir verwenden "inclusive", damit es auch für kleinere Listen definiert ist.
+    q25, q50, q75 = st.quantiles(values, n=4, method="inclusive")
+    sv = sorted(values)  # nur für min/max (ohne Input zu verändern)
+
     return {
-        "count": len(data),
-        "mean": stats.mean(data),
-        "std": stats.stdev(data),
-        "min": min(data),
-        "25%": quantiles[0],
-        "50%": quantiles[1], # median
-        "75%": quantiles[2],
-        "max": max(data),
+        "count": len(values),
+        "mean": st.mean(values),
+        "std": st.stdev(values) if len(values) >= 2 else 0.0,
+        "min": sv[0],
+        "25%": q25,
+        "50%": q50,
+        "75%": q75,
+        "max": sv[-1],
     }
 
-    
-def print_table(stats, cols, precision=2):
+
+def print_table(table_data, cols, precision=2):
     header = ["stat"] + cols
     rows = []
 
-    for stat, values in stats.items():
+    for stat, values in table_data.items():
         row = [stat] + [
             f"{v:.{precision}f}" if isinstance(v, float) else str(v)
             for v in values
@@ -255,24 +429,22 @@ def print_table(stats, cols, precision=2):
     ]
 
     def fmt_row(row):
-        return "  ".join(
-            cell.ljust(w) for cell, w in zip(row, col_widths)
-        )
+        return "  ".join(cell.ljust(w) for cell, w in zip(row, col_widths))
 
     print(fmt_row(header))
     print("-" * (sum(col_widths) + 2 * (len(col_widths) - 1)))
     for row in rows:
         print(fmt_row(row))
 
+
 results_dict = []
 cols = []
 
 for station in data:
-    _result = describe(data[station]["no2"])
+    result = describe(data[station]["no2"])
     cols.append(station)
-    results_dict.append(_result)
-    
-    
+    results_dict.append(result)
+
 table = {k: [row[k] for row in results_dict] for k in results_dict[0]}
-print_table(table, cols = cols)
+print_table(table, cols=cols)
 ```
