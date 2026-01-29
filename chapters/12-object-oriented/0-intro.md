@@ -12,6 +12,16 @@ kernelspec:
 (sec-oop)=
 # Objektorientierte Programmierung
 
+```{admonition} Lernziele
+::class: learngoals
+
+- Nach diesem Kapitel verstehen Sie den Unterschied zwischen prozeduraler und objektorientierter Programmierung und warum OOP als Paradigma in der Praxis so verbreitet ist.
+- Nach diesem Kapitel sind Sie in der Lage, Klassen und Objekte als benutzerdefinierte Datentypen zu erklären und einfache Klassen zu implementieren (Attribute, Methoden, ``__init__``).
+- Nach diesem Kapitel sind Sie in der Lage, Methodenaufrufe und das Zusammenspiel von Daten und Verhalten in Objekten nachzuvollziehen (inkl. ``self``).
+- Nach diesem Kapitel sind Sie in der Lage, grundlegende OOP-Konzepte anzuwenden und einzuordnen (Kapselung, Vererbung, Polymorphie) – soweit im Kapitel behandelt.
+- Nach diesem Kapitel sind Sie in der Lage, für einfache Problemstellungen zu entscheiden, ob ein prozeduraler oder objektorientierter Ansatz sinnvoller ist, und Ihre Entscheidung zu begründen.
+```
+
 Um zu verstehen was die *objektorientierte Programmierung* ist, ist es äußerst hilfreich sich klar zu machen, was die *objekt-orientierte Programmierung* nicht ist, beziehungsweise woraus die *objektorientierte Programmierung* entstanden ist.
 
 Die *objectorientierte Programmierung* ist ein Programmierparadigma, welches sich in den letzten 15 Jahren in vielen Bereichen der Softwareentwicklung durchgesetzt hat.
