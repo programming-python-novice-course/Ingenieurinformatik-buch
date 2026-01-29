@@ -1,4 +1,4 @@
-# Datenmodell (Einschub)
+# Datenmodell
 (sec-object-model)=
 
 Zahlreiche Eigenschaften von Python sind direkte Folgen des Datenmodells, mit denen wir uns in den kommenden Abschnitten auseinandersetzen werden. Voraussetzung um diese zu verstehen, ist das Verständnis über das Datenmodell. Deshalb gehen wir hier kurz auf Pythons Datenmodell ein. 

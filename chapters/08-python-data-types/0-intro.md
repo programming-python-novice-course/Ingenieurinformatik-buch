@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-python-data-types)=
-# Datentypen (Grundlagen)
+# Datentypen
 
 Wie in Abschnitt [Repräsentation](sec-representation) beschrieben, befinden sich im Speicher des (digitalen) Computers ausschließlich [Bits](def-bit).
 Sie können sich den Speicher als eine lange lange Liste von Bits vorstellen.
