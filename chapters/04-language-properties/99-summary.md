@@ -9,10 +9,14 @@ kernelspec:
   name: python3
 ---
 
-# Übersicht
+# Takeaways
+
+#TODO was haben wir in diesem kapitel gelernt?
 
 
-TODO..
+
+
+Und noch zum Schluss: das Python-Zen
 
 ```{code-cell} python3
 import this

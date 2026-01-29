@@ -54,6 +54,7 @@ parts:
       - file: chapters/04-language-properties/4-seiteneffekte
       - file: chapters/04-language-properties/3-speicherverwaltung
       - file: chapters/04-language-properties/8-primitive-data
+      - file: chapters/04-language-properties/99-summary
   - caption: Python anwenden
     numbered: True
     chapters:

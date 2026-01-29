@@ -17,22 +17,25 @@ Genau das beschreibt die **Komplexität** (Komplexitätstheorie/Analyse von Algo
 ```{admonition} Zeit- vs. Speicherkomplexität
 :class: definition
 
-- **Zeitkomplexität**: Wie viele elementare Rechenschritte (grob) benötigt ein Algorithmus in Abhängigkeit von der Eingabegröße \(n\)?
-- **Speicherkomplexität**: Wie viel Speicher (z. B. Anzahl/Größe von Datenstrukturen) wird in Abhängigkeit von \(n\) benötigt?
+- **Zeitkomplexität**: Wie viele elementare Rechenschritte (grob) benötigt ein Algorithmus in Abhängigkeit von der Eingabegröße $n$?
+- **Speicherkomplexität**: Wie viel Speicher (z. B. Anzahl/Größe von Datenstrukturen) wird in Abhängigkeit von $n$ benötigt?
 ```
 
-Wichtig: In der Regel interessiert uns nicht die genaue Zeit in Sekunden auf einem bestimmten Laptop, sondern wie stark der Aufwand wächst, wenn \(n\) größer wird (*Skalierung*).
+Wichtig: In der Regel interessiert uns nicht die genaue Zeit in Sekunden auf einem bestimmten Laptop, sondern wie stark der Aufwand wächst, wenn $n$ größer wird (*Skalierung*).
 
 **Notation**
 
-Wir beschreiben den Aufwand als Funktion \(T(n)\) (Zeit) oder \(S(n)\) (Speicher).
-Dabei wird der Blick auf große \(n\) gerichtet; Konstanten und unwichtige Terme werden „ignoriert“.
+Wir beschreiben den Aufwand als Funktion $T(n)$ (Zeit) oder $S(n)$ (Speicher).
+Dabei wird der Blick auf große $n$ gerichtet; Konstanten und unwichtige Terme werden „ignoriert“.
 
-- \(O(\cdot)\) (*obere Schranke*): „Wächst höchstens so schnell wie …“
-- \(\Omega(\cdot)\) (*untere Schranke*): „Wächst mindestens so schnell wie …“
-- \(\Theta(\cdot)\) (*enge Schranke*): „Wächst ungefähr genau so schnell wie …“ (oben *und* unten)
+- $$O(\cdot)$$
+  (*obere Schranke*): „Wächst höchstens so schnell wie …“
+- $$\Omega(\cdot)$$
+  (*untere Schranke*): „Wächst mindestens so schnell wie …“
+- $$\Theta(\cdot)$$
+  (*enge Schranke*): „Wächst ungefähr genau so schnell wie …“ (oben *und* unten)
 
-Beispiel: \(T(n)=3n+10\) ist \(\Theta(n)\) (und damit auch \(O(n)\)).
+Beispiel: $T(n)=3n+10$ ist $\Theta(n)$ (und damit auch $O(n)$).
 
 
 **Mini-Beispiel**
@@ -43,7 +46,7 @@ Gegeben ist eine Liste `xs`:
 xs = [3, 1, 4, 1, 5]  # Duplikat: 1 kommt zweimal vor
 ```
 
-Fragestellung: Kommt ein Wert mindestens zweimal vorkommt?
+**Fragestellung: Kommt ein Wert mindestens zweimal vorkommt?**
 
 Wir können das Problem mit unterschiedlichen Algorithmen lösen:
 
@@ -101,24 +104,32 @@ for n in ns:
     t_quad.append(timeit.timeit(lambda: algorithmus_A(xs), number=3) / 3)
     t_set.append(timeit.timeit(lambda: algorithmus_B(xs), number=200) / 200)
 
-plt.figure(figsize=(6, 4))
-plt.plot(ns, t_quad, "o-", label="naiv (O(n^2))")
-plt.plot(ns, t_set, "o-", label="mit Set (≈ O(n))")
-plt.xlabel("n (Listengröße)")
-plt.ylabel("Zeit pro Ausführung [s]")
-plt.title("Skalierung: gleicher Task, unterschiedliche Komplexität")
-plt.grid(True, alpha=0.3)
-plt.legend()
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(6, 6), sharex=True)
+
+ax1.plot(ns, t_quad, "o-", label="naiv (O(n^2))")
+ax1.set_title("Algorithmus A: naiv (O(n^2))")
+ax1.set_ylabel("Zeit pro Ausführung [s]")
+ax1.grid(True, alpha=0.3)
+ax1.legend()
+
+ax2.plot(ns, t_set, "o-", label="mit Set (≈ O(n))")
+ax2.set_title("Algorithmus B: mit Set (≈ O(n))")
+ax2.set_xlabel("n (Listengröße)")
+ax2.set_ylabel("Zeit pro Ausführung [s]")
+ax2.grid(True, alpha=0.3)
+ax2.legend()
+
+fig.tight_layout()
 plt.show()
 ```
 
 Das Diagramm zeigt, wie sich die Laufzeit verändert, wenn die Liste größer wird (mehr Elemente).
 Man erkennt zwei unterschiedliche Wachstumsarten:
 
-- **Algorithmus A** wächst deutlich steiler. Wenn sich die Listengröße ungefähr verdoppelt, steigt die benötigte Zeit *viel mehr* als doppelt. Das passt zu **quadratischem Wachstum** und damit zu einer Zeitkomplexität von ungefähr \(O(n^2)\).
-- **Algorithmus B** wächst deutlich flacher. Wenn sich die Listengröße verdoppelt, steigt die benötigte Zeit grob „im gleichen Verhältnis“. Das passt zu **linearem Wachstum** und damit zu ungefähr \(O(n)\).
+- **Algorithmus A** wächst deutlich steiler. Wenn sich die Listengröße ungefähr verdoppelt, steigt die benötigte Zeit *viel mehr* als doppelt. Das passt zu **quadratischem Wachstum** und damit zu einer Zeitkomplexität von ungefähr $O(n^2)$.
+- **Algorithmus B** wächst deutlich flacher. Wenn sich die Listengröße verdoppelt, steigt die benötigte Zeit grob „im gleichen Verhältnis“. Das passt zu **linearem Wachstum** und damit zu ungefähr $O(n)$.
 
-Die intuitive Erklärung: Algorithmus A vergleicht sehr viele Element-Paare (für jedes Element werden viele weitere geprüft). Algorithmus B geht einmal durch die Liste und nutzt zusätzliches „Gedächtnis“ (ein Set) zum Merken bereits gesehener Werte. Daher ist Algorithmus B für große \(n\) oft deutlich schneller, bezahlt das aber mit mehr Speicher (das Set wächst mit).
+Die intuitive Erklärung: Algorithmus A vergleicht sehr viele Element-Paare (für jedes Element werden viele weitere geprüft). Algorithmus B geht einmal durch die Liste und nutzt zusätzliches „Gedächtnis“ (ein Set) zum Merken bereits gesehener Werte. Daher ist Algorithmus B für große $n$ oft deutlich schneller, bezahlt das aber mit mehr Speicher (das Set wächst mit).
 
 Hinweis: Die Kurven hier sind eine **empirische Beobachtung** (Messung). Im Idealfall leitet man die Komplexität **analytisch** (durch eine mathematische Betrachtung) her. Messungen können die Tendenz gut sichtbar machen, hängen aber von Rechner, Implementierung und Messmethode ab.
 
