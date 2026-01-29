@@ -30,6 +30,9 @@ parts:
       sections:
       - file: chapters/03-computer-sciences-basics/10-informatik
       - file: chapters/03-computer-sciences-basics/20-basics
+        sections:
+        - file: chapters/03-computer-sciences-basics/21-neumann-architektur
+        - file: chapters/03-computer-sciences-basics/22-betriebssystem
       - file: chapters/03-computer-sciences-basics/30-codierung
         sections:
         - file: chapters/03-computer-sciences-basics/31-zusammenhang
