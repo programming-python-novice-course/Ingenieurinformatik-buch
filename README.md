@@ -1,32 +1,31 @@
 # Ingenieurinformatik 1 - Computational Thinking
 
-Dieses Repository enthält die Inhalte für eine interaktive Lern-Website, die auf Jupyter Book basiert. Studierende können sich selbstständig durch die Lehrinhalte arbeiten und **Python-Befehle direkt im Browser ausführen**.
+Dieses Repository enthält die Inhalte für eine interaktive Lern-Website auf Basis von Jupyter Book. Studierende können sich selbstständig durch die Lehrinhalte arbeiten und Python-Code direkt im Browser ausführen.
 
 ## Website
 
-Die Website wird automatisch über **GitLab LRZ Pages** bereitgestellt:
+Die Website wird automatisch über GitLab LRZ Pages bereitgestellt:
 
-** [Zur Website](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)**
+[Zur Website](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)
 
 Die Website basiert auf Jupyter Notebooks und ermöglicht es Studierenden, interaktiv mit den Lehrinhalten zu arbeiten und Python-Code direkt im Browser auszuführen.
 
 ## Binder / Thebe (interaktive Ausführung)
 
-Wenn im Buch **Thebe** aktiviert ist (`_config.yml`: `thebe: true`), wird im Hintergrund standardmäßig ein Kernel über **mybinder.org** gestartet. 
+Wenn im Buch Thebe aktiviert ist (`_config.yml`: `thebe: true`), wird im Hintergrund standardmäßig ein Kernel über mybinder.org gestartet.
 
-- **Wichtig (Dependencies)**: Binder erkennt Konfig-Dateien nur mit festen Namen. Daher liegt die Binder-Umgebung unter `binder/environment.yml` (wird von repo2docker automatisch gefunden).
+- Hinweis (Dependencies): Binder erkennt Konfig-Dateien nur mit festen Namen. Daher liegt die Binder-Umgebung unter `binder/environment.yml` (wird von repo2docker automatisch gefunden).
 
 
 Beispiel-Link (Branch `master`, JupyterLab):
 `https://mybinder.org/v2/git/https%3A%2F%2Fgitlab.lrz.de%2Ffk03ingenieurinformatik%2FIngenieurinformatik-buch.git/master?urlpath=lab`
 
-## 📄 PDF-Version
+## PDF-Version
 
-Zusätzlich zur Website kann aus den Inhalten ein **PDF-Buch** generiert werden. Dies wird über die GitLab CI/CD Pipeline erstellt.
+Zusätzlich zur Website kann aus den Inhalten ein PDF-Buch generiert werden. Dies wird über die GitLab CI/CD Pipeline erstellt.
 
-## 🤝 Beitragen
+## Beitragen
 
-### Workflow
 
 1. Repository klonen
 2. Änderungen durchführen
@@ -34,32 +33,25 @@ Zusätzlich zur Website kann aus den Inhalten ein **PDF-Buch** generiert werden.
 
 ### CI/CD Pipeline
 
-Das Projekt nutzt eine **Continuous Integration Pipeline**, mit der sowohl die Website als auch das PDF-Buch gebaut werden können. Die Pipeline wird auf einem GitLab Runner ausgeführt, der von Christina Mayr auf dem HM Kubernetes Cluster eingerichtet wurde.
+Das Projekt nutzt eine Continuous Integration Pipeline, mit der sowohl die Website als auch das PDF-Buch gebaut werden können. Die Pipeline wird auf einem GitLab Runner ausgeführt, der von Christina Mayr auf dem HM Kubernetes Cluster eingerichtet wurde.
 
-**Weitere Informationen:** [How-To: Get a local Docker Image into Kubernetes](https://collab.dvb.bayern/spaces/~ebke/pages/1494030620/How-To+Get+a+local+Docker+Image+into+Kubernetes)
+Weitere Informationen: [How-To: Get a local Docker Image into Kubernetes](https://collab.dvb.bayern/spaces/~ebke/pages/1494030620/How-To+Get+a+local+Docker+Image+into+Kubernetes)
 
-**Wichtig:**
-- Das **PDF-Buch** muss manuell getriggert werden (Job: `build_book_pdf`)
-- Das **Update der Website** muss ebenfalls manuell getriggert werden (Job: `update_website`)
+Wichtig:
+- Das PDF-Buch muss manuell getriggert werden (Job: `build_book_pdf`)
+- Das Update der Website muss ebenfalls manuell getriggert werden (Job: `update_website`)
 - Der Build der Website (`build_website_html`) läuft automatisch bei jedem Push
 
 ### Lokales Bauen
 
 Um die Website oder das PDF lokal zu bauen, schauen Sie am besten in die CI-Konfiguration (`.gitlab-ci.yml`). Hier sind alle verwendeten Befehle enthalten.
 
-**Voraussetzungen:**
+Voraussetzungen:
 - Docker muss installiert sein, um den Docker-Container lokal auszuführen
 - Das verwendete Docker-Image: `gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest`
 
-### Build dependencies
 
-Das Docker image kann gebaut werden über:
-```bash
-docker build --platform linux/amd64 -t gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest .
-docker push gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest
-```
-
-**Beispiel für lokalen Build:**
+Beispiel für lokalen Build:
 
 ```bash
 # Zuerst ins geklonte Repository-Verzeichnis wechseln
@@ -73,14 +65,16 @@ docker run --rm -it -v "$PWD":/home/jovyan/work -w /home/jovyan/work \
 
 Innerhalb des Containers können Sie dann die Befehle aus der CI-Konfiguration ausführen (`.gitlab-ci.yml`).
 
-**HTML-Website bauen:**
+HTML-Website bauen:
 ```bash
 jupyter-book build . --all --path-output _website_html
 ```
+Hinweis: Es kann vorkommen, dass Bilder nicht korrekt angezeigt werden, wenn Ihr Host-Betriebssystem sich vom dem des Docker-Images (Ubuntu) unterscheidet. Im Zweifel: Bauen Sie erneut in der CI-Pipeline und überprüfen Sie, ob das Bild dort korrekt dargestellt wird. Alternativ deaktivieren Sie die Ausführung der betreffenden Code-Zelle.
 
-**PDF-Buch bauen:**
+PDF-Buch bauen:
 ```bash
 # Zuerst GIF-Dateien zu PNG konvertieren (falls nötig)
+# Hinweis: `convert` ist Teil von ImageMagick.
 find figs -name "*.gif" -print0 | while IFS= read -r -d "" gif; do
   png="${gif%.gif}.png"
   if [ ! -f "$png" ]; then
@@ -93,11 +87,29 @@ export LATEXMKOPTS='-interaction=nonstopmode'
 jupyter-book build . --builder pdflatex --path-output _book_as_pdf
 ```
 
+### Docker-Image bauen (Build-Umgebung)
+
+Das Docker-Image (für CI/Lokales Bauen) kann so gebaut und gepusht werden:
+```bash
+REGISTRY_IMAGE="gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch"
+TAG="$(date +%F)"  # YYYY-MM-DD
+
+# falls nötig:
+docker login gitlab.lrz.de:5005
+
+# robust auf macOS/arm64: linux/amd64 bauen und direkt pushen (2 Tags in einem Build)
+docker buildx build --platform linux/amd64 \
+  -t "${REGISTRY_IMAGE}:${TAG}" \
+  -t "${REGISTRY_IMAGE}:latest" \
+  --push .
+```
+
+
 ## Deployment
 
-Das Deployment erfolgt über **GitLab LRZ** und **GitHub**:
+Das Deployment erfolgt über GitLab LRZ und GitHub:
 
-- In **GitLab LRZ** wird die interaktive Website in der **CI/CD-Pipeline** gebaut und über **Pages** veröffentlicht.
-- Für die Ausführung der Code-Zellen (Thebe) wird eine **Binder-Konfiguration** benötigt.
+- In GitLab LRZ wird die interaktive Website in der CI/CD-Pipeline gebaut und über Pages veröffentlicht.
+- Für die Ausführung der Code-Zellen (Thebe) wird eine Binder-Konfiguration benötigt.
   - Die Binder-Umgebung (Dependencies) liegt in `binder/` (z.B. `binder/environment.yml`). Mehr Infos im [deployment-repo auf GitHub](https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy)
-- Notebooks, die in der GitLab-LRZ-Pipeline gebaut werden, werden ebenfalls nach [GitHub](https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/tree/master/deployed_notebooks) deployed. Diese dienen als **Fallback**, falls die Live-Code-Ausführung nicht klappt.
+- Notebooks, die in der GitLab-LRZ-Pipeline gebaut werden, werden ebenfalls nach [GitHub](https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/tree/master/deployed_notebooks) deployed. Diese dienen als Fallback, falls die Live-Code-Ausführung nicht klappt.

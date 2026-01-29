@@ -30,7 +30,14 @@ parts:
       - file: chapters/03-computer-sciences-basics/30-codierung
       - file: chapters/03-computer-sciences-basics/40-zahlensysteme
       - file: chapters/03-computer-sciences-basics/50-programming
+        sections:
+        - file: chapters/03-computer-sciences-basics/51-algorithmus
+        - file: chapters/03-computer-sciences-basics/52-komplexität
+        - file: chapters/03-computer-sciences-basics/53-software
       - file: chapters/03-computer-sciences-basics/60-programmierkonstrukte
+        sections:
+        - file: chapters/03-computer-sciences-basics/61-kontrollstrukturen
+        - file: chapters/03-computer-sciences-basics/62-datenstrukturen
       - file: chapters/03-computer-sciences-basics/70-visualization
   - caption: Python verstehen
     numbered: True
