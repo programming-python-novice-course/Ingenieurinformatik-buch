@@ -296,22 +296,57 @@ for s in strategies:
 
 ## Performance: Lernalgorithmen vs. Python-Sort
 
-Julia muss sich entscheiden, welchen Algorithmus sie jetzt verwendet. Deshalb führt sie einen einfachen Performance-Test durch, indem sie die Zeit misst, die die jeweiligen Sortierungen benötigen.
+Julia muss sich entscheiden, welchen Algorithmus sie jetzt verwendet. Deshalb führt sie einen einfachen Performance-Test durch.
+
+
+```{admonition} Exkurs: Performance messen (Profiling)
+:class: tip
+„Performance“ kann sich auf verschiedene Dinge beziehen – z.B. **Laufzeit**, **Speicherverbrauch (RAM)** oder **I/O-Verhalten** (Warten auf Dateien/Netzwerk). Welche Kennzahl relevant ist, hängt vom Programm ab.
+
+**Einfache Zeitmessung in Python**
+
+```python
+import time
+
+start = time.perf_counter()   # alternativ: time.time()
+# ... Code, den Sie messen wollen ...
+dauer = time.perf_counter() - start
+print(f"{dauer:.3f}s")
+```
+
+**Profiling**
+Profiling ist mehr als eine einzelne Zeitmessung: Es hilft Ihnen zu verstehen, **welche Funktionen** wie viel Zeit (oder Speicher) verbrauchen – also **wo** der Engpass wirklich liegt. 
+
+- **CPU-Profiling (Standardbibliothek)**: `cProfile` (+ Auswertung mit `pstats`)
+- **Visualisierung**: z.B. `snakeviz` (zeigt `cProfile`-Ausgaben grafisch)
+- **Sampling-Profiler (geringer Overhead)**: z.B. `py-spy` (läuft auch an laufenden Prozessen)
+- **Line-by-line**: z.B. `line_profiler` (sehr konkret, aber mehr Overhead)
+- **Speicher/Allokationen**: `tracemalloc` (Standardbibliothek), optional `memory_profiler`
+
+Tipp: Messen Sie mit **realistischen Eingaben** und achten Sie darauf, ob Ihr Programm eher **CPU-bound** (Rechnung) oder **I/O-bound** (Warten) ist.
+```
+
+Der Performance-Test ist so aufgebaut, dass jeder Algorithmus 100 mal getestet wird. Dann werden die Ergebnisse in einem boxplot gegeübergestellt.
+
+```{admonition} Hinweis
+::class: remark
+
+Für die Darstellung verwenden wir `seaborn`. Das ist eine externe Bibliothek. Julia findet das hier in Ordnung, weil der Performance-Test nur der Analyse dient und nicht Teil der ausgelieferten Software ist.
+```
 
 
 ```{code-cell} python3
 import time
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-def time_sort(strategy, values, repeats=3):
-    best = None
-    for _ in range(repeats):
-        # Achtung: Listen sind mutable -> jede Messung auf einer frischen Kopie
-        sample = list(values)
-        t0 = time.perf_counter()
-        strategy.sort(sample)
-        dt = time.perf_counter() - t0
-        best = dt if best is None else min(best, dt)
-    return best
+
+def time_sort_once(strategy, values):
+    # Achtung: Listen sind mutable -> jede Messung auf einer frischen Kopie
+    sample = list(values)
+    t0 = time.perf_counter()
+    strategy.sort(sample)
+    return time.perf_counter() - t0
 
 # Reale Messdaten: wir vergleichen auf der Station Paris.
 paris_no2 = data["Paris"]["no2"]
@@ -319,9 +354,34 @@ paris_no2 = data["Paris"]["no2"]
 strategies = [BubbleSort(), SelectionSort(), PythonSort()]
 
 print(f"Station: Paris | Größe n={len(paris_no2)}")
+
+# 100 Messungen pro Algorithmus
+n_runs = 100
+names = []
+times_ms = []
+
 for s in strategies:
-    dt = time_sort(s, paris_no2, repeats=3)
-    print(f"  {type(s).__name__:>12}: {dt*1000:8.2f} ms")
+    name = type(s).__name__
+    for _ in range(n_runs):
+        dt = time_sort_once(s, paris_no2)
+        names.append(name)
+        times_ms.append(dt * 1000)
+
+plt.figure(figsize=(8, 4))
+if _HAVE_SEABORN:
+    sns.boxplot(x=names, y=times_ms)
+else:
+    # Fallback (falls seaborn nicht installiert ist)
+    unique = list(dict.fromkeys(names))
+    data_by_name = [[t for n, t in zip(names, times_ms) if n == u] for u in unique]
+    plt.boxplot(data_by_name, labels=unique)
+    plt.ylabel("Zeit (ms)")
+
+plt.title(f"Sortier-Performance (n={len(paris_no2)}, je {n_runs} Läufe)")
+plt.xlabel("Algorithmus")
+plt.ylabel("Zeit (ms)")
+plt.tight_layout()
+plt.show()
 ```
 
 ```{exercise} Aufgabe
@@ -339,6 +399,9 @@ Sortieralgorithmen können prüfungsrelevant sein. Sie müssen die Algorithmen n
 ```
 
 Julia entscheidet sich: Für reale Daten nutzt sie die Python-Implementierung (schnell, getestet, robust). Ihre Implementierungen behält sie - vielleicht sind diese ja später noch irgendwann nutzbar.
+
+
+
 
 
 ## Standardbibliothek `statistics`
