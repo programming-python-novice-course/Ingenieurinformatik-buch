@@ -51,6 +51,7 @@ parts:
       sections:
       - file: chapters/04-language-properties/10-syntax
       - file: chapters/04-language-properties/20-interpretation
+      - file: chapters/04-language-properties/21-cpython
       - file: chapters/04-language-properties/30-paradigma
       - file: chapters/04-language-properties/40-objektmodell-referenzen
         sections:
