@@ -7,19 +7,22 @@ parts:
     - file: chapters/01-course-overview/0-uebersicht
       sections:
       - file: chapters/01-course-overview/1-arbeitsmaterialien
-      - file: chapters/01-course-overview/2-livecode
-      - file: chapters/01-course-overview/3-beispiele
-      - file: chapters/01-course-overview/4-fallback
+        sections:
+        - file: chapters/01-course-overview/2-livecode
+        - file: chapters/01-course-overview/3-beispiele
+        - file: chapters/01-course-overview/4-fallback
       - file: chapters/01-course-overview/5-pruefung
       - file: chapters/01-course-overview/6-inhalte
-    - file: chapters/02-course-concept/0-uebersicht
-      sections:
-      - file: chapters/02-course-concept/2-softwaretypen
-      - file: chapters/02-course-concept/3-prozesssicht
-      - file: chapters/02-course-concept/4-sprachen
-      - file: chapters/02-course-concept/5-success-criteria
-      - file: chapters/02-course-concept/7-gliederung
-      - file: chapters/02-course-concept/8-vorlesung-praktikum
+      - file: chapters/02-course-concept/0-uebersicht
+        sections:
+        - file: chapters/02-course-concept/2-softwaretypen
+        - file: chapters/02-course-concept/3-prozesssicht
+        - file: chapters/02-course-concept/4-sprachen
+        - file: chapters/02-course-concept/5-success-criteria
+      - file: chapters/02-course-concept/0-roadmap
+        sections:
+        - file: chapters/02-course-concept/7-gliederung
+        - file: chapters/02-course-concept/8-vorlesung-praktikum
   - caption: Basiswissen 
     numbered: True
     chapters:
@@ -44,16 +47,17 @@ parts:
   - caption: Python verstehen
     numbered: True
     chapters:
-    - file: chapters/04-language-properties/0-intro
+    - file: chapters/04-language-properties/00-intro
       sections:
-      - file: chapters/04-language-properties/0-syntax
-      - file: chapters/04-language-properties/1-interpretation
-      - file: chapters/04-language-properties/2-paradigma
-      - file: chapters/04-language-properties/3-objektmodell-referenzen
-      - file: chapters/04-language-properties/7-typing
-      - file: chapters/04-language-properties/4-seiteneffekte
-      - file: chapters/04-language-properties/3-speicherverwaltung
-      - file: chapters/04-language-properties/8-primitive-data
+      - file: chapters/04-language-properties/10-syntax
+      - file: chapters/04-language-properties/20-interpretation
+      - file: chapters/04-language-properties/30-paradigma
+      - file: chapters/04-language-properties/40-objektmodell-referenzen
+        sections:
+        - file: chapters/04-language-properties/41-typing
+        - file: chapters/04-language-properties/42-seiteneffekte
+        - file: chapters/04-language-properties/43-speicherverwaltung
+        - file: chapters/04-language-properties/44-primitive-data
       - file: chapters/04-language-properties/99-summary
   - caption: Python anwenden
     numbered: True

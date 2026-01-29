@@ -12,7 +12,7 @@ kernelspec:
 # Indentation
 
 ```{admonition} Behauptung
-:class: remark
+::class: remark
 In Python bestimmt die Formatierung, was passiert.
 ```
 
@@ -75,7 +75,7 @@ Sie müssen PEP 8 in dieser Vorlesung nicht strikt anwenden; hier zählt vor all
 
 
 ```{admonition} Klarstellung
-:class: note
+::class: note
 - Einrückung ist in Python Syntax: Sie bestimmt Blöcke und damit Verhalten.
 - Nicht jede Formatierung ist semantisch: Leerzeichen um Operatoren sind Stil (z.B. `a=1+2` vs. `a = 1 + 2`).
 - Moderne Tools (IDE, Linter, Formatter) helfen, Einrückung konsistent zu halten – aber die Sprache bleibt dabei strikt.
