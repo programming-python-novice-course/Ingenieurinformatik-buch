@@ -23,15 +23,15 @@ parts:
   - caption: Basiswissen 
     numbered: True
     chapters:
-    - file: chapters/03-computer-sciences-basics/0-intro
+    - file: chapters/03-computer-sciences-basics/00-intro
       sections:
-      - file: chapters/03-computer-sciences-basics/1-aInformatik
-      - file: chapters/03-computer-sciences-basics/1-basics
-      - file: chapters/03-computer-sciences-basics/1-codierung
-      - file: chapters/03-computer-sciences-basics/1-zahlensysteme
-      - file: chapters/03-computer-sciences-basics/2-programming
-      - file: chapters/03-computer-sciences-basics/3-programmierkonstrukte
-      - file: chapters/03-computer-sciences-basics/6-visualization
+      - file: chapters/03-computer-sciences-basics/10-informatik
+      - file: chapters/03-computer-sciences-basics/20-basics
+      - file: chapters/03-computer-sciences-basics/30-codierung
+      - file: chapters/03-computer-sciences-basics/40-zahlensysteme
+      - file: chapters/03-computer-sciences-basics/50-programming
+      - file: chapters/03-computer-sciences-basics/60-programmierkonstrukte
+      - file: chapters/03-computer-sciences-basics/70-visualization
   - caption: Python verstehen
     numbered: True
     chapters:

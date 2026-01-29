@@ -203,53 +203,16 @@ Drei Viertel von 10 sind 7,5 Werte → Nearest-Rank nimmt den nächsten ganzen R
 ```
 
 In unserem Beispiel ist das 75 %-Quantil = 92.
-
-Jetzt setzt Julia das in Code um.
-
-```{code-cell} python3
----
-tags: [hide-input]
----
-import math
-
-def nearest_rank_quantile(sorted_values, q):
-    """
-    Nearest-Rank-Quantil für q in [0, 1].
-    Erwartet: sorted_values ist aufsteigend sortiert.
-    """
-    if not sorted_values:
-        raise ValueError("Leere Liste.")
-    if not (0 <= q <= 1):
-        raise ValueError("q muss zwischen 0 und 1 liegen.")
-
-    n = len(sorted_values)
-    k = max(1, math.ceil(q * n))  # 1..n
-    return sorted_values[k - 1]   # 0-basiert
-
-
-def median(sorted_values):
-    if not sorted_values:
-        raise ValueError("Leere Liste.")
-    n = len(sorted_values)
-    mid = n // 2
-    if n % 2 == 1:
-        return sorted_values[mid]
-    return (sorted_values[mid - 1] + sorted_values[mid]) / 2
 ```
 
-```{code-cell} python3
-values = [82, 91, 12, 92, 63, 9, 28, 55, 96, 97]
-sv = sorted(values)
+## Ermittlung der Quantile
 
-print("sortiert:", sv)
-print("25%:", nearest_rank_quantile(sv, 0.25))
-print("50% (Median):", median(sv))
-print("75%:", nearest_rank_quantile(sv, 0.75))
-```
+Julia zerlegt die Ermittlung der Quantile in zwei Teilaufgaben:
 
-## Berechnung
+- Sortieren der Messwerte (aufsteigend)
+- Berechnung der Quantilwerte (wie im Beispiel gezeigt)
 
-Zur Ermittlung der Quantile muss Julia also zunächst einmal die  Messwerte sortieren. Julia ist ganz Feuer und Flamme, da sie im Studium viel über Sortieralgorithmen gelernt hat.
+Julia startet zunächst einmal damit die Messwerte sortieren. Sie ist ganz Feuer und Flamme, da sie im Studium viel über Sortieralgorithmen gelernt hat.
 
 Sie erinnert sich noch dass es zum Sortieren unterschiedliche Algorithmen gibt und findet eine Übersichtstabelle:
 
@@ -362,9 +325,12 @@ for s in strategies:
 ```
 
 ```{exercise} Aufgabe
+:label: exercise-sample
 
-Implementieren Sie einen weiteren Sortieralgorithmus selbst und fügen Sie ihn dem Performance-Test hinzu.
+Implementieren Sie einen weiteren Sortieralgorithmus selbst und fügen Sie ihn dem Performance-Test hinzu. Visualisieren den Algorithmus mithilfe eines Struktogramms.
 ```
+
+
 
 ```{admonition} Wichtig
 :class: warning
@@ -372,8 +338,7 @@ Implementieren Sie einen weiteren Sortieralgorithmus selbst und fügen Sie ihn d
 Sortieralgorithmen können prüfungsrelevant sein. Sie müssen die Algorithmen nicht alle lernen, aber Sie sollten in der Lage sein, mindestens einen Algorithmus selbstständig (also **ohne** `list.sort()` oder `sorted()`) zu implementieren.
 ```
 
-
-Julia entscheidet sich: **Für reale Daten nutzt sie die Python-Implementierung** (schnell, getestet, robust). Ihre Implementierungen behält sie - vielleicht sind diese ja später noch irgendwann nutzbar.
+Julia entscheidet sich: Für reale Daten nutzt sie die Python-Implementierung (schnell, getestet, robust). Ihre Implementierungen behält sie - vielleicht sind diese ja später noch irgendwann nutzbar.
 
 
 ## Standardbibliothek `statistics`
