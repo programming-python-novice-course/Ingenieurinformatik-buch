@@ -203,7 +203,6 @@ Drei Viertel von 10 sind 7,5 Werte → Nearest-Rank nimmt den nächsten ganzen R
 ```
 
 In unserem Beispiel ist das 75 %-Quantil = 92.
-```
 
 ## Ermittlung der Quantile
 
@@ -228,6 +227,8 @@ Sie erinnert sich noch dass es zum Sortieren unterschiedliche Algorithmen gibt u
 | Radix Sort | Ziffernweise Sortierung | O(n·k) | O(n·k) | O(n·k) | O(n+k) | Ja | Nein | Ganzzahlen / Strings |
 | Timsort (Familie) | Adaptive Merge + Insertion | O(n) | O(n log n) | O(n log n) | O(n) | Ja | Nein | Industriestandard |
 | PowerSort (Merge-Policy) | Nahezu optimale Merge-Reihenfolge | O(n) | O(n log n) | O(n log n) | O(n) | Ja | Nein | CPython ≥ 3.11 |
+
+
 
 
 Sie recherchiert weiter und findet heraus: Python sortiert Listen seit Jahren mit einer sehr ausgefeilten, stabilen Merge-Sort-Familie (Timsort). Ab Python 3.11 wurde vor allem die *Merge-Strategie* verbessert (PowerSort). 
@@ -305,14 +306,11 @@ Julia muss sich entscheiden, welchen Algorithmus sie jetzt verwendet. Deshalb f�
 
 **Einfache Zeitmessung in Python**
 
-```python
-import time
+Die Idee ist folgende:
+- wir messen den startzeitpunkt: start = time.perf_counter()   # alternativ: time.time()
+- wir messen endzeitpunkt: endzeitpunkt = time.perf_counter()
+Die Dauer ist dann entsprechend: dauer = endteitpunkt - start
 
-start = time.perf_counter()   # alternativ: time.time()
-# ... Code, den Sie messen wollen ...
-dauer = time.perf_counter() - start
-print(f"{dauer:.3f}s")
-```
 
 **Profiling**
 Profiling ist mehr als eine einzelne Zeitmessung: Es hilft Ihnen zu verstehen, **welche Funktionen** wie viel Zeit (oder Speicher) verbrauchen – also **wo** der Engpass wirklich liegt. 
@@ -339,7 +337,6 @@ Für die Darstellung verwenden wir `seaborn`. Das ist eine externe Bibliothek. J
 import time
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 
 def time_sort_once(strategy, values):
     # Achtung: Listen sind mutable -> jede Messung auf einer frischen Kopie
@@ -368,15 +365,8 @@ for s in strategies:
         times_ms.append(dt * 1000)
 
 plt.figure(figsize=(8, 4))
-if _HAVE_SEABORN:
-    sns.boxplot(x=names, y=times_ms)
-else:
-    # Fallback (falls seaborn nicht installiert ist)
-    unique = list(dict.fromkeys(names))
-    data_by_name = [[t for n, t in zip(names, times_ms) if n == u] for u in unique]
-    plt.boxplot(data_by_name, labels=unique)
-    plt.ylabel("Zeit (ms)")
 
+sns.boxplot(x=names, y=times_ms)
 plt.title(f"Sortier-Performance (n={len(paris_no2)}, je {n_runs} Läufe)")
 plt.xlabel("Algorithmus")
 plt.ylabel("Zeit (ms)")
