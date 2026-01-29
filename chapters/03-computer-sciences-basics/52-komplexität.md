@@ -53,6 +53,13 @@ Wir können das Problem mit unterschiedlichen Algorithmen lösen:
 - **Algorithmus A (ohne „Gedächtnis“)**: Wir nehmen ein Element und vergleichen es mit allen späteren Elementen. Wenn irgendwo ein gleicher Wert auftaucht, sind Duplikate gefunden. Diese Idee macht viele Vergleiche, braucht dafür aber kaum zusätzlichen Speicher.
 - **Algorithmus B (mit „Gedächtnis“)**: Wir gehen die Liste einmal von vorne nach hinten durch und merken uns, welche Werte wir bereits gesehen haben (z. B. in einer Merkliste/„Sammlung“). Bei jedem neuen Wert prüfen wir zuerst: „Schon gesehen?“ – dann haben wir ein Duplikat. Diese Idee macht weniger Vergleiche, benötigt aber zusätzlichen Speicher für das Merken.
 
+```{figure} ../../figs/03-computer-sciences-basics/algorithmus_comps.png
+---
+width: 900px
+name: fig-algorithmus-comps
+---
+Zwei Lösungsstrategien für „Duplikat finden“: (A) viele Vergleiche ohne extra Speicher, (B) einmal durchlaufen und bereits gesehene Werte merken (mehr Speicher, typischerweise weniger Vergleiche).
+```
 
 Wir wollen nun wissen, welcher der beiden Algorithmen "schneller für große Datenmengen" ist, oder formal gesprochen: welcher der beiden Algorithmen besser skaliert in der Zeit.
 
@@ -135,15 +142,11 @@ Hinweis: Die Kurven hier sind eine **empirische Beobachtung** (Messung). Im Idea
 
 
 
-
-
-
 ```{admonition} Hinweis
 Ein *proprietäres Format* ist ein Dateiformat, das nicht offen standardisiert ist und meist an ein bestimmtes Tool gebunden ist.
 
 Beispiel: Wenn Sie ein Bauteil in CATIA als `.CATPart` speichern, können Sie die Geometrie in anderen CAD-Tools oft nicht direkt öffnen oder weiterbearbeiten. Häufig müssen Sie das Bauteil dafür erst in ein Austauschformat exportieren, z. B. als STEP-Datei (`.step`/`.stp`). STEP ist ein *offener Standard* für den Datenaustausch.
 ```
-
 
 *Programmiercode* auch genannt *Quellcode*, *Source Code* oder kurz *Code*, ist das Resultat der *Programmierung* und Teil eines *Programms*.
 Das heißt zur Ausführung des *Quellcodes* fehlt möglicherweise ein Teil des gesamten Codes.
