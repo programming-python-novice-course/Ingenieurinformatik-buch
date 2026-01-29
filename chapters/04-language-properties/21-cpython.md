@@ -89,6 +89,7 @@ Wenn Sie mit anderen zusammenarbeiten, lohnt es sich daher, kurz zu klären, wel
 In diesem interaktiven Notebook können Sie die Version direkt abfragen:
 
 ```{code-cell} python3
+:tags: [skip-execution]
 import sys
 
 print("Python-Version:", sys.version)

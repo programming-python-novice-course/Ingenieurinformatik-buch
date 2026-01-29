@@ -13,7 +13,13 @@ Reiner Python-Code (z.B. Schleifen, viele kleine Funktionsaufrufe, dynamische Ty
 
 Ein Computer führt am Ende Maschinencode aus (0 und 1). Quellcode in einer höheren Programmiersprache muss daher in eine ausführbare Form übersetzt werden. Dieses Grundprinzip ist bei allen Sprachen gleich {cite}`sommerville`. Der Unterschied liegt darin, wann und wo diese Übersetzung passiert – nicht darin, ob sie passiert.
 
-Kompiliert vs. „Skript“: Wo liegt der Maschinencode?
+```{figure} ../../figs/04-language-properties/overview/sprachverarbeitendes-system.png
+---
+width: 500px
+name: sprachverarbeitendes-system
+---
+Sprachverarbeitendes System: Quellcode wird immer kompiliert und interpretiert. Kompilierte Sprachen und interpretierte Sprachen unterscheiden sich nur wann und wo das passiert.
+```
 
 Wenn ein Programm in einer kompilierten Sprache erstellt wurde, erhalten Sie typischerweise eine ausführbare Datei:
 
@@ -49,7 +55,7 @@ Die Aussage „Python wird interpretiert“ ist als Vereinfachung weit verbreite
 
 ```{figure} ../../figs/04-language-properties/overview/python-einfach.png
 ---
-width: 600px
+width: 500px
 name: fig-python-einfach
 ---
 Python-Interpreter: Kompilierung und Interpretation

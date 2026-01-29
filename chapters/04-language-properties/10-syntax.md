@@ -12,7 +12,7 @@ kernelspec:
 # Indentation
 
 ```{admonition} Behauptung
-::class: remark
+:class: remark
 In Python bestimmt die Formatierung, was passiert.
 ```
 
@@ -51,13 +51,14 @@ print(a)  # 3
 print(b)  # 3
 ```
 
-Typische Stolperstellen:
+**Typische Stolperstellen**
 
 - **Tabs vs. Spaces**: Gemischte Einrückung kann zu Fehlern führen (oder zu Code, der „komisch“ aussieht).
 - **Kopieren aus PDFs/Websites**: Unsichtbare Whitespaces verursachen manchmal unerwartete `IndentationError`.
 - **„Warum ist das in anderen Sprachen egal?“** Dort definieren `{}` die Blöcke; Einrückung ist nur Konvention.
 
 **Style Guide**
+
 Durch den „Zwang zur Einrückung“ ist Python-Code meist schon relativ gut lesbar. Trotzdem gibt es viele Freiheiten bei der Benennung von Variablen, Funktionen und Klassen:
 
 ```python
