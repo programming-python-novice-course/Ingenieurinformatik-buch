@@ -1,5 +1,4 @@
-# Kursinhalte
-
+# Modulhandbuch
 
 In diesem Teilmodul lernen Sie Basis-Wissen aus der Informatik und Grundlagen der Programmiersprache Python. 
 

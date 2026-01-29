@@ -1,12 +1,9 @@
-# Datenmodell (Einschub)
+# Datenmodell
 (sec-object-model)=
 
-Zahlreiche Eigenschaften von Python sind direkte Folgen des Datenmodells, mit denen wir uns in den kommenden Abschnitten auseinandersetzen werden. Voraussetzung um diese zu verstehen, ist das Verständnis über das Datenmodell. Deshalb gehen wir hier kurz auf Pythons Datenmodell ein. 
+Zahlreiche Eigenschaften von Python sind direkte Folgen des Datenmodells. Deshalb gehen wir hier kurz auf Pythons Datenmodell ein. 
 
-Für den Computer sind Daten immer **Bits**. Ob eine Bitfolge „eine Zahl“ oder „Text“ bedeutet, hängt von ihrer **Interpretation** ab.
-In Python übernimmt diese Interpretation das Laufzeitsystem – aber nur, weil zu jedem Wert **Typinformationen** existieren.
-
-Genau hier kommt das Datenmodell ins Spiel: In Python werden Werte als Objekte modelliert. Ein Objekt hat (mindestens) einen Wert, einen Typ und eine Identität.
+Für den Computer sind Daten immer **Bits**. Ob eine Bitfolge „eine Zahl“ oder „Text“ bedeutet, hängt von ihrer **Interpretation** ab. Genau hier kommt das Datenmodell ins Spiel: In Python werden Werte als Objekte modelliert. Ein Objekt hat (mindestens) einen Wert, einen Typ und eine Identität.
 Variablennamen sind dann keine „Speicherzellen“, sondern Bindungen auf solche Objekte. Der Typ des Objekts bestimmt, wie die zugrunde liegenden Bits zu interpretieren sind (z.B. als `int` oder als `str`).
 
 Sehen wir uns hierzu das folgende Code‑Beispiel an:

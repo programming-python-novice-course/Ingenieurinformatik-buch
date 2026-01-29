@@ -12,6 +12,15 @@ kernelspec:
 (sec-functions)=
 # Funktionen
 
+```{admonition} Lernziele
+::class: learngoals
+
+- Nach diesem Kapitel sind Sie in der Lage, eigene Funktionen zu definieren und aufzurufen (Parameter, Argumente, Rückgabewert) und dabei sinnvolle Schnittstellen zu gestalten.
+- Nach diesem Kapitel sind Sie in der Lage, den Ablauf von Funktionsaufrufen nachzuvollziehen (z. B. „Sprung“ in die Funktion und zurück) und typische Fehler systematisch zu debuggen.
+- Nach diesem Kapitel verstehen Sie die Grundlagen von Namensräumen/Scope und können erklären, welche Variablen wo sichtbar sind.
+- Nach diesem Kapitel sind Sie in der Lage, fortgeschrittene Konzepte einzuordnen und anzuwenden (z. B. Funktionen als Werte, Lambda-Ausdrücke, Rekursion) – soweit im Kapitel behandelt.
+```
+
 Der Schlüssel zur Berechnung von Lösungen bzw. der Verarbeitung von Information ist die [Wiederholung](sec-repetition-and-recursion).
 Wo es uns [Schleifen](sec-loops) erlauben eine bestimmte Folge von Arbeitsschritte *lokal* mehrfach auszuführen, erlauben es uns Funktionen eine Folge von Arbeitsschritte *global* auszuführen.
 In beiden Fällen ändern wir den Verlauf der Codeausführung, sodass dieser nicht mehr der Befehlsfolge (gelesen von oben nach unten) entspricht.

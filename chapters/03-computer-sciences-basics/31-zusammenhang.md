@@ -1,51 +1,5 @@
-# Codierung
 
-Ein Computer arbeitet mit elektrischen Signalen, also physikalischen Zuständen.
-Diese Zustände werden durch Milliarden von Transistoren gespeichert und über Bussysteme übertragen.
-Ein Transistor kann dabei vereinfacht betrachtet zwei Zustände annehmen: *an* oder *aus*.
-
-## Lernziele
-
-Nach diesem Abschnitt können Sie …
-
-- erklären, warum Bitfolgen ohne Kontext **keine Bedeutung** haben.
-- erläutern, wie **Codierung** Bitfolgen Bedeutung zuweist (Zahl, Zeichen, Farbe, Maschinenbefehl).
-- den Unterschied zwischen **Codierung** (Bedeutung) und **Zahlensystem** (Darstellung) erklären.
-
-```{figure} ../../figs/03-computer-sciences-basics/digital-computer/representation/lamps.png
----
-width: 200px
-name: fig-lamps
----
-Eine Lampe, die entweder aus (links) oder an (rechts) geschaltet sein kann.
-```
-
-Diese beiden Zustände werden üblicherweise durch die Zahlen **0** und **1** repräsentiert.
-Damit entsteht eine Folge von Bits.
-
-Alle Informationen, die ein Computer verarbeitet, liegen letztlich als solche Bitfolgen vor.
-Für sich genommen haben diese Bitfolgen jedoch **keine Bedeutung**.
-
-Erst durch eine **Codierung** wird festgelegt, wie eine bestimmte Folge von 0 und 1 zu interpretieren ist.
-
-
-## Bedeutung entsteht durch Codierung
-
-Die gleiche Bitfolge kann – je nach Kontext – völlig unterschiedliche Bedeutungen haben.
-
-Beispiel:  
-Die Bitfolge `01000001` kann bedeuten:
-- die Zahl **65** (numerische Codierung)
-- den Buchstaben **"A"** (ASCII-Codierung)
-- einen Farbwert in einem Bild
-- einen Teil eines Maschinenbefehls
-
-Welche Bedeutung gilt, wird **nicht durch die Bitfolge selbst**,  
-sondern durch die verwendete **Codierung** festgelegt.
-
----
-
-## Zahlen
+# Codierung Zahlen
 
 Sollen Bitfolgen als **numerische Werte** interpretiert werden,  
 muss zunächst festgelegt werden, dass eine bestimmte Bitfolge überhaupt eine **Zahl** darstellt.
@@ -61,9 +15,7 @@ Beispiele für numerische Codierungen sind:
 - vorzeichenbehaftete Ganzzahlen (z. B. Zweierkomplement),
 - Gleitkommazahlen (z. B. IEEE 754).
 
----
-
-### Rolle der Zahlensysteme
+## Rolle Zahlensysteme
 
 Ein **Zahlensystem** ist ein Bestandteil der numerischen Codierung.
 Es legt fest, **wie eine Zahl symbolisch dargestellt und gelesen wird**,
@@ -108,25 +60,6 @@ Im **allgemeinen Fall** erzeugt die Codierung die Bitfolge, nicht das Zahlensyst
 
 ```
 
----
-
-## Text, Bilder und Töne
-
-Neben Zahlen müssen auch andere Arten von Information codiert werden:
-
-- **Text**  
-  Zeichen werden über Zeichencodierungen (z. B. ASCII, UTF-8) auf Bitfolgen abgebildet.
-
-- **Bilder**  
-  Bilder bestehen aus Pixeln, deren Farbwerte numerisch codiert sind – also wiederum Zahlen.
-
-- **Töne**  
-  Schall wird abgetastet und als Folge numerischer Werte gespeichert – auch Töne werden letztlich als Zahlen dargestellt.
-
-Alle diese Darstellungen beruhen auf Bitfolgen.
-Die jeweilige **Codierung** bestimmt, wie diese Bitfolgen interpretiert werden.
-
-
 ```{admonition} Merksatz
 :class: important
 
@@ -137,14 +70,3 @@ Die jeweilige **Codierung** bestimmt, wie diese Bitfolgen interpretiert werden.
 (z. B. zur Basis 2, 10 oder 16).
 
 ```
-
-## Selbstcheck
-
-- Nennen Sie zwei verschiedene Bedeutungen, die dieselbe Bitfolge haben kann (je nach Codierung).
-- Warum ist Hexadezimal in Debug-Ausgaben oft praktischer als Binär?
-- Was ist der Unterschied zwischen „Zahlensystem wechseln“ und „numerische Codierung festlegen“?
-
-
-
-
-

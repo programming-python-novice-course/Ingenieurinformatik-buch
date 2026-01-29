@@ -13,7 +13,13 @@ Reiner Python-Code (z.B. Schleifen, viele kleine Funktionsaufrufe, dynamische Ty
 
 Ein Computer führt am Ende Maschinencode aus (0 und 1). Quellcode in einer höheren Programmiersprache muss daher in eine ausführbare Form übersetzt werden. Dieses Grundprinzip ist bei allen Sprachen gleich {cite}`sommerville`. Der Unterschied liegt darin, wann und wo diese Übersetzung passiert – nicht darin, ob sie passiert.
 
-Kompiliert vs. „Skript“: Wo liegt der Maschinencode?
+```{figure} ../../figs/04-language-properties/overview/sprachverarbeitendes-system.png
+---
+width: 500px
+name: sprachverarbeitendes-system
+---
+Sprachverarbeitendes System: Quellcode wird immer kompiliert und interpretiert. Kompilierte Sprachen und interpretierte Sprachen unterscheiden sich nur wann und wo das passiert.
+```
 
 Wenn ein Programm in einer kompilierten Sprache erstellt wurde, erhalten Sie typischerweise eine ausführbare Datei:
 
@@ -49,7 +55,7 @@ Die Aussage „Python wird interpretiert“ ist als Vereinfachung weit verbreite
 
 ```{figure} ../../figs/04-language-properties/overview/python-einfach.png
 ---
-width: 600px
+width: 500px
 name: fig-python-einfach
 ---
 Python-Interpreter: Kompilierung und Interpretation
@@ -78,31 +84,4 @@ In der Praxis heißt es oft „entweder kompiliert oder interpretiert“. Streng
 - Wenn ein Programm vor allem wartet (z.B. Datei lesen/schreiben, Netzwerk), ist es häufig nicht durch Python selbst limitiert.
 - Viele Python‑Workflows sind schnell, weil sie Bibliotheken verwenden, die intern hochoptimiert sind.
 - „Python‑Performance“ hängt auch von der Implementierung ab: Verschiedene Interpreter/Übersetzer können denselben Code unterschiedlich schnell ausführen (Standard: CPython, in C implementiert).
-```
-
-```{admonition} Exkurs: Performance messen (Profiling)
-:class: tip
-„Performance“ kann sich auf verschiedene Dinge beziehen – z.B. **Laufzeit**, **Speicherverbrauch (RAM)** oder **I/O-Verhalten** (Warten auf Dateien/Netzwerk). Welche Kennzahl relevant ist, hängt vom Programm ab.
-
-**Einfache Zeitmessung in Python**
-
-```python
-import time
-
-start = time.perf_counter()   # alternativ: time.time()
-# ... Code, den Sie messen wollen ...
-dauer = time.perf_counter() - start
-print(f"{dauer:.3f}s")
-```
-
-**Profiling**
-Profiling ist mehr als eine einzelne Zeitmessung: Es hilft Ihnen zu verstehen, **welche Funktionen** wie viel Zeit (oder Speicher) verbrauchen – also **wo** der Engpass wirklich liegt. 
-
-- **CPU-Profiling (Standardbibliothek)**: `cProfile` (+ Auswertung mit `pstats`)
-- **Visualisierung**: z.B. `snakeviz` (zeigt `cProfile`-Ausgaben grafisch)
-- **Sampling-Profiler (geringer Overhead)**: z.B. `py-spy` (läuft auch an laufenden Prozessen)
-- **Line-by-line**: z.B. `line_profiler` (sehr konkret, aber mehr Overhead)
-- **Speicher/Allokationen**: `tracemalloc` (Standardbibliothek), optional `memory_profiler`
-
-Tipp: Messen Sie mit **realistischen Eingaben** und achten Sie darauf, ob Ihr Programm eher **CPU-bound** (Rechnung) oder **I/O-bound** (Warten) ist.
 ```

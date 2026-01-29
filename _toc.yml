@@ -4,47 +4,65 @@ parts:
   - caption: Übersicht
     numbered: True
     chapters:
-    - file: chapters/01-course-overview/0-uebersicht
+    - file: chapters/01-course-overview/00-uebersicht
       sections:
-      - file: chapters/01-course-overview/1-arbeitsmaterialien
-      - file: chapters/01-course-overview/2-livecode
-      - file: chapters/01-course-overview/3-beispiele
-      - file: chapters/01-course-overview/4-fallback
-      - file: chapters/01-course-overview/5-pruefung
-      - file: chapters/01-course-overview/6-inhalte
-    - file: chapters/02-course-concept/0-uebersicht
-      sections:
-      - file: chapters/02-course-concept/2-softwaretypen
-      - file: chapters/02-course-concept/3-prozesssicht
-      - file: chapters/02-course-concept/4-sprachen
-      - file: chapters/02-course-concept/5-success-criteria
-      - file: chapters/02-course-concept/7-gliederung
-      - file: chapters/02-course-concept/8-vorlesung-praktikum
+      - file: chapters/01-course-overview/10-arbeitsmaterialien
+        sections:
+        - file: chapters/01-course-overview/11-livecode
+        - file: chapters/01-course-overview/12-beispiele
+        - file: chapters/01-course-overview/13-fallback
+      - file: chapters/01-course-overview/20-pruefung
+      - file: chapters/01-course-overview/30-inhalte
+      - file: chapters/01-course-overview/40-orientierung
+        sections:
+        - file: chapters/01-course-overview/41-softwaretypen
+        - file: chapters/01-course-overview/42-prozesssicht
+        - file: chapters/01-course-overview/43-sprachen
+        - file: chapters/01-course-overview/44-success-criteria
+      - file: chapters/01-course-overview/50-roadmap
+        sections:
+        - file: chapters/01-course-overview/51-gliederung
+        - file: chapters/01-course-overview/52-vorlesung-praktikum
   - caption: Basiswissen 
     numbered: True
     chapters:
-    - file: chapters/03-computer-sciences-basics/0-intro
+    - file: chapters/03-computer-sciences-basics/00-intro
       sections:
-      - file: chapters/03-computer-sciences-basics/1-aInformatik
-      - file: chapters/03-computer-sciences-basics/1-basics
-      - file: chapters/03-computer-sciences-basics/1-codierung
-      - file: chapters/03-computer-sciences-basics/1-zahlensysteme
-      - file: chapters/03-computer-sciences-basics/2-programming
-      - file: chapters/03-computer-sciences-basics/3-programmierkonstrukte
-      - file: chapters/03-computer-sciences-basics/6-visualization
+      - file: chapters/03-computer-sciences-basics/10-informatik
+      - file: chapters/03-computer-sciences-basics/20-basics
+        sections:
+        - file: chapters/03-computer-sciences-basics/21-neumann-architektur
+        - file: chapters/03-computer-sciences-basics/22-betriebssystem
+      - file: chapters/03-computer-sciences-basics/30-codierung
+        sections:
+        - file: chapters/03-computer-sciences-basics/31-zusammenhang
+        - file: chapters/03-computer-sciences-basics/32-zahlensysteme
+      - file: chapters/03-computer-sciences-basics/50-programming
+        sections:
+        - file: chapters/03-computer-sciences-basics/51-algorithmus
+        - file: chapters/03-computer-sciences-basics/52-komplexität
+        - file: chapters/03-computer-sciences-basics/53-software
+      - file: chapters/03-computer-sciences-basics/60-programmierkonstrukte
+        sections:
+        - file: chapters/03-computer-sciences-basics/61-kontrollstrukturen
+        - file: chapters/03-computer-sciences-basics/62-datenstrukturen
+      - file: chapters/03-computer-sciences-basics/70-visualization
   - caption: Python verstehen
     numbered: True
     chapters:
-    - file: chapters/04-language-properties/0-intro
+    - file: chapters/04-language-properties/00-intro
       sections:
-      - file: chapters/04-language-properties/0-syntax
-      - file: chapters/04-language-properties/1-interpretation
-      - file: chapters/04-language-properties/2-paradigma
-      - file: chapters/04-language-properties/3-objektmodell-referenzen
-      - file: chapters/04-language-properties/7-typing
-      - file: chapters/04-language-properties/4-seiteneffekte
-      - file: chapters/04-language-properties/3-speicherverwaltung
-      - file: chapters/04-language-properties/8-primitive-data
+      - file: chapters/04-language-properties/10-syntax
+      - file: chapters/04-language-properties/20-interpretation
+      - file: chapters/04-language-properties/21-cpython
+      - file: chapters/04-language-properties/30-paradigma
+      - file: chapters/04-language-properties/40-objektmodell-referenzen
+        sections:
+        - file: chapters/04-language-properties/41-typing
+        - file: chapters/04-language-properties/42-seiteneffekte
+        - file: chapters/04-language-properties/43-speicherverwaltung
+        - file: chapters/04-language-properties/44-primitive-data
+      - file: chapters/04-language-properties/99-summary
   - caption: Python anwenden
     numbered: True
     chapters:
@@ -106,6 +124,7 @@ parts:
     chapters:
     - file: chapters/13-fallbeispiel/0-intro
       sections:
+      - file: chapters/13-fallbeispiel/0-zaufgabe
       - file: chapters/13-fallbeispiel/1-se-Prozess
       - file: chapters/13-fallbeispiel/2-lib-solution
       - file: chapters/13-fallbeispiel/3-eigenentwicklung

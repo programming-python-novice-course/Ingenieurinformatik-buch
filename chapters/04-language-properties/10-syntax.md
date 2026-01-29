@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Indetation
+# Indentation
 
 ```{admonition} Behauptung
 :class: remark
@@ -51,17 +51,33 @@ print(a)  # 3
 print(b)  # 3
 ```
 
-Typische Stolperstellen:
+**Typische Stolperstellen**
 
 - **Tabs vs. Spaces**: Gemischte Einrückung kann zu Fehlern führen (oder zu Code, der „komisch“ aussieht).
 - **Kopieren aus PDFs/Websites**: Unsichtbare Whitespaces verursachen manchmal unerwartete `IndentationError`.
 - **„Warum ist das in anderen Sprachen egal?“** Dort definieren `{}` die Blöcke; Einrückung ist nur Konvention.
 
+**Style Guide**
+
+Durch den „Zwang zur Einrückung“ ist Python-Code meist schon relativ gut lesbar. Trotzdem gibt es viele Freiheiten bei der Benennung von Variablen, Funktionen und Klassen:
+
+```python
+x = 3
+zahl = 4
+name = "Christina"
+text = "-1000"
+summand_1 = 3
+```
+Alle obigen Benennungen sind in Python erlaubt. Wenn Sie aber mit anderen Personen zusammenarbeiten (oder Ihren Code später selbst wieder lesen möchten), helfen bewährte Konventionen dabei, Code schnell zu verstehen.
+
+Für Namenskonventionen (also Schreibweisen für Variablen, Funktionen, Klassen usw.) empfehlen wir den [PEP 8 Style Guide](https://pep8.org/).
+
+Sie müssen PEP 8 in dieser Vorlesung nicht strikt anwenden; hier zählt vor allem die Logik. Wenn Sie aber gerade Python lernen und sich fragen, wie man Dinge „richtig“ benennt, ist PEP 8 eine gute Orientierung.
+
+
 ```{admonition} Klarstellung
-:class: note
+::class: note
 - Einrückung ist in Python Syntax: Sie bestimmt Blöcke und damit Verhalten.
 - Nicht jede Formatierung ist semantisch: Leerzeichen um Operatoren sind Stil (z.B. `a=1+2` vs. `a = 1 + 2`).
 - Moderne Tools (IDE, Linter, Formatter) helfen, Einrückung konsistent zu halten – aber die Sprache bleibt dabei strikt.
 ```
-
-
