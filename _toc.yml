@@ -28,7 +28,9 @@ parts:
       - file: chapters/03-computer-sciences-basics/10-informatik
       - file: chapters/03-computer-sciences-basics/20-basics
       - file: chapters/03-computer-sciences-basics/30-codierung
-      - file: chapters/03-computer-sciences-basics/40-zahlensysteme
+        sections:
+        - file: chapters/03-computer-sciences-basics/31-zusammenhang
+        - file: chapters/03-computer-sciences-basics/32-zahlensysteme
       - file: chapters/03-computer-sciences-basics/50-programming
         sections:
         - file: chapters/03-computer-sciences-basics/51-algorithmus
