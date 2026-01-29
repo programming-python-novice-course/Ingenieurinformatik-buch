@@ -17,16 +17,8 @@ kernelspec:
 Dieses Kapitel ist als **Hausaufgabe** gedacht. Sie sollten sich die Inhalte selbstständig erarbeiten und die Umrechnungen zwischen den verschiedenen Zahlensystemen üben. Die hier dargestellten Algorithmen und Tabellen helfen Ihnen dabei, die Umrechnungen zu verstehen und durchzuführen.
 ```
 
-## Lernziele
 
-Nach diesem Kapitel können Sie …
-
-- die Notation verschiedener Basen sicher lesen (z. B. \(13_{10}\), \(1101_2\), \(FF_{16}\)).
-- kleine Zahlen zwischen **Binär**, **Dezimal** und **Hexadezimal** umrechnen (und größere Darstellungen einordnen).
-- erklären, warum Hexadezimal in technischen Ausgaben (z. B. Debugging, Speicheradressen) häufig verwendet wird.
-- das Prinzip des **Zweierkomplements** als Standarddarstellung negativer ganzer Zahlen einordnen.
-
-```{admonition} Erwartung in der Praxis
+```{admonition} Die Praxis ...
 :class: remark
 
 In der Praxis müssen Sie nicht ständig Zahlen von Hand umrechnen. Wichtig ist vor allem, Darstellungen zu **erkennen**, korrekt **einzuordnen** und bei Bedarf Umrechnungen **nachvollziehen** zu können.

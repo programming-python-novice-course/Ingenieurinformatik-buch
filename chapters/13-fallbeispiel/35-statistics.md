@@ -204,52 +204,14 @@ Drei Viertel von 10 sind 7,5 Werte → Nearest-Rank nimmt den nächsten ganzen R
 
 In unserem Beispiel ist das 75 %-Quantil = 92.
 
-Jetzt setzt Julia das in Code um.
+## Ermittlung der Quantile
 
-```{code-cell} python3
----
-tags: [hide-input]
----
-import math
+Julia zerlegt die Ermittlung der Quantile in zwei Teilaufgaben:
 
-def nearest_rank_quantile(sorted_values, q):
-    """
-    Nearest-Rank-Quantil für q in [0, 1].
-    Erwartet: sorted_values ist aufsteigend sortiert.
-    """
-    if not sorted_values:
-        raise ValueError("Leere Liste.")
-    if not (0 <= q <= 1):
-        raise ValueError("q muss zwischen 0 und 1 liegen.")
+- Sortieren der Messwerte (aufsteigend)
+- Berechnung der Quantilwerte (wie im Beispiel gezeigt)
 
-    n = len(sorted_values)
-    k = max(1, math.ceil(q * n))  # 1..n
-    return sorted_values[k - 1]   # 0-basiert
-
-
-def median(sorted_values):
-    if not sorted_values:
-        raise ValueError("Leere Liste.")
-    n = len(sorted_values)
-    mid = n // 2
-    if n % 2 == 1:
-        return sorted_values[mid]
-    return (sorted_values[mid - 1] + sorted_values[mid]) / 2
-```
-
-```{code-cell} python3
-values = [82, 91, 12, 92, 63, 9, 28, 55, 96, 97]
-sv = sorted(values)
-
-print("sortiert:", sv)
-print("25%:", nearest_rank_quantile(sv, 0.25))
-print("50% (Median):", median(sv))
-print("75%:", nearest_rank_quantile(sv, 0.75))
-```
-
-## Berechnung
-
-Zur Ermittlung der Quantile muss Julia also zunächst einmal die  Messwerte sortieren. Julia ist ganz Feuer und Flamme, da sie im Studium viel über Sortieralgorithmen gelernt hat.
+Julia startet zunächst einmal damit die Messwerte sortieren. Sie ist ganz Feuer und Flamme, da sie im Studium viel über Sortieralgorithmen gelernt hat.
 
 Sie erinnert sich noch dass es zum Sortieren unterschiedliche Algorithmen gibt und findet eine Übersichtstabelle:
 
@@ -265,6 +227,8 @@ Sie erinnert sich noch dass es zum Sortieren unterschiedliche Algorithmen gibt u
 | Radix Sort | Ziffernweise Sortierung | O(n·k) | O(n·k) | O(n·k) | O(n+k) | Ja | Nein | Ganzzahlen / Strings |
 | Timsort (Familie) | Adaptive Merge + Insertion | O(n) | O(n log n) | O(n log n) | O(n) | Ja | Nein | Industriestandard |
 | PowerSort (Merge-Policy) | Nahezu optimale Merge-Reihenfolge | O(n) | O(n log n) | O(n log n) | O(n) | Ja | Nein | CPython ≥ 3.11 |
+
+
 
 
 Sie recherchiert weiter und findet heraus: Python sortiert Listen seit Jahren mit einer sehr ausgefeilten, stabilen Merge-Sort-Familie (Timsort). Ab Python 3.11 wurde vor allem die *Merge-Strategie* verbessert (PowerSort). 
@@ -333,22 +297,53 @@ for s in strategies:
 
 ## Performance: Lernalgorithmen vs. Python-Sort
 
-Julia muss sich entscheiden, welchen Algorithmus sie jetzt verwendet. Deshalb führt sie einen einfachen Performance-Test durch, indem sie die Zeit misst, die die jeweiligen Sortierungen benötigen.
+Julia muss sich entscheiden, welchen Algorithmus sie jetzt verwendet. Deshalb führt sie einen einfachen Performance-Test durch.
+
+
+```{admonition} Exkurs: Performance messen (Profiling)
+:class: tip
+„Performance“ kann sich auf verschiedene Dinge beziehen – z.B. **Laufzeit**, **Speicherverbrauch (RAM)** oder **I/O-Verhalten** (Warten auf Dateien/Netzwerk). Welche Kennzahl relevant ist, hängt vom Programm ab.
+
+**Einfache Zeitmessung in Python**
+
+Die Idee ist folgende:
+- wir messen den startzeitpunkt: start = time.perf_counter()   # alternativ: time.time()
+- wir messen endzeitpunkt: endzeitpunkt = time.perf_counter()
+Die Dauer ist dann entsprechend: dauer = endteitpunkt - start
+
+
+**Profiling**
+Profiling ist mehr als eine einzelne Zeitmessung: Es hilft Ihnen zu verstehen, **welche Funktionen** wie viel Zeit (oder Speicher) verbrauchen – also **wo** der Engpass wirklich liegt. 
+
+- **CPU-Profiling (Standardbibliothek)**: `cProfile` (+ Auswertung mit `pstats`)
+- **Visualisierung**: z.B. `snakeviz` (zeigt `cProfile`-Ausgaben grafisch)
+- **Sampling-Profiler (geringer Overhead)**: z.B. `py-spy` (läuft auch an laufenden Prozessen)
+- **Line-by-line**: z.B. `line_profiler` (sehr konkret, aber mehr Overhead)
+- **Speicher/Allokationen**: `tracemalloc` (Standardbibliothek), optional `memory_profiler`
+
+Tipp: Messen Sie mit **realistischen Eingaben** und achten Sie darauf, ob Ihr Programm eher **CPU-bound** (Rechnung) oder **I/O-bound** (Warten) ist.
+```
+
+Der Performance-Test ist so aufgebaut, dass jeder Algorithmus 100 mal getestet wird. Dann werden die Ergebnisse in einem boxplot gegeübergestellt.
+
+```{admonition} Hinweis
+::class: remark
+
+Für die Darstellung verwenden wir `seaborn`. Das ist eine externe Bibliothek. Julia findet das hier in Ordnung, weil der Performance-Test nur der Analyse dient und nicht Teil der ausgelieferten Software ist.
+```
 
 
 ```{code-cell} python3
 import time
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-def time_sort(strategy, values, repeats=3):
-    best = None
-    for _ in range(repeats):
-        # Achtung: Listen sind mutable -> jede Messung auf einer frischen Kopie
-        sample = list(values)
-        t0 = time.perf_counter()
-        strategy.sort(sample)
-        dt = time.perf_counter() - t0
-        best = dt if best is None else min(best, dt)
-    return best
+def time_sort_once(strategy, values):
+    # Achtung: Listen sind mutable -> jede Messung auf einer frischen Kopie
+    sample = list(values)
+    t0 = time.perf_counter()
+    strategy.sort(sample)
+    return time.perf_counter() - t0
 
 # Reale Messdaten: wir vergleichen auf der Station Paris.
 paris_no2 = data["Paris"]["no2"]
@@ -356,15 +351,36 @@ paris_no2 = data["Paris"]["no2"]
 strategies = [BubbleSort(), SelectionSort(), PythonSort()]
 
 print(f"Station: Paris | Größe n={len(paris_no2)}")
+
+# 100 Messungen pro Algorithmus
+n_runs = 100
+names = []
+times_ms = []
+
 for s in strategies:
-    dt = time_sort(s, paris_no2, repeats=3)
-    print(f"  {type(s).__name__:>12}: {dt*1000:8.2f} ms")
+    name = type(s).__name__
+    for _ in range(n_runs):
+        dt = time_sort_once(s, paris_no2)
+        names.append(name)
+        times_ms.append(dt * 1000)
+
+plt.figure(figsize=(8, 4))
+
+sns.boxplot(x=names, y=times_ms)
+plt.title(f"Sortier-Performance (n={len(paris_no2)}, je {n_runs} Läufe)")
+plt.xlabel("Algorithmus")
+plt.ylabel("Zeit (ms)")
+plt.tight_layout()
+plt.show()
 ```
 
 ```{exercise} Aufgabe
+:label: exercise-sample
 
-Implementieren Sie einen weiteren Sortieralgorithmus selbst und fügen Sie ihn dem Performance-Test hinzu.
+Implementieren Sie einen weiteren Sortieralgorithmus selbst und fügen Sie ihn dem Performance-Test hinzu. Visualisieren den Algorithmus mithilfe eines Struktogramms.
 ```
+
+
 
 ```{admonition} Wichtig
 :class: warning
@@ -372,8 +388,10 @@ Implementieren Sie einen weiteren Sortieralgorithmus selbst und fügen Sie ihn d
 Sortieralgorithmen können prüfungsrelevant sein. Sie müssen die Algorithmen nicht alle lernen, aber Sie sollten in der Lage sein, mindestens einen Algorithmus selbstständig (also **ohne** `list.sort()` oder `sorted()`) zu implementieren.
 ```
 
+Julia entscheidet sich: Für reale Daten nutzt sie die Python-Implementierung (schnell, getestet, robust). Ihre Implementierungen behält sie - vielleicht sind diese ja später noch irgendwann nutzbar.
 
-Julia entscheidet sich: **Für reale Daten nutzt sie die Python-Implementierung** (schnell, getestet, robust). Ihre Implementierungen behält sie - vielleicht sind diese ja später noch irgendwann nutzbar.
+
+
 
 
 ## Standardbibliothek `statistics`

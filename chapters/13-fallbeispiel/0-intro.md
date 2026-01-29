@@ -1,44 +1,41 @@
 # Wie werden Programme entwickelt?
 
-** Grundprinzip: Einkaufsteile vs. Eigenentwicklung**
 
-Softwareentwicklung und Hardwareentwicklung unterscheiden sich gar nicht so stark. Eine zentrale Frage ist immer: Was muss ich selbst entwickeln und was kann ich einkaufen?
+```{admonition} Lernziele
+::class: learngoals
 
-Beispiel Hardware: Wenn Sie einen Motor entwickeln, ist die Schraube vermutlich ein Einkaufsteil. Sie kaufen eine Schraube, die Ihren Anforderungen entspricht, aber Sie entwickeln nicht den Herstellungsprozess der Schraube.
-
-Beispiel Software: Ähnlich ist es mit Software: Es gibt sehr viele Einkaufsteile (Bibliotheken), die Sie einfach nutzen können! 
-
-In diesem Kapitel werden wir uns ansehen anhand eines Praxisbeispiels ansehen wie Programmieraufgaben üblicherweise in der Praxis umgesetzt werden.
-
-```{exercise} Fallbeispiel: Sensordaten statistisch auswerten
-:label: exercise-sensordata
-
-**Ausgangslage:**
-Julia bekommt von ihrer Kollegin eine Datei mit echten Messwerten, die die NO2-Konzentration an verschiedenen Flughäfen zu unterschiedlichen Zeitpunkten... 
-
-
-**Aufgabe:**
-Die Statistik der Messdaten soll bestimmt werden:
-- Grafisch: Die Verteilung der Daten visualisieren
-- Tabellarisch: Eine Übersichtstabelle erstellen, in der die statistischen Momente und Percentile enthalten sind
+- Nach diesem Kapitel verstehen Sie den typischen Ablauf, wie aus einer Aufgabenstellung schrittweise ein lauffähiges Programm entsteht (inkl. *Build vs. Buy*).
+- Nach diesem Kapitel sind Sie in der Lage, eine größere Lösung in Teilprobleme zu zerlegen (Parsing, Visualisierung, Statistik) und die Umsetzungsschritte begründet zu strukturieren.
+- Nach diesem Kapitel sind Sie in der Lage, den Unterschied zwischen „Library nutzen“ und „selbst implementieren“ anhand von Abstraktionsgrad, Testaufwand, Wartbarkeit und Performance zu erläutern.
+- Nach diesem Kapitel sind Sie in der Lage Programmcode mit einfachen Tests abzusichern.
+- Nach diesem Kapitel können Sie einordnen, warum Sortieren (und damit Sortieralgorithmen) im Kontext der Statistik-Auswertung auftaucht, und mindestens einen einfachen Sortieralgorithmus selbst zu implementieren.
 ```
 
-## Datensatz
-
-Die Datei mit den Messdaten liegt auf github:
-
-url = "https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/air_quality_no2.csv"
+In diesem letzten Teil laufen wir einen kompletten, realistischen Ablauf durch: von der Aufgabenstellung über die Planung bis zur Umsetzung. Ziel ist, den Prozess als Ganzes zu sehen (nicht nur einzelne Sprachkonstrukte).
 
 
-Die verwendeten Daten sind reale Messdaten zur Stickstoffdioxid-Konzentration (NO₂) in der Umgebungsluft.
+```{figure} ../../figs/02-course-concept/overview/fahrt.png
+---
+height: 320px
+name: fahrt
+---
+```
 
-- Gemessen in µg/m³ (Mikrogramm pro Kubikmeter)
-- Zeitlich aufgelöste Messreihen (Zeitstempel)
-- Mehrere städtische Messstationen in Europa (z. B. London, Paris, Antwerpen)
+Wir begleiten die Programmiererin Julia bei einer praxisnahen Aufgabe: Messdaten werden eingelesen, ausgewertet und visualisiert. Dabei sehen Sie zwei typische Wege der Softwareentwicklung:
 
-Die Daten stammen aus öffentlichen Umweltmessstationen (u. a. nationale Umweltbehörden, European Environmental Agency). Die Messdatei stammt aus der pandas-Dokumentation und wurden für Lehr- und Demonstrationszwecke leicht vorverarbeitet, in der Größe reduziert, und in ein CSV-Format überführt.
-
-Es handelt sich nicht um synthetische Daten, sondern um reale Messwerte mit typischem Messrauschen, Ausreißern und fehlenden Werten.
+- **Buy (Library nutzen)**: schnell zum Ergebnis kommen, indem gut gepflegte Bibliotheken (z. B. `pandas`) genutzt werden.
+- **Build (Eigenentwicklung)**: zentrale Schritte selbst implementieren (z. B. weil keine neuen Abhängigkeiten erlaubt sind) und die eigene Lösung durch Tests absichern.
 
 
 
+```{admonition} Hinweis: Sortieralgorithmen im Fallbeispiel
+::class: remark
+
+Sortieralgorithmen werden hier **nur gestreift**, weil sie im Modulhandbuch vorkommen und im Kontext der Statistik (Quantile/Median) natürlich auftauchen: Für viele Verfahren muss eine Liste (oder Teile davon) sortiert werden. Im Kapitel geht es nicht darum, alle Algorithmen auswendig zu lernen – wichtig ist, dass Sie verstehen, **warum** Sortieren gebraucht wird, und dass Sie (falls gefordert) mindestens **einen** einfachen Sortieralgorithmus selbst implementieren können. In der Praxis verwenden Sie in Python meist die eingebaute Sortierung.
+```
+
+```{admonition} Prüfungsrelevanz
+::class: note
+
+Dieses Kapitel ist insgesamt **nicht der Schwerpunkt der Prüfung**, aber die enthaltenen Übungen und Lösungsbausteine sollten Sie **nachvollziehen und erklären** können (insbesondere Vorgehen, Zerlegung, einfache Tests und die Begründung von „Build vs. Buy“).
+```

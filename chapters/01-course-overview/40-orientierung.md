@@ -1,8 +1,6 @@
-# Kurskonzept
+# Orientierung
 
-In diesem Kapitel bekommen Sie einen Überblick darüber, was in den nächsten Wochen auf Sie zukommt und warum wir die Inhalte genau so aufgebaut haben.
-
-Im Fokus stehen dabei folgende Fragen:
+Im folgenden gehen wir kurz auf folgendes ein:
 
 - **In welchem Kontext entwickeln Ingenieurinnen und Ingenieure Software?**  
   Damit Sie Beispiele und Anforderungen aus dem Ingenieuralltag wiedererkennen und einordnen können.
@@ -15,6 +13,3 @@ Im Fokus stehen dabei folgende Fragen:
 
 - **Woran erkennen wir „gutes“ Programmieren in dieser Veranstaltung?**  
   Damit Sie wissen, welche Qualitätsmerkmale in Übung, Praktikum und Prüfung zählen.
-
-- **Wie ist die Veranstaltung konkret organisiert (Roadmap, Vorlesung/Praktikum)?**  
-  Damit Sie wissen, wie die Teile zusammenhängen und wie Sie den roten Faden behalten.

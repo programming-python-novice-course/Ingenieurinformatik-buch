@@ -11,15 +11,16 @@ Dazu zählen wir unter anderem
 + andere Technologien, die mit ``Python`` gut integrierbar sind
 + und vorallem die Gemeinschaft bzw. Unterstützer:innen
 
-```{admonition} Lernziel
+```{admonition} Lernziele
 :class: learngoals
 
-Wie nutze ich das ``Python``-Ökosystem?
-Wie bringe ich ``Python`` "zum Laufen"?
-Wie nutze ich Pakte und Module (fremden Code) und die Jupyter Notebooks?
+- Nach diesem Kapitel verstehen Sie, was mit dem „Python-Ökosystem“ gemeint ist (Interpreter, Standardbibliothek, Pakete, Tools, Community) und warum es für die Praxis so wichtig ist.
+- Nach diesem Kapitel sind Sie in der Lage, eine lauffähige Python-Umgebung einzurichten und Python-Code auszuführen (z. B. über Terminal, IDE oder Notebook).
+- Nach diesem Kapitel sind Sie in der Lage, mit Paketen und Modulen zu arbeiten (importieren, Struktur verstehen, Dokumentation nutzen).
+- Nach diesem Kapitel sind Sie in der Lage, zusätzliche Pakete zielgerichtet zu installieren und zu verwalten (z. B. mit ``pip``/``conda``) und typische Stolpersteine einzuordnen.
+- Nach diesem Kapitel sind Sie in der Lage, Jupyter Notebooks als Arbeits- und Lernwerkzeug sinnvoll einzusetzen (Code ausführen, dokumentieren, experimentieren).
 
-Dieses Kapitel soll Sie in der Praxis "in Gang" setzen, sodass Sie mit dem ``Python``-Programmieren loslegen können.
-Der Inhalt ist daher sehr ``Python`` spezifisch und hat nur wenig mit dem eigentlichen [Computational Thinking](sec-what-is-ct) zu tun.
+Dieses Kapitel soll Sie in der Praxis „in Gang“ setzen, sodass Sie mit dem ``Python``-Programmieren loslegen können.
 ```
 
 Sie werden feststellen, dass das ``Python``-Ökosystem reich, erwachsen und breit aufgestellt ist.
