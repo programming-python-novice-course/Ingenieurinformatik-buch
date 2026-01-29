@@ -4,25 +4,25 @@ parts:
   - caption: Übersicht
     numbered: True
     chapters:
-    - file: chapters/01-course-overview/0-uebersicht
+    - file: chapters/01-course-overview/00-uebersicht
       sections:
-      - file: chapters/01-course-overview/1-arbeitsmaterialien
+      - file: chapters/01-course-overview/10-arbeitsmaterialien
         sections:
-        - file: chapters/01-course-overview/2-livecode
-        - file: chapters/01-course-overview/3-beispiele
-        - file: chapters/01-course-overview/4-fallback
-      - file: chapters/01-course-overview/5-pruefung
-      - file: chapters/01-course-overview/6-inhalte
-      - file: chapters/02-course-concept/0-uebersicht
+        - file: chapters/01-course-overview/11-livecode
+        - file: chapters/01-course-overview/12-beispiele
+        - file: chapters/01-course-overview/13-fallback
+      - file: chapters/01-course-overview/20-pruefung
+      - file: chapters/01-course-overview/30-inhalte
+      - file: chapters/01-course-overview/40-orientierung
         sections:
-        - file: chapters/02-course-concept/2-softwaretypen
-        - file: chapters/02-course-concept/3-prozesssicht
-        - file: chapters/02-course-concept/4-sprachen
-        - file: chapters/02-course-concept/5-success-criteria
-      - file: chapters/02-course-concept/0-roadmap
+        - file: chapters/01-course-overview/41-softwaretypen
+        - file: chapters/01-course-overview/42-prozesssicht
+        - file: chapters/01-course-overview/43-sprachen
+        - file: chapters/01-course-overview/44-success-criteria
+      - file: chapters/01-course-overview/50-roadmap
         sections:
-        - file: chapters/02-course-concept/7-gliederung
-        - file: chapters/02-course-concept/8-vorlesung-praktikum
+        - file: chapters/01-course-overview/51-gliederung
+        - file: chapters/01-course-overview/52-vorlesung-praktikum
   - caption: Basiswissen 
     numbered: True
     chapters:
