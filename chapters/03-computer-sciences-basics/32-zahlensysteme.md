@@ -455,5 +455,5 @@ Viele Entwicklungsumgebungen und Taschenrechner bieten Umrechnungsfunktionen. Da
 
 ## Selbstcheck
 
-- Was ist \(D_{16}\) in Dezimal – und warum ist das schnell über Binärgruppen nachvollziehbar?
+- Was ist $\(D_{16}\)$ in Dezimal – und warum ist das schnell über Binärgruppen nachvollziehbar?
 - Woran erkennen Sie in einer Ausgabe, dass `0xFF` eine Hexzahl ist?
