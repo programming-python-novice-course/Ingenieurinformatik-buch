@@ -1,22 +1,6 @@
 # Kurskonzept
 
-% diese Seite ist finalisiert und soll nicht mehr verändert werden. 
-
-In diesem Teilmodul lernen Sie Programmieren anhand der Programmiersprache Python. Ziel ist nicht, die Syntax von Python „auswendig zu lernen“, sondern Probleme systematisch in Programme zu übersetzen. Das Modul ist daher in vier Teile gegliedert. Zur Erinnerung an die Metapher aus der Einleitung (siehe {ref}`sec-intro`): Die vier Teile können Sie als Etappen einer Autofahrt lesen – von der „Verkehrsinfrastruktur“ (Teil 1) über das konkrete „Auto“ (Teil 2) und das Üben der Bedienung (Teil 3) bis zur längeren „Fahrt“ (Teil 4).
-
-Konkret bedeutet das:
-
-- **Teil 1: Basiswissen („Verkehrsinfrastruktur“)**  
-  Wir klären, was ein Computer grundsätzlich macht, wie Informationsverarbeitung funktioniert und welches Vokabular wir brauchen, um über Programme präzise zu sprechen.
-
-- **Teil 2: Python verstehen („konkretes Auto“)**  
-  Wir ordnen Python ein, besprechen zentrale Eigenschaften und Programmierkonzepte und schaffen so ein Verständnis, das Ihnen auch beim Lernen weiterer Sprachen hilft – z. B. wenn im nächsten Semester MATLAB dazukommt.
-
-- **Teil 3: Python anwenden („Autofahren mit Gangschaltung“)**  
-  Sie schreiben Schritt für Schritt eigene Programme und lernen die typischen Abläufe und Regeln der Praxis kennen. Das ist der Schwerpunkt der Veranstaltung.
-
-- **Teil 4: Anwendungsfall („Fahrt durchführen“)**  
-  Wir gehen den kompletten Ablauf gemeinsam durch: von der Aufgabenstellung über Planung und Umsetzung bis zum fertigen Ergebnis.
+Im folgenden werden die Kursteile genauer vorgestellt.
 
 ## Einführung (Teil 1)
 
@@ -57,7 +41,7 @@ Umfang: ca. 1 Vorlesungseinheit
 Je besser Sie hier die Hintergründe verstehen, desto weniger müssen Sie im Anwendungsteil „auswendig lernen“.
 
 ```{admonition} Hinweis
-Wenn Sie die grundlegenden Eigenschaften Ihres Autos (z. B. Motor und Getriebe) grob verstehen, können Sie viele Situationen beim Fahren besser einschätzen – etwa, wann der nächste Gang sinnvoll ist. Ohne dieses Hintergrundwissen müssten Sie sich für viele Situationen einzelne „Regeln“ merken. Genauso ist es beim Programmieren: Wenn Sie die Konzepte verstehen, ergeben sich viele „Regeln“ von selbst. Das spart Ihnen nicht nur Lernarbeit, sondern macht Sie flexibler und sicherer in der Anwendung.
+Wenn Sie die grundlegenden Eigenschaften Ihres Autos (z. B. Motor und Getriebe) grob verstehen, können Sie viele Situationen beim Fahren besser einschätzen – etwa, wann der nächste Gang sinnvoll ist. Ohne dieses Hintergrundwissen müssten Sie sich für viele Situationen einzelne „Regeln“ merken. Genauso ist es beim Programmieren: Wenn Sie die Konzepte verstehen, ergeben sich viele „Regeln“ von selbst. Das spart Ihnen nicht nur Lernarbeit, sondern macht Sie flexibler und sicherer in der Anwendung. 
 ```
 
 **Lernziele:**
@@ -104,7 +88,7 @@ name: fahrt
 ---
 ```
 
-Zum Abschluss laufen wir einen kompletten, realistischen Ablauf durch: von der Aufgabenstellung über die Planung bis zur Umsetzung. Ziel ist, den Prozess als Ganzes zu sehen (nicht nur einzelne Sprachkonstrukte). 
+Zum Abschluss laufen wir einen kompletten Ablauf in der Praxis durch: von der Aufgabenstellung über die Planung bis zur Umsetzung. Ziel ist, den Prozess als Ganzes zu sehen (nicht nur einzelne Sprachkonstrukte). 
 
 
 ```{exercise} Fallbeispiel: Sensordaten statistisch auswerten
@@ -129,4 +113,5 @@ Umfang: ca. 1 Vorlesungseinheit
 **Prüfungsrelevanz:**
 
 Nicht direkt prüfungsrelevant, aber studiums- und praxisrelevant.
+
 

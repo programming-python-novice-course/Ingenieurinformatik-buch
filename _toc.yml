@@ -23,6 +23,7 @@ parts:
         sections:
         - file: chapters/01-course-overview/51-gliederung
         - file: chapters/01-course-overview/52-vorlesung-praktikum
+        - file: chapters/01-course-overview/53-ki
   - caption: Basiswissen 
     numbered: True
     chapters:
@@ -44,6 +45,7 @@ parts:
         - file: chapters/03-computer-sciences-basics/51-algorithmus
         - file: chapters/03-computer-sciences-basics/52-komplexität
         - file: chapters/03-computer-sciences-basics/53-software
+        - file: chapters/03-computer-sciences-basics/54-repos
       - file: chapters/03-computer-sciences-basics/60-programmierkonstrukte
         sections:
         - file: chapters/03-computer-sciences-basics/61-kontrollstrukturen
