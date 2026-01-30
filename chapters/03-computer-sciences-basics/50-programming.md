@@ -9,7 +9,7 @@ Oft meinen wir damit zwei Dinge:
 
 Im Folgenden wollen wir eine gemeinsame Sprache schaffen und festlegen, was unter *Algorithmus*, *Programmcode* und *Programm* sowie *Software* verstanden wird. 
 
-Wir wollen uns außerdem Eigenschaften von Algorithmen ansehen, die Ihnen dazu dienen, um Algorithmen miteinander vergleiche zu können. Als Ingenieur werden Sie nämlich oftmals mehrere zur Auswahl haben. Welcher ist dann "der beste"?
+Wir wollen uns außerdem Eigenschaften von Algorithmen ansehen, die Ihnen dazu dienen, um Algorithmen miteinander vergleiche zu können. Als Ingenieur werden Sie nämlich oftmals mehrere zur Auswahl haben. Welcher ist dann "der beste" oder wie erkennen Sie, ob der Algorithmus, den sie implementiert haben performant ist?
 
 
 ```{figure} ../../figs/03-computer-sciences-basics/uebersicht-programmieren.png
