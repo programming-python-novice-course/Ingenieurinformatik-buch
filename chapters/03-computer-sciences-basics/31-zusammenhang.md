@@ -15,7 +15,7 @@ Beide Konzepte wurden verwendet, um ganze Zahlen als Bitfolgen darzustellen, ber
 - Ein Zahlensystem ist ein Stellenwertsystem, das definiert, wie ein Zahlenwert als Folge von Ziffern zur Basis b geschrieben und interpretiert wird  
   (z. B. Basis 2, 10 oder 16).
 
-```{figure} ../../figs/03-computer-sciences-basics/coding-numbers.svg
+```{figure} ../../figs/03-computer-sciences-basics/coding-numbers.png
 ---
 width: 900px
 name: fig-coding-numbers
