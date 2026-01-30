@@ -1,6 +1,12 @@
 
 # Codierung Zahlen
 
+
+In de
+
+
+
+
 Sollen Bitfolgen als **numerische Werte** interpretiert werden,  
 muss zunächst festgelegt werden, dass eine bestimmte Bitfolge überhaupt eine **Zahl** darstellt.
 

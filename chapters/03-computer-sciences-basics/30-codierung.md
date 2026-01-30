@@ -23,7 +23,7 @@ Für sich genommen haben diese Bitfolgen jedoch **keine Bedeutung**.
 Erst durch eine **Codierung** wird festgelegt, wie eine bestimmte Folge von 0 und 1 zu interpretieren ist.
 
 
-## Bedeutung entsteht durch Codierung
+**Bedeutung entsteht durch Codierung**
 
 Die gleiche Bitfolge kann – je nach Kontext – völlig unterschiedliche Bedeutungen haben.
 
@@ -37,9 +37,6 @@ Die Bitfolge `01000001` kann bedeuten:
 Welche Bedeutung gilt, wird **nicht durch die Bitfolge selbst**,  
 sondern durch die verwendete **Codierung** festgelegt.
 
----
-
-# Zahlen
 
 - **Zahlen**
   Wie Bitfolgen als numerische Werte interpretiert werden wird über numerische Codierungen festgelegt.
@@ -53,9 +50,7 @@ sondern durch die verwendete **Codierung** festgelegt.
 - **Töne**  
   Schall wird abgetastet und als Folge numerischer Werte gespeichert – auch Töne werden letztlich als Zahlen dargestellt.
 
-Alle diese Darstellungen beruhen auf Bitfolgen.
-Die jeweilige **Codierung** bestimmt, wie diese Bitfolgen interpretiert werden.
-
+- ...
 
 
 
