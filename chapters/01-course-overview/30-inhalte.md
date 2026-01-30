@@ -25,6 +25,6 @@ Ein grober Überblick über die Inhalte, die in der Prüfung geprüft werden, fi
 ```{admonition} Hinweis
 :name: remark-sample
 :class: remark
-Eine aktuelle Version des Modulhandbuchs finden Sie auf der Website der FK03.
+Eine aktuelle Version des Modulhandbuchs finden Sie auf der [Website der FK03](https://me.hm.edu/studierende/studienablauf/index.de.html).
 ```
 
