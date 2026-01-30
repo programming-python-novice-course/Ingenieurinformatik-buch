@@ -20,8 +20,7 @@ Beide Konzepte wurden verwendet, um ganze Zahlen als Bitfolgen darzustellen, ber
 width: 900px
 name: fig-coding-numbers
 ---
-Zahlenwert → Ziffernfolge (Zahlensystem) → Bitfolge (Codierung). Bei der Binärdarstellung fallen Ziffernfolge und Bitfolge oft zusammen; bei BCD sind sie strikt getrennt. Wichtig: Zahlensysteme ändern die Darstellung einer Zahl, nicht ihre Bedeutung!
-
+Zahlensysteme ändern die Darstellung einer Zahl, nicht ihre Bedeutung. Codierung übersetzt die Darstellung in eine Bitfolge. Sonderfall: Bei der Binärdarstellung von natürlichen Zahlen fallen Ziffernfolge und Bitfolge zusammen. In der Regel sind Darstellung (Zahlensystem) und Bitfolge (=Ergebnis der Codierung) strikt getrennt!
 ```
 
 ## Wichtige Zahlensystem
@@ -42,16 +41,12 @@ Als Programmierin sollten Sie diese kennen, denn beim Programmieren werden Ihnen
 Sie sollten in der Lage sein Zahlensysteme zu verstehen und sicher zwischen Darstellungen wechseln zu können. Dabei geht es nicht darum, ständig von Hand umzurechnen, sondern Darstellungen korrekt zu erkennen, einzuordnen und bei Bedarf nachvollziehen zu können.
 
 
-```{admonition} Spezialfall: Ganze Zahlen
+```{admonition} Spezialfall: Natürliche Zahlen
 :class: important
 
-Wenn wir eine bereits bekannte **ganze Zahl** (z. B. 23) als Bitfolge darstellen wollen, dann ist die numerische Bedeutung bereits festgelegt.
-In diesem Spezialfall fällt der Schritt „Zahl als Bits darstellen“ oft mit dem **Wechsel des Zahlensystems** zusammen (z. B. Dezimal \(\rightarrow\) Binär).
+Der Spezialfall ist in {numref}`fig-coding-numbers` dargestellt: Für natürliche Zahlen kann man oft „Zahl direkt als Bits darstellen".
 
-Dies gilt jedoch nur für ganze Zahlen! Für Zahlen mit Nachkommastellen (z. B. 3,14) reicht ein Zahlensystem allein nicht aus:
-Dann braucht man zusätzliche Regeln (z. B. eine Gleitkommacodierung wie IEEE 754).
-
-Im allgemeinen Fall erzeugt eine Codierung die Bitfolge – ein Zahlensystem ist nur ein möglicher Baustein davon.
+Für alles andere (Zahlen mit Nachkommastellen, Text, ... ) braucht man eine Codierung!
 ```
 
 Als nächstes (Hausaufgabe): In [](32-zahlensysteme.md) üben Sie, zwischen Dezimal-, Binär- und Hexadezimaldarstellung umzurechnen und die Notation sicher zu verwenden.

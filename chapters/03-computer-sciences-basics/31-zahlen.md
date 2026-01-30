@@ -3,26 +3,15 @@
 Im vorherigen Kapitel haben Sie bereits gesehen, dass beim UPC eine Bitfolge wie `0101111` für die Ziffer 6 steht.
 Das ist ein wichtiges Muster: Eine Bitfolge bedeutet nicht „von selbst“ etwas, sondern erst durch eine Codierung (ein Regelwerk).
 
-In diesem Abschnitt geht es darum, dass es für Zahlen verschiedene Repräsentationen gibt – und dass man diese nicht durcheinanderwerfen darf.
-
-```{admonition} Begriffe (kurz)
-:class: important
-
-- **Codierung**: legt fest, wie Bitmuster zu interpretieren sind.
-- **Codewort**: ein konkretes Bitmuster, das für ein Symbol steht (z. B. „Ziffer 7“).
-- **Dekodieren**: Codewörter mit einem „Codebuch“ (Tabelle) in Symbole/Bedeutung zurückübersetzen.
-- **Zahlensystem (Basis, Stellenwertsystem)**: legt fest, wie Stellenwerte einer Zahl interpretiert werden (z. B. Basis 2).
-```
-
-Bei UPC gab es nicht direkt ein Muster. Sie haben in der Tabelle einfach abgelesen, dass `0101111` für die **Ziffer** 6 steht. Sie mussten die Zuordnung aus der Tabelle entnehmen. 
+Bei UPC gab es nicht direkt ein Muster. Sie haben in der Tabelle einfach abgelesen, dass `0101111` für die **Ziffer** 6 steht. 
 
 ## Binary-coded decimal 
 
 Der **Binary-coded decimal (BCD)** ist eine weitere numerische Codierung.
+Die Zuordnung der Zahlen unterscheidet sich aber von dem, was wir bei UPC gesehen haben.
+Sehen Sie sich die Zuordnungstabelle der BCD-Codierung näher an. Fällt Ihnen etwas auf?
 
-Sehen Sie sich die folgende Tabelle an. Fällt Ihnen etwas auf?
-
-| Dezimal | BCD-Code |
+| Zahl | BCD-Code |
 |--------:|----------|
 | 0  | `0000` |
 | 1  | `0001` |
@@ -49,24 +38,29 @@ Sehen Sie sich die folgende Tabelle an. Fällt Ihnen etwas auf?
 | 22 | `0010 0010` |
 | 23 | `0010 0011` |
 
-Ist Ihnen aufgefallen, dass sich die Bitmuster für 0–9 nach einem sehr einfachen Schema ergeben?
-Denken Sie sich die 4 Bits wie **vier Schalter** mit den festen Werten **8**, **4**, **2** und **1**.
-Überall dort, wo eine **1** steht, „ist der Schalter an“ und der Wert wird **mitgezählt** (addiert); bei **0** wird nichts addiert.
+Die Bitmuster für 0–9 ergeben sich nach einem sehr einfachen Schema:
+
+- **linkes Bit**: steht für 8 (\(2^3\))
+- **zweites Bit**: steht für 4 (\(2^2\))
+- **drittes Bit**: steht für 2 (\(2^1\))
+- **rechtes Bit**: steht für 1 (\(2^0\))
+
+Hat das Bit den Wert "1" wird der zugehörige Wert (8,4,2,1) addiert, bei "0" wird nichts addiert.
 
 Hier noch einmal als Übersicht dargestellt:
 
 | Dezimal | BCD-Code | Umrechnung |
-|--------:|----------:| ---------------------|
-| 0  | `0000` | \(0\cdot 8 + 0\cdot 4 + 0\cdot 2 + 0\cdot 1 = 0\) |
-| 1  | `0001` | \(0\cdot 8 + 0\cdot 4 + 0\cdot 2 + 1\cdot 1 = 1\) |
-| 2  | `0010` | \(0\cdot 8 + 0\cdot 4 + 1\cdot 2 + 0\cdot 1 = 2\) |
-| 3  | `0011` | \(0\cdot 8 + 0\cdot 4 + 1\cdot 2 + 1\cdot 1 = 3\) |
-| 4  | `0100` | \(0\cdot 8 + 1\cdot 4 + 0\cdot 2 + 0\cdot 1 = 4\) |
-| 5  | `0101` | \(0\cdot 8 + 1\cdot 4 + 0\cdot 2 + 1\cdot 1 = 5\) |
-| 6  | `0110` | \(0\cdot 8 + 1\cdot 4 + 1\cdot 2 + 0\cdot 1 = 6\) |
-| 7  | `0111` | \(0\cdot 8 + 1\cdot 4 + 1\cdot 2 + 1\cdot 1 = 7\) |
-| 8  | `1000` | \(1\cdot 8 + 0\cdot 4 + 0\cdot 2 + 0\cdot 1 = 8\) |
-| 9  | `1001` | \(1\cdot 8 + 0\cdot 4 + 0\cdot 2 + 1\cdot 1 = 9\) |
+|--------:|----------:|----------------------|
+| 0  | `0000` | $0\cdot 8 + 0\cdot 4 + 0\cdot 2 + 0\cdot 1 = 0$ |
+| 1  | `0001` | $0\cdot 8 + 0\cdot 4 + 0\cdot 2 + 1\cdot 1 = 1$ |
+| 2  | `0010` | $0\cdot 8 + 0\cdot 4 + 1\cdot 2 + 0\cdot 1 = 2$ |
+| 3  | `0011` | $0\cdot 8 + 0\cdot 4 + 1\cdot 2 + 1\cdot 1 = 3$ |
+| 4  | `0100` | $0\cdot 8 + 1\cdot 4 + 0\cdot 2 + 0\cdot 1 = 4$ |
+| 5  | `0101` | $0\cdot 8 + 1\cdot 4 + 0\cdot 2 + 1\cdot 1 = 5$ |
+| 6  | `0110` | $0\cdot 8 + 1\cdot 4 + 1\cdot 2 + 0\cdot 1 = 6$ |
+| 7  | `0111` | $0\cdot 8 + 1\cdot 4 + 1\cdot 2 + 1\cdot 1 = 7$ |
+| 8  | `1000` | $1\cdot 8 + 0\cdot 4 + 0\cdot 2 + 0\cdot 1 = 8$ |
+| 9  | `1001` | $1\cdot 8 + 0\cdot 4 + 0\cdot 2 + 1\cdot 1 = 9$ |
 
 
 ```{admonition} Definition: Nibble und Byte
@@ -76,20 +70,21 @@ Hier noch einmal als Übersicht dargestellt:
 - Ein **Byte** sind **8 Bits** (= **2 Nibbles**, z. B. `0111 0101`).
 ```
 
-
-
-Im Vergleich zum UPC ist BCD damit „systematischer“: Wenn Sie das Muster einmal erkannt haben, brauchen Sie für 0–9 keine Tabelle mehr.
+Im Vergleich zum UPC ist BCD damit „systematischer“. Wenn Sie das Muster kennen, brauchen Sie für 0–9 keine Tabelle mehr! 
+Bei zwei Ziffern, wird einfach jeder Ziffer einzeln umgerechnet.
 
 Beispiel: **75 in BCD**
 
-1. Zerlegen Sie die Zahl in Dezimalziffern: \(75 \rightarrow\) „7“ und „5“.
+1. Zerlegen Sie die Zahl in ihre Einzelziffern: \(75 \rightarrow\) „7“ und „5“.
 2. Codieren Sie jede Ziffer als 4 Bits (Schalterwerte 8-4-2-1):
    - \(7 = 0\cdot 8 + 1\cdot 4 + 1\cdot 2 + 1\cdot 1 \rightarrow\) `0111`
    - \(5 = 0\cdot 8 + 1\cdot 4 + 0\cdot 2 + 1\cdot 1 \rightarrow\) `0101`
-3. Hängen Sie die Codewörter aneinander: \(75 \rightarrow\) `0111 0101`
+3. Hängen Sie die Bits aneinander: \(75 \rightarrow\) `0111 0101`
 
 
-Problem:  Die Zahl 10 belegt bereits 2 Nibbles (1 Byte) Speicherplatz. Das ineffizient, da wir ja noch nicht alle Stellen ausgenutzt haben. 4 Bits (1 Nibble) erlauben 16 Muster. Aktuell nutzen wir 10. Was wäre also wenn wir einfach weiterzählen würden??
+Problem: BCD codiert jede Dezimalziffer mit 4 Bits. Ab der Zahl 10 haben wir zwei Ziffern (1 und 0) und brauchen deshalb 2 Nibbles = 8 Bits (1 Byte).
+Das ist ineffizient, denn mit 4 Bits gäbe es bereits \(2^4 = 16\) mögliche Bitmuster, aber für Dezimalziffern werden nur 10 davon genutzt (0–9) – 6 Muster bleiben ungenutzt.
+Was wäre also, wenn wir diese ungenutzten Muster einfach zum Weiterzählen verwenden würden?
 
 | Dezimal | BCD-Code        | Alternative??? |
 |--------:|-----------------|----------------------|
@@ -142,11 +137,11 @@ Die Binärdarstellung ist ein **Stellenwertsystem** und nutzt die verfügbaren B
 | 128 | `1000 0000` |
 | 256 (= 2**8) | `0001 0000 0000` |
 
-Der wesentliche Unterschied zum BCD-Code ist, dass Dezimalziffern nicht mehr einzeln, also Zahl für Zahl (erst die 7, dann die 5 bei der zahl 75), codiert werden!
-
-Stattdessen ist die Binärdarstellung eine **Stellenwertdarstellung zur Basis 2**:
-Jedes Bit hat einen **Stellenwert** (eine Potenz von 2), und der Zahlenwert ergibt sich als Summe aller gesetzten Bits:
-\(\sum b_i \cdot 2^i\) mit \(b_i \in \{0,1\}\).
 
 
+Die Binärdarstellung ist eine **Stellenwertdarstellung zur Basis 2**:
+Jedes Bit hat einen Stellenwert (eine Potenz von 2), und der Zahlenwert ergibt sich als Summe aller gesetzten Bits:
 
+$$
+\sum b_i \cdot 2^i \quad \text{mit} \quad b_i \in \{0,1\}
+$$

@@ -1,3 +1,14 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Beispiel Barcode
 
 Dieses Beispiel (inkl. Abbildungen) ist angelehnt an das Kapitel 11 im Buch „Code“ von Charles Petzold {cite}`petzold:2000code`.
