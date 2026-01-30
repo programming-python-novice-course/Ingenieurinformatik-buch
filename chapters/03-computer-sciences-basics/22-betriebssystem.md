@@ -10,7 +10,7 @@ Sie können später als Ingenieurinnen und Ingenieure sowohl mit Embedded-Softwa
 Ein **Mikrocontroller** ist ebenfalls ein Computer im weiteren Sinne – aber typischerweise für eine *spezielle Aufgabe* optimiert: Er integriert CPU, Speicher und Ein-/Ausgabe (GPIO, Timer, ADC, Kommunikationsschnittstellen) auf einem Chip und arbeitet oft mit deutlich weniger Ressourcen.
 ```
 
-## Was macht ein Betriebssystem?
+**Was macht ein Betriebssystem?**
 
 Ein Betriebssystem ist die Software-Schicht zwischen Hardware und Anwendungsprogrammen. Es verwaltet Ressourcen (z. B. CPU-Zeit, Arbeitsspeicher, Geräte) und stellt Abstraktionen bereit, die das Programmieren und Ausführen von Programmen vereinfachen (z. B. Prozesse, Dateien, Netzwerkzugriffe).
 ```{admonition} Betriebssystem
@@ -45,7 +45,7 @@ Der Festwertspeicher ist nicht flüchtig und bleibt auch nach dem Ausschalten er
 Auf Mikrocontrollern ist der Ablauf oft einfacher: Nach einem Reset startet ein sehr kleiner Bootloader (oder direkt Ihr Programm) und springt dann in Ihre Firmware. Ob dabei ein RTOS beteiligt ist, hängt vom System ab.
 
 
-## Programme ausführen (mit Betriebssystem)
+**Programme ausführen (mit Betriebssystem)**
 
 Starten Sie ein Programm, teilen Sie dem [Betriebssystem](def-operating-system) mit, dass Sie dieses Programm ausführen möchten.
 Das *Betriebssystem* lädt es in den Hauptspeicher und teilt ihm entsprechende Ressourcen zu.

@@ -15,7 +15,7 @@ Dieses Beispiel (inkl. Abbildungen) ist angelehnt an das Kapitel 11 im Buch „C
 
 ```{figure} ../../figs/03-computer-sciences-basics/codierung/barcode.png
 ---
-width: 450px
+width: 200px
 name: fig-upc-barcode
 ---
 Beispiel eines UPC-Barcodes (Quelle: angelehnt an {cite}`petzold:2000code`).
@@ -25,7 +25,7 @@ Der Universal Product Code (UPC) ist ein Strichcode, der in den Vereinigten Staa
 
 ```{figure} ../../figs/03-computer-sciences-basics/codierung/coding.png
 ---
-width: 650px
+width: 800px
 name: fig-upc-bits
 ---
 Der Barcode als Folge von schwarzen (1) und weißen (0) Feldern, also als Bitfolge (Quelle: angelehnt an {cite}`petzold:2000code`).
@@ -111,7 +111,8 @@ Die Tabellen, die Sie bei der manuellen Übersetzung verwendet haben, sind 1:1 a
 
 
 ```{code-cell} python3
-# UPC-A (vereinfacht): Start Guard (101) + 6x L-Code + Middle Guard (01010) + 6x R-Code + End Guard (101)
+:tags: [skip-execution]
+# UPC-A (vereinfacht)
 
 L_CODE = {
     "0001101": "0",

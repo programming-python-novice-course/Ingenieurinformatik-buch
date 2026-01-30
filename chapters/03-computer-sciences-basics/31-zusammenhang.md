@@ -23,8 +23,9 @@ name: fig-coding-numbers
 Zahlensysteme ändern die Darstellung einer Zahl, nicht ihre Bedeutung. Codierung übersetzt die Darstellung in eine Bitfolge. Sonderfall: Bei der Binärdarstellung von natürlichen Zahlen fallen Ziffernfolge und Bitfolge zusammen. In der Regel sind Darstellung (Zahlensystem) und Bitfolge (=Ergebnis der Codierung) strikt getrennt!
 ```
 
-## Wichtige Zahlensystem
-Es gibt in der Informatik 3 Zahlensysteme, die besonders häufig genutzt werden: das Dezimal-, das Binär- und das Hexadezimalsystem. 
+**Wichtige Zahlensystem**
+
+Es gibt 3 Zahlensysteme, auf die Sie in der Praxis beim Programmieren stoßen können: das Dezimal-, das Binär- und das Hexadezimalsystem. 
 
 Die Zahl „dreizehn“ sieht in diesen drei Zahlensystemen wie folgt aus:
 
@@ -32,11 +33,11 @@ Die Zahl „dreizehn“ sieht in diesen drei Zahlensystemen wie folgt aus:
 - \(1101\) im Binärsystem (Basis 2)
 - \(D\) im Hexadezimalsystem (Basis 16)
 
-Als Programmierin sollten Sie diese kennen, denn beim Programmieren werden Ihnen diese Zahlensysteme immer wieder begegnen: 
+Als Programmierin sollten Sie die drei Zahlensysteme kennen, denn: 
 
-- wenn Debugger Speicheradressen oder Registerwerte in Hexadezimaldarstellung anzeigen,
-- wenn Fehlermeldungen Bitmasken oder Statusflags in binärer oder hexadezimaler Form enthalten,
-- wenn technische Dokumentationen Werte in verschiedenen Zahlensystemen angeben.
+- Debugger zeigen Speicheradressen oder Registerwerte eventuell in Hexadezimaldarstellung an,
+- Fehlermeldungen, Bitmasken oder Statusflags sind in binärer oder hexadezimaler Form,
+- in technische Dokumentationen können Werte in verschiedenen Zahlensystemen angeben sein.
 
 Sie sollten in der Lage sein Zahlensysteme zu verstehen und sicher zwischen Darstellungen wechseln zu können. Dabei geht es nicht darum, ständig von Hand umzurechnen, sondern Darstellungen korrekt zu erkennen, einzuordnen und bei Bedarf nachvollziehen zu können.
 

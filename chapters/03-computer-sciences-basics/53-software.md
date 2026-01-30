@@ -1,6 +1,7 @@
 # Software vs. Programm
 
 - Ein *Programm* ist in einer Programmiersprache (z. B. ``Python``) geschrieben und kann auf einer Maschine ausgeführt werden.
+- *Programmiercode* auch genannt *Quellcode*, *Source Code* oder kurz *Code*, ist das Resultat der *Programmierung* und Teil eines *Programms*.
 - Eine *Software* umfasst meist mehrere Programme sowie Konfiguration und Dokumentation {cite}`sommerville`.
 - Systemdokumentation beschreibt den inneren Aufbau der Software (z. B. Struktur und Komponenten).
 - Benutzerdokumentation erklärt, wie man die Software von außen bedient.
@@ -31,3 +32,4 @@ name: fig-programming-vs-scripting
 ---
 Skripten beschreibt häufig den Workflow (A → B → C) mit vorhandenen Bausteinen, während Programmieren stärker auf die Entwicklung wiederverwendbarer Bausteine (A/B/C) abzielt.
 ```
+

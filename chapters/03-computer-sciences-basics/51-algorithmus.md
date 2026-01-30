@@ -104,7 +104,7 @@ Determinismus und Determiniertheit hängen zusammen, denn Determiniertheit folgt
 :class: note
 
 Mit dem Begriff *Algorithmus* ist direkt die Frage verknüpft: **Welche Probleme sind überhaupt berechenbar?**  
-Die Berechenbarkeitstheorie untersucht (vereinfacht gesagt), ob es für ein Problem *grundsätzlich* einen Algorithmus geben kann – oder ob das unmöglich ist (klassische Beispiele: Halteproblem, Turingmaschine, Turing-Vollständigkeit).
+Die Berechenbarkeitstheorie untersucht (vereinfacht gesagt), ob es für ein Problem *grundsätzlich* einen Algorithmus geben kann – oder ob das unmöglich ist.
 
-Für das praktische Programmieren in dieser Vorlesung ist das spannend, aber **nicht Kernstoff** dieses Kapitels. Wenn Sie tiefer einsteigen möchten, finden Sie den Hintergrund im Expertenwissen: [Berechenbarkeit & Turing-Vollständigkeit](sec-expert-berechenbarkeit).
+Wenn Sie tiefer einsteigen möchten, finden Sie den Hintergrund im [Expertenwissen](sec-expert-berechenbarkeit).
 ```

@@ -14,7 +14,8 @@ name: fig-lamps
 Eine Lampe, die entweder aus (links) oder an (rechts) geschaltet sein kann.
 ```
 
-Diese beiden Zustände werden üblicherweise durch die Zahlen **0** und **1** repräsentiert. Damit entsteht eine Folge von Bits.
+Für einen Computer sind das zunächst nur unterscheidbare Zustände. Damit man damit rechnen und sie speichern kann, werden sie als **0** und **1** notiert. Aus vielen solchen Notationen entstehen Bitfolgen.
+
 
 
 ```{admonition} Definition: Bit
@@ -25,40 +26,33 @@ Es kann genau zwei Werte annehmen: **0** oder **1** (entspricht zwei unterscheid
 ```
 
 
-Alle Informationen, die ein Computer verarbeitet, liegen letztlich als solche Bitfolgen vor.
-Für sich genommen haben diese Bitfolgen jedoch **keine Bedeutung**.
+Alle Informationen, die ein Computer verarbeitet, liegen letztlich als Bitfolgen vor.
+Für sich genommen haben Bitfolgen keine Bedeutung. Eine Codierung legt fest, wie eine Bitfolge zu interpretieren ist.
 
-Erst durch eine **Codierung** wird festgelegt, wie eine bestimmte Folge von 0 und 1 zu interpretieren ist.
+```{admonition} Merksatz
+::class: tip
 
-
-**Bedeutung entsteht durch Codierung**
+Merksatz: Ohne Codierung ist eine Bitfolge nur eine Folge von 0 und 1.
+```
 
 Die gleiche Bitfolge kann – je nach Kontext – völlig unterschiedliche Bedeutungen haben.
 
-Beispiel:  
-Die Bitfolge `01000001` kann bedeuten:
-- die Zahl **65** (numerische Codierung)
-- den Buchstaben **"A"** (ASCII-Codierung)
+Beispiel: Die Bitfolge `01000001` kann bedeuten:
+
+- die Zahl 65 (numerische Codierung)
+- den Buchstaben "A" (ASCII-Codierung)
 - einen Farbwert in einem Bild
 - einen Teil eines Maschinenbefehls
 
-Welche Bedeutung gilt, wird **nicht durch die Bitfolge selbst**,  
-sondern durch die verwendete **Codierung** festgelegt.
+Welche Bedeutung gilt, wird durch die verwendete Codierung festgelegt. Typische Codierungsarten sind:
 
+- Zahlen: Bitfolgen werden durch numerische Codierungen als Zahlen interpretiert.
 
-- **Zahlen**
-  Wie Bitfolgen als numerische Werte interpretiert werden wird über numerische Codierungen festgelegt.
+- Text: Zeichen werden über Zeichencodierungen (z. B. ASCII, UTF-8) auf Bitfolgen abgebildet.
 
-- **Text**  
-  Zeichen werden über Zeichencodierungen (z. B. ASCII, UTF-8) auf Bitfolgen abgebildet.
+- Bilder: Bilder bestehen aus Pixeln, deren Farbwerte numerisch codiert sind, also wiederum Zahlen.
 
-- **Bilder**  
-  Bilder bestehen aus Pixeln, deren Farbwerte numerisch codiert sind – also wiederum Zahlen.
-
-- **Töne**  
-  Schall wird abgetastet und als Folge numerischer Werte gespeichert – auch Töne werden letztlich als Zahlen dargestellt.
-
-- ...
+- Töne: Schall wird abgetastet und als Folge numerischer Werte gespeichert, also ebenfalls als Zahlen dargestellt.
 
 
 

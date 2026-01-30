@@ -12,13 +12,14 @@ kernelspec:
 (sec-programming-constructs)=
 # Programmstruktur
 
-In diesem Kapitel lernen wir die fundamentalen Bausteine der Programmierung kennen: *Kontrollstrukturen* und *Datenstrukturen*.
+In diesem Kapitel lernen wir die fundamentalen Bausteine der Programmierung kennen: Kontrollstrukturen und Datenstrukturen.
 Diese beiden Konzepte bilden zusammen die Grundlage für alle Algorithmen und Programme.
 
 
-In diesem Teil klären wir
-
-- was **Kontrollstrukturen** sind und wozu man **Fallunterscheidungen** und **Wiederholungen** braucht.
-- den Unterschied zwischen **Iteration** und **Rekursion** beschreiben und typische Einsatzideen nennen.
-- zentrale **Datenstrukturen** (z. B. Stack, Queue, Array, dynamisches Array, verkettete Liste) einordnen und Grundoperationen benennen.
-- unterscheiden zwischen **Abstraktem Datentyp (ADT)** und **Implementierung im Speicher**.
+```{figure} ../../figs/03-computer-sciences-basics/bausteine.png
+---
+width: 800px
+name: fig-bausteine-programmierung
+---
+Überblick: Bausteine der Programmierung (Kontrollstrukturen und Datenstrukturen).
+```

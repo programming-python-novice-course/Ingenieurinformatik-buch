@@ -14,15 +14,6 @@ kernelspec:
 
 Wie kann ich anderen Personen verständlich machen, was mein Programm macht? Wie kann ich anderen Menschen beschreiben, was eine Software tut? Diese Frage steht im Zentrum der Softwareentwicklung, denn Programmieren ist immer auch Kommunikation. Sie wollen einem anderen Menschen Ihre Idee, Ihr Konzept begreiflich machen.
 
-## Lernziele
-
-Nach diesem Abschnitt können Sie …
-
-- erklären, warum Programmieren auch **Kommunikation** ist (Zielgruppe, Zweck, Abstraktionsgrad).
-- einen einfachen Algorithmus in **Pseudocode** ausdrücken.
-- die Grundideen von **Struktogrammen** (Sequenz, Fallunterscheidung, Schleife) erkennen und einsetzen.
-- das passende Kommunikationsmedium (Code, Skizze, Diagramm) für eine Situation begründet auswählen.
-
 Es gibt viele verschiedene Wege, Software und Algorithmen zu kommunizieren.
 Jede Methode hat ihre Stärken und ist für bestimmte Aspekte und Zielgruppen geeignet:
 

@@ -1,5 +1,5 @@
 (sec-expert-berechenbarkeit)=
-# Berechenbarkeit & Turing-Vollständigkeit (Expertenwissen)
+# Berechenbarkeit
 
 Dieses Kapitel ist **optional** und dient als Hintergrundwissen zur theoretischen Informatik.
 Im Haupttext der Vorlesung reicht es, die Begriffe grob einordnen zu können.

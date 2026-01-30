@@ -2,8 +2,7 @@
 
 Im folgenden werden die Kursteile genauer vorgestellt.
 
-## Einführung (Teil 1)
-
+**Basiswissen (Teil 1)**
 ```{figure} ../../figs/02-course-concept/overview/infrastructer-metaphor.png
 ---
 height: 320px
@@ -15,17 +14,17 @@ Wir schaffen ein gemeinsames Grundverständnis: Was macht ein Computer eigentlic
 
 Umfang: ca. 1 Vorlesungseinheit
 
-**Lernziele:**
+Lernziele:
 
 - Grundverständnis, was ein Computer tut (vereinfacht, aber belastbar)
 - Zentrale Begriffe der Informatik sicher verwenden
 - Informationsverarbeitung auf hoher Ebene beschreiben können
 
-**Prüfungsrelevanz:**
+Prüfungsrelevanz:
 
 In der Regel nicht direkt prüfungsrelevant (außer, wir weisen ausdrücklich darauf hin).
 
-## Python verstehen (Teil 2)
+**Python verstehen (Teil 2)**
 
 ```{figure} ../../figs/02-course-concept/overview/motorhaube.png
 ---
@@ -44,17 +43,17 @@ Je besser Sie hier die Hintergründe verstehen, desto weniger müssen Sie im Anw
 Wenn Sie die grundlegenden Eigenschaften Ihres Autos (z. B. Motor und Getriebe) grob verstehen, können Sie viele Situationen beim Fahren besser einschätzen – etwa, wann der nächste Gang sinnvoll ist. Ohne dieses Hintergrundwissen müssten Sie sich für viele Situationen einzelne „Regeln“ merken. Genauso ist es beim Programmieren: Wenn Sie die Konzepte verstehen, ergeben sich viele „Regeln“ von selbst. Das spart Ihnen nicht nur Lernarbeit, sondern macht Sie flexibler und sicherer in der Anwendung. 
 ```
 
-**Lernziele:**
+Lernziele:
 
 - Zentrale Eigenschaften von Python kennenlernen und einordnen
 - Wichtige Programmierkonzepte verstehen, die in der Praxis ständig auftauchen
 - Typische „Warum passiert das?“‑Fragen in Python mit Grundlagenwissen erklären können
 
-**Prüfungsrelevanz:**
+Prüfungsrelevanz:
 
 Für die Prüfung meist nicht direkt abgefragt – aber sehr wertvoll: Konzeptwissen macht Ihnen die Anwendung leichter, hilft beim Transfer auf weitere Sprachen und spart später viel „Auswendiglernen“.
 
-## Python anwenden (Teil 3)
+**Python anwenden (Teil 3)**
 
 ```{figure} ../../figs/02-course-concept/overview/bedienung.png
 ---
@@ -67,7 +66,7 @@ Hier geht es um die praktische Programmierarbeit: Programme schreiben, Daten ver
 
 Umfang: ca. 8 Vorlesungseinheiten
 
-**Lernziele:**
+Lernziele:
 
 - Python-Programme entwickeln und strukturieren
 - Datentypen, Ausdrücke und Operatoren sicher anwenden
@@ -75,11 +74,11 @@ Umfang: ca. 8 Vorlesungseinheiten
 - Einfache Algorithmen in Python umsetzen
 
 
-**Prüfungsrelevanz:**
+Prüfungsrelevanz:
 
 Sehr prüfungsrelevant: Hier prüfen wir, ob Sie „fahren können“ – also eigenständig Programme erstellen.
 
-## Anwendungsfall (Teil 4)
+**Anwendungsfall (Teil 4)**
 
 ```{figure} ../../figs/02-course-concept/overview/fahrt.png
 ---
@@ -94,23 +93,22 @@ Zum Abschluss laufen wir einen kompletten Ablauf in der Praxis durch: von der Au
 ```{exercise} Fallbeispiel: Sensordaten statistisch auswerten
 :label: exercise-sensordata
 
-**Ausgangslage:**
+Ausgangslage:
 Julia bekommt von ihrer Kollegin eine Datei, in der mehrere Arten von Messdaten abgelegt sind.
 
-**Aufgabe:**
-Die Statistik der Messdaten soll bestimmt werden:
+Aufgabe: Die Statistik der Messdaten soll bestimmt werden.
 - Grafisch: Die Verteilung der Daten visualisieren
 - Tabellarisch: Eine Übersichtstabelle erstellen, in der die statistischen Momente und Percentile enthalten sind
 ```
 
 Umfang: ca. 1 Vorlesungseinheit
 
-**Lernziele:**
+Lernziele:
 
 - Vorgehensweise zur Programmentwicklung (von Problem → Lösung) verstehen
 - Praxisnahe Planung und Umsetzung eines kleinen Anwendungsfalls
 
-**Prüfungsrelevanz:**
+Prüfungsrelevanz:
 
 Nicht direkt prüfungsrelevant, aber studiums- und praxisrelevant.
 

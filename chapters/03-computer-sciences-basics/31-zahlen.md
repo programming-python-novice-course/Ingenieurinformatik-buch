@@ -3,11 +3,11 @@
 Im vorherigen Kapitel haben Sie bereits gesehen, dass beim UPC eine Bitfolge wie `0101111` für die Ziffer 6 steht.
 Das ist ein wichtiges Muster: Eine Bitfolge bedeutet nicht „von selbst“ etwas, sondern erst durch eine Codierung (ein Regelwerk).
 
-Bei UPC gab es nicht direkt ein Muster. Sie haben in der Tabelle einfach abgelesen, dass `0101111` für die **Ziffer** 6 steht. 
+Bei UPC gab es nicht direkt ein Muster. Sie haben in der Tabelle einfach abgelesen, dass `0101111` für die Ziffer 6 steht. 
 
-## Binary-coded decimal 
+**Binary-coded decimal**
 
-Der **Binary-coded decimal (BCD)** ist eine weitere numerische Codierung.
+Der Binary-coded decimal (BCD) ist eine weitere numerische Codierung.
 Die Zuordnung der Zahlen unterscheidet sich aber von dem, was wir bei UPC gesehen haben.
 Sehen Sie sich die Zuordnungstabelle der BCD-Codierung näher an. Fällt Ihnen etwas auf?
 
@@ -106,7 +106,7 @@ Was wäre also, wenn wir diese ungenutzten Muster einfach zum Weiterzählen verw
 | 15 | `0001 0101`      | `1111`  <-- ungenutzt|
 
 
-## Binärdarstellung (Stellenwertsystem Basis 2)
+## Binärdarstellung 
 
 Die Binärdarstellung ist ein **Stellenwertsystem** und nutzt die verfügbaren Bitmuster aus:
 
@@ -136,7 +136,6 @@ Die Binärdarstellung ist ein **Stellenwertsystem** und nutzt die verfügbaren B
 | 64 | `0100 0000` |
 | 128 | `1000 0000` |
 | 256 (= 2**8) | `0001 0000 0000` |
-
 
 
 Die Binärdarstellung ist eine **Stellenwertdarstellung zur Basis 2**:
