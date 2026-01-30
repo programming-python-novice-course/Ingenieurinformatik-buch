@@ -1,27 +1,4 @@
-
-# Codierung Zahlen
-
-
-In de
-
-
-
-
-Sollen Bitfolgen als **numerische Werte** interpretiert werden,  
-muss zunächst festgelegt werden, dass eine bestimmte Bitfolge überhaupt eine **Zahl** darstellt.
-
-Diese Festlegung nennt man **numerische Codierung**.
-Sie bestimmt zum Beispiel:
-- ob es sich um eine Ganzzahl oder eine Gleitkommazahl handelt,
-- ob Vorzeichen erlaubt sind,
-- welcher Wertebereich darstellbar ist.
-
-Beispiele für numerische Codierungen sind:
-- vorzeichenlose Ganzzahlen,
-- vorzeichenbehaftete Ganzzahlen (z. B. Zweierkomplement),
-- Gleitkommazahlen (z. B. IEEE 754).
-
-## Rolle Zahlensysteme
+# Zahlensysteme 
 
 Ein **Zahlensystem** ist ein Bestandteil der numerischen Codierung.
 Es legt fest, **wie eine Zahl symbolisch dargestellt und gelesen wird**,
@@ -60,7 +37,7 @@ In diesem Spezialfall fällt der Codierungsschritt mit dem **Wechsel des Zahlens
 - Die Wahl des Zahlensystems (z. B. Binär, Dezimal, Hexadezimal) bestimmt direkt die Darstellung der Zahl als Bitfolge.
 
 Dies gilt jedoch **nur für ganze Zahlen**! Sollen Zahlen mit Nachkommastellen (z. B. 3,14) dargestellt werden, reicht ein Zahlensystem allein nicht aus.
-Dann ist eine zusätzliche **numerische Codierung** erforderlich, die festlegt, wie das Komma, die Nachkommastellen und Rundungen repräsentiert werden (z. B. Gleitkommacodierungen wie IEEE 754).
+Dann ist eine zusätzliche **Codierung** erforderlich, die festlegt, wie das Komma, die Nachkommastellen und Rundungen repräsentiert werden (z. B. Gleitkommacodierungen wie IEEE 754).
 
 Im **allgemeinen Fall** erzeugt die Codierung die Bitfolge, nicht das Zahlensystem!
 

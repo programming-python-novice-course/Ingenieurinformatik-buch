@@ -1,20 +1,29 @@
 # Beispiel Barcode
 
-beispiel stammt aus christian petzold code #todo add citation to all pictures
+Dieses Beispiel (inkl. Abbildungen) ist angelehnt an das Kapitel 11 im Buch „Code“ von Charles Petzold {cite}`petzold:2000code`.
 
-Barcode: 
-#todo add figure figs/03-computer-sciences-basics/codierung/barcode.png
+```{figure} ../../figs/03-computer-sciences-basics/codierung/barcode.png
+---
+width: 450px
+name: fig-upc-barcode
+---
+Beispiel eines UPC-Barcodes (Quelle: angelehnt an {cite}`petzold:2000code`).
+```
+
+Der Universal Product Code (UPC) ist ein Strichcode, der in den Vereinigten Staaten eingesetzt wird. In Europa wird ein anderer Code eingesetzt, aber das Prinzip ist dasselbe: Schwarze und weiße Felder wechseln sich ab, wobei **schwarz** für 1 steht und **weiß** für 0. Es gibt pro Feld also nur zwei mögliche Zustände (Binärcode).
+
+```{figure} ../../figs/03-computer-sciences-basics/codierung/coding.png
+---
+width: 650px
+name: fig-upc-bits
+---
+Der Barcode als Folge von schwarzen (1) und weißen (0) Feldern, also als Bitfolge (Quelle: angelehnt an {cite}`petzold:2000code`).
+```
+
+Der gesamte UPC besteht aus 95 Zeichen. Da jedes Zeichen nur 0 oder 1 sein kann, sprechen wir auch von 95 Bits.
 
 
-
-Der Universal Product Code (UPC) ist ein Strichcode, der in den Vereinigten Staaten eingesetzt wird. In Europa wird eine anderer Code eingesetzt, aber das Prinzip ist dasselbe: schwarze und weisse felder wechseln sich ab, wobei schwar für 1 steht und weiß für 0. Es gibt pro feld also nur zwei mögliche Zustände (binärcode).
-
-#todo add this figure
-figs/03-computer-sciences-basics/codierung/coding.png
-
-%10100011010110001001100100011010001101000110101010111001011001101101100100111011001101000100101
-
-der gesamte UPC besteht auf 95 Zeichen. da jedes zeichen nur 0 oder 1 sein kann, sprechen wir auch von 95 bits. Die Codierung sagt uns nun wie wir diese bits zu interpretieren haben:
+Das Codierschema des UPC sagt uns, wie wir diese Bits zu interpretieren haben:
 
 | Bits                                                                       | Bedeutung                                                         |
 | -------------------------------------------------------------------------- | ----------------------------------------------------------------- |
@@ -24,57 +33,70 @@ der gesamte UPC besteht auf 95 Zeichen. da jedes zeichen nur 0 oder 1 sein kann,
 | `1110010`<br>`1100110`<br>`1101100`<br>`1001110`<br>`1100110`<br>`1000100` | **Nutzdaten rechts** (6 Ziffern, R-Code) |
 | `101`                                                                      | **Stoppzeichen** (End Guard)                                      |
 
+```{admonition} Definition: Parität (hier: ungerade Parität)
+:class: def-sample
 
-| Ziffer | Bitfolge (L-Code) |
-|-------:|-------------------|
-| 0 | `0001101` |
-| 1 | `0011001` |
-| 2 | `0010011` |
-| 3 | `0111101` |
-| 4 | `0100011` |
-| 5 | `0110001` |
-| 6 | `0101111` |
-| 7 | `0111011` |
-| 8 | `0110111` |
-| 9 | `0001011` |
+Ein Bitmuster hat **ungerade Parität**, wenn die Anzahl der 1-Bits **ungerade** ist.
+Das kann zur einfachen Fehlererkennung genutzt werden.
+```
 
+Die Bitfolgen, bestehend auf 7 Bits, stehen jeweils für Zahlenwerte. Die folgenden beiden Tabellen enthalten die Zuordnung: also welche Bitfolge steht für welche Zahl?
 
-| Ziffer | Bitfolge (R-Code) |
-|-------:|-------------------|
-| 0 | `1110010` |
-| 1 | `1100110` |
-| 2 | `1101100` |
-| 3 | `1000010` |
-| 4 | `1011100` |
-| 5 | `1001110` |
-| 6 | `1010000` |
-| 7 | `1000100` |
-| 8 | `1001000` |
-| 9 | `1110100` |
-
-Ist Ihnen aufgefallen, dass die Bitfolge immer eine ungerade Anzahl an 1-Bits hat? Das nennt man eine ungerade Parität.
-
-Definition: Parität 
+| Bitfolge (L-Code) | Ziffer |
+|-------------------|-------:|
+| `0001101` | 0 |
+| `0011001` | 1 |
+| `0010011` | 2 |
+| `0111101` | 3 |
+| `0100011` | 4 |
+| `0110001` | 5 |
+| `0101111` | 6 |
+| `0111011` | 7 |
+| `0110111` | 8 |
+| `0001011` | 9 |
 
 
-Ist Ihnen aufgefallen, dass der R-Code und der L-Code genau das Gegenteil voneinander sind? Also da wo beim L-Code eine 0 ist, ist beim R-Code eine 1? Man spricht dann davon dass L-Code und R-Code Komplemente sind.
+| Bitfolge (R-Code) | Ziffer |
+|-------------------|-------:|
+| `1110010` | 0 |
+| `1100110` | 1 |
+| `1101100` | 2 |
+| `1000010` | 3 |
+| `1011100` | 4 |
+| `1001110` | 5 |
+| `1010000` | 6 |
+| `1000100` | 7 |
+| `1001000` | 8 |
+| `1110100` | 9 |
 
-Definition: Komplement
+
+Ist Ihnen aufgefallen, dass der R-Code und der L-Code genau das Gegenteil voneinander sind?
+Also: wo beim L-Code eine 0 ist, ist beim R-Code eine 1 (und umgekehrt). Man sagt: L-Code und R-Code sind **Komplemente**.
+
+```{admonition} Definition: Komplement (Bitweise)
+:class: def-sample
+
+Das **Komplement** einer Bitfolge erhält man, indem man jedes Bit umdreht: $\(0 \leftrightarrow 1\)$.
+```
 
 
+```{exercise} UPC dekodieren
+Entschlüsseln (dekodieren) Sie den binären Code!
+```
 
-Aufgabe: Enschlüsseln (decodieren) Sie die den binären Code! 
+**Das war anstrengend?**
 
+Ja – und deswegen gibt es für solche Aufgaben Programme ;-)
+Der folgende Python-Code erledigt genau das, was Sie gerade per Hand erledigt haben:
 
-Das war anstrengend? Ja, und deswegen machen wir das üblicherweise nicht von Hand sondern mit einem kleinen Programm, dass das für uns erledigt. Der folgende Python-Code erledigt genau das was Sie gerade per Hand erledigt haben:
-- es bekommt eine Folge von 0 und 1
-- es entfernt die Startzeichen (101)
-- dann übersetzt es die bitgruppen in zahlen mit dem L-Code
-- dann überprüft es ob das Trennzeichen vorhanden ist
-- dann übersetzt es die näcshten birgruppen mit dem R-Code
+- er bekommt eine Folge von 0 und 1
+- er entfernt die Startzeichen (101)
+- dann übersetzt er die Bitgruppen in Ziffern mit dem L-Code
+- dann überprüft er, ob das Trennzeichen vorhanden ist
+- dann übersetzt er die nächsten Bitgruppen mit dem R-Code
 
-Wichtig an dieser Stelle: Sie müssen den Python Code noch nicht verstehen. Wichtig ist zu erkennen, dass die Codierung nicht magisch passiert. Die Tabellen, die Sie bei der manuellen üebrsetzung verwendet haben, sind 1-1 so im Code Tabellen hinterlegt. 
-
+Wichtig an dieser Stelle: Sie müssen den folgenden Python-Code noch nicht verstehen. Sie sollten lediglich erkennen, dass die Codierung nicht „magisch“ passiert:
+Die Tabellen, die Sie bei der manuellen Übersetzung verwendet haben, sind 1:1 als Tabellen im Code hinterlegt!
 
 
 ```{code-cell} python3

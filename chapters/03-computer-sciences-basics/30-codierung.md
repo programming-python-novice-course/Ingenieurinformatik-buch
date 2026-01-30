@@ -14,8 +14,16 @@ name: fig-lamps
 Eine Lampe, die entweder aus (links) oder an (rechts) geschaltet sein kann.
 ```
 
-Diese beiden Zustände werden üblicherweise durch die Zahlen **0** und **1** repräsentiert.
-Damit entsteht eine Folge von Bits.
+Diese beiden Zustände werden üblicherweise durch die Zahlen **0** und **1** repräsentiert. Damit entsteht eine Folge von Bits.
+
+
+```{admonition} Definition: Bit
+:class: def-sample
+
+Ein **Bit** (binary digit) ist die kleinste Informationseinheit in einem Computer.
+Es kann genau zwei Werte annehmen: **0** oder **1** (entspricht zwei unterscheidbaren Zuständen, z. B. aus/an).
+```
+
 
 Alle Informationen, die ein Computer verarbeitet, liegen letztlich als solche Bitfolgen vor.
 Für sich genommen haben diese Bitfolgen jedoch **keine Bedeutung**.
