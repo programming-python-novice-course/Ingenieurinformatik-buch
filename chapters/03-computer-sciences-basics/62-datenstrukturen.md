@@ -1,121 +1,116 @@
-
 # Datenstrukturen
 
-Da sich alle Daten (Programm und dessen Eingabe/Ausgabe) im [Arbeitsspeicher](def-main-memory) befinden, müssen wir begreifen welche Funktionalität diese *konkrete* Datenstruktur bietet.
-Alle weiteren *abstrakten* Datenstrukturen bauen auf diesen Möglichkeiten auf.
+Programme arbeiten nicht nur mit Anweisungen, sondern ständig mit Daten.
+- Eingaben müssen im Arbeitsspeicher abgelegt werden.
+- Zwischenergebnisse müssen wiedergefunden werden können.
+- Ausgaben müssen erzeugt und oft erneut verarbeitet werden.
 
-Es gibt zwei wesentliche Arten, wie Datenstrukturen im Arbeitsspeicher realisiert werden:
+Die zentrale Frage lautet: Wie organisiert man Daten so, dass ein Programm sinnvoll und effizient mit ihnen arbeiten kann?
 
-(1) Statische Sammlungen
-: Die [Sammlung](def-collection) liegt als zusammenhängende Folge von [Bits](def-bit) im Arbeitsspeicher
 
-(2) Dynamische Sammlungen 
-: Die [Sammlung](def-collection) besteht aus mehreren zusammenhängenden Folgen von [Bits](def-bit), die voneinander getrennt im Arbeitsspeicher liegen. - wird von Python genutzt.
+```{figure} ../../figs/03-computer-sciences-basics/overview/datastructures-funny.png
+---
+width: 700px
+name: fig-datastructures-funny
+---
+Unterschiedliche Situationen erfordern unterschiedliche Datenstrukturen.
+```
 
-```{admonition} Statische Sammlungen
-:name: def-static-ds
+Das Bild zeigt: Es gibt keine „beste“ Datenstruktur, sondern nur eine passende für eine gegebene Aufgabe.
+
+## Beispiele für Ordnungsprinzipien
+
+- Eine Queue ist passend, wenn Elemente in der Reihenfolge verarbeitet werden sollen, in der sie eintreffen.
+- Ein Set ist passend, wenn nur relevant ist, ob ein Element vorhanden ist oder nicht.
+- Eine Map ist passend, wenn Daten über einen Schlüssel wiedergefunden werden sollen.
+- Ein Stack ist passend, wenn das zuletzt eingefügte Element zuerst wieder entfernt werden soll.
+
+Diese Prinzipien tauchen im Alltag oft in konkreten Situationen auf.
+- Eine Queue wird z. B. bei Aufträgen, Simulationen oder Datenströmen verwendet.
+- Ein Set beantwortet effizient die Frage „Ist dieses Element enthalten?“
+- Eine Map folgt dem Prinzip „Schlüssel → Wert“, z. B. wie in Tabellen oder Telefonbüchern.
+- Ein Stack ist auch im Computer selbst zentral, z. B. bei Funktionsaufrufen und Rücksprungadressen.
+
+
+```{admonition} Definition: Abstrakter Datentyp (ADT)
 :class: definition
-*Statische Sammlungen* können zur Laufzeit des Programms ihre Größe nicht verändern, d.h. ihr Speicherverbrauch kann sich **nicht** verändern. 
-Stattdessen muss eine neue Datenstruktur angelegt werden.
-```
+:name: def-abstract-data-type
 
-```{admonition} Dynamische Sammlungen
-:name: def-dynamic-ds
-:class: definition
-*Dynamische Sammlungen* können zur Laufzeit des Programms anwachsen und schrumpfen, d.h. ihr Speicherverbrauch kann sich verändern. Möglich wird dies durch die Verwendung von *[Zeigern](sec-pointer)*. Damit die fragmentierten Teile als ganzes repräsentiert werden können, müssen sie verbunden werden.
-Dies wird durch sog. *[Zeiger/Pointer](def-pointer)* realisiert.
-Oft spricht man auch von einer *Referenz*.
-Dabei ist wichtig, dass ein *Zeiger* wiederum auf einen weiteren *Zeiger* *zeigen/verweisen/referenzieren* kann.
-```
+Queue, Set, Map und Stack sind abstrakte Datentypen (ADTs).
+- Sie beschreiben, welche Operationen auf einer Struktur erlaubt sind (z. B. Einfügen, Entfernen, Suchen).
+- Sie beschreiben, welche Regeln dabei gelten (z. B. Reihenfolge beim Entfernen).
+- Sie sagen nicht, wie die Struktur intern im Speicher umgesetzt ist.
 
-```{admonition} Zeiger
-:name: def-pointer
-:class: definition
-Ein *Zeiger* ist ein Objekt welches eine Speicheradresse repräsentiert.
-Programmiersprachen bieten die Mittel um Zeiger *aufzulösen*, was den Zugriff auf das Objekt auf das sie verweisen ermöglicht.
+Neben Queue, Set, Map und Stack gibt es weitere ADTs, z. B. Trees (Bäume).
 ```
 
 
-## Überblick über wichtige Datenstrukturen
+Damit ein Computer diese abstrakten Ordnungen umsetzen kann, müssen sie konkret im Arbeitsspeicher realisiert werden.
+Hier kommt die Speicherrepräsentation ins Spiel.
 
-In diesem Abschnitt unterscheiden wir zwei Perspektiven:
+Alle Daten liegen letztlich als Bits im Arbeitsspeicher.
+Entscheidend ist, wie diese Bits angeordnet sind und wie auf sie zugegriffen wird.
+Eine grundlegende Unterscheidung ist die zwischen statischen und dynamischen Sammlungen.
 
-- **Abstrakte Datentypen (ADT)** beschreiben *das Verhalten* einer Sammlung: welche Operationen erlaubt sind und in welcher Reihenfolge (z. B. FIFO/LIFO).
-- **Implementierungen** beschreiben *die Realisierung im Speicher*: liegen Elemente zusammenhängend oder verkettet, statisch oder dynamisch?
+## Statische Sammlungen
 
-Wichtig: **Ein ADT kann durch verschiedene Implementierungen realisiert werden** (z. B. eine Queue als verkettete Liste *oder* auf Basis eines Arrays).
+Statische Sammlungen besitzen eine feste Größe.
+- Der benötigte Speicher wird einmal reserviert.
+- Die Größe kann sich zur Laufzeit nicht verändern.
+- Die Elemente liegen typischerweise zusammenhängend im Speicher.
 
-Das folgende Bild gibt einen Überblick über eine **strukturelle** Klassifikation (z. B. linear vs. nicht-linear). Diese Einordnung ist **unabhängig** von der Unterscheidung ADT vs. Implementierung.
+In unserem Beispiel ist es die Zahlenfolge 9-7-8-4-5-5-5-0.
+- Alle Zahlen liegen nebeneinander im Speicher.
+- Beim Einfügen zwischen 4 und 5 muss Platz vorhanden sein, oder es muss umorganisiert werden.
 
-- **Lineare Datenstrukturen**: Die Elemente sind in einer bestimmten Reihenfolge angeordnet.
-  - **Statische lineare Strukturen**: Die Größe ist fest und kann sich nicht ändern.
-  - **Dynamische lineare Strukturen**: Die Größe kann zur Laufzeit verändert werden.
-- **Nicht-lineare Datenstrukturen**: Die Elemente sind nicht in einer einfachen Reihenfolge angeordnet.
-
-```{figure} ../../figs/03-computer-sciences-basics/overview/datenstrukturen.png
-:name: fig-data-structures-overview
-:width: 100%
-:align: center
-
-Überblick über wichtige Datenstrukturen
+- Variante 1: Platz nebenan ist frei.
+```{figure} ../../figs/03-computer-sciences-basics/overview/einfuegen.png
+---
+width: 700px
+name: fig-static-insert-free
+---
+Einfügen in eine statische Struktur: rechts daneben ist noch Speicher frei.
 ```
 
-### Abstrakte Datentypen (ADT)
+- Variante 2: Platz nebenan ist belegt.
 
-(sec-stack)=
-Der *Stapel* (engl. *Stack*) oder auch *Stapelspeicher/Keller* ist einer der einfachsten [dynamischen Sammlungen](def-dynamic-ds), welche dem *Last-In-First-Out (LIFO)* Prinzip folgt.
-LIFO bedeutet soviel wie: *zuletzt hinein - zuerst heraus*.
-Das was zuletzt hinein gekommen ist, wird auch als erstes herausgenommen.
-Stellen Sie sich einen Stapel aus Büchern vor.
-Das Buch was Sie zuletzt auf den Bücherstapel gelegt haben liegt zugriffsbereit ganz oben.
-
-Typische Operationen sind: **push** (ablegen), **pop** (entnehmen) und **top/peek** (oberstes Element ansehen).
-Ein Stack kann z. B. als Array/dynamisches Array oder als verkettete Liste implementiert werden.
-
-(sec-queue)=
-Die *Warteschlange* (engl. *Queue*) ist eine [dynamische Sammlung](def-dynamic-ds) und folgt dem sog. *First-In-First-Out (FIFO)* Prinzip.
-FIFO bedeutet soviel wie: *zuerst hinein - zuerst hinaus*.
-Das was zuerst hinein gekommen ist, wird auch als erstes herausgenommen.
-Der Name rührt daher, dass die Datenstruktur wie eine Warteschlange an der Kasse funktioniert.
-Kunden die sich zuerst in die Schlange einreihen, werden auch zuerst bedient.
-
-Typische Operationen sind: **enqueue** (hinten anstellen), **dequeue** (vorne entnehmen) und **front/peek** (vorderstes Element ansehen).
-Auch eine Queue kann auf unterschiedliche Weise implementiert werden (z. B. verkettet oder als Ringpuffer auf Basis eines Arrays).
-
-### Implementierungen (Speicherrepräsentationen)
-
-(sec-array)=
-Ein *Array* ist eine [statische Sammlung](def-static-ds) mit direktem Indexzugriff.
-Es wird durch einen zusammenhängenden Speicherbereich realisiert.
-Ein Array beinhaltet üblicherweise Elemente die alle vom gleichen [Datentyp](def-datatypes) sind.
-Arrays bieten effizienten Zugriff über einen Index, können aber ihre Größe nicht dynamisch ändern.
-
-```{admonition} Arrays in Python?
-:name: remark-arrays-python
-:class: remark
-Anders als in den meisten Sprachen, gibt es in ``Python`` keine nativen Arrays.
+```{figure} ../../figs/03-computer-sciences-basics/overview/einfuegen-2.png
+---
+width: 700px
+name: fig-static-insert-occupied
+---
+Einfügen in eine statische Struktur: rechts daneben ist kein Speicher frei (Umkopieren/Neuanordnung nötig).
 ```
 
-Es gibt sog. [Tupel](sec-tuple), die einem Array nahekommen, jedoch kann man die Elemente eines Tupels nicht verändern.
-``Python``-Listen sind hingegen [dynamische Arrays](sec-dynamic-array).
-Details zu Tupeln und Listen finden Sie im Kapitel [Tupel](sec-tuple) und [Listen](sec-list).
 
-(sec-dynamic-array)=
-*Dynamische Arrays* kombinieren die Vorteile von Arrays (effizienter Indexzugriff) mit der Flexibilität dynamischer Sammlungen (Größenänderung zur Laufzeit).
-Sie basieren auf einem zusammenhängenden Speicherbereich, der jedoch bei Bedarf neu angelegt wird.
-Die ``Python``-[Liste](sec-list) ist ein *dynamisches Array*.
-Details zur Arbeit mit Listen in ``Python`` finden Sie im Kapitel [Listen](sec-list).
+## Dynamische Sammlungen
 
-(sec-linked-list)=
-Eine *verkettete Liste* (engl. *Linked List*) besteht aus Knoten, die durch [Zeiger](def-pointer) verbunden sind.
-Jeder Knoten enthält Daten und einen Zeiger auf den nächsten Knoten.
-Sie ist eine [dynamische Sammlung](def-dynamic-ds), d.h. sie kann zur Laufzeit vergrößert und verkleinert werden.
-Haben wir direkten Zugriff auf einen Knoten so können wir in die *verkettete Liste* ein neues Element effizient einfügen ohne dabei die anderen Elemente der Liste zu verschieben -- ein wesentlicher Vorteil dieser Datenstruktur.
+Eine dynamische Sammlung ist eine Sammlung, deren Größe sich während der Programmausführung ändern kann.
+- Sie kann wachsen oder schrumpfen.
+- Die Umsetzung im Speicher hängt von der konkreten Datenstruktur ab.
+- Häufig werden Verweise/Zeiger verwendet, um Elemente logisch zu verbinden.
+
+Ein einfaches Beispiel ist eine verkettete Liste.
+- Jedes Element (Knoten) enthält Daten und einen Zeiger auf das nächste Element.
+- Zusätzlich gibt es einen Startzeiger (Head) auf das erste Element.
+- Der Zeiger von G1 enthält (vereinfacht) die Speicheradresse von G2.
+- Das letzte Element zeigt auf „nichts“ (z. B. `null`/`None`).
+
+```{figure} ../../figs/03-computer-sciences-basics/overview/linkedlist.png
+---
+width: 700px
+name: fig-linked-list
+---
+Beispiel einer verketteten Liste: Knoten enthalten Daten und einen Zeiger auf den nächsten Knoten.
+```
 
 
-
-```{admonition} Mehr Hintergrund
+```{admonition} Hinweis
 :class: note
-Mehr Hintergrund zum Thema Speichern von Datenstrukturen finden Sie im [Expertenwissen: Speicherlayout von Datenstrukturen](sec-memory-layout).
+
+- Datenstrukturen sind Werkzeuge zur Organisation von Information.
+- Abstrakte Datentypen beschreiben das gewünschte Verhalten.
+- Implementierungen beschreiben die konkrete Umsetzung im Speicher.
+- Die Wahl der Datenstruktur bestimmt, ob ein Problem einfach oder unnötig kompliziert gelöst werden kann.
 ```
 
