@@ -18,7 +18,7 @@ Dieses Beispiel (inkl. Abbildungen) ist angelehnt an das Kapitel 11 im Buch „C
 width: 200px
 name: fig-upc-barcode
 ---
-Beispiel eines UPC-Barcodes (Quelle: angelehnt an {cite}`petzold:2000code`).
+Beispiel eines UPC-Barcodes (Quelle: angelehnt an Petzold, 2000).
 ```
 
 Der Universal Product Code (UPC) ist ein Strichcode, der in den Vereinigten Staaten eingesetzt wird. In Europa wird ein anderer Code eingesetzt, aber das Prinzip ist dasselbe: Schwarze und weiße Felder wechseln sich ab, wobei **schwarz** für 1 steht und **weiß** für 0. Es gibt pro Feld also nur zwei mögliche Zustände (Binärcode).
@@ -28,7 +28,7 @@ Der Universal Product Code (UPC) ist ein Strichcode, der in den Vereinigten Staa
 width: 800px
 name: fig-upc-bits
 ---
-Der Barcode als Folge von schwarzen (1) und weißen (0) Feldern, also als Bitfolge (Quelle: angelehnt an {cite}`petzold:2000code`).
+Der Barcode als Folge von schwarzen (1) und weißen (0) Feldern, also als Bitfolge (Quelle: angelehnt an Petzold, 2000).
 ```
 
 Der gesamte UPC besteht aus 95 Zeichen. Da jedes Zeichen nur 0 oder 1 sein kann, sprechen wir auch von 95 Bits.
@@ -87,7 +87,7 @@ Also: wo beim L-Code eine 0 ist, ist beim R-Code eine 1 (und umgekehrt). Man sag
 ```{admonition} Definition: Komplement (Bitweise)
 :class: def-sample
 
-Das **Komplement** einer Bitfolge erhält man, indem man jedes Bit umdreht: $\(0 \leftrightarrow 1\)$.
+Das **Komplement** einer Bitfolge erhält man, indem man jedes Bit umdreht: 0 → 1. 1 → 0.
 ```
 
 

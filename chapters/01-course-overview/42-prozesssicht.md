@@ -13,7 +13,7 @@ Im Rahmen eines Entwicklungsprozesses werden (fast immer) folgenden Phasen durch
 width: 600px
 name: fig-development-phases
 ---
-Entwicklungsphasen der Softwareentwicklung nach dem Wasserfallmodell. Bild in Anlehnung {cite}`sommerville`
+Entwicklungsphasen der Softwareentwicklung nach dem Wasserfallmodell. Bild in Anlehnung an Sommerville, 2011.
 ```
 
 - Analyse und Definition der Anforderungen: Die Ziele des Systems bzw. der Software werden gemeinsam mit den Nutzenden definiert.
