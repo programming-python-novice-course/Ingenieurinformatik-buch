@@ -75,15 +75,15 @@ Bei zwei Ziffern, wird einfach jeder Ziffer einzeln umgerechnet.
 
 Beispiel: **75 in BCD**
 
-1. Zerlegen Sie die Zahl in ihre Einzelziffern: \(75 \rightarrow\) „7“ und „5“.
+1. Zerlegen Sie die Zahl in ihre Einzelziffern: $75 \rightarrow$ „7“ und „5“.
 2. Codieren Sie jede Ziffer als 4 Bits (Schalterwerte 8-4-2-1):
-   - \(7 = 0\cdot 8 + 1\cdot 4 + 1\cdot 2 + 1\cdot 1 \rightarrow\) `0111`
-   - \(5 = 0\cdot 8 + 1\cdot 4 + 0\cdot 2 + 1\cdot 1 \rightarrow\) `0101`
-3. Hängen Sie die Bits aneinander: \(75 \rightarrow\) `0111 0101`
+   - $7 = 0\cdot 8 + 1\cdot 4 + 1\cdot 2 + 1\cdot 1 \rightarrow$ `0111`
+   - $5 = 0\cdot 8 + 1\cdot 4 + 0\cdot 2 + 1\cdot 1 \rightarrow$ `0101`
+3. Hängen Sie die Bits aneinander: $75 \rightarrow$ `0111 0101`
 
 
 Problem: BCD codiert jede Dezimalziffer mit 4 Bits. Ab der Zahl 10 haben wir zwei Ziffern (1 und 0) und brauchen deshalb 2 Nibbles = 8 Bits (1 Byte).
-Das ist ineffizient, denn mit 4 Bits gäbe es bereits \(2^4 = 16\) mögliche Bitmuster, aber für Dezimalziffern werden nur 10 davon genutzt (0–9) – 6 Muster bleiben ungenutzt.
+Das ist ineffizient, denn mit 4 Bits gäbe es bereits $2^4 = 16$ mögliche Bitmuster, aber für Dezimalziffern werden nur 10 davon genutzt (0–9) – 6 Muster bleiben ungenutzt.
 Was wäre also, wenn wir diese ungenutzten Muster einfach zum Weiterzählen verwenden würden?
 
 | Dezimal | BCD-Code        | Alternative??? |

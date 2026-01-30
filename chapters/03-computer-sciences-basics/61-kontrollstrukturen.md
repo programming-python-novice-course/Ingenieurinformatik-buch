@@ -16,7 +16,7 @@ kernelspec:
 width: 700px
 name: fig-control-structures
 ---
-Überblick über grundlegende Kontrollstrukturen: Fallunterscheidungen, Schleifen und Funktionen.
+Überblick über grundlegende Kontrollstrukturen
 ```
 
 Kontrollstrukturen beantworten eine einfache Frage: In welcher Reihenfolge werden Anweisungen ausgeführt – und unter welchen Bedingungen?

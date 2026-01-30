@@ -3,17 +3,17 @@
 - Ein *Repository* ist eine Ablage für Software in Form von Dateien und Ordnern.
 - Der Inhalt eines Repositories wird typischerweise mit einer *Versionskontrolle* verwaltet, z. B. mit Git.
 - Ein *Hub* hostet Repositories, sodass man sie teilen und gemeinsam daran arbeiten kann (z. B. GitHub oder GitLab).
-- An der Hochschule München wird dafür GitLab LRZ verwendet ([`gitlab.lrz.de`](https://gitlab.lrz.de)).
+- Der wohl bekannteste Hub ist [GitHub](https://github.com).
+- Als Studierende der Hochschule München, der LMU oder der TUM können Sie kostenfrei und ohne zusätzliche Registritierung [gitlab LRZ](https://gitlab.lrz.de) nutzen.
 
 ```{figure} ../../figs/03-computer-sciences-basics/gitlablrz.png
 ---
 width: 700px
 name: fig-gitlablrz
 ---
-GitLab ist eine Plattform (Hub) zum Hosten und gemeinsamen Bearbeiten von Git-Repositories.
+Snapshot des repositories auf gitlab LRZ, das den Quellcode des interaktiven Lehrbuchs enthält.
 ```
 
-- Der bekannteste Hub ist GitHub ([`github.com`](https://github.com)).
 
 ```{admonition} Tipp
 ::class: tip

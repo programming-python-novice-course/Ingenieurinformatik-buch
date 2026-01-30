@@ -45,9 +45,9 @@ Sie sollten in der Lage sein Zahlensysteme zu verstehen und sicher zwischen Dars
 ```{admonition} Spezialfall: Natürliche Zahlen
 :class: important
 
-Der Spezialfall ist in {numref}`fig-coding-numbers` dargestellt: Für natürliche Zahlen kann man oft „Zahl direkt als Bits darstellen".
+Der Spezialfall ist in {numref}`fig-coding-numbers` dargestellt: Für natürliche Zahlen kann man „Zahlen direkt als Bits darstellen".
 
 Für alles andere (Zahlen mit Nachkommastellen, Text, ... ) braucht man eine Codierung!
 ```
 
-Als nächstes (Hausaufgabe): In [](32-zahlensysteme.md) üben Sie, zwischen Dezimal-, Binär- und Hexadezimaldarstellung umzurechnen und die Notation sicher zu verwenden.
+Hausaufgabe: In [](32-zahlensysteme.md) üben Sie, zwischen Dezimal-, Binär- und Hexadezimaldarstellung umzurechnen und die Notation sicher zu verwenden.
