@@ -52,6 +52,7 @@ parts:
         - file: chapters/02-computer-sciences-basics/61-kontrollstrukturen
         - file: chapters/02-computer-sciences-basics/62-datenstrukturen
       - file: chapters/02-computer-sciences-basics/70-visualization
+      - file: chapters/02-computer-sciences-basics/99-summary
   - caption: Python verstehen
     numbered: True
     chapters:

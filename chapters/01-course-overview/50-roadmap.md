@@ -15,7 +15,7 @@ Das Modul ist in vier Teile gegliedert. Zur Erinnerung an die Metapher aus der E
 
 ```{figure} ../../figs/01-course-overview/car-drive2.png
 ---
-height: 500px
+height: 300px
 name: journey
 ---
 ```

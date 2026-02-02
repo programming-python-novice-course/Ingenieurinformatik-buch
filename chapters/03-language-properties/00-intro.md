@@ -21,9 +21,13 @@ In diesem Teil der Vorlesung werden wir daher Eigenschaften von Python kennenler
 ```{admonition} Lernziele
 :class: learngoals
 
-- Zentrale Eigenschaften von Python kennenlernen und einordnen
-- Wichtige Programmierkonzepte verstehen, die in der Praxis ständig auftauchen
-- Typische „Warum passiert das?“‑Fragen in Python mit Grundlagenwissen erklären können
+Nach diesem Kapitel ...
+- können Sie erklären, was in Python Syntax ist (z. B. Einrückung/Blöcke) und typische Syntaxfehler wie `IndentationError` einordnen.
+- können Sie beschreiben, wie Python‑Code ausgeführt wird (Quelltext → Bytecode → Ausführung) und warum „interpretiert“ eine Vereinfachung ist.
+- können Sie Python‑Implementierungen und -Versionen unterscheiden und erläutern, warum CPython als Referenzimplementierung eine besondere Rolle spielt.
+- können Sie das Paradigma‑Konzept erklären und einordnen, warum Python multiparadigmatisch ist (strukturiert, funktional, objektorientiert).
+- können Sie erklären, wie Python mit Variablen und Datentypen umgeht und welche typischen Stolpersteine sich daraus ergeben (z. B. „gleich“ vs. „dasselbe“, `==` vs. `is`, Fehler die erst zur Laufzeit auffallen).
+- können Sie erklären, unter welchen Umständen Python‑Code Zustände im Speicher verändern kann (Seiteneffekte) und warum das insbesondere bei veränderlichen Objekten relevant ist.
 ```
 
 
