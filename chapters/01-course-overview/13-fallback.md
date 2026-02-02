@@ -1,12 +1,12 @@
 # Live-Code-Alternative
 
 
-Python hat viele Gesichter: Es gibt verschiedene Möglichkeiten, Python-Code auszuführen. Eine davon haben Sie bereits genutzt – hier auf der Webseite, in Form von ausführbaren Code-Zellen. Daneben gibt es weitere Varianten; einige davon werden Sie im Laufe der Vorlesung kennenlernen und anwenden.
+Es gibt verschiedene Möglichkeiten, Python-Code auszuführen. Eine davon haben Sie bereits genutzt – hier auf der Webseite, in Form von ausführbaren Code-Zellen. Daneben gibt es weitere Varianten; einige davon werden Sie im Laufe der Vorlesung kennenlernen und anwenden.
 
 ```{admonition} Wichtig
 :class: attention
 
-Falls die Einrichtung von „Live Code“ einmal fehlschlägt, können Sie die Beispiele alternativ im **JupyterHub der Hochschule München** ausführen. Die Oberfläche sieht dort etwas anders aus: Statt einer Webansicht öffnen Sie ein Jupyter-Notebook. Das Prinzip ist sehr ähnlich: Sie arbeiten mit Code-Zellen, die Sie ausführen können.
+Falls die Einrichtung von „Live Code“ einmal fehlschlägt, können Sie die Beispiele auf dieser Website alternativ im **JupyterHub der Hochschule München** ausführen. Die Oberfläche sieht dort etwas anders aus: Statt einer Webansicht öffnen Sie ein Jupyter-Notebook. Das Prinzip ist sehr ähnlich: Sie arbeiten mit Code-Zellen, die Sie ausführen können.
 ```
 
 Eine kurze Anleitung dazu finden Sie im Abschnitt [Jupyter Notebooks](../misc/Expertenwissen/jupyter-notebooks.html).

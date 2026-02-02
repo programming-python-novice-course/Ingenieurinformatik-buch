@@ -2,9 +2,7 @@
 
 Abhängig von Ihrem Studienbeginn gelten unterschiedliche Prüfungsordnungen. Bitte prüfen Sie, welche Variante für Sie zutrifft.
 
-## Teilprüfungsregelungen
-
-**Variante 1: Aktuelle Prüfungsordnung (Teilprüfungen)**
+**Aktuelle Prüfungsordnung (Teilprüfungen)**
 
 Bei dieser Variante melden Sie sich zu zwei separaten Teilprüfungen an:
 - „Programmierung"
@@ -17,7 +15,7 @@ Wichtige Regelungen:
   - Programmierung: 60%
   - Numerik für Ingenieure: 40%
 
-**Variante 2: Alte Prüfungsordnung (Gesamtprüfung)**
+**Alte Prüfungsordnung (Gesamtprüfung)**
 
 Bei dieser Variante melden Sie sich zur Gesamtprüfung „Ingenieurinformatik" an.
 
@@ -28,8 +26,6 @@ Wichtige Regelungen:
 - Die Endnote ergibt sich aus der Gesamtpunktzahl
 - Es muss nicht jeder Prüfungsteil separat bestanden werden
 
-
-## Weitere Informationen
 
 **Prüfungsvorbereitung**
 

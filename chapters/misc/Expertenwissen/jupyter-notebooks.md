@@ -55,7 +55,7 @@ ein bestimmtes die Jupyter-Note starten und mit
 jupyter lab
 ```
 
-```{figure} ../../../figs/06-python-ecosystem-and-setup/python-tutorial/environment/jupyter-lab-start.png
+```{figure} ../../../figs/05-python-ecosystem-and-setup/python-tutorial/environment/jupyter-lab-start.png
 ---
 width: 800px
 name: fig-jupyter-lab-start-2
