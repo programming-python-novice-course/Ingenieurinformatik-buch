@@ -24,9 +24,11 @@ Die Kernidee ist einfach.
 
 **Maschinencode-Beispiel (vereinfacht)**
 
-- Einige Bytes sind Befehle (OpCodes), die der CPU sagen, was sie tun soll.
-- Andere Bytes sind Daten, zum Beispiel Adressen oder Zahlenwerte, auf die sich ein Befehl bezieht.
-- Ohne Befehle passiert nichts, und ohne Daten hat ein Programm nichts, worauf es arbeiten kann.
+In dem Beispiel wird ein Kontostand berechnet.
+- Das Programm liest zuerst einen Startwert aus dem Speicher (der aktuelle Kontostand).
+- Danach addiert es mehrere Beträge (z. B. Buchungen wie +45.000, +10.000, +5.000).
+- Am Ende schreibt es das Ergebnis zurück in den Speicher und beendet sich.
+
 
 ```text
 
@@ -65,14 +67,12 @@ Adresse   Inhalt   Bedeutung                        Rolle
 0022h     00h      Startwert / Ergebnis (Byte 2)     DATEN           /
 0023h     00h      Startwert / Ergebnis (Byte 3)     DATEN
 
-
 ```
 
-So können Sie das Beispiel lesen: 
+Erkennen Sie die Trennung zwischen Kontrollfluss und Daten?
+- Einige Bytes sind Befehle (OpCodes), die der CPU sagen, welche Aktion als nächstes ausgeführt wird (Kontrollfluss).
+- Andere Bytes sind Daten, zum Beispiel Adressen oder Zahlenwerte, auf die sich ein Befehl bezieht (Daten).
+- Ohne Befehle passiert nichts, und ohne Daten hat ein Programm nichts, worauf es arbeiten kann.
 
-- Die Zeilen mit „Opcode: …“ gehören zum Kontrollfluss, weil sie festlegen, welche Aktion als Nächstes ausgeführt wird.
-- Die jeweils nachfolgenden Bytes sind die Daten für diesen Schritt (z. B. eine Adresse oder ein Wert).
-- Der Startwert und das Ergebnis müssen irgendwoher kommen - im Beispiel stehen sie an der Adressen 0020h - 0023h. (unten)
-
-Im Folgenden verschaffen wir uns deshalb einen Überblick, was mit Kontrollfluss und Datenstrukturen gemeint ist und welche typischen Formen es dafür gibt.
+Im Folgenden verschaffen wir uns einen Überblick, was mit Kontrollfluss und Datenstrukturen gemeint ist und welche typischen Formen es dafür gibt.
 

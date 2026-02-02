@@ -19,3 +19,5 @@ name: fig-uebersicht-programmieren
 ---
 Übersicht: Programmieren umfasst die Entwicklung von Algorithmen und deren Implementierung als Programmcode im Kontext von Programmen und Software.
 ```
+
+
