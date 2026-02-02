@@ -30,17 +30,7 @@ print(potenz(3.0, 2.0))    # 9.0
 print(potenz("a", "b"))    # TypeError zur Laufzeit
 ```
 
-```{admonition} Hinweis: Type Hints
-:class: note
-Softwareentwickler können anderen Entwicklern mithilfe von *Type Hints* einen Hinweis darauf geben, welche Typen hier erwartet sind, z.B. macht es keinen Sinn die Potenz eines Textes zu berechnen.
-Diese Hinweise ändern (standardmäßig) nicht das Laufzeitverhalten, sondern dienen der Dokumentation und Werkzeugunterstützung (IDE, Linter).
 
-```python
-def potenz(basis: float, exponent: float) -> float:
-    """Berechnet basis^exponent (nur Zahlen)."""
-    return basis ** exponent
-```
-```
 
 Python ist außerdem **stark typisiert**: Es führt nicht automatisch „magische“ Typumwandlungen durch.
 
@@ -55,6 +45,16 @@ Zum Vergleich (vereinfachtes Beispiel) in JavaScript:
 x = "5"
 // je nach Kontext entstehen implizite Umwandlungen
 y = 2 + x   // ergibt "25"
+```
+
+**Type Hints**
+Softwareentwickler können anderen Entwicklern mithilfe von *Type Hints* einen Hinweis darauf geben, welche Typen hier erwartet sind, z.B. macht es keinen Sinn die Potenz eines Textes zu berechnen.
+Diese Hinweise ändern (standardmäßig) nicht das Laufzeitverhalten, sondern dienen der Dokumentation und Werkzeugunterstützung (IDE, Linter).
+
+```python
+def potenz(basis: float, exponent: float) -> float:
+    """Berechnet basis^exponent (nur Zahlen)."""
+    return basis ** exponent
 ```
 
 ```{admonition} Klarstellung
