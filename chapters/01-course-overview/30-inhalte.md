@@ -4,15 +4,10 @@ In diesem Teilmodul lernen Sie Basis-Wissen aus der Informatik und Grundlagen de
 
 Ein grober Überblick über die Inhalte, die in der Prüfung geprüft werden, finden Sie im Modulhandbuch Ihres Studiengangs. Wie die Inhalte im Rahmen dieser Vorlesung umgesetzt werden, finden Sie im Kapitel [Kurskonzept](chapters/02-course-concept/0-uebersicht). 
 
+Auszug aus dem Modulhandbuch:
+
 | **Eigenschaft** | **Inhalt** |
 |----------------|------------|
-| **Modulbezeichnung/Modulnummer** | Programmieren L1171 (zusammen mit L1172 im Modul L1170) |
-| **engl. Modulbezeichnung** | Computer Programming |
-| **Modulverantwortung** | Prof. Dr.-Ing. Tilman Küpper |
-| **Weitere Lehrende** | Prof. Dr. Marcin Hinz<br>Prof. Dr. Markus Krug<br>Prof. Dr. Petra Selting<br>N.N. |
-| **Sprache** | Deutsch |
-| **Zuordnung zum Curriculum** | LRB, 1. Semester, WiSe/SoSe |
-| **Verwendbarkeit im weiteren Studienablauf / in anderen Studiengängen / in Zertifikaten** | Pflichtmodul mathematische, natur- und ingenieurwissenschaftliche Grundlagen / bei Studiengangswechsel für FAB/FMB, MBB und SEB verwendbar |
 | **Art der Lehrveranstaltung, SWS** | Seminaristischer Unterricht 2 SWS, Praktikum 1 SWS |
 | **Arbeitsaufwand in Zeitstunden** | Präsenzstudium: 35h - Selbststudium: 55h |
 | **Leistungspunkte** | 3 |
@@ -25,6 +20,6 @@ Ein grober Überblick über die Inhalte, die in der Prüfung geprüft werden, fi
 ```{admonition} Hinweis
 :name: remark-sample
 :class: remark
-Eine aktuelle Version des Modulhandbuchs finden Sie auf der Website der FK03.
+Eine aktuelle Version des Modulhandbuchs finden Sie auf der [Website der FK03](https://me.hm.edu/studierende/studienablauf/index.de.html).
 ```
 

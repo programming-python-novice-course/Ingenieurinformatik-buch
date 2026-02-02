@@ -1,0 +1,23 @@
+(sec-programming)=
+# Programmieren
+
+Programmieren ist eine Tätigkeit, bei der wir Ideen und Konzepte in eine präzise, ausführbare Beschreibung überführen – meist als Quellcode.
+Oft meinen wir damit zwei Dinge:
+
+- das Entwerfen eines Algorithmus (die Idee / Vorgehensweise) und
+- die Implementierung in einer Programmiersprache (z. B. Python).
+
+Im Folgenden wollen wir eine gemeinsame Sprache schaffen und festlegen, was unter *Algorithmus*, *Programmcode* und *Programm* sowie *Software* verstanden wird. 
+
+Wir wollen uns außerdem Eigenschaften von Algorithmen ansehen, die Ihnen dazu dienen, um Algorithmen miteinander vergleiche zu können. Als Ingenieur werden Sie nämlich oftmals mehrere zur Auswahl haben. Welcher ist dann "der beste" oder wie erkennen Sie, ob der Algorithmus, den sie implementiert haben performant ist?
+
+
+```{figure} ../../figs/02-computer-sciences-basics/uebersicht-programmieren.png
+---
+width: 900px
+name: fig-uebersicht-programmieren
+---
+Übersicht: Programmieren umfasst die Entwicklung von Algorithmen und deren Implementierung als Programmcode im Kontext von Programmen und Software.
+```
+
+

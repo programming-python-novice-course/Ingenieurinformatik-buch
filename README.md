@@ -1,4 +1,4 @@
-# Ingenieurinformatik 1 - Computational Thinking
+# Ingenieurinformatik 1 - Programmieren (Python)
 
 Dieses Repository enthält die Inhalte für eine interaktive Lern-Website auf Basis von Jupyter Book. Studierende können sich selbstständig durch die Lehrinhalte arbeiten und Python-Code direkt im Browser ausführen.
 

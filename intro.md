@@ -1,8 +1,6 @@
 (sec-intro)=
 # Ingenieurinformatik 1 - Programmieren (Python)
 
-% diese Seite ist finalisiert und soll nicht mehr verändert werden. 
-
 Sie studieren an der FK03 an der Hochschule München und besuchen das Teilmodul „Programmieren“? Dann sind Sie hier genau richtig: Herzlich willkommen!
 
 In Ihrem Ingenieursalltag werden Sie immer wieder auf Aufgaben stoßen, bei denen Sie Programmiertechniken einsetzen – etwa bei der Auswertung großer Sensordatenmengen, beim Entwurf einer Flugregelung oder bei der Konstruktion eines Bauteils. In den nächsten Wochen lernen wir dafür die Grundlagen des Programmierens.
