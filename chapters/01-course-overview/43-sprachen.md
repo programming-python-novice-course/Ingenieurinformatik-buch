@@ -59,17 +59,16 @@ Man kann sich das so merken: Bestimmte Code-Bausteine entscheiden über das Verh
 :class: remark
 Syntax-Fehler werden von der IDE oder dem Interpreter sofort erkannt. Semantik-Fehler sind schwieriger zu finden: Der Code ist syntaktisch korrekt, tut aber nicht das, was beabsichtigt war. Die Unterscheidung zwischen Syntax (wie schreibe ich es?) und Semantik (was tut es?) ist fundamental für das Verständnis von Programmiersprachen.
 ```
-## Konzepte
+**Konzepte**
 
 Konzepte sind wiederkehrende Ideen und Mechanismen, mit denen man Programme strukturiert entwickelt.
 Sie sind oft sprachenübergreifend, aber jede Sprache setzt sie etwas anders um.
 
-### Beispiel: Speicherverwaltung
+Beispiel: Speicherverwaltung
+- Ein Programm erzeugt zur Laufzeit Daten (Objekte) und braucht dafür Speicher.
+- Irgendwann werden diese Daten nicht mehr gebraucht, und der Speicher sollte wieder frei werden.
 
-Ein Programm erzeugt zur Laufzeit Daten (Objekte) und braucht dafür Speicher.
-Irgendwann werden diese Daten nicht mehr gebraucht, und der Speicher sollte wieder frei werden.
-
-- In C (vereinfacht) kann Speicher explizit reserviert und freigegeben werden:
+In der Programmiersprache C (vereinfacht) kann Speicher explizit reserviert und freigegeben werden:
 
 ```c
 int* xs = malloc(3 * sizeof(int)); // malloc = memory allocation 
@@ -80,7 +79,7 @@ xs[2] = 3;
 free(xs);
 ```
 
-- In Python wird Speicher in der Regel automatisch verwaltet:
+In der Programmiersprache Python wird Speicher in der Regel automatisch verwaltet:
 
 ```python
 xs = [1, 2, 3]
@@ -88,10 +87,9 @@ xs = [1, 2, 3]
 # Kein free/delete nötig; Speicher wird freigegeben, wenn keine Referenzen mehr existieren.
 ```
 
-Warum gibt es unterschiedliche Konzepte und Umsetzungen?
+Warum gibt es hierfür unterschiedliche Konzepte?
 - Manuelle Speicherverwaltung gibt viel Kontrolle, ist aber komplex und fehleranfällig!
 - Automatische Speicherverwaltung ist oft leichter zu nutzen und sicherer, bietet aber weniger Kontrolle über den genauen Zeitpunkt der Freigabe.
-
 
 > Die Wahl einer Programmiersprache hängt von Ihren Anforderungen (z. B. maximale Kontrolle vs. schneller Einstieg) ab!
 
