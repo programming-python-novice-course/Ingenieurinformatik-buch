@@ -1,6 +1,5 @@
 # Softwareentwicklung
 
-
 Wie auch Hardware hat auch Software einen *Produktlebenszyklus*. Es gibt irgendwann eine Produktidee, dann wird entwickelt, produziert und verkauft.
 
 Um sicherzustellen, dass die Software am Ende das tut was sie soll wird üblicherweise nach einem bestimmten Schema vorgegangen. Je nach Firma und Projekt gibt es unterschiedliche Schemata wie man Software entwickeln kann, die sich darin unterscheiden, wann welche Aufgabe in einem bestimmten Umfang als erledigt betrachtet wird.

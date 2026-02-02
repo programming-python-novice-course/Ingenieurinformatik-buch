@@ -1,11 +1,14 @@
 # Programmiersprachen
 
+Was bedeutet es, eine Programmiersprache zu lernen? 
 
-Was bedeutet es, eine Programmiersprache zu lernen? Das bedeutet, dass Sie Syntax, Semantik und Konzepte unterscheiden und anwenden können.
+Es bedeutet, dass Sie Syntax, Semantik und zentrale Konzepte unterscheiden und anwenden können.
 
-- Syntax beschreibt die Regeln, wie Code geschrieben werden muss („Grammatik“).
-- Semantik beschreibt, was Code bedeutet und wie er sich bei Eingaben verhält („Bedeutung“).
-- Konzepte sind Lösungsansätze für wiederkehrende Probleme in der Programmierung.
+- Syntax beschreibt die Regeln, wie Code geschrieben werden muss („Grammatik der Programmiersprache“).
+- Semantik beschreibt die Bedeutung von Sprachkonstrukten („Was heißt `if`, `while`, Funktionsaufruf, Zuweisung …?“) und damit, was ein konkretes Programm bei einer Eingabe tut.
+- Konzepte sind wiederkehrende Ideen und Bausteine, mit denen man Probleme strukturiert löst (z. B. Kontrollfluss, Datenstrukturen, Abstraktion, Modularisierung).
+
+**Syntax**
 
 Beispiel zur Syntax: „Hello World“ sieht in C und Python unterschiedlich aus, obwohl die Idee gleich ist.
 
@@ -27,7 +30,9 @@ if __name__ == "__main__":
 
 Damit wird sichtbar: Dieselbe Idee kann in unterschiedlichen Sprachen sehr unterschiedlich aussehen.
 
-Beispiel zur Semantik: Zwei Programme können ähnlich aussehen, aber sich bei bestimmten Eingaben unterschiedlich verhalten.
+**Semantik**
+
+Beispiel zur Programsemantik: Zwei Programme können ähnlich aussehen, aber sich bei bestimmten Eingaben unterschiedlich verhalten.
 
 Programm 1 (mit if-Statement):
 ```python
@@ -54,17 +59,43 @@ Man kann sich das so merken: Bestimmte Code-Bausteine entscheiden über das Verh
 :class: remark
 Syntax-Fehler werden von der IDE oder dem Interpreter sofort erkannt. Semantik-Fehler sind schwieriger zu finden: Der Code ist syntaktisch korrekt, tut aber nicht das, was beabsichtigt war. Die Unterscheidung zwischen Syntax (wie schreibe ich es?) und Semantik (was tut es?) ist fundamental für das Verständnis von Programmiersprachen.
 ```
+## Konzepte
+
+Konzepte sind wiederkehrende Ideen und Mechanismen, mit denen man Programme strukturiert entwickelt.
+Sie sind oft sprachenübergreifend, aber jede Sprache setzt sie etwas anders um.
+
+### Beispiel: Speicherverwaltung
+
+Ein Programm erzeugt zur Laufzeit Daten (Objekte) und braucht dafür Speicher.
+Irgendwann werden diese Daten nicht mehr gebraucht, und der Speicher sollte wieder frei werden.
+
+- In C (vereinfacht) kann Speicher explizit reserviert und freigegeben werden:
+
+```c
+int* xs = malloc(3 * sizeof(int)); // malloc = memory allocation 
+xs[0] = 1;
+xs[1] = 2;
+xs[2] = 3;
+// ... xs benutzen ...
+free(xs);
+```
+
+- In Python wird Speicher in der Regel automatisch verwaltet:
+
+```python
+xs = [1, 2, 3]
+# ... xs benutzen ...
+# Kein free/delete nötig; Speicher wird freigegeben, wenn keine Referenzen mehr existieren.
+```
+
+Warum gibt es unterschiedliche Konzepte und Umsetzungen?
+- Manuelle Speicherverwaltung gibt viel Kontrolle, ist aber komplex und fehleranfällig!
+- Automatische Speicherverwaltung ist oft leichter zu nutzen und sicherer, bietet aber weniger Kontrolle über den genauen Zeitpunkt der Freigabe.
 
 
-Beispiel zu Konzepten (Speicherverwaltung):
+> Die Wahl einer Programmiersprache hängt von Ihren Anforderungen (z. B. maximale Kontrolle vs. schneller Einstieg) ab!
 
-- In einigen Sprachen (z. B. C, C++) reservieren und geben Programmierende Speicher explizit frei.
-- In anderen Sprachen (z. B. Python, Java) übernimmt das die Sprache automatisch.
-- Manuelle Speicherverwaltung gibt viel Kontrolle, ist aber komplexer und fehleranfälliger.
-- Automatische Speicherverwaltung ist oft leichter zu erlernen und weniger fehleranfällig, bietet aber weniger Kontrolle.
-- Je nach Anforderung (z. B. maximale Kontrolle vs. schneller Einstieg) wählen Sie eine Sprache, deren Konzepte gut passen.
-
-Die Eigenschaften der Programmiersprache Python, einschließlich ihrer Konzepte, werden im Kapitel [Spracheigenschaften](chapters/04-language-properties/0-intro) detailliert behandelt.
+Die Eigenschaften der Programmiersprache Python, einschließlich zentraler Konzepte, werden im Kapitel [Spracheigenschaften](chapters/03-language-properties/00-intro) behandelt.
 
 ```{admonition} Tipp
 :class: tip

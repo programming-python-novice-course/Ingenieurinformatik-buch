@@ -85,3 +85,12 @@ In der Praxis heißt es oft „entweder kompiliert oder interpretiert“. Streng
 - Viele Python‑Workflows sind schnell, weil sie Bibliotheken verwenden, die intern hochoptimiert sind.
 - „Python‑Performance“ hängt auch von der Implementierung ab: Verschiedene Interpreter/Übersetzer können denselben Code unterschiedlich schnell ausführen (Standard: CPython, in C implementiert).
 ```
+
+
+```{admonition} Empfehlung
+:class: remark
+:name: remark-learn-multiple-languages
+Im Berufsalltag begegnen Ihnen meist sowohl interpretierten Sprachen (z. B. Python, Octave) als auch kompilierten Sprachen (z. B. C++, Java).
+Wir empfehlen Ihnen, dass Sie im Laufe Ihres Studiums zusätzlich zu Python mindestens eine statisch typisierte, kompilierte Sprache zu erlernen!
+
+```

@@ -23,7 +23,7 @@ parts:
         sections:
         - file: chapters/01-course-overview/51-gliederung
         - file: chapters/01-course-overview/52-vorlesung-praktikum
-        - file: chapters/01-course-overview/53-ki
+      - file: chapters/01-course-overview/53-ki
   - caption: Basiswissen 
     numbered: True
     chapters:
