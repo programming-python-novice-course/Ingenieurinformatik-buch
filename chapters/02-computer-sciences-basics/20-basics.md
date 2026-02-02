@@ -25,7 +25,7 @@ Ein Computer erweitert das EVA-Prinzip um den **Speicher** und damit um einen **
 Wäre der Computer zustandslos würde er bei gleicher **Eingabe** $x$ auch stets die gleiche **Ausgabe** $y$ erzeugen.
 Durch den Speicher kann sich, je nach Eingabe, der Zustand $z$ des Computers verändern und, je nach seinem Zustand, kann dieselbe Eingabe zu unterschiedlichen Ausgaben führen.
 
-```{figure} ../../figs/03-computer-sciences-basics/digital-computer/basics/dfa.png
+```{figure} ../../figs/02-computer-sciences-basics/digital-computer/basics/dfa.png
 ---
 width: 600px
 name: fig-dfa

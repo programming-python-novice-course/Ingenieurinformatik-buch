@@ -13,7 +13,7 @@
 - Ein *Entrypoint* ist **nicht** die Geschäftslogik selbst, sondern ein Startpunkt, der die Geschäftslogik aufruft (z. B. über GUI oder „headless“ ohne Oberfläche).
 
 
-```{figure} ../../figs/03-computer-sciences-basics/overview/softwarevsprogram.png
+```{figure} ../../figs/02-computer-sciences-basics/overview/softwarevsprogram.png
 ---
 width: 700px
 name: fig-software-vs-program
@@ -25,7 +25,7 @@ Anwendungs-Software besteht meist aus mehreren Programmen, die sowohl programmsp
 - Beim *Skripten* beschreiben wir oft vor allem den **Workflow** (A → B → C) und nutzen vorhandene Bibliotheken als Bausteine.
 - Beim *Programmieren* entwickeln wir zusätzlich (oder vor allem) die Bausteine selbst (A/B/C), sodass sie sauber strukturiert und wiederverwendbar sind.
 
-```{figure} ../../figs/03-computer-sciences-basics/programming-scripting.png
+```{figure} ../../figs/02-computer-sciences-basics/programming-scripting.png
 ---
 width: 700px
 name: fig-programming-vs-scripting

@@ -53,7 +53,7 @@ Wir können das Problem mit unterschiedlichen Algorithmen lösen:
 - **Algorithmus A (ohne „Gedächtnis“)**: Wir nehmen ein Element und vergleichen es mit allen späteren Elementen. Wenn irgendwo ein gleicher Wert auftaucht, sind Duplikate gefunden. Diese Idee macht viele Vergleiche, braucht dafür aber kaum zusätzlichen Speicher.
 - **Algorithmus B (mit „Gedächtnis“)**: Wir gehen die Liste einmal von vorne nach hinten durch und merken uns, welche Werte wir bereits gesehen haben (z. B. in einer Merkliste/„Sammlung“). Bei jedem neuen Wert prüfen wir zuerst: „Schon gesehen?“ – dann haben wir ein Duplikat. Diese Idee macht weniger Vergleiche, benötigt aber zusätzlichen Speicher für das Merken.
 
-```{figure} ../../figs/03-computer-sciences-basics/algorithmus_comps.png
+```{figure} ../../figs/02-computer-sciences-basics/algorithmus_comps.png
 ---
 width: 900px
 name: fig-algorithmus-comps

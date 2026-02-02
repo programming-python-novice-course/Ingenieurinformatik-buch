@@ -16,7 +16,7 @@ In diesem Kapitel lernen wir die fundamentalen Bausteine der Programmierung kenn
 Diese beiden Konzepte bilden zusammen die Grundlage für alle Algorithmen und Programme.
 
 
-```{figure} ../../figs/03-computer-sciences-basics/bausteine.png
+```{figure} ../../figs/02-computer-sciences-basics/bausteine.png
 ---
 width: 800px
 name: fig-bausteine-programmierung

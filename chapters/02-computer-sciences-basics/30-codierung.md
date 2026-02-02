@@ -6,7 +6,7 @@ Ein Transistor kann dabei vereinfacht betrachtet zwei Zustände annehmen: *an* o
 
 
 
-```{figure} ../../figs/03-computer-sciences-basics/digital-computer/representation/lamps.png
+```{figure} ../../figs/02-computer-sciences-basics/digital-computer/representation/lamps.png
 ---
 width: 200px
 name: fig-lamps

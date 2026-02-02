@@ -13,7 +13,7 @@ kernelspec:
 
 Dieses Beispiel (inkl. Abbildungen) ist angelehnt an das Kapitel 11 im Buch „Code“ von Charles Petzold {cite}`petzold:2000code`.
 
-```{figure} ../../figs/03-computer-sciences-basics/codierung/barcode.png
+```{figure} ../../figs/02-computer-sciences-basics/codierung/barcode.png
 ---
 width: 200px
 name: fig-upc-barcode
@@ -23,7 +23,7 @@ Beispiel eines UPC-Barcodes (Quelle: angelehnt an Petzold, 2000).
 
 Der Universal Product Code (UPC) ist ein Strichcode, der in den Vereinigten Staaten eingesetzt wird. In Europa wird ein anderer Code eingesetzt, aber das Prinzip ist dasselbe: Schwarze und weiße Felder wechseln sich ab, wobei **schwarz** für 1 steht und **weiß** für 0. Es gibt pro Feld also nur zwei mögliche Zustände (Binärcode).
 
-```{figure} ../../figs/03-computer-sciences-basics/codierung/coding.png
+```{figure} ../../figs/02-computer-sciences-basics/codierung/coding.png
 ---
 width: 800px
 name: fig-upc-bits

@@ -11,7 +11,7 @@ kernelspec:
 
 # Kontrollstrukturen
 
-```{figure} ../../figs/03-computer-sciences-basics/control-structures.png
+```{figure} ../../figs/02-computer-sciences-basics/control-structures.png
 ---
 width: 700px
 name: fig-control-structures

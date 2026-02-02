@@ -12,7 +12,7 @@ Im Folgenden wollen wir eine gemeinsame Sprache schaffen und festlegen, was unte
 Wir wollen uns außerdem Eigenschaften von Algorithmen ansehen, die Ihnen dazu dienen, um Algorithmen miteinander vergleiche zu können. Als Ingenieur werden Sie nämlich oftmals mehrere zur Auswahl haben. Welcher ist dann "der beste" oder wie erkennen Sie, ob der Algorithmus, den sie implementiert haben performant ist?
 
 
-```{figure} ../../figs/03-computer-sciences-basics/uebersicht-programmieren.png
+```{figure} ../../figs/02-computer-sciences-basics/uebersicht-programmieren.png
 ---
 width: 900px
 name: fig-uebersicht-programmieren

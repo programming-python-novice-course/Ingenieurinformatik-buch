@@ -8,7 +8,7 @@ Programme arbeiten nicht nur mit Anweisungen, sondern ständig mit Daten.
 Die zentrale Frage lautet: Wie organisiert man Daten so, dass ein Programm sinnvoll und effizient mit ihnen arbeiten kann?
 
 
-```{figure} ../../figs/03-computer-sciences-basics/overview/datastructures-funny.png
+```{figure} ../../figs/02-computer-sciences-basics/overview/datastructures-funny.png
 ---
 width: 700px
 name: fig-datastructures-funny
@@ -64,7 +64,7 @@ In unserem Beispiel ist es die Zahlenfolge 9-7-8-4-5-5-5-0.
 - Beim Einfügen zwischen 4 und 5 muss Platz vorhanden sein, oder es muss umorganisiert werden.
 
 - Variante 1: Platz nebenan ist frei.
-```{figure} ../../figs/03-computer-sciences-basics/overview/einfuegen.png
+```{figure} ../../figs/02-computer-sciences-basics/overview/einfuegen.png
 ---
 width: 700px
 name: fig-static-insert-free
@@ -74,7 +74,7 @@ Einfügen in eine statische Struktur: rechts daneben ist noch Speicher frei.
 
 - Variante 2: Platz nebenan ist belegt.
 
-```{figure} ../../figs/03-computer-sciences-basics/overview/einfuegen-2.png
+```{figure} ../../figs/02-computer-sciences-basics/overview/einfuegen-2.png
 ---
 width: 700px
 name: fig-static-insert-occupied
@@ -96,7 +96,7 @@ Ein einfaches Beispiel ist eine verkettete Liste.
 - Der Zeiger von G1 enthält (vereinfacht) die Speicheradresse von G2.
 - Das letzte Element zeigt auf „nichts“ (z. B. `null`/`None`).
 
-```{figure} ../../figs/03-computer-sciences-basics/overview/linkedlist.png
+```{figure} ../../figs/02-computer-sciences-basics/overview/linkedlist.png
 ---
 width: 700px
 name: fig-linked-list

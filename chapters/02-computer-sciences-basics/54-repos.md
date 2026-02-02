@@ -6,7 +6,7 @@
 - Der wohl bekannteste Hub ist [GitHub](https://github.com).
 - Als Studierende der Hochschule München, der LMU oder der TUM können Sie kostenfrei und ohne zusätzliche Registritierung [gitlab LRZ](https://gitlab.lrz.de) nutzen.
 
-```{figure} ../../figs/03-computer-sciences-basics/gitlablrz.png
+```{figure} ../../figs/02-computer-sciences-basics/gitlablrz.png
 ---
 width: 700px
 name: fig-gitlablrz

@@ -5,7 +5,7 @@
 Die *Von-Neumann-Architektur* ist die bekannteste und meist verwendete Hardware-Architektur, die den Aufbau von Computern beschreibt.
 Sie legt fest, wie die wesentlichen Bauteile miteinander interagieren.
 
-```{figure} ../../figs/03-computer-sciences-basics/digital-computer/informationcycle/von-neumann-architecture.png
+```{figure} ../../figs/02-computer-sciences-basics/digital-computer/informationcycle/von-neumann-architecture.png
 ---
 height: 300px
 name: von-neumann-architecture-2

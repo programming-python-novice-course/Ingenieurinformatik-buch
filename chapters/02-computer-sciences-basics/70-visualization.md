@@ -75,7 +75,7 @@ Struktogramme verwenden folgende Grundstrukturen:
 2. **Fallunterscheidung**: Ein Rechteck wird durch eine Bedingung geteilt; der obere Teil enthält die Bedingung, der untere Teil die Anweisungen für den Fall, dass die Bedingung erfüllt ist.
 3. **Schleife**: Ein Rechteck mit einer Bedingung, die angibt, wann die Schleife wiederholt wird.
 
-```{figure} ../../figs/03-computer-sciences-basics/struktogrammtypen.png
+```{figure} ../../figs/02-computer-sciences-basics/struktogrammtypen.png
 ---
 width: 600px
 name: fig-struktogrammtypen
@@ -137,7 +137,7 @@ ENDE FUNKTION
 
 **Struktogramm:**
 
-```{figure} ../../figs/03-computer-sciences-basics/struktogramm-example.png
+```{figure} ../../figs/02-computer-sciences-basics/struktogramm-example.png
 ---
 width: 350px
 name: fig-struktogramm-example

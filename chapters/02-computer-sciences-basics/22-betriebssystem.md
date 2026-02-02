@@ -56,7 +56,7 @@ Das Programm ist eine zusammenhängende Folge von 0 und 1, welche Befehle reprä
 - $\text{LOAD} \ \#15 \ \$5$: Lade Daten aus Hauptspeicheradresse $\#15$ ins Register $\$5$
 - $\text{STORE} \ \$7 \ \#16$: Speichere Daten von Register $\$7$ im Hauptspeicher an Adresse $\#16$
 
-```{figure} ../../figs/03-computer-sciences-basics/digital-computer/informationcycle/program-run.png
+```{figure} ../../figs/02-computer-sciences-basics/digital-computer/informationcycle/program-run.png
 ---
 width: 700px
 name: fig-program-run
