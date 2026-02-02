@@ -62,7 +62,7 @@ Wenn Ihr Gegenüber keine Struktogramme kennt, aber Sie beide in der gleichen Pr
 
 Im Rahmen dieser Vorlesung lernen wir Struktogramme und Pseudocode als Kommunikationswege kennen. Diese eignen sich für strukturierte Algorithmen, bei denen nur wenige Schritte nacheinander ausgeführt werden. 
 
-## Struktogramme
+**Nassi-Shneiderman-Diagramme**
 
 Struktogramme, auch Nassi-Shneiderman-Diagramme genannt, sind eine visuelle Darstellungsform für strukturierte Algorithmen.
 Sie ermöglichen es, mit dem Auge schnell zu erkennen, wie die Kontrollstruktur und der Ablauf in einem Programm aussehen.
@@ -101,7 +101,7 @@ Struktogramme sind prüfungsrelevant!
 ```
 
 
-## Pseudocode
+**Pseudocode**
 
 *Pseudocode* ist eine einfache, weniger strikte Beschreibung eines Algorithmus in einer Sprache, die der natürlichen Sprache ähnelt (siehe [Definition](def-pseudocode)).
 Mit Pseudocode können wir einen Algorithmus in einer Sprache beschreiben, die keine bestimmte Programmiersprache zur Basis hat.
@@ -181,9 +181,8 @@ Das bedeutet jedoch nicht, dass der Entwickler beim Entwurf des Algorithmus kein
 Struktogramme und Pseudocode sind wichtige Werkzeuge während der Entwicklung, auch wenn sie später nicht in der finalen Dokumentation erscheinen.
 ```
 
-## Mini-Übung (mit Lösung)
 
-```{exercise} Medium wählen und Algorithmus kurz ausdrücken
+```{exercise} Aufgabe
 :label: ex-visualization-medium
 
 Sie möchten einer Kommilitonin erklären, was diese Funktion macht, **ohne** Python-Syntax im Detail zu besprechen:
@@ -197,7 +196,7 @@ Sie möchten einer Kommilitonin erklären, was diese Funktion macht, **ohne** Py
 ```{solution} ex-visualization-medium
 :class: dropdown
 
-1. **Pseudocode** ist hier gut geeignet, weil er sprachenübergreifend ist und die Logik klar zeigt, ohne syntaktische Details.
+1. Hier gibt es keine Musterlösung! Begründen Sie!
 2. Beispiel-Pseudocode:
 
    - Wenn die Liste leer ist: Fehler zurückgeben

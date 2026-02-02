@@ -2,9 +2,14 @@
 
 # Spracheigenschaften
 
-In diesem Teil der Vorlesung geht es darum, Python zu verstehen. Was ist damit gemeint? Jede Programmiersprache hat bestimmte Eigenschaften. Diese sollten Sie kennen! Viele Programmierfehler oder ungute Strukturen entstehen nämlich dadurch, dass jemand die Eigenschaften seiner Sprache nicht kennt. 
+- In diesem Teil geht es darum, Python als Programmiersprache besser zu verstehen.
+- Jede Programmiersprache hat Eigenschaften, die das Programmieren prägen.
+- Wenn man diese Eigenschaften nicht kennt, entstehen in der Praxis unnötige Umwege, schwer erklärbare Fehler oder ungünstige Strukturen.
 
-Zurück zu unserem Autobeispiel: Sowohl ein Elektroauto als auch ein Gangschaltauto haben einen Schalthebel. Die Bedienung ist aber sehr unterschiedlich: Einmal benutzen Sie den Schalthebel nur, um einen Modus (vorwärts, rückwärts, parken) einzustellen, und beim anderen schalten Sie Gänge, die unterschiedliche Geschwindigkeiten erlauben. Ähnlich ist es mit Programmiersprachen. Python bietet Ihnen sehr viel Komfort! Im Autobeispiel wäre Python vielleicht das E-Auto, bei dem Sie nicht mehr manuell schalten müssen. Allerdings werden Sie in Ihrem Berufsalltag nie mit nur einer Sprache in Berührung kommen. Vielleicht müssen Sie plötzlich doch schalten lernen? Deshalb: ein Blick unter die Motorhaube lohnt sich.
+- Analogie: Elektroauto vs. Gangschaltung.
+  - Beide haben einen Schalthebel, aber die Bedienlogik ist unterschiedlich.
+  - Genauso kann „ähnlich aussehender“ Code je nach Sprache anders funktionieren und andere Stolperstellen haben.
+  - Im Berufsalltag begegnen Ihnen mehrere Sprachen; deshalb lohnt sich ein Blick hinter die Oberfläche.
 
 ```{figure} ../../figs/01-course-overview/overview/motorhaube.png
 ---
@@ -13,9 +18,10 @@ name: motorhaube
 ---
 ```
 
-Unabhängig davon können eine Programmiersprache nur dann effizient anwenden, wenn Sie ihre Eigenschaften kennen. Kennen Sie diese nicht, suchen Sie entweder nach Lösungen, die keiner braucht (ich suche im E-Auto verzweifelt nach den Gängen am Schalthebel) oder Sie machen eventuell Fehler (Sie fahren im Gangschalter nur im ersten Gang, weil Sie nicht wissen, dass man schalten kann). Das wollen wir vermeiden.
-
-In diesem Teil der Vorlesung werden wir daher Eigenschaften von Python kennenlernen, die direkte Auswirkung auf die Anwendung von Python haben. Wir ordnen Python als Programmiersprache ein: Welche Eigenschaften prägen das Programmieren in Python und welche allgemeinen Konzepte stecken dahinter? Das hilft Ihnen, Wissen später auf andere Sprachen zu übertragen (z. B. in Richtung MATLAB).
+- Ziel dieses Kapitels ist ein Grundverständnis, das Ihnen beim Anwenden hilft.
+  - Sie können typische Fehler schneller erklären und vermeiden.
+  - Sie können Lösungen besser beurteilen, statt nur „Code zu kopieren, bis es läuft“.
+  - Sie können Wissen später leichter auf andere Sprachen übertragen (z. B. MATLAB).
 
 
 ```{admonition} Lernziele

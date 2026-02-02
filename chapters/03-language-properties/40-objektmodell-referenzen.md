@@ -56,17 +56,25 @@ name: fig-ram-language-properties
 Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus Bits.
 ```
 
-```{figure} ../../figs/03-language-properties/python-tutorial/variables/variable.png
+**Name**
+
+Eine Variable ist demnach nur ein Name, der auf einen Speicherbereich-Bereich zeigt. Die Zahl 25 entspricht in Binärdarstellung 011001. 
+Beispiel: wir weisen 25 der Variablen x und der Varibalen z zu. Im Arbeitsspeicher könnte das wie in Abbildung fig-variable-language-properties gezeigt, aussehen.
+
+```{figure} ../../figs/03-language-properties/xzadresse.png
 ---
 width: 800px
 name: fig-variable-language-properties
 ---
-Eine Variable ist ein Name, der auf einen Speicherbereich (und damit auf ein Objekt) zeigt.
+Initialisierung und Zuweisung einer Variablen x und z mit dem Wert 25. Die Adresse beider Variablen ist identisch.
 ```
 
-Identität vs. Gleichheit: `is` und `==`
+**Identität**
 
-Zwei Namen können auf **dasselbe Objekt** zeigen (gleiche Identität) oder auf **zwei verschiedene Objekte**, die zufällig gleich aussehen (gleicher Wert).
+In diesem Beispiel verweisen zwei Namen auf **dasselbe Objekt** (gleiche Identität). Es kann aber auch sein, dass der Wert gleich ist, aber in **zwei verschiedenen Objekten** gespeichert ist - dann spricht man von Gleichheit.
+
+- `==` prüft (typischerweise) **Wert/Gleichheit**.
+- `is` prüft **Identität** („ist es wirklich dasselbe Objekt?“).
 
 ```{code-cell} ipython3
 a = [1, 2, 3]
@@ -76,9 +84,20 @@ c = [1, 2, 3]
 print(a == b, a is b)  # gleicher Inhalt, gleiche Identität
 print(a == c, a is c)  # gleicher Inhalt, aber andere Identität
 ```
+**Typ**
 
-- `==` prüft (typischerweise) **Wert/Gleichheit**.
-- `is` prüft **Identität** („ist es wirklich dasselbe Objekt?“).
+Nachdem wir gesehen haben, wie Werte im Arbeitsspeicher abgelegt werden, betrachten wir nun die Typinformation.
+Grundidee: Auch der Typ muss irgendwo repräsentiert sein – er ist Teil der Daten, mit denen das Laufzeitsystem arbeitet.
+Wie genau das im Speicher aussieht, kann je nach Datentyp und Implementierung variieren, aber „Typ“ entsteht nicht automatisch, sondern muss mitverwaltet werden.
+
+
+```{figure} ../../figs/03-language-properties/speicheranordnung.png
+---
+width: 800px
+name: fig-speicheranordnung-language-properties
+---
+Speicheranordnung von Werten verschiedener Datentypen. 
+```
 
 ```{admonition} Klarstellung
 :class: note

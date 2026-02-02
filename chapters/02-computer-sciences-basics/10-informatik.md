@@ -38,6 +38,6 @@ Dazu gehören in der Praxis zum Beispiel:
 - Sicherheit: Die Software ist gegen typische Angriffe und Fehlkonfigurationen geschützt.
 
 ```{admonition} Hinweis
-Die hier genannten Eigenschaften sind Beispiele für nicht-funktionale Anforderungen an Software. Eine umfangreichere Übersicht finden Sie z. B. in der Norm ISO/IEC 25010: [ISO/IEC 25010:2011](https://www.iso.org/standard/78176.html).
+Die hier genannten Eigenschaften sind Beispiele für nicht-funktionale Anforderungen an Software. Eine umfangreichere Übersicht finden Sie z. B. in der Norm [ISO/IEC 25010:2011](https://www.iso.org/standard/78176.html).
 ```
 

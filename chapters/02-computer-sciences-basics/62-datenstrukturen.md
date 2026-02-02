@@ -5,7 +5,7 @@ Programme arbeiten nicht nur mit Anweisungen, sondern ständig mit Daten.
 - Zwischenergebnisse müssen wiedergefunden werden können.
 - Ausgaben müssen erzeugt und oft erneut verarbeitet werden.
 
-Die zentrale Frage lautet: Wie organisiert man Daten so, dass ein Programm sinnvoll und effizient mit ihnen arbeiten kann?
+> Wie organisiert man Daten so, dass ein Programm sinnvoll und effizient mit ihnen arbeiten kann?
 
 
 ```{figure} ../../figs/02-computer-sciences-basics/overview/datastructures-funny.png
@@ -17,8 +17,6 @@ Unterschiedliche Situationen erfordern unterschiedliche Datenstrukturen.
 ```
 
 Das Bild zeigt: Es gibt keine „beste“ Datenstruktur, sondern nur eine passende für eine gegebene Aufgabe.
-
-## Beispiele für Ordnungsprinzipien
 
 - Eine Queue ist passend, wenn Elemente in der Reihenfolge verarbeitet werden sollen, in der sie eintreffen.
 - Ein Set ist passend, wenn nur relevant ist, ob ein Element vorhanden ist oder nicht.
@@ -52,7 +50,7 @@ Alle Daten liegen letztlich als Bits im Arbeitsspeicher.
 Entscheidend ist, wie diese Bits angeordnet sind und wie auf sie zugegriffen wird.
 Eine grundlegende Unterscheidung ist die zwischen statischen und dynamischen Sammlungen.
 
-## Statische Sammlungen
+**Statische Sammlungen**
 
 Statische Sammlungen besitzen eine feste Größe.
 - Der benötigte Speicher wird einmal reserviert.
@@ -83,7 +81,7 @@ Einfügen in eine statische Struktur: rechts daneben ist kein Speicher frei (Umk
 ```
 
 
-## Dynamische Sammlungen
+**Dynamische Sammlungen**
 
 Eine dynamische Sammlung ist eine Sammlung, deren Größe sich während der Programmausführung ändern kann.
 - Sie kann wachsen oder schrumpfen.
