@@ -26,7 +26,7 @@ Dieses Objekt hat einen Wert („100“), einen Typ (`int`) und eine Identität 
 Eine *Variable* ist (vereinfacht) also ein **Name**, mit dem Sie ein Objekt wiederfinden können. Mit dem Zuweisungszeichen `=` wird der Name an ein Objekt „gebunden“.
 
 
-```{figure} ../../figs/04-language-properties/overview/object.png
+```{figure} ../../figs/03-language-properties/overview/object.png
 ---
 width: 550px
 name: fig-python-object-model
@@ -48,7 +48,7 @@ x = 13
 
 „Binde den Namen `x` an das Objekt `13`“ – nicht „lege 13 in eine Variable ab“.
 
-```{figure} ../../figs/04-language-properties/python-tutorial/variables/ram.png
+```{figure} ../../figs/03-language-properties/python-tutorial/variables/ram.png
 ---
 width: 400px
 name: fig-ram-language-properties
@@ -56,7 +56,7 @@ name: fig-ram-language-properties
 Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus Bits.
 ```
 
-```{figure} ../../figs/04-language-properties/python-tutorial/variables/variable.png
+```{figure} ../../figs/03-language-properties/python-tutorial/variables/variable.png
 ---
 width: 800px
 name: fig-variable-language-properties

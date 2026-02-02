@@ -55,7 +55,7 @@ Das mag verwirrend klingen.
 >Wenn eine Sprache wie ``Python`` eine Implementierung wie *CPython* benötigt, die wiederum in einer anderen Sprache wie ``C`` geschrieben ist, wie kann es dann jemals ausführbaren Code geben?
 
 
-```{figure} ../../figs/04-language-properties/funny-image-cpython.png
+```{figure} ../../figs/03-language-properties/funny-image-cpython.png
 ---
 width: 700px
 name: fig-funny-cpython

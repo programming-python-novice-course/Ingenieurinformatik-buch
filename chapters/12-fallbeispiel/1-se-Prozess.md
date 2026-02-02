@@ -5,7 +5,7 @@ In {numref}`fig-se-flow-simple` sehen Sie einen vereinfachten, aber praxisnahen 
 Ausgehend von einer gegebenen Problemstellung wird zunächst geprüft, ob existierende Bibliotheken oder Frameworks das Problem vollständig abdecken (*Buy*).
 Ist dies nicht der Fall, wird das Problem in Teilprobleme zerlegt. Für jedes Teilproblem wird erneut entschieden, ob eine Fremdlösung verwendet oder eine eigene Implementierung entwickelt werden muss (*Build*).
 
-```{figure} ../../figs/13-fallbeispiel/se-flow-simple.png
+```{figure} ../../figs/12-fallbeispiel/se-flow-simple.png
 ---
 width: 900px
 name: fig-se-flow-simple

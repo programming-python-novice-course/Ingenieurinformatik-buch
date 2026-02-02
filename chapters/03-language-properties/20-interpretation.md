@@ -13,7 +13,7 @@ Reiner Python-Code (z.B. Schleifen, viele kleine Funktionsaufrufe, dynamische Ty
 
 Ein Computer führt am Ende Maschinencode aus (0 und 1). Quellcode in einer höheren Programmiersprache muss daher in eine ausführbare Form übersetzt werden. Dieses Grundprinzip ist bei allen Sprachen gleich {cite}`sommerville`. Der Unterschied liegt darin, wann und wo diese Übersetzung passiert – nicht darin, ob sie passiert.
 
-```{figure} ../../figs/04-language-properties/overview/sprachverarbeitendes-system.png
+```{figure} ../../figs/03-language-properties/overview/sprachverarbeitendes-system.png
 ---
 width: 500px
 name: sprachverarbeitendes-system
@@ -38,7 +38,7 @@ Der wichtige Unterschied ist dabei:
 - bei Skript-/Interpreter-Setups steckt ein großer Teil der Ausführung in `python3` (dem Interpreter), während Ihr `.py`-File als Quelltext bestehen bleibt.
 
 
-```{figure} ../../figs/04-language-properties/overview/interpretationcompilation.png
+```{figure} ../../figs/03-language-properties/overview/interpretationcompilation.png
 ---
 width: 600px
 name: fig-interpretationcompilation
@@ -53,7 +53,7 @@ Die Aussage „Python wird interpretiert“ ist als Vereinfachung weit verbreite
 - Der **Python-Interpreter** (z.B. CPython) enthält eine Compiler-Komponente, die Quelltext in **Bytecode** übersetzt (Zwischenform).
 - Eine Ausführungs-Komponente (oft als **Python Virtual Machine / PVM** beschrieben) führt diesen Bytecode aus.
 
-```{figure} ../../figs/04-language-properties/overview/python-einfach.png
+```{figure} ../../figs/03-language-properties/overview/python-einfach.png
 ---
 width: 500px
 name: fig-python-einfach

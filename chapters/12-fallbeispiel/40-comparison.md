@@ -26,7 +26,7 @@ Sie müssen Pakete kennen – und Sie müssen erkennen können, **auf welchem Ab
 
 In der Vorlesung und den Praktika sind Ihnen verschiedenen Python-Bibliotheken begegnet, die sich im Abstraktionsgrad und in ihrem Einsatzzweck unterscheiden. Die Grafik soll Sie dabei unterstützen, diese Bibliotheken einzuordnen und ihre Beziehungen zueinander zu verstehen.
 
-```{figure} ../../figs/13-fallbeispiel/abstraction-degress.png
+```{figure} ../../figs/12-fallbeispiel/abstraction-degress.png
 ---
 width: 900px
 ---

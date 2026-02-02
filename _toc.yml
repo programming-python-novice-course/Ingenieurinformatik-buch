@@ -17,13 +17,14 @@ parts:
         sections:
         - file: chapters/01-course-overview/41-softwaretypen
         - file: chapters/01-course-overview/42-prozesssicht
-        - file: chapters/01-course-overview/43-sprachen
         - file: chapters/01-course-overview/44-success-criteria
+        - file: chapters/01-course-overview/43-sprachen
+      - file: chapters/01-course-overview/53-ki
       - file: chapters/01-course-overview/50-roadmap
         sections:
         - file: chapters/01-course-overview/51-gliederung
         - file: chapters/01-course-overview/52-vorlesung-praktikum
-      - file: chapters/01-course-overview/53-ki
+      
   - caption: Basiswissen 
     numbered: True
     chapters:
