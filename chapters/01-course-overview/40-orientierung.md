@@ -2,7 +2,7 @@
 
 Die folgenden Inhalte sollen Ihnen dabei helfen, die Kursinhalte und das Vorgehen einordnen zu können.
 
-```{figure} ../../figs/02-course-concept/orientation.png
+```{figure} ../../figs/01-course-overview/orientation.png
 ---
 height: 320px
 name: fig-orientierung

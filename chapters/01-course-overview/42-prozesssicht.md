@@ -8,7 +8,7 @@ Um sicherzustellen, dass die Software am Ende das tut was sie soll wird übliche
 Im Rahmen eines Entwicklungsprozesses werden (fast immer) folgenden Phasen durchlaufen:
 
 
-```{figure} ../../figs/02-course-concept/overview/development-phases.png
+```{figure} ../../figs/01-course-overview/overview/development-phases.png
 ---
 width: 600px
 name: fig-development-phases

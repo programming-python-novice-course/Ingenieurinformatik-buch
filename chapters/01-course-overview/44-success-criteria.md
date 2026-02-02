@@ -9,7 +9,7 @@ Sie ist jedoch erst in den letzten Jahren so richtig in Fahrt gekommen.
 Der Zugang war vor nicht allzu langer Zeit keineswegs derart einfach, was den anfänglichen Erfolg behindert hat. ``Python`` ist heute eine der weitverbreitetsten Sprachen und sie scheint sich weiter und weiter auszubreiten.
 
 
-```{figure} ../../figs/02-course-concept/languages/programming-language-popularity.png
+```{figure} ../../figs/01-course-overview/languages/programming-language-popularity.png
 ---
 width: 700px
 name: fig-language-popularity

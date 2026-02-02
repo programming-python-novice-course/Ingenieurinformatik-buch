@@ -14,7 +14,7 @@
 In diesem letzten Teil laufen wir einen kompletten, realistischen Ablauf durch: von der Aufgabenstellung über die Planung bis zur Umsetzung. Ziel ist, den Prozess als Ganzes zu sehen (nicht nur einzelne Sprachkonstrukte).
 
 
-```{figure} ../../figs/02-course-concept/overview/fahrt.png
+```{figure} ../../figs/01-course-overview/overview/fahrt.png
 ---
 height: 320px
 name: fahrt

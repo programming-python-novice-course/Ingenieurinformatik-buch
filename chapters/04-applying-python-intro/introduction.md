@@ -14,7 +14,7 @@ kernelspec:
 Ziel dieses Teils ist, dass Sie **einfache Python-Programme schreiben**, **Daten verarbeiten** und **Probleme Schritt für Schritt lösen** können. In Anlehnung an unsere Auto‑Metapher: Sie lernen hier, das Auto selbst zu fahren.
 
 
-```{figure} ../../figs/02-course-concept/overview/bedienung.png
+```{figure} ../../figs/01-course-overview/overview/bedienung.png
 ---
 height: 320px
 name: bedienung
