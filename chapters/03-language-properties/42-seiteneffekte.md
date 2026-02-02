@@ -1,3 +1,14 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Seiteneffekt
 
 ```{admonition} Behauptung
@@ -72,7 +83,7 @@ print("Originale Liste:", meine_liste)  # Ausgabe: [1, 2, 3] - unverändert!
 
 In diesem Fall bleibt der Zustand außerhalb der Funktion unverändert – es liegt kein Seiteneffekt vor. In der Informatik spricht man hier auch von reinen (ohne Seiteneffekt) bzw. unreinen Funktionen (mit Seiteneffekt).
 
-Wann tritt ein Seiteneffekt ein?
+**Wann tritt ein Seiteneffekt ein?**
 
 Drei Voraussetzungen müssen erfüllt sein, damit ein Seiteneffekt entstehen kann:
 

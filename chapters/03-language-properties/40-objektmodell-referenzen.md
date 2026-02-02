@@ -1,3 +1,14 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Datenmodell
 (sec-object-model)=
 
@@ -36,9 +47,9 @@ Ein Objekt hat eine Identität (`id`) und einen Wert; Variablennamen sind Bindun
 
 Das Zuweisungszeichen `=` unterscheidet sich damit vom mathematischen \(=\):
 
-\[
+$$
 x = 13
-\]
+$$
 
 In Python bedeutet
 
@@ -56,17 +67,17 @@ name: fig-ram-language-properties
 Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus Bits.
 ```
 
-**Name**
+**Name und Wert**
 
 Eine Variable ist demnach nur ein Name, der auf einen Speicherbereich-Bereich zeigt. Die Zahl 25 entspricht in Binärdarstellung 011001. 
-Beispiel: wir weisen 25 der Variablen x und der Varibalen z zu. Im Arbeitsspeicher könnte das wie in Abbildung fig-variable-language-properties gezeigt, aussehen.
+Beispiel: wir weisen 25 der Variablen x und der Variablen z zu. Im Arbeitsspeicher könnte das wie in {numref}`fig-variable-language-properties` gezeigt aussehen.
 
 ```{figure} ../../figs/03-language-properties/xzadresse.png
 ---
 width: 800px
 name: fig-variable-language-properties
 ---
-Initialisierung und Zuweisung einer Variablen x und z mit dem Wert 25. Die Adresse beider Variablen ist identisch.
+Initialisierung und Zuweisung der Variablen x und z mit dem Wert 25. Die Adresse beider Variablen ist identisch.
 ```
 
 **Identität**
