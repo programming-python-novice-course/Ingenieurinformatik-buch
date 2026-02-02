@@ -27,119 +27,119 @@ parts:
   - caption: Basiswissen 
     numbered: True
     chapters:
-    - file: chapters/03-computer-sciences-basics/00-intro
+    - file: chapters/02-computer-sciences-basics/00-intro
       sections:
-      - file: chapters/03-computer-sciences-basics/10-informatik
-      - file: chapters/03-computer-sciences-basics/20-basics
+      - file: chapters/02-computer-sciences-basics/10-informatik
+      - file: chapters/02-computer-sciences-basics/20-basics
         sections:
-        - file: chapters/03-computer-sciences-basics/21-neumann-architektur
-        - file: chapters/03-computer-sciences-basics/22-betriebssystem
-      - file: chapters/03-computer-sciences-basics/30-codierung
+        - file: chapters/02-computer-sciences-basics/21-neumann-architektur
+        - file: chapters/02-computer-sciences-basics/22-betriebssystem
+      - file: chapters/02-computer-sciences-basics/30-codierung
         sections:
-        - file: chapters/03-computer-sciences-basics/31-barcode
-        - file: chapters/03-computer-sciences-basics/31-zahlen
-        - file: chapters/03-computer-sciences-basics/31-zusammenhang
-        - file: chapters/03-computer-sciences-basics/32-zahlensysteme
-      - file: chapters/03-computer-sciences-basics/50-programming
+        - file: chapters/02-computer-sciences-basics/31-barcode
+        - file: chapters/02-computer-sciences-basics/31-zahlen
+        - file: chapters/02-computer-sciences-basics/31-zusammenhang
+        - file: chapters/02-computer-sciences-basics/32-zahlensysteme
+      - file: chapters/02-computer-sciences-basics/50-programming
         sections:
-        - file: chapters/03-computer-sciences-basics/51-algorithmus
-        - file: chapters/03-computer-sciences-basics/52-komplexität
-        - file: chapters/03-computer-sciences-basics/53-software
-        - file: chapters/03-computer-sciences-basics/54-repos
-      - file: chapters/03-computer-sciences-basics/60-programmierkonstrukte
+        - file: chapters/02-computer-sciences-basics/51-algorithmus
+        - file: chapters/02-computer-sciences-basics/52-komplexität
+        - file: chapters/02-computer-sciences-basics/53-software
+        - file: chapters/02-computer-sciences-basics/54-repos
+      - file: chapters/02-computer-sciences-basics/60-programmierkonstrukte
         sections:
-        - file: chapters/03-computer-sciences-basics/61-kontrollstrukturen
-        - file: chapters/03-computer-sciences-basics/62-datenstrukturen
-      - file: chapters/03-computer-sciences-basics/70-visualization
+        - file: chapters/02-computer-sciences-basics/61-kontrollstrukturen
+        - file: chapters/02-computer-sciences-basics/62-datenstrukturen
+      - file: chapters/02-computer-sciences-basics/70-visualization
   - caption: Python verstehen
     numbered: True
     chapters:
-    - file: chapters/04-language-properties/00-intro
+    - file: chapters/03-language-properties/00-intro
       sections:
-      - file: chapters/04-language-properties/10-syntax
-      - file: chapters/04-language-properties/20-interpretation
-      - file: chapters/04-language-properties/21-cpython
-      - file: chapters/04-language-properties/30-paradigma
-      - file: chapters/04-language-properties/40-objektmodell-referenzen
+      - file: chapters/03-language-properties/10-syntax
+      - file: chapters/03-language-properties/20-interpretation
+      - file: chapters/03-language-properties/21-cpython
+      - file: chapters/03-language-properties/30-paradigma
+      - file: chapters/03-language-properties/40-objektmodell-referenzen
         sections:
-        - file: chapters/04-language-properties/41-typing
-        - file: chapters/04-language-properties/42-seiteneffekte
-        - file: chapters/04-language-properties/43-speicherverwaltung
-        - file: chapters/04-language-properties/44-primitive-data
-      - file: chapters/04-language-properties/99-summary
+        - file: chapters/03-language-properties/41-typing
+        - file: chapters/03-language-properties/42-seiteneffekte
+        - file: chapters/03-language-properties/43-speicherverwaltung
+        - file: chapters/03-language-properties/44-primitive-data
+      - file: chapters/03-language-properties/99-summary
   - caption: Python anwenden
     numbered: True
     chapters:
-    - file: chapters/05-applying-python-intro/introduction
-    - file: chapters/06-python-ecosystem-and-setup/python-environment
+    - file: chapters/04-applying-python-intro/introduction
+    - file: chapters/05-python-ecosystem-and-setup/python-environment
       sections:
-      - file: chapters/06-python-ecosystem-and-setup/1-installation
-      - file: chapters/06-python-ecosystem-and-setup/2-run
-      - file: chapters/06-python-ecosystem-and-setup/3-files
-      - file: chapters/06-python-ecosystem-and-setup/4-modules
-    - file: chapters/07-python-basics/0-intro
+      - file: chapters/05-python-ecosystem-and-setup/1-installation
+      - file: chapters/05-python-ecosystem-and-setup/2-run
+      - file: chapters/05-python-ecosystem-and-setup/3-files
+      - file: chapters/05-python-ecosystem-and-setup/4-modules
+    - file: chapters/06-python-basics/0-intro
       sections:
-      - file: chapters/07-python-basics/1-variables
-      - file: chapters/07-python-basics/2-expressions
-      - file: chapters/07-python-basics/3-invoking-functions
-    - file: chapters/08-python-data-types/0-intro
+      - file: chapters/06-python-basics/1-variables
+      - file: chapters/06-python-basics/2-expressions
+      - file: chapters/06-python-basics/3-invoking-functions
+    - file: chapters/07-python-data-types/0-intro
       sections:
-      - file: chapters/08-python-data-types/1-zahlenwerte/0-intro
+      - file: chapters/07-python-data-types/1-zahlenwerte/0-intro
         sections:
-        - file: chapters/08-python-data-types/1-zahlenwerte/1-int
-        - file: chapters/08-python-data-types/1-zahlenwerte/2-bool
-        - file: chapters/08-python-data-types/1-zahlenwerte/3-float
-        - file: chapters/08-python-data-types/1-zahlenwerte/4-codierung
-      - file: chapters/08-python-data-types/2-sequenzen/0-intro
+        - file: chapters/07-python-data-types/1-zahlenwerte/1-int
+        - file: chapters/07-python-data-types/1-zahlenwerte/2-bool
+        - file: chapters/07-python-data-types/1-zahlenwerte/3-float
+        - file: chapters/07-python-data-types/1-zahlenwerte/4-codierung
+      - file: chapters/07-python-data-types/2-sequenzen/0-intro
         sections:
-        - file: chapters/08-python-data-types/2-sequenzen/1-list
-        - file: chapters/08-python-data-types/2-sequenzen/2-tuple
-        - file: chapters/08-python-data-types/2-sequenzen/3-range
-        - file: chapters/08-python-data-types/2-sequenzen/4-string
-      - file: chapters/08-python-data-types/3-mengen/0-intro
+        - file: chapters/07-python-data-types/2-sequenzen/1-list
+        - file: chapters/07-python-data-types/2-sequenzen/2-tuple
+        - file: chapters/07-python-data-types/2-sequenzen/3-range
+        - file: chapters/07-python-data-types/2-sequenzen/4-string
+      - file: chapters/07-python-data-types/3-mengen/0-intro
         sections:
-        - file: chapters/08-python-data-types/3-mengen/1-set
-        - file: chapters/08-python-data-types/3-mengen/2-dict
-    - file: chapters/09-eingaben-und-ausgaben/0-intro
+        - file: chapters/07-python-data-types/3-mengen/1-set
+        - file: chapters/07-python-data-types/3-mengen/2-dict
+    - file: chapters/08-eingaben-und-ausgaben/0-intro
       sections:
-      - file: chapters/09-eingaben-und-ausgaben/1-eingaben
-      - file: chapters/09-eingaben-und-ausgaben/2-gui-eingaben
-      - file: chapters/09-eingaben-und-ausgaben/3-ausgaben
-    - file: chapters/10-control-flow/0-intro
+      - file: chapters/08-eingaben-und-ausgaben/1-eingaben
+      - file: chapters/08-eingaben-und-ausgaben/2-gui-eingaben
+      - file: chapters/08-eingaben-und-ausgaben/3-ausgaben
+    - file: chapters/09-control-flow/0-intro
       sections:
-      - file: chapters/10-control-flow/1-cases
-      - file: chapters/10-control-flow/2-loops
-      - file: chapters/10-control-flow/3-comprehensions
-    - file: chapters/11-functions/0-intro
+      - file: chapters/09-control-flow/1-cases
+      - file: chapters/09-control-flow/2-loops
+      - file: chapters/09-control-flow/3-comprehensions
+    - file: chapters/10-functions/0-intro
       sections:
-      - file: chapters/11-functions/2-definition
-      - file: chapters/11-functions/3-namespaces
-      - file: chapters/11-functions/3-zmutability
-      - file: chapters/11-functions/4-lambdas
-      - file: chapters/11-functions/5-nested-functions
-      - file: chapters/11-functions/6-first-class-functions
-      - file: chapters/11-functions/x-recursion
-    - file: chapters/12-object-oriented/0-intro
+      - file: chapters/10-functions/2-definition
+      - file: chapters/10-functions/3-namespaces
+      - file: chapters/10-functions/3-zmutability
+      - file: chapters/10-functions/4-lambdas
+      - file: chapters/10-functions/5-nested-functions
+      - file: chapters/10-functions/6-first-class-functions
+      - file: chapters/10-functions/x-recursion
+    - file: chapters/11-object-oriented/0-intro
       sections:
-      - file: chapters/12-object-oriented/1-class-and-objects
-      - file: chapters/12-object-oriented/2-inheritance-poly-encap
+      - file: chapters/11-object-oriented/1-class-and-objects
+      - file: chapters/11-object-oriented/2-inheritance-poly-encap
   - caption: Fallbeispiel
     numbered: True
     chapters:
-    - file: chapters/13-fallbeispiel/0-intro
+    - file: chapters/12-fallbeispiel/0-intro
       sections:
-      - file: chapters/13-fallbeispiel/0-zaufgabe
-      - file: chapters/13-fallbeispiel/1-se-Prozess
-      - file: chapters/13-fallbeispiel/2-lib-solution
-      - file: chapters/13-fallbeispiel/3-eigenentwicklung
+      - file: chapters/12-fallbeispiel/0-zaufgabe
+      - file: chapters/12-fallbeispiel/1-se-Prozess
+      - file: chapters/12-fallbeispiel/2-lib-solution
+      - file: chapters/12-fallbeispiel/3-eigenentwicklung
         sections:
-        - file: chapters/13-fallbeispiel/31-tests
-        - file: chapters/13-fallbeispiel/32-problem-zerlegung
-        - file: chapters/13-fallbeispiel/33-parsing
-        - file: chapters/13-fallbeispiel/34-histogram
-        - file: chapters/13-fallbeispiel/35-statistics
-      - file: chapters/13-fallbeispiel/40-comparison
-      - file: chapters/13-fallbeispiel/50-summary
+        - file: chapters/12-fallbeispiel/31-tests
+        - file: chapters/12-fallbeispiel/32-problem-zerlegung
+        - file: chapters/12-fallbeispiel/33-parsing
+        - file: chapters/12-fallbeispiel/34-histogram
+        - file: chapters/12-fallbeispiel/35-statistics
+      - file: chapters/12-fallbeispiel/40-comparison
+      - file: chapters/12-fallbeispiel/50-summary
   - caption: Appendix
     chapters:
     - file: chapters/misc/contributors
