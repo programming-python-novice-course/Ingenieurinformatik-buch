@@ -18,7 +18,7 @@ Popularität der Programmiersprachen nach dem [PYPL Index](https://pypl.github.i
 ```
 
 
-## Warum ist Python so populär?
+**Warum ist Python so populär?**
 
 Ein wichtiger Grund ist, dass Python vergleichsweise leicht zu lesen und zu lernen ist.
 Viele Aufgaben lassen sich mit wenig Code ausprobieren und schnell ausführen.
