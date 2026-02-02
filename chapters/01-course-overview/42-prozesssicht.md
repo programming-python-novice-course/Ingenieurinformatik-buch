@@ -31,13 +31,15 @@ Phasen-übergreifend wird außerdem
 ```{admonition} Hinweis
 :name: remark-sample
 :class: remark
-Das Software Engineering Compentency Model (SWECOM) der IEEE Computer Society beschreibt welche Kompetenzen ein Softwareentwickler benötigt, um die Phasen-bezogenen und phasen-übergreifenden Aufgaben zu erledigen.
+Das Software Engineering Compentency Model (SWECOM) der IEEE Computer Society beschreibt welche Kompetenzen ein Softwareentwickler benötigt, um die Phasen-bezogenen und phasen-übergreifenden Aufgaben zu erledigen: [SWECOM (PDF)](https://ieeecs-media.computer.org/media/education/swebok/swecom.pdf).
 ```
 
 ```{admonition} Fokus dieser Vorlesung
 ::class: note
 
-Softwareentwicklung beinhaltet viele Aspekte. In dieser Vorlesung betrachten wir bewusst nur einen Ausschnitt.
+Softwareentwicklung beinhaltet viele Aspekte. In dieser Vorlesung betrachten wir bewusst die Grundlagen des Programmierens, was zu der Phase **„Implementierung und Modultests“** korrespondiert.
+
+Sie lernen, wie man einen Algorithmus entwickelt, in einem Programm umsetzt (implementiert) und testet.
 
 **Vereinfachende Annahmen:**
 
@@ -45,16 +47,7 @@ Softwareentwicklung beinhaltet viele Aspekte. In dieser Vorlesung betrachten wir
 - Das Programm muss von keinen anderen Menschen oder Systemen genutzt werden, d. h. Systemplanung und Integration entfallen.
 - Das Programm muss nur auf dem Rechner laufen, auf dem es entwickelt wurde, d. h. Systemintegration, Betrieb und Wartung entfallen.
 - Der Algorithmus wird nur über einen begrenzten Zeitraum genutzt, d. h. es gibt keine Software-Updates.
-
-**Worauf wir uns konzentrieren:**
-
-- Der Schwerpunkt liegt auf den Grundlagen des Programmierens und entspricht der Phase **„Implementierung und Modultests“**.
-- Sie lernen, wie man einen Algorithmus entwickelt, in einem Programm umsetzt (implementiert) und testet.
-
-**Abgrenzung:**
-
-- Wir entwickeln Programme, bei denen alles nacheinander ausgeführt wird (Single-Thread-Anwendungen).
-- Nebenläufige Ausführung (z. B. Multithreading oder parallele Programmierung) ist nicht Teil der Veranstaltung.
+- Wir entwickeln Programme, bei denen alles nacheinander ausgeführt wird (Single-Thread-Anwendungen). 
 ```
 
 

@@ -9,7 +9,7 @@ name: journey
 ---
 ```
 
-Das Ziel ist es, dass Sie Probleme systemtisch in Programme übersetzen und lösen können. Ziel ist es  nicht, die Syntax von Python „auswendig zu lernen“. 
+Das Ziel ist es, dass Sie Probleme systematisch in Programme übersetzen und lösen können. Ziel ist es  nicht, die Syntax von Python „auswendig zu lernen“. 
 
 Das Modul ist in vier Teile gegliedert. Zur Erinnerung an die Metapher aus der Einleitung (siehe {ref}`sec-intro`): Die vier Teile können Sie als Etappen einer Autofahrt vorstellen.
 

@@ -12,7 +12,10 @@ Ein Programm läuft immer auf *irgendeiner* Rechenplattform – zum Beispiel auf
 Diese Plattformen unterscheiden sich u. a. in Rechenleistung, Speicher, Betriebssystem und Schnittstellen. 
 
 Damit wir Programme verstehen (und später selbst entwickeln können), schauen wir in diesem Teil auf die „Infrastruktur“, auf der Programme laufen. Wir konzentrieren uns dabei auf den Computer, weil er ein gut verständliches Grundmodell liefert, das sich später auf andere Systeme (z. B. Mikrocontroller) übertragen lässt.
-Konkret klären wir: Wie liest ein System Informationen ein, wie speichert und verarbeitet es sie, wie kommen Ergebnisse wieder heraus, und welche zentralen Begriffe helfen dabei, über Programme präzise zu sprechen.
+
+Konkret klären wir: 
+- Wie liest ein System Informationen ein, wie speichert und verarbeitet es sie, wie kommen Ergebnisse wieder heraus.
+- Welche zentralen Begriffe uns dabei helfen, präzise über Programme zu sprechen.
 
 ```{admonition} Lernziele
 :class: learngoals

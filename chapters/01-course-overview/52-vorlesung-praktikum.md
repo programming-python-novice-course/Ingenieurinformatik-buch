@@ -9,13 +9,15 @@ kernelspec:
   name: python3
 ---
 
-# Zeitplan
+# Praktikum
 
 
+```{admonition} Hinweis
+::class: note
 Eine aktuelle Übersicht über die Vorlesungs- und Praktikumstermine finden Sie in Ihrem Moodle-Kurs.
+```
 
-
-**Hinweise zum Praktikum**
+**Hinweise**
 
 Wir haben mehrere Praktikumsgruppen, die wir über das Semester verteilen müssen. Damit wir mit allen Terminen gut durchkommen, starten die Praktika früh.
 
