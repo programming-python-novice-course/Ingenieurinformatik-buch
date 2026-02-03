@@ -109,6 +109,7 @@ sphinx:
         % Sorgt dafür, dass vor einem Inhaltsverzeichnis-Eintrag genug Platz bleibt.
         % Wenn nicht, wird vorher umgebrochen (statt mitten im Kapitel/Abschnittseintrag).
         \makeatletter
+        \pretocmd{\l@part}{\Needspace{8\baselineskip}\addvspace{1.0\baselineskip}}{}{}
         \pretocmd{\l@chapter}{\Needspace{4\baselineskip}}{}{}
         \pretocmd{\l@section}{\Needspace{3\baselineskip}}{}{}
         \pretocmd{\l@subsection}{\Needspace{2\baselineskip}}{}{}
