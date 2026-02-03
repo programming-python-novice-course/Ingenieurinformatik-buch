@@ -12,12 +12,6 @@ kernelspec:
 (sec-jupyter-notebooks)=
 # Jupyter Notebooks
 
-Wie Sie mittlerweile bemerkt haben, verwenden wir für unseren Kurs ``Python`` in Kombination mit den sogenannten *Jupyter Notebooks*.
-Weshalb eignet sich diese Kombination für den Einstieg in das [Computational Thinking](sec-what-is-ct)?
-Über [Python](sec-python) haben wir bereits gesprochen, was also sind Jupyter-Notebooks und wozu eignen sie sich?
-
-## Motivation
-
 Die folgende [Referenz](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) liefert eine ausführliche Erläuterung darüber was Jupyter Notebooks sind, welche wir hier in unseren Worten zusammenfassen.
 
 Ein Jupyter Notebook war zu Anfang in erster Linie dazu gedacht wissenschaftlichen Code effektiv innerhalb der Wissenschaftsgemeinschaft auszutauschen.
@@ -257,7 +251,7 @@ Haben Sie keine Angst vor solchen Fehlern.
 Im Gegenteil, provozieren Sie diese um zu sehen was passiert.
 
 Fehlermeldungen schützen Sie jedoch nur vor offensichtlichen Fehlern.
-Hin und wieder läuft unser Code, produziert jedoch nicht das richtige Ergebnis, da wir etwas falsch programmiert haben oder unsere Überlegungen - unser [Computational Thinking](sec-what-is-ct) -- fehlerhaft ist.
+Hin und wieder läuft unser Code, produziert jedoch nicht das richtige Ergebnis, da wir etwas falsch programmiert haben oder unsere Überlegungen fehlerhaft sind.
 
 Das kann dazu führen, dass unser Code gar nicht terminiert.
 In einem solchen Fall kommt die Auswertung der Zelle nie zum erliegen.

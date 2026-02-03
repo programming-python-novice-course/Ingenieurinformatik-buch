@@ -64,7 +64,7 @@ Grundsätzlich gibt es dafür zwei Wege:
 
 Die folgende Abbildung zeigt diesen Zusammenhang schematisch:
 
-```{figure} ../../figs/05-python-ecosystem-and-setup/distribution_envs_packages.svg
+```{figure} ../../figs/05-python-ecosystem-and-setup/distribution_envs_packages.png
 ---
 width: 90%
 name: fig-distribution-envs-packages
