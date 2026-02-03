@@ -1,27 +1,32 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 (sec-python-installation)=
-# Installation
+# Installation (Kurs-Setup)
 
 > Arbeiten mit Python heißt: Arbeiten in einer Python-Umgebung
 
-Eine zentrale Idee, die Sie in dieser Vorlesung verstehen sollen, ist folgende: Python-Code läuft nie „einfach so“, sondern immer innerhalb einer Python-Umgebung.
+Eine zentrale Idee in diesem Kurs ist: Python-Code läuft nicht „einfach so“, sondern immer innerhalb einer Python-Umgebung.
 
 In einer solchen Python-Umgebung ist festgelegt:
 - welche Python-Version verwendet wird und
 - welche Pakete (z. B. `numpy`, `pandas`, `matplotlib`) darin installiert sind.
 
-Wenn Sie Python-Code ausführen, arbeitet Ihr Programm immer genau in *einer* solchen Umgebung – auch dann, wenn Ihnen das bisher nicht bewusst war.
+Wenn Sie Python-Code ausführen, arbeitet Ihr Programm immer genau in einer solchen Umgebung – auch dann, wenn Ihnen das bisher nicht bewusst war.
 
-**Warum Ihnen das bisher (vielleicht) nicht aufgefallen ist**
+## Vorlesung: interaktive Website und JupyterHub
 
-Im Rahmen der Vorlesung haben Sie bisher vor allem mit:
-- interaktiven Webseiten und
-- Jupyter Notebooks auf dem JupyterHub der Hochschule München
-gearbeitet.
+In der Vorlesung arbeiten Sie über eine interaktive Website und auf dem JupyterHub der Hochschule München. Dort ist die Umgebung bereits eingerichtet. Sie können direkt programmieren, ohne lokal etwas zu installieren.
 
-Dort konnten Sie Python-Code sofort ausführen, ohne selbst etwas installieren zu müssen.  
-Das liegt daran, dass Python und alle benötigten Pakete bereits auf einem Server installiert waren. Sie haben sozusagen *von außen* auf eine bestehende Python-Umgebung zugegriffen.
-
-Welche Python-Version und welche Pakete dort konkret installiert waren/sind, können Sie direkt in Python abfragen:
+Wenn Sie wissen möchten, welche Python-Version und welche Pakete dort installiert sind, können Sie das in Python abfragen:
 
 ```python
 import sys
@@ -30,22 +35,9 @@ print("Python-Version:", sys.version)
 print("Interpreter:", sys.executable)
 ```
 
-Diese Vorgehensweise hat einen klaren didaktischen Vorteil:
+## Praktikum: lokale Entwicklungsumgebung
 
-- Sie können sofort mit Python starten
-- Sie können sich auf Konzepte und Programmierung konzentrieren
-- Sie müssen sich nicht mit Installation und Konfiguration beschäftigen
-
-Gerade am Anfang ist das hilfreich, weil technische Details sonst vom eigentlichen Lernziel ablenken würden.
-
-**Warum das später nicht mehr reicht**
-
-Wenn Sie Python professionell einsetzen möchten – etwa:
-- für größere Projekte,
-- in Teams,
-- auf anderen Rechnern oder Servern,
-- oder über längere Zeiträume hinweg –
-dann werden genau diese technischen Fragen wichtig.
+Im Praktikum arbeiten Sie lokal in einer Entwicklungsumgebung. Dort geht es darum, Werkzeuge kennenzulernen, die beim Programmieren in Projekten wichtig sind (z.B. Umgebungen, Paketverwaltung, Debugging, Run-Konfigurationen).
 
 Denn Sie möchten sicherstellen, dass Ihr Programm:
 - auch mit einer bestimmten Python-Version läuft,
@@ -59,15 +51,15 @@ Spätestens dann müssen Sie sich mit Fragen beschäftigen wie:
 > Wie stelle ich sicher, dass die installierten Pakete zur Python-Version passen?
 
 
-## Python-Umgebungen erzeugen und verwalten
+## Python-Umgebungen: Distribution, Umgebungen, Pakete
 
 Eine Python-Umgebung entsteht nicht von selbst – sie muss irgendwie erzeugt werden.  
 Grundsätzlich gibt es dafür zwei Wege:
 
-1. **Ausgehend von einer Python-Distribution**  
+1. Ausgehend von einer Python-Distribution  
    (z. B. Anaconda, die Python und viele Werkzeuge bereits mitbringt)
 
-2. **Ausgehend von einer „reinen“ Python-Installation**  
+2. Ausgehend von einer „reinen“ Python-Installation  
    (z. B. von python.org, mit anschließendem Erzeugen eigener Umgebungen)
 
 Die folgende Abbildung zeigt diesen Zusammenhang schematisch:
@@ -88,7 +80,7 @@ In {numref}`Abbildung {number} <fig-distribution-envs-packages>` sehen Sie drei 
 
 Im Praktikum verwenden wir Anaconda. Wichtig ist dabei: „Anaconda“ ist kein einzelnes Konzept, sondern deckt mehrere Rollen ab.
 
-**Python-Distribution**
+### Distribution (Anaconda)
 
 Wir nutzen Anaconda als Python-Distribution. Sie dient als Startpunkt für die Erstellung einer Python-Umgebung: Sie bringt Python (und typischerweise weitere Werkzeuge) mit.
 
@@ -97,9 +89,19 @@ Wenn Sie auf Ihrem eigenen Rechner lokal wie im Praktikum arbeiten wollen, insta
 
 - [Anaconda Download](https://www.anaconda.com/download)
 
+```{admonition} Hinweis: conda in der Shell
+:class: note
+
+Beim Installieren werden Sie ggf. gefragt, ob conda Ihre Shell automatisch anpassen soll. Wir empfehlen, das nicht automatisch machen zu lassen. Stattdessen können Sie es kontrolliert nachholen und gleichzeitig verhindern, dass ``base`` immer automatisch aktiv ist:
+
+    conda init zsh  # macOS (zsh)
+    conda config --set auto_activate_base false
+```
+
+
 Hinweis für Windows: Nutzen Sie danach den „Anaconda Prompt“ oder richten Sie conda so ein, dass es in Ihrer Shell verfügbar ist.
 
-**Umgebungen**
+### Umgebungen (Environments)
 
 Umgebungen sorgen dafür, dass sich Projekte nicht gegenseitig „kaputtinstallieren“. In {numref}`Abbildung {number} <fig-distribution-envs-packages>` sind das die getrennten Boxen „Environment A/B/C“.
 
@@ -107,7 +109,7 @@ Eine conda-Umgebung ist technisch „nur“ ein Ordner mit einer eigenen Python-
 
 Wenn man Umgebungen nur über einen Namen anlegt, liegen sie je nach Rechner-Konfiguration an verschiedenen Standardorten. Das ist im Praktikum unpraktisch: Man sieht die Dateien nicht direkt und im schlimmsten Fall liegt eine Umgebung in einem Bereich, der regelmäßig bereinigt wird.
 
-Deshalb nutzen wir im Praktikum konsequent einen konkreten Pfad!
+Deshalb nutzen wir im Praktikum konsequent einen konkreten Pfad.
 
 Wählen Sie einen dauerhaften Speicherort für Ihre Umgebungen (keine Temp-Ordner). Fragen Sie im Praktikum Ihre Dozentin/Ihren Dozenten, welche Ordner dafür geeignet sind.
 
@@ -145,7 +147,7 @@ Wenn Sie vergessen, Ihre Kursumgebung zu aktivieren und dann Pakete installieren
 Prüfen Sie im Zweifel immer zuerst, welche Umgebung aktiv ist (z.B. mit ``conda env list``) und aktivieren Sie dann die richtige Umgebung.
 ````
 
-**Pakete-Installation**
+### Pakete installieren
 
 Pakete werden immer in eine aktivierte Umgebung installiert. In der Abbildung sehen Sie zwei typische Wege:
 
@@ -160,40 +162,42 @@ Faustregel im Kurs:
 
 ## Praktikum-Setup: Schnellstart
 
-Schritt 1: Prüfen, ob conda installiert ist. Öffnen Sie ein Terminal (unter Windows am einfachsten „Anaconda Prompt“) und führen Sie aus:
+Schritt 1: Prüfen, ob conda verfügbar ist. Öffnen Sie ein Terminal (unter Windows am einfachsten „Anaconda Prompt“) und führen Sie aus:
 
 ```sh
 conda --version
 python --version
 ```
 
-```{figure} ../../figs/05-python-ecosystem-and-setup/python-tutorial/environment/conda-version.png
----
-width: 600px
-name: fig-conda-version
----
-```
-Schritt 2: Aktivieren Sie Ihre Kurs-Umgebung an
+Schritt 2: Kursumgebung aktivieren
 
-Falls Sie die Kursumgebung noch nicht angelegt haben, erstellen Sie sie wie oben beschrieben. Ansonsten: aktivieren Sie sie direkt:
+Falls Sie die Kursumgebung noch nicht angelegt haben, erstellen Sie sie wie oben beschrieben. Ansonsten aktivieren Sie sie direkt:
 
 ```sh
 conda activate ./envs/programmierung1
 ```
 
-Falls notwendig: Installieren Sie Pakete 
+```{figure} ../../figs/05-python-ecosystem-and-setup/active_env.png
+---
+width: 600px
+name: fig-active-env
+---
+Nach dem Aktivieren einer Umgebung steht ihr Name bzw. Pfad in Klammern vor der Eingabeaufforderung (Prompt).
+```
+
+Schritt 3: Pakete installieren (falls nötig)
 
 ```sh
 conda install numpy matplotlib pandas
 ```
 
-Wenn ein Paket nicht über conda verfügbar ist, installieren Sie es mit ``pip`` – aber nur, wenn das passende conda-Environment aktiv ist:
+Wenn ein Paket nicht über conda verfügbar ist, installieren Sie es mit ``pip`` – aber nur, wenn die Kursumgebung aktiv ist:
 
 ```sh
 pip install paketname
 ```
 
-Nachschauen, was installiert ist:
+Schritt 4: Nachschauen, was installiert ist
 
 ```sh
 conda list
