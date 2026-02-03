@@ -104,11 +104,17 @@ sphinx:
         % Inhaltsverzeichnis: Einträge nicht über Seiten trennen
         % --------------------------------------------------
         \usepackage{etoolbox}
-        \makeatletter
-        \patchcmd{\l@chapter}{\par}{\nopagebreak\par}{}{}
-        \patchcmd{\l@section}{\par}{\nopagebreak\par}{}{}
-        \patchcmd{\l@subsection}{\par}{\nopagebreak\par}{}{}
-        \makeatother
+        \usepackage{needspace}
+
+        % Sorgt dafür, dass vor einem Inhaltsverzeichnis-Eintrag genug Platz bleibt.
+        % Wenn nicht, wird vorher umgebrochen (statt mitten im Kapitel/Abschnittseintrag).
+        \AtBeginDocument{
+          \makeatletter
+          \pretocmd{\l@chapter}{\Needspace{4\baselineskip}}{}{}
+          \pretocmd{\l@section}{\Needspace{3\baselineskip}}{}{}
+          \pretocmd{\l@subsection}{\Needspace{2\baselineskip}}{}{}
+          \makeatother
+        }
 
         % --------------------------------------------------
         % PDF-only: Autor für die Titelseite setzen
