@@ -12,7 +12,9 @@ kernelspec:
 (sec-visualization)=
 # Kommunikation von Software
 
-Wie kann ich anderen Personen verständlich machen, was mein Programm macht? Wie kann ich anderen Menschen beschreiben, was eine Software tut? Diese Frage steht im Zentrum der Softwareentwicklung, denn Programmieren ist immer auch Kommunikation. Sie wollen einem anderen Menschen Ihre Idee, Ihr Konzept begreiflich machen.
+> Wie kann ich anderen Personen verständlich machen, was mein Programm macht? Wie kann ich anderen Menschen beschreiben, was eine Software tut? 
+
+Diese Frage steht im Zentrum der Softwareentwicklung, denn Programmieren ist immer auch Kommunikation. Sie wollen einem anderen Menschen Ihre Idee, Ihr Konzept begreiflich machen.
 
 Es gibt viele verschiedene Wege, Software und Algorithmen zu kommunizieren.
 Jede Methode hat ihre Stärken und ist für bestimmte Aspekte und Zielgruppen geeignet:
@@ -37,9 +39,8 @@ Jede Methode hat ihre Stärken und ist für bestimmte Aspekte und Zielgruppen ge
 
 Eine Übersicht über Diagramme, die im Systems und Software Engineering klassischerweise zum Einsatz kommen, finden Sie beispielsweise in der [Systems Modeling Language (SysML)](https://de.wikipedia.org/wiki/Systems_Modeling_Language).
 
-```{admonition} Wahl des Kommunikationsmediums
-:name: hint-kommunikationsmedium
-:class: hint
+
+**Wahl des Kommunikationsmediums**
 
 Die Wahl des Kommunikationsmediums hängt dabei von zwei zentralen Faktoren ab:
 
@@ -58,9 +59,26 @@ Die Wahl des Kommunikationsmediums hängt dabei von zwei zentralen Faktoren ab:
 
 Je nach Zweck und Zielgruppe werden Sie ein bestimmtes Kommunikationsmedium auswählen: 
 Wenn Ihr Gegenüber keine Struktogramme kennt, aber Sie beide in der gleichen Programmiersprache programmieren: Warum nicht einfach den Algorithmus in Ihrer Programmiersprache ausdrücken?
-```
 
-Im Rahmen dieser Vorlesung lernen wir Struktogramme und Pseudocode als Kommunikationswege kennen. Diese eignen sich für strukturierte Algorithmen, bei denen nur wenige Schritte nacheinander ausgeführt werden. 
+
+Im Rahmen dieser Vorlesung lernen wir Struktogramme und Pseudocode als Kommunikationswege kennen. Diese eignen sich für strukturierte Algorithmen, bei denen nur wenige Schritte nacheinander ausgeführt werden. Der Standard ist allerdings der Einsatz von UML-Diagrammen.
+
+
+```{admonition} UML – die wohl wichtigste Darstellungsform
+::class: note
+
+UML (Unified Modeling Language) ist eine standardisierte grafische Notation, mit der man Struktur und Verhalten von Softwaresystemen modellieren kann.
+Die Idee ist, komplexe Software auf einer „gemeinsamen Bildsprache“ zu beschreiben, bevor oder während man sie implementiert.
+
+Sie hat sich durchgesetzt, weil sie als Standard von vielen Tools unterstützt wird und weil Teams (Entwicklung, Test, Fachseite) damit leichter eine gemeinsame Grundlage für Kommunikation und Dokumentation finden.
+
+Beispiel (vereinfacht, Klassen/Beziehungen):
+
++------+   1    +------+   *    +------+
+|User  |------->|Order |------->|Item  |
++------+        +------+        +------+
+
+```
 
 **Nassi-Shneiderman-Diagramme**
 
