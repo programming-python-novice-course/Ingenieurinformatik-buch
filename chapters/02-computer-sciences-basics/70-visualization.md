@@ -72,12 +72,6 @@ Die Idee ist, komplexe Software auf einer „gemeinsamen Bildsprache“ zu besch
 
 Sie hat sich durchgesetzt, weil sie als Standard von vielen Tools unterstützt wird und weil Teams (Entwicklung, Test, Fachseite) damit leichter eine gemeinsame Grundlage für Kommunikation und Dokumentation finden.
 
-Beispiel (vereinfacht, Klassen/Beziehungen):
-
-+------+   1    +------+   *    +------+
-|User  |------->|Order |------->|Item  |
-+------+        +------+        +------+
-
 ```
 
 **Nassi-Shneiderman-Diagramme**
