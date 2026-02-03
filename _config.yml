@@ -101,6 +101,16 @@ sphinx:
         }
 
         % --------------------------------------------------
+        % Inhaltsverzeichnis: Einträge nicht über Seiten trennen
+        % --------------------------------------------------
+        \usepackage{etoolbox}
+        \makeatletter
+        \patchcmd{\l@chapter}{\par}{\nopagebreak\par}{}{}
+        \patchcmd{\l@section}{\par}{\nopagebreak\par}{}{}
+        \patchcmd{\l@subsection}{\par}{\nopagebreak\par}{}{}
+        \makeatother
+
+        % --------------------------------------------------
         % PDF-only: Autor für die Titelseite setzen
         % (HTML bleibt sauber, da author: "" gesetzt ist)
         % --------------------------------------------------
