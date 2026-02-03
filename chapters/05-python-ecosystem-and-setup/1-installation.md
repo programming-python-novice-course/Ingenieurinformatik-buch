@@ -1,78 +1,166 @@
 (sec-python-installation)=
 # Installation
 
-> Wie bekomme ich mein Programm mit einer bestimmten Python-version und allen paketen die ich dafür brauche zum laufen? Wie beziehe ich eine bestimmte Python-Version (auf Ihrem Rechner können Sie mehrere installieren)? Wie schaffe ich es, dass darin wiederum Paket installiert werden, die mit der Python-Version kompatibel sind?
+> Arbeiten mit Python heißt: Arbeiten in einer Python-Umgebung
 
-Diese Frage scheint erstmal trivial, aber...
+Eine zentrale Idee, die Sie in dieser Vorlesung verstehen sollen, ist folgende: Python-Code läuft nie „einfach so“, sondern immer innerhalb einer Python-Umgebung.
 
-```{figure} ../../figs/05-python-ecosystem-and-setup/python-tutorial/environment/python_tooling.png
----
-width: 900px
-name: fig-python-tooling
----
-Überblick über typische Bausteine einer Python-Arbeitsumgebung (Versionen, Umgebungen, Paketverwaltung).
+In einer solchen Python-Umgebung ist festgelegt:
+- welche Python-Version verwendet wird und
+- welche Pakete (z. B. `numpy`, `pandas`, `matplotlib`) darin installiert sind.
+
+Wenn Sie Python-Code ausführen, arbeitet Ihr Programm immer genau in *einer* solchen Umgebung – auch dann, wenn Ihnen das bisher nicht bewusst war.
+
+**Warum Ihnen das bisher (vielleicht) nicht aufgefallen ist**
+
+Im Rahmen der Vorlesung haben Sie bisher vor allem mit:
+- interaktiven Webseiten und
+- Jupyter Notebooks auf dem JupyterHub der Hochschule München
+gearbeitet.
+
+Dort konnten Sie Python-Code sofort ausführen, ohne selbst etwas installieren zu müssen.  
+Das liegt daran, dass Python und alle benötigten Pakete bereits auf einem Server installiert waren. Sie haben sozusagen *von außen* auf eine bestehende Python-Umgebung zugegriffen.
+
+Welche Python-Version und welche Pakete dort konkret installiert waren/sind, können Sie direkt in Python abfragen:
+
+```python
+import sys
+
+print("Python-Version:", sys.version)
+print("Interpreter:", sys.executable)
 ```
 
-- **Python-Versionsmanager**: ermöglicht das Installieren und Wechseln zwischen verschiedenen Python-Interpreter-Versionen (z. B. 3.10, 3.11, 3.12)  
-  *Beispiel für ein Tool:* `pyenv`
+Diese Vorgehensweise hat einen klaren didaktischen Vorteil:
 
-- **Python-Distribution**: liefert einen Python-Interpreter zusammen mit einer vorab ausgewählten Sammlung an Paketen („fertiges Ökosystem“)  
-  *Beispiel für ein Tool:* `Anaconda`
+- Sie können sofort mit Python starten
+- Sie können sich auf Konzepte und Programmierung konzentrieren
+- Sie müssen sich nicht mit Installation und Konfiguration beschäftigen
 
-- **Environment-Manager**: erstellt und verwaltet isolierte Python-Environments, sodass Projekte voneinander getrennt bleiben  
-  *Beispiel für ein Tool:* `venv`
+Gerade am Anfang ist das hilfreich, weil technische Details sonst vom eigentlichen Lernziel ablenken würden.
 
-- **Package-Manager**: installiert, aktualisiert und entfernt Pakete innerhalb eines bestehenden Environments  
-  *Beispiel für ein Tool:* `pip`
+**Warum das später nicht mehr reicht**
 
-- **Project-Manager**: beschreibt Projektabhängigkeiten und sorgt für ein reproduzierbares Setup aus Environment und Paketen  
-  *Beispiel für ein Tool:* `poetry`
+Wenn Sie Python professionell einsetzen möchten – etwa:
+- für größere Projekte,
+- in Teams,
+- auf anderen Rechnern oder Servern,
+- oder über längere Zeiträume hinweg –
+dann werden genau diese technischen Fragen wichtig.
 
- Wichtig: Sie müssen nicht im Detail verstehen, wie die einzelnen Tools funktionieren! Sondern dass sie sich um unterschiedliche Aufgabenkümmern!
+Denn Sie möchten sicherstellen, dass Ihr Programm:
+- auch mit einer bestimmten Python-Version läuft,
+- auch dann noch funktioniert, wenn sich Python weiterentwickelt,
+- und auch dann stabil bleibt, wenn sich einzelne Pakete ändern.
 
- Das Tool das sie Im Praktikum verwenden ist Anaconda. Es hat eine Sonderstellung, da es gleich mehrere Aufgaben gleichzeitig für Sie übernimmt. Anaconda ist gleichzeitig:
-- eine *Python-Distribution*, 
-- ein *Environment-Manager* und 
-- ein *Package-Manager*.
+Spätestens dann müssen Sie sich mit Fragen beschäftigen wie:
 
-## Python-Setup in der Vorlesung
+> Wie bekomme ich mein Programm mit einer bestimmten Python-Version und allen benötigten Paketen zum Laufen?  
+> Wie kann ich mehrere Python-Versionen auf einem Rechner verwalten?  
+> Wie stelle ich sicher, dass die installierten Pakete zur Python-Version passen?
 
-In diesem Kurs gibt es zwei sehr unterschiedliche Arbeitsweisen – und genau deshalb sieht auch das „Python-Setup“ unterschiedlich aus.
 
-In der Vorlesung nutzen wir die interaktive Kurs-Website. Dort ist die komplette Umgebung bereits eingerichtet (Python, Notebooks, benötigte Pakete). Sie müssen auf Ihrem eigenen Rechner dafür nichts installieren.
+## Python-Umgebungen erzeugen und verwalten
 
-Auch auf der alternativen Plattform (JupyterHub der Hochschule München) ist in der Regel alles vorinstalliert. Der Fokus liegt hier darauf, dass Sie Konzepte verstehen und mit Notebooks arbeiten können – nicht darauf, Installation und Tooling zu debuggen.
+Eine Python-Umgebung entsteht nicht von selbst – sie muss irgendwie erzeugt werden.  
+Grundsätzlich gibt es dafür zwei Wege:
 
-Wenn Sie auf der Website oder im JupyterHub prüfen möchten, was verfügbar ist, reichen meist diese zwei Befehle in einem Terminal/Notebook:
+1. **Ausgehend von einer Python-Distribution**  
+   (z. B. Anaconda, die Python und viele Werkzeuge bereits mitbringt)
+
+2. **Ausgehend von einer „reinen“ Python-Installation**  
+   (z. B. von python.org, mit anschließendem Erzeugen eigener Umgebungen)
+
+Die folgende Abbildung zeigt diesen Zusammenhang schematisch:
+
+```{figure} ../../figs/05-python-ecosystem-and-setup/distribution_envs_packages.svg
+---
+width: 90%
+name: fig-distribution-envs-packages
+---
+Zusammenspiel von Python-Distribution, Umgebungen (Environments) und Paketen.
+```
+
+In {numref}`Abbildung {number} <fig-distribution-envs-packages>` sehen Sie drei Ebenen, die man beim Python-Setup auseinanderhalten sollte:
+
+- Python-Distribution: liefert Python (und oft weitere Werkzeuge) als „Grundpaket“.
+- Umgebungen (Environments): getrennte Arbeitsbereiche pro Kurs/Projekt, mit eigener Python-Version und eigenen Paketen.
+- Pakete: zusätzliche Bibliotheken (z.B. ``numpy``), die in eine konkrete Umgebung installiert werden.
+
+Im Praktikum verwenden wir Anaconda. Wichtig ist dabei: „Anaconda“ ist kein einzelnes Konzept, sondern deckt mehrere Rollen ab.
+
+**Python-Distribution**
+
+Wir nutzen Anaconda als Python-Distribution. Sie dient als Startpunkt für die Erstellung einer Python-Umgebung: Sie bringt Python (und typischerweise weitere Werkzeuge) mit.
+
+Auf den Praktikumsrechnern ist Anaconda bereits installiert, damit alle mit einer möglichst ähnlichen Basis arbeiten.
+Wenn Sie auf Ihrem eigenen Rechner lokal wie im Praktikum arbeiten wollen, installieren Sie Anaconda von der offiziellen Seite:
+
+- [Anaconda Download](https://www.anaconda.com/download)
+
+Hinweis für Windows: Nutzen Sie danach den „Anaconda Prompt“ oder richten Sie conda so ein, dass es in Ihrer Shell verfügbar ist.
+
+**Umgebungen**
+
+Umgebungen sorgen dafür, dass sich Projekte nicht gegenseitig „kaputtinstallieren“. In {numref}`Abbildung {number} <fig-distribution-envs-packages>` sind das die getrennten Boxen „Environment A/B/C“.
+
+Eine conda-Umgebung ist technisch „nur“ ein Ordner mit einer eigenen Python-Installation und eigenen Paketen.
+
+Wenn man Umgebungen nur über einen Namen anlegt, liegen sie je nach Rechner-Konfiguration an verschiedenen Standardorten. Das ist im Praktikum unpraktisch: Man sieht die Dateien nicht direkt und im schlimmsten Fall liegt eine Umgebung in einem Bereich, der regelmäßig bereinigt wird.
+
+Deshalb nutzen wir im Praktikum konsequent einen konkreten Pfad!
+
+Wählen Sie einen dauerhaften Speicherort für Ihre Umgebungen (keine Temp-Ordner). Fragen Sie im Praktikum Ihre Dozentin/Ihren Dozenten, welche Ordner dafür geeignet sind.
+
+Legen Sie die Umgebung als Ordner an:
 
 ```sh
-python --version
-pip list
+conda create --prefix ./envs/programmierung1 python
 ```
-Falls ein Paket fehlt: In {ref}`sec-python-beispiele` sehen Sie ein Beispiel, wie man Pakete nachinstallieren kann.
 
-## Praktikum: lokale Entwicklungsumgebung (Tooling lernen)
+Alle Umgebungen (inkl. Pfad) sehen Sie mit:
 
-Im Praktikum arbeiten Sie nicht mit der interaktiven Website, sondern in einer „richtigen“ Entwicklungsumgebung. Hier geht es darum, Werkzeuge kennenzulernen, die das Programmieren in größeren Projekten erleichtern, z.B.:
+```sh
+conda env list
+conda info
+```
 
-- Arbeiten in einer IDE (Projektstruktur, Dateien, Run-Konfigurationen)
-- Debugging
-- Paketverwaltung und reproduzierbare Umgebungen
+Um mit einer Umgebung arbeiten zu können, müssen Sie sie aktivieren:
 
-Auf den Praktikumsrechnern ist Anaconda bereits installiert. Wenn Sie zu Hause arbeiten möchten, installieren Sie am besten ebenfalls Anaconda, damit Ihr Setup möglichst nah an den Praktikumsrechnern ist.
+```sh
+conda activate ./envs/programmierung1
+```
+In Ihrer Entwicklungsumgebung geht das üblicherweise über das Hinterlegen eines entsprechenden Pfads.
 
-## Warum Anaconda (und was ist das überhaupt)?
 
-Anaconda ist eine Python-Distribution, die den Paketmanager ``conda`` mitbringt und das Verwalten von Umgebungen erleichtert. Für den Kurs ist vor allem wichtig:
+````{admonition} Wichtig (Praktikum): Umgebung benutzen
+:class: attention
+Prüfen Sie im Praktikum immer zuerst, ob die richtige Umgebung aktiv ist. So vermeiden Sie typische Probleme wie „Paket fehlt“ oder „falsche Python-Version“.
+````
 
-- Sie können pro Kurs/Projekt eine eigene Umgebung anlegen.
-- Pakete lassen sich zuverlässig installieren (insbesondere im wissenschaftlichen Python-Ökosystem).
+````{admonition} Hinweis: Paket „verschwindet“?
+:class: note
+
+Wenn Sie vergessen, Ihre Kursumgebung zu aktivieren und dann Pakete installieren, landen diese häufig in der Standardumgebung ``base`` (oder in einer anderen gerade aktiven Umgebung). In Ihrer Kursumgebung fehlen sie dann später scheinbar.
+
+Prüfen Sie im Zweifel immer zuerst, welche Umgebung aktiv ist (z.B. mit ``conda env list``) und aktivieren Sie dann die richtige Umgebung.
+````
+
+**Pakete-Installation**
+
+Pakete werden immer in eine aktivierte Umgebung installiert. In der Abbildung sehen Sie zwei typische Wege:
+
+- ``conda install ...``: Pakete aus der conda-Welt (oft sehr stabil für Data-Science-Pakete).
+- ``pip install ...``: Pakete aus PyPI (falls etwas nicht per conda verfügbar ist).
+
+Faustregel im Kurs:
+
+1. Aktivieren Sie zuerst die passende Umgebung (z.B. ``conda activate ./envs/programmierung1``).
+2. Versuchen Sie dann ``conda install paketname``.
+3. Wenn nötig, nutzen Sie ``pip install paketname`` (aber nur innerhalb der aktivierten Umgebung).
 
 ## Praktikum-Setup: Schnellstart
 
-### 1) Prüfen, ob conda da ist
-
-Öffnen Sie ein Terminal (unter Windows am einfachsten „Anaconda Prompt“) und führen Sie aus:
+Schritt 1: Prüfen, ob conda installiert ist. Öffnen Sie ein Terminal (unter Windows am einfachsten „Anaconda Prompt“) und führen Sie aus:
 
 ```sh
 conda --version
@@ -85,50 +173,28 @@ width: 600px
 name: fig-conda-version
 ---
 ```
+Schritt 2: Aktivieren Sie Ihre Kurs-Umgebung an
 
-### 2) Eigene Kurs-Umgebung anlegen
-
-Arbeiten Sie nicht dauerhaft in der ``base``-Umgebung. Legen Sie stattdessen eine Umgebung für den Kurs an, z.B. ``ii``:
-
-```sh
-conda create -n ii python
-conda activate ii
-```
-
-### 3) Pakete installieren und JupyterLab starten (falls benötigt)
+Falls Sie die Kursumgebung noch nicht angelegt haben, erstellen Sie sie wie oben beschrieben. Ansonsten: aktivieren Sie sie direkt:
 
 ```sh
-conda install jupyterlab numpy matplotlib pandas
-jupyter lab
+conda activate ./envs/programmierung1
 ```
 
-```{figure} ../../figs/05-python-ecosystem-and-setup/python-tutorial/environment/jupyter-lab-start.png
----
-width: 800px
-name: fig-jupyter-lab-start
----
-JupyterLab im Browser.
-```
-
-### 4) Nachschauen, was installiert ist
+Falls notwendig: Installieren Sie Pakete 
 
 ```sh
-conda list
+conda install numpy matplotlib pandas
 ```
 
-## conda und pip: eine kurze Faustregel
-
-- Versuchen Sie zuerst ``conda install paketname``.
-- Wenn ein Paket nicht über conda verfügbar ist, installieren Sie es mit ``pip`` – aber nur, wenn das passende conda-Environment aktiv ist:
+Wenn ein Paket nicht über conda verfügbar ist, installieren Sie es mit ``pip`` – aber nur, wenn das passende conda-Environment aktiv ist:
 
 ```sh
 pip install paketname
 ```
 
-## Anaconda zu Hause installieren (optional, aber empfohlen)
+Nachschauen, was installiert ist:
 
-Wenn Sie auf Ihrem eigenen Rechner lokal wie im Praktikum arbeiten wollen, installieren Sie Anaconda von der offiziellen Seite:
-
-- [Anaconda Download](https://www.anaconda.com/download)
-
-Hinweis für Windows: Nutzen Sie danach den „Anaconda Prompt“ oder richten Sie conda so ein, dass es in Ihrer Shell verfügbar ist.
+```sh
+conda list
+```
