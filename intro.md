@@ -10,7 +10,7 @@ Im Teilmodul „Programmieren“ lernen Sie Programmieren anhand der **Programmi
 
 ```{figure} ./figs/00-general/landing-page.png
 ---
-height: 300px
+width: 300px
 name: journey
 ---
 ```
