@@ -3,6 +3,13 @@
 Python ist eine Universalsprache (General Purpose Language) und damit [Turing-vollständig](info-universal-turing-machine).
 Das bedeutet: Python kann grundsätzlich sehr viele unterschiedliche Problemklassen ausdrücken.
 
+```{figure} ../../figs/01-course-overview/python-logo.png
+---
+height: 150px
+name: journey
+---
+```
+
 Python wurde bereits 1990 entwickelt und ist damit älter als z. B. Java.
 In den letzten Jahren ist Python aber besonders stark gewachsen und heute sehr weit verbreitet.
 

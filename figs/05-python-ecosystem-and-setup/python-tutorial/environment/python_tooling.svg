@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1500"
+   height="850"
+   viewBox="0 0 1500 850"
+   version="1.1"
+   id="svg36"
+   sodipodi:docname="python_tooling.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   inkscape:export-filename="python_tooling.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview36"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.30015961"
+     inkscape:cx="466.41851"
+     inkscape:cy="449.76071"
+     inkscape:window-width="1710"
+     inkscape:window-height="1073"
+     inkscape:window-x="0"
+     inkscape:window-y="34"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg36"
+     inkscape:export-bgcolor="#ffffffff" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .H{font:900 26px system-ui,-apple-system,Segoe UI,Roboto,Arial}
+      .T{font:800 16px system-ui,-apple-system,Segoe UI,Roboto,Arial}
+      .S{font:600 13px system-ui,-apple-system,Segoe UI,Roboto,Arial; fill:#333}
+      .Q{font:900 14px system-ui,-apple-system,Segoe UI,Roboto,Arial}
+      .M{font:700 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
+      .box{fill:#fff;stroke:#111;stroke-width:2;rx:18}
+      .soft{fill:#f7f7f7;stroke:#111;stroke-width:2;rx:18}
+      .note{fill:#fff;stroke:#111;stroke-width:1.6;rx:14}
+
+      .arrow{stroke:#111;stroke-width:2.8;fill:none}
+      .alabel{font:700 12px system-ui,-apple-system,Segoe UI,Roboto,Arial; fill:#111}
+      .alabelBg{fill:#fff;stroke:#111;stroke-width:1.4;rx:10}
+      .ex{font:700 12px system-ui,-apple-system,Segoe UI,Roboto,Arial; fill:#111}
+    </style>
+    <marker
+       id="arrow"
+       markerWidth="10"
+       markerHeight="10"
+       refX="8"
+       refY="3"
+       orient="auto">
+      <path
+         d="M 0,0 9,3 0,6 Z"
+         fill="#111111"
+         id="path1" />
+    </marker>
+    <marker
+       id="arrow-5"
+       markerWidth="10"
+       markerHeight="10"
+       refX="8"
+       refY="3"
+       orient="auto">
+      <path
+         d="M 0,0 9,3 0,6 Z"
+         fill="#111111"
+         id="path1-5" />
+    </marker>
+  </defs>
+  <!-- Title -->
+  <!-- ================= ENVIRONMENT (CENTER) ================= -->
+  <g
+     transform="translate(492,174)"
+     id="g11">
+    <rect
+       width="560"
+       height="360"
+       class="soft"
+       id="rect3"
+       x="0"
+       y="0" />
+    <text
+       x="20"
+       y="44"
+       class="T"
+       id="text4"
+       style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:16px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial;-inkscape-font-specification:'system-ui, -apple-system, Segoe UI, Roboto, Arial, Ultra-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+         sodipodi:role="line"
+         id="tspan41"
+         x="20"
+         y="44">Python-Environment</tspan></text>
+    <text
+       x="20"
+       y="70"
+       class="S"
+       id="text5"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:13px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">isolierter Ort mit eigenem Python + installierten Paketen</text>
+    <g
+       transform="translate(20,108)"
+       id="g10">
+      <rect
+         width="520"
+         height="220"
+         class="box"
+         id="rect5"
+         x="0"
+         y="0" />
+      <text
+         x="20"
+         y="38"
+         class="T"
+         id="text6"
+         style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:16px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">Beispiel</text>
+      <text
+         x="20"
+         y="72"
+         class="M"
+         id="text7"
+         style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:12px;line-height:normal;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">/project/.venv/</text>
+      <text
+         x="20"
+         y="98"
+         class="M"
+         id="text8"
+         style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:12px;line-height:normal;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">Python Interpreter = 3.12</text>
+      <text
+         x="20"
+         y="136"
+         class="S"
+         id="text9"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:13px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">Pakete:</text>
+      <text
+         x="20"
+         y="160"
+         class="M"
+         id="text10"
+         style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:12px;line-height:normal;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">numpy, pandas, matplotlib</text>
+    </g>
+  </g>
+  <!-- ================= LEFT ================= -->
+  <!-- Version Manager -->
+  <g
+     transform="translate(12,44)"
+     id="g14">
+    <rect
+       width="360"
+       height="180"
+       class="box"
+       id="rect11"
+       x="0"
+       y="0" />
+    <text
+       x="20"
+       y="38"
+       class="T"
+       id="text11"
+       style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:16px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">Python Version Manager</text>
+    <text
+       x="49.984047"
+       y="163.61792"
+       class="Q"
+       id="text12"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:14px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">❓ Welche Python-Interpreter-Version?</text>
+    <text
+       x="18.334219"
+       y="62.355492"
+       class="S"
+       id="text13"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:13px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">installiert &amp; verwaltet mehrere Python-Interpreter</text>
+    <text
+       x="18.334219"
+       y="106.01595"
+       class="ex"
+       id="text14"
+       style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:12px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">Beispiele: pyenv, uv</text>
+  </g>
+  <!-- Distribution -->
+  <g
+     transform="translate(12,324)"
+     id="g18">
+    <rect
+       width="286.9191"
+       height="180.21344"
+       class="box"
+       id="rect14"
+       x="-0.10672366"
+       y="-0.10672366" />
+    <text
+       x="20"
+       y="38"
+       class="T"
+       id="text15"
+       style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:16px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">Python Distribution</text>
+    <text
+       x="54.981388"
+       y="160.28636"
+       class="Q"
+       id="text16"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:14px;line-height:normal;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+         sodipodi:role="line"
+         id="tspan39"
+         x="54.981388"
+         y="160.28636">Was ist schon dabei?</tspan></text>
+    <text
+       x="23.331562"
+       y="121.00797"
+       class="ex"
+       id="text18"
+       style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:12px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">Beispiele: Anaconda, Miniconda</text>
+  </g>
+  <!-- ================= RIGHT ================= -->
+  <!-- Environment Manager -->
+  <g
+     transform="translate(1172,84)"
+     id="g22">
+    <rect
+       width="310.14108"
+       height="200.1145"
+       class="note"
+       id="rect18"
+       x="-0.057249982"
+       y="-0.057249982" />
+    <text
+       x="20"
+       y="38"
+       class="T"
+       id="text19"
+       style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:16px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">Environment Manager</text>
+    <text
+       x="43.320923"
+       y="171.94682"
+       class="Q"
+       id="text20"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:14px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">❓ WO liegt das Environment?</text>
+    <text
+       x="20"
+       y="67.352829"
+       class="S"
+       id="text21"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:13px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial;-inkscape-font-specification:'system-ui, -apple-system, Segoe UI, Roboto, Arial, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#333333"><tspan
+         sodipodi:role="line"
+         id="tspan42"
+         x="20"
+         y="67.352829">erstellt, isoliert und aktiviert Environments</tspan><tspan
+         sodipodi:role="line"
+         id="tspan43"
+         x="20"
+         y="83.602829">(für einen Interpreter)</tspan></text>
+    <text
+       x="21.665781"
+       y="130.68439"
+       class="ex"
+       id="text22"
+       style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:12px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">Beispiele: venv, conda, poetry, uv</text>
+  </g>
+  <!-- Package Manager -->
+  <g
+     transform="translate(1172,414)"
+     id="g26">
+    <rect
+       width="315.15204"
+       height="200.12813"
+       class="box"
+       id="rect22"
+       x="-0.064060278"
+       y="-0.064060278" />
+    <text
+       x="20"
+       y="38"
+       class="T"
+       id="text23"
+       style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:16px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">Package Manager</text>
+    <text
+       x="53.315609"
+       y="171.94682"
+       class="Q"
+       id="text24"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:14px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">❓ WAS ist im Environment?</text>
+    <text
+       x="24.334219"
+       y="65.68705"
+       class="S"
+       id="text25"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:13px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">installiert, entfernt und aktualisiert Pakete</text>
+    <text
+       x="21.665781"
+       y="114.34486"
+       class="ex"
+       id="text26"
+       style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:12px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">Beispiele: pip, conda, poetry, uv</text>
+  </g>
+  <!-- ================= BOTTOM ================= -->
+  <!-- Project Manager -->
+  <g
+     transform="translate(492,644)"
+     id="g30">
+    <rect
+       width="560.10376"
+       height="161.78017"
+       class="box"
+       id="rect26"
+       x="-0.051872805"
+       y="-0.051872805" />
+    <text
+       x="20"
+       y="40"
+       class="T"
+       id="text27"
+       style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:16px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">Project Manager</text>
+    <text
+       x="144.93353"
+       y="152.29169"
+       class="Q"
+       id="text28"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:14px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">❓ Wie soll alles zusammen aussehen?</text>
+    <text
+       x="20"
+       y="71.352829"
+       class="S"
+       id="text29"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:13px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">definiert Abhängigkeiten &amp; sorgt für Reproduzierbarkeit</text>
+    <text
+       x="23.33156"
+       y="111.68173"
+       class="ex"
+       id="text30"
+       style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:12px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">Beispiele: poetry, uv</text>
+  </g>
+  <!-- ================= ARROWS + LABELS ================= -->
+  <!-- Version -> Env -->
+  <path
+     d="m 372,134 c 70,0 100,80 120,120"
+     class="arrow"
+     marker-end="url(#arrow)"
+     id="path30" />
+  <g
+     transform="translate(402,174)"
+     id="g31">
+    <text
+       x="58.360813"
+       y="-50.296997"
+       text-anchor="middle"
+       class="alabel"
+       id="text31"
+       style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:12px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial;-inkscape-font-specification:'system-ui, -apple-system, Segoe UI, Roboto, Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#111111"><tspan
+         sodipodi:role="line"
+         id="tspan40"
+         x="58.360813"
+         y="-50.296997">liefert Python-Interpreter</tspan></text>
+  </g>
+  <!-- Distribution -> Env -->
+  <path
+     d="m 300.20128,428.35947 c 111.23061,0 150.95583,-26.80407 190.68105,-53.60813"
+     class="arrow"
+     marker-end="url(#arrow)"
+     id="path31"
+     style="stroke-width:2.686;stroke-dasharray:none" />
+  <path
+     d="m 712.90225,645.25993 c 0,-63.17088 16.55249,-85.73191 33.10497,-108.29294"
+     class="arrow"
+     marker-end="url(#arrow-5)"
+     id="path31-1"
+     style="fill:none;stroke:#111111;stroke-width:2.991;stroke-dasharray:none;marker-end:url(#arrow-5)" />
+  <g
+     transform="translate(426.98138,270.75884)"
+     id="g32">
+    <text
+       x="-44.904282"
+       y="184.57803"
+       text-anchor="middle"
+       class="alabel"
+       id="text32"
+       style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:12px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial;-inkscape-font-specification:'system-ui, -apple-system, Segoe UI, Roboto, Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#111111"><tspan
+         sodipodi:role="line"
+         id="tspan37"
+         x="-44.904282"
+         y="184.57803">liefert Python-Interpreter</tspan><tspan
+         sodipodi:role="line"
+         id="tspan38"
+         x="-44.904282"
+         y="199.57803">+ viele Pakete</tspan></text>
+  </g>
+  <!-- Env Manager -> Env -->
+  <path
+     d="m 1172,184 c -60,0 -95,50 -120,110"
+     class="arrow"
+     marker-end="url(#arrow)"
+     id="path32" />
+  <g
+     transform="translate(808.76947,29.06647)"
+     id="g33">
+    <text
+       x="241.61792"
+       y="121.27838"
+       text-anchor="middle"
+       class="alabel"
+       id="text33"
+       style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:12px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">erstellt &amp; isoliert das Environment (WO)</text>
+  </g>
+  <!-- Package Manager -> Env -->
+  <path
+     d="m 1172,514 c -60,0 -95,-60 -120,-100"
+     class="arrow"
+     marker-end="url(#arrow)"
+     id="path33" />
+  <g
+     transform="translate(982,544)"
+     id="g34">
+    <text
+       x="216.63654"
+       y="-155.24115"
+       text-anchor="middle"
+       class="alabel"
+       id="text34"
+       style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:12px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">verändert den Inhalt des Environments (WAS)</text>
+  </g>
+  <!-- Project Manager -> Env -->
+  <g
+     transform="translate(530.38208,578.98671)"
+     id="g35">
+    <text
+       x="311.59665"
+       y="18.000006"
+       text-anchor="middle"
+       class="alabel"
+       id="text35"
+       style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:12px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial">beschreibt &amp; reproduziert Setup (WIE)</text>
+  </g>
+  <!-- Footer -->
+</svg>

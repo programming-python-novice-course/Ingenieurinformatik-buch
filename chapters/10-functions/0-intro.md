@@ -79,7 +79,7 @@ Funktionen sind ein Mittel um Codewiederholungen zu verhindern und auch ein Mitt
 Stellen Sie sich vor wir müssten jedes Mal wenn wir etwas ausgeben wollen den Code der Funktion ``print()`` niederschreiben.
 Schnell würden unsere Programme lange und auch langweilig und unübersichtlich werden.
 
-Gute Funktionen zu schreiben kann sehr befriedigend für uns Computational Thinker\*innen sein.
+Gute Funktionen zu schreiben kann sehr befriedigend sein, weil wir Probleme damit systematisch in Teilprobleme zerlegen können.
 Wir lösen damit oft ein Teilproblem und kommen der gesamten Lösung näher.
 Mit ein wenig Erfahrung können wir sogar Probleme lösen indem wir davon ausgehen, ein Teilproblem hätten wir bereits gelöst -- auch wenn dies noch nicht der Fall ist.
 

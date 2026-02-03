@@ -11,8 +11,6 @@ exclude_patterns:
   - Thumbs.db
   - .DS_Store
   - "**.ipynb_checkpoints"
-  - de_computational-thinking.md
-  - Planung-Computational-Thinking-ALLGEMEIN.md
   - README.md
 
 only_build_toc_files: true
@@ -50,7 +48,7 @@ sphinx:
 
   config:
     version: "1.9"
-    release: "1.9.1"
+    release: "1.9.2"
 
     myst_enable_extensions:
       - dollarmath
@@ -103,6 +101,21 @@ sphinx:
         }
 
         % --------------------------------------------------
+        % Inhaltsverzeichnis: Einträge nicht über Seiten trennen
+        % --------------------------------------------------
+        \usepackage{etoolbox}
+        \usepackage{needspace}
+
+        % Sorgt dafür, dass vor einem Inhaltsverzeichnis-Eintrag genug Platz bleibt.
+        % Wenn nicht, wird vorher umgebrochen (statt mitten im Kapitel/Abschnittseintrag).
+        \makeatletter
+        \pretocmd{\l@part}{\Needspace{8\baselineskip}\addvspace{1.0\baselineskip}}{}{}
+        \pretocmd{\l@chapter}{\Needspace{4\baselineskip}}{}{}
+        \pretocmd{\l@section}{\Needspace{3\baselineskip}}{}{}
+        \pretocmd{\l@subsection}{\Needspace{2\baselineskip}}{}{}
+        \makeatother
+
+        % --------------------------------------------------
         % PDF-only: Autor für die Titelseite setzen
         % (HTML bleibt sauber, da author: "" gesetzt ist)
         % --------------------------------------------------
@@ -152,6 +165,6 @@ html:
       <div class="col1">
         Autoren: <a href="/chapters/misc/contributors.html">alle anzeigen</a>.
         Lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>.
-        Version 1.9.1
+        Version 1.9.2
       </div>
     </div>
