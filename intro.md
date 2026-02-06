@@ -1,11 +1,9 @@
 (sec-intro)=
 # Ingenieurinformatik 1 - Programmieren (Python)
 
-Sie studieren an der FK03 an der Hochschule München und besuchen das Teilmodul „Programmieren“? Dann sind Sie hier genau richtig: Herzlich willkommen!
+Willkommen im Teilmodul „Programmieren“ (FK03, Hochschule München). In Ihrem Ingenieursalltag werden Sie immer wieder Aufgaben lösen, bei denen Programmiertechniken helfen – etwa bei der Auswertung großer Sensordatenmengen, beim Entwurf einer Flugregelung oder bei der Konstruktion eines Bauteils. In den nächsten Wochen lernen Sie dafür die Grundlagen des Programmierens.
 
-In Ihrem Ingenieursalltag werden Sie immer wieder auf Aufgaben stoßen, bei denen Sie Programmiertechniken einsetzen – etwa bei der Auswertung großer Sensordatenmengen, beim Entwurf einer Flugregelung oder bei der Konstruktion eines Bauteils. In den nächsten Wochen lernen wir dafür die Grundlagen des Programmierens.
-
-Im Teilmodul „Programmieren“ lernen Sie Programmieren anhand der **Programmiersprache Python**. Als Leitbild nutzen wir eine Metapher: Programmieren lernen ist ein wenig wie Autofahren lernen. Python ist das konkrete Auto (mit „Gangschaltung“), Programmieren ist die Fähigkeit, damit sicher von A nach B zu kommen.
+Wir lernen Programmieren anhand der **Programmiersprache Python**. Als Leitbild nutzen wir eine Metapher: Programmieren lernen ist ein wenig wie Autofahren lernen. Python ist das konkrete Auto (mit „Gangschaltung“) — Programmieren ist die Fähigkeit, damit sicher von A nach B zu kommen.
 
 
 ```{figure} ./figs/00-general/landing-page.png
@@ -15,29 +13,31 @@ name: journey
 ---
 ```
 
-Das Modul ist in vier Teile gegliedert. Zur Orientierung: Wir lernen zuerst die „Verkehrsinfrastruktur“ kennen (Teil 1), schauen uns dann das konkrete „Auto“ an (Teil 2), üben die Bedienung in der Praxis (Teil 3) und führen zum Abschluss eine längere „Fahrt“ komplett durch (Teil 4).
+**Orientierung: Die Veranstaltung in 4 Teilen**
 
 - **Part 1: Basiswissen (ca. 10% der Modulinhalte)**  
-  Wenn wir Auto fahren, bewegen wir uns in einer Verkehrsinfrastruktur: Straßen, Regeln, Schilder und Begriffe, die allen Orientierung geben. Genauso klären wir hier, was ein Computer grundsätzlich macht, wie Informationsverarbeitung funktioniert und welches Vokabular wir brauchen, um über Programme präzise zu sprechen.
+  Wie beim Autofahren die Verkehrsinfrastruktur Orientierung gibt, klären wir hier Grundlagen: Was macht ein Computer grundsätzlich, wie funktioniert Informationsverarbeitung, und welches Vokabular brauchen wir, um über Programme präzise zu sprechen?
 
 - **Part 2: Python verstehen (ca. 10% der Modulinhalte)**  
-  Danach schauen wir uns das konkrete „Auto“ an, mit dem wir fahren: Python. Wir ordnen Python ein (unser „Auto mit Gangschaltung“), besprechen zentrale Eigenschaften und Programmierkonzepte und schaffen so ein Verständnis, das Ihnen auch beim Lernen weiterer Sprachen hilft – z. B. wenn im nächsten Semester MATLAB dazukommt (vielleicht eher „E‑Auto“ als Gangschaltung).
+  Danach schauen wir uns das konkrete „Auto“ an: Python. Wir ordnen Python ein, besprechen zentrale Eigenschaften und Programmierkonzepte und schaffen so ein Verständnis, das auch beim Lernen weiterer Sprachen hilft (z. B. MATLAB).
 
 - **Part 3: Python anwenden (ca. 70% der Modulinhalte)**  
-  Jetzt üben wir das Fahren: Sie schreiben Schritt für Schritt eigene Programme und lernen die typischen Abläufe und Regeln der Praxis (z. B. „wann schalte ich in den nächsten Gang?“). Das ist der Schwerpunkt der Veranstaltung.
+  Jetzt üben wir das Fahren: Sie schreiben Schritt für Schritt eigene Programme und lernen typische Abläufe und Regeln der Praxis. Das ist der Schwerpunkt der Veranstaltung.
 
 - **Part 4: Anwendungsfall (ca. 10% der Modulinhalte)**  
   Zum Abschluss machen wir eine komplette „Fahrt“: Wir planen die Route, packen den Kofferraum und fahren los. Dabei sehen Sie den gesamten Prozess am Stück und lernen, wie man in der Praxis strukturiert vorgeht.
 
 
-**Programmieren lernen in Zeiten von KI**
+```{admonition} Programmieren lernen in Zeiten von KI
+:class: hint
 
-Wie kann man heute noch zeitgemäß Programmieren lernen? Welche Kompetenzen sind beim Programmieren heute wichtiger als je zuvor?
+KI verändert, wie wir programmieren und auch wie wir Programmieren lernen. In vielen klassischen Programmierkursen steht die Programmiersprache im Vordergrund: Man lernt ihre Grammatik und übt vor allem an typischen Beispielen.  
 
-Unser Ziel ist, dass Sie Kompetenzen aufbauen, die ein LLM nicht einfach für Sie übernehmen kann: Probleme verstehen, Anforderungen klären, Lösungen prüfen und Verantwortung übernehmen.
+Wir nutzen Beispiele ebenfalls, aber mit einem anderen Ziel. Wir machen Konzepte sichtbar, wofür wir Live‑Code direkt hier auf der Website ausführen. 
 
-Viele Kurse setzen vor allem auf „viel üben, viele Beispiele“. Wir nutzen Beispiele auch – aber bewusst anders: Im Mittelpunkt stehen konzeptionelles Verständnis und methodisches Vorgehen. In der Vorlesung arbeiten wir daher bewusst mit Live-Code-Beispielen auf dieser Website, die uns Konzepte näher bringen werden. Das macht Sie zukunftssicher in einer Arbeitswelt, in der reines „Code tippen“ zunehmend automatisiert wird.
+Außerdem üben wir ein sprachübergreifendes, systematisches Vorgehen, damit Sie sattelfest für Ihre berufliche Zukunft werden. Grammatik von Programmiersprachen wird durch LLMs nämlich zunehmend „wegautomatisiert“.  In der Praxis zählt aber, dass ein Programm das Richtige tut und das erreicht man durch Systemverständnis, sauberes Vorgehen, Tests und gutes Debugging, unabhängig (!) von der Sprache. 
 
-Mehr Informationen zum Kurskonzept finden Sie hier: [Programmieren lernen in Zeiten von LLMs](chapters/01-course-overview/40-learningLLM) und [Wissensarten (A/S/V)](chapters/01-course-overview/42-asvconcept).
+Mehr zum Kurskonzept: [Programmieren lernen in Zeiten von LLMs](chapters/01-course-overview/40-learningLLM).
+```
 
 *Hinweis: Abbildungen wurden teilweise mithilfe generativer KI erstellt und dienen der Illustration.*
