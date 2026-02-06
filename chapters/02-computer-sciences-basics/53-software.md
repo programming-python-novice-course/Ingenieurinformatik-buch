@@ -1,4 +1,4 @@
-# Software vs. Programm
+# Software vs. Programm (S)
 
 - Ein *Programm* ist in einer Programmiersprache (z. B. ``Python``) geschrieben und kann auf einer Maschine ausgeführt werden.
 - *Programmiercode* auch genannt *Quellcode*, *Source Code* oder kurz *Code*, ist das Resultat der *Programmierung* und Teil eines *Programms*.

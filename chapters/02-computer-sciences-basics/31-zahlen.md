@@ -1,4 +1,4 @@
-# Zahlen
+# Zahlen (S)
 
 Im vorherigen Kapitel haben Sie bereits gesehen, dass beim UPC eine Bitfolge wie `0101111` für die Ziffer 6 steht.
 Das ist ein wichtiges Muster: Eine Bitfolge bedeutet nicht „von selbst“ etwas, sondern erst durch eine Codierung (ein Regelwerk).

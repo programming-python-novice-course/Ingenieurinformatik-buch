@@ -1,6 +1,6 @@
 (sec-computer-basics)=
 
-# Computer
+# Computer (S)
 
 Ein *Computer* ist die konkrete technische Realisierung eines **Informationsverarbeitungssystems** (Hardware + Software). Um Programme zu verstehen (und später selbst zu schreiben), hilft es, ein klares Modell davon zu haben, **wie** ein Computer Informationen einliest, speichert, verarbeitet und ausgibt.
 

@@ -1,4 +1,4 @@
-# Wissensarten (A/S/V)
+# Wissensarten (Hintergrund: A/S/V)
 
 In diesem Skript finden Sie an vielen Kapiteln eine Markierung **(A)**, **(S)** oder **(V)**. Diese Markierung zeigt, **welche Art von Wissen** im jeweiligen Kapitel im Vordergrund steht. Sie hilft Ihnen dabei, Inhalte gezielt auszuwählen – je nachdem, ob Sie gerade üben, verstehen oder systematisch vorgehen möchten.
 

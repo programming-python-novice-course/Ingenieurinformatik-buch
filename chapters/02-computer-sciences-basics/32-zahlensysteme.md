@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Zahlensysteme
+# Zahlensysteme (A)
 
 ```{admonition} Hausaufgabe
 :class: note

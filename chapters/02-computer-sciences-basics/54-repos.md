@@ -1,4 +1,4 @@
-# Repositories und Hubs
+# Repositories und Hubs (-)
 
 - Ein *Repository* ist eine Ablage für Software in Form von Dateien und Ordnern.
 - Der Inhalt eines Repositories wird typischerweise mit einer *Versionskontrolle* verwaltet, z. B. mit Git.

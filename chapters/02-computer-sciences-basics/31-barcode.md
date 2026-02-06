@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Beispiel Barcode
+# Beispiel Barcode (S)
 
 Dieses Beispiel (inkl. Abbildungen) ist angelehnt an das Kapitel 11 im Buch „Code“ von Charles Petzold {cite}`petzold:2000code`.
 
