@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Datenmodell
+# Datenmodell 
 (sec-object-model)=
 
 Zahlreiche Eigenschaften von Python sind direkte Folgen des Datenmodells. Deshalb gehen wir hier kurz auf Pythons Datenmodell ein. 

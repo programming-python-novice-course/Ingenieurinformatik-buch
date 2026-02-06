@@ -1,4 +1,4 @@
-# Performance
+# Performance (S)
 
 ```{admonition} Behauptung
 :class: remark

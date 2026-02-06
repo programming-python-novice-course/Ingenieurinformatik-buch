@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Indentation
+# Indentation (S)
 
 ```{admonition} Behauptung
 :class: remark

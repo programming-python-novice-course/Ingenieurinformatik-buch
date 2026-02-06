@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Seiteneffekt
+# Seiteneffekt (A)
 
 ```{admonition} Behauptung
 :class: remark

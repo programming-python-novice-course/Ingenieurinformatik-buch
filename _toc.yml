@@ -35,8 +35,7 @@ parts:
     chapters:
     - file: chapters/02-computer-sciences-basics/00-intro
       sections:
-      - file: chapters/02-computer-sciences-basics/10-informatik
-      - file: chapters/02-computer-sciences-basics/20-basics
+      - file: chapters/02-computer-sciences-basics/10-intro
         sections:
         - file: chapters/02-computer-sciences-basics/21-neumann-architektur
         - file: chapters/02-computer-sciences-basics/22-betriebssystem
@@ -68,14 +67,14 @@ parts:
       sections:
       - file: chapters/03-language-properties/10-syntax
       - file: chapters/03-language-properties/20-interpretation
-      - file: chapters/03-language-properties/21-cpython
-      - file: chapters/03-language-properties/30-paradigma
-      - file: chapters/03-language-properties/40-objektmodell-referenzen
+      - file: chapters/03-language-properties/30-cpython
+      - file: chapters/03-language-properties/40-paradigma
+      - file: chapters/03-language-properties/50-objektmodell-referenzen
         sections:
-        - file: chapters/03-language-properties/41-typing
-        - file: chapters/03-language-properties/42-seiteneffekte
-        - file: chapters/03-language-properties/43-speicherverwaltung
-        - file: chapters/03-language-properties/44-primitive-data
+        - file: chapters/03-language-properties/51-typing
+        - file: chapters/03-language-properties/52-seiteneffekte
+        - file: chapters/03-language-properties/53-speicherverwaltung
+        - file: chapters/03-language-properties/54-primitive-data
       - file: chapters/03-language-properties/99-summary
   - caption: Python anwenden
     numbered: True

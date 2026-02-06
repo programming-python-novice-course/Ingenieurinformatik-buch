@@ -1,4 +1,4 @@
-# Typing
+# Typing (A)
 
 ```{admonition} Behauptung
 :class: remark

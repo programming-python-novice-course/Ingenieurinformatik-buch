@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 
-# Paradigmen
+# Paradigmen (V)
 
 ```{admonition} Behauptung
 :class: remark

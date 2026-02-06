@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 
-# Varianten und Versionen
+# Varianten und Versionen (S)
 
 ```{admonition} Behauptung
 :class: remark
