@@ -21,6 +21,7 @@ parts:
         - file: chapters/01-course-overview/32-prozesssicht
         - file: chapters/01-course-overview/33-success-criteria
       - file: chapters/01-course-overview/40-learningLLM
+        sections:
         - file: chapters/01-course-overview/41-sprachen
         - file: chapters/01-course-overview/42-asvconcept
         - file: chapters/01-course-overview/43-ki
