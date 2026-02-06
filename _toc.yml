@@ -51,7 +51,6 @@ parts:
         - file: chapters/02-computer-sciences-basics/51-algorithmus
         - file: chapters/02-computer-sciences-basics/52-komplexität
         - file: chapters/02-computer-sciences-basics/53-software
-        - file: chapters/02-computer-sciences-basics/54-repos
       - file: chapters/02-computer-sciences-basics/60-programmierkonstrukte
         sections:
         - file: chapters/02-computer-sciences-basics/61-kontrollstrukturen
@@ -158,5 +157,6 @@ parts:
       - file: chapters/misc/Expertenwissen/compilation
       - file: chapters/misc/Expertenwissen/euclid-algorithm
       - file: chapters/misc/Expertenwissen/jupyter-notebooks
+      - file: chapters/misc/Expertenwissen/repos
       - file: chapters/misc/Expertenwissen/berechenbarkeit
       - file: chapters/misc/Expertenwissen/memory-layout
