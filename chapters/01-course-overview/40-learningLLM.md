@@ -1,3 +1,4 @@
+(sec-learning-llm)=
 # Programmieren lernen in Zeiten von LLMs
 
 > „Man muss Programmieren erst ohne KI lernen – sonst lernt man es nie richtig.“

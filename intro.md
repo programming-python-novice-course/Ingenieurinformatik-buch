@@ -30,4 +30,13 @@ Das Modul ist in vier Teile gegliedert. Zur Orientierung: Wir lernen zuerst die 
   Zum Abschluss machen wir eine komplette „Fahrt“: Wir planen die Route, packen den Kofferraum und fahren los. Dabei sehen Sie den gesamten Prozess am Stück und lernen, wie man in der Praxis strukturiert vorgeht.
 
 
+Insbesondere in Zeiten von KI haben wir uns die Frage gestellt: Wie kann man heute noch zeitgemäß Programmieren lernen? Welche Kompetenzen sind beim Programmieren heute wichtiger als vielleicht vor 20 Jahren?
+Sie als Studierende der Hochschule München sollen in diesem Kurs eine Programmierkompetenz entwickeln, die über das hinausgeht, was KI heute bereits automatisieren kann. Deshalb markieren wir im Skript gezielt, welche Art von Wissen in einem Kapitel im Vordergrund steht:
+
+- (A) Anwendungswissen: konkrete Umsetzung und Übung (prüfungsrelevant)
+- (S) Strukturwissen: Konzepte und Zusammenhänge („Warum ist das so? Geht das auch anders?“)
+- (V) Vorgehenswissen: Methoden und Vorgehen, die sich auf neue Aufgaben übertragen lassen
+
+Mehr Informationen zum Kurskonzept finden Sie hier: [Programmieren lernen in Zeiten von LLMs](chapters/01-course-overview/40-learningLLM).
+
 *Hinweis: Abbildungen wurden teilweise mithilfe generativer KI erstellt und dienen der Illustration.*
