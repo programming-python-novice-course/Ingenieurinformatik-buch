@@ -1,14 +1,19 @@
 # Informatik und Software Engineering
 
-
 ```{figure} ../../figs/01-course-overview/overview/infrastructer-metaphor.png
 ---
 height: 320px
 name: infrastructer-metaphor
 ---
 ```
-
 **Informatik** beschäftigt sich mit Algorithmen, Rechenmaschinen und damit, wie Information dargestellt, gespeichert, verarbeitet und übertragen wird. In dieser Vorlesung schauen wir vor allem aus der Ingenieurperspektive darauf: Wir wollen verstehen, wie Informationsverarbeitungssysteme aufgebaut sind und welche Prinzipien dahinterstehen.
+
+**Software Engineering** meint, Software als Produkt zu planen, zu entwickeln, zu testen, zu betreiben und weiterzuentwickeln. Ziel ist, Informationsverarbeitungssysteme so zu bauen, dass sie die gewünschten Funktionalitäten zuverlässig bereitstellen. Typische Qualitätsziele sind zum Beispiel:
+
+- Robustheit (funktioniert auch bei Fehlern und unerwarteten Situationen)
+- Anpassbarkeit (Änderungen lassen sich in vertretbarer Zeit umsetzen)
+- Wartbarkeit (auch andere Personen können die Software verstehen und weiterentwickeln)
+- Sicherheit (gegen typische Angriffe und Fehlkonfigurationen geschützt)
 
 ```{figure} ../../figs/02-computer-sciences-basics/unterscheidung.png
 ---
@@ -18,12 +23,6 @@ name: fig-unterscheidung-informatik-se
 Unterscheidung zwischen Informatik und Software Engineering.
 ```
 
-**Software Engineering** meint, Software als Produkt zu planen, zu entwickeln, zu testen, zu betreiben und weiterzuentwickeln. Ziel ist, Informationsverarbeitungssysteme so zu bauen, dass sie die gewünschten Funktionalitäten zuverlässig bereitstellen. Typische Qualitätsziele sind zum Beispiel:
-
-- Robustheit (funktioniert auch bei Fehlern und unerwarteten Situationen)
-- Anpassbarkeit (Änderungen lassen sich in vertretbarer Zeit umsetzen)
-- Wartbarkeit (auch andere Personen können die Software verstehen und weiterentwickeln)
-- Sicherheit (gegen typische Angriffe und Fehlkonfigurationen geschützt)
 
 ```{admonition} Hinweis
 Die hier genannten Eigenschaften sind Beispiele für nicht-funktionale Anforderungen an Software. Eine umfangreichere Übersicht finden Sie z. B. in der Norm [ISO/IEC 25010:2011](https://www.iso.org/standard/78176.html).
