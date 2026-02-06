@@ -30,13 +30,14 @@ Das Modul ist in vier Teile gegliedert. Zur Orientierung: Wir lernen zuerst die 
   Zum Abschluss machen wir eine komplette „Fahrt“: Wir planen die Route, packen den Kofferraum und fahren los. Dabei sehen Sie den gesamten Prozess am Stück und lernen, wie man in der Praxis strukturiert vorgeht.
 
 
-Insbesondere in Zeiten von KI haben wir uns die Frage gestellt: Wie kann man heute noch zeitgemäß Programmieren lernen? Welche Kompetenzen sind beim Programmieren heute wichtiger als vielleicht vor 20 Jahren?
-Sie als Studierende der Hochschule München sollen in diesem Kurs eine Programmierkompetenz entwickeln, die über das hinausgeht, was KI heute bereits automatisieren kann. Deshalb markieren wir im Skript gezielt, welche Art von Wissen in einem Kapitel im Vordergrund steht:
+**Programmieren lernen in Zeiten von KI**
 
-- (A) Anwendungswissen: konkrete Umsetzung und Übung (prüfungsrelevant)
-- (S) Strukturwissen: Konzepte und Zusammenhänge („Warum ist das so? Geht das auch anders?“)
-- (V) Vorgehenswissen: Methoden und Vorgehen, die sich auf neue Aufgaben übertragen lassen
+Wie kann man heute noch zeitgemäß Programmieren lernen? Welche Kompetenzen sind beim Programmieren heute wichtiger als je zuvor?
 
-Mehr Informationen zum Kurskonzept finden Sie hier: [Programmieren lernen in Zeiten von LLMs](chapters/01-course-overview/40-learningLLM).
+Unser Ziel ist, dass Sie Kompetenzen aufbauen, die ein LLM nicht einfach für Sie übernehmen kann: Probleme verstehen, Anforderungen klären, Lösungen prüfen und Verantwortung übernehmen.
+
+Viele Kurse setzen vor allem auf „viel üben, viele Beispiele“. Wir nutzen Beispiele auch – aber bewusst anders: Im Mittelpunkt stehen konzeptionelles Verständnis und methodisches Vorgehen. In der Vorlesung arbeiten wir daher bewusst mit Live-Code-Beispielen auf dieser Website, die uns Konzepte näher bringen werden. Das macht Sie zukunftssicher in einer Arbeitswelt, in der reines „Code tippen“ zunehmend automatisiert wird.
+
+Mehr Informationen zum Kurskonzept finden Sie hier: [Programmieren lernen in Zeiten von LLMs](chapters/01-course-overview/40-learningLLM) und [Wissensarten (A/S/V)](chapters/01-course-overview/42-asvconcept).
 
 *Hinweis: Abbildungen wurden teilweise mithilfe generativer KI erstellt und dienen der Illustration.*

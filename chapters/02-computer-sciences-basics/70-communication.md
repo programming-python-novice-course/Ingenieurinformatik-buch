@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-visualization)=
-# Kommunikation von Software (A)
+# Kommunikation von Software 
 
 > Wie kann ich anderen Personen verständlich machen, was mein Programm macht? Wie kann ich anderen Menschen beschreiben, was eine Software tut?
 
