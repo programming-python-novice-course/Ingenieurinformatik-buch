@@ -11,15 +11,19 @@ parts:
         - file: chapters/01-course-overview/11-livecode
         - file: chapters/01-course-overview/12-beispiele
         - file: chapters/01-course-overview/13-fallback
-      - file: chapters/01-course-overview/20-pruefung
-      - file: chapters/01-course-overview/30-inhalte
-      - file: chapters/01-course-overview/40-orientierung
+      - file: chapters/01-course-overview/20-kursrahmen
         sections:
-        - file: chapters/01-course-overview/41-softwaretypen
-        - file: chapters/01-course-overview/42-prozesssicht
-        - file: chapters/01-course-overview/43-success-criteria
-        - file: chapters/01-course-overview/44-sprachen
-      - file: chapters/01-course-overview/45-ki
+        - file: chapters/01-course-overview/21-pruefung
+        - file: chapters/01-course-overview/22-inhalte
+      - file: chapters/01-course-overview/30-orientierung
+        sections:
+        - file: chapters/01-course-overview/31-softwaretypen
+        - file: chapters/01-course-overview/32-prozesssicht
+        - file: chapters/01-course-overview/33-success-criteria
+      - file: chapters/01-course-overview/40-learningLLM
+        - file: chapters/01-course-overview/41-sprachen
+        - file: chapters/01-course-overview/42-asvconcept
+        - file: chapters/01-course-overview/43-ki
       - file: chapters/01-course-overview/50-roadmap
         sections:
         - file: chapters/01-course-overview/51-gliederung

@@ -1,4 +1,4 @@
-# Programmiersprachen
+# Lernen einer Programmiersprache
 
 > Was bedeutet es, eine Programmiersprache zu lernen? 
 

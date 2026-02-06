@@ -21,7 +21,7 @@ only_build_toc_files: true
 execute:
   execute_notebooks: auto  # off
   allow_errors: true       # due to CI setup in Gitlab
-  timeout: 60
+  timeout: 25
 
 # --------------------------------------------------
 # Literatur
@@ -57,6 +57,9 @@ sphinx:
       - deflist
 
     myst_heading_anchors: 3
+
+    # Inhaltsverzeichnis-Tiefe (eine Ebene mehr als Standard)
+    toc_maxdepth: 3
 
     html_static_path: ["_static"]
     html_js_files:
@@ -99,6 +102,13 @@ sphinx:
           pdfborder={0 0 0},
           unicode=true
         }
+
+        % --------------------------------------------------
+        % PDF: Inhaltsverzeichnis-Tiefe (eine Ebene mehr)
+        % tocdepth: 0=chapter, 1=section, 2=subsection, 3=subsubsection
+        % --------------------------------------------------
+        \setcounter{tocdepth}{2}
+        \setcounter{secnumdepth}{2}
 
         % --------------------------------------------------
         % Inhaltsverzeichnis: Einträge nicht über Seiten trennen
