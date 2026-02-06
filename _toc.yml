@@ -29,16 +29,13 @@ parts:
         sections:
         - file: chapters/01-course-overview/51-gliederung
         - file: chapters/01-course-overview/52-vorlesung-praktikum
-      
   - caption: Basiswissen 
     numbered: True
     chapters:
-    - file: chapters/02-computer-sciences-basics/00-intro
+    - file: chapters/02-computer-sciences-basics/10-intro
       sections:
-      - file: chapters/02-computer-sciences-basics/10-intro
-        sections:
-        - file: chapters/02-computer-sciences-basics/21-neumann-architektur
-        - file: chapters/02-computer-sciences-basics/22-betriebssystem
+      - file: chapters/02-computer-sciences-basics/21-neumann-architektur
+      - file: chapters/02-computer-sciences-basics/22-betriebssystem
       - file: chapters/02-computer-sciences-basics/30-codierung
         sections:
         - file: chapters/02-computer-sciences-basics/31-barcode

@@ -8,7 +8,6 @@ name: infrastructer-metaphor
 ---
 ```
 
-
 **Informatik** beschäftigt sich mit Algorithmen, Rechenmaschinen und damit, wie Information dargestellt, gespeichert, verarbeitet und übertragen wird. In dieser Vorlesung schauen wir vor allem aus der Ingenieurperspektive darauf: Wir wollen verstehen, wie Informationsverarbeitungssysteme aufgebaut sind und welche Prinzipien dahinterstehen.
 
 ```{figure} ../../figs/02-computer-sciences-basics/unterscheidung.png

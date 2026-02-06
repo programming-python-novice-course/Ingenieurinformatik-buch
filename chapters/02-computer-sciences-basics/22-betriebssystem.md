@@ -1,4 +1,4 @@
-# Betriebssystem: ja/nein? (S)
+# (Embedded?) Software (S)
 
 Sie können später als Ingenieurinnen und Ingenieure sowohl mit Embedded-Software (z. B. Mikrocontroller in Maschinen, Sensorik, Aktorik) als auch mit „klassischer“ Software auf PCs/Servern in Berührung kommen. Deshalb ist es wichtig, dass Sie die Unterschiede zwischen zwei Welten kennen:
 
