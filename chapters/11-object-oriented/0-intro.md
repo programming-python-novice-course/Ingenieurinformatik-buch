@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-oop)=
-# Objektorientierte Programmierung
+# Objektorientierte Programmierung (S)
 
 ```{admonition} Lernziele
 ::class: learngoals

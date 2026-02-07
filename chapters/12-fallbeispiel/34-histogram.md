@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 
-# Histogram
+# Histogram (A)
 
 Nachdem Julia nun mithilfe ihres neuen Parsers die Daten auslesen kann, macht sie sich an die Visualisierung der Histogramme.
 

@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Statistiken
+# Statistiken (A)
 
 Zum Schluss macht sich Julia an den letzten Baustein des Fallbeispiels: **die statistische Auswertung** der NO₂-Messwerte.
 
