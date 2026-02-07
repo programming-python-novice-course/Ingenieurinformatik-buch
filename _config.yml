@@ -51,7 +51,7 @@ sphinx:
     release: "1.9.4"
     
     html_theme_options:
-      pygments_dark_style = monokai
+      pygments_dark_style: monokai
 
     myst_enable_extensions:
       - dollarmath
