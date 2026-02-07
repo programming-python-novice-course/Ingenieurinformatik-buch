@@ -156,3 +156,23 @@
 :root:is([data-theme="dark"], [data-mode="dark"]) .thebelab-cell .jp-Error {
   color: #ff6b6b !important;
 }
+
+/* --------------------------------------------------
+   Brute-force fallback: stdout still dark?
+   (The `.jp-*` widgets are effectively unique to Thebe/Jupyter output on the page,
+   so it is safe to target them directly.)
+   -------------------------------------------------- */
+
+:root:is([data-theme="dark"], [data-mode="dark"]) body .jp-OutputArea-output,
+:root:is([data-theme="dark"], [data-mode="dark"]) body .jp-RenderedText.jp-OutputArea-output {
+  color: #f8f8f2 !important;
+}
+
+:root:is([data-theme="dark"], [data-mode="dark"]) body .jp-OutputArea-output pre,
+:root:is([data-theme="dark"], [data-mode="dark"]) body .jp-RenderedText.jp-OutputArea-output pre,
+:root:is([data-theme="dark"], [data-mode="dark"]) body .jp-RenderedText.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stdout"] > pre,
+:root:is([data-theme="dark"], [data-mode="dark"]) body .jp-RenderedText.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"] > pre {
+  color: #f8f8f2 !important;
+  background: #272822 !important;
+  opacity: 1 !important;
+}
