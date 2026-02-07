@@ -59,11 +59,15 @@ sphinx:
     myst_heading_anchors: 3
 
     # Inhaltsverzeichnis-Tiefe (eine Ebene mehr als Standard)
-    toc_maxdepth: 3
+    
+    
+    
+    
 
     html_static_path: ["_static"]
     html_js_files:
       - js/hub-link-rewrite.js
+      - js/theme-overwrite.js
 
     html_show_copyright: false
     language: de

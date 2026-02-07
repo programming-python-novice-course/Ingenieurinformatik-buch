@@ -1,0 +1,55 @@
+/* --------------------------------------------------
+   Thebe / CodeMirror – Monokai-inspiriert (Dark Mode)
+   -------------------------------------------------- */
+
+   html[data-theme="dark"] .thebe .CodeMirror {
+    background: #272822 !important;   /* Monokai background */
+    color: #f8f8f2 !important;        /* default text */
+    border-radius: 4px;
+    font-family: "Fira Code", "JetBrains Mono", monospace;
+    font-size: 0.9em;
+  }
+  
+  /* Fallback, falls Theme-Klasse gesetzt ist */
+  html[data-theme="dark"] .thebe .cm-s-default {
+    background: #272822 !important;
+    color: #f8f8f2 !important;
+  }
+  
+  /* --- Tokenfarben (Monokai-like) --- */
+  
+  html[data-theme="dark"] .thebe .cm-keyword   { color: #f92672 !important; } /* pink */
+  html[data-theme="dark"] .thebe .cm-operator  { color: #f92672 !important; }
+  
+  html[data-theme="dark"] .thebe .cm-string    { color: #e6db74 !important; } /* yellow */
+  html[data-theme="dark"] .thebe .cm-number    { color: #ae81ff !important; } /* purple */
+  
+  html[data-theme="dark"] .thebe .cm-comment   { color: #75715e !important; font-style: italic; }
+  
+  html[data-theme="dark"] .thebe .cm-def       { color: #a6e22e !important; } /* green */
+  html[data-theme="dark"] .thebe .cm-variable  { color: #f8f8f2 !important; }
+  
+  html[data-theme="dark"] .thebe .cm-builtin   { color: #66d9ef !important; } /* cyan */
+  html[data-theme="dark"] .thebe .cm-atom      { color: #ae81ff !important; }
+  
+  html[data-theme="dark"] .thebe .cm-meta      { color: #fd971f !important; }
+  html[data-theme="dark"] .thebe .cm-tag       { color: #f92672 !important; }
+  
+  /* Cursor & selection */
+  html[data-theme="dark"] .thebe .CodeMirror-cursor {
+    border-left: 2px solid #f8f8f2 !important;
+  }
+  
+  html[data-theme="dark"] .thebe .CodeMirror-selected {
+    background: rgba(73, 72, 62, 0.9) !important;
+  }
+  
+  /* Line numbers */
+  html[data-theme="dark"] .thebe .CodeMirror-gutters {
+    background: #272822 !important;
+    border-right: 1px solid #3e3d32;
+  }
+  
+  html[data-theme="dark"] .thebe .CodeMirror-linenumber {
+    color: #75715e !important;
+  }
