@@ -1,5 +1,5 @@
 (sec-python-ecosystem)=
-# Das Python Ökosystem
+# Das Python Ökosystem (S)
 
 Als ``Python``-Ökosystem bezeichnen wir den Zusammenschluss aus dem was die Softwareentwicklung mit ``Python`` ermöglicht.
 Dazu zählen wir unter anderem

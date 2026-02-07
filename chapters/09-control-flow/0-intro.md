@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-control-statements)=
-# Kontrollstrukturen
+# Kontrollstrukturen (S)
 
 ```{admonition} Lernziele
 ::class: learngoals

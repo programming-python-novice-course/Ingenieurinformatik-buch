@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-purity)=
-# Seiteneffekte 
+# Seiteneffekte (S)
 
 Im vorherigen Kapitel haben wir gelernt, wie Namensräume funktionieren und wie ``Python`` entscheidet, welche Variable verwendet wird, wenn derselbe Name in verschiedenen Namensräumen existiert. 
 

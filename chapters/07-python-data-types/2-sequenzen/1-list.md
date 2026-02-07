@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-list)=
-# Listen - list
+# Listen - list (A)
 
 Listen (engl. [List](https://docs.python.org/3/library/stdtypes.html#list)) ``list`` sind eine der wichtigsten *Datentypen* und zugleich einfachsten [Datenstrukturen](sec-data-structures) in ``Python``.
 Sobald Sie irgendetwas sinnvolles programmieren möchten, kommen Sie um die Liste kaum herum.

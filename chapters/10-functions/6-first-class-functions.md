@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-first-class-functions)=
-# First-Class-Funktion
+# First-Class-Funktion (S)
 
 Wie in ``JavaScript``, so sind Funktionen in ``Python`` ebenfalls First-Class-Funktionen (Funktionen erster Klasse).
 Das bedeutet im Wesentlichen, dass es keinen Unterschied mit dem Umgang zwischen Funktionen und Daten gibt.
