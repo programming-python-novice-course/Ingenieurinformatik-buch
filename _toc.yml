@@ -149,6 +149,7 @@ parts:
   - caption: Appendix
     chapters:
     - file: chapters/misc/contributors
+    - file: chapters/misc/danksagung
     - file: chapters/misc/downloads
     - file: chapters/misc/bibliography
     - file: chapters/misc/Expertenwissen/0-intro
