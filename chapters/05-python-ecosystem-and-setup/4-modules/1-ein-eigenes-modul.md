@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Ein eigenes Modul (A)
+# Ein eigenes Modul (V)
 
 Lassen Sie uns eine Datei ``squaresum.py`` im aktuellen Verzeichnis erstellen und folgenden Code einfügen:
 
@@ -28,7 +28,7 @@ Lassen Sie uns den Kommandozeileninterpreter im gleichen Verzeichnis ausführen:
 python
 ```
 
-Wie können wir nun unsere Funktion, welche in der Datei ``square_sum.py`` steht, nutzen?
+Wie können wir nun unsere Funktion, welche in der Datei ``squaresum.py`` steht, nutzen?
 Wir importieren ``squaresum``, denn der Name unseres eben geschriebenen Moduls ist standardmäßig gleich seinem Dateinamen ohne der Endung ``.py``.
 
 ```python

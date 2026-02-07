@@ -10,21 +10,16 @@ kernelspec:
 ---
 
 (sec-python-installation)=
-# Installation (Kurs-Setup) (V)
+# Installation (Kurs-Setup)
 
-> Arbeiten mit Python heißt: Arbeiten in einer Python-Umgebung
+In diesem Abschnitt richten Sie die Arbeitsumgebung für den Kurs ein. Das machen wir nicht „fürs Installieren an sich“, sondern damit Sie im Kurs (und später in Projekten) zuverlässig arbeiten können:
 
-Eine zentrale Idee in diesem Kurs ist: Python-Code läuft nicht „einfach so“, sondern immer innerhalb einer Python-Umgebung.
+- Sie wissen, welche Python-Version Sie gerade verwenden.
+- Sie wissen, welche zusätzlichen Pakete installiert sind.
+- Sie können Ergebnisse reproduzieren (bei Ihnen, im Praktikum, auf anderen Rechnern).
+- Sie vermeiden typische Fehler wie „bei mir läuft’s, aber bei anderen nicht“ oder „Paket fehlt plötzlich“.
 
-In einer solchen Python-Umgebung ist festgelegt:
-- welche Python-Version verwendet wird und
-- welche Pakete (z. B. `numpy`, `pandas`, `matplotlib`) darin installiert sind.
+Im Kurs gibt es dafür zwei typische Situationen:
 
-Wenn Sie Python-Code ausführen, arbeitet Ihr Programm immer genau in einer solchen Umgebung – auch dann, wenn Ihnen das bisher nicht bewusst war.
-
-Dieses Kapitel ist in Unterkapitel aufgeteilt:
-
-- [Vorlesung: interaktive Website und JupyterHub (A)](1-installation/1-vorlesung-jupyterhub.md)
-- [Praktikum: lokale Entwicklungsumgebung (V)](1-installation/2-praktikum-lokal.md)
-- [Python-Umgebungen: Distribution, Umgebungen, Pakete (S)](1-installation/3-umgebungen-distribution-pakete.md)
-- [Praktikum-Setup: Schnellstart (V)](1-installation/4-schnellstart.md)
+- Vorlesung (interaktive Website/JupyterHub): Die Umgebung (Live-Code auf der Webiste ODER JupyterHub) ist bereits eingerichtet; Sie können direkt Code ausführen.
+- Praktikum (lokal): Sie legen einmal eine Kursumgebung an und arbeiten dann in einem Projektordner.

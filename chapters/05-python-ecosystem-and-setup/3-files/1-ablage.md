@@ -1,4 +1,4 @@
-# Wo und wie legen wir Python-Dateien ab? (V)
+# Python-Projekte (S)
 
 Python-Projekte (klein wie groß) trennen typischerweise drei Dinge:
 

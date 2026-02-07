@@ -1,5 +1,7 @@
 # Script / Datei (V)
 
+Im Praktikum ist das der Standard: Sie schreiben Code in `.py`-Dateien und führen diese aus (im Terminal oder über Ihre IDE).
+
 Die wohl gängigste Technik, Python-Anwendungen zu entwickeln, ist es, Code in **Dateien** (z. B. `mein_script.py`) abzulegen und diese dann vom Python-Interpreter ausführen zu lassen.
 
 Wir öffnen unseren Texteditor unserer Wahl und tippen folgenden Code ein:
@@ -29,4 +31,4 @@ python square_sum.py 100
 ```
 und erhalten als Ausgabe die Summe aller Quadratzahlen von 1 bis einschließlich 100. 
 
-Wie man Skripte sinnvoll strukturiert (Entrypoint/Workflow/Bausteine, Guard, Import) besprechen wir im nächsten Abschnitt: [Python-Skripte](sec-python-scripts).
+Wie man Skripte sinnvoll strukturiert (Entrypoint/Workflow/Bausteine, Guard, Import) besprechen wir im nächsten Abschnitt: {ref}`Python-Skripte <sec-python-scripts>`.

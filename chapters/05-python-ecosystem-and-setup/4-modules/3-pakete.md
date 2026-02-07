@@ -32,6 +32,6 @@ oder
 from roboworld import world
 ```
 
-Wie wir Module und Pakete installieren haben wir in [Python installieren](sec-python-installation) angerissen und das soll an dieser Stelle auch ersteinmal ausreichen.
+Wie wir Pakete installieren und verwalten, haben wir im Setup-Teil behandelt: {ref}`Installation (Kurs-Setup) <sec-python-installation>`.
 Soweit zu den Grundlagen in sehr wenigen Worten.
 Weiterführende Informationen können Sie der exzellenten [Dokumentation](https://docs.python.org/3/tutorial/modules.html#tut-modules) entnehmen.

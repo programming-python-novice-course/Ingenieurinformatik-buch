@@ -11,6 +11,19 @@ kernelspec:
 
 # Python-Umgebungen: Distribution, Umgebungen, Pakete (S)
 
+In der Praxis müssen Sie sicherstellen, dass Ihr Programm:
+- mit einer bestimmten Python-Version läuft,
+- auch dann noch funktioniert, wenn sich Python weiterentwickelt,
+- und auch dann stabil bleibt, wenn sich einzelne Pakete ändern.
+
+Spätestens dann müssen Sie sich mit Fragen beschäftigen wie:
+
+> Wie bekomme ich mein Programm mit einer bestimmten Python-Version und allen benötigten Paketen zum Laufen?  
+> Wie kann ich mehrere Python-Versionen auf einem Rechner verwalten?  
+> Wie stelle ich sicher, dass die installierten Pakete zur Python-Version passen?
+
+Dieses Kapitel erklärt die Begriffe hinter dem Kurs-Setup, damit Sie typische Probleme (falsche Python-Version, Paket fehlt, falsche Umgebung aktiv) schnell einordnen können.
+
 Eine Python-Umgebung entsteht nicht von selbst – sie muss irgendwie erzeugt werden.  
 Grundsätzlich gibt es dafür zwei Wege:
 
@@ -92,8 +105,8 @@ conda activate ./envs/programmierung1
 In Ihrer Entwicklungsumgebung geht das üblicherweise über das Hinterlegen eines entsprechenden Pfads.
 
 
-````{admonition} Wichtig (Praktikum): Umgebung benutzen
-:class: attention
+````{admonition} Hinweis (Praktikum): Umgebung benutzen
+:class: note
 Prüfen Sie im Praktikum immer zuerst, ob die richtige Umgebung aktiv ist. So vermeiden Sie typische Probleme wie „Paket fehlt“ oder „falsche Python-Version“.
 ````
 

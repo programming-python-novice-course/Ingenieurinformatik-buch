@@ -1,4 +1,6 @@
-# REPL (A)
+# REPL (V)
+
+Eine REPL ist ideal, um schnell etwas auszuprobieren (ein Ausdruck, ein Import, ein kurzer Test). Im Praktikum ist das vor allem für Mini-Experimente nützlich – für „richtige“ Programme arbeiten wir dann meist mit Skript-Dateien.
 
 ## Python
 

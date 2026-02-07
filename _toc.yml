@@ -82,8 +82,7 @@ parts:
       - file: chapters/05-python-ecosystem-and-setup/1-installation
         sections:
         - file: chapters/05-python-ecosystem-and-setup/1-installation/1-vorlesung-jupyterhub
-        - file: chapters/05-python-ecosystem-and-setup/1-installation/2-praktikum-lokal
-        - file: chapters/05-python-ecosystem-and-setup/1-installation/3-umgebungen-distribution-pakete
+        - file: chapters/05-python-ecosystem-and-setup/1-installation/2-umgebungen-distribution-pakete
         - file: chapters/05-python-ecosystem-and-setup/1-installation/4-schnellstart
       - file: chapters/05-python-ecosystem-and-setup/2-run
         sections:
@@ -94,7 +93,6 @@ parts:
         sections:
         - file: chapters/05-python-ecosystem-and-setup/3-files/1-ablage
         - file: chapters/05-python-ecosystem-and-setup/3-files/2-eine-datei
-        - file: chapters/05-python-ecosystem-and-setup/3-files/3-empfohlene-datei-struktur
         - file: chapters/05-python-ecosystem-and-setup/3-files/4-merksatz
       - file: chapters/05-python-ecosystem-and-setup/4-modules
         sections:

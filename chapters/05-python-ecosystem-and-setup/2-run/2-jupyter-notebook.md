@@ -1,4 +1,4 @@
-# Jupyter Notebook (A)
+# Jupyter Notebook (V)
 
 Wenn Sie mit diesem interaktiven Lehrbuch in der Web-Version arbeiten, dann nutzen Sie bereits Jupyter Notebooks:
 Wenn Sie auf „Live Code“ oder „Jupyter“ klicken, wird im Hintergrund ein Notebook gestartet (nicht auf Ihrem Rechner, sondern auf einem Server). Sie sehen die Ergebnisse über Ihren Browser.
@@ -10,6 +10,6 @@ Sie starten ein Notebook lokal in der Konsole mit:
 ```sh
 jupyter lab [path/to/notebook/file]
 ```
-Im Rahmen dieser Vorlesung werden Sie Jupyter Notebooks vor allem nutzen, um Code-Beispiele aus der Vorlesung auf der interaktiven Website selbst auszuprobieren.
+Voraussetzung hierfür ist, dass Sie jupyter lab installiert haben.
 
-Falls Sie dennoch mehr über Jupyter Notebooks erfahren möchten, finden Sie dazu Informationen im Expertenwissen: [Jupyter Notebooks](sec-jupyter-notebooks).
+Falls Sie dennoch mehr über Jupyter Notebooks erfahren möchten, finden Sie dazu Informationen im Expertenwissen: {ref}`Jupyter Notebooks <sec-jupyter-notebooks>`.

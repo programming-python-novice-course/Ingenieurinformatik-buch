@@ -1,4 +1,4 @@
-# Python ausführen (V)
+# Python ausführen
 
 Es gibt verschiedene Möglichkeiten, Python-Code auszuführen. Die drei wichtigsten sind:
 
@@ -11,6 +11,6 @@ Notebooks verwenden wir im Kurs hauptsächlich zum Ausprobieren von Beispielen a
 
 Dieses Kapitel ist in Unterkapitel aufgeteilt:
 
-- [REPL (A)](2-run/1-repl.md)
-- [Jupyter Notebook (A)](2-run/2-jupyter-notebook.md)
-- [Script / Datei (V)](2-run/3-script-datei.md)
+- [REPL](2-run/1-repl.md)
+- [Jupyter Notebook](2-run/2-jupyter-notebook.md)
+- [Script / Datei](2-run/3-script-datei.md)
