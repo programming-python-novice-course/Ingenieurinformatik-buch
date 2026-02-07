@@ -9,6 +9,7 @@ kernelspec:
   name: python3
 ---
 
+(sec-struktogramme)=
 # Nassi-Shneiderman-Diagramme (A)
 
 Struktogramme, auch Nassi-Shneiderman-Diagramme genannt, sind eine visuelle Darstellungsform für strukturierte Algorithmen. Sie ermöglichen es, mit dem Auge schnell zu erkennen, wie die Kontrollstruktur und der Ablauf in einem Programm aussehen.

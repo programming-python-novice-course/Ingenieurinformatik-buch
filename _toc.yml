@@ -158,10 +158,7 @@ parts:
       - file: chapters/09-control-flow/1-cases
         sections:
         - file: chapters/09-control-flow/1-cases/1-if
-        - file: chapters/09-control-flow/1-cases/2-if-else
-        - file: chapters/09-control-flow/1-cases/3-if-elif
         - file: chapters/09-control-flow/1-cases/4-if-elif-else
-        - file: chapters/09-control-flow/1-cases/5-if-if-else
         - file: chapters/09-control-flow/1-cases/6-verschachtelung
         - file: chapters/09-control-flow/1-cases/7-schnellschreibweise
         - file: chapters/09-control-flow/1-cases/8-beispiel-quadratische-gleichungen

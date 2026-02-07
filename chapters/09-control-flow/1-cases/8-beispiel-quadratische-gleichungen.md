@@ -1,118 +1,59 @@
-# Beispiel (quadratische Gleichungen) (V)
+# Beispiel: Ticketpreis (Bahn) (V)
 
-Sei $f(x) = ax^2 + bx + c$ mit konstanten Zahlen $a, b, c \in \mathbb{R}$. Wir wissen, dass $f(x) = 0$ für
+Wir modellieren ein (vereinfachtes) Ticket-System: Aus *Alter* und einem *Status* bestimmen wir eine Ticket-Kategorie.
 
-$$x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+- **Eingaben**: `alter` (in Jahren), `status` (z. B. `"schueler"`, `"student"`, `"keiner"`)
+- **Ausgabe**: Ticket-Kategorie als Text
 
-sofern $b^2 - 4ac >= 0$.
-Lassen Sie uns eine Funktion ``solve_quadratic(a, b, c)`` entwerfen, welche uns alle $x_{1,2}$ berechnet. 
-Es gibt eine, zwei oder keine Lösung.
+**Regeln (Beispiel)**
 
-Lassen Sie uns als erstes eine Funktion entwerfen, die testet ob eine Fließkommazahl annähernd gleich null ist.
-Beachten Sie: [Fließkommazahlen](sec-float) sind lediglich eine Annäherung des echten Wertes und damit ist der exakte Vergleich ``==`` ungeeignet.
-Stattdessen ist unsere Fließkommazahl ``x`` gleich null, falls sie annähernd gleich null ist.
+- `alter < 6`: `"gratis"`
+- `6 <= alter <= 17`: Schüler:innen `"stark ermäßigt"`, sonst `"ermäßigt"`
+- `18 <= alter <= 64`: Studierende `"ermäßigt"`, sonst `"normal"`
+- `alter >= 65`: `"senior"`
 
 ```{code-cell} python3
-def is_zero(x):
-    epsilon = 1.0e-12
-    return -epsilon < x < 1.0e-12
+alter = 20
+status = "student"  # z.B. "schueler" | "student" | "keiner"
+
+if alter < 6:
+    ticket = "gratis"
+
+elif alter <= 17:
+    if status == "schueler":
+        ticket = "stark ermäßigt"
+    else:
+        ticket = "ermäßigt"
+
+elif alter <= 64:
+    if status == "student":
+        ticket = "ermäßigt"
+    else:
+        ticket = "normal"
+
+else:
+    ticket = "senior"
+
+ticket
 ```
 
-Lassen Sie uns nun die quadratische Gleichung lösen.
-Dazu müssen wir lediglich die Formel für $x_{1,2}$ implementieren:
+```{admonition} Was passiert, wenn ein Senior „student“ angibt?
+:class: question
 
-```{code-cell} python3
-def solve_quadratic(a, b, c):    
-    disc = b**2 - (4*a*c)
-            
-    # disc < 0 => no solution
-    if disc < 0:
-        return ()
-    
-    # disc == 0? => one solution
-    if is_zero(disc):
-        return -b / (2*a),
-    
-    # default case => 2 solutions
-    return (-b + disc**0.5) / (2*a), (-b - disc**0.5) / (2*a)
+In diesem Beispiel **gewinnt die Altersregel**: Sobald `alter >= 65` ist, landen wir im `else`-Zweig und bekommen immer `"senior"`, egal welcher `status` angegeben wurde.
 ```
 
-Der Code scheint zur richtigen Lösung zu führen:
+```{exercise} Ticketpreis als `match`/`case`
+:label: exercise-ticketpreis-match-case
 
-```{code-cell} python3
-print(f'solution for x^2 -4x + 1 = 0: {solve_quadratic(1, -4, 1)}')
-print(f'solution for x^2 + x = 0: {solve_quadratic(1, 1, 0)}')
-print(f'solution for x^2 = 0: {solve_quadratic(1, 0, 0)}')
-```
+Schreiben Sie die gleiche Logik als `match`/`case` (Pattern Matching).
 
-Was passiert allerdings wenn ``a==0`` ist?
+Testen Sie Ihr Programm mindestens mit diesen Fällen:
 
-```{code-cell} python3
----
-tags: [raises-exception]
----
-print(f'solution for -4x + 1 = 0: {solve_quadratic(0, -4, 1)}')
-```
-
-In diesem Fall teilen wir durch null und erhalten (zum Glück) einen Fehler.
-Sofern ``a==0`` gilt müssen wir die lineare Gleichung 
-
-$$bx + c = 0 \Rightarrow x = c/b$$
-
-lösen.
-
-Hier wartet ein weiterer Sonderfall für ``b==0``!
-In diesem Fall gibt es kein Ergebnis sofern ``c != 0``, andernfalls gibt es unendlich viele Lösungen.
-Nutzen wir die Fallunterscheidung um all diese Sonderfälle abzudecken:
-
-```{code-cell} python3
-def solve_quadratic(a, b, c):
-    """"
-    solves the quadratic equation ax^2 + bx + c = 0.
-    a == b == c == 0 is not allowed!
-    """
-    
-    disc = b**2 - (4*a*c)
-    epsilon = 1.0e-12
-    
-    # a == 0? => line => one or none solution
-    if is_zero(a):
-        # b == 0? 
-        if is_zero(b):
-            # c == 0 => infinitely many solutions
-            if is_zero(c):
-                raise AttributeError('Invalid arguments a == b == c == 0! This quadratic equation has infinitely many solutions.')
-            else:
-                return ()
-        else:
-            return -c/b,
-        
-    # disc < 0 => no solution
-    if disc < 0:
-        return ()
-    
-    # disc == 0? => one solution
-    if is_zero(disc):
-        return -b / (2*a),
-    
-    # default case => 2 solutions
-    return (-b + disc**0.5) / (2*a), (-b - disc**0.5) / (2*a)
-```
-
-```{code-cell} python3
-print(f'solution for x^2 -4x + 1 = 0: {solve_quadratic(1, -4, 1)}')
-print(f'solution for x^2 + x = 0: {solve_quadratic(1, 1, 0)}')
-print(f'solution for x^2 = 0: {solve_quadratic(1, 0, 0)}')
-print(f'solution for -4x + 1 = 0: {solve_quadratic(0, -4, 1)}')
-print(f'solution for 1 = 0: {solve_quadratic(0, 0, 1)}')
-```
-
-Gilt ``a == b == c == 0`` wird unsere Funktion zu $f(x) = 0$ und demnach gilt für jedes $x_0 \in \mathbb{R}$ dass es eine Nullstelle ist.
-Das wären unendlich viele Zahlen, deshalb werfen wir (``raise``) in diesem Fall einen Fehler.
-
-```{code-cell} python3
----
-tags: [raises-exception]
----
-print(f'solution for 0 = 0: {solve_quadratic(0, 0, 0)}')
+- `alter = 5`, `status = "student"`  → `"gratis"`
+- `alter = 16`, `status = "schueler"` → `"stark ermäßigt"`
+- `alter = 16`, `status = "keiner"` → `"ermäßigt"`
+- `alter = 30`, `status = "student"` → `"ermäßigt"`
+- `alter = 30`, `status = "keiner"` → `"normal"`
+- `alter = 70`, `status = "student"` → `"senior"`
 ```
