@@ -69,6 +69,7 @@ sphinx:
       - theme-overwrite.css
     html_js_files:
       - js/hub-link-rewrite.js
+      - js/thebe-output-fix.js
 
     html_show_copyright: false
     language: de
