@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-loops)=
-# Schleifen (A)
+# Schleifen 
 
 
 Erinnern Sie sich noch an unser Roboterbeispiel aus dem Kapitel {ref}`sec-python-beispiele`?

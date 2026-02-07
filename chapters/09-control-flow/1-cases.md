@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-cases)=
-# Fallunterscheidungen (A)
+# Fallunterscheidungen 
 
 Wir wollen ein Programm schreiben, das uns sagt, welcher Ticketpreis für eine Bahnfahrt gilt.  
 Dazu müssen wir abhängig von Eingabedaten (z. B. Alter und ggf. Status) unterschiedliche Fälle unterscheiden.

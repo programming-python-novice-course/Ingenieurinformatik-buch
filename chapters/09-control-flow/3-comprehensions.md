@@ -10,15 +10,47 @@ kernelspec:
 ---
 
 (sec-comprehension)=
-# Comprehensions (A)
+# Comprehensions 
 
-Eine Comprehension ist eine Art von ``Python``-[Syntax](def-syntax), die es uns durch eine sehr kompakte Schreibweise erlaubt aus einer Datenstruktur eine andere Datenstruktur zu erstellen.
+Oft möchten wir aus einer bestehenden Datenstruktur eine neue erzeugen:
+Wir transformieren Werte, filtern Elemente heraus oder bauen eine neue Struktur auf.
+Mit *Comprehensions* bietet ``Python`` dafür eine sehr kompakte [Syntax](def-syntax).
 
-## List-Comprehensions
-Siehe Unterkapitel: [List-Comprehensions (A)](3-comprehensions/1-list-comprehensions.md)
+**Aus Daten werden neue Daten **
 
-## Dictionary-Comprehensions
-Siehe Unterkapitel: [Dictionary-Comprehensions (A)](3-comprehensions/2-dict-comprehensions.md)
+Eine typische Schleifen-Form, die Sie vielleicht schon geschrieben haben, sieht so aus:
 
-## Set-Comprehensions
-Siehe Unterkapitel: [Set-Comprehensions (A)](3-comprehensions/3-set-comprehensions.md)
+```{code-cell} python3
+numbers = list(range(5))
+
+result = []
+for x in numbers:
+    result.append(x * x)
+
+result
+```
+Was ist hier passiert? Wir haben eine neue Datenstruktur, eine Liste, erzeugt. Diese haben wir dann schrittweise befüllt.
+
+Mit einer List-Comprehension können wir das als einen Ausdruck schreiben:
+
+```{code-cell} python3
+numbers = list(range(5))
+
+[x * x for x in numbers]
+```
+
+```{admonition} Merke
+Materialisierende Comprehensions eignen sich zur Transformation von Datenstrukturen, wenn Sie in *einer* Zeile klar ausdrücken können: „nimm jedes Element und mache etwas damit (eventuell unter einer bestimmten Voraussetzung)“.
+Wenn mehrere Schritte, Nebenwirkungen oder Debug-Ausgaben nötig sind, ist eine normale Schleife oft besser lesbar!
+```
+
+```{admonition} Expertentipp: Generator-Expressions (Werte erst bei Bedarf)
+:class: dropdown
+
+Eine Generator-Expression (z. B. ``(x*x for x in numbers)``) erzeugt **keine** neue Datenstruktur,
+sondern einen *Datenstrom* von Werten, der erst beim Iterieren berechnet wird.
+Das spart nicht nur Speicher, sondern kann auch **Arbeit vermeiden** (z. B. wenn man früh abbrechen kann)
+und ist praktisch für **Pipelines**: Datenquelle hier, Verarbeitung dort.
+```
+
+
