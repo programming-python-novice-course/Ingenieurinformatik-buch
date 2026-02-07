@@ -23,15 +23,24 @@ Diese Aussage liest man oft – und sie ist „halb richtig“. Python **ermögl
 
 Ein Programmierparadigma kann man sich wie einen Programmierstil vorstellen: eine bestimmte Art, wie man eine Funktionalität in Programmcode niederschreibt und strukturiert. Paradigmen sind dabei weitgehend unabhängig von der konkreten Sprache – eine Sprache kann ein Paradigma stärker „nahelegen“, aber oft mehrere unterstützen.
 
-Drei wichtige Paradigmen sind (vgl. {cite}`martin:2017clean`):
+Die drei Paradigmen sind (vgl. {cite}`martin:2017clean`):
 
 - Strukturierte/Prozedurale Programmierung
 - Funktionale Programmierung
 - Objektorientierte Programmierung
 
-Für dieselbe Aufgabe gibt es daher oft mehrere „richtige“ Implementierungen – abhängig vom Stil, den man wählt. Und selbst innerhalb eines Stils gibt es meist mehrere Lösungen. Diese müssen Sie nicht alle lernen oder beherrschen, aber Sie sollten nicht überrascht sein, wenn Code manchmal ganz anders aussieht.
+```{admonition} Was Sie hier (nicht) können müssen
+:class: learngoals
+**Erwartet:** Sie kennen die Begriffe **strukturiert/prozedural**, **funktional** und **objektorientiert** und können grob einordnen, was damit gemeint ist. 
 
-Beispiel: Quadrat einer Zahl berechnen 
+**Nicht erwartet:** Dass Sie alle drei Stile schon sicher erkennen oder selbst umsetzen können. In der Vorlesung arbeiten wir vor allem strukturiert/prozedural.
+```
+
+Wir schauen uns anhand eines kurzen Python-Beispiels an, wie sich diese Paradigmen unterscheiden. Entscheidend ist nur die Beobachtung: Wir rechnen dreimal \(5 \cdot 5\) aus – aber der Code ist jeweils anders strukturiert (Funktion, Lambda, Klasse). Diese unterschiedlichen Strukturen stehen für verschiedene Programmierstile.
+
+Für dieselbe Aufgabe gibt es daher oft mehrere „richtige“ Implementierungen – abhängig vom Stil, den man wählt.
+
+**Beispiel: Quadrat einer Zahl berechnen**
 
 ```python
 def quadrat_strukturiert(x: int) -> int:
@@ -57,12 +66,12 @@ if __name__ == "__main__":
 :name: important-paradigm-choice
 Wir werden in diesem Modul vor allem strukturiert/prozedural programmieren.
 ```
-Wie Sie im Beispiel gesehen haben, erlaubt uns Python, dass wir sowohl prozedural, funktional als auch objekt-orientiert programmieren. 
+Wie das Beispiel zeigt, erlaubt uns Python, sowohl prozedural, funktional als auch objektorientiert zu programmieren.
 
 ```{admonition} Klarstellung
 :class: note
 
 - **Python ist sehr gut für objektorientierte Programmierung geeignet**, aber nicht darauf beschränkt.
-- **Python ist multiparadigmatisch**: strukturiert, funktional und objektorientiert sind möglich – es unterstützt objektorientierte, funktionale und strukturierte Programmierung. Viele Bibliotheken und Konventionen sind jedoch objektorientiert geprägt.
+- **Python ist multiparadigmatisch** (es unterstützt objektorientierte, funktionale und strukturierte Programmierung). Viele Bibliotheken und Konventionen sind jedoch objektorientiert geprägt.
 - In der Praxis ist weniger wichtig, „welches Paradigma richtig ist“, sondern **welches Modell Ihr Problem am klarsten beschreibt**.
 ```
