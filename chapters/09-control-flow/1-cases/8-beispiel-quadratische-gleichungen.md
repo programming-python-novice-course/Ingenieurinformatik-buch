@@ -1,4 +1,15 @@
-# Beispiel: Ticketpreis (Bahn) (V)
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+# Beispiel: Ticketpreis (V)
 
 Wir modellieren ein (vereinfachtes) Ticket-System: Aus *Alter* und einem *Status* bestimmen wir eine Ticket-Kategorie.
 

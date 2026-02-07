@@ -38,11 +38,11 @@ Die Entscheidungen erfolgen schrittweise:
 - zuerst anhand des Alters,
 - anschließend – in bestimmten Altersbereichen – anhand eines zusätzlichen Status.
 
-```{figure} figs/09-control-flow/decisiontree.png
-:name: fig-ticketpreis-decisiontree
-:alt: Entscheidungsbaum zur Ticketpreis-Bestimmung
-:width: 80%
-
+```{figure} ../../figs/09-control-flow/decisiontree.png
+---
+width: 700px
+name: decision-tree
+---
 Entscheidungsbaum für die Tarifregeln.
 ```
 

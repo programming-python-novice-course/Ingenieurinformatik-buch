@@ -1,7 +1,13 @@
 # Verschachtelung (V)
 
-Selbstverständlich kann ein Codeblock $B_i$ erneut eine oder mehrere Fallunterscheidungen enthalten.
-Und selbstverständlich können wir Fallunterscheidungen in Funktionen einbauen.
+Wir können häufig verschachtelte Fallunterscheidungen auflösen, um Code leserlicher zu machen.
+
+**Beispiel**
+Eine Funktion liefert einen Zahlenwert abhängig von den Werten von x und y. Je nachdem welche Werte x und y annehmen
+- wird x und y addiert/subtrahiert
+- wird x und y multipliziert
+oder
+- eine Meldung gegeben, dass das ergebnis nicht definiert ist
 
 ```{code-cell} python3
 def nested_branching(x, y):
@@ -14,7 +20,7 @@ def nested_branching(x, y):
         if y > 2:
             out = x * y
         else:
-            out = 0
+            out = "nicht definiert"
     return out
 
 print(nested_branching(3, 1))
@@ -23,7 +29,12 @@ print(nested_branching(1, 3))
 print(nested_branching(1, 1))
 ```
 
-Wir können häufig verschachtelte Fallunterscheidungen auflösen. Zum Beispiel können wir die Funktion auch wie folgt definieren:
+**Problem**
+Die Funktion sehr verschachtelt, was manche Programmierer als unleserlich empfinden.
+
+**Was können wir tun?**
+Wir formden den Code um, indem wir die verschachtelten Bedingungen zu zusammengesetzten Bedingungen (mit `and`) zusammenfassen und die Verschachtelung durch eine `if`/`elif`/`else`-Kette ersetzen:
+
 
 ```{code-cell} python3
 def nested_branching(x, y):
@@ -34,7 +45,7 @@ def nested_branching(x, y):
     elif x <= 2 and y > 2:
         out = x * y
     else:
-        out = 0
+        out = "nicht definiert"
     return out
 
 print(nested_branching(3, 1))
@@ -42,7 +53,7 @@ print(nested_branching(3, 2))
 print(nested_branching(1, 3))
 print(nested_branching(1, 1))
 ```
-
+Wir sehen, dass beide Codes zum gleichen Ergebnis führen.
 Es ist eine Frage der **Lesbarkeit**, welche Variante besser ist. 
 In der zweiten Version haben wir zwar eine niedrigere Verschachtellung, allerdings sehen wir nicht sofort, dass die ersten Fälle 
 
