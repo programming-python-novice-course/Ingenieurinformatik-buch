@@ -164,8 +164,8 @@ parts:
         - file: chapters/09-control-flow/1-cases/8-beispiel-quadratische-gleichungen
       - file: chapters/09-control-flow/2-loops
         sections:
-        - file: chapters/09-control-flow/2-loops/1-motivation
-        - file: chapters/09-control-flow/2-loops/2-for-und-while
+        - file: chapters/09-control-flow/2-loops/1-while
+        - file: chapters/09-control-flow/2-loops/2-for
       - file: chapters/09-control-flow/3-comprehensions
         sections:
         - file: chapters/09-control-flow/3-comprehensions/1-list-comprehensions
