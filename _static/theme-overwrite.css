@@ -105,3 +105,54 @@
 :root:is([data-theme="dark"], [data-mode="dark"]) .thebelab-cell .CodeMirror-linenumber {
   color: #75715e !important;
 }
+
+/* --------------------------------------------------
+   Thebe / Jupyter-Ausgabe (stdout, rich output)
+   -------------------------------------------------- */
+
+/* Default text color inside live output area */
+:root:is([data-theme="dark"], [data-mode="dark"]) .cell .jp-OutputArea,
+:root:is([data-theme="dark"], [data-mode="dark"]) .thebelab-cell .jp-OutputArea,
+:root:is([data-theme="dark"], [data-mode="dark"]) .cell .jp-OutputArea-output,
+:root:is([data-theme="dark"], [data-mode="dark"]) .thebelab-cell .jp-OutputArea-output,
+:root:is([data-theme="dark"], [data-mode="dark"]) .cell .jp-RenderedText,
+:root:is([data-theme="dark"], [data-mode="dark"]) .thebelab-cell .jp-RenderedText {
+  color: #f8f8f2 !important;
+}
+
+/* Printed stdout/stderr usually ends up in pre tags */
+:root:is([data-theme="dark"], [data-mode="dark"]) .cell .jp-OutputArea pre,
+:root:is([data-theme="dark"], [data-mode="dark"]) .thebelab-cell .jp-OutputArea pre,
+:root:is([data-theme="dark"], [data-mode="dark"]) .cell .jp-OutputArea-output pre,
+:root:is([data-theme="dark"], [data-mode="dark"]) .thebelab-cell .jp-OutputArea-output pre {
+  color: #f8f8f2 !important;
+  background: #272822 !important;
+  padding: 0.4rem 0.6rem !important;
+  border-radius: 4px !important;
+  font-family: "Fira Code", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace !important;
+}
+
+/* Extra-specific selectors for plain stdout/stderr (matches your pasted HTML) */
+:root:is([data-theme="dark"], [data-mode="dark"])
+  .jp-RenderedText.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stdout"]
+  > pre,
+:root:is([data-theme="dark"], [data-mode="dark"])
+  .jp-RenderedText.jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"]
+  > pre {
+  color: #f8f8f2 !important;
+  background: #272822 !important;
+}
+
+/* Prompts (e.g. "Out[1]:") */
+:root:is([data-theme="dark"], [data-mode="dark"]) .cell .jp-OutputPrompt,
+:root:is([data-theme="dark"], [data-mode="dark"]) .thebelab-cell .jp-OutputPrompt {
+  color: #a6e22e !important;
+}
+
+/* Make errors readable too (if present) */
+:root:is([data-theme="dark"], [data-mode="dark"]) .cell .jp-RenderedText.jp-mod-error,
+:root:is([data-theme="dark"], [data-mode="dark"]) .thebelab-cell .jp-RenderedText.jp-mod-error,
+:root:is([data-theme="dark"], [data-mode="dark"]) .cell .jp-Error,
+:root:is([data-theme="dark"], [data-mode="dark"]) .thebelab-cell .jp-Error {
+  color: #ff6b6b !important;
+}
