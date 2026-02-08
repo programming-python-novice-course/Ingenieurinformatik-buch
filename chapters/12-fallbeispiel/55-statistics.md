@@ -1,14 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 # Statistiken (S)
 
 Zum Schluss macht sich Julia an den letzten Baustein des Fallbeispiels: die statistische Auswertung der NO₂-Messwerte.
