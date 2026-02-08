@@ -111,3 +111,4 @@ update_website:
       - _website_html/_build/html
   pages:
     publish: "_website_html/_build/html"
+    path_prefix: "test" # Results in paths like mr-123
