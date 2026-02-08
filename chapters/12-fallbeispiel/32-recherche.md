@@ -14,7 +14,7 @@ Ich will ein Python-Programm schreiben, das Messdaten auswertet. Ich habe die Au
 | Teilproblem | Input | Transformation (grob) | Output | Abhängigkeiten |
 |---|---|---|---|---|
 | 1 Visualisierung | Messdaten | Daten aufbereiten → geeignete Visualisierung erstellen | Plot(s) zur Verteilung | 3 Daten einlesen |
-| 2 Statistik-Tabelle | Messdaten | Kennzahlen berechnen (z. B. Mean/Median/Quantile) → tabellarisch darstellen | Tabelle mit Kennzahlen | 3 Daten einlesen |
+| 2 Statistik-Tabelle | Messdaten | Kennzahlen berechnen (z. B. Mean/Median/Quantile; insbesondere Quartile (Q1, Median, Q3)) → tabellarisch darstellen | Tabelle mit Kennzahlen | 3 Daten einlesen |
 | 3 Daten einlesen & vorbereiten | Datei mit Messdaten | Datei finden/öffnen → parsen → bereinigen/validieren | Daten im Programm (z. B. Liste/Array/DataFrame) | — |
 
 Kennst du Python-Pakete, die diese Aufgaben bereits abdecken? Gibt es ein Paket, das möglichst viele Teilprobleme gleichzeitig löst?

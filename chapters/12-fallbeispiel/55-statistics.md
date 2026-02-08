@@ -13,16 +13,16 @@ kernelspec:
 
 Zum Schluss macht sich Julia an den letzten Baustein des Fallbeispiels: die statistische Auswertung der NO₂-Messwerte.
 
-Ziel ist eine tabellarische Übersicht *ähnlich zu* `pandas.describe()` – aber ohne Pandas (also ohne externe Bibliotheken): Anzahl, Mittelwert, Standardabweichung, Minimum/Maximum sowie Quartile (25 %, Median, 75 %).
+Ziel ist eine tabellarische Übersicht *ähnlich zu* `pandas.describe()` – aber ohne Pandas (also ohne externe Bibliotheken): Anzahl, Mittelwert, Standardabweichung, Minimum/Maximum sowie Quartile (25 %, Median, 75 %). Quartile sind dabei ein Spezialfall von Quantilen.
 
 ## Quantile: Idee 
 
-Julia startet mit der Berechnung der Quantile. Sie rechechiert erst einmal was das ist und findet folgendes heraus:
+Julia startet mit der Berechnung von Quantilen. Sie recherchiert erst einmal, was das ist, und findet folgendes heraus:
 Grundsätzlich teilen Quantile eine (aufsteigend) **sortierte** Zahlenliste in Abschnitte.
 
-- **25 %-Quantil (Q1)**: 25 % der Werte liegen links davon (oder sind kleiner/gleich).
-- **50 %-Quantil (Median)**: „mittlerer“ Wert (bzw. bei gerader Anzahl der Mittelwert der zwei mittleren Werte).
-- **75 %-Quantil (Q3)**: 75 % der Werte liegen links davon.
+- **25 %-Quantil (1. Quartil, Q1)**: 25 % der Werte liegen links davon (oder sind kleiner/gleich).
+- **50 %-Quantil (Median, 2. Quartil, Q2)**: „mittlerer“ Wert (bzw. bei gerader Anzahl der Mittelwert der zwei mittleren Werte).
+- **75 %-Quantil (3. Quartil, Q3)**: 75 % der Werte liegen links davon.
 
 **Beispiel**
 

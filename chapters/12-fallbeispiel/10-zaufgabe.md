@@ -11,7 +11,7 @@ Julia bekommt eine Datei mit NO₂-Messwerten verschiedener Messstationen zu vie
 **Aufgabe:**  
 Julia soll ein Programm erstellen, das die Messdaten auswertet:
 - **Grafisch:** Die Verteilung der Messwerte pro Station visualisieren (z. B. als Histogramm).
-- **Tabellarisch:** Eine Übersichtstabelle mit Kennzahlen erzeugen (z. B. Anzahl, Mittelwert, Standardabweichung, Minimum/Maximum sowie Quartile/Perzentile).
+- **Tabellarisch:** Eine Übersichtstabelle mit Kennzahlen erzeugen (z. B. Anzahl, Mittelwert, Standardabweichung, Minimum/Maximum sowie Quartile (Q1, Median, Q3)).
 ```
 
 **Datensatz**

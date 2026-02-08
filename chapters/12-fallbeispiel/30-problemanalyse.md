@@ -13,7 +13,7 @@ Dann notiert Julia offene Fragen, bevor sie sich im Code festlegt:
 
 - Wie genau soll die Ausgabe aussehen (Plot-Format, Tabellendarstellung, Reihenfolge der Kennzahlen)?
 - Wie sollen fehlende Werte behandelt werden (ignorieren, als `NaN` speichern, als Fehler werten)?
-- Welche Kennzahlen sind „Pflicht“ (Quartile/Median oder weitere Perzentile, z. B. 5 %/95 %)?
+- Welche Kennzahlen sind „Pflicht“ (Quartile, Median oder weitere Quantile)?
 - Wo liegt die Datei im konkreten Ausführungsumfeld (lokal, Server, URL), und wie darf sie darauf zugreifen?
 - Welche Abhängigkeiten sind erlaubt (dürfen neue Bibliotheken installiert werden oder gilt „Standardbibliothek only“)?
 
@@ -26,7 +26,7 @@ Julia kann diese Fragen nicht alle „wegprogrammieren“. Sie muss Annahmen tre
 Damit sie weiterarbeiten kann, trifft Julia pragmatische Annahmen:
 
 - Fehlende Werte werden nicht als Fehler behandelt, sondern übersprungen oder explizit markiert (je nach Pfad im Kapitel).
-- Für die Statistik reichen Quartile (25 %, Median, 75 %) plus Standardkennzahlen (count, mean, std, min, max).
+- Für die Statistik reichen Quartile (Q1, Median, Q3) plus Standardkennzahlen (count, mean, std, min, max).
 - Die Visualisierung darf im Build-Pfad einfach sein (notfalls als ASCII-Ausgabe), solange die Verteilung erkennbar wird.
 
 Julia formuliert außerdem „fertig“-Kriterien, damit sie später prüfen kann, ob die Lösung wirklich passt:

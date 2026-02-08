@@ -45,7 +45,7 @@ Die Grafik ordnet Bibliotheken nach Abstraktionsgrad (oben = „mehr erledigt f�
 :::class: note
 
 - High-Level-Funktionen beschreiben eher, was berechnet werden soll, und sparen Implementierungsarbeit.
-- Low-Level-Code legt fest, wie gerechnet wird, und bringt mehr Kontrolle (z. B. welche Methode für Perzentile/Quantile verwendet wird), aber auch mehr Aufwand.
+- Low-Level-Code legt fest, wie gerechnet wird, und bringt mehr Kontrolle (z. B. welche Methode für Quantile verwendet wird), aber auch mehr Aufwand.
 - Im Fallbeispiel nutzt Julia beide Ebenen: erst `pandas` (hoch), dann Eigenimplementierung und Standardbibliothek (niedriger).
 ```
 

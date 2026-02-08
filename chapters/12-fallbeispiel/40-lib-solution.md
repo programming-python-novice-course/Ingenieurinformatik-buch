@@ -72,7 +72,7 @@ df.head()
 
 **Kennzahlen berechnen**
 
-Dann lässt sich Julia zentrale Kennwerte automatisch berechnen (z. B. Mittelwert, Standardabweichung und Perzentile).
+Dann lässt sich Julia zentrale Kennwerte automatisch berechnen (z. B. Mittelwert, Standardabweichung und Quartile (Q1, Median, Q3)).
 
 ```{code-cell} python3
 

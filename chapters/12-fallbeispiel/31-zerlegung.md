@@ -9,7 +9,7 @@ Julia liest die Aufgabenstellung und merkt: „Visualisierung“ und „Statisti
 - Kontext: Julia erhält eine Datei mit Messwerten (NO\(_2\)-Konzentration) zu verschiedenen Flughäfen und Zeitpunkten.
 - Ziel: Ein Programm, das die Messdaten auswertet:
   - grafisch: Verteilung visualisieren
-  - tabellarisch: Übersichtstabelle mit Kennzahlen (z. B. Mittelwert, Median, Quantile/Perzentile)
+  - tabellarisch: Übersichtstabelle mit Kennzahlen (z. B. Mittelwert, Median, Quartile (Q1, Median, Q3))
 
 Julia nutzt für jedes Teilproblem denselben Fragenkatalog:
 
@@ -33,7 +33,7 @@ Analysieren Sie Input, Output und Abhängigkeiten für die Teilaufgaben „Visua
 | Teilproblem | Input | Transformation (grob) | Output | Abhängigkeiten |
 |---|---|---|---|---|
 | 1 Visualisierung | Messdaten | Daten aufbereiten → geeignete Visualisierung erstellen | Plot(s) zur Verteilung | 3 Daten einlesen |
-| 2 Statistik-Tabelle | Messdaten | Kennzahlen berechnen (z. B. Mean/Median/Quantile) → tabellarisch darstellen | Tabelle mit Kennzahlen | 3 Daten einlesen |
+| 2 Statistik-Tabelle | Messdaten | Kennzahlen berechnen (z. B. Mean/Median/Quantile; insbesondere Quartile (Q1, Median, Q3)) → tabellarisch darstellen | Tabelle mit Kennzahlen | 3 Daten einlesen |
 | 3 Daten einlesen & vorbereiten | Datei mit Messdaten | Datei finden/öffnen → parsen → bereinigen/validieren | Daten im Programm (z. B. Liste/Array/DataFrame) | — |
 
 Damit ist klar: Teilproblem 1 und 2 hängen beide von Teilproblem 3 ab.
