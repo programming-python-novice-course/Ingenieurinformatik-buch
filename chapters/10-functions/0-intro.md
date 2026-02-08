@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-functions)=
-# Funktionen
+# Funktionen (S)
 
 ```{admonition} Lernziele
 ::class: learngoals

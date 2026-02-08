@@ -1,4 +1,4 @@
-# Abstraktionsgrad
+# Abstraktionsgrad (S)
 
 Wir haben uns angesehen, wie Julia das Problem mithilfe von **High-Level-Funktionen** aus der Fremdbibliothek `pandas` gelöst hat. Diese Funktionen kapseln komplexe Datenstrukturen und statistische Auswertungen – und ermöglichen dadurch eine sehr kompakte Implementierung.
 

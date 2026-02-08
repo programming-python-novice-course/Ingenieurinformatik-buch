@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Zahlensysteme
+# Zahlensysteme (S)
 
 Im letzten Abschnitt haben Sie zwei grundsätzlich verschiedene Konzepte kennengelernt, mit denen Zahlen als Bitfolgen dargestellt werden können:
 

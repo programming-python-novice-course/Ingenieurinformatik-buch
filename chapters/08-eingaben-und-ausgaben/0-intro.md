@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Eingaben und Ausgaben
+# Eingaben und Ausgaben (S)
 
 ```{admonition} Lernziele
 ::class: learngoals

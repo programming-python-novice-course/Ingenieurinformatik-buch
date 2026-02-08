@@ -1,4 +1,4 @@
-# Codierung
+# Codierung und Zahlensysteme
 
 Ein Computer arbeitet mit elektrischen Signalen, also physikalischen Zuständen.
 Diese Zustände werden durch Milliarden von Transistoren gespeichert und über Bussysteme übertragen.

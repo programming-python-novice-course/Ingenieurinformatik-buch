@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-class-and-object)=
-# Klassen und Objekte
+# Klassen und Objekte (S)
 
 Eine *Klasse* ist die Blaupause seiner *Objekte*.
 

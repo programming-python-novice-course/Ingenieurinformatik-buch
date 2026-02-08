@@ -10,11 +10,18 @@ kernelspec:
 ---
 
 (sec-functions-basics)=
-# Grundlagen
+# Grundlagen (A)
 
 Ok, lassen Sie ganz frisch starten, von der Definition einer Funktion bis hin zu ihrer Benutzung!
 
+Dieses Kapitel ist in Unterkapitel aufgeteilt:
+
+- [Definition (A)](2-definition/1-definition.md)
+- [Rückgabewerte (A)](2-definition/2-rueckgabewerte.md)
+- [Standardargumente für Parameter (A)](2-definition/3-standardargumente.md)
+
 ## Definition
+Siehe Unterkapitel: [Definition (A)](2-definition/1-definition.md)
 
 In ``Python`` definieren wir eine Funktion mit dem Signalwort ``def`` (für Definition).
 Es folgt der Funktionsname und in runden Klammern, getrennt durch Komma, die Parameter der Funktion.
@@ -78,6 +85,7 @@ Nichts ist irreführender als fehlerhafte, widersprüchliche oder schlicht falsc
 ```
 
 ## Rückgabewerte
+Siehe Unterkapitel: [Rückgabewerte (A)](2-definition/2-rueckgabewerte.md)
 
 In ``Python`` ist es sehr einfach mehrere Rückgabewerte zu definieren:
 
@@ -125,6 +133,7 @@ print(print42())
 ```
 
 ## Standardargumente für Parameter
+Siehe Unterkapitel: [Standardargumente für Parameter (A)](2-definition/3-standardargumente.md)
 
 Wir können Parametern auch einen sog. Standardargumente (Standardwerte) verpassen.
 Das Standardargument wird genau dann verwendet, wenn der Wert des Parameters beim Aufruf der Funktion nicht definiert wurde.

@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-anonymous-function)=
-# Anonyme Funktionen
+# Anonyme Funktionen (A)
 
 *Anonyme Funktionen* sind **namenlose** Funktionen.
 Nehmen wir folgende Funktion mit dem Namen ``add``:

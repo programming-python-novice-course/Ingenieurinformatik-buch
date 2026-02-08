@@ -5,9 +5,13 @@ Dieses Buch wurde durch Beiträge verschiedener Personen ermöglicht.
 ## Ursprüngliche Fassung für das Modul "Computational Thinking"
 
 - [Benedikt Zönnchen](https://mucdai.hm.edu/kontakte_de/phonebook_detailseite_18243.de.html)
+
+Benedikt Zönnchen hat das interaktive Lehrbuch für das Modul "Computational Thinking" entwickelt. Die ursprüngliche Fassung ist auf [GitHub](https://bzoennchen.github.io/ct-book/intro.html) verfügbar.
+
 - [Mathias Schwaller](https://github.com/mathias-schwaller)
 
-Benedikt Zönnchen und Mathias Schwaller haben das interaktive Lehrbuch für das Modul "Computational Thinking" entwickelt. Die ursprüngliche Fassung ist auf [GitHub](https://bzoennchen.github.io/ct-book/intro.html) verfügbar.
+Mathias Schwaller hat kleinere textuelle Änderungen vorgeschlagen, die Benedikt Zönnchens übernommen hat.
+
 
 ## Neue Fassung für das Modul "Ingenieurinformatik - Programmieren"
 

@@ -1,0 +1,21 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+# Pseudocode (A)
+
+Pseudocode ist eine einfache, weniger strikte Beschreibung eines Algorithmus in einer Sprache, die der natürlichen Sprache ähnelt (siehe [Definition](def-pseudocode)). Damit können wir einen Algorithmus beschreiben, ohne eine konkrete Programmiersprache vorauszusetzen.
+
+Pseudocode steht zwischen der natürlichen Sprache und einer Programmiersprache:
+
+- Er ist präziser als natürliche Sprache, aber weniger strikt als Programmcode.
+- Er orientiert sich an der Syntax von Programmiersprachen, ist aber sprachenübergreifend verwendbar.
+- Er erlaubt es, sich auf die Logik des Algorithmus zu konzentrieren, ohne sich mit sprachspezifischen Details auseinandersetzen zu müssen.
+

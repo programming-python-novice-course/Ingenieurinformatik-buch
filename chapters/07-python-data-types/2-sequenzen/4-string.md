@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-string)=
-# Zeichenketten - str
+# Zeichenketten - str (A)
 
 Eine Zeichenkette (engl. [String](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)) ``str`` ist eine [Sequenzen](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) von Zeichen.
 Wie ein [Tupel](sec-tuple), ist auch eine Zeichenkette **unveränderlich** (engl. immutable).

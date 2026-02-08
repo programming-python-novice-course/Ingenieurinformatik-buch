@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Algorithmus
+# Algorithmus (S)
 
 Ein *Algorithmus* ist eine wohldefinierte Sequenz von Anweisungen, die zu einer (endlichen) Eingabe in endlich vielen Schritten eine (endliche) Ausgabe berechnet – und dabei nur endlich viel Speicher verwendet {cite}`knuth:1997`.
 

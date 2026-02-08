@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-int)=
-# Ganze Zahlen - int
+# Ganze Zahlen - int (A)
 
 Der Datentyp, welcher ganze Zahlen repräsentiert ``int`` (engl. [Integer](https://docs.python.org/3/library/functions.html#int)) ist ein [atomarer Datentyp](def-atomare-data-types) und verhält sich so wie wir es erwarten.
 

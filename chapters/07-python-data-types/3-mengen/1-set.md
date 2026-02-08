@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-set)=
-# Mengen - set
+# Mengen - set (A)
 
 ``Python``-Mengen (engl. [Set](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)) ``set`` ist eine ungeordnete Zusammenfassung (engl. collection) von Elementen, wobei jedes Element in der Menge einzigartig ist.
 Damit repräsentieren ``Python``-Mengen ``set`` *endliche* [Mengen](sec-math-set) im mathematischen Sinne.

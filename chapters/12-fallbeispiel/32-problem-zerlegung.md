@@ -1,4 +1,4 @@
-# Problem-Zerlegung
+# Problem-Zerlegung (V)
 
 Bezug der Daten
 - wir müssen Zahlenwerte aus einer Datei auslesen und in einer oder mehreren Datenstrukturen speichern
