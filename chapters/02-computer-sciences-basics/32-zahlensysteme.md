@@ -9,7 +9,9 @@ kernelspec:
   name: python3
 ---
 
-# Zahlensysteme
+# Zahlensysteme (A)
+
+> Geschätzter Zeitaufwand: 120min (Eigenaufwand)
 
 ```{admonition} Hausaufgabe
 :class: note

@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Sets und Mengen
+# Sets und Mengen (S)
 
 In diesem Abschnitt lernen Sie die *built-in* Datentypen ``set`` (Mengen) und ``dict`` (Wörterbücher) kennen.
 Beide Datenstrukturen basieren auf dem Konzept der Mengen und nutzen Hashfunktionen für einen schnellen Zugriff auf ihre Elemente.

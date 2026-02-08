@@ -1,6 +1,6 @@
 
 (sec-von-neumann)=
-# Die Von-Neumann-Architektur
+# Die Von-Neumann-Architektur (S)
 
 Die *Von-Neumann-Architektur* ist die bekannteste und meist verwendete Hardware-Architektur, die den Aufbau von Computern beschreibt.
 Sie legt fest, wie die wesentlichen Bauteile miteinander interagieren.

@@ -1,4 +1,4 @@
-# Eingaben mit GUI-Frameworks
+# Eingaben mit GUI-Frameworks (V)
 
 Endanwender nutzen in der Regel keine Texteingabe-Schnittstelle, sondern eine **grafische Benutzeroberfläche (GUI)**.
 Grafische Benutzeroberflächen werden programmatisch erstellt.

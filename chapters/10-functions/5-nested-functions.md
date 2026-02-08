@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Umschlossene Funktionen
+# Umschlossene Funktionen (S)
 
 Eine *umschlossene Funktion* ist eine Funktion, welche innerhalb einer anderen Funktion definiert wurde.
 

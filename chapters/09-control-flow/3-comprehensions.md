@@ -10,117 +10,47 @@ kernelspec:
 ---
 
 (sec-comprehension)=
-# Comprehensions
+# Comprehensions 
 
-Eine Comprehension ist eine Art von ``Python``-[Syntax](def-syntax), die es uns durch eine sehr kompakte Schreibweise erlaubt aus einer Datenstruktur eine andere Datenstruktur zu erstellen.
+Oft möchten wir aus einer bestehenden Datenstruktur eine neue erzeugen:
+Wir transformieren Werte, filtern Elemente heraus oder bauen eine neue Struktur auf.
+Mit *Comprehensions* bietet ``Python`` dafür eine sehr kompakte [Syntax](def-syntax).
 
-## List-Comprehensions
+**Aus Daten werden neue Daten **
 
-Ein Beispiel:
-
-```{code-cell} python3
-numbers = list(range(10))
-squares = [x*x for x in numbers]
-
-print(f'numbers: {numbers}')
-print(f'squares: {squares}')
-```
-
-Wir erzeugen erst eine Liste ``numbers`` und transformieren diese in eine neue Liste aus Quadratzahlen.
-Dieser Code wird durch den ``Python``-[Interpreter](def-interpreter) in folgenden Code übersetzt:
+Eine typische Schleifen-Form, die Sie vielleicht schon geschrieben haben, sieht so aus:
 
 ```{code-cell} python3
-numbers = list(range(10))
-squares = []
+numbers = list(range(5))
 
+result = []
 for x in numbers:
-    squares.append(x*x)
+    result.append(x * x)
 
-print(f'numbers: {numbers}')
-print(f'squares: {squares}')
+result
 ```
+Was ist hier passiert? Wir haben eine neue Datenstruktur, eine Liste, erzeugt. Diese haben wir dann schrittweise befüllt.
 
-``x*x`` ist eine [anonyme Funktion](sec-anonymous-function) in Kurzschreibweise.
-Wir können dies explizit verdeutlichen:
+Mit einer List-Comprehension können wir das als einen Ausdruck schreiben:
 
 ```{code-cell} python3
-def square(x):
-    return x*x
+numbers = list(range(5))
 
-numbers = list(range(10))
-squares = [square(x) for x in numbers]
-
-print(f'numbers: {numbers}')
-print(f'squares: {squares}')
+[x * x for x in numbers]
 ```
 
-Wir können die Liste der Elemente der Ursprungsliste auch durch eine Fallunterscheidung filter:
-
-```{code-cell} python3
-def square(x):
-    return x*x
-
-numbers = list(range(10))
-odd_squares = [square(x) for x in numbers if x % 2 == 1]
-
-print(f'numbers: {numbers}')
-print(f'squares: {odd_squares}')
+```{admonition} Merke
+Materialisierende Comprehensions eignen sich zur Transformation von Datenstrukturen, wenn Sie in *einer* Zeile klar ausdrücken können: „nimm jedes Element und mache etwas damit (eventuell unter einer bestimmten Voraussetzung)“.
+Wenn mehrere Schritte, Nebenwirkungen oder Debug-Ausgaben nötig sind, ist eine normale Schleife oft besser lesbar!
 ```
 
-Wir können auch mehrere Sequenzen kombinieren.
-Folgender Code 
+```{admonition} Expertentipp: Generator-Expressions (Werte erst bei Bedarf)
+:class: dropdown
 
-```{code-cell} python3
-numbers = [i + j for i in range(5) for j in range(2)]
-print(f'numbers: {numbers}')
+Eine Generator-Expression (z. B. ``(x*x for x in numbers)``) erzeugt **keine** neue Datenstruktur,
+sondern einen *Datenstrom* von Werten, der erst beim Iterieren berechnet wird.
+Das spart nicht nur Speicher, sondern kann auch **Arbeit vermeiden** (z. B. wenn man früh abbrechen kann)
+und ist praktisch für **Pipelines**: Datenquelle hier, Verarbeitung dort.
 ```
 
-entspricht
 
-```{code-cell} python3
-numbers =[]
-for i in range(5):
-    for j in range(2):
-        numbers.append(i + j)
-print(f'numbers: {numbers}')
-```
-
-Lassen Sie uns damit eine Matrix $A$ mit
-
-$$
-A = \begin{pmatrix}
-    0+0 & 0+1 & 0+2 & \ldots & 0+(n-1)\\
-    1+0 & 1+1 & 1+2 & \ldots & 1+(n-1)\\
-    \vdots & \vdots & \vdots & \vdots\\
-    (m-1) + 0 & (m-1) + 1 & (m-1) + 2 & \ldots & (m-1)+(n-1)
-\end{pmatrix}
-$$
-
-als Liste von Listen generieren:
-
-```{code-cell} python3
-n = 3
-m = 4
-A = [[(i+j) for i in range(m)] for j in range(m)]
-print(f'Matrix A: {A}')
-```
-
-## Dictionary-Comprehensions
-
-Sehr ähnlich lässt sich diese Schreibweise für [Wörterbücher](sec-dict) einsetzten.
-
-```{code-cell} python3
-x = {'a': 1, 'b': 2, 'c': 3}
-
-{key:v**3 for (key, v) in x.items()}
-```
-
-## Set-Comprehensions
-
-Und auch für [Mengen](sec-set) können wir Comprehensions verwenden.
-
-```{code-cell} python3
-numbers = {1,2,3,4}
-
-{x*x for x in numbers}
-```

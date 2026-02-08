@@ -21,7 +21,7 @@ only_build_toc_files: true
 execute:
   execute_notebooks: auto  # off
   allow_errors: true       # due to CI setup in Gitlab
-  timeout: 60
+  timeout: 25
 
 # --------------------------------------------------
 # Literatur
@@ -47,8 +47,8 @@ sphinx:
     - sphinx_proof
 
   config:
-    version: "1.9"
-    release: "1.9.2"
+    version: "2.0"
+    release: "2.0.0"
 
     myst_enable_extensions:
       - dollarmath
@@ -58,9 +58,18 @@ sphinx:
 
     myst_heading_anchors: 3
 
+    # Inhaltsverzeichnis-Tiefe (eine Ebene mehr als Standard)
+    
+    
+    
+    
+
     html_static_path: ["_static"]
+    html_css_files:
+      - theme-overwrite.css
     html_js_files:
       - js/hub-link-rewrite.js
+      - js/thebe-output-fix.js
 
     html_show_copyright: false
     language: de
@@ -99,6 +108,13 @@ sphinx:
           pdfborder={0 0 0},
           unicode=true
         }
+
+        % --------------------------------------------------
+        % PDF: Inhaltsverzeichnis-Tiefe (eine Ebene mehr)
+        % tocdepth: 0=chapter, 1=section, 2=subsection, 3=subsubsection
+        % --------------------------------------------------
+        \setcounter{tocdepth}{2}
+        \setcounter{secnumdepth}{2}
 
         % --------------------------------------------------
         % Inhaltsverzeichnis: Einträge nicht über Seiten trennen
@@ -165,6 +181,6 @@ html:
       <div class="col1">
         Autoren: <a href="/chapters/misc/contributors.html">alle anzeigen</a>.
         Lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>.
-        Version 1.9.2
+        Version 2.0.0
       </div>
     </div>

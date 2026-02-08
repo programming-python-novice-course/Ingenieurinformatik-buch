@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Komplexität
+# Komplexität (S)
 
 Oft gibt es mehrere Algorithmen, die *das gleiche Problem* lösen – aber sie benötigen unterschiedlich viele Ressourcen.
 Genau das beschreibt die **Komplexität** (Komplexitätstheorie/Analyse von Algorithmen).

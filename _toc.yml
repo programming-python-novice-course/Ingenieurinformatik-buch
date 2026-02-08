@@ -11,30 +11,31 @@ parts:
         - file: chapters/01-course-overview/11-livecode
         - file: chapters/01-course-overview/12-beispiele
         - file: chapters/01-course-overview/13-fallback
-      - file: chapters/01-course-overview/20-pruefung
-      - file: chapters/01-course-overview/30-inhalte
-      - file: chapters/01-course-overview/40-orientierung
+      - file: chapters/01-course-overview/20-kursrahmen
         sections:
-        - file: chapters/01-course-overview/41-softwaretypen
-        - file: chapters/01-course-overview/42-prozesssicht
-        - file: chapters/01-course-overview/43-success-criteria
-        - file: chapters/01-course-overview/44-sprachen
-      - file: chapters/01-course-overview/45-ki
+        - file: chapters/01-course-overview/21-pruefung
+        - file: chapters/01-course-overview/22-inhalte
+      - file: chapters/01-course-overview/30-orientierung
+        sections:
+        - file: chapters/01-course-overview/31-softwaretypen
+        - file: chapters/01-course-overview/32-prozesssicht
+        - file: chapters/01-course-overview/33-success-criteria
+      - file: chapters/01-course-overview/40-learningLLM
+        sections:
+        - file: chapters/01-course-overview/41-sprachen
+        - file: chapters/01-course-overview/42-asvconcept
+        - file: chapters/01-course-overview/43-ki
       - file: chapters/01-course-overview/50-roadmap
         sections:
         - file: chapters/01-course-overview/51-gliederung
         - file: chapters/01-course-overview/52-vorlesung-praktikum
-      
   - caption: Basiswissen 
     numbered: True
     chapters:
-    - file: chapters/02-computer-sciences-basics/00-intro
+    - file: chapters/02-computer-sciences-basics/10-intro
       sections:
-      - file: chapters/02-computer-sciences-basics/10-informatik
-      - file: chapters/02-computer-sciences-basics/20-basics
-        sections:
-        - file: chapters/02-computer-sciences-basics/21-neumann-architektur
-        - file: chapters/02-computer-sciences-basics/22-betriebssystem
+      - file: chapters/02-computer-sciences-basics/21-neumann-architektur
+      - file: chapters/02-computer-sciences-basics/22-betriebssystem
       - file: chapters/02-computer-sciences-basics/30-codierung
         sections:
         - file: chapters/02-computer-sciences-basics/31-barcode
@@ -46,12 +47,15 @@ parts:
         - file: chapters/02-computer-sciences-basics/51-algorithmus
         - file: chapters/02-computer-sciences-basics/52-komplexität
         - file: chapters/02-computer-sciences-basics/53-software
-        - file: chapters/02-computer-sciences-basics/54-repos
       - file: chapters/02-computer-sciences-basics/60-programmierkonstrukte
         sections:
         - file: chapters/02-computer-sciences-basics/61-kontrollstrukturen
         - file: chapters/02-computer-sciences-basics/62-datenstrukturen
-      - file: chapters/02-computer-sciences-basics/70-visualization
+      - file: chapters/02-computer-sciences-basics/70-communication
+        sections:
+        - file: chapters/02-computer-sciences-basics/71-struktogramme
+        - file: chapters/02-computer-sciences-basics/72-pseudocode
+        - file: chapters/02-computer-sciences-basics/73-beispiel-darstellungen
       - file: chapters/02-computer-sciences-basics/99-summary
   - caption: Python verstehen
     numbered: True
@@ -60,14 +64,14 @@ parts:
       sections:
       - file: chapters/03-language-properties/10-syntax
       - file: chapters/03-language-properties/20-interpretation
-      - file: chapters/03-language-properties/21-cpython
-      - file: chapters/03-language-properties/30-paradigma
-      - file: chapters/03-language-properties/40-objektmodell-referenzen
+      - file: chapters/03-language-properties/30-cpython
+      - file: chapters/03-language-properties/40-paradigma
+      - file: chapters/03-language-properties/50-objektmodell-referenzen
         sections:
-        - file: chapters/03-language-properties/41-typing
-        - file: chapters/03-language-properties/42-seiteneffekte
-        - file: chapters/03-language-properties/43-speicherverwaltung
-        - file: chapters/03-language-properties/44-primitive-data
+        - file: chapters/03-language-properties/51-typing
+        - file: chapters/03-language-properties/52-seiteneffekte
+        - file: chapters/03-language-properties/53-speicherverwaltung
+        - file: chapters/03-language-properties/54-primitive-data
       - file: chapters/03-language-properties/99-summary
   - caption: Python anwenden
     numbered: True
@@ -76,14 +80,45 @@ parts:
     - file: chapters/05-python-ecosystem-and-setup/python-environment
       sections:
       - file: chapters/05-python-ecosystem-and-setup/1-installation
+        sections:
+        - file: chapters/05-python-ecosystem-and-setup/1-installation/1-vorlesung-jupyterhub
+        - file: chapters/05-python-ecosystem-and-setup/1-installation/2-umgebungen-distribution-pakete
+        - file: chapters/05-python-ecosystem-and-setup/1-installation/4-schnellstart
       - file: chapters/05-python-ecosystem-and-setup/2-run
+        sections:
+        - file: chapters/05-python-ecosystem-and-setup/2-run/1-repl
+        - file: chapters/05-python-ecosystem-and-setup/2-run/2-jupyter-notebook
+        - file: chapters/05-python-ecosystem-and-setup/2-run/3-script-datei
       - file: chapters/05-python-ecosystem-and-setup/3-files
+        sections:
+        - file: chapters/05-python-ecosystem-and-setup/3-files/1-ablage
+        - file: chapters/05-python-ecosystem-and-setup/3-files/2-eine-datei
+        - file: chapters/05-python-ecosystem-and-setup/3-files/4-merksatz
       - file: chapters/05-python-ecosystem-and-setup/4-modules
+        sections:
+        - file: chapters/05-python-ecosystem-and-setup/4-modules/1-ein-eigenes-modul
+        - file: chapters/05-python-ecosystem-and-setup/4-modules/2-modul-suche
+        - file: chapters/05-python-ecosystem-and-setup/4-modules/3-pakete
     - file: chapters/06-python-basics/0-intro
       sections:
       - file: chapters/06-python-basics/1-variables
+        sections:
+        - file: chapters/06-python-basics/1-variables/1-initialisierung-zuweisung
+        - file: chapters/06-python-basics/1-variables/2-variablen-arbeitsspeicher
+        - file: chapters/06-python-basics/1-variables/3-veraenderung
+        - file: chapters/06-python-basics/1-variables/4-das-nichts
+        - file: chapters/06-python-basics/1-variables/5-namenskonvention
       - file: chapters/06-python-basics/2-expressions
+        sections:
+        - file: chapters/06-python-basics/2-expressions/1-arithmetische-operatoren
+        - file: chapters/06-python-basics/2-expressions/2-vergleichsoperatoren
+        - file: chapters/06-python-basics/2-expressions/3-logische-operatoren
+        - file: chapters/06-python-basics/2-expressions/4-bitoperatoren
       - file: chapters/06-python-basics/3-invoking-functions
+        sections:
+        - file: chapters/06-python-basics/3-invoking-functions/1-module
+        - file: chapters/06-python-basics/3-invoking-functions/2-auswertungsreihenfolge
+        - file: chapters/06-python-basics/3-invoking-functions/3-das-kennenlernen
     - file: chapters/07-python-data-types/0-intro
       sections:
       - file: chapters/07-python-data-types/1-zahlenwerte/0-intro
@@ -105,13 +140,35 @@ parts:
     - file: chapters/08-eingaben-und-ausgaben/0-intro
       sections:
       - file: chapters/08-eingaben-und-ausgaben/1-eingaben
+        sections:
+        - file: chapters/08-eingaben-und-ausgaben/1-eingaben/1-zahl-einlesen-und-quadrieren
+        - file: chapters/08-eingaben-und-ausgaben/1-eingaben/2-email-validierung
       - file: chapters/08-eingaben-und-ausgaben/2-gui-eingaben
       - file: chapters/08-eingaben-und-ausgaben/3-ausgaben
+        sections:
+        - file: chapters/08-eingaben-und-ausgaben/3-ausgaben/1-print-und-stdout
+        - file: chapters/08-eingaben-und-ausgaben/3-ausgaben/2-konvertierung
+        - file: chapters/08-eingaben-und-ausgaben/3-ausgaben/3-f-strings
+        - file: chapters/08-eingaben-und-ausgaben/3-ausgaben/4-praktische-beispiele
+        - file: chapters/08-eingaben-und-ausgaben/3-ausgaben/5-zusammenfassung
     - file: chapters/09-control-flow/0-intro
       sections:
       - file: chapters/09-control-flow/1-cases
+        sections:
+        - file: chapters/09-control-flow/1-cases/1-if
+        - file: chapters/09-control-flow/1-cases/4-if-elif-else
+        - file: chapters/09-control-flow/1-cases/6-verschachtelung
+        - file: chapters/09-control-flow/1-cases/7-schnellschreibweise
+        - file: chapters/09-control-flow/1-cases/8-beispiel-quadratische-gleichungen
       - file: chapters/09-control-flow/2-loops
+        sections:
+        - file: chapters/09-control-flow/2-loops/1-while
+        - file: chapters/09-control-flow/2-loops/2-for
       - file: chapters/09-control-flow/3-comprehensions
+        sections:
+        - file: chapters/09-control-flow/3-comprehensions/1-list-comprehensions
+        - file: chapters/09-control-flow/3-comprehensions/2-dict-comprehensions
+        - file: chapters/09-control-flow/3-comprehensions/3-set-comprehensions
     - file: chapters/10-functions/0-intro
       sections:
       - file: chapters/10-functions/2-definition
@@ -145,6 +202,7 @@ parts:
   - caption: Appendix
     chapters:
     - file: chapters/misc/contributors
+    - file: chapters/misc/danksagung
     - file: chapters/misc/downloads
     - file: chapters/misc/bibliography
     - file: chapters/misc/Expertenwissen/0-intro
@@ -153,5 +211,6 @@ parts:
       - file: chapters/misc/Expertenwissen/compilation
       - file: chapters/misc/Expertenwissen/euclid-algorithm
       - file: chapters/misc/Expertenwissen/jupyter-notebooks
+      - file: chapters/misc/Expertenwissen/repos
       - file: chapters/misc/Expertenwissen/berechenbarkeit
       - file: chapters/misc/Expertenwissen/memory-layout

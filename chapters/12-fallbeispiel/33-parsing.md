@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Parsing
+# Parsing (A)
 
 Julia startet im „Build“-Pfad ganz unten: Sie liest die CSV-Daten selbst ein und legt sie in einer Datenstruktur ab, die sie später leicht testen und weiterverarbeiten kann.
 

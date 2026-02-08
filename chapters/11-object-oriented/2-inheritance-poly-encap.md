@@ -10,8 +10,7 @@ kernelspec:
 ---
 
 (sec-inheritance)=
-# Vererbung, Kapselung und Polymorphie
-
+# Vererbung, Kapselung und Polymorphie 
 *Objektorientierte Programmierung OOP* ist ein mächtiges Modellierungswerkzeug bei der wir Daten und Methoden in eine zusammenhängende Struktur bringen.
 Es deckt sich mit der 'natürlichen' denkweise von uns Menschen.
 Wir denken gerne in Objekten wie Bäume, Häuser, Personen, Rechtecken, und so weiter und so fort.

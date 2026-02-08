@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-python-data-types)=
-# Datentypen
+# Datentypen (S)
 
 ```{admonition} Lernziele
 ::class: learngoals

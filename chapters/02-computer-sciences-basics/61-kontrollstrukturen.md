@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Kontrollstrukturen
+# Kontrollstrukturen (A)
 
 ```{figure} ../../figs/02-computer-sciences-basics/control-structures.png
 ---

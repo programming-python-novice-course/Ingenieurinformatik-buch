@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Zahlenwerte
+# Zahlenwerte (S)
 
 In diesem Abschnitt lernen Sie die einfachsten *built-in* Datentypen von Python kennen: ``int``, ``float`` und ``bool``.
 Sie repräsentieren Zahlen und Wahrheitswerte.

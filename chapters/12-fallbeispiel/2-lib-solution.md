@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Lösung mit Library
+# Lösung mit Library (V)
 
 Wir sehen uns an, wie man mit "Einkaufsteilen" (Bibliotheken) sehr schnell Programme erstellen kann. Eine wichtige Regel in der Softwareentwicklung ist: "Do not reinvent the wheel!" Das heißt: Nutzen Sie Einkaufsteile, die gut getestet sind und gewartet werden! Eine Sammlung von Einkaufsteilen wird in der Softwareentwicklung als **Library** bezeichnet. Konkret sehen wir uns an, wie Julia das Fallbeispiel mithilfe einer Library lösen kann.
 

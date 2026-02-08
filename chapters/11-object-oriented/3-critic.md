@@ -1,4 +1,4 @@
-# OOP als Allheilmittel
+# OOP als Allheilmittel (S)
 
 Fast zeitgleich mit der Zunahme an Popularität der Programmiersprache ``Java`` nahm auch die Objektorientierte Programmierung an Fahrt auf.
 Mit seinem Versprechen

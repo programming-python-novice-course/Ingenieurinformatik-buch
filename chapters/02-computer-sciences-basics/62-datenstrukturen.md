@@ -1,4 +1,4 @@
-# Datenstrukturen
+# Datenstrukturen (S)
 
 Programme arbeiten nicht nur mit Anweisungen, sondern ständig mit Daten.
 - Eingaben müssen im Arbeitsspeicher abgelegt werden.
