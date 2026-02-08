@@ -16,9 +16,6 @@ Zum Schluss macht sich Julia an den letzten Baustein des Fallbeispiels: **die st
 Ziel ist eine tabellarische Übersicht *ähnlich zu* `pandas.describe()` – aber ohne Pandas (also ohne externe Bibliotheken): Anzahl, Mittelwert, Standardabweichung, Minimum/Maximum sowie Quartile (25 %, Median, 75 %).
 
 ```{code-cell} python3
----
-tags: [hide-input]
----
 
 def _non_empty_lines(text):
     return [ln.strip() for ln in text.strip().splitlines() if ln.strip()]

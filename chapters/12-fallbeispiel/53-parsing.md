@@ -11,7 +11,7 @@ kernelspec:
 
 # Parsing (A)
 
-Julia startet im „Build“-Pfad ganz unten: Sie liest die CSV-Daten selbst ein und legt sie in einer Datenstruktur ab, die sie später leicht testen und weiterverarbeiten kann.
+Julia startet mit dem Teilproblem "Datei einlesen". Sie sieht sich zunächst die Datenstruktur der Messdatei an.
 
 
 Beispieldaten (CSV-Ausschnitt):
@@ -25,7 +25,23 @@ datetime,station_antwerp,station_paris,station_london
 ...
 ```
 
+Diese muss nun irgendwie in Python abgespeichert werden - aber wie soll das aussehen?
+
+Das erste Teilproblem das Julia also zu lösen hat ist es eine Zieldatenstruktur festzulegen.
+
 Ziel-Datenstruktur: Für jede Station speichert sie die Zeitpunkte und die zugehörigen NO₂-Werte. Fehlende Messwerte (leere Felder) lässt sie weg. Das ist eine **Designentscheidung**: Genauso gut hätte sie `NaN`-Werte oder Platzhalter (z. B. leere Strings) speichern können – vgl. die Tabelle im vorherigen Abschnitt; dort waren fehlende Werte als leere Felder dargestellt.
+
+Dann müssen die Messwerte irgendwie aus der Messdatei nach Python kommen. Sie muss Python also sagen, dass Python die Datei irgendwie öffnen und den Inhalt konsumieren und verwerten soll.  -> nächstes problem.
+
+Was heisst verwerten? jede zeile muss als messwert intepretiert werden, wobei die messwerte sowohl einen zeit als auch ort zugeordnet sind. -> Julia muss also zeit und ort richtig zuornen -> nächstes problem.
+
+```{exercise} Aufgabe
+:label: exercise-parsing-datenverarbeitung-visualisieren
+
+Visualisieren Sie nach einer Methode Ihrer Wahl den Vorgang der Datenverarbeitung.
+```
+
+Nachdem Julia nun eine Vorstellung hat, welche Schritte alle notwendig sind und wie diese zusammenhängen startet sie mit der Implementierung. Sie entscheidet sich die Datenverarbeitungslogik in einer Funktion parse_air_quality_csv_v2 zu kapseln, damit die Logik einfach wiederverwendet werden kann.
 
 ```{code-cell} python3
 

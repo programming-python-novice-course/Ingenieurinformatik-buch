@@ -16,9 +16,6 @@ Nachdem Julia nun mithilfe ihres neuen Parsers die Daten auslesen kann, macht si
 
 
 ```{code-cell} python3
----
-tags: [hide-input]
----
 
 def _non_empty_lines(text):
     return [ln.strip() for ln in text.strip().splitlines() if ln.strip()]

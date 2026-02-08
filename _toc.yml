@@ -185,20 +185,24 @@ parts:
   - caption: Fallbeispiel
     numbered: True
     chapters:
-    - file: chapters/12-fallbeispiel/0-intro
+    - file: chapters/12-fallbeispiel/00-intro
       sections:
-      - file: chapters/12-fallbeispiel/0-zaufgabe
-      - file: chapters/12-fallbeispiel/1-se-Prozess
-      - file: chapters/12-fallbeispiel/2-lib-solution
-      - file: chapters/12-fallbeispiel/3-eigenentwicklung
+      - file: chapters/12-fallbeispiel/10-zaufgabe
+      - file: chapters/12-fallbeispiel/20-se-Prozess
+      - file: chapters/12-fallbeispiel/30-zerlegung
         sections:
-        - file: chapters/12-fallbeispiel/31-tests
-        - file: chapters/12-fallbeispiel/32-problem-zerlegung
-        - file: chapters/12-fallbeispiel/33-parsing
-        - file: chapters/12-fallbeispiel/34-histogram
-        - file: chapters/12-fallbeispiel/35-statistics
-      - file: chapters/12-fallbeispiel/40-comparison
-      - file: chapters/12-fallbeispiel/50-summary
+        - file: chapters/12-fallbeispiel/31-problemanalyse
+        - file: chapters/12-fallbeispiel/32-recherche
+      - file: chapters/12-fallbeispiel/40-lib-solution
+      - file: chapters/12-fallbeispiel/50-eigenentwicklung
+        sections:
+        - file: chapters/12-fallbeispiel/51-tests
+        - file: chapters/12-fallbeispiel/52-problem-zerlegung
+        - file: chapters/12-fallbeispiel/53-parsing
+        - file: chapters/12-fallbeispiel/54-histogram
+        - file: chapters/12-fallbeispiel/55-statistics
+      - file: chapters/12-fallbeispiel/60-comparison
+      - file: chapters/12-fallbeispiel/70-summary
   - caption: Appendix
     chapters:
     - file: chapters/misc/contributors

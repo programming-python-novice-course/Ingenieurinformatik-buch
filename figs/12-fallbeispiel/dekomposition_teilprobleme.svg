@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1200"
+   height="400"
+   viewBox="0 0 1200 400"
+   role="img"
+   aria-label="Dekomposition: Teilproblem 3 Daten einlesen als Grundlage für Teilproblem 1 Visualisierung und Teilproblem 2 statistische Auswertung; alle Boxen mit Input und Output"
+   version="1.1"
+   id="svg19"
+   sodipodi:docname="dekomposition_teilprobleme.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview19"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.56568542"
+     inkscape:cx="657.60931"
+     inkscape:cy="274.00388"
+     inkscape:window-width="1710"
+     inkscape:window-height="1073"
+     inkscape:window-x="0"
+     inkscape:window-y="34"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg19" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect25"
+       is_visible="true"
+       lpeversion="1.3"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false"
+       uniform="false" />
+    <style
+       id="style1">
+      .title { font: 700 24px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; fill: #111; }
+      .h { font: 700 18px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; fill: #111; }
+      .t { font: 500 15px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; fill: #111; }
+      .edge { font: 600 14px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; fill: #111; }
+      .box { fill: #ffffff; stroke: #111; stroke-width: 2.2; }
+      .arrow { stroke: #111; stroke-width: 2.2; fill: none; }
+    </style>
+    <marker
+       id="arrowhead"
+       markerWidth="10"
+       markerHeight="10"
+       refX="9"
+       refY="3"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M 0,0 10,3 0,6 Z"
+         fill="#111111"
+         id="path1" />
+    </marker>
+    <marker
+       id="arrowhead-9"
+       markerWidth="10"
+       markerHeight="10"
+       refX="9"
+       refY="3"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M 0,0 10,3 0,6 Z"
+         fill="#111111"
+         id="path1-9" />
+    </marker>
+    <marker
+       id="arrowhead-7"
+       markerWidth="10"
+       markerHeight="10"
+       refX="9"
+       refY="3"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M 0,0 10,3 0,6 Z"
+         fill="#111111"
+         id="path1-5" />
+    </marker>
+    <marker
+       id="arrowhead-3"
+       markerWidth="10"
+       markerHeight="10"
+       refX="9"
+       refY="3"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M 0,0 10,3 0,6 Z"
+         fill="#111111"
+         id="path1-52" />
+    </marker>
+  </defs>
+  <!-- Titel -->
+  <!-- Teilproblem 3 -->
+  <rect
+     x="157.77786"
+     y="122.82486"
+     width="300"
+     height="140"
+     rx="16"
+     class="box"
+     id="rect1" />
+  <text
+     x="187.77786"
+     y="164.82486"
+     class="h"
+     id="text2"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif">Teilproblem 3</text>
+  <text
+     x="187.77786"
+     y="192.82486"
+     class="t"
+     id="text3"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif">Daten einlesen</text>
+  <text
+     x="187.77786"
+     y="220.82486"
+     class="t"
+     id="text4"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif">Messdaten in eine interne Struktur</text>
+  <text
+     x="187.77786"
+     y="242.82486"
+     class="t"
+     id="text5"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif">überführen</text>
+  <!-- Teilproblem 1 -->
+  <rect
+     x="675.67706"
+     y="22.724001"
+     width="263.63315"
+     height="140.20171"
+     rx="13.181658"
+     class="box"
+     id="rect5" />
+  <text
+     x="705.77789"
+     y="64.82486"
+     class="h"
+     id="text6"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif">Teilproblem 1</text>
+  <text
+     x="705.77789"
+     y="92.82486"
+     class="t"
+     id="text7"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif">Visualisierung</text>
+  <text
+     x="705.77789"
+     y="120.82486"
+     class="t"
+     id="text8"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif">Verteilung der Messwerte</text>
+  <text
+     x="705.77789"
+     y="142.82486"
+     class="t"
+     id="text9"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif">grafisch darstellen</text>
+  <!-- Teilproblem 2 -->
+  <rect
+     x="675.67706"
+     y="222.724"
+     width="263.63315"
+     height="140.20171"
+     rx="13.181658"
+     class="box"
+     id="rect9" />
+  <text
+     x="705.77789"
+     y="264.82486"
+     class="h"
+     id="text10"
+     style="font-style:normal;font-variant:normal;font-weight:700;font-stretch:normal;font-size:18px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif">Teilproblem 2</text>
+  <text
+     x="705.77789"
+     y="292.82486"
+     class="t"
+     id="text11"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif">Statistische Auswertung</text>
+  <text
+     x="705.77789"
+     y="320.82486"
+     class="t"
+     id="text12"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif">Kenngrößen und Perzentile</text>
+  <text
+     x="705.77789"
+     y="342.82486"
+     class="t"
+     id="text13"
+     style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:15px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif">tabellarisch bestimmen</text>
+  <!-- Input-Pfeil zu Teilproblem 3 (von links) -->
+  <path
+     class="arrow"
+     d="M 22.734758,192.82485 H 158.99226"
+     marker-end="url(#arrowhead)"
+     id="path13" />
+  <text
+     x="30.663687"
+     y="158.37943"
+     class="edge"
+     id="text14"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif"><tspan
+       sodipodi:role="line"
+       id="tspan19"
+       x="30.663687"
+       y="158.37943">Input:</tspan><tspan
+       sodipodi:role="line"
+       id="tspan20"
+       x="30.663687"
+       y="175.87943">Messdatendatei</tspan></text>
+  <!-- Output-Pfeil von Teilproblem 3 (zu Verzweigungspunkt) -->
+  <text
+     x="469.24234"
+     y="213.18021"
+     class="edge"
+     id="text15"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif"><tspan
+       sodipodi:role="line"
+       id="tspan22"
+       x="469.24234"
+       y="213.18021">Output:</tspan><tspan
+       sodipodi:role="line"
+       x="469.24234"
+       y="230.68021"
+       id="tspan23">Messdaten</tspan></text>
+  <!-- Von Verzweigungspunkt zu Teilproblem 1 -->
+  <path
+     class="arrow"
+     d="m 556.03703,194.36796 119.399,-97.353397"
+     marker-end="url(#arrowhead)"
+     id="path15"
+     style="stroke-width:2.062;stroke-dasharray:none" />
+  <path
+     class="arrow"
+     d="m 556.12104,195.21149 119.399,97.3534"
+     marker-end="url(#arrowhead-9)"
+     id="path15-7"
+     style="fill:none;stroke:#111111;stroke-width:2.062;stroke-dasharray:none;marker-end:url(#arrowhead-9)" />
+  <text
+     x="595.72583"
+     y="65.398453"
+     class="edge"
+     id="text16"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif"><tspan
+       sodipodi:role="line"
+       id="tspan24"
+       x="595.72583"
+       y="65.398453">Input:</tspan><tspan
+       sodipodi:role="line"
+       id="tspan25"
+       x="595.72583"
+       y="82.898453">Messdaten</tspan></text>
+  <text
+     x="592.28534"
+     y="310.92633"
+     class="edge"
+     id="text16-5"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif;fill:#111111"><tspan
+       sodipodi:role="line"
+       id="tspan24-7"
+       x="592.28534"
+       y="310.92633">Input:</tspan><tspan
+       sodipodi:role="line"
+       id="tspan25-6"
+       x="592.28534"
+       y="328.42633">Messdaten</tspan></text>
+  <!-- Von Verzweigungspunkt zu Teilproblem 2 -->
+  <!-- Output-Pfeil von Teilproblem 1 -->
+  <path
+     class="arrow"
+     d="M 939.20936,92.824853 H 1164.9793"
+     marker-end="url(#arrowhead)"
+     id="path17"
+     style="stroke-width:2.30578;stroke-dasharray:none" />
+  <path
+     class="arrow"
+     d="m 938.7068,293.27773 h 225.7699"
+     marker-end="url(#arrowhead-3)"
+     id="path17-6"
+     style="fill:none;stroke:#111111;stroke-width:2.30578;stroke-dasharray:none;marker-end:url(#arrowhead-3)" />
+  <text
+     x="964.59961"
+     y="114.06409"
+     class="edge"
+     id="text18"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif"><tspan
+       sodipodi:role="line"
+       id="tspan29"
+       x="964.59961"
+       y="114.06409">Output:</tspan><tspan
+       sodipodi:role="line"
+       id="tspan30"
+       x="964.59961"
+       y="131.56409">Grafische Darstellung</tspan><tspan
+       sodipodi:role="line"
+       x="964.59961"
+       y="149.06409"
+       id="tspan31">der Verteilung</tspan></text>
+  <!-- Output-Pfeil von Teilproblem 2 -->
+  <text
+     x="964.34839"
+     y="314.94797"
+     class="edge"
+     id="text19"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14px;line-height:normal;font-family:system-ui, '-apple-system', 'Segoe UI', Roboto, Arial, sans-serif"><tspan
+       sodipodi:role="line"
+       id="tspan26"
+       x="964.34839"
+       y="314.94797">Output:</tspan><tspan
+       sodipodi:role="line"
+       id="tspan27"
+       x="964.34839"
+       y="332.44797">Tabelle mit Kennwerten</tspan><tspan
+       sodipodi:role="line"
+       x="964.34839"
+       y="349.94797"
+       id="tspan28">und Perzentilen</tspan></text>
+  <path
+     style="fill:#000000;stroke:#000000;stroke-width:2.662;stroke-miterlimit:3.9;stroke-dasharray:none;stroke-opacity:1"
+     d="M 556.23999,194.03495 H 458.12893"
+     id="path25" />
+</svg>
