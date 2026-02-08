@@ -1,28 +1,27 @@
 # Takeaways
 
-Zum Abschluss: Dieses Fallbeispiel war weniger ein „neues Sprachkonstrukt“, sondern eine Zusammenführung. Sie haben gesehen, wie man aus einer Aufgabe Schritt für Schritt eine Lösung macht – und welche Praxisfragen dabei sofort auftauchen.
+Zum Abschluss: Dieses Fallbeispiel war weniger ein „neues Sprachkonstrukt“, sondern eine Zusammenführung. Sie haben gesehen, wie Julia aus einer Aufgabe Schritt für Schritt eine Lösung macht – und welche Praxisfragen dabei sofort auftauchen.
 
-- **Build vs. Buy ist eine Kernentscheidung**: Oft ist die Frage nicht „Kann ich es selbst programmieren?“, sondern „Soll ich es selbst programmieren?“ (Abhängigkeiten, Zeit, Qualität, Compliance).
-- **Abstraktionsgrad hat konkrete Folgen**: High-Level‑Bibliotheken beschreiben eher *was* berechnet werden soll, Low-Level‑Code legt fest *wie*. Das beeinflusst Geschwindigkeit, Entwicklungszeit, Fehlerrisiko und Wartbarkeit.
-- **Eigener Code ist anfangs selten generisch** (Parsing): Erste Versionen lösen meist nur den aktuellen Fall. Robustheit (fehlende Werte, andere Formate, kaputte Zeilen) kostet zusätzliche Tests, Fehlerbehandlung und Refactoring.
-- **Performance ist oft „eingebaut“** (Sortieren): Standardfunktionen wie `sorted()`/`list.sort()` sind in der Praxis meist deutlich schneller und besser getestet als eigene Implementierungen.
-- **Tests sind kein Extra, sondern Teil der Eigenentwicklung**: Sobald Sie selbst implementieren, müssen Sie Verhalten festlegen und absichern (z. B. mit Unit-Tests), sonst ist die Lösung schwer wartbar!
-- **Design Patterns als Werkzeugkasten**: Wir haben das *Strategy Pattern* kurz gestreift, um austauschbare Algorithmen (z. B. Sortierstrategien) zu modellieren. In professioneller Softwareentwicklung ist es hilfreich, mehrere Patterns zu kennen und situationsgerecht einzusetzen.
+- Build vs. Buy ist eine Kernentscheidung: Oft ist die Frage nicht „Kann ich es programmieren?“, sondern „Soll ich es programmieren?“ (Abhängigkeiten, Zeit, Qualität, Compliance).
+- Der Abstraktionsgrad hat konkrete Folgen: High-Level‑Bibliotheken beschreiben eher *was* berechnet werden soll, Low-Level‑Code legt fest *wie*. Das beeinflusst Entwicklungszeit, Fehlerrisiko und Wartbarkeit.
+- Eigener Code ist anfangs selten generisch: Erste Versionen lösen meist nur den aktuellen Fall. Robustheit (fehlende Werte, andere Formate, kaputte Zeilen) kostet zusätzliche Tests, Fehlerbehandlung und Refactoring.
+- Performance ist oft „eingebaut“: Standardfunktionen wie `sorted()`/`list.sort()` sind in der Praxis meist schneller und besser getestet als eigene Implementierungen.
+- Tests sind Teil der Eigenentwicklung: Sobald Julia selbst implementiert, muss sie Verhalten festlegen und absichern, sonst ist die Lösung schwer wartbar.
+- Design Patterns sind Werkzeuge: Das Strategy-Pattern zeigt, wie Julia austauschbare Algorithmen modellieren kann, ohne den Rest des Programms ständig umzubauen.
 
-## Was wir bewusst NICHT betrachtet haben (Einschränkungen)
+**Was wir bewusst nicht betrachtet haben**
 
-Das Fallbeispiel ist absichtlich klein und isoliert. Deshalb haben wir viele Themen, die in realer Software Entwicklung wichtig sind, **nicht** behandelt:
+Das Fallbeispiel ist absichtlich klein und isoliert. Deshalb haben wir viele Themen, die in realer Softwareentwicklung wichtig sind, nicht behandelt:
 
-- **System-Integration & Architektur**: kein Zusammenspiel mehrerer Komponenten (z. B. GUI ↔ Programmlogik ↔ Datenhaltung), keine verteilten Systeme, keine Schnittstellen-/API-Architektur.
-- **Ablaufmodell**: ein einzelnes Programm, das überwiegend **sequentiell** abarbeitet; keine Nebenläufigkeit, keine Skalierung, keine asynchronen Workflows.
-- **Security-by-Design**: wir haben Sicherheitsanforderungen nicht systematisch modelliert (Threat Modeling, Authentisierung/Autorisierung, Input-Härtung, Secrets-Handling) – siehe auch den Hinweis zu {ref}`tip-cve`.
-- **Deployability/Operations**: kein Packaging, keine Deployment-Pipeline, keine Monitoring/Logging-Strategie, keine Update-Strategie.
-- **Lieferkette/Compliance-Artefakte**: keine **SBOM** erstellt (auch wenn das Thema im Prozesskapitel motiviert wird); Abhängigkeits- und Lizenzmanagement wurde nur angerissen.
-- **Test-Automatisierung (CI)**: Wir haben zwar Unit-Tests im Notebook erstellt, aber nicht betrachtet, wie Tests in professionellen Projekten typischerweise **automatisiert** ausgeführt werden (z. B. auf einem CI-Server), inklusive verschiedener Testarten (Unit-, Integrations-, Systemtests) und Qualitätschecks.
+- System-Integration & Architektur: Es gibt kein Zusammenspiel mehrerer Komponenten (z. B. GUI ↔ Logik ↔ Datenhaltung) und keine API-Architektur.
+- Ablaufmodell: Es ist ein einzelnes Programm, das überwiegend sequentiell arbeitet; Nebenläufigkeit und Skalierung bleiben außen vor.
+- Security-by-Design: Sicherheitsanforderungen werden nicht systematisch modelliert (Threat Modeling, Authentisierung/Autorisierung, Input-Härtung, Secrets-Handling) – siehe auch {ref}`tip-cve`.
+- Deployability/Operations: Es gibt kein Packaging, keine Deployment-Pipeline und keine Monitoring/Logging-Strategie.
+- Lieferkette/Compliance: Es wird keine SBOM erstellt; Abhängigkeits- und Lizenzmanagement wird nur angerissen.
+- Test-Automatisierung (CI): Tests werden im Notebook gezeigt, aber nicht als professioneller CI-Workflow (Unit-/Integrations-/Systemtests, Quality Gates) aufgebaut.
 
 Wenn Sie diese Themen theoretisch oder praktisch vertiefen möchten, sprechen Sie uns gerne an. Wir geben Ihnen gerne Literaturempfehlungen und Hinweise zu möglichen Vertiefungsangeboten.
 
-Exkurs: Sicherheit (CVE)
 
 ```{admonition} Hinweis: CVE
 :class: remark

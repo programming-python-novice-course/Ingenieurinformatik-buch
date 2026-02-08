@@ -12,7 +12,11 @@ kernelspec:
 
 # Histogram (A)
 
-Nachdem Julia nun mithilfe ihres neuen Parsers die Daten auslesen kann, macht sie sich an die Visualisierung der Histogramme.
+Nachdem Julia nun mithilfe ihres Parsers die Daten auslesen kann, macht sie sich an die Visualisierung der Histogramme.
+
+## Parser wiederverwenden 
+
+Julia übernimmt den Parser aus dem vorherigen Schritt. Im Buch ist der Parser hier noch einmal sichtbar, damit dieses Teilkapitel für sich lesbar bleibt. In einem echten Projekt würde Julia diese Funktionen in ein eigenes Modul auslagern und wiederverwenden.
 
 
 ```{code-cell} python3
@@ -98,7 +102,9 @@ def parse_air_quality_csv_v3(csv_text):
     return result
 ```
 
-Zunächst liest Julia die Datei ein. Dafür verwendet sie `urllib` – das gehört zur Standardbibliothek von Python. Es muss also nichts installiert werden (was aus Compliance-Gründen nicht immer möglich ist).
+## Daten einlesen 
+
+Zunächst liest Julia die Datei ein. Dafür verwendet sie `urllib` aus der Standardbibliothek. Es muss also nichts installiert werden (was aus Compliance-Gründen nicht immer möglich ist).
 
 ```{code-cell} python3
 from urllib.request import urlopen
@@ -129,7 +135,9 @@ def _preview_data(data, n=5):
 print(json.dumps(_preview_data(data, n=5), indent=2, ensure_ascii=False))
 ```
 
-Dann schreibt Julia eine Funktion, die ein Histogramm ausgeben soll. Da sie keine externen Bibliotheken einbinden kann, bleibt nur die Konsole. Sie entscheidet sich für eine einfache Darstellung: **Für jede Zählung wird ein `|` gezeichnet**.
+## Histogramm ausgeben 
+
+Dann schreibt Julia eine Funktion, die ein Histogramm ausgeben soll. Da sie keine externen Bibliotheken einbinden kann, bleibt nur die Konsole. Sie entscheidet sich für eine einfache Darstellung: Für jede Zählung wird ein `|` gezeichnet.
 
 
 ```{code-cell} python3
@@ -192,7 +200,9 @@ for station in data:
     histogram(data[station])
 ```
 
-Für kleinere Datenmengen funktioniert das gut. Bei größeren Datensätzen werden die Balken jedoch schnell so lang, dass sie über die Seitenbreite hinausragen. Julia braucht also eine skalierte Darstellung.
+## Skalierung für große Datenmengen 
+
+Für kleinere Datenmengen funktioniert die unskalierte Ausgabe gut. Bei größeren Datensätzen werden die Balken jedoch schnell so lang, dass sie über die Seitenbreite hinausragen. Julia braucht also eine skalierte Darstellung.
 
 ```{code-cell} python3
 def histogram_scaled(station_dict, bins=8, width=50):
@@ -229,14 +239,16 @@ for station in data:
     histogram_scaled(data[station], width=50)
 ```
 
-Julia ist mit ihrer Lösung zufrieden und macht sich nun an das Testing. Auf Unit-Tests für die **Darstellung** (also die genaue ASCII-Ausgabe) verzichtet sie an dieser Stelle: Schon kleine Änderungen in der Konsole (Abstände, Rundung, Zeilenumbrüche) können die Ausgabe verändern – Tests auf exakte Strings wären dadurch schnell fragil.
+## Teststrategie: Logik statt Layout 
+
+Julia ist mit ihrer Lösung zufrieden und macht sich nun an das Testing. Auf Unit-Tests für die Darstellung (also die genaue ASCII-Ausgabe) verzichtet sie an dieser Stelle.
 
 Glücklicherweise hat Julia den Code bereits sauber getrennt:
 
-- **Logik**: Bin-Grenzen und Counts berechnen (`_histogram_counts(...)`)
-- **Darstellung**: daraus eine ASCII-Ausgabe erzeugen (`histogram(...)`, `histogram_scaled(...)`)
+- Logik: Bin-Grenzen und Counts berechnen (`_histogram_counts(...)`)
+- Darstellung: daraus eine ASCII-Ausgabe erzeugen (`histogram(...)`, `histogram_scaled(...)`)
 
-Die **Logik** kann sie mit Unit-Tests zuverlässig prüfen:
+Die Logik kann sie mit Unit-Tests zuverlässig prüfen:
 
 ```{code-cell} python3
 import ipytest
@@ -265,3 +277,4 @@ def test_histogram_counts_all_equal_values():
 
 ipytest.run()
 ```
+

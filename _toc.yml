@@ -188,10 +188,10 @@ parts:
     - file: chapters/12-fallbeispiel/00-intro
       sections:
       - file: chapters/12-fallbeispiel/10-zaufgabe
-      - file: chapters/12-fallbeispiel/20-se-Prozess
-      - file: chapters/12-fallbeispiel/30-zerlegung
+      - file: chapters/12-fallbeispiel/20-se-Prozess        
+      - file: chapters/12-fallbeispiel/30-problemanalyse
         sections:
-        - file: chapters/12-fallbeispiel/31-problemanalyse
+        - file: chapters/12-fallbeispiel/31-zerlegung
         - file: chapters/12-fallbeispiel/32-recherche
       - file: chapters/12-fallbeispiel/40-lib-solution
       - file: chapters/12-fallbeispiel/50-eigenentwicklung
@@ -201,6 +201,8 @@ parts:
         - file: chapters/12-fallbeispiel/53-parsing
         - file: chapters/12-fallbeispiel/54-histogram
         - file: chapters/12-fallbeispiel/55-statistics
+        - file: chapters/12-fallbeispiel/56-statistics
+        - file: chapters/12-fallbeispiel/57-statistics
       - file: chapters/12-fallbeispiel/60-comparison
       - file: chapters/12-fallbeispiel/70-summary
   - caption: Appendix

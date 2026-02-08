@@ -1,12 +1,12 @@
-# Recherche
+# Recherche (V)
 
-Für jedes Teilproblem prüfen wir jetzt, ob es dafür schon ein Python-Paket (oder sogar eine “Komplettlösung”) gibt. Moderne LLMs können diese Recherche stark beschleunigen – wichtig ist dabei, dass Sie sich **Quellen/Links** geben lassen und die Vorschläge kurz verifizieren.
+Julia prüft für jedes Teilproblem, ob es dafür bereits ein Python-Paket (oder sogar eine „Komplettlösung“) gibt. Ein LLM kann diese Recherche beschleunigen – aber Julia bleibt verantwortlich dafür, die Vorschläge kurz zu verifizieren.
 
 ```{tip}
-Bitten Sie das LLM immer um Links zur offiziellen Doku (oder PyPI) und darum, keine Pakete zu “erfinden”. Recherchieren heißt: Vorschläge sammeln, vergleichen, entscheiden.
+Julia bittet das LLM immer um Links zur offiziellen Doku (oder PyPI) und darum, keine Pakete zu „erfinden“. Recherche heißt: Vorschläge sammeln, vergleichen, entscheiden.
 ```
 
-**Beispielprompt (zum Kopieren)**
+## Beispielprompt für die Recherche
 
 ```text
 Ich will ein Python-Programm schreiben, das Messdaten auswertet. Ich habe die Aufgabe in Teilprobleme zerlegt:
@@ -39,7 +39,7 @@ datetime,station_antwerp,station_paris,station_london
 ...
 ```
 
-Antwort von ChatGPT
+## Beispielantwort 
 
 ```{figure} ../../figs/12-fallbeispiel/recherche/response-1.png
 ---
@@ -65,20 +65,32 @@ width: 95%
 Beispielantwort - Teil 3 (LLM-Recherche).
 ```
 
-Am besten probieren Sie den prompt einfach selbst aus.
+Am besten probieren Sie den Prompt selbst aus.
 
 
 
-Was hier wichtig ist: das LLM wird Ihnen alles mögliche an Paketen anbieten - das ist super, aber Sie sind dafür verantwortlich, dass diese Pakete stabil funktionieren.
-- Wie werden die Pakete gewartet? 
-- Sind sie die Pakete qualitätsgesichtert, also "gut getestet"?
-- Sind sie einfach installierbar? 
-- Wie komplex darf/muss das System aufgebaut sein? Reicht uns die Minimal-Variante?
+Wichtig ist: Das LLM wird Julia viele Paketvorschläge machen. Das ist hilfreich, aber Julia muss entscheiden, ob diese Pakete für ihr Umfeld wirklich taugen:
 
-Sie sehen: trotz recherche und beispielskript haben wir immer noch einige Fragen zu klären.
-+
-Das LLM kann in der Regel keine Schnittstellenarbeit für Sie übernehmen. In unserem Fall: Sie müssen sich darum kümmern, dass die Datei an einer Stelle abgelegt ist, worauf Sie Zugriff haben.
+- Wie werden die Pakete gewartet?
+- Sind die Pakete gut getestet?
+- Sind sie einfach installierbar?
+- Wie komplex darf das System werden? Reicht eine Minimal-Variante?
+
+Selbst mit Recherche und Beispielskript bleiben meist Fragen offen. Außerdem kann das LLM in der Regel keine Schnittstellenarbeit übernehmen. In diesem Fall heißt das: Julia muss sicherstellen, dass die Datei an einer Stelle liegt (oder erreichbar ist), auf die ihr Programm zugreifen kann.
 
 
-Julia entscheidet sich, dass eine Minimal-Variante erst einmal reichen soll. Also wenige neue Pakete - überschaubare Komplexität.
-Sie entscheidet sich deshalb für die Variante "pandas und matplotlib" - Pakete, die sie bereits im Studium als verwendet hat und mit denen sie aus Erfahrung weiss, dass diese weit verbreitet, gut gewartet/getestet sind.
+## Julias Entscheidung: Minimal-Stack (V)
+
+Julia entscheidet sich zunächst für eine Minimal-Variante: wenige neue Pakete, überschaubare Komplexität. Sie wählt daher „pandas und matplotlib“ – Werkzeuge, die verbreitet sind und die sie bereits kennt.
+
+## Recherche-Checkliste (V)
+
+- Julia fordert Links zu offizieller Doku oder PyPI an, statt sich auf Namen zu verlassen.
+- Julia prüft kurz Wartung, Qualität und Installierbarkeit, bevor sie ein Paket übernimmt.
+- Julia entscheidet bewusst zwischen „minimal“ (wenig Abhängigkeiten) und „komfortabel“ (mehr Features).
+- Julia klärt die Datenquelle (Pfad/URL) als eigene Schnittstellenaufgabe.
+
+## Kurz zusammengefasst (V)
+
+- Julia nutzt das LLM als Recherchehilfe, nicht als Entscheidungsträger.
+- Julia priorisiert einen Minimal-Stack, um schnell und robust starten zu können.

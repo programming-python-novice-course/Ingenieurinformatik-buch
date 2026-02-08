@@ -1,11 +1,8 @@
 # Problem-Zerlegung (V)
 
-Grobe Teilprobleme
-Julia hat für jedes der drei Teilproblem eine pandas funktionalität genutzt.
+Julia hat die Aufgabe bereits grob zerlegt (Parsing, Visualisierung, Statistik). Im Buy-Pfad war das einfach, weil `pandas` und `matplotlib` viele Details kapseln. Im Build-Pfad muss Julia diese Bausteine so weiter zerlegen, dass sie kleine, testbare Schritte erhält.
 
-Jetzt steht sie vor der herausforderung, dass sie selbst diese drei funktionalitäten entwickeln muss. 
-
-Die grosse frage ist: wie kann Julia die probleme weiter zerlegen?
+> Kernidee: Julia zerlegt so lange weiter, bis jeder Schritt in 10–30 Zeilen verständlich implementierbar und testbar ist.
 
 ```{figure} ../../figs/12-fallbeispiel/dekomposition_teilprobleme-further.png
 ---
@@ -14,5 +11,3 @@ width: 95%
 ---
 Wie kann jedes Einzelproblem gelöst werden?
 ```
-
-

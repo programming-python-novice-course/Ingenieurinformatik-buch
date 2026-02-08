@@ -11,18 +11,21 @@ kernelspec:
 
 # Test-Frameworks (V)
 
-Julia erkundigt sich zuerst, welches Test-Framework in der Firma verwendet wird. Ein Test-Framework ist ein Softwarepaket, das Sie beim **Schreiben, Ausführen und Auswerten** von Tests unterstützt (z. B. Test entdecken, Ergebnisse übersichtlich anzeigen, Fehlermeldungen gut lesbar machen).
+Julia erkundigt sich zuerst, welches Test-Framework in der Firma verwendet wird. Sie will möglichst früh prüfen können, ob ihre Eigenentwicklung das gewünschte Verhalten hat.
+
+
+Ein *Test-Framework* ist ein Softwarepaket, das beim Schreiben, Ausführen und Auswerten von Tests unterstützt (z. B. Tests entdecken, Ergebnisse übersichtlich anzeigen, Fehlermeldungen gut lesbar machen).
 
 Für Python sind u. a. diese Optionen verbreitet:
-- **`unittest`**: Teil der Python-Standardbibliothek, läuft ohne Zusatzinstallation.
-- **`pytest`**: sehr beliebt, weil Tests kurz und gut lesbar sind (z. B. via `assert`).
-- **Notebook-Variante**: In Jupyter-Notebooks nutzt man häufig **`ipytest`**, um `pytest` bequem „in Zellen“ laufen zu lassen. - das tun wir hier ;)
+
+- `unittest`: Teil der Python-Standardbibliothek, läuft ohne Zusatzinstallation.
+- `pytest`: sehr beliebt, weil Tests kurz und gut lesbar sind (z. B. via `assert`).
+- Notebook-Variante: In Jupyter-Notebooks nutzt man häufig `ipytest`, um `pytest` bequem „in Zellen“ laufen zu lassen – das tun wir hier.
+
 
 Im Folgenden verwenden wir `ipytest` für ein minimales Beispiel.
 
-Kurz zur Frage „Woher weiß Jupyter/IPython, was ein Test ist?“:
-Nicht IPython entscheidet das, sondern **`pytest`**. `ipytest` ist nur die „Brücke“, um `pytest` bequem aus einem Notebook heraus zu starten.
-`pytest` findet Tests über **Konventionen**, z. B. Funktionen, deren Name mit `test_` beginnt.
+
 
 ```{code-cell} python3
 # `autoconfig()` richtet die Ausgabe/Ergebnisdarstellung ein,
@@ -30,10 +33,12 @@ import ipytest
 ipytest.autoconfig()
 ```
 
-Im folgenden soll die Funktion mean() getestet werden. Es werden zwei Tests erstellt:
-- test_mean_of_three_values
-- test_mean_raises_on_empty_list
-In den Tests wird kurz beschrieben, was die Tests beabsichtigen.
+Julia startet mit einer kleinen Funktion `mean()` und schreibt zwei Tests:
+
+- `test_mean_of_three_values`
+- `test_mean_raises_on_empty_list`
+
+Jeder Test beschreibt kurz, was er prüfen soll.
 
 ```{code-cell} python3
 
@@ -62,3 +67,12 @@ def test_mean_raises_on_empty_list():
 # (ipytest sammelt den Code aus dem Notebook-Kontext und ruft dann pytest auf.)
 ipytest.run()
 ```
+
+
+```{admonition} Hinweis
+:::class: remark
+
+Woher weiß das System, was ein Test ist? Nicht IPython entscheidet das, sondern `pytest`. `ipytest` ist nur die „Brücke“, um `pytest` bequem aus einem Notebook heraus zu starten. `pytest` findet Tests über Konventionen, z. B. Funktionen, deren Name mit `test_` beginnt.
+```
+
+

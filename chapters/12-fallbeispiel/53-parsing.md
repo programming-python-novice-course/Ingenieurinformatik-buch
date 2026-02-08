@@ -25,15 +25,19 @@ datetime,station_antwerp,station_paris,station_london
 ...
 ```
 
-Diese muss nun irgendwie in Python abgespeichert werden - aber wie soll das aussehen?
+Julia fragt sich zuerst: In welcher Datenstruktur will sie die Messwerte am Ende haben? Ohne diese Entscheidung kann sie zwar Text „einlesen“, aber nicht sinnvoll weiterverarbeiten.
 
-Das erste Teilproblem das Julia also zu lösen hat ist es eine Zieldatenstruktur festzulegen.
+## Zieldatenstruktur festlegen 
 
-Ziel-Datenstruktur: Für jede Station speichert sie die Zeitpunkte und die zugehörigen NO₂-Werte. Fehlende Messwerte (leere Felder) lässt sie weg. Das ist eine **Designentscheidung**: Genauso gut hätte sie `NaN`-Werte oder Platzhalter (z. B. leere Strings) speichern können – vgl. die Tabelle im vorherigen Abschnitt; dort waren fehlende Werte als leere Felder dargestellt.
+Julia entscheidet sich für eine einfache Struktur: Für jede Station speichert sie die Zeitpunkte und die zugehörigen NO₂-Werte. Fehlende Messwerte (leere Felder) lässt sie weg. Das ist eine Designentscheidung: Sie hätte fehlende Werte auch explizit als `NaN` oder Platzhalter speichern können.
 
-Dann müssen die Messwerte irgendwie aus der Messdatei nach Python kommen. Sie muss Python also sagen, dass Python die Datei irgendwie öffnen und den Inhalt konsumieren und verwerten soll.  -> nächstes problem.
+## Parsing-Schritte klären 
 
-Was heisst verwerten? jede zeile muss als messwert intepretiert werden, wobei die messwerte sowohl einen zeit als auch ort zugeordnet sind. -> Julia muss also zeit und ort richtig zuornen -> nächstes problem.
+Julia skizziert die Verarbeitung in drei Schritten:
+
+- Julia beschafft den CSV-Text (Datei öffnen oder URL laden).
+- Julia interpretiert jede Zeile als Messzeitpunkt und ordnet die Werte den Stationen zu.
+- Julia konvertiert Zahlenwerte in `float` und überspringt fehlende Felder.
 
 ```{exercise} Aufgabe
 :label: exercise-parsing-datenverarbeitung-visualisieren
@@ -41,7 +45,9 @@ Was heisst verwerten? jede zeile muss als messwert intepretiert werden, wobei di
 Visualisieren Sie nach einer Methode Ihrer Wahl den Vorgang der Datenverarbeitung.
 ```
 
-Nachdem Julia nun eine Vorstellung hat, welche Schritte alle notwendig sind und wie diese zusammenhängen startet sie mit der Implementierung. Sie entscheidet sich die Datenverarbeitungslogik in einer Funktion parse_air_quality_csv_v2 zu kapseln, damit die Logik einfach wiederverwendet werden kann.
+## Implementierung: erster Parser
+
+Nachdem Julia eine Vorstellung hat, welche Schritte notwendig sind, startet sie mit der Implementierung. Sie kapselt die Logik in einer Funktion `parse_air_quality_csv_v2`, damit sie sie später wiederverwenden und testen kann.
 
 ```{code-cell} python3
 
@@ -108,7 +114,7 @@ data = parse_air_quality_csv_v2(sample)
 list(data.keys())
 ```
 
-## Testing
+## Testing 
 
 Julia sichert das Verhalten mit ein paar Unit-Tests ab. Da sie- wie wir hier - Notebooks nutzt, greift sie dafür auf `ipytest` zurück (siehe auch das Test-Kapitel).
 
@@ -147,11 +153,13 @@ def test_parse_converts_values_to_float():
 ipytest.run()
 ```
 
+## Veränderte Rahmenbedingungen
+
 Auf einem Laufwerk entdeckt Julia weitere Messdateien. Dort sind die Werte allerdings nicht durch `,`, sondern durch `;` getrennt.
 
-Sie schreibt einen zusätzlichen Test, um zu prüfen, wie **generisch** ihr Code ist – also wie viele ähnliche Eingabeformate er abdecken kann.
+Sie schreibt einen zusätzlichen Test, um zu prüfen, wie generisch ihr Code ist – also wie viele ähnliche Eingabeformate er abdecken kann.
 
-Wie erwartet ist der Code noch wenig generisch: Der Test ist **rot** (Fail), weil der Parser (noch) nicht mit `;` umgehen kann.
+Wie erwartet ist der Code noch wenig generisch: Der Test schlägt fehl, weil der Parser (noch) nicht mit `;` umgehen kann.
 
 ```{code-cell} python3
 def _sample_csv_semicolon():
@@ -171,7 +179,7 @@ def test_parse_with_semicolon_delimiter_should_work():
 ipytest.run()
 ```
 
-## Error handling
+## Error handling (V)
 
 Wie soll Julia mit dieser Erkenntnis umgehen, dass das Parsing nicht mehr funktioniert sobald das Trennzeichen anders ist? 
 
@@ -268,7 +276,7 @@ ipytest.run()
 ```
 Ganz zufrieden ist Julia noch nicht: Andere Trennzeichen (z. B. `|`) werden weiterhin nicht unterstützt. Deshalb dokumentiert sie die Einschränkung und erstellt ein internes Ticket für eine generische Lösung.
 
-## Refactoring: kleine, testbare Funktionen
+## Refactoring: kleine, testbare Funktionen (V)
 
 Das größere Problem ist aber: Aktuell steckt (fast) die gesamte Logik in einer einzigen Funktion. Zum Beispiel kann sie das Parsen einzelner Messwerte (String → `float`) nicht unabhängig vom gesamten CSV-Einlesen testen.
 

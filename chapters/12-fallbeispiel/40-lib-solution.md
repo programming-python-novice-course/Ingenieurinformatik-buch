@@ -11,16 +11,22 @@ kernelspec:
 
 # Lösung mit Library (V)
 
-Wir sehen uns an, wie man mit "Einkaufsteilen" (Bibliotheken) sehr schnell Programme erstellen kann. Eine wichtige Regel in der Softwareentwicklung ist: "Do not reinvent the wheel!" Das heißt: Nutzen Sie Einkaufsteile, die gut getestet sind und gewartet werden! Eine Sammlung von Einkaufsteilen wird in der Softwareentwicklung als **Library** bezeichnet. Konkret sehen wir uns an, wie Julia das Fallbeispiel mithilfe einer Library lösen kann.
+Julia startet im Buy-Pfad: Sie möchte schnell zu einem Ergebnis kommen und nutzt dafür gut gepflegte Bibliotheken. Das ist in der Praxis oft die Standardwahl, solange Abhängigkeiten erlaubt sind und das Paket zuverlässig ist.
+
+> Kernidee: Julia beschreibt eher *was* sie will (Kennzahlen, Histogramm) und überlässt das *wie* der Library.
 
 
 ```{admonition} Hinweis
 :class: remark
 
-Sie führen den Code gerade auf einem Server aus. Deshalb können Sie **nicht** einfach Dateien von Ihrem Rechner hochladen oder von Ihrem Rechner-Pfad einlesen. Die Messdaten-Datei ist bereits auf dem Server für Sie abgelegt. 
+Sie führen den Code gerade auf einem Server aus. Deshalb können Sie nicht einfach Dateien von Ihrem Rechner-Pfad einlesen. Die Messdaten-Datei ist bereits für Sie online erreichbar.
 ```
 
-Bitte führen Sie den folgendenen Code nochmals aus, um in Ihrem Setup den Pfad zur Datei zu identifizieren. Verwenden Sie die Variable `csv_file_path` um auf die Datei zuzugreifen:
+**Datenquelle festlegen**
+
+Julia greift über eine URL die Daten direkt als rohen Text ab. 
+
+Hinweis: die Variable `csv_file_path` liefert die Messdaten im Textformat.
 
 
 ```{code-cell} python3
@@ -29,7 +35,9 @@ csv_file_path = "https://raw.githubusercontent.com/fk03ingenieursinformatik/inge
 print(f"Die Datei wird bezogen über: {csv_file_path}")
 ```
 
-Als erstes liest Julia die Messdaten aus der CSV-Datei ein und werfen einen Blick auf die Tabelle.
+**CSV einlesen und inspizieren**
+
+Als Erstes liest Julia die Messdaten ein und verschafft sich einen Überblick.
 
 
 ```{code-cell} python3
@@ -52,7 +60,9 @@ df = df.rename(
 df.head()
 ```
 
-Als Nächstes bereiten wir die Daten so vor, dass Zeitpunkte bequem als Index genutzt werden können.
+**Daten vorbereiten**
+
+Als Nächstes bereitet Julia die Daten so vor, dass Zeitpunkte bequem als Index genutzt werden können.
 
 ```{code-cell} python3
 
@@ -60,7 +70,9 @@ df = df.set_index("datetime")
 df.head()
 ```
 
-Nun lassen wir uns zentrale Kennwerte (z. B. Mittelwert, Standardabweichung und Perzentile) automatisch berechnen.
+**Kennzahlen berechnen**
+
+Dann lässt sich Julia zentrale Kennwerte automatisch berechnen (z. B. Mittelwert, Standardabweichung und Perzentile).
 
 ```{code-cell} python3
 
@@ -68,7 +80,9 @@ stats = df.describe().T
 stats
 ```
 
-Zum Abschluss visualisieren wir die Verteilung der Messwerte als Histogramme.
+**Verteilung visualisieren**
+
+Zum Abschluss visualisiert Julia die Verteilung der Messwerte als Histogramme.
 
 ```{code-cell} python3
 import matplotlib.pyplot as plt
@@ -82,4 +96,11 @@ plt.tight_layout(h_pad=2.0, w_pad=1.0)
 plt.show()
 ```
 
-Und wir sind fertig!
+
+```{admonition} Kurz gefasst
+:::class: note
+
+- Julia löst die Aufgabe im Buy-Pfad mit wenigen, gut getesteten Bibliotheksaufrufen.
+- Julia bekommt Einlesen, Kennzahlen und Histogramme, ohne die Algorithmen selbst zu implementieren.
+- Julia profitiert vom hohen Abstraktionsgrad: Der Code ist kurz, aber sie ist an die Library gebunden.
+```
