@@ -36,6 +36,7 @@ build_book_pdf:
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: on_success
     - when: manual
+      allow_failure: true
   variables:
     PDF_BUILD_DIR: "_book_as_pdf"
     PYDEVD_DISABLE_FILE_VALIDATION: "1"
@@ -73,6 +74,7 @@ deploy_notebooks_in_github:
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: on_success
     - when: manual
+      allow_failure: true
   needs:
     - job: build_website_html
       artifacts: true
@@ -126,6 +128,7 @@ update_website_test:
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
       when: manual
+      allow_failure: true
     - when: never
   needs:
     - job: build_website_html
