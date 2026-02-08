@@ -32,7 +32,10 @@ build_website_html:
 
 build_book_pdf:
   stage: build
-  when: manual
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+      when: on_success
+    - when: manual
   variables:
     PDF_BUILD_DIR: "_book_as_pdf"
     PYDEVD_DISABLE_FILE_VALIDATION: "1"
@@ -66,7 +69,10 @@ build_book_pdf:
 deploy_notebooks_in_github:
   image: alpine/git:latest
   stage: deploy
-  when: manual
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+      when: on_success
+    - when: manual
   needs:
     - job: build_website_html
       artifacts: true
@@ -98,17 +104,39 @@ deploy_notebooks_in_github:
 
 update_website:
   stage: deploy
-  when: manual
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+      when: on_success
+    - when: never
   needs:
     - job: build_website_html
       artifacts: true
   dependencies:
     - build_website_html
   script:
-    - 'echo "Update website: https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html"'
+    - 'echo "Pages accessible through ${CI_PAGES_URL}"'
   artifacts:
     paths:
       - _website_html/_build/html
   pages:
     publish: "_website_html/_build/html"
-    path_prefix: "test" # Results in paths like mr-123
+
+update_website_test:
+  stage: deploy
+  rules:
+    - if: '$CI_COMMIT_BRANCH != "master"'
+      when: manual
+    - when: never
+  needs:
+    - job: build_website_html
+      artifacts: true
+  dependencies:
+    - build_website_html
+  script:
+    - 'echo "Pages accessible through ${CI_PAGES_URL}"'
+  artifacts:
+    paths:
+      - _website_html/_build/html
+  pages:
+    publish: "_website_html/_build/html"
+    path_prefix: "test"
