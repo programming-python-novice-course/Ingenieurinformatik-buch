@@ -11,7 +11,7 @@ kernelspec:
 
 # Skript
 
-Eine Variante wie wir das Logo einbinden können, ist, dass wir unser Python-Skript einfach durch die entsprechende Logik erweitern.
+Eine Variante, wie Sie ein Logo einbinden können, ist, das Python-Skript direkt um die entsprechende Logik zu erweitern.
 
 ```{code-cell} python3
 from io import BytesIO
@@ -24,7 +24,7 @@ from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 LOGO_URL = "https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/blob/master/img/logo-mini.png?raw=true"
 
 fig, ax = plt.subplots()
-ax.plot([0, 1, 2, 4, 6], [2, 1, 3, 0, 1]) # Grafik-Teil
+ax.plot([0, 1, 2, 4, 6], [2, 1, 3, 0, 1])  # Grafik-Teil
 ax.set_title("Messreihe (mit Logo)")
 
 # Logo laden (aus URL) und einfügen
@@ -38,11 +38,11 @@ ax.add_artist(ab)
 plt.show()
 ```
 
-Wenn wir eine neue Grafik brauchen kopieren wir das Skript und ändern den Grafik-Teil ab. 
+Wenn Sie eine neue Grafik benötigen, kopieren Sie das Skript und ändern den „Grafik-Teil“ entsprechend ab.
 
-Problem: 
-- irgendwann haben wir ganz viele Kopien und wenn sich dann zum Beispiel das Logo ändert, müssen wir es 100000mal abändern in jedem einzelnen Skript. 
+**Problem:** Irgendwann gibt es sehr viele Kopien. Wenn sich dann z.B. das Logo (oder dessen Position/Größe) ändert, müssen Sie die Änderung an vielen Stellen nachziehen.
 
-Lösung:
-- wir möchten die Logo-Logik nicht in jedes Skript kopieren, sondern an **einer** Stelle zentral pflegen (z.B. als Wrapper oder als OO-Erweiterung).
+**Ziel:** Die Logo-Logik soll nicht in jedem Skript stehen, sondern an **einer** Stelle zentral gepflegt werden (z.B. als Wrapper oder als OO-Erweiterung).
+
+Ein naheliegender nächster Schritt ist daher eine eigene Funktion, die das Plotten kapselt und das Logo automatisch ergänzt: eine Wrapper-Funktion.
 

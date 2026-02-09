@@ -2,6 +2,13 @@
 
 In unserer Vorlesung haben wir uns bisher nur auf die *prozedurale Programmierung* beschränkt. Die *prozedurale Programmierung* war lange Zeit die dominierende Art und Weise zu programmieren.
 
+```{admonition} Prozedurale Programmierung
+:class: definition
+:name: def-procedural-programming
+Die *prozedurale Programmierung* ist ein *Programmierparadigma*, welches auf *Funktionen / Prozeduren* aufgebaut ist.
+Sie gilt als Erweiterung des *imperativen Paradigmas*.
+```
+
 In den letzten 15 Jahren hat sich in vielen Bereichen der Softwareentwicklung immer mehr die *objekt-orientierte Programmierung* durchgesetzt, das wie die *prozedurale Programmierung* ein Programmierparadigma darstellt.
 
 Sie werden in der Programmierpraxis daher immer wieder mit diesem Programmierparadigma in Berührung kommen.

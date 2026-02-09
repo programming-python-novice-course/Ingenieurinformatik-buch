@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-class-and-object)=
-# Klassen und Objekte (S)
+# Klassen (S) 
 
 Eine *Klasse* ist die Blaupause seiner *Objekte*.
 
@@ -33,7 +33,6 @@ Es kann viele *Objekte* einer *Klasse* geben.
 Jedes *Objekt* liegt als *Datenbündel* im Speicher.
 Jedes Objekt einer bestimmten Klasse beinhaltet andere Werte, doch sind die Methoden aller Objekte einer Klasse [identisch](def-identity).
 
-## Klassen
 
 Eine *Klasse* ist eine Definition eines [zusammengesetzten Datentyps](sec-datastructures) angereichert mit *Methoden*, die auf dem Datentyp ausgeführt werden sollen.
 Sie ist ein Codeblock der mit dem ``class``-Ausdruck beginnt:

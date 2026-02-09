@@ -9,20 +9,27 @@ kernelspec:
   name: python3
 ---
 
-# Wrapper-Funktion 
+# Wrapper-Funktion
 
-Wir schreiben eine neue Funktion, die die plot() Funkion von matplotlib ersetzen soll. In Zukunft können dann alle Personen diese Funktion nutzen anstelle der matplotlib plot Funktion. 
+Sie schreiben eine neue Funktion, die die `plot()`-Funktionalität von Matplotlib *kapselt* und anschließend das Logo ergänzt. In Zukunft könnten dann alle Personen diese Funktion anstelle der direkten Matplotlib-Nutzung verwenden.
 
-Die Funktion plot_line_with_logo
-- ruft intern matplotlib plot funktionalität auf
-- fügt dann noch das logo hinzu
+Die Funktion `plot_line_with_logo`:
+- ruft intern Matplotlib-Funktionalität auf (hier: `ax.plot(...)`)
+- fügt danach das Logo hinzu
 
-Man spricht hier auch davon, dass plot_line_with_logo eine wrapper funktion ist (sie wrapped die matplotlib funktionaliät)
+Man spricht hier von einer **Wrapper-Funktion**: Sie „umhüllt“ eine bestehende Funktionalität und ergänzt sie um Zusatzverhalten.
 
 
 ```{code-cell} python3
 
+from io import BytesIO
+from urllib.request import urlopen
+
+import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+
+LOGO_URL = "https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/blob/master/img/logo-mini.png?raw=true"
 
 def load_logo(url: str):
     """Lädt das Logo von einer URL (PNG) als Bildarray."""
@@ -54,18 +61,22 @@ plt.show()
 
 Ein Wrapper ist nicht „falsch“ – aber in der Praxis hat er typische Probleme:
 
-Skalierung: Heute Linie, morgen `scatter`, dann `hist`, dann mehrere Subplots … der Wrapper wächst schnell oder es entstehen viele Wrapper.
+**Skalierung:** Heute Linie, morgen `scatter`, dann `hist`, dann mehrere Subplots … der Wrapper wächst schnell oder es entstehen viele Wrapper.
 
-- plot_line_with_logo -> ruft intern matplotlib...plot auf
-- plot_scatter_with_logo -> ruft intern matplotlib...scatter
-- plot_hist_with_logo -> ruft intern 
-- ..
+- `plot_line_with_logo(...)` kapselt `ax.plot(...)`
+- `plot_scatter_with_logo(...)` kapselt `ax.scatter(...)`
+- `plot_hist_with_logo(...)` kapselt `ax.hist(...)`
+- …
 
-Unschön: Wir haben dann ganz viel neue Funktionen ...
+**Unschön:** Es entstehen dann sehr viele neue Funktionen, die gepflegt werden müssen.
 
-Disziplin: Alle müssen den Wrapper konsequent verwenden. Sobald jemand `plt.subplots()` direkt nutzt, fehlt das Logo wieder.
+**Disziplin:** Alle müssen den Wrapper konsequent verwenden. Sobald jemand `plt.subplots()` direkt nutzt, fehlt das Logo wieder.
 
 
-Die Frage ist also: können wir irgendwie anders das Logo hinzufügen ohne zu wrappen?
+Die Frage ist also: **Können wir das Logo hinzufügen, ohne für jede Plot-Variante eine neue Wrapper-Funktion zu schreiben?**
+
+Genau an dieser Stelle hilft Objektorientierung: Wir erweitern eine passende Komponente von Matplotlib so, dass das Logo „von innen“ automatisch ergänzt wird – ohne dass sich die Nutzung von `plot`, `scatter`, `set_title`, … für Anwender:innen ändern muss.
+
+Wie das konkret funktioniert, sehen Sie in der OOP-Variante im nächsten Abschnitt.
 
 
