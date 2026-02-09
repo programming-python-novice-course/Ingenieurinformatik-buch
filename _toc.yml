@@ -182,6 +182,11 @@ parts:
       sections:
       - file: chapters/11-object-oriented/1-class-and-objects
       - file: chapters/11-object-oriented/2-inheritance-poly-encap
+        sections:
+        - file: chapters/11-object-oriented/2-inheritance-poly-encap/1-vererbung
+        - file: chapters/11-object-oriented/2-inheritance-poly-encap/2-vererbung-und-komposition
+        - file: chapters/11-object-oriented/2-inheritance-poly-encap/3-kapselung
+        - file: chapters/11-object-oriented/2-inheritance-poly-encap/4-polymorphie
   - caption: Fallbeispiel
     numbered: True
     chapters:

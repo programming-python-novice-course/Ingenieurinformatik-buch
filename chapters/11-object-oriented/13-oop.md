@@ -13,7 +13,9 @@ kernelspec:
 
 Stellen Sie sich eine Grafik wie eine **Baugruppe** vor: Sie setzt sich aus **Unterbaugruppen** zusammen, diese wiederum aus weiteren Unterbaugruppen und am Ende aus **Einzelteilen**.
 
+
 ## Ziel: „Plotbereich/Hintergrund mit Logo“ als Variante
+
 Wir möchten eine Variante des Plotbereichs (vereinfacht: „Hintergrund“) haben, die **zusätzlich ein Logo enthält** – und zwar so, dass Anwender:innen weiterhin „ganz normal“ plotten können.
 
 Aus Wrapper-Sicht heißt das: Wir nehmen den bereits vorhandenen Plotbereich und **fügen ein Element hinzu** (das Logo). In der Baugruppen-Logik bedeutet das: Wir bauen aus einer vorhandenen Unterbaugruppe eine **Variante mit zusätzlichem Anbauteil**.
@@ -24,6 +26,7 @@ Aus Wrapper-Sicht heißt das: Wir nehmen den bereits vorhandenen Plotbereich und
 Wichtig ist dabei: **Die Bedienoberfläche bleibt gleich** (Sie plotten wie gewohnt), aber eine interne Komponente wird als Variante ausgetauscht/erweitert, sodass das zusätzliche Verhalten (Logo) „automatisch“ dazukommt.
 
 ## Wie könnte man das erreichen?
+
 Matplotlib ist – wie viele Bibliotheken – wie ein System aus **Baugruppen** aufgebaut. Für uns reicht ein einfaches „enthält“-Bild, damit man weiß, *wo* man ansetzt:
 
 - **Figure** (Gesamtbaugruppe): die ganze Abbildung
@@ -33,6 +36,7 @@ Matplotlib ist – wie viele Bibliotheken – wie ein System aus **Baugruppen** 
 Der „Hintergrund/Plotbereich“ heißt in Matplotlib `Axes`. Das Logo ist dabei einfach ein weiteres Einzelteil (ein Bild-„Artist“), das am Plotbereich hängt.
 
 ### OOP-Kern: Vererbung (Variante, die weiterhin „passt“)
+
 Damit unser „Plotbereich mit Logo“ wirklich ein Plotbereich bleibt und überall passt, wo Matplotlib ein `Axes` erwartet, bauen wir die Variante als **neue Klasse, die von `Axes` erbt**. Das ist ein zentrales Verfahren in der Objektorientierung: Eine neue Baugruppe entsteht aus einer vorhandenen – mit **gleichen Anschlüssen nach außen**, aber zusätzlichem Innenleben.
 
 ### Architektur-Kern: Registrierung (wie Matplotlib die neue Klasse kennt)
@@ -123,7 +127,6 @@ Die wichtigste Idee hinter objektorientierter Programmierung ist:
 > Große Systeme so bauen, dass man kleine Teile ändern kann, ohne alles andere anzufassen.
 
 ## Ingenieur-Analogie (Schnittstellen)
-
 Stellen Sie sich vor, ein Auto besteht aus Baugruppen mit definierten Schnittstellen (Aufhängung, Wellen, Stecker, Befestigungspunkte). Dann kann man **eine Baugruppe austauschen**, ohne das ganze System neu zu konstruieren – solange die Schnittstelle gleich bleibt.
 
 Genau das ist hier passiert: `LogoAxes` hält die gleiche „Schnittstelle“ wie `Axes` (die gleichen Methoden), funktioniert aber intern etwas anders (es ergänzt automatisch einen zusätzlichen Artist).
@@ -141,4 +144,6 @@ Objektorientierung **begünstigt** solche austauschbaren Strukturen, weil in Kom
 
 Aber: OOP ist **kein Garant** für gute Architektur. Es gibt objektorientierte Systeme, in denen nichts sauber austauschbar ist – und prozedurale Systeme, die sehr gut modularisiert sind. Entscheidend ist nicht das Paradigma allein, sondern die Struktur und die Schnittstellengestaltung.
 
-**Merksatz:** Die Motivation hinter objektorientierter Programmierung ist, große Systeme so zu bauen, dass man kleine Teile ändern kann, ohne alles andere anzufassen. Umgesetzt wird das u.a. mit Klassen.
+
+
+> Die Motivation hinter objektorientierter Programmierung ist, große Systeme so zu bauen, dass man kleine Teile ändern kann, ohne alles andere anzufassen (*Kapselung*). Umgesetzt wird das u.a. mit Klassen.

@@ -10,8 +10,9 @@ kernelspec:
 ---
 
 (sec-class-and-object)=
-# Klassen (S) 
+# Klasse vs. Objekt (S) 
 
+## Klasse 
 Eine *Klasse* ist die Blaupause seiner *Objekte*.
 
 ```{admonition} Klassen
