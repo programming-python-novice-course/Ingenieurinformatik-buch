@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# OOP-Variante
+# OOP-Variante (V)
 
 Stellen Sie sich eine Grafik wie eine **Baugruppe** vor: Sie setzt sich aus **Unterbaugruppen** zusammen, diese wiederum aus weiteren Unterbaugruppen und am Ende aus **Einzelteilen**.
 

@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Wrapper-Funktion
+# Wrapper-Funktion (V)
 
 Sie schreiben eine neue Funktion, die die `plot()`-Funktionalität von Matplotlib *kapselt* und anschließend das Logo ergänzt. In Zukunft könnten dann alle Personen diese Funktion anstelle der direkten Matplotlib-Nutzung verwenden.
 

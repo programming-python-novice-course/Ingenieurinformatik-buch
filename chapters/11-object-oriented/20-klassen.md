@@ -10,9 +10,7 @@ kernelspec:
 ---
 
 (sec-oop)=
-# Klassen (V)
-
-**Wiederholung**
+# Datenstrukturen vs. Klassen (V)
 
 Im *prozeduralen Programmierparadigma* schreiben wir Funktionen, die bestimmte Daten verarbeiten.
 Jede Funktion steht für sich 'separat' neben den Daten und erhält (sofern sie keine globalen Variablen verwendet) alle Daten als Argumente.
@@ -34,8 +32,6 @@ print(translate(rect1, (10,-5)))
 print(rect1)
 ```
 Da wir in der *prozeduralen Programmierung* bevorzugt [reine Funktionen](sec-purity) verwenden, legt ``translate`` eine Kopie an und liefert diese verschobene Kopie zurück.
-
-**Klassen**
 
 In der *objektorientierte Programmierung* bündeln wir **Daten** und deren **Operanden**.
 Das heißt, Funktionen welche wir auf die Daten anwenden wollen und die Daten selbst werden zusammen in ein sog. *Objekt* gepackt.

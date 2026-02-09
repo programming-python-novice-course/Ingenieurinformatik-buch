@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Skript
+# Skript (V)
 
 Eine Variante, wie Sie ein Logo einbinden können, ist, das Python-Skript direkt um die entsprechende Logik zu erweitern.
 
