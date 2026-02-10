@@ -1,3 +1,14 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Herkunft (S)
 
 > Ein Datentyp kann entweder von der Programmiersprache bereitgestellt werden (built-in) oder vom Programmiert selbst definiert werden (Eigendefinition).
