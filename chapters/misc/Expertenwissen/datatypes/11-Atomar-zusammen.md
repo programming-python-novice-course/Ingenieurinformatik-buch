@@ -16,8 +16,8 @@ Eine wesentlich Eigenschaft von *atomaren Datentypen* ist die Unveränderbarkeit
 Der **Wert** einer Variable eines *atomaren Datentyps* liegt **unverändert** im Speicher.
 
 ```{admonition} Atomare Datentypen
-:name: def-atomare-data-types
-:class: python
+::name: def-atomare-data-types
+::class: python
 
 *Datentypen* welche sich auf einen einzelnen Wert beziehen, d.h., ganze Zahlen ``int``, Wahrheitswerte ``bool`` und Gleitkommazahlen ``float`` sind *atomare Datentypen*.
 ```
@@ -27,8 +27,8 @@ In anderen Worten, wird der Speicher von Ihrem laufenden Programm nicht mehr ben
 Der Speicher der durch einen Wert eines *atomaren Datentyp* belegt ist kann also durchaus verändert werden, allerdings nur dann wenn er nicht mehr gebraucht wird.
 
 ```{admonition} Unveränderliche atomare Datentypen
-:class: theorem
-:name: theorem-immutable-atom-data-types
+::class: theorem
+::name: theorem-immutable-atom-data-types
 Atomare Datentypen sind *unveränderlich*.
 ```
 
@@ -37,8 +37,8 @@ Wir hatten festgehalten, dass Veränderungen der einen Variablen keinen Effekt a
 Für *atomare Datentypen* gilt noch mehr: 
 
 ```{admonition} Unveränderliche atomare Datentypen
-:class: remark
-:name: remark-immutable-atom-data-types
+::class: remark
+::name: remark-immutable-atom-data-types
 Ändern wir den **Wert** einer Variable vom Typ ``int``, ``bool`` oder ``float``, so kann diese Änderung nicht den **Wert** einer anderen Variablen verändern.
 ```
 
@@ -67,9 +67,9 @@ print(f'id of z = {id(z)}')
 *Zusammengesetzte Datentypen* oder auch *Datenstrukturen* bestehen hingegen aus mehreren Werten.
 Sie strukturieren diese Werte.
 
-```{admonition} Zusammengesetzt Datentypen 
-:name: def-data-structures
-:class: python
+```{admonition} Zusammengesetzt Datypen 
+::name: def-data-structures
+::class: python
 
 Datentypen welche Sammlungen von Werten modellieren, bezeichnen wir als *zusammengesetzte Datentypen* oder *Datenstrukturen*.
 ```
@@ -104,8 +104,8 @@ Eine gute Analogie zu diesen sog, [Sammlung / Kollektion (engl. Collections)](de
 Auch der Arbeitsspeicher ist in diesem Sinne eine sowohl physikalische wie auch virtuelle Kollektion an Bits.
 
 ```{admonition} Sammlung (Collection)
-:name: def-collection
-:class: definition
+::name: def-collection
+::class: definition
 
 Als *Sammlung* bezeichnen wir alle Datentypen ([Tupel](sec-tuple), [Dictionary](def-python-dictionary), [Listen](sec-list), [Mengen](sec-set) usw.), die eine **variable Anzahl** an anderen Elementen (normalerweise mehrere) beinhalten.
 

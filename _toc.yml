@@ -122,10 +122,6 @@ parts:
     - file: chapters/07-python-data-types/00-intro
       sections:
       - file: chapters/07-python-data-types/10-uebersicht
-        sections:
-        - file: chapters/07-python-data-types/11-Atomar-zusammen
-        - file: chapters/07-python-data-types/12-primitiv
-        - file: chapters/07-python-data-types/13-build
       - file: chapters/07-python-data-types/20-intro
         sections:
         - file: chapters/07-python-data-types/21-int
@@ -235,6 +231,11 @@ parts:
       sections:
       - file: chapters/misc/Expertenwissen/interpreter
       - file: chapters/misc/Expertenwissen/compilation
+      - file: chapters/misc/Expertenwissen/datatypes/00-properties
+        sections:
+        - file: chapters/misc/Expertenwissen/datatypes/11-Atomar-zusammen
+        - file: chapters/misc/Expertenwissen/datatypes/12-primitiv
+        - file: chapters/misc/Expertenwissen/datatypes/13-build
       - file: chapters/misc/Expertenwissen/euclid-algorithm
       - file: chapters/misc/Expertenwissen/jupyter-notebooks
       - file: chapters/misc/Expertenwissen/repos

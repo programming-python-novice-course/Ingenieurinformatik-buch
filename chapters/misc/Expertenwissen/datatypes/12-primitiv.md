@@ -5,8 +5,8 @@
 In ``Python`` gibt es streng genommen keine primitiven Datentypen.
 
 ```{admonition} Primitive Datentypen
-:name: def-primitive-datatypes
-:class: definition
+::name: def-primitive-datatypes
+::class: definition
 
 *Primitive Datentypen* sind jene Datentypen aus denen alle anderen Datentypen einer Sprache hervorgehen.
 Sie sind nicht weiter reduzierbar.
@@ -26,14 +26,15 @@ Das Datum ist wiederum ein *zusammengesetzten Datentyp* bestehend aus Tag, Monat
 Der Tag ist schließlich ein *primitiver* oder (in ``Python``) ein *atomarer* Datentyp (eine Zahl zwischen 0 und 31).
 
 ```{exercise} Der Datentyp Zeichenkette
-:label: datatype-str-exercise
+::label: datatype-str-exercise
 Ist ``set``, d.h. eine Menge, ein atomarer oder zusammengesetzter Datentyp?
 Begründen Sie Ihre Antwort.
 ```
 
 ```{solution} datatype-str-exercise
-:label: datatype-str-solution
-:class: dropdown
+::label: datatype-str-solution
+::class: dropdown
 
 ``set`` ist ein zusammengesetzter Datentyp dessen Wert eine variable Anzahl an Werten verschiedener Datentypen enthalten kann.
 ```
+
