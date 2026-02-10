@@ -8,7 +8,7 @@ kernelspec:
   language: python
   name: python3
 ---
-(sec-python-beispiele) =
+(sec-python-beispiele)=
 
 # Python-Beispiele
 

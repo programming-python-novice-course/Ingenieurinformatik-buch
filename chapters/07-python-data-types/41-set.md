@@ -13,12 +13,12 @@ kernelspec:
 # Mengen - set (A)
 
 ``Python``-Mengen (engl. [Set](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)) ``set`` ist eine ungeordnete Zusammenfassung (engl. collection) von Elementen, wobei jedes Element in der Menge einzigartig ist.
-Damit repräsentieren ``Python``-Mengen ``set`` *endliche* [Mengen](sec-math-set) im mathematischen Sinne.
+Damit repräsentieren ``Python``-Mengen ``set`` *endliche* Mengen im mathematischen Sinne.
 Endlich deshalb, weil die Elemente von ``Python``-Mengen explizit im Speicher liegen und wir nur endlich viel Arbeitsspeicher zur Verfügung haben.
 
 Eine mathematische Menge $M$ ist ein abstraktes Objekt, das aus der Zusammenfassung einer Anzahl von einzelnen Elementen hervorgeht.
 Dabei ist jedes Element was sich in der Menge befindet von allen anderen Elementen verschieden.
-Anders als [mathematische Tupel](sec-math-tuple) (durch die ``Python``-Tupel und den Listen motiviert sind) sind Mengen ungeordnet.
+Anders als mathematische Tupel (durch die ``Python``-Tupel und den Listen motiviert sind) sind Mengen ungeordnet.
 
 Von hier an meinen wir mit Mengen die ``Python``-Mengen ``set`` und sprechen ansonsten von mathematischen Mengen.
 

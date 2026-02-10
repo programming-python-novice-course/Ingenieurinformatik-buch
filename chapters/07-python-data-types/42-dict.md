@@ -24,7 +24,7 @@ Jede Zeile ist ein Tupel ``tuple`` aus ``key`` und ``value``.
 
 Da die Schlüssel im Sinne der [Gleichheit](def-identity) eindeutig sind, kann die Spalte aus ``key``s als Menge ``set`` an **Schlüsseln** angesehen werden.
 Die **Werte** müssen hingegen nicht eindeutig sein.
-Sind Sie wie ich ein Freund der Mathematik, so realisiert ein Wörterbücher ``dict`` eine [(mathematische) Funktion](sec-math-function):
+Sind Sie wie ich ein Freund der Mathematik, so realisiert ein Wörterbücher ``dict`` eine (mathematische) Funktion:
 
 $$f : K \rightarrow V,$$
 

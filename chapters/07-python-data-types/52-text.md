@@ -2,7 +2,7 @@
 
 Text besteht aus Zeichen (Buchstaben, Ziffern, Sonderzeichen), die als Bitfolgen codiert werden müssen. Hierbei handelt es sich um eine **Codierung** im eigentlichen Sinne: Wir legen fest, welche Bitfolge welchem Zeichen entspricht.
 
-Wie wir bereits im Kapitel über [Codierung](sec-codierung) gesehen haben, kann die gleiche Bitfolge `01000001` je nach Codierung unterschiedliche Bedeutungen haben:
+Wie wir bereits im Kapitel über [Codierung](../02-computer-sciences-basics/30-codierung.md) gesehen haben, kann die gleiche Bitfolge `01000001` je nach Codierung unterschiedliche Bedeutungen haben:
 - Als Zahl: $65_{10}$ (wenn wir die Bitfolge als Binärzahl interpretieren)
 - Als Buchstabe: "A" (wenn wir die Bitfolge als ASCII-Zeichen interpretieren)
 

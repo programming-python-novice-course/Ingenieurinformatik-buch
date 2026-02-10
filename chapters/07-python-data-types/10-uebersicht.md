@@ -39,7 +39,7 @@ mytuple = ('A', 'B', 'C')
 
 
 Beim Datentyp ``list`` und ``tuple`` fällt auf, dass diese Werte eines anderen Datentyps enthalten, hier ``int`` und ``str``.
-Solche Datentypen nennen wir [zusammengesetzt Datentypen](sec-datastructures)) wohingegen wir Datentypen, welche wir nicht zerlegen können als [atomare Datentypen](def-atomare-data-types) bezeichnen.
+Solche Datentypen nennen wir [zusammengesetzte Datentypen](sec-datastructures) wohingegen wir Datentypen, welche wir nicht zerlegen können als [atomare Datentypen](def-atomare-data-types) bezeichnen.
 
 ```{admonition} Hinweis
 :class: note

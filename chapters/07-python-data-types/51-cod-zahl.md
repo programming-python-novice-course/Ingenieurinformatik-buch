@@ -19,7 +19,7 @@ $$1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 8 + 4 + 0 + 1 = 13_{10
 Hierbei handelt es sich um einen direkten **Zahlensystemwechsel** - keine spezielle Codierung im eigentlichen Sinne.
 Die **Codierung** besteht lediglich darin, dass wir festlegen: "Diese Bitfolge wird als Binärzahl interpretiert."
 
-Für Details zur Umrechnung zwischen Dezimal- und Binärsystem siehe das Kapitel [Zahlensysteme](sec-number-systems).
+Für Details zur Umrechnung zwischen Dezimal- und Binärsystem siehe das Kapitel [Zahlensysteme](../02-computer-sciences-basics/32-zahlensysteme.md).
 
 ## Negative Zahlen (Zweierkomplement)
 
@@ -51,7 +51,7 @@ So kann mit 8 Bits der Bereich von $-128$ bis $+127$ dargestellt werden.
 Das Zweierkomplement ist eine **Codierung**, die festlegt, wie Bitfolgen als negative Zahlen interpretiert werden.
 Es ist mehr als nur ein Zahlensystem - es definiert eine spezielle Interpretation von Bitfolgen für negative Werte.
 
-Für detaillierte Informationen über das Zweierkomplement, die Umrechnung zwischen positiven und negativen Zahlen sowie Addition und Subtraktion im Binärsystem siehe das Kapitel [Zahlensysteme](sec-number-systems).
+Für detaillierte Informationen über das Zweierkomplement, die Umrechnung zwischen positiven und negativen Zahlen sowie Addition und Subtraktion im Binärsystem siehe das Kapitel [Zahlensysteme](../02-computer-sciences-basics/32-zahlensysteme.md).
 ```
 
 ## Gleitkommazahlen (IEEE 754)
