@@ -113,6 +113,16 @@ plt.show()
 
 
 ## Was haben wir gewonnen?
+
+```{figure} ../../figs/11-object-oriented/logoaxes_diagram.png
+---
+width: 700px
+name: fig-logoaxes-diagram
+---
+Überblick: `LogoAxes` erweitert `Axes` und wird als neue Projektion registriert.
+```
+
+
 In diesem Beispiel haben wir tatsächlich eine Komponente ausgetauscht: Statt eines normalen `Axes` verwenden wir ein `LogoAxes`.
 
 - **Vererbung (OOP):** Die neue Baugruppe wird als Variante aus der vorhandenen abgeleitet. Im Code sehen Sie das an `class LogoAxes(Axes):` und daran, dass zuerst die Elternklasse aufgebaut wird (`super().__init__(...)`).
