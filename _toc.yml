@@ -119,24 +119,28 @@ parts:
         - file: chapters/06-python-basics/3-invoking-functions/1-module
         - file: chapters/06-python-basics/3-invoking-functions/2-auswertungsreihenfolge
         - file: chapters/06-python-basics/3-invoking-functions/3-das-kennenlernen
-    - file: chapters/07-python-data-types/0-intro
+    - file: chapters/07-python-data-types/00-intro
       sections:
-      - file: chapters/07-python-data-types/1-zahlenwerte/0-intro
+      - file: chapters/07-python-data-types/10-uebersicht
+      - file: chapters/07-python-data-types/20-intro
         sections:
-        - file: chapters/07-python-data-types/1-zahlenwerte/1-int
-        - file: chapters/07-python-data-types/1-zahlenwerte/2-bool
-        - file: chapters/07-python-data-types/1-zahlenwerte/3-float
-        - file: chapters/07-python-data-types/1-zahlenwerte/4-codierung
-      - file: chapters/07-python-data-types/2-sequenzen/0-intro
+        - file: chapters/07-python-data-types/21-int
+        - file: chapters/07-python-data-types/22-bool
+        - file: chapters/07-python-data-types/23-float
+      - file: chapters/07-python-data-types/30-intro
         sections:
-        - file: chapters/07-python-data-types/2-sequenzen/1-list
-        - file: chapters/07-python-data-types/2-sequenzen/2-tuple
-        - file: chapters/07-python-data-types/2-sequenzen/3-range
-        - file: chapters/07-python-data-types/2-sequenzen/4-string
-      - file: chapters/07-python-data-types/3-mengen/0-intro
+        - file: chapters/07-python-data-types/31-list
+        - file: chapters/07-python-data-types/32-tuple
+        - file: chapters/07-python-data-types/33-range
+        - file: chapters/07-python-data-types/34-string
+      - file: chapters/07-python-data-types/40-intro
         sections:
-        - file: chapters/07-python-data-types/3-mengen/1-set
-        - file: chapters/07-python-data-types/3-mengen/2-dict
+        - file: chapters/07-python-data-types/41-set
+        - file: chapters/07-python-data-types/42-dict
+      - file: chapters/07-python-data-types/50-codierung
+        sections:
+        - file: chapters/07-python-data-types/51-cod-zahl
+        - file: chapters/07-python-data-types/52-text
     - file: chapters/08-eingaben-und-ausgaben/0-intro
       sections:
       - file: chapters/08-eingaben-und-ausgaben/1-eingaben
@@ -178,27 +182,45 @@ parts:
       - file: chapters/10-functions/5-nested-functions
       - file: chapters/10-functions/6-first-class-functions
       - file: chapters/10-functions/x-recursion
-    - file: chapters/11-object-oriented/0-intro
+    - file: chapters/11-object-oriented/00-intro
       sections:
-      - file: chapters/11-object-oriented/1-class-and-objects
-      - file: chapters/11-object-oriented/2-inheritance-poly-encap
+      - file: chapters/11-object-oriented/10-motivation
+        sections:
+        - file: chapters/11-object-oriented/11-script
+        - file: chapters/11-object-oriented/12-wrapper
+        - file: chapters/11-object-oriented/13-oop
+      - file: chapters/11-object-oriented/20-klassen
+      - file: chapters/11-object-oriented/30-class-and-objects
+      - file: chapters/11-object-oriented/40-inheritance-poly-encap
+        sections:
+        - file: chapters/11-object-oriented/41-vererbung
+        - file: chapters/11-object-oriented/42-vererbung-und-komposition
+        - file: chapters/11-object-oriented/43-kapselung
+        - file: chapters/11-object-oriented/44-polymorphie
+      - file: chapters/11-object-oriented/50-critic
   - caption: Fallbeispiel
     numbered: True
     chapters:
-    - file: chapters/12-fallbeispiel/0-intro
+    - file: chapters/12-fallbeispiel/00-intro
       sections:
-      - file: chapters/12-fallbeispiel/0-zaufgabe
-      - file: chapters/12-fallbeispiel/1-se-Prozess
-      - file: chapters/12-fallbeispiel/2-lib-solution
-      - file: chapters/12-fallbeispiel/3-eigenentwicklung
+      - file: chapters/12-fallbeispiel/10-zaufgabe
+      - file: chapters/12-fallbeispiel/20-se-Prozess        
+      - file: chapters/12-fallbeispiel/30-problemanalyse
         sections:
-        - file: chapters/12-fallbeispiel/31-tests
-        - file: chapters/12-fallbeispiel/32-problem-zerlegung
-        - file: chapters/12-fallbeispiel/33-parsing
-        - file: chapters/12-fallbeispiel/34-histogram
-        - file: chapters/12-fallbeispiel/35-statistics
-      - file: chapters/12-fallbeispiel/40-comparison
-      - file: chapters/12-fallbeispiel/50-summary
+        - file: chapters/12-fallbeispiel/31-zerlegung
+        - file: chapters/12-fallbeispiel/32-recherche
+      - file: chapters/12-fallbeispiel/40-lib-solution
+      - file: chapters/12-fallbeispiel/50-eigenentwicklung
+        sections:
+        - file: chapters/12-fallbeispiel/51-tests
+        - file: chapters/12-fallbeispiel/52-problem-zerlegung
+        - file: chapters/12-fallbeispiel/53-parsing
+        - file: chapters/12-fallbeispiel/54-histogram
+        - file: chapters/12-fallbeispiel/55-statistics
+        - file: chapters/12-fallbeispiel/56-statistics
+        - file: chapters/12-fallbeispiel/57-statistics
+      - file: chapters/12-fallbeispiel/60-comparison
+      - file: chapters/12-fallbeispiel/70-summary
   - caption: Appendix
     chapters:
     - file: chapters/misc/contributors
@@ -209,6 +231,11 @@ parts:
       sections:
       - file: chapters/misc/Expertenwissen/interpreter
       - file: chapters/misc/Expertenwissen/compilation
+      - file: chapters/misc/Expertenwissen/datatypes/00-properties
+        sections:
+        - file: chapters/misc/Expertenwissen/datatypes/11-Atomar-zusammen
+        - file: chapters/misc/Expertenwissen/datatypes/12-primitiv
+        - file: chapters/misc/Expertenwissen/datatypes/13-build
       - file: chapters/misc/Expertenwissen/euclid-algorithm
       - file: chapters/misc/Expertenwissen/jupyter-notebooks
       - file: chapters/misc/Expertenwissen/repos

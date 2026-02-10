@@ -159,7 +159,7 @@ $$a_j < b_j$$
 
 gilt.
 
-```{figure} ../../figs/archive/name-register/binary-search.png
+```{figure} ../../../figs/archive/name-register/binary-search.png
 ---
 width: 600px
 name: fig-binary-search
@@ -209,7 +209,7 @@ $$[0;149], [0;73], [37;73], [37;54], [46;54], [46;49], [48;49]$$
 ### Algorithmische Beschreibung
 
 Die wesentliche Eigenschaft welche die [binäre Suche](def-binary-search) ausnutzt sind in Gleichungen {eq}`name-register-eq-1`, {eq}`name-register-eq-2` und {eq}`name-register-eq-3` zusammengefasst.
-Wir benötigen eine [Ordnung](def-math-order), sodass es einen Komparator $f_E$ gibt.
+Wir benötigen eine Ordnung, sodass es einen Komparator $f_E$ gibt.
 Das Tupel bzw. unsere Liste muss sortiert sein {eq}`name-register-eq-3`.
 
 Der Komparator $f_E$ wird passend zur Menge der möglichen Listenelemente $E$ definiert, d.h. je nachdem welche Art von Liste (Namensliste, Telefonbucheinträge, Zahlen, Klausuren) wir vorfinden, müssen wir ein geeignetes $f_E$ konstruieren. 
@@ -265,7 +265,7 @@ print(type(4/2))
 ```
 
 ``Python`` bietet aber auch die Ganzzahlendivision ``//`` an bei der das Ergebnis immer eine Ganzzahl ist.
-Es wird dabei stets auf die nächst liegende ganze Zahl [abgerundet](def-math-floor).
+Es wird dabei stets auf die nächst liegende ganze Zahl abgerundet.
 
 ```python
 print(3//2)
@@ -563,7 +563,7 @@ countings = count_all(names)
 unique_names = list(countings.keys())
 ```
 
-In [Karten sortieren](sec-sort-cards-with-python) haben wir selbst einen Sortieralgorithmus entworfen.
+In Karten sortieren haben wir selbst einen Sortieralgorithmus entworfen.
 Selbstverständlich hat ``Python`` bereits einen solchen Algorithmus im Angebot.
 Diesen haben wir oben beim Generieren des zufälligen Telefonbuchs verwendet.
 
@@ -634,7 +634,7 @@ In der *abstrakten Welt* modellieren wir mehrere *Fächer* meist durch eine einf
 Jeder Listeneintrag *repräsentiert* ein *Fach*, was wiederum eine Liste aber auch eine andere [Sammlung (Collection)](def-collection) sein kann, siehe untere 
 {numref}`Abbildung {number} <fig-buckets>`.
 
-```{figure} ../../figs/archive/name-register/bucket.png
+```{figure} ../../../figs/archive/name-register/bucket.png
 ---
 width: 600px
 name: fig-buckets
@@ -658,7 +658,7 @@ Wir machen aus ``unique_names_lex`` eine zweidimensionale Liste ``names_by_lette
 + ``names_by_letter[25]`` alle Namen die mit ``Z`` beginnen enthält. 
 
 
-```{figure} ../../figs/archive/name-register/babynames.png
+```{figure} ../../../figs/archive/name-register/babynames.png
 ---
 width: 300px
 name: fig-babynames-buckets
@@ -756,7 +756,7 @@ Wir verwenden weiterhin ``unique_names_lex``, fügen aber eine weitere unterstü
 + ...
 + ``marks[25]`` ist der kleinste Index der Indices der Wörter die mit einem ``Z`` beginnen,
 
-```{figure} ../../figs/archive/name-register/marks.png
+```{figure} ../../../figs/archive/name-register/marks.png
 ---
 width: 250px
 name: fig-babynames-marks
@@ -928,7 +928,7 @@ Für die weitere Diskussion benötigen wir folgende Definitionen:
 In unserer Fächer-Datenstruktur, lösen wir Kollisionen auf indem wir alle Elemente mit gleichem Index in eine zweite Liste packen.
 Ein solches Verfahren heißt *offenes Hashing mit geschlossener Adressierung*.
 
-```{figure} ../../figs/archive/name-register/open-hashing.png
+```{figure} ../../../figs/archive/name-register/open-hashing.png
 ---
 width: 530px
 name: fig-open-hashing
@@ -962,7 +962,7 @@ Sobald die Liste droht voll zu laufen muss sie vergrößert werden.
 Ein solches Verfahren heißt *geschlossenes Hashing mit offener Adressierung*.
 In {numref}`Abbildung {number} <fig-closed-hashing>` ist dieses mit einer der einfachsten Kollisionsauflösungen skizziert: Falls ein Platz belegt ist suchen wir aufsteigend nach dem nächst liegenden freien Platz.
 
-```{figure} ../../figs/archive/name-register/closed-hashing.png
+```{figure} ../../../figs/archive/name-register/closed-hashing.png
 ---
 width: 430px
 name: fig-closed-hashing
@@ -1109,7 +1109,7 @@ Angenommen wir fügen die Schlüssel ``'Anna'``, ``'Alex'``, ``'Clara'``, ``'Alb
 Und angenommen wir verwenden als Hashfunktion ``index_of`` und eine *lineare Sondierung*.
 Dann erhalten wir als Resultat die Liste aus {numref}`Abbildung {number} <fig-closed-hashing-deletion>`.
 
-```{figure} ../../figs/archive/name-register/closed-hashing-deletion.png
+```{figure} ../../../figs/archive/name-register/closed-hashing-deletion.png
 ---
 width: 600px
 name: fig-closed-hashing-deletion
@@ -1379,7 +1379,7 @@ print(f' collisions with index_of: {collisions(new_hash_table(unique_names_lex, 
 Das ist ca. 2.5 Kollision pro Element!
 ``index_of`` verursacht hingegen über 60 Millionen *Kollisionen*!
 
-Im Abschnitt [Python](sec-python) hatten wir erwähnt, dass ``Python`` aufwendige Berechnungen in ``C/C++``-Coder verlagert.
+Im Abschnitt Python hatten wir erwähnt, dass ``Python`` aufwendige Berechnungen in ``C/C++``-Coder verlagert.
 Dies ist auch für die Funktion ``hash`` der Fall.
 Im folgenden zeigen wir ihnen den Code der Hashfunktion ``hash`` für Zeichenketten.
 Bitte erschrecken Sie nicht.
@@ -1520,7 +1520,7 @@ Ist $p$ keine Primzahl gibt es mehr Möglichkeiten für die Gleichheit der beide
 ```
 
 Sie sehen, wir tauchen ein wenig in die Zahlentheorie ein.
-Dieses mathematische Denken ist auch ein Teil des [Computational Thinkings](sec-what-is-ct).
+Dieses mathematische Denken ist auch ein Teil des Computational Thinkings.
 
 ```{exercise} Eine gute Hashfunktion
 :label: good-hashfunction-hashmap-exercise

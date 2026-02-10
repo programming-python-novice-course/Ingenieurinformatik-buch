@@ -34,7 +34,7 @@ Er konnte nur noch mit seinem linken Augenlid blinzeln.
 Der Körper versagte ihm nahezu alle Möglichkeiten der Verständigung und doch gelang es Dominique, über seine Erlebnisse in der geistigen Isolation, ein ganzes Buch zu schreiben.
 Wie war dies möglich?
 
-```{figure} ../../figs/archive/dive-bell/jean-dominique-bauby.jpeg
+```{figure} ../../../figs/archive/dive-bell/jean-dominique-bauby.jpeg
 ---
 height: 100px
 name: jean-dominique-bauby
@@ -46,7 +46,7 @@ In seinem äußerst bewegenden Buch *Schmetterling und Taucherglocke* beschreibt
 Er liefert uns tiefe Einblicke darüber, wie wichtig Verständigung für den Menschen ist und wie sehr wir einander brauchen um uns selbst nicht zu verlieren.
 
 Während Dominique sein Buch schrieb entwickelte er einen Algorithmus um die Kommunikation zu beschleunigen.
-Ohne es zu wissen bediente er sich des [Computational Thinkings](sec-what-is-ct).
+Ohne es zu wissen bediente er sich des Computational Thinkings.
 Im alter von 44 Jahren, zwei Tage nach der Veröffentlichung seines Buchs, verstarb Dominique an einer Lungenentzündung.
 
 In diesem Abschnitt werden wir uns ansehen wie er die Kommunikation aufbaute und wesentlich verbesserte.
@@ -300,13 +300,13 @@ Anstatt mit der gesamten Tabelle ins Gespräch zu gehen könnten wir lediglich d
 ```
 
 Wie würden wir die $n$ häufigsten Wörter in absteigender Reihenfolge aus unserem ``Python`` [Dictionary](def-python-dictionary) extrahieren?
-Können Sie hierfür eventuell die gleichen Algorithmen verwenden wie in [Karten sortieren in Python](sec-sort-cards-with-python)?
+Können Sie hierfür eventuell die gleichen Algorithmen verwenden wie beim Karten sortieren in Python?
 
 ```{exercise} Temporäres Lernen mit dem Dictionary
 :label: blinking-temp-learning-dict-exercise
 Schreiben Sie eine Programmcode der Ihnen die ``n`` häufigsten Wörter in sortierter absteigender Reihenfolge aus dem [Dictionary](def-python-dictionary) ``word_frequency`` extrahiert.
 
-**Tipp:** Bauen Sie eine Liste die alle Schlüssel enthält und sortieren Sie diese anhand des [Dictionarys](def-python-dictionary). Sie können den Code aus [Karten sortieren in Python](sec-sort-cards-with-python) verwenden.
+**Tipp:** Bauen Sie eine Liste die alle Schlüssel enthält und sortieren Sie diese anhand des [Dictionarys](def-python-dictionary). Sie können dafür denselben Codeansatz wie beim Karten sortieren in Python verwenden.
 ```
 
 ```{code-cell} python3
@@ -662,7 +662,7 @@ Die Zeile ``np.ceil(np.log2(7.77 * 10**9))`` berechnet
 
 $$\lceil \log_2(7.77 \cdot 10^9) \rceil$$
 
-([aufgerundet](sec-math-rounding)).
+(aufgerundet).
 ````
 
 Das Fragespiel können wir auch als eine Suche interpretieren.
@@ -756,7 +756,7 @@ Wir können **nicht blinzeln** als $0$ und **blinzeln** als $1$ interpretieren!
 Damit ergibt sich für ``P`` die Folge $0, 1, 1, 0, 1$ oder schlicht das binäre Wort $01101$.
 Eine andere *Codierung* ist natürlich auch möglich.
 
-```{figure} ../../figs/archive/dive-bell/alphabet-code-tree.png
+```{figure} ../../../figs/archive/dive-bell/alphabet-code-tree.png
 ---
 width: 800px
 name: fig-alphabet-code-tree
@@ -831,9 +831,9 @@ Was wir voraussetzen ist, dass wir gute Fragen stellen können und, anhand jeder
 Mit schnell meinen wir, dass es keinen großen Aufwand kostet!
 Wenn Sie beispielsweise in unserem Ratespiel die Frage nach dem Geschlecht stellen, sie aber erst einmal jeden Menschen betrachten müssen um das Geschlecht herauszufinden,
 ist diese Frage zu aufwendig zu beantworten.
-Im Fall der Buchstabencodierung, verwenden wir eine [totale Ordnung](def-math-order) der Buchstaben und können durch einen entsprechenden *Vergleichsoperator* die Buchstabenmengen immer weiter verfeinern, indem wir das *Intervall* der Buchstaben, die wir betrachten, verkleinern.
+Im Fall der Buchstabencodierung verwenden wir eine totale Ordnung der Buchstaben und können durch einen entsprechenden *Vergleichsoperator* die Buchstabenmengen immer weiter verfeinern, indem wir das *Intervall* der Buchstaben, die wir betrachten, verkleinern.
 
-Wenn Sie sich unsere Lösung ansehen werden Sie vielleicht festellen, dass wir jede endliche Menge mit einer [totale Ordnung](def-math-order) codieren können, sofern der ``<=``-Operator definiert ist.
+Wenn Sie sich unsere Lösung ansehen werden Sie vielleicht festellen, dass wir jede endliche Menge mit einer totalen Ordnung codieren können, sofern der ``<=``-Operator definiert ist.
 Zum Beispiel können wir Zahlen codieren:
 
 ```{code-cell} python3

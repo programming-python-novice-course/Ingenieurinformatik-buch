@@ -46,7 +46,7 @@ Zum Beispiel, bietet ``Python`` die vordefinierte Funktion ``abs`` an, welche ei
 abs(-23)
 ```
 
-In diesem Fall realisiert diese ``Python``-Funktion eine *mathematische Funktion*, nämlich den [Betrag](def-math-abs) $\text{abs}(x) = |x|$.
+In diesem Fall realisiert diese ``Python``-Funktion eine *mathematische Funktion*, nämlich den Betrag $\text{abs}(x) = |x|$.
 Weitere Beispiele sind die ``Python``-Funktionen ``round`` und ``max``.
 
 ```{code-cell} python3

@@ -27,9 +27,9 @@ Es gibt jedoch noch eine ganze Reihe von weiteren *arithmetische Operatoren*:
 
 Jeder dieser Operatoren ``op`` erwartet zwei Zahlen, eine links und eine rechts von ``op``.
 
-Die Bedeutung der Modulo-Operation ``%`` sieht kompliziert aus, doch bedeutet dies schlicht, dass ``10 % 4`` der *ganzzahlige Rest* der [Restwertdivision](def-euclid-division) ist.
+Die Bedeutung der Modulo-Operation ``%`` sieht kompliziert aus, doch bedeutet dies schlicht, dass ``10 % 4`` der *ganzzahlige Rest* der Restwertdivision (Euklidische Division) ist.
 
-Die ganzzahlige Division [rundet](sec-math-rounding) das Ergebnis der Division auf die nächst kleinere ganze Zahl (Integer).
+Die ganzzahlige Division rundet das Ergebnis der Division auf die nächst kleinere ganze Zahl (Integer).
 Beachten Sie
 
 ```{code-cell} python3

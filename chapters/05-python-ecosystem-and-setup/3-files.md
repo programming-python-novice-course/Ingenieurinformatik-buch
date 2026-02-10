@@ -9,5 +9,4 @@ Dieses Kapitel ist in Unterkapitel aufgeteilt:
 
 - [Wo und wie legen wir Python-Dateien ab?](3-files/1-ablage.md)
 - [Was wir im Kurs machen (vereinfacht: eine Datei)](3-files/2-eine-datei.md)
-- [Empfohlene Datei-Struktur](3-files/3-empfohlene-datei-struktur.md)
 - [Merksatz fürs Praktikum (empfohlenes Muster)](3-files/4-merksatz.md)

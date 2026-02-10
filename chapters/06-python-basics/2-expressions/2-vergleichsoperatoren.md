@@ -47,5 +47,5 @@ So können wir in ``Python`` auch Zeichenketten ``str`` mit den Vergleichsoperat
 'Anna' < 'Emma' # True
 ```
 
-Generell vergleichen wir Objekte einer [Menge](sec-math-set) immer bezüglich einer [(totalen) Ordnung](def-math-order).
+Generell vergleichen wir Objekte einer Menge immer bezüglich einer (totalen) Ordnung.
 Diese Ordnung muss irgendwo definiert worden sein, ob durch die Standardbibliothek von ``Python``, impliziet, oder durch uns Entwickler\*innen.

@@ -38,7 +38,7 @@ Durch die Interpretation werden die Spezifika Ihrer Maschine beachtet.
 
 Folgende Abbildung verdeutlicht den Ablauf bei der Ausführung eines ``Python``-Programms.
 
-```{figure} ../../figs/archive/python-tutorial/cpython/cpython-interpreter.png
+```{figure} ../../../figs/archive/python-tutorial/cpython/cpython-interpreter.png
 ---
 width: 800px
 name: fig-cpython-interpreter

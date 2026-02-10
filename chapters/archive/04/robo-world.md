@@ -25,11 +25,11 @@ herunterladen und installieren.
 ```{admonition} Lernziel
 :class: learngoals
 Im [ersten Teil](sec-robo-world-part-1) dieser Übung machen wir Sie mit den Kontrollstrukturen von imperativen Programmiersprachen vertraut.
-Dazu tauchen Sie in eine vorgegebene Welt ein und lernen das **WAS** von dem **WIE** zu trennen (siehe [Das Was und das Wie](sec-what-and-how)).
+Dazu tauchen Sie in eine vorgegebene Welt ein und lernen das **WAS** von dem **WIE** zu trennen.
 
-Im [zweiten Teil](sec-robo-world-part-2) werden wir interessante aber auch schwierigere Fragen diskutieren und durch [Computational Thinking](sec-what-is-ct) lösen und unser Denken dadurch trainieren.
+Im [zweiten Teil](sec-robo-world-part-2) werden wir interessante aber auch schwierigere Fragen diskutieren und durch Computational Thinking lösen und unser Denken dadurch trainieren.
 
-In dieser Übung beschäftigen wir uns mit der [Zufallsfahrt](https://de.wikipedia.org/wiki/Random_Walk), determinierten und nicht-determinierten [Algorithmen](sec-algorithm-def), [Simulationen](https://de.wikipedia.org/wiki/Monte-Carlo-Simulation), [Mittel-](https://de.wikipedia.org/wiki/Mittelwert) und [Erwartungswert](https://de.wikipedia.org/wiki/Erwartungswert), [Bäumen](https://de.wikipedia.org/wiki/Baum_(Datenstruktur)) und der [Tiefen-](https://de.wikipedia.org/wiki/Tiefensuche) wie auch [Breitensuche](https://de.wikipedia.org/wiki/Breitensuche).
+In dieser Übung beschäftigen wir uns mit der [Zufallsfahrt](https://de.wikipedia.org/wiki/Random_Walk), determinierten und nicht-determinierten Algorithmen, [Simulationen](https://de.wikipedia.org/wiki/Monte-Carlo-Simulation), [Mittel-](https://de.wikipedia.org/wiki/Mittelwert) und [Erwartungswert](https://de.wikipedia.org/wiki/Erwartungswert), [Bäumen](https://de.wikipedia.org/wiki/Baum_(Datenstruktur)) und der [Tiefen-](https://de.wikipedia.org/wiki/Tiefensuche) wie auch [Breitensuche](https://de.wikipedia.org/wiki/Breitensuche).
 ```
 
 Roboter dienen uns heute in vielen Bereichen als Helfer und Assistenten.
@@ -60,7 +60,7 @@ $$
 \Omega \subset \mathbb{N} \times \mathbb{N}, \text{ und } |\Omega| = k \text{ für irgendein } k \in \mathbb{N}.
 $$
 
-```{figure} ../../figs/archive/roboworld/roboworld.png
+```{figure} ../../../figs/archive/roboworld/roboworld.png
 ---
 width: 400px
 name: fig-robo-world-roboworld
@@ -143,7 +143,7 @@ Steht der Roboter an der Stelle ``(i,j)`` kann er durch mehrmaliges Drehen und e
 erreichen. Diese Nachbarschaft heißt im übrigen *Von-Neumann-Nachbarschaft*, siehe {numref}`Abbildung {number} <fig-robo-world-von-neumann-nh>`.
 Beachten Sie, dass wir die Zeile zuerst nennen und von null beginnen zu zählen. ``(3,1)`` steht demnach für die Zeile ``3`` und Spalte ``1`` bzw. für die ``4``-te Zeile und ``2``-te Spalte.
 
-```{figure} ../../figs/archive/roboworld/von-neumann-nh.png
+```{figure} ../../../figs/archive/roboworld/von-neumann-nh.png
 ---
 width: 400px
 name: fig-robo-world-von-neumann-nh
@@ -508,7 +508,7 @@ In dieser Art und Weise formuliert, fällt es unserem Gehirn sehr schwer das Spi
 Dabei ist das Spiel nichts anderes als [Tic-Tac-Toe](https://de.wikipedia.org/wiki/Tic-Tac-Toe).
 In visueller Form, ist das Spiel sehr einfach zu verstehen:
 
-```{figure} ../../figs/archive/roboworld/tic-tac-toe.png
+```{figure} ../../../figs/archive/roboworld/tic-tac-toe.png
 ---
 width: 200px
 name: fig-tic-tac-toe
@@ -1128,8 +1128,8 @@ Als nächstes sollen Sie das gleiche Gebiet determiniert (ohne Zufall) durchlauf
 :name: attention-determinism-vs-determination
 Die Begriffe **determiniert** und **deterministisch** haben in der Informatik eine ganz bestimmte Bedeutung, welche wir nur allzu gerne verwechseln.
 
-+ Ein *determinierter* [Algorithmus](sec-algorithms) erzeugt bei gleicher Eingabe auch die gleiche Ausgabe.
-+ Für einen *deterministischer* [Algorithmus](sec-algorithms) ist während seiner Ausführung zu jedem Zeitpunkt die nächste Anweisung eindeutig definiert.
++ Ein *determinierter* Algorithmus erzeugt bei gleicher Eingabe auch die gleiche Ausgabe.
++ Für einen *deterministischer* Algorithmus ist während seiner Ausführung zu jedem Zeitpunkt die nächste Anweisung eindeutig definiert.
 ```
 
 Die Zufallsfahrt ist aus unserer Sicht nicht *determiniert*, da Sie bei jeder Ausführung einen anderen Pfad berechnet.
@@ -1231,12 +1231,12 @@ $$
 n \cdot m + \left \lceil{m/2}\right \rceil + \left \lceil{n/2}\right \rceil
 $$
 
-Schritte, wobei $\left \lceil{\cdot}\right \rceil$ gleich dem [Aufrunden](sec-math-rounding) auf die nächste ganze Zahl darstellt.
+Schritte, wobei $\left \lceil{\cdot}\right \rceil$ gleich dem Aufrunden auf die nächste ganze Zahl darstellt.
 
 Das animierte Ergebnis sieht wie folgt aus
 
 ```{only} html
-```{figure} ../../figs/archive/roboworld/robo-world-det-walk.gif
+```{figure} ../../../figs/archive/roboworld/robo-world-det-walk.gif
 ---
 width: 400px
 name: fig-robo-world-det-walk
@@ -1246,7 +1246,7 @@ Ein determinierter Lauf zum Ziel.
 ```
 
 ```{only} latex
-```{figure} ../../figs/archive/roboworld/robo-world-det-walk.png
+```{figure} ../../../figs/archive/roboworld/robo-world-det-walk.png
 ---
 width: 400px
 name: fig-robo-world-det-walk
@@ -1275,7 +1275,7 @@ Die Zelle auf der Ihr Roboter startet gilt als bereits besucht.
 
 Nehmen wir das $3 \times 3$-Zellen Gebiet:
 
-```{figure} ../../figs/archive/roboworld/roboworld-3-times-3.png
+```{figure} ../../../figs/archive/roboworld/roboworld-3-times-3.png
 ---
 width: 80px
 name: fig-roboworld-3-times-3
@@ -1299,7 +1299,7 @@ Geben Sie ein Gebiet an für das es nicht möglich ist jede Zelle nur einmal zu 
 
 Ein einfaches Gegenbeispiel ist jedes $1 \times n$ für $n \geq 2$ Gebiet.
 
-```{figure} ../../figs/archive/roboworld/fig-1-times-n.png
+```{figure} ../../../figs/archive/roboworld/fig-1-times-n.png
 ---
 width: 240px
 name: fig-1-times-n
@@ -1331,7 +1331,7 @@ Deshalb laufen wir mit dem ersten Schritt immer erst nach Westen und dann nach S
 Zwischen der Drehung nach links (``turn_left()``) und den Schritten (``move()``) können wir folgenden Zusammenhang feststellen:
 Die Anzahl der Schritte erhöht sich nach jeder zweiten Drehung um eins.
 
-```{figure} ../../figs/archive/roboworld/spiral-walk.png
+```{figure} ../../../figs/archive/roboworld/spiral-walk.png
 ---
 width: 400px
 name: fig-robo-world-spiral-walk
@@ -1501,7 +1501,7 @@ Jeder Knoten hat genau 4 Kanten:
 Jeder Lauf ist durch ein Blatt (Knoten ohne Kinder) definiert.
 Der Baum ist für Läufe der Länge 2 in {numref}`Abbildung {number} <fig-robo-world-tree>` skizziert.
 
-```{figure} ../../figs/archive/roboworld/robo-world-tree.png
+```{figure} ../../../figs/archive/roboworld/robo-world-tree.png
 ---
 width: 700px
 name: fig-robo-world-tree
@@ -1513,7 +1513,7 @@ Ein Baum der alle möglichen Läufe der Länge zwei codiert.
 In anderen Worten wir gehen erst tief in den Baum hinein und springen erst wieder nach oben, wenn alles darunter bereits besucht wurde.
 Zudem wandern wir meist von links nach rechts.
 
-```{figure} ../../figs/archive/roboworld/robo-world-depth-first-search.png
+```{figure} ../../../figs/archive/roboworld/robo-world-depth-first-search.png
 ---
 width: 700px
 name: fig-robo-world-depth-first-search
@@ -1525,7 +1525,7 @@ Ein anderer Algorithmus, der einen Baum durchwandert, ist die sogenannte *Breite
 Hierbei gehen wir erst in die nächst tiefere Ebene, wenn alle Knoten der aktuellen Ebene bereits besucht wurden.
 Vergleichen Sie folgende Abbildung.
 
-```{figure} ../../figs/archive/roboworld/robo-world-breadth-first-search.png
+```{figure} ../../../figs/archive/roboworld/robo-world-breadth-first-search.png
 ---
 width: 700px
 name: fig-robo-world-breadth-first-search
