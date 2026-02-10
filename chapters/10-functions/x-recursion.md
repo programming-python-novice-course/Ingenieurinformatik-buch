@@ -10,11 +10,36 @@ kernelspec:
 ---
 
 (sec-recursive-functions)=
-# Rekursive Funktionen (Heimarbeit)
+# Rekursive Funktionen (S)
 
-Bevor Sie fortfahren sollten Sie sich den Abschnitt [Wiederholung](sec-repetition-and-recursion) durchgelesen haben.
+Rekursion beschreibt Wiederholung über Selbstaufruf: Eine Funktion reduziert das Problem, bis ein einfacher Basisfall erreicht ist. Rekursive Lösungen können sehr kompakt sein, sind aber nicht immer die effizienteste Wahl.
 
-Wir werden in diesem Abschnitt nicht über Rekursion an sich sprechen, sondern wie *rekursive Funktionen* in den allermeisten Programmiersprachen realisiert werden.
+```{admonition} Iteration und Rekursion
+:class: theorem
+:name: theorem-iteration-and-recursion
+
+Jede Rekursion kann in eine unbestimmte Iteration und jede (unbestimmte) Iteration in eine Rekursion umgewandelt werden. 
+```
+
+Nehmen wir die Berechnung der Fakultät, einmal iterativ
+
+$$\text{fac}_\text{it}(n) = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 1 = \prod\limits_{i=1}^n i$$
+
+und einmal rekursiv
+
+$$\text{fac}_\text{rec}(n) = \begin{cases} 1 & \text{ falls } n = 0\\ n \cdot \text{fac}_\text{rec}(n-1) & \text{ sonst}\end{cases}$$
+
+Die Rekursion beinhaltet einen Selbstbezug, wohingegen die iterative Lösung diesen ausbreitet bzw. auflöst.
+Betrachten wir die rekursive Lösung benötigen wir für die Berechnung lediglich die Multiplikation und den Selbstbezug - keine Schleife, und abgesehen von ``n``, nicht einmal eine Variable.
+
+```{admonition} Rekursion
+:name: def-recursion
+:class: definition
+Als Rekursion wird ein Vorgang bezeichnet, welcher sich selbst als Teil enthält oder mithilfe von sich selbst definierbar ist.
+```
+
+
+Wir werden im folgenden Abschnitt darüber sprechen wie *rekursive Funktionen* in den allermeisten Programmiersprachen realisiert werden.
 
 >Wie realisiert der Computer Rekursion? 
 

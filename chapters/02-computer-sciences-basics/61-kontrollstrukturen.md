@@ -53,21 +53,20 @@ name: fig-function-bieber
 Funktionen – das Bündeln der Äste (Funktion) folgt immer dem gleichen Ablauf (Äste greifen, anordnen, Schnur herumwickeln, prüfen). Wie groß das resultierende Bündel (Ergebnis) ist, hängt von der Astanzahl (Übergabeparameter) ab.
 ```
 
+## Wie geht das in Python?
+
 (sec-if-else)=
 **Fallunterscheidungen (bedingte Ausführung)**
 
 Eine Fallunterscheidung führt Code nur dann aus, wenn eine Bedingung erfüllt ist. Die Bedingung wird zur Laufzeit zu ``True`` oder ``False`` ausgewertet.
 
-Mini‑Beispiel (Python):
 
 ```python
-x = -3
-if x < 0:
-    print("negativ")
-elif x == 0:
-    print("null")
+stamm_laenge = 20 # 20m 
+if stamm_laenge < 15:
+    print("Zu kurz. Familiy dinner!")
 else:
-    print("positiv")
+    print("Passt. Ab damit in die Produktion")
 ```
 
 (sec-repetition-and-recursion)=
@@ -77,31 +76,24 @@ Wiederholung bedeutet: Wir schreiben einen Ablauf einmal und führen ihn mehrfac
 
 Zwei zentrale Formen sind:
 
-1. Iteration (Schleifen, z. B. ``for``/``while``)
-2. Rekursion (eine Funktion ruft sich selbst auf)
+1. **Iteration (Schleifen)**: Wiederholung über ``for`` oder ``while``.
+   - **bestimmt**: Die Anzahl der Durchläufe ist vorab bekannt (typisch: ``for``).
+   - **unbestimmt**: Die Anzahl hängt von einer Bedingung ab (typisch: ``while``).
+2. **Rekursion**: Wiederholung durch Selbstbezug.
 
-Auf der konzeptionellen Ebene erscheinen Iteration und Rekursion grundverschieden -- es sind unterschiedliche Denkweisen.
-Wir können rekursiv oder iterativ denken.
+```{admonition} Hinweis: Rekursion
+:class: note
 
-```{admonition} Iteration und Rekursion
-:class: theorem
-:name: theorem-iteration-and-recursion
+Rekursion bedeutet grob: Man wendet „denselben Trick“ immer wieder auf kleinere Teile an, bis es nicht mehr weitergeht.
 
-Jede Rekursion kann in eine unbestimmte Iteration und jede (unbestimmte) Iteration in eine Rekursion umgewandelt werden.
+Beispiel (Biber und Stamm):
 
-```
+- Der Biber halbiert den Stamm.
+- Jede Hälfte halbiert er wieder.
+- Die entstehenden Stücke halbiert er wieder.
+- … bis die Stücke klein genug sind.
 
-Mit unbestimmt meinen wir, dass vor Beginn nicht klar ist, wie viele Wiederholungen nötig sind (typisch: ``while``‑Schleifen).
-
-Mini‑Beispiel (Python, unbestimmte Wiederholung):
-
-```python
-n = 100
-steps = 0
-while n > 1:
-    n //= 2
-    steps += 1
-print(steps)  # wie oft kann man halbieren, bis 1 erreicht ist?
+In diesem Kapitel lassen wir das bewusst als Idee stehen und konzentrieren uns auf Iteration (Schleifen). Details finden Sie im Kapitel [Rekursion](sec-recursive-functions).
 ```
 
 (sec-iteration)=
@@ -109,64 +101,99 @@ print(steps)  # wie oft kann man halbieren, bis 1 erreicht ist?
 
 Iteration wiederholt einen Codeblock über eine Schleife. Typisch ist ``for`` (wiederhole über eine Folge von Werten) oder ``while`` (wiederhole, solange eine Bedingung gilt).
 
-Mini‑Beispiel (Python, ``for``‑Schleife):
+Mini‑Beispiel (Python, ``while``‑Schleife — unbestimmte Wiederholung):
 
 ```python
-n = 10
-acc = 0
-for i in range(2, n + 1, 2):
-    acc += i
-print(acc)  # 2+4+6+8+10
+stamm_laenge = 25          # 25m
+stueck_laenge = 4               # 0.3m 
+
+anzahl_stuecke = 0
+while stamm_laenge >= stueck_laenge:   # solange noch ein ganzes Stück möglich ist ...
+    neue_stamm_laenge = stamm_laenge - stueck_laenge         # ... sägen wir eines ab
+    stamm_laenge = neue_stamm_laenge
+    anzahl_stuecke = anzahl_stuecke + 1
+
+print("Stücke:")
+print(anzahl_stuecke)
+
+print("Rest (in m):")
+print(stamm_laenge)
 ```
 
-(sec-recursion)=
-**Rekursion**
+Tatsächlich muss nach dem Zersägen jeder einzelner Holzscheit noch auf sein Gewicht geprüft werden. 
+Nachdem wir nun wissen wie viele Teilabschnitte wir haben können wir eine *bestimmte Schleife* nutzen: die ``for``‑Schleife.
 
-Rekursion beschreibt Wiederholung über Selbstaufruf: Eine Funktion reduziert das Problem, bis ein einfacher Basisfall erreicht ist. Rekursive Lösungen können sehr kompakt sein, sind aber nicht immer die effizienteste Wahl.
+Im folgenden Beispiel übernehmen Sie den Mess-Bieber. Für jedes Teilstück müssen Sie ein Gewicht eingeben. Basierend auf Ihrer Eingabe erhalten Sie dann eine Rückmeldung, ob das Gewicht in Ordnung ist.
 
-Nehmen wir die Berechnung der Fakultät, einmal iterativ
 
-$$\text{fac}_\text{it}(n) = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 1 = \prod\limits_{i=1}^n i$$
-
-und einmal rekursiv
-
-$$\text{fac}_\text{rec}(n) = \begin{cases} 1 & \text{ falls } n = 0\\ n \cdot \text{fac}_\text{rec}(n-1) & \text{ sonst}\end{cases}$$
-
-Die Rekursion beinhaltet einen Selbstbezug, wohingegen die iterative Lösung diesen ausbreitet bzw. auflöst.
-Betrachten wir die rekursive Lösung benötigen wir für die Berechnung lediglich die Multiplikation und den Selbstbezug - keine Schleife, und abgesehen von ``n``, nicht einmal eine Variable.
-
-```{admonition} Rekursion
-:name: def-recursion
-:class: definition
-Als Rekursion wird ein Vorgang bezeichnet, welcher sich selbst als Teil enthält oder mithilfe von sich selbst definierbar ist.
-```
-
-Mini‑Beispiel (Python, rekursive Fakultät):
 
 ```python
-def fac(n: int) -> int:
-    if n == 0:
-        return 1      # Basisfall
-    return n * fac(n - 1)  # rekursiver Schritt
 
-print(fac(5))  # 120
+#anzahl_stuecke = 10 
+
+for i in range(anzahl_stuecke):
+    
+    print(f"Starte Prüfung des Teilstücks mit der Nummer {i}")
+    gewicht =  float(input("    Bitte geben Sie das Gewicht in kg an (bitte Zahl eingeben):"))
+
+    if gewicht < 2.0:
+        print(f"    Das Gewicht ist zu gering! Bitte entsorgen Sie das Teilstück {i}.")
+    else:
+        print(f"    Alles super! Lege Teilstück {i} zum Ablagestapel.")
+    
+    print(f"--------------------------------------------------------")
+
 ```
+
+Wichtig an dem Beispiel ist zu erkennen, wie die ``for``-Schleife aufgebaut ist.
+
+``range(anzahl_stuecke)`` erzeugt die Zahlen **0, 1, 2, ..., anzahl_stuecke-1**.
+Die Variable ``i`` nimmt dann der Reihe nach diese Werte an.
+
+Beispiel: ``range(5)`` bedeutet: 0, 1, 2, 3, 4
+
 
 (sec-functions-control-structures)=
 **Funktionen**
 
 Funktionen kapseln Teilaufgaben: Sie geben einem Ablauf einen Namen, können Parameter annehmen und (typisch) ein Ergebnis zurückgeben. So wird Code wiederverwendbar und Programme werden übersichtlicher.
 
-Mini‑Beispiel (Python):
+In dem folgenden Beispiel nutzen wir eine Funktion, um Äste zu bündeln. 
+Als Eingabe erhalten wir die Anzahl der Äste.
+Als Ausgabe übergeben wir ein Konstrukt, das die Äste visuell für uns darstellen soll. Jeder Ast soll durch ein "|" dargestellt werden.
 
-```python
-def is_even(n: int) -> bool:
-    return n % 2 == 0
+Ein Bündel von 3 Ästen sieht demnach wie folgt aus: > ||| < 
+Ein Bündel von 5 Ästen sieht wie folgt aus: > ||||| < 
 
-nums = [1, 2, 3, 4, 5, 6]
-print([x for x in nums if is_even(x)])  # [2, 4, 6]
+
+
+```{code-cell} python3
+def create_bundle(n: int) -> str:
+    _bundle = "> "
+    for i in range(n):
+        _bundle = _bundle + "|"
+    _bundle = _bundle + " <"
+    return _bundle
+
+
+print("My dam:")
+
+print(create_bundle(5))
+print(create_bundle(12))
+print(create_bundle(44))
+print(create_bundle(17))
+print(create_bundle(6))
+print(create_bundle(20))
+
 ```
 
+
+Aufgabe: Schreiben Sie ein kleines Pythonprogramm das die Stämme in die Kisten S, M, L einsortiert.
+Der Nutzer wi
+
+```{code-cell} python3
+
+```
 
 
 ```{figure} ../../figs/02-computer-sciences-basics/control-structures.png
