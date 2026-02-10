@@ -11,32 +11,47 @@ kernelspec:
 
 # Kontrollstrukturen (A)
 
-```{figure} ../../figs/02-computer-sciences-basics/control-structures.png
----
-width: 700px
-name: fig-control-structures
----
-Überblick über grundlegende Kontrollstrukturen
-```
-
-Kontrollstrukturen beantworten eine einfache Frage: In welcher Reihenfolge werden Anweisungen ausgeführt – und unter welchen Bedingungen?
-Mit wenigen Bausteinen lassen sich bereits sehr viele Programme ausdrücken.
-
-- Fallunterscheidungen: führe Code nur aus, wenn eine Bedingung erfüllt ist.
-- Wiederholung: führe Code mehrfach aus (als Schleife oder als Rekursion).
-- Funktionen: kapseln Teilaufgaben und machen Code wiederverwendbar.
-
-Für konkrete Syntax und Varianten in ``Python`` verweisen wir auf den Teil PYTHON:
-[Fallunterscheidungen](sec-cases), [Schleifen](sec-loops) und [Rekursion](sec-recursive-functions).
-
-```{admonition} Kontrollstrukturen
+```{admonition} Hinweis
 :name: def-control-structure
 :class: definition
 
-Kontrollstrukturen sind Anweisungen, welche die Abarbeitungsreihenfolge von anderen Anweisungen, und damit den Programmablauf kontrollieren.
+In diesem Kapitel geben wir eine Einführung zu Kontrollstrukturen, damit Sie im Praktikum schon einmal losarbeiten können. Details zu Kontrollstrukturen lernen wir dann im Kapitel [Kontrollstrukturen](sec-control-statements) kennen.
 ```
 
-Schon wenige Konzepte reichen aus, um sehr viele Programme auszudrücken. Die formale Einordnung (Berechenbarkeit, Turing‑Vollständigkeit) ist spannend, aber nicht Kernstoff dieses Kapitels.
+Kontrollstrukturen sind etwas das uns im Alltag ständig begegnet. Kontrollstrukturen bestimmen wie ein Ablauf aussieht.
+
+Sehen Sie sich hierzu eine Baumstammproduktion an:
+- im ersten Schritt wird geprüft, ob der Baum lang genug ist. Falls ja: geht es weiter in die Produktion. Falls nein: wird der Baum anderweitig verwertet.
+- im zweiten Schritt wird der Baum solange in 30cm-Abschnitte zerteilt, bis nur noch ein Reststück übrig bleibt.
+- im dritten Schritt werden dann die Abschnitte nach Größe in verschiedene Kisten sortiert.
+
+Was vielleicht zu offensichtlich ist: die Schritte erfolgen nacheinander und bauen aufeinander auf.
+
+
+```{figure} ../../figs/02-computer-sciences-basics/kontrollstruktur-bieber.png
+---
+width: 700px
+name: fig-kontrollstruktur-bieber
+---
+Kontrollstrukturen – Überblick. Oben: Fallunterscheidung (Verzweigung), Mitte: Schleife. Unten: Match-case
+```
+
+Ein einfaches Computerprogramm (ohne Parallelisierung) macht nichts anderes: es führt nacheinander Schritte aus. Innerhalb dieser Schritte kann es Wiederholungen geben ("Zerteile solange bis") oder auch Fallunterscheidungen ("Wenn größer, dann.. "). 
+
+
+Wir unterscheiden:
+
+- Fallunterscheidungen: führen Code nur aus, wenn eine Bedingung erfüllt ist.
+- Wiederholung: führen Code mehrfach aus (als Schleife oder als Rekursion).
+- Funktionen: kapseln Teilaufgaben und machen Code wiederverwendbar.
+
+```{figure} ../../figs/02-computer-sciences-basics/functionbieber.png
+---
+width: 700px
+name: fig-function-bieber
+---
+Funktionen – das Bündeln der Äste (Funktion) folgt immer dem gleichen Ablauf (Äste greifen, anordnen, Schnur herumwickeln, prüfen). Wie groß das resultierende Bündel (Ergebnis) ist, hängt von der Astanzahl (Übergabeparameter) ab.
+```
 
 (sec-if-else)=
 **Fallunterscheidungen (bedingte Ausführung)**
@@ -150,4 +165,14 @@ def is_even(n: int) -> bool:
 
 nums = [1, 2, 3, 4, 5, 6]
 print([x for x in nums if is_even(x)])  # [2, 4, 6]
+```
+
+
+
+```{figure} ../../figs/02-computer-sciences-basics/control-structures.png
+---
+width: 700px
+name: fig-control-structures
+---
+Überblick über grundlegende Kontrollstrukturen
 ```
