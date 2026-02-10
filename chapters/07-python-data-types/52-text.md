@@ -1,4 +1,3 @@
-
 # Text (S)
 
 Text besteht aus Zeichen (Buchstaben, Ziffern, Sonderzeichen), die als Bitfolgen codiert werden müssen. Hierbei handelt es sich um eine **Codierung** im eigentlichen Sinne: Wir legen fest, welche Bitfolge welchem Zeichen entspricht.

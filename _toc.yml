@@ -119,24 +119,32 @@ parts:
         - file: chapters/06-python-basics/3-invoking-functions/1-module
         - file: chapters/06-python-basics/3-invoking-functions/2-auswertungsreihenfolge
         - file: chapters/06-python-basics/3-invoking-functions/3-das-kennenlernen
-    - file: chapters/07-python-data-types/0-intro
+    - file: chapters/07-python-data-types/00-intro
       sections:
-      - file: chapters/07-python-data-types/1-zahlenwerte/0-intro
+      - file: chapters/07-python-data-types/10-uebersicht
         sections:
-        - file: chapters/07-python-data-types/1-zahlenwerte/1-int
-        - file: chapters/07-python-data-types/1-zahlenwerte/2-bool
-        - file: chapters/07-python-data-types/1-zahlenwerte/3-float
-        - file: chapters/07-python-data-types/1-zahlenwerte/4-codierung
-      - file: chapters/07-python-data-types/2-sequenzen/0-intro
+        - file: chapters/07-python-data-types/11-Atomar-zusammen
+        - file: chapters/07-python-data-types/12-primitiv
+        - file: chapters/07-python-data-types/13-build
+      - file: chapters/07-python-data-types/20-intro
         sections:
-        - file: chapters/07-python-data-types/2-sequenzen/1-list
-        - file: chapters/07-python-data-types/2-sequenzen/2-tuple
-        - file: chapters/07-python-data-types/2-sequenzen/3-range
-        - file: chapters/07-python-data-types/2-sequenzen/4-string
-      - file: chapters/07-python-data-types/3-mengen/0-intro
+        - file: chapters/07-python-data-types/21-int
+        - file: chapters/07-python-data-types/22-bool
+        - file: chapters/07-python-data-types/23-float
+      - file: chapters/07-python-data-types/30-intro
         sections:
-        - file: chapters/07-python-data-types/3-mengen/1-set
-        - file: chapters/07-python-data-types/3-mengen/2-dict
+        - file: chapters/07-python-data-types/31-list
+        - file: chapters/07-python-data-types/32-tuple
+        - file: chapters/07-python-data-types/33-range
+        - file: chapters/07-python-data-types/34-string
+      - file: chapters/07-python-data-types/40-intro
+        sections:
+        - file: chapters/07-python-data-types/41-set
+        - file: chapters/07-python-data-types/42-dict
+      - file: chapters/07-python-data-types/50-codierung
+        sections:
+        - file: chapters/07-python-data-types/51-cod-zahl
+        - file: chapters/07-python-data-types/52-text
     - file: chapters/08-eingaben-und-ausgaben/0-intro
       sections:
       - file: chapters/08-eingaben-und-ausgaben/1-eingaben
