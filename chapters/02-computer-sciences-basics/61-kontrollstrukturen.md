@@ -30,7 +30,7 @@ Wichtig dabei: Die Schritte erfolgen nacheinander und bauen aufeinander auf.
 
 ```{figure} ../../figs/02-computer-sciences-basics/kontrollstruktur-bieber.png
 ---
-width: 700px
+width: 400px
 name: fig-kontrollstruktur-bieber
 ---
 Kontrollstrukturen – Überblick. Oben: Fallunterscheidung (Verzweigung), Mitte: Schleife. Unten: Match-case.
@@ -47,7 +47,7 @@ Wir unterscheiden:
 
 ```{figure} ../../figs/02-computer-sciences-basics/functionbieber.png
 ---
-width: 700px
+width: 400px
 name: fig-function-bieber
 ---
 Funktionen – das Bündeln der Äste (Funktion) folgt immer dem gleichen Ablauf (Äste greifen, anordnen, Schnur herumwickeln, prüfen). Wie groß das resultierende Bündel (Ergebnis) ist, hängt von der Astanzahl (Übergabeparameter) ab.
@@ -128,6 +128,8 @@ Im folgenden Beispiel übernehmen Sie den Mess-Biber. Für jedes Teilstück gebe
 
 
 ```{code-cell} python3
+:tags: [skip-execution]
+
 
 # anzahl_stuecke = 10
 
@@ -208,10 +210,3 @@ anzahl_stuecke = 6
 ```
 
 
-```{figure} ../../figs/02-computer-sciences-basics/control-structures.png
----
-width: 700px
-name: fig-control-structures
----
-Überblick über grundlegende Kontrollstrukturen
-```
