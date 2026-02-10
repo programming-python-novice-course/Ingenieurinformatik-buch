@@ -26,7 +26,7 @@ python --version
 ```
 
 Wenn `conda` nicht gefunden wird, lesen Sie zuerst den Hintergrundteil:  
-→ [Python-Umgebungen: Distribution, Umgebungen, Pakete](3-umgebungen-distribution-pakete.md)
+→ [Python-Umgebungen: Distribution, Umgebungen, Pakete](2-umgebungen-distribution-pakete.md)
 
 ## Schritt 2: Kursumgebung anlegen (falls nötig)
 

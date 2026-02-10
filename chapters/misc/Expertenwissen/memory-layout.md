@@ -101,7 +101,7 @@ Wir müssen uns nur eine *Speicheradresse* merken!
 
 Wollen wir, z.B., die Ziffern einer ISBN-Nummer abspeichern, so könnten wir diese Ziffern nebeneinander im Speicher ablegen.
 Wir merken uns bei welcher Adresse die ISBN-Nummer beginnt und wie viele Stellen sie hat.
-Eine solche Datenstruktur realisiert das sog. [Array](sec-array).
+Eine solche Datenstruktur realisiert das sog. Array.
 
 Datenstrukturen realisiert als *zusammenhängender Speicherbereich* haben Vor- und Nachteile, welche uns das Schließfachbeispiel gut veranschaulicht.
 Wenn Sie, z.B., auf den dritten Gegenstand (wir beginnen bei 0) zugreifen wollen, können Sie das Schließfach in Windeseile auffinden.
@@ -175,7 +175,7 @@ Dadurch müssen wir Elemente nicht fortwährend verschieben.
 Die Sammlung kann dynamisch anwachsen und schrumpfen.
 
 Damit die fragmentierten Teile als ganzes repräsentiert werden können, müssen sie verbunden werden.
-Dies wird durch sog. *[Zeiger/Pointer](def-pointer)* realisiert.
+Dies wird durch sog. *Zeiger/Pointer* realisiert.
 Oft spricht man auch von einer *Referenz*.
 Dabei ist wichtig, dass ein *Zeiger* wiederum auf einen weiteren *Zeiger* *zeigen/verweisen/referenzieren* kann.
 
@@ -191,7 +191,7 @@ Selbstverständlich bedarf es der richtigen [Interpretation](sec-interpretation)
 Für *Zeiger* gibt es keine perfekte Analogie aus der Realwelt, jedenfalls ist uns keine eingefallen.
 Probieren wir es mit unserer Schließfachanalogie: Nehmen sie eine große geordnete Anreihung von Schließfächern als Arbeitsspeicher.
 Jedes Schließfach hat eine eindeutige Nummer (Speicheradresse).
-In jedem Schließfach kann sich etwas befinden, unter anderem auch ein Zettel mit einer Schließfachnummer ([Zeiger](def-pointer)).
+In jedem Schließfach kann sich etwas befinden, unter anderem auch ein Zettel mit einer Schließfachnummer (Zeiger).
 
 Das Problem an dieser Analogie ist jedoch, dass, wenn wir den Zettel in Händen halten, wir erst zum entsprechenden Schließfach gehen müssen.
 Dabei laufen wir an vielen anderen Schließfächern vorbei.
@@ -206,7 +206,7 @@ Die Schnur ist **gerichtet**!
 
 ## Verkettete Listen im Speicher
 
-Wie können wir mit [Zeigern](def-pointer) eine Datenstruktur aus einem fragmentierten Speicherbereich bilden?
+Wie können wir mit Zeigern eine Datenstruktur aus einem fragmentierten Speicherbereich bilden?
 Bleiben wir bei der Analogie der Schließfächer und Schnüre.
 Sie möchten ihre Lieblingsgerichte in alphabetischer Reihenfolge abspeichern.
 Dazu verwenden Sie die Schließfächer und Schnüre.
@@ -225,7 +225,7 @@ Jede Kachel repräsentiert ein Schließfach bzw. einen adressierbaren Speicherbe
 
 Befinden Sie sich an einem Schließfach der Liste, so können Sie recht einfach ein neues Element an dieser Stelle einfügen.
 Eine *verkettete Liste* besteht aus sogenannten *Knoten* (Schließfach + Schnur zum nächsten Schließfach), welche durch *Zeiger* verbunden sind.
-Sie ist eine [dynamische Sammlung](def-dynamic-ds), d.h. sie kann zur Laufzeit vergrößert und verkleinert werden.
+Sie ist eine dynamische Sammlung, d.h. sie kann zur Laufzeit vergrößert und verkleinert werden.
 
 Haben wir direkten Zugriff auf einen Knoten so können wir in die *verkettete Liste* ein neues Element, was direkt nachfolgt, effizient einfügen ohne dabei die anderen Elemente der Liste zu verschieben -- ein wesentlicher Vorteil dieser Datenstruktur.
 Jeder Knoten besteht aus zwei Teilen:

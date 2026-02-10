@@ -71,7 +71,7 @@ Und somit können wir mit $n$ Lampen eine Menge mit $2^n$ Elementen repräsentie
 Dieser exponentielle Anstieg ist enorm wichtig.
 Ohne diese Eigenschaft würden die Speicher der Computer sehr schnell volllaufen.
 
-```{figure} ../../figs/archive/digital-computer/representation/lamps-example.png
+```{figure} ../../../figs/archive/digital-computer/representation/lamps-example.png
 ---
 width: 600px
 name: fig-lamps-example
@@ -240,7 +240,7 @@ Zusammenfassend ist demnach
 $$1 \cdot 2^3 + 0 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 9_{10} = 1001_2$$
 
 Dieser Vorgang scheint komplizierter als er in Wirklichkeit ist.
-Wir müssen lediglich die sog. [Restwertdivision](def-euclid-division) immer und immer wieder anwenden.
+Wir müssen lediglich die sog. Restwertdivision (Euklidische Division) immer und immer wieder anwenden.
 Wir dividieren die gegebene Dezimalzahl mit 2.
 Ergibt dies einen Rest, notieren wir eine 1 andernfalls eine 0.
 
@@ -575,7 +575,7 @@ Jeder Pixel hat eine bestimmte Farbe.
 Wir nennen diese Grafiken auch *Rastergrafiken*.
 Farben werden wiederum durch Zahlen repräsentiert.
 
-```{figure} ../../figs/archive/digital-computer/representation/pixel-image.png
+```{figure} ../../../figs/archive/digital-computer/representation/pixel-image.png
 ---
 width: 400px
 name: fig-pixel-image
@@ -666,7 +666,7 @@ Dann können wir entweder alle $200$ Zeichen speichern, was uns $200$ Byte koste
 was uns 6 Byte kostet.
 Wir bräuchten dann ein Programm in Form eines Übersetzer, der die Anweisung ``'ab'*100`` versteht und ausführt.
 Wir verringern somit den verbrauchten Speicherplatz auf Kosten der Rechenzeit.
-Diese Technik ist eng mit dem Informationsbegriff verknüpft, siehe [Informationstheorie](sec-kolmogorow).
+Diese Technik ist eng mit dem Informationsbegriff verknüpft, siehe Informationstheorie.
 
 (representation-sound)=
 ## Ton
@@ -678,7 +678,7 @@ Vergleichbar ist die Welle die entsteht wenn Sie einen Stein in einen See werfen
 Die Energie bewegt sich durch das Medium bis an unser Ohr.
 Unser Ohr erkennt die oszillierende Druckveränderung (die Welle) und interpretiert diese als das was wir Ton nennen.
 
-```{figure} ../../figs/archive/digital-computer/representation/particle-waves.png
+```{figure} ../../../figs/archive/digital-computer/representation/particle-waves.png
 ---
 width: 800px
 name: fig-particle-waves
@@ -697,7 +697,7 @@ Dazu werten wir die Funktion an endlich vielen Stellen $t = t_0, \ldots, t_n$ au
 Dabei ist $\hat{f}(t_i)$ eine Annäherung des eigentlichen Funktionswerts, d.h. $\hat{f}(t_i) \approx f(t_i)$.
 Je mehr *Samples* wir pro Sekunde machen und je genauer wir die Amplitude an den Samplepunkten treffen, desto genauer wird unsere Annäherung an $f(t)$.
 
-```{figure} ../../figs/archive/digital-computer/representation/sound-wave.png
+```{figure} ../../../figs/archive/digital-computer/representation/sound-wave.png
 ---
 width: 800px
 name: fig-sound-wave

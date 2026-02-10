@@ -12,6 +12,15 @@ kernelspec:
 (sec-control-statements)=
 # Kontrollstrukturen 
 
+```{figure} ../../figs/02-computer-sciences-basics/control-structures.png
+---
+width: 700px
+name: fig-control-structures
+---
+Es gibt verschiedene Ausprägungen von Kontrollstrukturen, die wir im Detail in Kapitel 
+```
+
+
 ```{admonition} Lernziele
 ::class: learngoals
 

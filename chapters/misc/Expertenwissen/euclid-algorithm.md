@@ -83,7 +83,7 @@ Solange m ungleich n:
 
 Dabei sind ``c0`` und ``c1`` irgendwelche natürliche Zahlen wobei ``c0`` größer gleich ``c1`` sein muss.
 Überführen wir diesen Code in ein ``Python``-Programm um.
-Durch die [Restwertdivision](def-euclid-division) können ``m nicht n teilt`` in ``Python`` realisieren:
+Durch die Restwertdivision können ``m nicht n teilt`` in ``Python`` realisieren:
 
 ```{code-cell} python3
 def gcd(n,m):
@@ -107,7 +107,7 @@ Das mathematische $=$ wird aufgrund dessen mit ``==`` ausgedrückt.
 
 ## Version 2
 
-Da uns die [Restwertdivision](def-euclid-division) als Operation zur Verfügung steht, können wir die wiederholte Subtraktion beschleunigen.
+Da uns die Restwertdivision als Operation zur Verfügung steht, können wir die wiederholte Subtraktion beschleunigen.
 Anstatt zum Beispiel ``43 - 11 - 11 - 11 == 10`` zu rechnen ergibt ``43 % 11 == 10``.
 Diese Operation steht Ihnen in allen gängigen Programmiersprachen zur Verfügung und kann auf dem Computer sehr schnell ausgeführt werden.
 
@@ -126,7 +126,7 @@ Solange m > 0:
 Die Anweisungen werden von oben nach unten ausgeführt, wobei ``Solange`` eine Wiederholung markiert.
 Alles was unter dieser Anweisung eingerückt steht, wird wiederholt, solange die Bedingung ``m > 0`` gilt.
 Nach diesen Schritten ist der Wert auf den die Variable ``n``  verweist, der größten gemeinsamen Teiler (ggT) von ``c0`` und ``c1``.
-Die Operation ``n % m`` berechnet den Rest der [Restwertdivision](def-euclid-division).
+Die Operation ``n % m`` berechnet den Rest der Restwertdivision.
 Unter ``r <- n % m`` verstehen wir die Zuweisung des Wertes ``n % m`` zur Variablen ``r``.
 
 Um einen Algorithmus zu verstehen hilft es oft ihn auszuführen.

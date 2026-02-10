@@ -72,7 +72,7 @@ def-oop, sec-oop
 def-class, sec-class-and-object
 def-constructor, sec-class-and-object
 def-objects, sec-class-and-object
-def-polymorph, sec-inheritance
+def-polymorph, sec-polymorphism
 def-protocols, sec-dive-bell
 def-python-dictionary, sec-dive-bell
 def-linear-search, sec-dive-bell
@@ -135,7 +135,7 @@ remark-while-vs-for, sec-loops
 remark-while-usage, sec-loops
 remark-avoid-endless-loop, sec-loops
 remark-inherited-attributes, sec-inheritance
-remark-when-inheritance, sec-inheritance
+remark-when-inheritance, sec-composition
 remark-robo-animation, sec-robo-world
 remark-deep-copy-python, sec-binary-drawing
 remark-memory-of-primitive-data-types, 

@@ -13,6 +13,27 @@ name: von-neumann-architecture-2
 Die Von-Neumann-Architektur auch bekannt als Princeton Architektur.
 ```
 
+```{admonition} Definition: Hauptspeicher (RAM)
+:name: def-main-memory
+:class: definition
+
+Der Hauptspeicher (auch Arbeitsspeicher, RAM) ist ein flüchtiger Speicher, in dem während der Ausführung Programme und Daten liegen, auf die die CPU schnell zugreifen kann.
+```
+
+```{admonition} Definition: CPU
+:name: def-cpu
+:class: definition
+
+Die CPU (Central Processing Unit, Prozessor) führt Befehle aus und verarbeitet Daten. Vereinfacht besteht sie aus einer Kontrolleinheit (steuert den Ablauf) und einer arithmetisch-logischen Einheit (führt Rechen- und Logikoperationen aus).
+```
+
+```{admonition} Definition: Register
+:name: def-register
+:class: definition
+
+Register sind sehr kleine, extrem schnelle Speichereinheiten innerhalb der CPU, die für aktuelle Operanden und Zwischenergebnisse verwendet werden.
+```
+
 In der Von-Neumann-Architektur finden Sie (vereinfacht) vier zentrale Bausteine: Hauptspeicher (RAM), CPU, Register und Bus. Programme liegen zunächst auf einem persistenten Speicher (z. B. Festplatte/SSD) und werden zum Ausführen in den Hauptspeicher geladen.
 
 Die wichtigsten Komponenten sind:

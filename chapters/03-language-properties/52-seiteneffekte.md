@@ -118,7 +118,7 @@ print("\nBeide zeigen auf dasselbe Objekt:", zettel_julia is zettel_hannes)
 ```{admonition} Klarstellung
 :class: note
 - Funktionen in Python können Seiteneffekte haben – das ist erlaubt und oft gewollt.
-- Seiteneffekte entstehen bei mutierbaren Objekten (z.B. `list`, `dict`). Mehr dazu im Kapitel [Datentypen](../08-python-data-types/0-intro.md).
+- Seiteneffekte entstehen bei mutierbaren Objekten (z.B. `list`, `dict`). Mehr dazu im Kapitel [Datentypen](../07-python-data-types/00-intro.md).
 - Wenn Sie keine Seiteneffekte wollen, arbeiten Sie z.B. mit Kopien.
 ```
 
