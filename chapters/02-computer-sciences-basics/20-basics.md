@@ -1,3 +1,4 @@
+(sec-information)=
 (sec-computer-basics)=
 
 # Computer

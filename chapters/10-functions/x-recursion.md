@@ -67,7 +67,7 @@ fac(4)
 
 Damit eine rekursive Funktion terminiert benötigt sie mindestens einen *Basisfall*, d.h. einen Pfad an Anweisungen, welcher **keinen** Funktionsaufruf der Funktion selbst enthält.
 Das ist eine notwendige aber noch nicht hinreichende Bedingung.
-Um formal zu beweisen, dass eine rekursive Funktion terminiert und auch das richtig berechnet, verwendet man die sog. [Induktion](sec-induction).
+Um formal zu beweisen, dass eine rekursive Funktion terminiert und auch das richtig berechnet, verwendet man die sog. Induktion.
 
 Im obigen Fall sehen wir recht schnell, dass alles korrekt ablaufen sollte, sofern ``n`` eine natürliche Zahl ist.
 Da wir ``n`` bei jedem rekursiven Aufruf um 1 verkleinern, muss irgendwann die ``if``-Bedingung zutreffen.

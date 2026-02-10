@@ -35,7 +35,7 @@ verstanden werden.
 Die **Speicheradresse** der Variable zeigt in den Arbeitsspeicher an eine bestimmte Stelle.
 Dort steht jedoch nicht nur der **Wert** sondern auch der **Datentyp**, d.h. die *Information* wie dieser **Wert** zu interpretieren ist.
 
-```{figure} ../../figs/07-python-data-types/python-tutorial/datatypes/data-type-key-pair.png
+```{figure} ../../../figs/07-python-data-types/python-tutorial/datatypes/data-type-key-pair.png
 ---
 width: 800px
 name: fig-data-type-key-pair-2
@@ -48,7 +48,7 @@ In diesem Beispiel benötigt die Datentypinformation 3 Bit und der Wert 8 Bit.
 ```{admonition} Pythons Typisierung
 :name: remark-python-type-mem
 :class: remark
-Eine ``Python`` *Variable* verweist durch eine Adresse eigentlich nicht nur auf einen Wert sondern auch auf einen [Datentyp](sec-typing-in-python) und auf den Referenzzähler, welcher angibt wie viele Variablen auf den Wert verweisen.
+Eine ``Python`` *Variable* verweist durch eine Adresse eigentlich nicht nur auf einen Wert sondern auch auf einen Datentyp und auf den Referenzzähler, welcher angibt wie viele Variablen auf den Wert verweisen.
 Dies werden wir aber vorerst ignorieren.
 ```
 

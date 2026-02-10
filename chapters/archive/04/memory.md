@@ -44,7 +44,7 @@ Der Inhalt wird in ein [Register](def-register) der [CPU](def-cpu) geladen und d
 Zudem kann die [CPU](def-cpu) Ergebnisse an die Adresse des Befehlszeigers schreiben.
 Aufgrund der Befehle, welche aus dem [Arbeitsspeicher](def-main-memory) geladen werden, verändert die Kontrolleinheit den Befehlszeiger entsprechend, d.h., die Kontrolleinheit führt das im Speicher stehende Programm aus.
 
-```{figure} ../../figs/03-computer-sciences-basics/digital-computer/informationcycle/program-run.png
+```{figure} ../../../figs/02-computer-sciences-basics/digital-computer/informationcycle/program-run.png
 ---
 width: 600px
 name: fig-program-run-memory
@@ -77,13 +77,13 @@ Die Speicherressourcen eines Computers sind jedoch endlich.
 
 Durch diese künstliche Einschränkung rücken wir näher an die konkrete Maschine heran.
 Daraufhin werden wir uns selbständig wieder von ihr entfernen.
-Dieser Prozess soll Ihnen aufzeigen, wie wir aus einer sehr konkreten Welt der Register, elektrischen Schaltungen und des endlichen Speichers, in eine abstrakte Welt der [Datenstrukturen](sec-data-structures) und [Algorithmen](def-algorithm) gelangen.
-Dieser Prozess des Abstrahierens ist ein wesentlicher Bestandteil des [Computational Thinkings](sec-what-is-ct) und kann auf vielerlei Probleme angewendet werden.
+Dieser Prozess soll Ihnen aufzeigen, wie wir aus einer sehr konkreten Welt der Register, elektrischen Schaltungen und des endlichen Speichers, in eine abstrakte Welt der [Datenstrukturen](sec-datastructures) und [Algorithmen](def-algorithm) gelangen.
+Dieser Prozess des Abstrahierens ist ein wesentlicher Bestandteil des Computational Thinkings und kann auf vielerlei Probleme angewendet werden.
 
 Ihnen wird diese Übung möglichweise sehr kleinlich und technisch vorkommen und damit liegen Sie richtig.
 Die konkrete Welt ist kleinlich und technisch.
 Programmieren Sie in ``Python`` bewegen Sie sich bereits in einer abstrakten Welt.
-Vergleichen Sie {numref}`Abbildung {number} <fig-world-code-computer>`.
+Vergleichen Sie {numref}`Abbildung {number} <fig-program-run-memory>`.
 Jede Welt lässt sich jedoch weiter abstrahieren.
 Für die ``Assembler``-Programmierer\*innen bietet ``C`` eine hohe Abstraktion und für die ``C``-Programmierer\*innen ist ``Python`` abstrakt.
 Bauen Sie Programme mit ``Pyhton``, so sind diese eine weitere Abstraktion.
@@ -126,7 +126,7 @@ Gewöhnlich unterteilt man Datentypen einer Programmiersprache in zwei Typen:
 2. [zusammengesetzten Datentypen](def-data-structures)
 
 In ``Python`` gibt es jedoch keine **primitive Datentypen**.
-Wie in Abschnitt [Datentypen](sec-data-types-advanced) besprochen, ist jeder Datentyp in ``Python`` ein [atomarer](def-atomare-data-types) oder [zusammengesetzter Datentyp](def-data-structures)!
+Wie in Abschnitt Datentypen besprochen, ist jeder Datentyp in ``Python`` ein [atomarer](def-atomare-data-types) oder [zusammengesetzter Datentyp](def-data-structures)!
 
 In ``Java`` gibt es zum Beispiel folgende primitiven Datentypen:
 
@@ -153,7 +153,7 @@ Obwohl es diese primitiven Datentypen in ``Python`` nicht gibt, stellen wir uns 
 Sie werden in fast allen anderen Sprachen mit primitiven Datentypen in Berührung kommen und auch in ``Python`` verhalten sich ``int``, ``float`` und co. sehr ähnlich.
 Zum Beispiel sind die Werte von atomaren Datentypen *unveränderlich* (engl. *immutable*).
 
-Weshalb es diese Aufteilung gibt und wie aus [Bits](def-bit) und [Bytes](def-byte) verschiedene Datentypen entstehen erfahren sie in dieser Übung. Zusätzlich verweisen wir auf die Kapitel [Datentypen (Grundlagen)](sec-python-data-types) und [Datentypen (Fortsetzung)](sec-data-types-advanced).
+Weshalb es diese Aufteilung gibt und wie aus [Bits](def-bit) und [Bytes](def-byte) verschiedene Datentypen entstehen erfahren sie in dieser Übung. Zusätzlich verweisen wir auf die Kapitel [Datentypen (Grundlagen)](sec-python-data-types) und Datentypen (Fortsetzung).
 
 Wie es möglich ist, dass wir in ``Python`` mit all den schönen Datentypen und Datenstrukturen hantieren können, werden wir uns nun Schritt für Schritt erarbeiten.
 Wir werden uns in dieser Übung auf die *Modellierung* von Zahlen, Zeichen und Listen beschränken.
@@ -195,7 +195,7 @@ Jedoch soll auch für unsere Liste gelten, dass
 1. sie nur Dezimalzahlen beinhalten darf und
 2. diese durch 8 [Bit](def-bit) darstellbar sind.
 
-```{figure} ../../figs/archive/memory/list-as-memory.png
+```{figure} ../../../figs/archive/memory/list-as-memory.png
 ---
 width: 600px
 name: fig-list-as-memory
@@ -227,7 +227,7 @@ $$
 
 Im [Arbeitsspeicher](def-main-memory) eines Computers, der die [Von-Neumann-Architektur](sec-von-neumann) realisiert, liegen **Daten** wie auch **Anweisungen**.
 Damit es nicht zu kompliziert wird, werden wir in dieser Übung uns nur auf die **Daten** konzentrieren und die Anweisungen außer acht lassen.
-Wir gehen also davon aus, dass die *Kontrolleinheit* (siehe [Programmausführung](sec-run-program)) Ihre Befehle wie in der [Harvard Architektur](remark-neumann-vs-harvard) von einem anderen Speicher lädt.
+Wir gehen also davon aus, dass die *Kontrolleinheit* (siehe Programmausführung) Ihre Befehle wie in der [Harvard Architektur](remark-neumann-vs-harvard) von einem anderen Speicher lädt.
 Diesen modellieren wir nicht.
 
 Die Ausführung der Befehle simulieren wir als ``Python``-Code, d.h. wir erlauben uns ganz normalen ``Python``-Code für die Manipulation des Speichers zu schreiben.
@@ -287,7 +287,7 @@ Damit bräuchte die Liste $n$ Bit, wobei $n$ die Anzahl der Speicherbereiche (L�
 
 In unserem Speicher ``memory`` befinden sich nur natürliche Zahlen von 0 bis 255.
 Doch möchten wir natürlich auch Zeichen oder größere Zahlen repräsentieren.
-Für interpretierte dynamisch getypte Sprachen wie ``Python`` (siehe Abschnitt [Python's Typisierung](sec-typing-in-python)) benötigt der [Interpreter](def-interpreter) Information darüber, wie er bestimmter Speicherbereich, d.h., ein Listenelement ``memory[i]`` zu interpretieren hat.
+Für interpretierte dynamisch getypte Sprachen wie ``Python`` (siehe Abschnitt Python's Typisierung) benötigt der [Interpreter](def-interpreter) Information darüber, wie er bestimmter Speicherbereich, d.h., ein Listenelement ``memory[i]`` zu interpretieren hat.
 
 Datentypen liefern diese Information.
 Neben dem eigentlichen Wert beschreiben sie, wie dieser Wert zu interpretieren ist!
@@ -296,7 +296,7 @@ Da in ``memory`` nur Zahlen stehen können, ist auch diese Datentypinformation a
 Brauchen wir dann nicht eine weitere Information die uns sagt, dass es sich bei diesem oder jenem Speicherbereich um die Datentypinformation handelt?
 Wenn ja kommen wir aus dem Schlamassel nicht mehr heraus.
 
-```{figure} ../../figs/archive/memory/data-type-key-pair.png
+```{figure} ../../../figs/archive/memory/data-type-key-pair.png
 ---
 width: 250px
 name: fig-data-type-key-pair
@@ -513,7 +513,7 @@ Nach dieser Prämisse folgen die eigentlichen Elemente ohne Datentypinformation.
 
 {numref}`Abbildung {number} <fig-datatypes-in-memory>` fasst alle besprochenen Datentypen zusammen.
 
-```{figure} ../../figs/archive/memory/datatypes-in-memory.png
+```{figure} ../../../figs/archive/memory/datatypes-in-memory.png
 ---
 width: 500px
 name: fig-datatypes-in-memory
@@ -862,7 +862,7 @@ wobei ``n`` die Anzahl der Listenelemente ist.
 Weshalb subtrahieren wir die eins?
 Da Listenelemente keine Datentypinformation benötigen!
 
-```{figure} ../../figs/archive/memory/list-in-memory.png
+```{figure} ../../../figs/archive/memory/list-in-memory.png
 ---
 width: 600px
 name: fig-list-in-memory
