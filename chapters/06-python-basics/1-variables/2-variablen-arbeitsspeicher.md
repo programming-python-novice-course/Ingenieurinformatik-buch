@@ -25,6 +25,25 @@ Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus [Bits](def-bit).
 Die Adresse ist im Wesentlichen die Nummer / der Index eines bestimmten Speicherplatzes.
 ```
 
+Eine *Variable* kann demnach als Tripel, bestehend aus
+
++ **Wert**
++ **Datentyp**
++ **Adresse**
+
+verstanden werden.
+Die **Speicheradresse** der Variable zeigt in den Arbeitsspeicher an eine bestimmte Stelle.
+Dort steht jedoch nicht nur der **Wert** sondern auch der **Datentyp**, d.h. die *Information* wie dieser **Wert** zu interpretieren ist.
+
+```{figure} ../../figs/07-python-data-types/python-tutorial/datatypes/data-type-key-pair.png
+---
+width: 800px
+name: fig-data-type-key-pair-2
+---
+Variablen für dynamische Typisierung: Eine *Variable* dargestellt als Tripel aus (Adresse, Datentyp, Wert). 
+Datentyp und Wert stehen im Speicher. Die Variable 'kennt' ihre Adresse.
+In diesem Beispiel benötigt die Datentypinformation 3 Bit und der Wert 8 Bit.
+```
 
 ```{admonition} Pythons Typisierung
 :name: remark-python-type-mem
@@ -166,3 +185,25 @@ while(id(x) == id(z)):
     z = z - 1
 x
 ```
+
+
+
+Blicken wir auf folgenden Code und fragen uns was der Interpreter daraus macht.
+
+```python
+x = 3       # <x, int>
+y = 5       # <y, int>
+z = x + y   # int + int -> int
+
+x = 1.3     # <x, float>
+y = 3.5     # <y, float>
+z = x + y   # float + float -> float
+```
+
+Für die erste Addition von ``x`` und ``y`` holt sich der Interpreter die Datentypinformation.
+Er weiß demnach, dass ``x + y`` bedeutet, dass eine Addition von zwei ganzen Zahlen auszuführen ist.
+Er wandelt den Code so um, dass die CPU angewiesen wird, zwei ganze Zahlen zu addieren.
+Der Addierer der CPU wird aktiv und addiert die beiden Zahlen.
+Für die zweiten Addition führt der Interpreter die gleiche Übersetzung durch, jedoch für zwei Fließkommazahlen.
+Eine **andere** Einheit, die Fließkomma-Einheit, der CPU wird aktiviert!
+
