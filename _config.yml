@@ -48,7 +48,7 @@ sphinx:
 
   config:
     version: "2.0"
-    release: "2.0.0"
+    release: "2.1.0"
 
     myst_enable_extensions:
       - dollarmath
@@ -181,6 +181,6 @@ html:
       <div class="col1">
         Autoren: <a href="/chapters/misc/contributors.html">alle anzeigen</a>.
         Lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>.
-        Version 2.0.0
+        Version 2.1.0
       </div>
     </div>
