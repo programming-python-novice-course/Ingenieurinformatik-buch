@@ -1,3 +1,4 @@
+(info-und-se)=
 # Informatik und Software Engineering
 
 ```{figure} ../../figs/01-course-overview/overview/infrastructer-metaphor.png

@@ -1,3 +1,4 @@
+(sec-cod-zahlen)=
 # Codierung und Zahlensysteme
 
 Ein Computer arbeitet mit elektrischen Signalen, also physikalischen Zuständen.
