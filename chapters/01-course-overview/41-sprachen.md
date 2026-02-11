@@ -1,6 +1,10 @@
 # Lernen einer Programmiersprache
 
-> Was bedeutet es, eine Programmiersprache zu lernen? 
+```{admonition} Leitfrage
+::class: note
+
+Was bedeutet es, eine Programmiersprache zu lernen?
+```
 
 Es bedeutet, dass Sie Syntax, Semantik und zentrale Konzepte unterscheiden und anwenden können und das Sprach-Ökosystem gezielt einsetzen.
 
