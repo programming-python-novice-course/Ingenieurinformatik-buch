@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-encapsulation)=
-# Kapselung (S)
+# Kapselung (V)
 
 *Kapselung* ist ein weiteres fundamentales, wenn nicht sogar DAS fundamentalste aller Konzept der OOP.
 Dabei wird der gesamte, sich ändernden Zustand eines Programms in kleine Zuständigkeiten aka Objekte aufgeteilt.
