@@ -141,7 +141,7 @@ parts:
         sections:
         - file: chapters/07-python-data-types/51-cod-zahl
         - file: chapters/07-python-data-types/52-text
-        - file: chapters/07-python-data-types/53-big-picutere
+        - file: chapters/07-python-data-types/53-big-picture
     - file: chapters/08-eingaben-und-ausgaben/0-intro
       sections:
       - file: chapters/08-eingaben-und-ausgaben/1-eingaben
