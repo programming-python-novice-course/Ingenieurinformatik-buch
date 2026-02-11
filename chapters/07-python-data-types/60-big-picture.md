@@ -131,3 +131,9 @@ width: 400px
 name: fig-hydra-funny
 ---
 ```
+
+```{admonition} Aufgabe
+::class: note
+
+Wo würden Sie Abstrakte Datentypen wie Queue oder Stack in der Abbildung vermuten?
+```
