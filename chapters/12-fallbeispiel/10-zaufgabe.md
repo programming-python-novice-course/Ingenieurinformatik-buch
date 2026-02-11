@@ -1,4 +1,4 @@
-# Fallbeispiel: Sensordaten statistisch auswerten
+# Fallbeispiel
 
 Julia bekommt von einer Kollegin eine CSV-Datei mit echten Messwerten. Ihre Aufgabe klingt zunächst einfach („einlesen und auswerten“), aber schnell wird klar: Sie muss Anforderungen klären, Teilprobleme erkennen und Entscheidungen treffen.
 

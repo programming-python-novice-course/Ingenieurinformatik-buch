@@ -24,10 +24,3 @@ In diesem Unterkapitel bauen wir dafür das Fundament der Objektorientierung in 
 - Sie können Objektattribute von Klassenattributen unterscheiden und einfache Beispiele implementieren.
 ```
 
-## Was kommt als Nächstes?
-
-- **Datenstrukturen vs. Klassen**: Motivation und ein erstes Klassenbeispiel.
-- **Klasse vs. Objekt**: Begriffe, Klassendefinition und Instanzen.
-- **Methoden und `self`**: Wie Methodenaufrufe funktionieren und wie sich Methoden gegenseitig aufrufen.
-- **Klassenattribute**: Was sie sind, wann man sie braucht (und wann besser nicht).
-

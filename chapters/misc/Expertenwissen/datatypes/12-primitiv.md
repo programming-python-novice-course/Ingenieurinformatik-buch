@@ -1,4 +1,4 @@
-# Komplexität (S)
+# Komplexität 
 
 > Ein Datentyp kann entweder primitiv oder komplex sein.
 

@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Zerteilbarkeit (S)
+# Zerteilbarkeit 
 
 > Ein Datentyp kann entweder atomar oder zusammengesetzt sein.
 1. *Atomare Datentypen* sind Datentypen die sich auf einen einzelnen Wert beziehen und

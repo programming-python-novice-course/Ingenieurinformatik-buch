@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Herkunft (S)
+# Herkunft 
 
 > Ein Datentyp kann entweder von der Programmiersprache bereitgestellt werden (built-in) oder vom Programmiert selbst definiert werden (Eigendefinition).
 Diese Datentypen stehen Ihnen zur Verfügung sobald Sie ``Python`` auf Ihrem System oder Ihrer Umgebung installiert haben.
