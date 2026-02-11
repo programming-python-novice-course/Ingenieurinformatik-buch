@@ -22,7 +22,7 @@ name: fig-datatypes-hierarchy-class
 Übersicht: Klassen als Datentyp in Python.
 ```
 
-## Klassendefinition (S)
+## Klassendefinition 
 Eine *Klasse* ist die Blaupause seiner *Objekte*.
 
 ```{admonition} Klassen
@@ -130,7 +130,7 @@ Der Interpreter wandelt ``self.say_name()`` zu ``say_name(self)`` um.
 
 In ``report`` übergeben wir ein weiteres Argument ``score``, welches wir wie gewöhnt durch seinen Namen ansprechen können.
 
-## Objektdefinition (S)
+## Objektdefinition 
 
 Ein *Objekt* ist eine Instanz einer Klasse.
 Die *Klasse* ist der *Datentyp* und das Objekt ist ein *Wert* vom Typ der Klasse angereichert mit den Methoden, die in der Klasse definiert wurden.
