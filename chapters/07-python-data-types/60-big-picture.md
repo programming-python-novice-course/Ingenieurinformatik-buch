@@ -1,3 +1,4 @@
+(sec-pib-picture)=
 # Big picture
 
 Sie haben in diesem Kapitel Datentypen kennengelernt und wie die Codierung von Zahlen und Text konkret umgesetzt wird.

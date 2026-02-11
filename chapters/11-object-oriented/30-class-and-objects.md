@@ -12,6 +12,16 @@ kernelspec:
 (sec-class-and-object)=
 # Klasse vs. Objekt (S) 
 
+Eine Klasse ist in Python wie ein float, int ein Datentyp.
+
+```{figure} ../../figs/11-object-oriented/datatypes-hierachy-class.png
+---
+width: 500px
+name: fig-datatypes-hierarchy-class
+---
+Übersicht: Klassen als Datentyp in Python.
+```
+
 ## Klassendefinition (S)
 Eine *Klasse* ist die Blaupause seiner *Objekte*.
 
