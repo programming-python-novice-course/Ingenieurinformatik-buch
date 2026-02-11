@@ -140,6 +140,10 @@ sphinx:
           \date{}
         }
 
+        % --- Listenpunkte im PDF erzwingen (Bullet) ---
+        \usepackage{enumitem}
+        \setlist[itemize]{label=\textbullet}
+
 # --------------------------------------------------
 # Repository / Edit-Buttons
 # --------------------------------------------------
