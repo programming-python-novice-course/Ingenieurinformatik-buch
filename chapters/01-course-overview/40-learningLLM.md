@@ -1,7 +1,11 @@
 (sec-learning-llm)=
 # Programmieren lernen in Zeiten von LLMs
 
-> „Man muss Programmieren erst ohne KI lernen – sonst lernt man es nie richtig.“
+```{admonition} Mit oder ohne KI?
+:class: note
+
+„Man muss Programmieren erst ohne KI lernen – sonst lernt man es nie richtig.“
+```
 
 Diese Aussage klingt erst mal plausibel, greift aber zu kurz. Warum?
 

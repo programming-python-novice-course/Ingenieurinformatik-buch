@@ -82,6 +82,20 @@ sphinx:
     latex_engine: xelatex
 
     latex_elements:
+      # Admonition-Styling im PDF (note/hint/important/tip + warning/caution/attention/danger/error)
+      sphinxsetup: |
+        noteborder=1pt,
+        noteBorderColor={RGB}{210,210,210},
+        warningborder=1pt,
+        warningBorderColor={RGB}{200,80,80},
+        cautionborder=1pt,
+        cautionBorderColor={RGB}{200,200,80},
+        attentionborder=1pt,
+        attentionBorderColor={RGB}{200,80,200},
+        dangerborder=1pt,
+        dangerBorderColor={RGB}{200,80,80},
+        errorborder=1pt,
+        errorBorderColor={RGB}{200,80,80}
       fontpkg: |
         \usepackage{fontspec}
         \setmainfont{Latin Modern Roman}
