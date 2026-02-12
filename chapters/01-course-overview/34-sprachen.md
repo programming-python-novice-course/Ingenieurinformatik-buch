@@ -1,6 +1,6 @@
 # Lernen einer Programmiersprache
 
-```{admonition} Leitfrage
+```{admonition} Lernen
 ::class: note
 
 Was bedeutet es, eine Programmiersprache zu lernen?
