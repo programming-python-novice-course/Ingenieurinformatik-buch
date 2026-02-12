@@ -11,24 +11,17 @@ kernelspec:
 
 # Zahlensysteme (A)
 
-```{note}
-Geschätzter Zeitaufwand: 120min (Eigenaufwand)
-```
-
 ```{admonition} Hausaufgabe
 :class: note
 
-Dieses Kapitel ist als **Hausaufgabe** gedacht. Sie sollten sich die Inhalte selbstständig erarbeiten und die Umrechnungen zwischen den verschiedenen Zahlensystemen üben. Die hier dargestellten Algorithmen und Tabellen helfen Ihnen dabei, die Umrechnungen zu verstehen und durchzuführen.
+Dieser Abschnitt ist für das Eigenstudium gedacht. Es dient dazu, dass Sie die "Umrechnung einer Zahl" zwischen den verschiedenen Zahlensystemen üben. Die hier dargestellten Algorithmen und Tabellen helfen Ihnen dabei, die Umrechnungen zu verstehen und durchzuführen.
 ```
 
+**Wiederholung**
 
-```{admonition} Die Praxis ...
-:class: remark
+Im vorherigen Abschnitt haben wir gesehen, dass es möglich ist, Zahlen unterschiedlich darzustellen.
 
-In der Praxis müssen Sie nicht ständig Zahlen von Hand umrechnen. Wichtig ist vor allem, Darstellungen zu **erkennen**, korrekt **einzuordnen** und bei Bedarf Umrechnungen **nachvollziehen** zu können.
-```
-
-Im vorherigen Kapitel haben wir gesehen, dass es möglich ist, Zahlen unterschiedlich darzustellen.
+Beispiel: Zahl "dreizehn"
 
 - **13** im Dezimalsystem (Basis 10, Alltagsschreibweise) - das verwenden wir im Alltag, wenn wir von der Zahl 13 sprechen
 - **1101** im Binärsystem (Basis 2)
