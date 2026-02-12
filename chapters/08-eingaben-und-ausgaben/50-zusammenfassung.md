@@ -1,4 +1,4 @@
-# Zusammenfassung (V)
+# Takeaways 
 
 - `print()` gibt Text auf die Standard-Ausgabe (`stdout`) aus
 - Alle Datentypen werden bei `print()` automatisch zu Strings konvertiert

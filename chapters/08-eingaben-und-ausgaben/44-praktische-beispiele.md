@@ -1,4 +1,4 @@
-# Praktische Beispiele (A)
+# Beispiele (A)
 
 ## Beispiel 1: Kombination von Eingabe und Ausgabe
 
