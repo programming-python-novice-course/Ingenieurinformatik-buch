@@ -1,4 +1,4 @@
-# Eingaben (A)
+# Command-Line-Interface - CLI (A)
 
 Wenn wir in Python Texteingaben über das Command Line Interface (CLI) verarbeiten möchten, verwenden wir die Funktion `input()`.
 
@@ -6,17 +6,40 @@ Wenn wir in Python Texteingaben über das Command Line Interface (CLI) verarbeit
 text = input("Eingabe: ")
 ```
 
-### Was macht `input()`?
+## Was macht `input()`? 
 
 - `input()` liest **Text** von der Standard-Eingabe (`stdin`)
 - dieser Text wird **unverändert** an unser Programm übergeben
 - der Rückgabewert ist **immer vom Typ `str`**
 - `input()` nutzt eine **textbasierte Eingabe-Schnittstelle**, die vom Betriebssystem bereitgestellt wird
 
-Beispiele (ausgelagert als Unterkapitel):
+```python
+text = input("Bitte eine Zahl eingeben: ")
+zahl = int(text)
+print("Quadrat:", zahl ** 2)
+```
 
-- [Beispiel 1: Zahl einlesen und quadrieren (Typumwandlung) (A)](1-eingaben/1-zahl-einlesen-und-quadrieren.md)
-- [Beispiel 2: E-Mail-Adresse einlesen (Validierung) (A)](1-eingaben/2-email-validierung.md)
+- `input()` liefert Text
+- Typumwandlung kann fehlschlagen (`ValueError`)
+- Fehlerbehandlung ist notwendig!!
+
+```python
+email = input("Bitte E-Mail-Adresse eingeben: ")
+
+if "@" in email:
+    print("E-Mail-Adresse sieht gültig aus.")
+else:
+    print("Ungültige E-Mail-Adresse.")
+```
+
+Validierung bedeutet **nicht**, dass eine Eingabe harmlos oder sicher ist.
+
+Beispiel einer formal gültigen, aber potenziell problematischen Adresse:
+
+```
+mein-trojanerlegtdeinenpclam@hacking.de
+```
+
 
 ```{admonition} Warnung
 :name: warning-input-limitations

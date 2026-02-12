@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-dict)=
-# Wörterbücher - dict (A)
+# Wörterbücher - dict (A*)
 
 Die letzte *built-in* Datenstruktur, welche wir besprechen, sind die sogenannten Wörterbücher (engl. [Dictionary](https://docs.python.org/3/library/stdtypes.html#dict)) ``dict``.
 In anderen Programmiersprachen, wie z.B. ``Java`` spricht man stattdessen auch von *Hashtables* oder *Hashmaps*.

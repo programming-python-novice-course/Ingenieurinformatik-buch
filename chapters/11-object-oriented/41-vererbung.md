@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-inheritance)=
-# Vererbung (S)
+# Vererbung (V)
 
 Vererbung ist eine Möglichkeit Funktionalität und Attribute einer Eltern-Klasse in eine Kind-Klasse zu übernehmen -- zu *vererben*.
 Wir sagen, die Kind-Klasse *erbt* von der *Eltern-Klasse*.

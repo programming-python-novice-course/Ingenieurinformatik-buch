@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-memory-management)=
-# Garbage Collection (A)
+# Speicherverwaltung (V)
 
 ```{admonition} Behauptung
 :class: remark

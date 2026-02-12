@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Pseudocode (A)
+# Pseudocode (V)
 
 Pseudocode ist eine einfache, weniger strikte Beschreibung eines Algorithmus in einer Sprache, die der natürlichen Sprache ähnelt (siehe [Definition](def-pseudocode)). Damit können wir einen Algorithmus beschreiben, ohne eine konkrete Programmiersprache vorauszusetzen.
 

@@ -20,10 +20,11 @@ parts:
         - file: chapters/01-course-overview/31-softwaretypen
         - file: chapters/01-course-overview/32-prozesssicht
         - file: chapters/01-course-overview/33-success-criteria
+        - file: chapters/01-course-overview/34-sprachen
       - file: chapters/01-course-overview/40-learningLLM
         sections:
-        - file: chapters/01-course-overview/41-sprachen
-        - file: chapters/01-course-overview/42-asvconcept
+        - file: chapters/01-course-overview/41-asvconcept
+        - file: chapters/01-course-overview/42-markierung
         - file: chapters/01-course-overview/43-ki
       - file: chapters/01-course-overview/50-roadmap
         sections:
@@ -127,6 +128,7 @@ parts:
         - file: chapters/07-python-data-types/21-int
         - file: chapters/07-python-data-types/22-bool
         - file: chapters/07-python-data-types/23-float
+        - file: chapters/07-python-data-types/24-mix
       - file: chapters/07-python-data-types/30-intro
         sections:
         - file: chapters/07-python-data-types/31-list
@@ -137,24 +139,31 @@ parts:
         sections:
         - file: chapters/07-python-data-types/41-set
         - file: chapters/07-python-data-types/42-dict
+      - file: chapters/07-python-data-types/60-external
       - file: chapters/07-python-data-types/50-codierung
         sections:
         - file: chapters/07-python-data-types/51-cod-zahl
         - file: chapters/07-python-data-types/52-text
-    - file: chapters/08-eingaben-und-ausgaben/0-intro
+      - file: chapters/07-python-data-types/70-big-picture
+    - file: chapters/08-eingaben-und-ausgaben/00-intro
       sections:
-      - file: chapters/08-eingaben-und-ausgaben/1-eingaben
+      - file: chapters/08-eingaben-und-ausgaben/10-io
         sections:
-        - file: chapters/08-eingaben-und-ausgaben/1-eingaben/1-zahl-einlesen-und-quadrieren
-        - file: chapters/08-eingaben-und-ausgaben/1-eingaben/2-email-validierung
-      - file: chapters/08-eingaben-und-ausgaben/2-gui-eingaben
-      - file: chapters/08-eingaben-und-ausgaben/3-ausgaben
+        - file: chapters/08-eingaben-und-ausgaben/11-interfaces
+        - file: chapters/08-eingaben-und-ausgaben/12-protokol
+      - file: chapters/08-eingaben-und-ausgaben/20-eingaben
         sections:
-        - file: chapters/08-eingaben-und-ausgaben/3-ausgaben/1-print-und-stdout
-        - file: chapters/08-eingaben-und-ausgaben/3-ausgaben/2-konvertierung
-        - file: chapters/08-eingaben-und-ausgaben/3-ausgaben/3-f-strings
-        - file: chapters/08-eingaben-und-ausgaben/3-ausgaben/4-praktische-beispiele
-        - file: chapters/08-eingaben-und-ausgaben/3-ausgaben/5-zusammenfassung
+        - file: chapters/08-eingaben-und-ausgaben/21-cli
+        - file: chapters/08-eingaben-und-ausgaben/22-gui-eingaben
+      - file: chapters/08-eingaben-und-ausgaben/40-ausgaben
+        sections:
+        - file: chapters/08-eingaben-und-ausgaben/41-print-und-stdout
+        - file: chapters/08-eingaben-und-ausgaben/42-pic
+      - file: chapters/08-eingaben-und-ausgaben/50-konvertierung
+        sections:
+        - file: chapters/08-eingaben-und-ausgaben/51-konvertierung
+        - file: chapters/08-eingaben-und-ausgaben/52-f-strings
+      - file: chapters/08-eingaben-und-ausgaben/70-zusammenfassung
     - file: chapters/09-control-flow/0-intro
       sections:
       - file: chapters/09-control-flow/1-cases
@@ -189,8 +198,12 @@ parts:
         - file: chapters/11-object-oriented/11-script
         - file: chapters/11-object-oriented/12-wrapper
         - file: chapters/11-object-oriented/13-oop
-      - file: chapters/11-object-oriented/20-klassen
-      - file: chapters/11-object-oriented/30-class-and-objects
+      - file: chapters/11-object-oriented/20-klassen-und-objekte
+        sections:
+        - file: chapters/11-object-oriented/21-datenstrukturen-vs-klassen
+        - file: chapters/11-object-oriented/22-klasse-vs-objekt
+        - file: chapters/11-object-oriented/23-methoden-und-self
+        - file: chapters/11-object-oriented/24-klassenattribute
       - file: chapters/11-object-oriented/40-inheritance-poly-encap
         sections:
         - file: chapters/11-object-oriented/41-vererbung
@@ -203,7 +216,6 @@ parts:
     chapters:
     - file: chapters/12-fallbeispiel/00-intro
       sections:
-      - file: chapters/12-fallbeispiel/10-zaufgabe
       - file: chapters/12-fallbeispiel/20-se-Prozess        
       - file: chapters/12-fallbeispiel/30-problemanalyse
         sections:

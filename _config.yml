@@ -48,7 +48,7 @@ sphinx:
 
   config:
     version: "2.0"
-    release: "2.1.0"
+    release: "2.2.0"
 
     myst_enable_extensions:
       - dollarmath
@@ -82,6 +82,20 @@ sphinx:
     latex_engine: xelatex
 
     latex_elements:
+      # Admonition-Styling im PDF (note/hint/important/tip + warning/caution/attention/danger/error)
+      sphinxsetup: |
+        noteborder=1pt,
+        noteBorderColor={RGB}{210,210,210},
+        warningborder=1pt,
+        warningBorderColor={RGB}{200,80,80},
+        cautionborder=1pt,
+        cautionBorderColor={RGB}{200,200,80},
+        attentionborder=1pt,
+        attentionBorderColor={RGB}{200,80,200},
+        dangerborder=1pt,
+        dangerBorderColor={RGB}{200,80,80},
+        errorborder=1pt,
+        errorBorderColor={RGB}{200,80,80}
       fontpkg: |
         \usepackage{fontspec}
         \setmainfont{Latin Modern Roman}
@@ -140,6 +154,10 @@ sphinx:
           \date{}
         }
 
+        % --- Listenpunkte im PDF erzwingen (Bullet) ---
+        \usepackage{enumitem}
+        \setlist[itemize]{label=\textbullet}
+
 # --------------------------------------------------
 # Repository / Edit-Buttons
 # --------------------------------------------------
@@ -181,6 +199,6 @@ html:
       <div class="col1">
         Autoren: <a href="/chapters/misc/contributors.html">alle anzeigen</a>.
         Lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>.
-        Version 2.1.0
+        Version 2.2.0
       </div>
     </div>

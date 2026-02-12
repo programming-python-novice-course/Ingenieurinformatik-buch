@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Vorlesung: interaktive Website und JupyterHub
+# Interaktive Website und JupyterHub (V)
 
 In der Vorlesung arbeiten Sie über eine interaktive Website und auf dem JupyterHub der Hochschule München. Dort ist die Umgebung bereits eingerichtet: Sie können direkt programmieren, ohne lokal etwas zu installieren.
 

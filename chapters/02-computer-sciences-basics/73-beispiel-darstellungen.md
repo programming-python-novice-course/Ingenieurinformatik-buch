@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Exemplarischer Vergleich (A)
+# Vergleich Pseudocode - Struktogramm (V)
 
 Betrachten wir einen einfachen Algorithmus, der das Maximum einer Liste von Zahlen findet. Wir stellen ihn in drei verschiedenen Formen dar.
 

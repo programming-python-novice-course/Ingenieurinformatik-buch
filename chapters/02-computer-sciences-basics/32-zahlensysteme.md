@@ -11,7 +11,9 @@ kernelspec:
 
 # Zahlensysteme (A)
 
-> Geschätzter Zeitaufwand: 120min (Eigenaufwand)
+```{note}
+Geschätzter Zeitaufwand: 120min (Eigenaufwand)
+```
 
 ```{admonition} Hausaufgabe
 :class: note

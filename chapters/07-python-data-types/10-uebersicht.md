@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Übersicht (A)
+# Übersicht: Built-in Datentypen (A)
 
 Im folgenden definieren und initialisieren wir Variablen mit unterschiedlichen Datentypen: 
 
