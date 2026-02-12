@@ -17,7 +17,7 @@ Umfang: ca. 1 Vorlesungseinheit
 
 Lernziele:
 
-- Grundverständnis, was ein Computer tut (vereinfacht, aber belastbar)
+- Grundverständnis, was ein Computer tut 
 - Zentrale Begriffe der Informatik sicher verwenden
 - Informationsverarbeitung auf hoher Ebene beschreiben können
 
