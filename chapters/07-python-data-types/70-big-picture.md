@@ -1,5 +1,5 @@
 (sec-pib-picture)=
-# Big picture
+# Big picture (S)
 
 Sie haben in diesem Kapitel Datentypen kennengelernt und wie die Codierung von Zahlen und Text konkret umgesetzt wird.
 
