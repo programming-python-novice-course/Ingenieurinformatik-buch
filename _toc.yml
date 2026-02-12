@@ -211,7 +211,6 @@ parts:
     chapters:
     - file: chapters/12-fallbeispiel/00-intro
       sections:
-      - file: chapters/12-fallbeispiel/10-zaufgabe
       - file: chapters/12-fallbeispiel/20-se-Prozess        
       - file: chapters/12-fallbeispiel/30-problemanalyse
         sections:
