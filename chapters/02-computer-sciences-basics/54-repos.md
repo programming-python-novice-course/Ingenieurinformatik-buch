@@ -1,7 +1,11 @@
 (sec-repos-hubs)=
-# Repositories und Hubs
+# Repositories und Hubs (V*)
 
-Dieses Kapitel ist **Expertenwissen** und ergänzt, wie Software typischerweise gespeichert, versioniert und geteilt wird.
+```{admonition} Verwaltung von Software und Versionen
+:class: hint
+
+Wie wird Software gespeichert und anderen zugänglich gemacht? Siehe dazu das Expertenwissen-Kapitel {ref}`sec-repos-hubs`.
+```
 
 - Ein *Repository* ist eine Ablage für Software in Form von Dateien und Ordnern.
 - Der Inhalt eines Repositories wird typischerweise mit einer *Versionskontrolle* verwaltet, z. B. mit Git.
@@ -9,7 +13,7 @@ Dieses Kapitel ist **Expertenwissen** und ergänzt, wie Software typischerweise 
 - Der wohl bekannteste Hub ist [GitHub](https://github.com).
 - Als Studierende der Hochschule München, der LMU oder der TUM können Sie kostenfrei und ohne zusätzliche Registrierung [GitLab LRZ](https://gitlab.lrz.de) nutzen.
 
-```{figure} ../../../figs/02-computer-sciences-basics/gitlablrz.png
+```{figure} ../../figs/02-computer-sciences-basics/gitlablrz.png
 ---
 width: 700px
 name: fig-gitlablrz
@@ -25,5 +29,6 @@ Snapshot des Repositories auf GitLab LRZ, das den Quellcode des interaktiven Leh
 - Für den Login nutzen Sie Ihre HM-Kennung (Benutzername `hm-…`) und Ihr normales Accountpasswort.
 
 Voraussetzung für die Nutzung: Sie müssen lernen, wie man das Versionskontrollsystem Git bedient.
-```
 
+Einen Anfängerkurs dazu finden Sie auf der Lernplattform Carpentries: https://swcarpentry.github.io/git-novice/01-basics.html
+```

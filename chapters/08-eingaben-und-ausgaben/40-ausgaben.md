@@ -1,15 +1,8 @@
-# Ausgaben (A)
+# Ausgaben
 
-Wenn wir in Python Daten ausgeben möchten, verwenden wir die Funktion `print()`.
+Bisher haben Sie Text mit print() ausgegeben, Bilder und Animationen mit matplotlib.pyplot erstellt und ausgegeben. Der Begriff „ausgeben“ passt in allen Fällen – das Ergebnis erscheint am Bildschirm oder unter der Notebook-Zelle.
 
-```python
-print("Hallo Welt!")
-```
+In den folgenden Abschnitten geht es darum, diese Ausgabekanäle genauer zu verstehen: Sind sie immer verfügbar? Wann lassen sie sich nutzen – und wann nicht?
 
-Dieses Kapitel ist in Unterkapitel aufgeteilt:
 
-- [Was macht `print()`? (A)](3-ausgaben/1-print-und-stdout.md)
-- [Automatische Konvertierung bei `print()` (A)](3-ausgaben/2-konvertierung.md)
-- [f-Strings (A)](3-ausgaben/3-f-strings.md)
-- [Praktische Beispiele (A)](3-ausgaben/4-praktische-beispiele.md)
-- [Zusammenfassung (V)](3-ausgaben/5-zusammenfassung.md)
+

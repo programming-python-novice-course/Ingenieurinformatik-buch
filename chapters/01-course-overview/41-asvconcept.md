@@ -1,5 +1,7 @@
 # Wissensarten 
 
+Es gibt verschiedene Arten von Wissen, deren Stellenwert sich in Zeiten von LLMs stark ändern.
+
 Wir unterscheiden vereinfacht drei Wissensarten:
 
 - (S) Strukturwissen: Warum verbindet eine Schraube zwei Teile (Gewinde → Klemmkraft)? Welche Randbedingungen sind wichtig (Material, Reibung)? Woran erkenne ich „zu locker/zu fest“?

@@ -1,7 +1,6 @@
 # Vorgehen (V)
 
-Julia will nicht sofort losschreiben, sondern zuerst bewusst entscheiden, wie sie vorgeht. Dafür nutzt sie eine einfache Schleife: erst prüfen, was es schon gibt (Buy), dann gezielt selbst bauen (Build) – und bei Teilproblemen wiederholt sich das.
-
+Julia will bewusst entscheiden, wie sie vorgeht. 
 
 In {numref}`fig-se-flow-simple` sehen Sie einen vereinfachten, aber praxisnahen Software-Entwicklungsprozess.
 Ausgehend von einer gegebenen Problemstellung wird zunächst geprüft, ob existierende Bibliotheken oder Frameworks das Problem vollständig abdecken (*Buy*).
