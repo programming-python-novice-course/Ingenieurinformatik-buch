@@ -10,13 +10,13 @@ kernelspec:
 ---
 
 (sec-purity)=
-# Seiteneffekte (S)
+# Seiteneffekte und Mutability (A)
 
-Im vorherigen Kapitel haben wir gelernt, wie Namensräume funktionieren und wie ``Python`` entscheidet, welche Variable verwendet wird, wenn derselbe Name in verschiedenen Namensräumen existiert. 
+Im vorherigen Abschnitt haben wir gelernt, wie Namensräume funktionieren und wie ``Python`` entscheidet, welche Variable verwendet wird, wenn derselbe Name in verschiedenen Namensräumen existiert.
 
 Ein wichtiger Aspekt, der eng mit Namensräumen zusammenhängt, sind **Seiteneffekte**: Wenn eine Funktion ein Objekt aus einem anderen Namensraum (z.B. dem globalen Namensraum) erhält und dieses Objekt verändert, kann dies Auswirkungen auf andere Teile des Programms haben, die dasselbe Objekt verwenden. Das Verständnis von Namensräumen hilft uns zu verstehen, warum Seiteneffekte auftreten können - nämlich dann, wenn mehrere Namen aus verschiedenen Namensräumen auf dasselbe Objekt im Speicher verweisen.
 
-Wie wir bereits in Kapitel chapters/04-language-properties/4-seiteneffekte.md gelernt haben, können Funktionen den Zustand auch außerhalb ihres Gültigkeitsbereichs verändern. 
+Wie wir bereits in den [Sprach Eigenschaften](chapters/03-language-properties/52-seiteneffekte) gelernt haben, können Funktionen den Zustand auch außerhalb ihres Gültigkeitsbereichs verändern.
 
 ```{code-cell} python3
 y = []
@@ -31,7 +31,7 @@ print(y)
 
 Die Liste ``y`` (die außerhalb der Funktion ``sideeffect`` existiert) wird durch die Funktion ``sideeffect`` erweitert. Es gibt also einen Seiteneffekt.
 
-Eine Voraussetzung dafür, dass das Objekt ``y`` veränderbar ist, ist, dass der Datentyp veränderbar ist. 
+Eine Voraussetzung dafür, dass das Objekt ``y`` veränderbar ist, ist, dass der Datentyp veränderbar ist.
 
 ```{admonition} Wichtig
 :class: important

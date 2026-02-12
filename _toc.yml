@@ -185,13 +185,17 @@ parts:
         - file: chapters/09-control-flow/3-comprehensions/3-set-comprehensions
     - file: chapters/10-functions/00-intro
       sections:
-      - file: chapters/10-functions/10-definition
-      - file: chapters/10-functions/20-namespaces
-      - file: chapters/10-functions/30-mutability
-      - file: chapters/10-functions/40-lambdas
-      - file: chapters/10-functions/50-nested-functions
-      - file: chapters/10-functions/60-first-class-functions
-      - file: chapters/10-functions/70-recursion
+      - file: chapters/10-functions/20-intro
+        sections:
+        - file: chapters/10-functions/21-definition
+        - file: chapters/10-functions/22-parameter
+        - file: chapters/10-functions/23-anwendung
+      - file: chapters/10-functions/30-intro
+        sections:
+        - file: chapters/10-functions/31-namespaces
+        - file: chapters/10-functions/32-mutability
+      - file: chapters/10-functions/40-recursion
+      - file: chapters/10-functions/50-advanced
     - file: chapters/11-object-oriented/00-intro
       sections:
       - file: chapters/11-object-oriented/10-motivation
@@ -249,6 +253,12 @@ parts:
         - file: chapters/misc/Expertenwissen/datatypes/11-Atomar-zusammen
         - file: chapters/misc/Expertenwissen/datatypes/12-primitiv
         - file: chapters/misc/Expertenwissen/datatypes/13-build
+      - file: chapters/misc/Expertenwissen/functions/00-intro
+        sections:
+        - file: chapters/misc/Expertenwissen/functions/00-lambdas
+        - file: chapters/misc/Expertenwissen/functions/01-nested-functions
+        - file: chapters/misc/Expertenwissen/functions/02-first-class-functions
+        - file: chapters/misc/Expertenwissen/functions/03-rekursion-vertieft
       - file: chapters/misc/Expertenwissen/euclid-algorithm
       - file: chapters/misc/Expertenwissen/jupyter-notebooks
       - file: chapters/misc/Expertenwissen/berechenbarkeit

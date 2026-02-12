@@ -92,7 +92,7 @@ Beispiel (Biber und Stamm):
 - Die entstehenden Stücke halbiert er wieder.
 - … bis die Stücke klein genug sind.
 
-In diesem Kapitel lassen wir das bewusst als Idee stehen und konzentrieren uns auf Iteration (Schleifen). Details finden Sie im Kapitel [Rekursion](sec-recursive-functions).
+In diesem Kapitel lassen wir das bewusst als Idee stehen und konzentrieren uns auf Iteration (Schleifen). Details finden Sie im Kapitel [Rekursion](sec-recursion-basis).
 ```
 
 (sec-iteration)=
