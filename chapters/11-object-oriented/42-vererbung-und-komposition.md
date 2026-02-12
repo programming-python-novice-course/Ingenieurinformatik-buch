@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-composition)=
-# Vererbung und Komposition (S)
+# Komposition (V)
 
 Vererbung ist ein mächtiges Werkzeug, doch sollten Sie damit bedacht und sparsam umgehen.
 Tiefe Vererbungshierarchien tendieren dazu unverständlich zu werden.

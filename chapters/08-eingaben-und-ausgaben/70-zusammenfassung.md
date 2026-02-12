@@ -1,6 +1,14 @@
-# Praktische Beispiele (A)
+# Takeaways 
 
-## Beispiel 1: Kombination von Eingabe und Ausgabe
+- `print()` gibt Text auf die Standard-Ausgabe (`stdout`) aus
+- Alle Datentypen werden bei `print()` automatisch zu Strings konvertiert
+- f-Strings (`f"..."`) ermöglichen elegante String-Formatierung mit Variablen und Ausdrücken
+- f-Strings unterstützen Formatierungsoptionen für Zahlen, Dezimalstellen, etc.
+- Die Kombination von Eingabe (`input()`) und Ausgabe (`print()`) mit f-Strings ermöglicht interaktive Programme
+
+Cheat-Sheet:
+
+**Beispiel 1: Kombination von Eingabe und Ausgabe**
 
 ```python
 name = input("Wie heißen Sie? ")
@@ -11,7 +19,7 @@ print(f"Hallo {name}! Sie sind {alter} Jahre alt.")
 print(f"In 10 Jahren werden Sie {alter + 10} Jahre alt sein.")
 ```
 
-## Beispiel 2: Formatierte Tabellenausgabe
+**Beispiel 2: Formatierte Tabellenausgabe**
 
 ```python
 produkte = [
@@ -26,7 +34,7 @@ for produkt in produkte:
     print(f"{produkt['name']}\t\t{produkt['preis']:.2f}€\t{produkt['anzahl']}")
 ```
 
-## Beispiel 3: Fehlermeldungen ausgeben
+**Beispiel 3: Fehlermeldungen ausgeben**
 
 ```python
 zahl_text = input("Bitte eine Zahl eingeben: ")

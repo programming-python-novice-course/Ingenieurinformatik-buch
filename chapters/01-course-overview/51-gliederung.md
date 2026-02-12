@@ -17,13 +17,19 @@ Umfang: ca. 1 Vorlesungseinheit
 
 Lernziele:
 
-- Grundverständnis, was ein Computer tut (vereinfacht, aber belastbar)
+- Grundverständnis, was ein Computer tut 
 - Zentrale Begriffe der Informatik sicher verwenden
 - Informationsverarbeitung auf hoher Ebene beschreiben können
 
 Prüfungsrelevanz:
 
-In der Regel nicht direkt prüfungsrelevant (außer, wir weisen ausdrücklich darauf hin).
+Zum Teil prüfungsrelevant: ca. 40% der Kapitelabschnitte haben eine A-Markierung (A=Anwendungswissen).
+
+```{admonition} Hinweis
+:class: note
+
+Prüfungsrelevante Kapitel bzw. Unterkapitel haben ein „(A)" in der Überschrift. Mehr dazu im [Kapitelmarker](sec-kapitelmarker).
+```
 
 **Python verstehen (Teil 2)**
 
@@ -53,7 +59,7 @@ Lernziele:
 
 Prüfungsrelevanz:
 
-Für die Prüfung meist nicht direkt abgefragt – aber sehr wertvoll: Konzeptwissen macht Ihnen die Anwendung leichter, hilft beim Transfer auf weitere Sprachen und spart später viel „Auswendiglernen“.
+Für die Prüfung nicht direkt abgefragt – aber sehr wertvoll: das Struktur- und Vorgehenswissen schafft die Voraussetzung dafür, dass Sie Teil 3 verstehen können. Sonst müssen Sie in Teil 3 sehr viel "auswendig lernen".
 
 **Python anwenden (Teil 3)**
 
@@ -79,7 +85,7 @@ Lernziele:
 
 Prüfungsrelevanz:
 
-Sehr prüfungsrelevant: Hier prüfen wir, ob Sie „fahren können“ – also eigenständig Programme erstellen.
+Sehr prüfungsrelevant (viele A-Markierungen!): Hier lernen wir Python anzuwenden, indem wir Programmierkonstrukte kennenlernen und diese in einfachen Beispielen anwenden. 
 
 **Anwendungsfall (Teil 4)**
 
@@ -114,6 +120,6 @@ Lernziele:
 
 Prüfungsrelevanz:
 
-Zum Großteil nicht prüfungsrelevant - außer es wird ausdrücklich darauf hingewiesen. Höchst praxisrelevant!
+Zum Teil prüfungsrelevant: das Anwendungswissen entspricht ca. 30% des Kapitels.
 
 

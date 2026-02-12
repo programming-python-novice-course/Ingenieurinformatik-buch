@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-tuple)=
-# Tupel - tuple (A)
+# Tupel - tuple (A*)
 
 [Listen](sec-list) und [Tupel](https://docs.python.org/3/library/stdtypes.html#tuple) ``tuple`` (wie auch [Zeichenketten](sec-string), und [Zahlenbereiche](sec-range)) sind allesamt [Sequenzen](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) und haben dadurch sehr ähnliche Eigenschaften.
 Einzig bei der Erstellung verwenden wir statt der eckigen die runden Klammern:

@@ -2,7 +2,7 @@
 
 Dieses Buch wurde durch Beiträge verschiedener Personen ermöglicht.
 
-## Ursprüngliche Fassung für das Modul "Computational Thinking"
+**Ursprüngliche Fassung für das Modul "Computational Thinking"**
 
 - [Benedikt Zönnchen](https://mucdai.hm.edu/kontakte_de/phonebook_detailseite_18243.de.html)
 
@@ -13,7 +13,7 @@ Benedikt Zönnchen hat das interaktive Lehrbuch für das Modul "Computational Th
 Mathias Schwaller hat kleinere textuelle Änderungen vorgeschlagen, die Benedikt Zönnchens übernommen hat.
 
 
-## Neue Fassung für das Modul "Ingenieurinformatik - Programmieren"
+**Neue Fassung für das Modul "Ingenieurinformatik - Programmieren**
 
 - [Christina Maria Mayr](https://christinamaria-mayr.userweb.mwn.de/)
 
@@ -24,7 +24,7 @@ Die Einteilung des Buches in vier Teile (Einleitung, Theorie, Python, CT in Acti
 - Die Kapitel aus dem Teil "Python" sind größtenteils unverändert in den neuen Teil "Python anwenden" eingegangen.
 - Die Teile "Übersicht", "Basiswissen", "Python verstehen" und "Fallbeispiel" wurden neu entwickelt. Teilweise wurden dabei Beispiele und Grafiken aus der Ursprungsfassung wiederverwendet.
 
-## Einsatz von KI
+**Einsatz von KI**
 
 Zur Illustration und zur Überarbeitung von Textpassagen wurde ein KI-gestütztes Werkzeug eingesetzt:
 

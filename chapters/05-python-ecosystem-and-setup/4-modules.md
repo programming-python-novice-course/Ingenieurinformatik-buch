@@ -20,8 +20,3 @@ Module schaffen außerdem **Namensräume**: statt `func1()` schreiben Sie dann z
 
 >Python has a way to put definitions in a file and use them in a script or in an interactive instance of the interpreter. Such a file is called a module. -- [offizielle Dokumentation](https://docs.python.org/3/tutorial/modules.html#tut-modules)
 
-## Unterkapitel
-
-- [Ein eigenes Modul](4-modules/1-ein-eigenes-modul.md)
-- [Wie findet Python die Module?](4-modules/2-modul-suche.md)
-- [Pakete](4-modules/3-pakete.md)

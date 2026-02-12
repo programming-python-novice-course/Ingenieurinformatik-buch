@@ -1,4 +1,54 @@
-# Wie werden Programme entwickelt? (V)
+# Wie werden Programme entwickelt? 
+
+```{figure} ../../figs/01-course-overview/overview/fahrt.png
+---
+height: 320px
+name: fahrt
+---
+```
+
+
+
+Julia bekommt von einer Kollegin eine CSV-Datei mit echten Messwerten. Die Aufgabe klingt zunächst einfach („einlesen und auswerten“), aber schnell wird klar: Sie muss Anforderungen klären, Teilprobleme erkennen und Entscheidungen treffen. In diesem Kapitel schauen wir ihr über die Schulter – vom ersten Lesen der Aufgabe bis zu zwei möglichen Lösungen.
+
+```{exercise} Fallbeispiel: Sensordaten statistisch auswerten
+:label: exercise-sensordata
+
+**Ausgangslage:**  
+Julia bekommt eine Datei mit NO₂-Messwerten verschiedener Messstationen zu vielen Zeitpunkten. Die Datei enthält auch fehlende Werte (leere Felder), wie sie in echten Messreihen typisch sind.
+
+**Aufgabe:**  
+Julia soll ein Programm erstellen, das die Messdaten auswertet:
+- **Grafisch:** Die Verteilung der Messwerte pro Station visualisieren (z. B. als Histogramm).
+- **Tabellarisch:** Eine Übersichtstabelle mit Kennzahlen erzeugen (z. B. Anzahl, Mittelwert, Standardabweichung, Minimum/Maximum sowie Quartile (Q1, Median, Q3)).
+```
+
+**Datensatz**
+
+Die Messdatei liegt online. Julia arbeitet (wie später in den Codebeispielen) mit dieser Quelle:
+
+`https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/air_quality_no2.csv`
+
+Die Daten sind reale Messdaten zur Stickstoffdioxid-Konzentration (NO₂) in der Umgebungsluft:
+
+- Die Werte sind in µg/m³ (Mikrogramm pro Kubikmeter) angegeben.
+- Die Messreihe ist zeitlich aufgelöst (Zeitstempel).
+- Es gibt mehrere Messstationen in Europa (z. B. London, Paris, Antwerpen).
+
+Die Datei stammt aus der pandas-Dokumentation und wurde für Lehrzwecke leicht vorverarbeitet (z. B. reduziert und als CSV bereitgestellt). Sie enthält typische Eigenschaften realer Daten, z. B. Messrauschen und fehlende Werte.
+
+
+
+Julia möchte am Ende zwei Dinge liefern: eine einfache Visualisierung der Verteilung und eine Tabelle mit Kennzahlen. Auf dem Weg dorthin trifft sie eine zentrale Entscheidung: nutzt sie vorhandene Bibliotheken oder baut sie die Bausteine selbst?
+
+
+```{admonition} Zentrale Frage in der Programmierpraxis
+:class: note
+
+Nicht „Kann ich das programmieren?“, sondern:
+
+„Soll ich es selbst programmieren?“ 
+```
 
 
 ```{admonition} Lernziele
@@ -11,36 +61,3 @@ Nach diesem Kapitel können Sie:
 - eigenen Code mit einfachen Tests absichern,
 - einordnen, warum Sortieren in Statistik-Auswertungen auftaucht (Quantile/Median) und bei Bedarf einen einfachen Sortieralgorithmus implementieren.
 ```
-
-Julia bekommt eine praxisnahe Aufgabe: Eine Messdatei soll eingelesen, ausgewertet und visualisiert werden. In diesem Kapitel schauen wir ihr über die Schulter – vom ersten Lesen der Aufgabe bis zu zwei möglichen Lösungen.
-
-
-```{figure} ../../figs/01-course-overview/overview/fahrt.png
----
-height: 320px
-name: fahrt
----
-```
-
-
-Julia möchte am Ende zwei Dinge liefern: eine einfache Visualisierung der Verteilung und eine Tabelle mit Kennzahlen. Auf dem Weg dorthin trifft sie eine zentrale Entscheidung: nutzt sie vorhandene Bibliotheken oder baut sie die Bausteine selbst?
-
-- Buy: Julia nutzt gut gepflegte Bibliotheken (z. B. `pandas`) und kommt schnell zu einem Ergebnis.
-- Build: Julia implementiert zentrale Schritte selbst (z. B. weil keine neuen Abhängigkeiten erlaubt sind) und sichert die Lösung mit Tests ab.
-
-> Kernidee: Nicht „Kann ich das programmieren?“, sondern „Soll ich es selbst programmieren?“ ist oft die entscheidende Frage.
-
-
-
-```{admonition} Hinweis: Sortieralgorithmen im Fallbeispiel
-::class: remark
-
-Sortieralgorithmen werden hier nur gestreift, weil sie im Kontext der Statistik (Quantile/Median) auftauchen. Wichtig ist, dass Sie verstehen, warum Sortieren gebraucht wird, und dass Sie (falls gefordert) mindestens einen einfachen Sortieralgorithmus selbst implementieren können. In der Praxis verwenden Sie in Python meist die eingebaute Sortierung.
-```
-
-```{admonition} Prüfungsrelevanz
-::class: note
-
-Dieses Kapitel ist insgesamt nicht der Schwerpunkt der Prüfung. Die enthaltenen Schritte sollten Sie aber nachvollziehen und erklären können, insbesondere Vorgehen, Zerlegung, einfache Tests und die Begründung von „Build vs. Buy“.
-```
-

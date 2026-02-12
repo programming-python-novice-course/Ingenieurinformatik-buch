@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-polymorphism)=
-# Polymorphie (S)
+# Polymorphie (V)
 
 ```{admonition} Polymorphie
 :class: definition

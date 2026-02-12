@@ -1,4 +1,4 @@
-# OOP als Allheilmittel (S)
+# Objektorientiert vs. prozedural? (S)
 
 Objektorientierung war (spätestens mit ``Java`` und dem Motto *„Write once, run everywhere.“*) lange Zeit das dominierende Paradigma in der industriellen Softwareentwicklung.
 Dabei entstand stellenweise der Eindruck, OOP sei der „heilige Gral“ gegen Komplexität.

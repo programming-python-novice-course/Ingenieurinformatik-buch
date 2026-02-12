@@ -1,6 +1,6 @@
-# f-Strings (Formatted String Literals) (A)
+# f-Strings (A)
 
-f-Strings sind eine elegante Möglichkeit, Variablen und Ausdrücke direkt in Strings einzubinden.
+Formatted String Literals (f-Strings) sind eine elegante Möglichkeit, Variablen und Ausdrücke direkt in Strings einzubinden.
 
 ## Syntax
 

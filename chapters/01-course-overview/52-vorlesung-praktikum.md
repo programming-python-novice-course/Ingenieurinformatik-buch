@@ -16,11 +16,9 @@ kernelspec:
 Eine aktuelle Übersicht über die Vorlesungs- und Praktikumstermine finden Sie in Ihrem Moodle-Kurs.
 ```
 
-**Hinweis**
-
 Wir haben mehrere Praktikumsgruppen, die wir über das Semester verteilen müssen. Damit wir mit allen Terminen gut durchkommen, starten die Praktika früh.
 
-```{admonition} Hinweis
+```{admonition} Verzahnung von Vorlesung und Praktikum
 Das Konzept ist wie folgt:
 - Im Praktikum „fahren“ wir schon einmal los, das heißt: Sie arbeiten früh mit konkreten Beispielen und wenden Python praktisch an.
 - In der Vorlesung lernen wir parallel dazu die Hintergründe und ordnen ein, was wir dabei gerade tun.
