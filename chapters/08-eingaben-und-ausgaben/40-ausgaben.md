@@ -1,4 +1,4 @@
-# Ausgaben 
+# Ausgaben (A)
 
 Wenn wir in Python Daten ausgeben möchten, verwenden wir die Funktion `print()`.
 

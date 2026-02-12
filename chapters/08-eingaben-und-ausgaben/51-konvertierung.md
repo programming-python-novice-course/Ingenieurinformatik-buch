@@ -1,4 +1,4 @@
-# Automatische Konvertierung (A)
+# Explizite Konvertierung (A)
 
 Eines der wichtigsten Merkmale von `print()` ist die **automatische Konvertierung** aller Datentypen zu Strings.
 
@@ -12,8 +12,6 @@ print(liste)  # Die Liste wird automatisch zu "[1, 2, 3]" konvertiert
 woerterbuch = {"name": "Anna", "alter": 25}
 print(woerterbuch)  # Das Wörterbuch wird automatisch zu "{'name': 'Anna', 'alter': 25}" konvertiert
 ```
-
-## Explizite Konvertierung mit `str()`
 
 Wenn Sie eine explizite Konvertierung zu einem String durchführen möchten, können Sie die Funktion `str()` verwenden:
 

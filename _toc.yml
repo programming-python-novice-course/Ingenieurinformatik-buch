@@ -158,10 +158,12 @@ parts:
       - file: chapters/08-eingaben-und-ausgaben/40-ausgaben
         sections:
         - file: chapters/08-eingaben-und-ausgaben/41-print-und-stdout
-        - file: chapters/08-eingaben-und-ausgaben/42-konvertierung
-        - file: chapters/08-eingaben-und-ausgaben/43-f-strings
-      - file: chapters/08-eingaben-und-ausgaben/50-praktische-beispiele
-      - file: chapters/08-eingaben-und-ausgaben/50-zusammenfassung
+        - file: chapters/08-eingaben-und-ausgaben/42-pic
+      - file: chapters/08-eingaben-und-ausgaben/50-konvertierung
+        sections:
+        - file: chapters/08-eingaben-und-ausgaben/51-konvertierung
+        - file: chapters/08-eingaben-und-ausgaben/52-f-strings
+      - file: chapters/08-eingaben-und-ausgaben/70-zusammenfassung
     - file: chapters/09-control-flow/0-intro
       sections:
       - file: chapters/09-control-flow/1-cases
