@@ -183,15 +183,15 @@ parts:
         - file: chapters/09-control-flow/3-comprehensions/1-list-comprehensions
         - file: chapters/09-control-flow/3-comprehensions/2-dict-comprehensions
         - file: chapters/09-control-flow/3-comprehensions/3-set-comprehensions
-    - file: chapters/10-functions/0-intro
+    - file: chapters/10-functions/00-intro
       sections:
-      - file: chapters/10-functions/2-definition
-      - file: chapters/10-functions/3-namespaces
-      - file: chapters/10-functions/3-zmutability
-      - file: chapters/10-functions/4-lambdas
-      - file: chapters/10-functions/5-nested-functions
-      - file: chapters/10-functions/6-first-class-functions
-      - file: chapters/10-functions/x-recursion
+      - file: chapters/10-functions/10-definition
+      - file: chapters/10-functions/20-namespaces
+      - file: chapters/10-functions/30-mutability
+      - file: chapters/10-functions/40-lambdas
+      - file: chapters/10-functions/50-nested-functions
+      - file: chapters/10-functions/60-first-class-functions
+      - file: chapters/10-functions/70-recursion
     - file: chapters/11-object-oriented/00-intro
       sections:
       - file: chapters/11-object-oriented/10-motivation
