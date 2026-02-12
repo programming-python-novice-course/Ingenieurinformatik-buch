@@ -1,4 +1,4 @@
-# Was macht `print()`? (A)
+# Command Line Interface - CLI (A)
 
 - `print()` schreibt **Text** auf die Standard-Ausgabe (`stdout`)
 - der Text wird **unverändert** an die Ausgabe-Schnittstelle übergeben

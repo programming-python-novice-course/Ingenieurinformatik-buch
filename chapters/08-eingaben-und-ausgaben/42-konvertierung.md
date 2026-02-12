@@ -1,4 +1,4 @@
-# Automatische Konvertierung bei `print()` (A)
+# Automatische Konvertierung (A)
 
 Eines der wichtigsten Merkmale von `print()` ist die **automatische Konvertierung** aller Datentypen zu Strings.
 

@@ -1,6 +1,6 @@
 # Beispiele (A)
 
-## Beispiel 1: Kombination von Eingabe und Ausgabe
+**Beispiel 1: Kombination von Eingabe und Ausgabe**
 
 ```python
 name = input("Wie heißen Sie? ")
@@ -11,7 +11,7 @@ print(f"Hallo {name}! Sie sind {alter} Jahre alt.")
 print(f"In 10 Jahren werden Sie {alter + 10} Jahre alt sein.")
 ```
 
-## Beispiel 2: Formatierte Tabellenausgabe
+**Beispiel 2: Formatierte Tabellenausgabe**
 
 ```python
 produkte = [
@@ -26,7 +26,7 @@ for produkt in produkte:
     print(f"{produkt['name']}\t\t{produkt['preis']:.2f}€\t{produkt['anzahl']}")
 ```
 
-## Beispiel 3: Fehlermeldungen ausgeben
+**Beispiel 3: Fehlermeldungen ausgeben**
 
 ```python
 zahl_text = input("Bitte eine Zahl eingeben: ")
