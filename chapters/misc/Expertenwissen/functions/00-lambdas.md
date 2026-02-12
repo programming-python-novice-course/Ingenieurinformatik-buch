@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-anonymous-function)=
-# Anonyme Funktionen (A)
+# Anonyme Funktionen (Lambda)
 
 *Anonyme Funktionen* sind **namenlose** Funktionen.
 Nehmen wir folgende Funktion mit dem Namen ``add``:
@@ -26,7 +26,7 @@ Diese Funktion können wir über ihren Namen ansprechen:
 add(4, 6)
 ```
 
-Der Name befindet sich im [globalen Namensraum](sec-global-namespace) und verweist auf den Code der die Funktion realisiert.
+Der Name befindet sich im [globalen Namensraum](sec-namespaces) und verweist auf den Code der die Funktion realisiert.
 Wir können einen Verweis auf die Funktion auch in einer Variablen abspeichern, dazu verwenden wir lediglich den Namen der Funktion:
 
 ```{code-cell} python3
@@ -79,7 +79,7 @@ Erwartet eine Funktion eine andere Funktion, so ist es oft sinnvoll ein Standard
 
 ```{code-cell} python3
 def apply(mylist, func = lambda e : e):
-    return list(map(func, numbers))
+    return list(map(func, mylist))
 
 numbers = list(range(10))
 print(apply(numbers))

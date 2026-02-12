@@ -634,7 +634,7 @@ for x in mylist_deep_copy[2]:
 Diese sind gleich geblieben, da es sich um *atomare Datentypen* handelt und somit eine Kopie lediglich Speicher verbrauchen würde.
 
 Und was machen wir wenn wir eine dreidimensionale oder gar vierdimensionale Liste haben?
-Wir bräuchten eine sog. [rekursive Funktion](sec-recursive-functions), welche uns eine Kopie erstellt.
+Wir bräuchten eine sog. [rekursive Funktion](sec-recursion-basis), welche uns eine Kopie erstellt.
 Glücklicherweise bietet uns ``Python`` durch das ``copy``-Modul bereits Funktionen zur Erstellung *flacher* und *tiefer Kopien*.
 Die Funktion ``copy()`` liefert eine *flache* und die Funktion ``deepcopy()`` eine *tiefe Kopie*:
 

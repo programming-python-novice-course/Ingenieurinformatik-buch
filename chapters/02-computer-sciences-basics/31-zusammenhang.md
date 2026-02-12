@@ -87,4 +87,40 @@ Der Spezialfall ist in {numref}`fig-coding-numbers` dargestellt: Für natürlich
 Für alles andere (Zahlen mit Nachkommastellen, Text, ... ) braucht man eine Codierung!
 ```
 
-Hausaufgabe: In [](32-zahlensysteme.md) üben Sie, zwischen Dezimal-, Binär- und Hexadezimaldarstellung umzurechnen und die Notation sicher zu verwenden.
+Für jede Umrechnung zwischen Zahlensystemen gibt es einen **Algorithmus** – eine feste Rechenvorschrift, die man lernt und dann anwendet. Wie Kochrezepte: Man muss sie nicht erfinden, sondern lediglich anwenden.
+
+## Beispiel: Binär → Dezimal
+
+**Gegeben:** Binärzahl $1101_2$ (nur 0 und 1)  
+**Gewollt:** Dezimalzahl (das, was wir im Alltag benutzen)
+
+**Algorithmus:**
+
+1. **Die Stellen werden von rechts beginnend nummeriert** (rechts: Index 0, dann 1, 2, …).
+
+   Bei $1101_2$:
+   ```{math}
+   \begin{array}{cccc}
+   1 & 1 & 0 & 1 \\
+   3 & 2 & 1 & 0 \quad \text{(Index } i \text{)}
+   \end{array}
+   ```
+
+2. **Stelle $i$ hat die Stellenwertigkeit $2^i$** (also $2^0=1$, $2^1=2$, $2^2=4$, …).
+
+   Bei $1101_2$:
+   ```{math}
+   \begin{array}{cccc}
+   1 & 1 & 0 & 1 \\
+   8 & 4 & 2 & 1 \quad (2^3, 2^2, 2^1, 2^0)
+   \end{array}
+   ```
+
+3. **Für jede Ziffer: Ziffer $\times$ Stellenwertigkeit; alle Produkte addieren.**
+
+   Bei $1101_2$: $1 \cdot 8 + 1 \cdot 4 + 0 \cdot 2 + 1 \cdot 1 = 8 + 4 + 0 + 1 = 13_{10}$
+
+**Ergebnis:** $1101_2 = 13_{10}$
+
+
+In [](32-zahlensysteme.md) üben Sie, zwischen Dezimal-, Binär- und Hexadezimaldarstellung umzurechnen und die Notation sicher zu verwenden. Es ist kein Hexenwerk – Sie wenden einfach nur die Rezepte an. 

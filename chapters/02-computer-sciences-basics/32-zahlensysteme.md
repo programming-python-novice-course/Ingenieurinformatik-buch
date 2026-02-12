@@ -9,26 +9,19 @@ kernelspec:
   name: python3
 ---
 
-# Zahlensysteme (A)
+# Zahlensysteme (A*)
 
-```{note}
-Geschätzter Zeitaufwand: 120min (Eigenaufwand)
-```
-
-```{admonition} Hausaufgabe
+```{admonition} Eigenstudium
 :class: note
 
-Dieses Kapitel ist als **Hausaufgabe** gedacht. Sie sollten sich die Inhalte selbstständig erarbeiten und die Umrechnungen zwischen den verschiedenen Zahlensystemen üben. Die hier dargestellten Algorithmen und Tabellen helfen Ihnen dabei, die Umrechnungen zu verstehen und durchzuführen.
+Dieser Abschnitt ist für das Eigenstudium gedacht. Jede Umrechnungsrichtung ist gleich aufgebaut: **Theorie** – **Kochrezept** – **Aufgabe**. Lösen Sie die Aufgaben zuerst **selbst von Hand**, bevor Sie die Lösung im Dropdown öffnen oder die Verifikations-Code-Zellen ausführen. Es ist kein Hexenwerk – Sie wenden einfach nur die Rezepte an.
 ```
 
+**Wiederholung**
 
-```{admonition} Die Praxis ...
-:class: remark
+Im vorherigen Abschnitt haben wir gesehen, dass es möglich ist, Zahlen unterschiedlich darzustellen.
 
-In der Praxis müssen Sie nicht ständig Zahlen von Hand umrechnen. Wichtig ist vor allem, Darstellungen zu **erkennen**, korrekt **einzuordnen** und bei Bedarf Umrechnungen **nachvollziehen** zu können.
-```
-
-Im vorherigen Kapitel haben wir gesehen, dass es möglich ist, Zahlen unterschiedlich darzustellen.
+Beispiel: Zahl "dreizehn"
 
 - **13** im Dezimalsystem (Basis 10, Alltagsschreibweise) - das verwenden wir im Alltag, wenn wir von der Zahl 13 sprechen
 - **1101** im Binärsystem (Basis 2)
@@ -82,11 +75,79 @@ $1101_2$ (binär) und $13_{10}$ (dezimal) repräsentieren den gleichen numerisch
 
 ### Binär → Dezimal
 
-Um eine Binärzahl in eine Dezimalzahl umzuwandeln, multiplizieren Sie jede Stelle mit ihrer Stellenwertigkeit ($2^i$) und addieren Sie die Ergebnisse gemäß Gleichung {eq}`eq:binary:natural`.
+**Theorie:** Eine Binärzahl lässt sich in Dezimal umwandeln, indem man jede Stelle mit ihrer Stellenwertigkeit $2^i$ multipliziert und die Produkte addiert (vgl. Gleichung {eq}`eq:binary:natural`).
 
-**Beispiel: $1101_2$ in Dezimal umwandeln**
+**Kochrezept**
 
-$$1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 8 + 4 + 0 + 1 = 13_{10}$$
+**Gegeben:** Binärzahl (nur 0 und 1)  
+**Gewollt:** Dezimalzahl
+
+**Algorithmus:**
+
+1. **Die Stellen von rechts beginnend nummerieren** (rechts: Index 0, dann 1, 2, …).
+
+   Bei $1101_2$:
+   ```{math}
+   \begin{array}{cccc}
+   1 & 1 & 0 & 1 \\
+   3 & 2 & 1 & 0 \quad \text{(Index } i \text{)}
+   \end{array}
+   ```
+
+2. **Stelle $i$ hat die Stellenwertigkeit $2^i$** (also $2^0=1$, $2^1=2$, $2^2=4$, …).
+
+   Bei $1101_2$:
+   ```{math}
+   \begin{array}{cccc}
+   1 & 1 & 0 & 1 \\
+   8 & 4 & 2 & 1 \quad (2^3, 2^2, 2^1, 2^0)
+   \end{array}
+   ```
+
+3. **Für jede Ziffer: Ziffer $\times$ Stellenwertigkeit; alle Produkte addieren.**
+
+   Bei $1101_2$: $1 \cdot 8 + 1 \cdot 4 + 0 \cdot 2 + 1 \cdot 1 = 8 + 4 + 0 + 1 = 13_{10}$
+
+**Ergebnis:** $1101_2 = 13_{10}$
+
+**Aufgabe**
+
+```{exercise} Binär → Dezimal
+:label: binary-to-decimal-exercise
+Wandeln Sie die folgenden Binärzahlen in Dezimalzahlen um:
+
+1. $10110_2$
+2. $111111_2$
+3. $1000011_2$
+```
+
+```{solution} binary-to-decimal-exercise
+:label: binary-to-decimal-solution
+:class: dropdown
+1. $10110_2 = 1 \cdot 16 + 0 \cdot 8 + 1 \cdot 4 + 1 \cdot 2 + 0 \cdot 1 = 22_{10}$
+2. $111111_2 = 32 + 16 + 8 + 4 + 2 + 1 = 63_{10}$
+3. $1000011_2 = 64 + 0 + 0 + 0 + 0 + 2 + 1 = 67_{10}$
+```
+
+```{admonition} Lösung überprüfen
+:class: tip
+Führen Sie die folgende Code-Zelle aus (Live Code aktivieren, dann „Run“), um Ihre Ergebnisse zu überprüfen.
+```
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+# Ihre Ergebnisse: 10110₂ = ?, 111111₂ = ?, 1000011₂ = ?
+print("Binär → Dezimal:")
+print("  10110₂   =", int("10110", 2))
+print("  111111₂  =", int("111111", 2))
+print("  1000011₂ =", int("1000011", 2))
+```
+
+```{admonition} Optional
+:class: note
+Die folgende Code-Zelle zeigt die Umsetzung des Kochrezepts in Python – für alle, die den Algorithmus im Programmcode nachvollziehen möchten.
+```
 
 ```{code-cell} python3
 # Transformation einer Zahl in Binärdarstellung zu ihrer Dezimaldarstellung
@@ -103,51 +164,76 @@ to_decimal([1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1])
 
 ### Dezimal → Binär
 
-Um eine Dezimalzahl in eine Binärzahl umzuwandeln, teilen Sie die Zahl wiederholt durch 2 und notieren Sie die Reste.
-Die Binärzahl ergibt sich, indem Sie die Reste von unten nach oben lesen.
+**Theorie:** Um eine Dezimalzahl in Binär umzuwandeln, teilt man wiederholt durch 2 und notiert die Reste. Die Binärzahl ergibt sich, indem man die Reste von unten nach oben liest.
 
-**Beispiel: $9_{10}$ in Binär umwandeln**
+**Kochrezept**
 
-Wir suchen eine Binärzahl $b_{n-1}\ldots b_0$, sodass
+**Gegeben:** Dezimalzahl  
+**Gewollt:** Binärzahl (nur 0 und 1)
 
-```{math}
-:label: eq:nine:to:binary
-b_{n-1} \cdot 2^{n-1} + \ldots + b_0 \cdot 2^0 = 9
+**Algorithmus:**
+
+1. **Zahl durch 2 teilen, Rest notieren.**
+
+   Bei $9_{10}$: $9 = 4 \cdot 2 + \mathbf{1}$ (Rest 1)
+
+2. **Mit dem Quotienten wiederholt von Schritt 1, bis der Quotient 0 ist.**
+
+   Bei $9_{10}$:
+   ```{math}
+   \begin{split}
+   9 &= 4 \cdot 2 + 1 \\
+   4 &= 2 \cdot 2 + 0 \\
+   2 &= 1 \cdot 2 + 0 \\
+   1 &= 0 \cdot 2 + 1
+   \end{split}
+   ```
+   Die Reste (rechts): 1, 0, 0, 1
+
+3. **Die Reste von unten nach oben lesen** – das ergibt die Binärzahl.
+
+   Bei $9_{10}$: Reste 1, 0, 0, 1 (von unten) → $1001_2$
+
+**Ergebnis:** $9_{10} = 1001_2$
+
+**Aufgabe**
+
+```{exercise} Dezimal → Binär
+:label: decimal-to-binary-exercise
+Wandeln Sie die folgenden Dezimalzahlen in Binärzahlen um:
+
+1. $42_{10}$
+2. $100_{10}$
+3. $255_{10}$
 ```
 
-ergibt.
-Wir dividieren wiederholt durch 2 und notieren die Reste:
-
-```{math}
-  \begin{split}
-    9 &= 4 \cdot 2 + 1 \\
-    4 &= 2 \cdot 2 + 0 \\
-    2 &= 1 \cdot 2 + 0 \\
-    1 &= 0 \cdot 2 + 1
-  \end{split}
+```{solution} decimal-to-binary-exercise
+:label: decimal-to-binary-solution
+:class: dropdown
+1. $42_{10} = 101010_2$ (42 = 2·21+0, 21 = 2·10+1, 10 = 2·5+0, 5 = 2·2+1, 2 = 2·1+0, 1 = 2·0+1 → Reste von unten: 101010)
+2. $100_{10} = 1100100_2$
+3. $255_{10} = 11111111_2$
 ```
 
-Von unten nach oben gelesen: $1001_2 = 9_{10}$
-
-**Beispiel: $1871_{10}$ in Binär umwandeln**
-
-```{math}
-  \begin{split}
-    1871 &= 935 \cdot 2 + 1 \\
-    935 &= 467 \cdot 2 + 1 \\ 
-    467 &= 233 \cdot 2 + 1 \\
-    233 &= 116 \cdot 2 + 1 \\
-    116 &= 58 \cdot 2 + 0\\
-    58 &= 29 \cdot 2 + 0\\
-    29 &= 14 \cdot 2 + 1\\
-    14 &= 7 \cdot 2 + 0\\
-    7 &= 3 \cdot 2 + 1 \\
-    3 &= 1 \cdot 2 + 1 \\
-    1 &= 0 \cdot 2 + 1
-  \end{split}
+```{admonition} Lösung überprüfen
+:class: tip
+Führen Sie die folgende Code-Zelle aus, um Ihre Ergebnisse zu überprüfen.
 ```
 
-Wir erhalten somit $11101001111_2 = 1871_{10}$.
+```{code-cell} python3
+:tags: [skip-execution]
+
+# Ihre Ergebnisse: 42₁₀ = ?, 100₁₀ = ?, 255₁₀ = ?
+print("Dezimal → Binär:")
+print("  42₁₀  =", format(42, "08b"), "=", format(42, "b") + "₂")
+print("  100₁₀ =", format(100, "08b"), "=", format(100, "b") + "₂")
+print("  255₁₀ =", format(255, "08b"), "=", format(255, "b") + "₂")
+```
+
+```{admonition} Optional
+:class: note
+Die folgende Code-Zelle zeigt die Umsetzung des Kochrezepts in Python – für alle, die den Algorithmus im Programmcode nachvollziehen möchten.
+```
 
 ```{code-cell} python3
 # Transformation einer Zahl in Dezimaldarstellung zu ihrer Binärdarstellung
@@ -308,62 +394,197 @@ h_{n-1} \ldots h_0 = \sum\limits_{i=0}^{n-1} h_i \cdot 16^i.
 
 ### Dezimal → Hexadezimal
 
-Um eine Dezimalzahl in eine Hexadezimalzahl umzuwandeln, teilen Sie die Zahl wiederholt durch 16 und notieren Sie die Reste. Reste größer als 9 werden durch Buchstaben ersetzt (10=A, 11=B, 12=C, 13=D, 14=E, 15=F).
+**Theorie:** Analog zu Dezimal → Binär: Wiederholt durch 16 teilen, Reste notieren. Reste 10–15 als A–F.
 
-**Beispiel: $13_{10}$ in Hexadezimal umwandeln**
+**Kochrezept**
 
+**Gegeben:** Dezimalzahl  
+**Gewollt:** Hexadezimalzahl (Ziffern 0–9, A–F)
+
+**Algorithmus:**
+
+1. **Zahl durch 16 teilen, Rest notieren** (10–15 als A–F).
+
+   Bei $255_{10}$: $255 = 15 \cdot 16 + \mathbf{15}$ (Rest 15 = F)
+
+2. **Mit dem Quotienten wiederholt von Schritt 1, bis der Quotient 0 ist.**
+
+   Bei $255_{10}$:
+   ```
+   255 ÷ 16 = 15  Rest: 15 (= F)
+    15 ÷ 16 =  0  Rest: 15 (= F)
+   ```
+   Die Reste (rechts): F, F
+
+3. **Die Reste von unten nach oben lesen** – das ergibt die Hexadezimalzahl.
+
+   Bei $255_{10}$: Reste F, F (von unten) → $FF_{16}$
+
+**Ergebnis:** $255_{10} = FF_{16}$
+
+**Aufgabe**
+
+```{exercise} Dezimal → Hexadezimal
+:label: decimal-to-hex-exercise
+Wandeln Sie die folgenden Dezimalzahlen in Hexadezimalzahlen um:
+
+1. $42_{10}$
+2. $200_{10}$
 ```
-13 ÷ 16 = 0  Rest: 13 (= D)
+
+```{solution} decimal-to-hex-exercise
+:label: decimal-to-hex-solution
+:class: dropdown
+1. $42_{10} = 2A_{16}$ (42 ÷ 16 = 2 Rest 10 = A, 2 ÷ 16 = 0 Rest 2)
+2. $200_{10} = C8_{16}$ (200 ÷ 16 = 12 Rest 8 = C8)
 ```
 
-Ergebnis: **D**₁₆
-
-**Beispiel: $255_{10}$ in Hexadezimal umwandeln**
-
-```
-255 ÷ 16 = 15  Rest: 15 (= F)
- 15 ÷ 16 = 0   Rest: 15 (= F)
+```{admonition} Lösung überprüfen
+:class: tip
+Führen Sie die folgende Code-Zelle aus, um Ihre Ergebnisse zu überprüfen.
 ```
 
-Von unten nach oben gelesen: **FF**₁₆
+```{code-cell} python3
+:tags: [skip-execution]
+
+# Ihre Ergebnisse: 42₁₀ = ?, 200₁₀ = ?
+print("Dezimal → Hexadezimal:")
+print("  42₁₀  =", format(42, "X") + "₁₆")
+print("  200₁₀ =", format(200, "X") + "₁₆")
+```
 
 ### Hexadezimal → Dezimal
 
-Um eine Hexadezimalzahl in eine Dezimalzahl umzuwandeln, multiplizieren Sie jede Stelle mit ihrer Stellenwertigkeit ($16^i$) und addieren Sie die Ergebnisse. Buchstaben werden zuerst in Zahlen umgewandelt (A=10, B=11, C=12, D=13, E=14, F=15).
+**Theorie:** Wie bei Binär → Dezimal: Jede Stelle mit ihrer Stellenwertigkeit $16^i$ multiplizieren und addieren. Buchstaben A–F zuerst in 10–15 umwandeln.
 
-**Beispiel: D₁₆ in Dezimal umwandeln**
+**Kochrezept**
 
-$$D \times 16^0 = 13 \times 1 = 13_{10}$$
+**Gegeben:** Hexadezimalzahl (Ziffern 0–9, A–F)  
+**Gewollt:** Dezimalzahl
 
-**Beispiel: FF₁₆ in Dezimal umwandeln**
+**Algorithmus:**
 
-$$F \times 16^1 + F \times 16^0 = 15 \times 16 + 15 \times 1 = 240 + 15 = 255_{10}$$
+1. **Die Stellen von rechts beginnend nummerieren** (rechts: Index 0, dann 1, 2, …).
+
+   Bei $FF_{16}$:
+   ```{math}
+   \begin{array}{cc}
+   F & F \\
+   1 & 0 \quad \text{(Index } i \text{)}
+   \end{array}
+   ```
+
+2. **Stelle $i$ hat die Stellenwertigkeit $16^i$.** A=10, B=11, …, F=15.
+
+   Bei $FF_{16}$:
+   ```{math}
+   \begin{array}{cc}
+   F & F \\
+   16 & 1 \quad (16^1, 16^0)
+   \end{array}
+   ```
+
+3. **Für jede Ziffer: Ziffer $\times$ Stellenwertigkeit; alle Produkte addieren.**
+
+   Bei $FF_{16}$: $15 \cdot 16 + 15 \cdot 1 = 240 + 15 = 255_{10}$
+
+**Ergebnis:** $FF_{16} = 255_{10}$
+
+**Aufgabe**
+
+```{exercise} Hexadezimal → Dezimal
+:label: hex-to-decimal-exercise
+Wandeln Sie die folgenden Hexadezimalzahlen in Dezimalzahlen um:
+
+1. $2A_{16}$
+2. $C8_{16}$
+```
+
+```{solution} hex-to-decimal-exercise
+:label: hex-to-decimal-solution
+:class: dropdown
+1. $2A_{16} = 2 \cdot 16 + 10 = 32 + 10 = 42_{10}$
+2. $C8_{16} = 12 \cdot 16 + 8 = 192 + 8 = 200_{10}$
+```
+
+```{admonition} Lösung überprüfen
+:class: tip
+Führen Sie die folgende Code-Zelle aus, um Ihre Ergebnisse zu überprüfen.
+```
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+# Ihre Ergebnisse: 2A₁₆ = ?, C8₁₆ = ?
+print("Hexadezimal → Dezimal:")
+print("  2A₁₆ =", int("2A", 16))
+print("  C8₁₆ =", int("C8", 16))
+```
 
 ### Binär ↔ Hexadezimal
 
-Die Umrechnung zwischen Binär und Hexadezimal ist besonders einfach, da $16 = 2^4$ ist. Sie können jede Hexadezimalziffer direkt durch 4 Binärziffern ersetzen und umgekehrt.
+**Theorie:** Da $16 = 2^4$ gilt, entspricht jede Hexadezimalziffer genau 4 Binärziffern. Die Umrechnung erfolgt über 4er-Gruppen – der schnellste Weg zwischen diesen beiden Systemen.
 
-**Beispiel: D₁₆ in Binär umwandeln**
+**Kochrezept**
 
-$$D = 13_{10} = 1101_2$$
+**Gegeben:** Binärzahl oder Hexadezimalzahl  
+**Gewollt:** Hexadezimalzahl oder Binärzahl
 
-**Beispiel: $1101_2$ in Hexadezimal umwandeln**
+**Richtung: Binär → Hexadezimal**
 
-$$1101_2 = D_{16}$$
+1. **Binärzahl von rechts nach links in Gruppen zu 4 Ziffern einteilen.**
 
-**Beispiel: FF₁₆ in Binär umwandeln**
+   Bei $10101101_2$: $1010 \, | \, 1101$
 
-$$F = 1111_2, \text{ also } FF_{16} = 11111111_2$$
+2. **Jede 4er-Gruppe in Hex-Ziffer umwandeln** (0–9, A=10–F=15).
 
-**Beispiel: $10101101_2$ in Hexadezimal umwandeln**
+   Bei $10101101_2$: 1010 = 10 = A, 1101 = 13 = D → $AD_{16}$
 
-Von rechts nach links in Gruppen zu 4:
+**Ergebnis:** $10101101_2 = AD_{16}$
+
+**Richtung: Hexadezimal → Binär**
+
+1. **Jede Hexadezimalziffer durch 4 Binärziffern ersetzen.**
+
+   Bei $3F_{16}$: 3 = 0011, F = 15 = 1111
+
+2. **Die 4er-Blockfolge aneinanderfügen.**
+
+   Bei $3F_{16}$: 0011 1111 → $00111111_2 = 111111_2$
+
+**Ergebnis:** $3F_{16} = 111111_2$
+
+**Aufgabe**
+
+```{exercise} Binär ↔ Hexadezimal
+:label: binary-hex-exercise
+Wandeln Sie um (nutzen Sie die 4er-Gruppen-Methode):
+
+1. $10101101_2$ in Hexadezimal
+2. $3F_{16}$ in Binär
 ```
-1010 1101
- A    D
+
+```{solution} binary-hex-exercise
+:label: binary-hex-solution
+:class: dropdown
+1. $10101101_2$: Von rechts in 4er-Gruppen: 1010 | 1101 → A | D → $AD_{16}$
+2. $3F_{16}$: 3 = 0011, F = 1111 → $00111111_2 = 111111_2$
 ```
 
-Ergebnis: **AD**₁₆
+```{admonition} Lösung überprüfen
+:class: tip
+Führen Sie die folgende Code-Zelle aus, um Ihre Ergebnisse zu überprüfen.
+```
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+# Ihre Ergebnisse: 10101101₂ = ?, 3F₁₆ = ?
+print("Binär → Hexadezimal:")
+print("  10101101₂ =", format(int("10101101", 2), "X") + "₁₆")
+print("Hexadezimal → Binär:")
+print("  3F₁₆ =", format(0x3F, "08b") + "₂")
+```
 
 ## Tabellen
 

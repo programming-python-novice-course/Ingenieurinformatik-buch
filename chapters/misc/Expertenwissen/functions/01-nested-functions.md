@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Umschlossene Funktionen (S)
+# Umschlossene Funktionen (Nested Functions)
 
 Eine *umschlossene Funktion* ist eine Funktion, welche innerhalb einer anderen Funktion definiert wurde.
 
@@ -39,7 +39,7 @@ func = f(5, 6)
 func(3)
 ```
 
-Zu beachten ist, dass dabei der sog. [umschließende Namensraum](sec-local-namespace) ins Spiel kommt.
+Zu beachten ist, dass dabei der sog. [umschließende Namensraum](sec-namespaces) ins Spiel kommt.
 Dieser bleibt auch dann am Leben, wenn die *umschließende Funktion* abgearbeitet wurde.
 
 Im obigen Fall existiert das ``z`` aus der Funktion ``f()`` beim Aufruf ``func(3)`` noch und hat den Wert ``5``.

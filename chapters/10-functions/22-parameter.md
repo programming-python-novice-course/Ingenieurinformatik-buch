@@ -1,6 +1,17 @@
-# Standardargumente für Parameter (A)
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
 
-Wir können Parametern auch einen sog. Standardargumente (Standardwerte) verpassen.
+# Standardargumente und Keyword-Argumente (A)
+
+Wir können Parametern auch sog. Standardargumente (Standardwerte) verpassen.
 Das Standardargument wird genau dann verwendet, wenn der Wert des Parameters beim Aufruf der Funktion nicht definiert wurde.
 
 Erinnern Sie sich noch an die Funktion ``range()``?
@@ -31,7 +42,7 @@ Definieren wir Standardargumente, müssen wir uns überlegen welche Werte sinnvo
 Was soll also passieren wenn wir beim Funktionsaufruf bestimmte Parameter weglassen?
 
 Standardargumente setzten wir durch eine Zuweisung im Funktionskopf.
-Dabei müssen alle Parameter mit Standardargumenten **hinten stehen!** 
+Dabei müssen alle Parameter mit Standardargumenten **hinten stehen!**
 Folgender Code wird ebenfalls zu einem Fehler führen:
 
 ```{code-cell} python3
@@ -42,6 +53,7 @@ def lrange(start=0, stop, step=1):
     numbers = list(range(start, stop, step))
     return numbers
 
+lrange(0, 10, 2)
 ```
 
 Wir müssen die Reihenfolge der Parameter verändern (und diese Änderung auch beim Aufruf der Funktion berücksichtigen):
@@ -55,8 +67,8 @@ print(lrange(10, 0, 2))
 print(lrange(10))
 ```
 
-Wir können auch **einzelne** Standardargumente beim Funktionsaufruf verändern. 
-Zum Beispiel wollen wir vielleicht eine Liste mit ``lrange()`` erzeugen, für die ``stop=10``, ``start=0`` und ``step=2`` gilt. 
+Wir können auch **einzelne** Standardargumente beim Funktionsaufruf verändern.
+Zum Beispiel wollen wir vielleicht eine Liste mit ``lrange()`` erzeugen, für die ``stop=10``, ``start=0`` und ``step=2`` gilt.
 Da wir ``start`` weiterhin auf dem Standardwert ``0`` belassen, müssen wir es nicht angeben.
 
 ```{code-cell} python3

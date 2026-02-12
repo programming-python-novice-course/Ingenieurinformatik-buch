@@ -1,16 +1,27 @@
 (sec-learning-llm)=
 # Programmieren lernen in Zeiten von LLMs
 
-```{admonition} Mit oder ohne KI?
+
+```{admonition} Aussage gegen Aussage
 :class: note
+
+„Warum sollte ich eine Programmiersprache lernen? ChatGPT erzeugt doch super Programme. Und es gibt sogar Entwicklungsumgebungen mit LLM – dann spare ich mir das Hin‑ und Herkopieren. Prompt eingeben, abschicken - warten - Programmieraufgabe fertig.“
 
 „Man muss Programmieren erst ohne KI lernen – sonst lernt man es nie richtig.“
 ```
 
-Diese Aussage klingt erst mal plausibel, greift aber zu kurz. Warum?
+Wenn es um KI geht, dann ist das Diskussionspotential groß!
 
-Es gibt verschiedene Arten von Wissen, deren Stellenwert sich in Zeiten von LLMs stark ändern! 
+In diesem Kapitel gehen wir darauf ein, was es heißt eine Programmiersprache in Zeiten von LLMs zu lernen.  
 
-Wir möchten Sie bestmöglich auf Ihre Zukunft vorbereiten und erklären Ihnen im folgenden welche Kompentenezn, die Sie in diesem Kurs erwerben auch in Zeiten von KI noch unerlässlich sind.
+Wir besprechen 
+
+- welche Programmier-Kompentenzen mehr denn je in Zeiten von KI unerlässlich für die Erstellung robuster Programme sind.
+- ob die Aussage "Programmieren lernen kann man nur ohne KI" wissenschaftlich stand hält. (Spoiler: nein!)
+- besprechen, wie und wofür Sie KI sinnvoll beim Erlernen einer Programmiersprache einsetzen können.
+
+
+
+
 
 
