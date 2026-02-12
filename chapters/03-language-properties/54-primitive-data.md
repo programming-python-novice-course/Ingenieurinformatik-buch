@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Zahlen (A)
+# Zahlen (V)
 
 ```{admonition} Behauptung
 :class: remark

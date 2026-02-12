@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# int und float in Kombination
+# int und float in Kombination (V)
 
 Da wir bei mathematischen Operationen wie ``+``, ``-``, ``*``, ``/``, ``//`` und ``**`` ganze Zahlen ``int`` und Fließkommazahlen ``float`` vermischen können, müssen wir darauf achten welcher Datentyp am Ende herauskommt.
 Sobald eine Fließkommazahl ein Teil der Berechnung ist, ist das Ergebnis vom Typ ``float``.
