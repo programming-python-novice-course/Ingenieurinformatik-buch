@@ -128,6 +128,7 @@ parts:
         - file: chapters/07-python-data-types/21-int
         - file: chapters/07-python-data-types/22-bool
         - file: chapters/07-python-data-types/23-float
+        - file: chapters/07-python-data-types/24-mix
       - file: chapters/07-python-data-types/30-intro
         sections:
         - file: chapters/07-python-data-types/31-list
@@ -142,7 +143,8 @@ parts:
         sections:
         - file: chapters/07-python-data-types/51-cod-zahl
         - file: chapters/07-python-data-types/52-text
-      - file: chapters/07-python-data-types/60-big-picture
+      - file: chapters/07-python-data-types/60-external
+      - file: chapters/07-python-data-types/70-big-picture
     - file: chapters/08-eingaben-und-ausgaben/0-intro
       sections:
       - file: chapters/08-eingaben-und-ausgaben/1-eingaben

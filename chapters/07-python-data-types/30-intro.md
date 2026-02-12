@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Sequenzen 
+# Sequenzen (Built-in)
 
 In diesem Abschnitt lernen Sie weitere *built-in* Datentypen von Python kennen, die zu den Sequenzen gehören.
 Während ``int``, ``float`` und ``bool`` nur einzelne Werte repräsentieren, lernen wir hier Datentypen kennen, die mehrere Werte in einer strukturierten Form zusammenfassen.

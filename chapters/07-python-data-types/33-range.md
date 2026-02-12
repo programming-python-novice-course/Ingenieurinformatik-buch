@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sec-range)=
-# Zahlenbereich - range (A)
+# Zahlenbereich - range (A*)
 
 Ein *Zahlenbereich* oder kurz *Bereich* (engl. [Range](https://docs.python.org/3/library/stdtypes.html#typesseq-range)) ``range`` ist eine **unveränderliche** *faule* (engl. *lazy*) [Sequenzen](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) von **ganzen Zahlen**.
 
