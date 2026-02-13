@@ -77,6 +77,44 @@ build_book_pdf:
 # DEPLOYMENT JOBS
 # ============================================================================
 
+deploy_pdf:
+  image: alpine/git:latest
+  stage: deploy
+  rules:
+    #- if: '$CI_COMMIT_BRANCH == "master"'
+    #  when: on_success
+    - when: manual
+      allow_failure: true
+  needs:
+    - job: build_book_pdf
+      artifacts: true
+  dependencies:
+    - build_book_pdf
+  variables:
+    PDF_BUILD_DIR: "_book_as_pdf"
+  script:
+    - |
+      VERSION="$(awk -F: '/^[[:space:]]*release:[[:space:]]*/{gsub(/"/,"",$2); gsub(/^[[:space:]]+|[[:space:]]+$/,"",$2); print $2; exit}' _config.yml)" && [ -n "$VERSION" ] || VERSION="unknown"
+    - PDF_SOURCE="$PDF_BUILD_DIR/_build/latex/book.pdf"
+    - PDF_FILENAME="Skript-${VERSION}.pdf"
+    - GITHUB_DOWNLOAD_REPO="fk03ingenieursinformatik/ingenieurinformatik-download"
+    - GITHUB_DOWNLOAD_BRANCH="main"
+    - GITHUB_REMOTE_PUBLIC="https://github.com/${GITHUB_DOWNLOAD_REPO}.git"
+    - GITHUB_REMOTE_PUSH="https://x-access-token:${GITHUB_DOWNLOAD_REPO_TOKEN}@github.com/${GITHUB_DOWNLOAD_REPO}.git"
+    - rm -rf _github_download_repo
+    - git clone --depth 1 --branch "$GITHUB_DOWNLOAD_BRANCH" "$GITHUB_REMOTE_PUBLIC" _github_download_repo
+    - cd _github_download_repo
+    - git remote set-url origin "$GITHUB_REMOTE_PUSH"
+    - mkdir -p Downloads
+    - cp "../${PDF_SOURCE}" "Downloads/${PDF_FILENAME}"
+    - git add "Downloads/${PDF_FILENAME}"
+    - |
+      if git diff --staged --quiet; then
+        echo "No changes to push (PDF unchanged)"
+      else
+        git -c user.name="gitlab-ci" -c user.email="gitlab-ci@localhost" commit -m "Update Skript PDF ${VERSION} from ${CI_PROJECT_PATH}@${CI_COMMIT_SHA}"
+        git push origin "$GITHUB_DOWNLOAD_BRANCH"
+      fi
 
 deploy_notebooks_in_github:
   image: alpine/git:latest
