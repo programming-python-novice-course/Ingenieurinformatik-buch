@@ -77,7 +77,7 @@ build_book_pdf:
 # DEPLOYMENT JOBS
 # ============================================================================
 
-deploy_pdf:
+deploy_pdf_in_github:
   image: alpine/git:latest
   stage: deploy
   rules:
