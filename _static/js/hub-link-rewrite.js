@@ -16,46 +16,83 @@
         `/chapters/.../*.md` -> `/deployed_notebooks/.../*.ipynb`
       The notebooks are stored in the repository under `deployed_notebooks/` and mirror the
       chapter structure.
+
+    Binder:
+    - Jupyter Book uses repository.branch (binder-minimal) for Binder links. This script
+      overwrites Binder URLs (mybinder.org) so the branch in the path becomes "master".
+    - Only links whose urlpath ends with .md are rewritten (restrictive, fail-safe).
+    - urlpath: /chapters/.../*.md -> /deployed_notebooks/.../*.ipynb (same as JupyterHub).
   */
 
-  function rewriteHubGitPullLinks() {
-    /** @type {NodeListOf<HTMLAnchorElement>} */
-    const anchors = document.querySelectorAll('a[href*="/hub/user-redirect/git-pull"]');
+  /** @param {string | null} urlpath */
+  function toNotebookUrlpath(urlpath) {
+    if (!urlpath || !urlpath.endsWith(".md")) return null;
+    return urlpath
+      .replace("/chapters/", "/deployed_notebooks/")
+      .replace(/\.md$/, ".ipynb");
+  }
 
-    anchors.forEach((a) => {
+  /** @param {string} selector @param {(a: HTMLAnchorElement) => void} fn */
+  function safeRewriteAnchors(selector, fn) {
+    document.querySelectorAll(selector).forEach((a) => {
       try {
-        const rawHref = a.getAttribute("href");
-        if (!rawHref) return;
-
-        const url = new URL(rawHref, window.location.href);
-
-        // Only act on the intended JupyterHub git-pull redirect links.
-        if (!url.pathname.includes("/hub/user-redirect/git-pull")) return;
-
-        // Force JupyterHub to always pull branch "master" (independent of repository.branch in _config.yml).
-        url.searchParams.set("branch", "master");
-
-        if (url.searchParams.has("urlpath")) {
-          const urlpath = url.searchParams.get("urlpath");
-          if (urlpath && urlpath.includes("/chapters/") && urlpath.endsWith(".md")) {
-            const newUrlpath = urlpath
-              .replace("/chapters/", "/deployed_notebooks/") // first occurrence only
-              .replace(/\.md$/, ".ipynb");
-            url.searchParams.set("urlpath", newUrlpath);
-            a.title = "Öffnet das zugehörige Notebook (.ipynb) im JupyterHub";
-          }
-        }
-        a.href = url.toString();
-
+        fn(a);
       } catch {
         // Fail-safe: leave link unchanged on any parsing/processing errors.
       }
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", rewriteHubGitPullLinks);
-  } else {
+  function rewriteBinderLinks() {
+    safeRewriteAnchors('a[href*="mybinder.org"]', (a) => {
+      const rawHref = a.getAttribute("href");
+      if (!rawHref) return;
+
+      const url = new URL(rawHref, window.location.href);
+      if (!url.hostname.includes("mybinder.org")) return;
+      if (!url.pathname.match(/^\/v2\/gh\/.+\/.+\/.+$/)) return;
+
+      const urlpath = url.searchParams.get("urlpath");
+      const newUrlpath = toNotebookUrlpath(urlpath);
+      if (!newUrlpath) return;
+
+      url.pathname = url.pathname.replace(/\/[^/]+$/, "/master");
+      url.searchParams.set("urlpath", newUrlpath);
+      a.title = "Öffnet das zugehörige Notebook (.ipynb) in Binder";
+      a.href = url.toString();
+    });
+  }
+
+  function rewriteHubGitPullLinks() {
+    safeRewriteAnchors('a[href*="/hub/user-redirect/git-pull"]', (a) => {
+      const rawHref = a.getAttribute("href");
+      if (!rawHref) return;
+
+      const url = new URL(rawHref, window.location.href);
+      if (!url.pathname.includes("/hub/user-redirect/git-pull")) return;
+
+      url.searchParams.set("branch", "master");
+
+      const urlpath = url.searchParams.get("urlpath");
+      if (urlpath?.includes("/chapters/")) {
+        const newUrlpath = toNotebookUrlpath(urlpath);
+        if (newUrlpath) {
+          url.searchParams.set("urlpath", newUrlpath);
+          a.title = "Öffnet das zugehörige Notebook (.ipynb) im JupyterHub der Hochschule München";
+        }
+      }
+      a.href = url.toString();
+    });
+  }
+
+  function runRewrites() {
+    rewriteBinderLinks();
     rewriteHubGitPullLinks();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", runRewrites);
+  } else {
+    runRewrites();
   }
 })();
