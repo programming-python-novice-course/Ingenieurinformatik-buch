@@ -107,7 +107,8 @@ deploy_pdf:
     - git remote set-url origin "$GITHUB_REMOTE_PUSH"
     - mkdir -p Downloads
     - cp "../${PDF_SOURCE}" "Downloads/${PDF_FILENAME}"
-    - git add "Downloads/${PDF_FILENAME}"
+    - cp "../${PDF_SOURCE}" "Downloads/Skript-aktuell.pdf"
+    - git add "Downloads/${PDF_FILENAME}" "Downloads/Skript-aktuell.pdf"
     - |
       if git diff --staged --quiet; then
         echo "No changes to push (PDF unchanged)"

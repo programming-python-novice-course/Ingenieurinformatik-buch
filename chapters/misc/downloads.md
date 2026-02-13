@@ -1,19 +1,23 @@
 # Downloads
 
+Alle Unterlagen zum Download sind öffentlich zugänglich über im Download-Verzeichnis des folgenden  github-repositories:
 
+https://github.com/fk03ingenieursinformatik/ingenieurinformatik-download
 
 **Skript im PDF-Format**
 
-Das Skript im PDF-Format finden Sie in Kürze hier.
+Das aktuelle Skript im PDF-Format ist im Download-Ordner enthalten. Direktlink zum Skript: 
+
+https://github.com/fk03ingenieursinformatik/ingenieurinformatik-download/blob/main/Downloads/Skript-aktuell.pdf
+
+Eine komplette Historie aller Skript-Versionen finden sie hier:
+
+https://github.com/fk03ingenieursinformatik/ingenieurinformatik-download/tree/main/Downloads
+
 
 **Prüfungen aus vergangenen Semestern**
 
-```{only} html
-Eine Sammlung von Prüfungen aus vergangenen Semestern finden Sie [hier](../../_downloads/programmierung-pruefungssammlung.pdf) oder auf der [Website von Prof. Dr. Küpper](https://kuepper.userweb.mwn.de/).
-```
+Eine Sammlung von Prüfungen aus vergangenen Semestern finden Sie [hier](https://github.com/fk03ingenieursinformatik/ingenieurinformatik-download/blob/main/Downloads/Altklausuren.pdf) oder auf der [Website von Prof. Dr. Küpper](https://kuepper.userweb.mwn.de/).
 
-```{only} latex
-Eine Sammlung von Prüfungen aus vergangenen Semestern finden Sie auf der [Website von Prof. Dr. Küpper](https://kuepper.userweb.mwn.de/).
-```
 
 
