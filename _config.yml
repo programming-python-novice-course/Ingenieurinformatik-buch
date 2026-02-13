@@ -164,12 +164,13 @@ sphinx:
 repository:
   url: https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy.git
   path_to_book: ""
-  branch: master
+  branch: binder-minimal
 
 # --------------------------------------------------
 # Launch-Buttons
 # --------------------------------------------------
 launch_buttons:
+  binderhub_url: "https://mybinder.org"
   notebook_interface: jupyterlab
   jupyterhub_url: https://datahub.cs.hm.edu/
   thebe: true

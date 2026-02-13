@@ -31,20 +31,21 @@
 
         // Only act on the intended JupyterHub git-pull redirect links.
         if (!url.pathname.includes("/hub/user-redirect/git-pull")) return;
-        if (!url.searchParams.has("urlpath")) return;
 
-        const urlpath = url.searchParams.get("urlpath");
-        if (!urlpath) return;
-        if (!urlpath.includes("/chapters/")) return;
-        if (!urlpath.endsWith(".md")) return;
+        // Force JupyterHub to always pull branch "master" (independent of repository.branch in _config.yml).
+        url.searchParams.set("branch", "master");
 
-        const newUrlpath = urlpath
-          .replace("/chapters/", "/deployed_notebooks/") // first occurrence only
-          .replace(/\.md$/, ".ipynb");
-
-        url.searchParams.set("urlpath", newUrlpath);
+        if (url.searchParams.has("urlpath")) {
+          const urlpath = url.searchParams.get("urlpath");
+          if (urlpath && urlpath.includes("/chapters/") && urlpath.endsWith(".md")) {
+            const newUrlpath = urlpath
+              .replace("/chapters/", "/deployed_notebooks/") // first occurrence only
+              .replace(/\.md$/, ".ipynb");
+            url.searchParams.set("urlpath", newUrlpath);
+            a.title = "Öffnet das zugehörige Notebook (.ipynb) im JupyterHub";
+          }
+        }
         a.href = url.toString();
-        a.title = "Öffnet das zugehörige Notebook (.ipynb) im JupyterHub";
 
       } catch {
         // Fail-safe: leave link unchanged on any parsing/processing errors.
