@@ -2,9 +2,9 @@
   const TARGET = {
     // Repository used for JupyterHub git-pull links (`repo=` query parameter).
     // Keep as full git URL.
-    hubRepoUrl: "https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy.git",
+    hubRepoUrl: "https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git",
     // Branch is intentionally hardcoded as requested.
-    branch: "master",
+    branch: "test_gitlab2",
   };
 
   /*
