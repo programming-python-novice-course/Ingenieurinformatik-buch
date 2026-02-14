@@ -7,6 +7,10 @@
     // Use "<owner>/<repo>" without branch. Example: "org/my-repo".
     // Set to null to keep whatever Jupyter Book generated.
     binderGhSlug: null,
+    // Repository used for Binder v2/git links (`/v2/git/<encoded_repo>/<branch>`).
+    // Keep null to preserve the repo from the generated URL.
+    // Use full git URL if you want to force a repository.
+    binderGitRepoUrl: null,
     // Branch is intentionally hardcoded as requested.
     branch: "master",
   };
@@ -65,52 +69,65 @@
     });
   }
 
-  function rewriteBinderLinks() {
-    safeRewriteAnchors('a[href*="mybinder.org"]', (a) => {
-      const rawHref = a.getAttribute("href");
-      if (!rawHref) return;
+  function rewriteBinderAnchor(a) {
+    const rawHref = a.getAttribute("href");
+    if (!rawHref) return;
 
-      const url = new URL(rawHref, window.location.href);
-      if (!url.hostname.includes("mybinder.org")) return;
-      const ghMatch = url.pathname.match(/^\/v2\/gh\/([^/]+)\/([^/]+)\/([^/]+)$/);
-      if (!ghMatch) return;
+    const url = new URL(rawHref, window.location.href);
+    if (!url.hostname.includes("mybinder.org")) return;
+    const ghMatch = url.pathname.match(/^\/v2\/gh\/([^/]+)\/([^/]+)\/([^/]+)$/);
+    const gitMatch = url.pathname.match(/^\/v2\/git\/([^/]+)\/([^/]+)$/);
+    if (!ghMatch && !gitMatch) return;
 
-      const urlpath = url.searchParams.get("urlpath");
-      const newUrlpath = toNotebookUrlpath(urlpath);
-      if (!newUrlpath) return;
+    const urlpath = url.searchParams.get("urlpath");
+    const newUrlpath = toNotebookUrlpath(urlpath);
+    if (!newUrlpath) return;
 
+    if (ghMatch) {
       if (TARGET.binderGhSlug && TARGET.binderGhSlug.includes("/")) {
         url.pathname = `/v2/gh/${TARGET.binderGhSlug}/${TARGET.branch}`;
       } else {
         url.pathname = url.pathname.replace(/\/[^/]+$/, `/${TARGET.branch}`);
       }
+    } else {
+      const encodedRepo =
+        TARGET.binderGitRepoUrl && TARGET.binderGitRepoUrl.trim()
+          ? encodeURIComponent(TARGET.binderGitRepoUrl.trim())
+          : gitMatch[1];
+      url.pathname = `/v2/git/${encodedRepo}/${TARGET.branch}`;
+    }
+    url.searchParams.set("urlpath", newUrlpath);
+    a.title = "Öffnet das zugehörige Notebook (.ipynb) in Binder";
+    a.href = url.toString();
+  }
+
+  function rewriteBinderLinks() {
+    safeRewriteAnchors('a[href*="mybinder.org"]', rewriteBinderAnchor);
+  }
+
+  function rewriteHubGitPullAnchor(a) {
+    const rawHref = a.getAttribute("href");
+    if (!rawHref) return;
+
+    const url = new URL(rawHref, window.location.href);
+    if (!url.pathname.includes("/hub/user-redirect/git-pull")) return;
+
+    url.searchParams.set("branch", TARGET.branch);
+    if (TARGET.hubRepoUrl) {
+      url.searchParams.set("repo", TARGET.hubRepoUrl);
+    }
+
+    const urlpath = url.searchParams.get("urlpath");
+    const newUrlpath = toNotebookUrlpath(urlpath);
+    if (newUrlpath) {
       url.searchParams.set("urlpath", newUrlpath);
-      a.title = "Öffnet das zugehörige Notebook (.ipynb) in Binder";
-      a.href = url.toString();
-    });
+      a.title = "Öffnet das zugehörige Notebook (.ipynb) im JupyterHub der Hochschule München";
+    }
+    a.href = url.toString();
   }
 
   function rewriteHubGitPullLinks() {
-    safeRewriteAnchors('a[href*="/hub/user-redirect/git-pull"]', (a) => {
-      const rawHref = a.getAttribute("href");
-      if (!rawHref) return;
-
-      const url = new URL(rawHref, window.location.href);
-      if (!url.pathname.includes("/hub/user-redirect/git-pull")) return;
-
-      url.searchParams.set("branch", TARGET.branch);
-      if (TARGET.hubRepoUrl) {
-        url.searchParams.set("repo", TARGET.hubRepoUrl);
-      }
-
-      const urlpath = url.searchParams.get("urlpath");
-      const newUrlpath = toNotebookUrlpath(urlpath);
-      if (newUrlpath) {
-        url.searchParams.set("urlpath", newUrlpath);
-        a.title = "Öffnet das zugehörige Notebook (.ipynb) im JupyterHub der Hochschule München";
-      }
-      a.href = url.toString();
-    });
+    safeRewriteAnchors('a[href*="/hub/user-redirect/git-pull"]', rewriteHubGitPullAnchor);
   }
 
   function runRewrites() {
@@ -125,4 +142,22 @@
   }
   // Run again shortly after load in case theme scripts alter launch links.
   setTimeout(runRewrites, 100);
+
+  // Ensure links are rewritten even if theme code mutates them later.
+  document.addEventListener(
+    "click",
+    (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const anchor = target.closest("a[href]");
+      if (!(anchor instanceof HTMLAnchorElement)) return;
+      try {
+        rewriteBinderAnchor(anchor);
+        rewriteHubGitPullAnchor(anchor);
+      } catch {
+        // Fail-safe: never block navigation because of rewrite errors.
+      }
+    },
+    true
+  );
 })();
