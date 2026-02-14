@@ -77,9 +77,10 @@
       } catch (e) {}
     }
 
+    var repoEscaped = repoUrl.replace(/\//g, "\\/");
     var fixed = text
-      .replace(/"None\/None"/g, '"' + repoUrl + '"')
-      .replace(/repo:\s*"None\/None"/g, 'repo: "' + repoUrl + '"');
+      .replace(/"None\/None"/g, '"' + repoEscaped + '"')
+      .replace(/repo:\s*"None\/None"/g, 'repo: "' + repoEscaped + '"');
     if (fixed.indexOf('repoProvider') === -1) {
       fixed = fixed.replace(/binderOptions:\s*\{/, 'binderOptions: { repoProvider: "git", ');
     }
