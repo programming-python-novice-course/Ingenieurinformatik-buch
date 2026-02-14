@@ -66,28 +66,16 @@
     if (text.indexOf("None/None") === -1 && text.indexOf('"None"') === -1) return;
 
     var GITLAB_REPO = "https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git";
-    var DEFAULT_BRANCH = "master";
-    var a = document.querySelector('a[href*="mybinder.org"][href*="/git/"]');
-    var repoUrl = GITLAB_REPO;
-    var ref = DEFAULT_BRANCH;
-    if (a && a.href) {
-      try {
-        var m = a.href.match(/\/git\/([^/]+)\/([^/?#]+)/);
-        if (m) {
-          repoUrl = decodeURIComponent(m[1]);
-          ref = m[2];
-        }
-      } catch (e) {}
-    }
+    var GITLAB_BRANCH = "test_gitlab_binder_depl";
 
-    var repoEscaped = repoUrl.replace(/\//g, "\\u002f");
+    var repoEscaped = GITLAB_REPO.replace(/\//g, "\\u002f");
     var fixed = text
       .replace(/"None\/None"/g, '"' + repoEscaped + '"')
       .replace(/repo:\s*"None\/None"/g, 'repo: "' + repoEscaped + '"');
     if (fixed.indexOf("repoProvider") === -1) {
       fixed = fixed.replace(/binderOptions:\s*\{/, 'binderOptions: { repoProvider: "git", ');
     }
-    fixed = fixed.replace(/ref:\s*"[^"]*"/, 'ref: "' + ref.replace(/"/g, '\\"') + '"');
+    fixed = fixed.replace(/ref:\s*"[^"]*"/, 'ref: "' + GITLAB_BRANCH + '"');
     if (fixed !== text) {
       script.textContent = fixed;
       console.log("[thebe-gitlab-fix]: Patched Thebe config (repoProvider: git, unicode-escaped URL)");
