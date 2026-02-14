@@ -1,4 +1,16 @@
 (() => {
+  const TARGET = {
+    // Repository used for JupyterHub git-pull links (`repo=` query parameter).
+    // Keep as full git URL.
+    hubRepoUrl: "https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy.git",
+    // Repository used for Binder v2/gh links (`/v2/gh/<owner>/<repo>/<branch>`).
+    // Use "<owner>/<repo>" without branch. Example: "org/my-repo".
+    // Set to null to keep whatever Jupyter Book generated.
+    binderGhSlug: null,
+    // Branch is intentionally hardcoded as requested.
+    branch: "master",
+  };
+
   /*
     Background / rationale
     ----------------------
@@ -20,6 +32,8 @@
     Binder:
     - Jupyter Book uses repository.branch (binder-minimal) for Binder links. This script
       overwrites Binder URLs (mybinder.org) so the branch in the path becomes "master".
+    - Optional: you can set `TARGET.binderGhSlug` / `TARGET.hubRepoUrl` above to force the
+      repository as well (instead of keeping Jupyter Book defaults).
     - Only links whose urlpath ends with .md are rewritten (restrictive, fail-safe).
     - urlpath: /chapters/.../*.md -> /deployed_notebooks/.../*.ipynb (same as JupyterHub).
   */
@@ -50,13 +64,18 @@
 
       const url = new URL(rawHref, window.location.href);
       if (!url.hostname.includes("mybinder.org")) return;
-      if (!url.pathname.match(/^\/v2\/gh\/.+\/.+\/.+$/)) return;
+      const ghMatch = url.pathname.match(/^\/v2\/gh\/([^/]+)\/([^/]+)\/([^/]+)$/);
+      if (!ghMatch) return;
 
       const urlpath = url.searchParams.get("urlpath");
       const newUrlpath = toNotebookUrlpath(urlpath);
       if (!newUrlpath) return;
 
-      url.pathname = url.pathname.replace(/\/[^/]+$/, "/master");
+      if (TARGET.binderGhSlug && TARGET.binderGhSlug.includes("/")) {
+        url.pathname = `/v2/gh/${TARGET.binderGhSlug}/${TARGET.branch}`;
+      } else {
+        url.pathname = url.pathname.replace(/\/[^/]+$/, `/${TARGET.branch}`);
+      }
       url.searchParams.set("urlpath", newUrlpath);
       a.title = "Öffnet das zugehörige Notebook (.ipynb) in Binder";
       a.href = url.toString();
@@ -71,7 +90,10 @@
       const url = new URL(rawHref, window.location.href);
       if (!url.pathname.includes("/hub/user-redirect/git-pull")) return;
 
-      url.searchParams.set("branch", "master");
+      url.searchParams.set("branch", TARGET.branch);
+      if (TARGET.hubRepoUrl) {
+        url.searchParams.set("repo", TARGET.hubRepoUrl);
+      }
 
       const urlpath = url.searchParams.get("urlpath");
       if (urlpath?.includes("/chapters/")) {
