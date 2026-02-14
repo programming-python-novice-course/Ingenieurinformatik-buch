@@ -71,11 +71,6 @@ sphinx:
       - js/thebe-output-fix.js
       - js/hub-link-rewrite.js
 
-    # Thebe/Binder explizit auf GitLab-Repo setzen (ohne Laufzeit-Patch)
-    thebe_config:
-      repository_url: "https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git"
-      repository_branch: "test_gitlab_binder_depl"
-
     html_show_copyright: false
     language: de
     html_baseurl: https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/
@@ -169,7 +164,6 @@ sphinx:
 repository:
   url: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git
   path_to_book: ""
-  branch: test_gitlab_binder_depl
 
 # --------------------------------------------------
 # Launch-Buttons

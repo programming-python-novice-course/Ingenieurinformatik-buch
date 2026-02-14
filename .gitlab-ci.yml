@@ -78,7 +78,7 @@ build_book_pdf:
 # DEPLOYMENT JOBS
 # ============================================================================
 
-deploy_pdf_in_github:
+deploy_pdf_in_gitlabLRZ:
   image: alpine/git:latest
   stage: deploy
   rules:
@@ -118,7 +118,7 @@ deploy_pdf_in_github:
         git push origin "$DOWNLOAD_BRANCH"
       fi
 
-deploy_notebooks_in_github:
+deploy_notebooks_in_gitlabLRZ:
   image: alpine/git:latest
   stage: deploy
   rules:
