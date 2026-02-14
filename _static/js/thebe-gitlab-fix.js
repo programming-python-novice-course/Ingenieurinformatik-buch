@@ -77,16 +77,18 @@
       } catch (e) {}
     }
 
-    var repoEscaped = repoUrl.replace(/\//g, "\\/");
+    window.__THEBE_GITLAB_REPO__ = repoUrl;
+    window.__THEBE_GITLAB_REF__ = ref;
     var fixed = text
-      .replace(/"None\/None"/g, '"' + repoEscaped + '"')
-      .replace(/repo:\s*"None\/None"/g, 'repo: "' + repoEscaped + '"');
-    if (fixed.indexOf('repoProvider') === -1) {
+      .replace(/"None\/None"/g, "window.__THEBE_GITLAB_REPO__")
+      .replace(/repo:\s*"None\/None"/g, "repo: window.__THEBE_GITLAB_REPO__")
+      .replace(/ref:\s*"[^"]*"/g, "ref: window.__THEBE_GITLAB_REF__");
+    if (fixed.indexOf("repoProvider") === -1) {
       fixed = fixed.replace(/binderOptions:\s*\{/, 'binderOptions: { repoProvider: "git", ');
     }
     if (fixed !== text) {
       script.textContent = fixed;
-      console.log("[thebe-gitlab-fix]: Patched Thebe config (repoProvider: git)");
+      console.log("[thebe-gitlab-fix]: Patched Thebe config (repoProvider: git, repo from variable)");
     }
   }
 
