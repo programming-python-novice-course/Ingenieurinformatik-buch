@@ -66,7 +66,8 @@
       const u = new URL(repoUrl);
       const parts = u.pathname.split("/").filter(Boolean);
       if (parts.length === 0) return null;
-      return parts[parts.length - 1].replace(/\.git$/, "");
+      // Keep `.git` suffix because JupyterHub git-pull commonly uses that folder name.
+      return parts[parts.length - 1];
     } catch {
       return null;
     }
