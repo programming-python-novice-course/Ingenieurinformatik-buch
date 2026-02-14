@@ -41,9 +41,17 @@
   /** @param {string | null} urlpath */
   function toNotebookUrlpath(urlpath) {
     if (!urlpath || !urlpath.endsWith(".md")) return null;
-    return urlpath
-      .replace("/chapters/", "/deployed_notebooks/")
-      .replace(/\.md$/, ".ipynb");
+    const chaptersIdx = urlpath.indexOf("/chapters/");
+    if (chaptersIdx === -1) return null;
+
+    const rel = urlpath.slice(chaptersIdx + "/chapters/".length).replace(/\.md$/, ".ipynb");
+
+    // Keep a lab/tree prefix if present, but always drop any `<repo>.git/` segment.
+    const labTreePrefix = urlpath.match(/^(.*?lab\/tree\/)(?:[^/]+\.git\/)?/);
+    if (labTreePrefix) {
+      return `${labTreePrefix[1]}deployed_notebooks/${rel}`;
+    }
+    return `/deployed_notebooks/${rel}`;
   }
 
   /** @param {string} selector @param {(a: HTMLAnchorElement) => void} fn */
@@ -96,12 +104,10 @@
       }
 
       const urlpath = url.searchParams.get("urlpath");
-      if (urlpath?.includes("/chapters/")) {
-        const newUrlpath = toNotebookUrlpath(urlpath);
-        if (newUrlpath) {
-          url.searchParams.set("urlpath", newUrlpath);
-          a.title = "Öffnet das zugehörige Notebook (.ipynb) im JupyterHub der Hochschule München";
-        }
+      const newUrlpath = toNotebookUrlpath(urlpath);
+      if (newUrlpath) {
+        url.searchParams.set("urlpath", newUrlpath);
+        a.title = "Öffnet das zugehörige Notebook (.ipynb) im JupyterHub der Hochschule München";
       }
       a.href = url.toString();
     });
@@ -117,4 +123,6 @@
   } else {
     runRewrites();
   }
+  // Run again shortly after load in case theme scripts alter launch links.
+  setTimeout(runRewrites, 100);
 })();
