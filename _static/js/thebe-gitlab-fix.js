@@ -1,8 +1,8 @@
 /**
  * Patches the Thebe config so GitLab repositories work with Binder.
  *
- * Thebe always builds URLs with "gh/" prefix. We intercept fetch() and rewrite
- * Binder requests from gh/... to git/ENCODED_URL/ref before they are sent.
+ * Thebe expects repoProvider: "git" (not repositoryProvider) to build the
+ * correct /build/git/ENCODED_URL/ref URL. Without it, it uses /build/gh/.
  */
 (function () {
   function rewriteBinderUrl(url) {
@@ -80,9 +80,12 @@
     var fixed = text
       .replace(/"None\/None"/g, '"' + repoUrl + '"')
       .replace(/repo:\s*"None\/None"/g, 'repo: "' + repoUrl + '"');
+    if (fixed.indexOf('repoProvider') === -1) {
+      fixed = fixed.replace(/binderOptions:\s*\{/, 'binderOptions: { repoProvider: "git", ');
+    }
     if (fixed !== text) {
       script.textContent = fixed;
-      console.log("[thebe-gitlab-fix]: Patched Thebe config repo/ref");
+      console.log("[thebe-gitlab-fix]: Patched Thebe config (repoProvider: git)");
     }
   }
 
