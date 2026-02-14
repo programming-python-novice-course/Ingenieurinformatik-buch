@@ -72,23 +72,25 @@
     var ref = DEFAULT_BRANCH;
     if (a && a.href) {
       try {
-        var m = a.href.match(/\/git\/(.+?)\/([^/?#]+)/);
-        if (m) { repoUrl = decodeURIComponent(m[1]); ref = m[2]; }
+        var m = a.href.match(/\/git\/([^/]+)\/([^/?#]+)/);
+        if (m) {
+          repoUrl = decodeURIComponent(m[1]);
+          ref = m[2];
+        }
       } catch (e) {}
     }
 
-    window.__THEBE_GITLAB_REPO__ = repoUrl;
-    window.__THEBE_GITLAB_REF__ = ref;
+    var repoEscaped = repoUrl.replace(/\//g, "\\u002f");
     var fixed = text
-      .replace(/"None\/None"/g, "window.__THEBE_GITLAB_REPO__")
-      .replace(/repo:\s*"None\/None"/g, "repo: window.__THEBE_GITLAB_REPO__")
-      .replace(/ref:\s*"[^"]*"/g, "ref: window.__THEBE_GITLAB_REF__");
+      .replace(/"None\/None"/g, '"' + repoEscaped + '"')
+      .replace(/repo:\s*"None\/None"/g, 'repo: "' + repoEscaped + '"');
     if (fixed.indexOf("repoProvider") === -1) {
       fixed = fixed.replace(/binderOptions:\s*\{/, 'binderOptions: { repoProvider: "git", ');
     }
+    fixed = fixed.replace(/ref:\s*"[^"]*"/, 'ref: "' + ref.replace(/"/g, '\\"') + '"');
     if (fixed !== text) {
       script.textContent = fixed;
-      console.log("[thebe-gitlab-fix]: Patched Thebe config (repoProvider: git, repo from variable)");
+      console.log("[thebe-gitlab-fix]: Patched Thebe config (repoProvider: git, unicode-escaped URL)");
     }
   }
 
