@@ -45,6 +45,8 @@ sphinx:
     - sphinx_exercise
     - sphinx_inline_tabs
     - sphinx_proof
+  local_extensions:
+    thebe_gitlab: _extensions/thebe_gitlab
 
   config:
     version: "2.0"
@@ -67,8 +69,6 @@ sphinx:
     html_static_path: ["_static"]
     html_css_files:
       - theme-overwrite.css
-    html_js_files:
-      - js/thebe-gitlab-fix.js
 
     html_show_copyright: false
     language: de
@@ -172,7 +172,20 @@ launch_buttons:
   binderhub_url: "https://mybinder.org"
   notebook_interface: jupyterlab
   jupyterhub_url: https://datahub.cs.hm.edu/
-  thebe: true
+  thebe:
+    binderOptions:
+      repoProvider: "git"
+      repo: "https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git"
+      ref: "test_gitlab_binder_depl"
+
+# --------------------------------------------------
+# Thebe/Binder für GitLab (ersetzt sphinx-thebe Config beim Build)
+# --------------------------------------------------
+thebe_binder:
+  repo: "https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git"
+  ref: "test_gitlab_binder_depl"
+  repo_provider: "git"
+  binder_url: "https://mybinder.org"
 
 # --------------------------------------------------
 # HTML Darstellung
