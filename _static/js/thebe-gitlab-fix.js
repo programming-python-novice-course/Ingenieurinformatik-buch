@@ -73,7 +73,7 @@
       .replace(/"None\/None"/g, '"' + repoEscaped + '"')
       .replace(/repo:\s*"None\/None"/g, 'repo: "' + repoEscaped + '"');
     if (fixed.indexOf("repoProvider") === -1) {
-      fixed = fixed.replace(/binderOptions:\s*\{/, 'binderOptions: { repoProvider: "git", ');
+      fixed = fixed.replace(/binderOptions:\s*\{/, 'binderOptions: { repoProvider: "git", ref: "test_gitlab_binder_depl" ');
     }
     fixed = fixed.replace(/ref:\s*"[^"]*"/, 'ref: "' + GITLAB_BRANCH + '"');
     if (fixed !== text) {
