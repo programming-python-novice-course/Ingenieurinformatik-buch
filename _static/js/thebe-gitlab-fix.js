@@ -63,17 +63,19 @@
     var script = document.querySelector('script[type="text/x-thebe-config"]');
     if (!script || !script.textContent) return;
     var text = script.textContent.trim();
-    if (text.indexOf("None/None") === -1 && text.indexOf('"None"') === -1) return;
 
     var GITLAB_REPO = "https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git";
     var GITLAB_BRANCH = "test_gitlab_binder_depl";
 
-    var repoEscaped = GITLAB_REPO.replace(/\//g, "\\u002f");
-    var fixed = text
-      .replace(/"None\/None"/g, '"' + repoEscaped + '"')
-      .replace(/repo:\s*"None\/None"/g, 'repo: "' + repoEscaped + '"');
-    if (fixed.indexOf("repoProvider") === -1) {
-      fixed = fixed.replace(/binderOptions:\s*\{/, 'binderOptions: { repoProvider: "git", ref: "test_gitlab_binder_depl" ');
+    var fixed = text;
+    if (text.indexOf("None/None") !== -1 || text.indexOf('"None"') !== -1) {
+      var repoEscaped = GITLAB_REPO.replace(/\//g, "\\u002f");
+      fixed = fixed
+        .replace(/"None\/None"/g, '"' + repoEscaped + '"')
+        .replace(/repo:\s*"None\/None"/g, 'repo: "' + repoEscaped + '"');
+      if (fixed.indexOf("repoProvider") === -1) {
+        fixed = fixed.replace(/binderOptions:\s*\{/, 'binderOptions: { repoProvider: "git", ');
+      }
     }
     fixed = fixed.replace(/ref:\s*"[^"]*"/, 'ref: "' + GITLAB_BRANCH + '"');
     if (fixed !== text) {
