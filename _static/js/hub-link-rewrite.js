@@ -50,12 +50,49 @@
 
     const rel = urlpath.slice(chaptersIdx + "/chapters/".length).replace(/\.md$/, ".ipynb");
 
-    // Keep a lab/tree prefix if present, but always drop any `<repo>.git/` segment.
-    const labTreePrefix = urlpath.match(/^(.*?lab\/tree\/)(?:[^/]+\.git\/)?/);
+    // Keep the lab/tree prefix, but always drop any repository folder segment
+    // (with or without `.git`) before `deployed_notebooks/...`.
+    const labTreePrefix = urlpath.match(/^(.*?lab\/tree\/)/);
     if (labTreePrefix) {
       return `${labTreePrefix[1]}deployed_notebooks/${rel}`;
     }
     return `/deployed_notebooks/${rel}`;
+  }
+
+  /** @param {string | null} repoUrl */
+  function repoDirFromUrl(repoUrl) {
+    if (!repoUrl) return null;
+    try {
+      const u = new URL(repoUrl);
+      const parts = u.pathname.split("/").filter(Boolean);
+      if (parts.length === 0) return null;
+      return parts[parts.length - 1].replace(/\.git$/, "");
+    } catch {
+      return null;
+    }
+  }
+
+  /** Ensure JupyterHub urlpath is `lab/tree/<repo>/deployed_notebooks/...` */
+  function toHubNotebookUrlpath(urlpath) {
+    const base = toNotebookUrlpath(urlpath);
+    if (!base) return null;
+
+    const repoDir = repoDirFromUrl(TARGET.hubRepoUrl);
+    if (!repoDir) return base;
+
+    const m = base.match(/^(.*?lab\/tree\/)(.*)$/);
+    if (!m) return base;
+
+    const prefix = m[1];
+    let rest = m[2];
+
+    if (rest.startsWith(`${repoDir}/`)) return base;
+
+    // Normalize variants like `<other-repo>/deployed_notebooks/...` or `deployed_notebooks/...`
+    rest = rest.replace(/^[^/]+\/deployed_notebooks\//, "deployed_notebooks/");
+    if (!rest.startsWith("deployed_notebooks/")) return base;
+
+    return `${prefix}${repoDir}/${rest}`;
   }
 
   /** @param {string} selector @param {(a: HTMLAnchorElement) => void} fn */
@@ -118,7 +155,7 @@
     }
 
     const urlpath = url.searchParams.get("urlpath");
-    const newUrlpath = toNotebookUrlpath(urlpath);
+    const newUrlpath = toHubNotebookUrlpath(urlpath);
     if (newUrlpath) {
       url.searchParams.set("urlpath", newUrlpath);
       a.title = "Öffnet das zugehörige Notebook (.ipynb) im JupyterHub der Hochschule München";
