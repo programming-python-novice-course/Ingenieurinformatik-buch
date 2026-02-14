@@ -3,14 +3,6 @@
     // Repository used for JupyterHub git-pull links (`repo=` query parameter).
     // Keep as full git URL.
     hubRepoUrl: "https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy.git",
-    // Repository used for Binder v2/gh links (`/v2/gh/<owner>/<repo>/<branch>`).
-    // Use "<owner>/<repo>" without branch. Example: "org/my-repo".
-    // Set to null to keep whatever Jupyter Book generated.
-    binderGhSlug: null,
-    // Repository used for Binder v2/git links (`/v2/git/<encoded_repo>/<branch>`).
-    // Keep null to preserve the repo from the generated URL.
-    // Use full git URL if you want to force a repository.
-    binderGitRepoUrl: null,
     // Branch is intentionally hardcoded as requested.
     branch: "master",
   };
@@ -36,8 +28,9 @@
     Binder:
     - Jupyter Book uses repository.branch (binder-minimal) for Binder links. This script
       overwrites Binder URLs (mybinder.org) so the branch in the path becomes "master".
-    - Optional: you can set `TARGET.binderGhSlug` / `TARGET.hubRepoUrl` above to force the
-      repository as well (instead of keeping Jupyter Book defaults).
+    - Binder repository is derived from `TARGET.hubRepoUrl`:
+      * github.com  -> /v2/gh/<owner>/<repo>/<branch>
+      * otherwise   -> /v2/git/<encoded_repo_url>/<branch>
     - Only links whose urlpath ends with .md are rewritten (restrictive, fail-safe).
     - urlpath: /chapters/.../*.md -> /deployed_notebooks/.../*.ipynb (same as JupyterHub).
   */
@@ -114,25 +107,41 @@
     const url = new URL(rawHref, window.location.href);
     if (!url.hostname.includes("mybinder.org")) return;
     const ghMatch = url.pathname.match(/^\/v2\/gh\/([^/]+)\/([^/]+)\/([^/]+)$/);
-    const gitMatch = url.pathname.match(/^\/v2\/git\/([^/]+)\/([^/]+)$/);
+    // Be permissive for git provider: malformed links may contain raw slashes in repo segment.
+    const gitMatch = url.pathname.match(/^\/v2\/git\/(.+)\/([^/]+)$/);
     if (!ghMatch && !gitMatch) return;
 
     const urlpath = url.searchParams.get("urlpath");
     const newUrlpath = toNotebookUrlpath(urlpath);
     if (!newUrlpath) return;
 
-    if (ghMatch) {
-      if (TARGET.binderGhSlug && TARGET.binderGhSlug.includes("/")) {
-        url.pathname = `/v2/gh/${TARGET.binderGhSlug}/${TARGET.branch}`;
+    let forcedPath = null;
+    try {
+      const repoUrl = new URL(TARGET.hubRepoUrl);
+      const repoPath = repoUrl.pathname.split("/").filter(Boolean);
+      if (repoUrl.hostname.includes("github.com") && repoPath.length >= 2) {
+        const owner = repoPath[0];
+        const repo = repoPath[1];
+        forcedPath = `/v2/gh/${owner}/${repo}/${TARGET.branch}`;
       } else {
-        url.pathname = url.pathname.replace(/\/[^/]+$/, `/${TARGET.branch}`);
+        forcedPath = `/v2/git/${encodeURIComponent(TARGET.hubRepoUrl)}/${TARGET.branch}`;
       }
+    } catch {
+      // Keep fallback behavior if TARGET.hubRepoUrl is invalid.
+    }
+
+    if (forcedPath) {
+      url.pathname = forcedPath;
+    } else if (ghMatch) {
+      url.pathname = url.pathname.replace(/\/[^/]+$/, `/${TARGET.branch}`);
     } else {
-      const encodedRepo =
-        TARGET.binderGitRepoUrl && TARGET.binderGitRepoUrl.trim()
-          ? encodeURIComponent(TARGET.binderGitRepoUrl.trim())
-          : gitMatch[1];
-      url.pathname = `/v2/git/${encodedRepo}/${TARGET.branch}`;
+      let repoCandidate = gitMatch[1];
+      try {
+        repoCandidate = decodeURIComponent(repoCandidate);
+      } catch {
+        // Keep original if decoding fails.
+      }
+      url.pathname = `/v2/git/${encodeURIComponent(repoCandidate)}/${TARGET.branch}`;
     }
     url.searchParams.set("urlpath", newUrlpath);
     a.title = "Öffnet das zugehörige Notebook (.ipynb) in Binder";
