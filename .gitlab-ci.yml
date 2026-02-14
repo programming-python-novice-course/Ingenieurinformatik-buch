@@ -100,10 +100,9 @@ deploy_pdf_in_gitlabLRZ:
     - PDF_FILENAME="Skript-${VERSION}.pdf"
     - DOWNLOAD_REPO="fk03ingenieurinformatik/ingenieurinformatik-download"
     - DOWNLOAD_BRANCH="main"
-    - DOWNLOAD_REMOTE_PUBLIC="https://gitlab.lrz.de/${DOWNLOAD_REPO}.git"
     - DOWNLOAD_REMOTE_PUSH="https://oauth2:${DOWNLOAD_REPO_TOKEN}@gitlab.lrz.de/${DOWNLOAD_REPO}.git"
     - rm -rf _github_download_repo
-    - git clone --depth 1 --branch "$DOWNLOAD_BRANCH" "$DOWNLOAD_REMOTE_PUBLIC" _github_download_repo
+    - git clone --depth 1 --branch "$DOWNLOAD_BRANCH" "$DOWNLOAD_REMOTE_PUSH" _github_download_repo
     - cd _github_download_repo
     - git remote set-url origin "$DOWNLOAD_REMOTE_PUSH"
     - mkdir -p Downloads
@@ -136,10 +135,9 @@ deploy_notebooks_in_gitlabLRZ:
     - DEPLOY_REPO="fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz"
     - DEPLOY_BRANCH="master"
     - TARGET_DIR="deployed_notebooks"
-    - DEPLOY_REMOTE_PUBLIC="https://gitlab.lrz.de/${DEPLOY_REPO}.git"
     - DEPLOY_REMOTE_PUSH="https://oauth2:${DEPLOY_REPO_TOKEN}@gitlab.lrz.de/${DEPLOY_REPO}.git"
     - rm -rf _github_deploy_repo
-    - git clone --depth 1 --branch "$DEPLOY_BRANCH" "$DEPLOY_REMOTE_PUBLIC" _github_deploy_repo
+    - git clone --depth 1 --branch "$DEPLOY_BRANCH" "$DEPLOY_REMOTE_PUSH" _github_deploy_repo
     - cd _github_deploy_repo
     - git remote set-url origin "$DEPLOY_REMOTE_PUSH"
     - echo "Syncing notebooks into ${TARGET_DIR}/ ..."
@@ -152,7 +150,7 @@ deploy_notebooks_in_gitlabLRZ:
       printf "%s\n" "Diese notebooks wurden automatisiert erzeugt. Der dazugehörige commit ist: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/commit/${CI_COMMIT_SHA} (Release: ${VERSION})" > "$TARGET_DIR/Version.md"
     - git add -A
     - git -c user.name="gitlab-ci" -c user.email="gitlab-ci@localhost" commit -m "Update executed notebooks from ${CI_PROJECT_PATH}@${CI_COMMIT_SHA}"
-    - echo "Pushing to GitHub..."
+    - echo "Pushing to GitLab..."
     - git push origin "$DEPLOY_BRANCH"
 
 update_website:
