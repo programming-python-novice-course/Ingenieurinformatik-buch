@@ -35,6 +35,7 @@ parts:
     chapters:
     - file: chapters/02-computer-sciences-basics/10-intro
       sections:
+      - file: chapters/02-computer-sciences-basics/20-basics
       - file: chapters/02-computer-sciences-basics/21-neumann-architektur
       - file: chapters/02-computer-sciences-basics/22-betriebssystem
       - file: chapters/02-computer-sciences-basics/30-codierung
@@ -59,6 +60,7 @@ parts:
         - file: chapters/02-computer-sciences-basics/72-pseudocode
         - file: chapters/02-computer-sciences-basics/73-beispiel-darstellungen
       - file: chapters/02-computer-sciences-basics/99-summary
+      - file: chapters/02-computer-sciences-basics/90-uebungsaufgaben
   - caption: Python verstehen
     numbered: True
     chapters:
@@ -75,7 +77,6 @@ parts:
         - file: chapters/03-language-properties/53-speicherverwaltung
         - file: chapters/03-language-properties/54-primitive-data
       - file: chapters/03-language-properties/99-summary
-      - file: chapters/03-language-properties/90-uebungsaufgaben
   - caption: Python anwenden
     numbered: True
     chapters:
@@ -260,7 +261,7 @@ parts:
         - file: chapters/misc/Expertenwissen/datatypes/11-Atomar-zusammen
         - file: chapters/misc/Expertenwissen/datatypes/12-primitiv
         - file: chapters/misc/Expertenwissen/datatypes/13-build
-      - file: chapters/misc/Expertenwissen/functions/00-intro
+      - file: chapters/misc/Expertenwissen/functions/0-intro
         sections:
         - file: chapters/misc/Expertenwissen/functions/00-lambdas
         - file: chapters/misc/Expertenwissen/functions/01-nested-functions
