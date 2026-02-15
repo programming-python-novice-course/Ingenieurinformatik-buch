@@ -48,7 +48,7 @@ sphinx:
 
   config:
     version: "2.0"
-    release: "2.3.0"
+    release: "2.4.0"
 
     myst_enable_extensions:
       - dollarmath
@@ -58,11 +58,6 @@ sphinx:
 
     myst_heading_anchors: 3
 
-    # Inhaltsverzeichnis-Tiefe (eine Ebene mehr als Standard)
-    
-    
-    
-    
 
     html_static_path: ["_static"]
     html_css_files:
@@ -82,6 +77,18 @@ sphinx:
     latex_engine: xelatex
 
     latex_elements:
+      releasename: "Version"
+      tableofcontents: |
+        \chapter*{Vorbemerkung}
+        Dieses Buch ist durch Beiträge verschiedener Personen entstanden. Die Herausgeberin allein ist für die Integration der Beiträge und die daraus resultierende Buchfassung verantwortlich. Eine Übersicht aller beitragenden Personen und ihrer Beiträge findet sich im Anhang unter „Beiträge“.
+
+        % weiße Rückseite (leer, ohne Kopf-/Fußzeile)
+        \clearpage
+        \thispagestyle{empty}
+        \null
+        \clearpage
+
+        \sphinxtableofcontents
       # Admonition-Styling im PDF (note/hint/important/tip + warning/caution/attention/danger/error)
       sphinxsetup: |
         noteborder=1pt,
@@ -150,8 +157,8 @@ sphinx:
         % (HTML bleibt sauber, da author: "" gesetzt ist)
         % --------------------------------------------------
         \AtBeginDocument{
-          \author{Dr.\ rer.\ nat.\ Christina Maria Mayr}
-          \date{}
+          \author{Herausgeberin: Christina Maria Mayr}
+          \date{SoSe 2026}
         }
 
         % --- Listenpunkte im PDF erzwingen (Bullet) ---
@@ -198,8 +205,8 @@ html:
         </a>
       </div>
       <div class="col1">
-        Autoren: <a href="/chapters/misc/contributors.html">alle anzeigen</a>.
+        Beiträge: <a href="/chapters/misc/beitraege.html">alle anzeigen</a>.
         Lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>.
-        Version 2.3.0
+        Version 2.4.0
       </div>
     </div>

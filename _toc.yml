@@ -149,7 +149,6 @@ parts:
         - file: chapters/07-python-data-types/51-cod-zahl
         - file: chapters/07-python-data-types/52-text
       - file: chapters/07-python-data-types/70-big-picture
-      - file: chapters/07-python-data-types/90-uebungsaufgaben
     - file: chapters/08-eingaben-und-ausgaben/00-intro
       sections:
       - file: chapters/08-eingaben-und-ausgaben/10-io
@@ -248,8 +247,7 @@ parts:
       - file: chapters/12-fallbeispiel/90-uebungsaufgaben
   - caption: Appendix
     chapters:
-    - file: chapters/misc/contributors
-    - file: chapters/misc/danksagung
+    - file: chapters/misc/beitraege
     - file: chapters/misc/downloads
     - file: chapters/misc/bibliography
     - file: chapters/misc/Expertenwissen/0-intro
