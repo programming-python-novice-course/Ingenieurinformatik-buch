@@ -8,8 +8,15 @@ kernelspec:
   language: python
   name: python3
 ---
-
+(datenstrukturen-sec)=
 # Datenstrukturen (A)
+
+```{admonition} Hinweis
+:name: def-control-structure
+:class: definition
+
+In diesem Abschnitt geben wir eine Einführung dazu wie Daten in Python strukturiert werden können - falls es mal mehr als nur eine Zahl (a = 21) oder ein Text (name = "Christina") ist. Mit den Informationen aus dem Teilabschnitt [Wie gehts das nun in Python?](sec-wie-in-python-data-) können Sie im Praktikum schon einmal losarbeiten. Details dazu lernen wir dann im Kapitel [Datentypen](sec-python-data-types) kennen.
+```
 
 Programme arbeiten nicht nur mit Anweisungen, sondern ständig mit Daten.
 - Eingaben müssen im Arbeitsspeicher abgelegt werden.
@@ -123,6 +130,7 @@ Beispiel einer verketteten Liste: Knoten enthalten Daten und einen Zeiger auf de
 - Die Wahl der Datenstruktur bestimmt, ob ein Problem einfach oder unnötig kompliziert gelöst werden kann.
 ```
 
+(sec-wie-in-python-data-)=
 ## Wie gehts das nun in Python?
 
 - Abstrakte Datenstrukturen (ADT) beschreiben was eine Datenstruktur leisten soll (Semantik), unabhängig von Programmiersprache und Speicher.
@@ -211,4 +219,10 @@ print("'java' enthalten?", "java" in tags)
 andere = {"python", "oop", "algo"}
 print("Schnittmenge:", tags & andere)
 print("Vereinigung:", tags | andere)
+```
+
+```{admonition} Hinweis
+:class: note
+
+Eine umfassende Übersicht zu Datentypen und deren Details lernen wir im [Kapitel Datentypen](sec-python-data-types) kennen.
 ```

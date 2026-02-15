@@ -9,13 +9,14 @@ kernelspec:
   name: python3
 ---
 
+(control-struc-sec)=
 # Kontrollstrukturen (A)
 
 ```{admonition} Hinweis
 :name: def-control-structure
 :class: definition
 
-In diesem Kapitel geben wir eine Einführung zu Kontrollstrukturen, damit Sie im Praktikum schon einmal losarbeiten können. Details zu Kontrollstrukturen lernen wir dann im Kapitel [Kontrollstrukturen](sec-control-statements) kennen.
+In diesem Abschnitt geben wir eine Einführung zu Kontrollstrukturen, damit Sie im Praktikum schon einmal losarbeiten können. Details zu Kontrollstrukturen lernen wir dann im Kapitel [Kontrollstrukturen](sec-control-statements) kennen.
 ```
 
 Kontrollstrukturen sind etwas, das uns im Alltag ständig begegnet. Sie bestimmen, wie ein Ablauf aussieht.
