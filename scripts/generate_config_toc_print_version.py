@@ -56,9 +56,10 @@ def generate_config_print(
     input_path: Path,
     output_path: Path,
     execute_notebooks_value: str = "'off'",
+    latex_targetname_value: str = "book-print.tex",
 ) -> None:
     """
-    Create a copy of `_config.yml` with `execute.execute_notebooks` forced to `'off'`.
+    Create a copy of `_config.yml` for the print build.
 
     This is line-based and preserves the rest of the file verbatim.
     """
@@ -67,22 +68,39 @@ def generate_config_print(
     # Match lines like:
     #   execute_notebooks: auto  # off
     # with arbitrary indentation.
-    pattern = re.compile(r"^(\s*execute_notebooks\s*:\s*)([^#\n]*?)(\s*(#.*)?)?$")
+    execute_pattern = re.compile(
+        r"^(\s*execute_notebooks\s*:\s*)([^#\n]*?)(\s*(#.*)?)?$"
+    )
+    targetname_pattern = re.compile(
+        r"^(\s*targetname\s*:\s*)([^#\n]*?)(\s*(#.*)?)?$"
+    )
 
-    found = False
+    found_execute_notebooks = False
+    found_targetname = False
     out: list[str] = []
     for line in src:
-        m = pattern.match(line.rstrip("\n"))
-        if m and not found:
-            prefix = m.group(1)
-            suffix = m.group(3) or ""
+        m_exec = execute_pattern.match(line.rstrip("\n"))
+        if m_exec and not found_execute_notebooks:
+            prefix = m_exec.group(1)
+            suffix = m_exec.group(3) or ""
             out.append(f"{prefix}{execute_notebooks_value}{suffix}\n")
-            found = True
+            found_execute_notebooks = True
+            continue
+
+        m_tn = targetname_pattern.match(line.rstrip("\n"))
+        if m_tn and not found_targetname:
+            prefix = m_tn.group(1)
+            suffix = m_tn.group(3) or ""
+            out.append(f"{prefix}{latex_targetname_value}{suffix}\n")
+            found_targetname = True
+            continue
         else:
             out.append(line)
 
-    if not found:
+    if not found_execute_notebooks:
         raise RuntimeError(f"Could not find an 'execute_notebooks:' line in {input_path}")
+    if not found_targetname:
+        raise RuntimeError(f"Could not find a 'targetname:' line in {input_path}")
 
     output_path.write_text("".join(out), encoding="utf-8")
 
@@ -124,6 +142,11 @@ def main(argv: list[str]) -> int:
         default="'off'",
         help="Value to write for execute_notebooks (default: 'off')",
     )
+    parser.add_argument(
+        "--latex-targetname",
+        default="book-print.tex",
+        help="Value to write for latex.latex_documents.targetname (default: book-print.tex)",
+    )
 
     args = parser.parse_args(argv)
     toc_input_path = Path(args.input)
@@ -141,6 +164,7 @@ def main(argv: list[str]) -> int:
             input_path=config_input_path,
             output_path=config_output_path,
             execute_notebooks_value=args.execute_notebooks_value,
+            latex_targetname_value=args.latex_targetname,
         )
     except Exception as e:
         print(f"ERROR: {e}", file=sys.stderr)

@@ -89,7 +89,7 @@ build_book_pdf_print:
     - export PYDEVD_DISABLE_FILE_VALIDATION=1
     - export MPLCONFIGDIR=/tmp/matplotlib
     - gosu jovyan bash -c "rm -rf _build $PDF_PRINT_BUILD_DIR"
-    - gosu jovyan python3 scripts/generate_config_toc_print_version.py --input _toc.yml --output _toc_print.yml --config-input _config.yml --config-output _config_print.yml --stop-after chapters/misc/Expertenwissen/0-intro
+    - gosu jovyan python3 scripts/generate_config_toc_print_version.py --input _toc.yml --output _toc_print.yml --config-input _config.yml --config-output _config_print.yml --stop-after chapters/misc/Expertenwissen/0-intro --latex-targetname book-print.tex
     - |
       gosu jovyan sh -c 'find figs -name "*.gif" -print0 | while IFS= read -r -d "" gif; do
         png="${gif%.gif}.png"
@@ -100,10 +100,8 @@ build_book_pdf_print:
     - gosu jovyan bash -c "export MPLCONFIGDIR=/tmp/matplotlib && export LATEXMKOPTS='-interaction=nonstopmode' && jupyter-book build . --config _config_print.yml --toc _toc_print.yml --builder pdflatex --path-output $PDF_PRINT_BUILD_DIR --verbose"
   artifacts:
     paths:
-      - $PDF_PRINT_BUILD_DIR/_build/latex/book.pdf
-      - $PDF_PRINT_BUILD_DIR/_build/latex/book.log
-      - _toc_print.yml
-      - _config_print.yml
+      - $PDF_PRINT_BUILD_DIR/_build/latex/book-print.pdf
+      - $PDF_PRINT_BUILD_DIR/_build/latex/book-print.log
     expire_in: 1 week
     when: always
 
@@ -167,7 +165,7 @@ deploy_print_pdf_in_github:
   script:
     - |
       VERSION="$(awk -F: '/^[[:space:]]*release:[[:space:]]*/{gsub(/"/,"",$2); gsub(/^[[:space:]]+|[[:space:]]+$/,"",$2); print $2; exit}' _config.yml)" && [ -n "$VERSION" ] || VERSION="unknown"
-    - PDF_PRINT_SOURCE="$PDF_PRINT_BUILD_DIR/_build/latex/book.pdf"
+    - PDF_PRINT_SOURCE="$PDF_PRINT_BUILD_DIR/_build/latex/book-print.pdf"
     - PDF_PRINT_FILENAME="Skript-print-${VERSION}.pdf"
     - GITHUB_DOWNLOAD_REPO="fk03ingenieursinformatik/ingenieurinformatik-download"
     - GITHUB_DOWNLOAD_BRANCH="main"
