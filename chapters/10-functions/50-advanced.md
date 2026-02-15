@@ -77,4 +77,3 @@ print(wende_an([10, 20, 30], halbieren))
 
 Details dazu finden Sie im [Expertenwissen](sec-first-class-functions).
 
-

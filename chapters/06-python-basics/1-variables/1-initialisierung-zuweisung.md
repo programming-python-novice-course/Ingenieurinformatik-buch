@@ -66,3 +66,27 @@ Nach Ausführung dieser Codezeilen funktioniert auch der obige Code.
 Dies hängt mit der Funktionsweise der Notebooks zusammen.
 Sobald ``z`` *initialisiert* wurde, existiert ``z`` für alle Zellen des Notebooks.
 ```
+
+```{exercise} Praxisaufgabe (PA1.3): Temperatur umrechnen (Variablen + Zuweisung)
+:label: ex-paufgaben-a13-temperatur-zuweisung
+
+Schreiben Sie ein kleines Programm, das eine Temperatur \(C\) in Grad Celsius einliest und in Grad Fahrenheit \(F\) umrechnet:
+
+\[
+F = \\frac{9}{5} \\cdot C + 32
+\]
+
+Nutzen Sie dafür Variablen (z.B. `celsius`, `fahrenheit`) und geben Sie das Ergebnis aus.
+
+Starten Sie mit dieser Zelle:
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+celsius = float(input("Temperatur in °C: "))
+
+# TODO: fahrenheit berechnen
+
+print(f"{celsius:.1f} °C sind ... °F")
+```
+```

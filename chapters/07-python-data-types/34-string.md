@@ -175,6 +175,29 @@ print(text.replace('salat', 'spinat'))
 Es würde zu weit gehen alle Funktionen zu besprechen -- das wäre auch ziemlich langweilig.
 Schauen Sie sich einfach die [Dokumentation](https://docs.python.org/3/library/string.html) an oder verwenden Sie die eingebaute Hilfe ``help(str)``.
 
+```{exercise} Praxisaufgabe (PA3.11-Variante): Zeilen verarbeiten
+:label: ex-paufgaben-a311-string-zeilen
+
+Sie lesen eine Textdatei Zeile für Zeile ein. Erweitern Sie das Grundgerüst so, dass Sie pro Zeile:
+
+- das Zeilenende entfernen (`rstrip("\\n")`),
+- leere Zeilen überspringen,
+- und am Ende ausgeben, wie viele **nicht-leere** Zeilen die Datei hatte.
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+count = 0
+
+with open("data.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        # TODO: line bereinigen und zählen
+        pass
+
+print(f"Nicht-leere Zeilen: {count}")
+```
+```
+
 ## Formatierte Zeichenketten (f-Strings) - Vertiefung
 
 Wie bereits oben erwähnt, sind **f-Strings** (formatted string literals) eine elegante Möglichkeit, Variablen und Ausdrücke direkt in Zeichenketten einzubetten. Das ``f`` vor der Zeichenkette aktiviert diese Funktionalität.

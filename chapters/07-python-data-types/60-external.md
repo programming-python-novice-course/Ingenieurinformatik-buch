@@ -118,6 +118,41 @@ plt.tight_layout()
 plt.show()
 ```
 
+```{exercise} Optional (C_Vektoren_Matrizen): NumPy-Arrays erzeugen
+:label: ex-paufgaben-c-vektoren-matrizen
+
+Erzeugen Sie mit NumPy ein paar typische Vektoren/Matrizen (aus der Aufgabensammlung, Teil „NumPy“):
+
+- `np.array([...])`, `np.arange(...)`, `np.zeros(...)`, `np.linspace(...)`
+- `np.eye(...)` (Einheitsmatrix), `np.zeros((m,n))`, `np.random.random((m,n))`
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+import numpy as np
+
+v1 = np.array([1.1, 2.2, 4.4, 8.8])
+v2 = np.arange(1.0, 3.5, 0.5)
+v3 = np.zeros(5)
+v4 = np.linspace(-1.5, 1.5, 31)
+
+print("v1 =", v1)
+print("v2 =", v2)
+print("v3 =", v3)
+print("v4 =", v4)
+
+M1 = np.array([[2.0, 1.0, 0.0], [1.0, 2.0, 1.0], [0.0, 1.0, 2.0]])
+M2 = np.eye(3)
+M3 = np.zeros((3, 5))
+M4 = np.random.random((3, 2))
+
+print("M1 =\n", M1)
+print("M2 =\n", M2)
+print("M3 =\n", M3)
+print("M4 =\n", M4)
+```
+```
+
 Matrizen eignen sich z.B. dafür, **binäre Bilder** (Schwarz-Weiß) oder Rasterdaten darzustellen. Eine Matrix mit 0 und 1 kann mit `imshow` als Pixelbild gezeichnet werden:
 
 ```{code-cell} python3

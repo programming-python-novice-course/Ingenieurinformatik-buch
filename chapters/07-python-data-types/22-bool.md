@@ -91,4 +91,3 @@ print(f'{x} not is less than 10')
 Da ``bool`` eine Unterklasse von ``int`` ist, können Sie mit Wahrheitswerten rechnen: ``True`` entspricht ``1`` und ``False`` entspricht ``0``. Beispiel: ``True + True  # ergibt 2``. In der Praxis wird dies jedoch selten verwendet, da Booleans primär für logische Ausdrücke gedacht sind.
 ```
 
-

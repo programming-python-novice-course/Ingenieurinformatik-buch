@@ -75,6 +75,7 @@ parts:
         - file: chapters/03-language-properties/53-speicherverwaltung
         - file: chapters/03-language-properties/54-primitive-data
       - file: chapters/03-language-properties/99-summary
+      - file: chapters/03-language-properties/90-uebungsaufgaben
   - caption: Python anwenden
     numbered: True
     chapters:
@@ -101,6 +102,7 @@ parts:
         - file: chapters/05-python-ecosystem-and-setup/4-modules/1-ein-eigenes-modul
         - file: chapters/05-python-ecosystem-and-setup/4-modules/2-modul-suche
         - file: chapters/05-python-ecosystem-and-setup/4-modules/3-pakete
+      - file: chapters/05-python-ecosystem-and-setup/90-uebungsaufgaben
     - file: chapters/06-python-basics/0-intro
       sections:
       - file: chapters/06-python-basics/1-variables
@@ -146,6 +148,7 @@ parts:
         - file: chapters/07-python-data-types/51-cod-zahl
         - file: chapters/07-python-data-types/52-text
       - file: chapters/07-python-data-types/70-big-picture
+      - file: chapters/07-python-data-types/90-uebungsaufgaben
     - file: chapters/08-eingaben-und-ausgaben/00-intro
       sections:
       - file: chapters/08-eingaben-und-ausgaben/10-io
@@ -165,6 +168,7 @@ parts:
         - file: chapters/08-eingaben-und-ausgaben/51-konvertierung
         - file: chapters/08-eingaben-und-ausgaben/52-f-strings
       - file: chapters/08-eingaben-und-ausgaben/70-zusammenfassung
+      - file: chapters/08-eingaben-und-ausgaben/90-uebungsaufgaben
     - file: chapters/09-control-flow/0-intro
       sections:
       - file: chapters/09-control-flow/1-cases
@@ -196,6 +200,7 @@ parts:
         - file: chapters/10-functions/32-mutability
       - file: chapters/10-functions/40-recursion
       - file: chapters/10-functions/50-advanced
+      - file: chapters/10-functions/90-uebungsaufgaben
     - file: chapters/11-object-oriented/00-intro
       sections:
       - file: chapters/11-object-oriented/10-motivation
@@ -216,6 +221,7 @@ parts:
         - file: chapters/11-object-oriented/43-kapselung
         - file: chapters/11-object-oriented/44-polymorphie
       - file: chapters/11-object-oriented/50-critic
+      - file: chapters/11-object-oriented/90-uebungsaufgaben
   - caption: Fallbeispiel
     numbered: True
     chapters:
@@ -238,6 +244,7 @@ parts:
         - file: chapters/12-fallbeispiel/57-statistics
       - file: chapters/12-fallbeispiel/60-comparison
       - file: chapters/12-fallbeispiel/70-summary
+      - file: chapters/12-fallbeispiel/90-uebungsaufgaben
   - caption: Appendix
     chapters:
     - file: chapters/misc/contributors

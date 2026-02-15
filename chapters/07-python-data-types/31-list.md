@@ -69,6 +69,35 @@ In diesem Fall repräsentiert ``A`` die Identitätsmatrix
 
 $$\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}.$$
 
+```{exercise} Praxisaufgabe (PA3.10): Fibonacci-Folge als Liste
+:label: ex-paufgaben-a310-fibonacci-list
+
+```{figure} ../../figs/paufgaben/k3/k3_abb9.png
+---
+width: 520px
+name: fig-paufgaben-a310-fibonacci
+---
+Beispielplot der Fibonacci-Folge (Aufgabensammlung PA3.10).
+```
+
+Erzeugen Sie die ersten \(n\) Fibonacci-Zahlen und speichern Sie sie in einer Liste.
+
+- Startwerte: \(0, 1\)
+- Jede weitere Zahl ist die Summe der beiden vorherigen.
+
+Starten Sie mit dieser Zelle (ohne Plot):
+
+```{code-cell} python3
+n = 10
+
+fib = []  # TODO: Liste füllen
+
+print(fib)
+```
+
+Zusatz (optional): Plotten Sie die Werte als Punkte (z.B. mit `matplotlib`).
+```
+
 ## Erstellung
 
 Es gibt unterschiedliche Möglichkeiten um eine Liste zu erzeugen.

@@ -24,3 +24,17 @@ In diesem Unterkapitel bauen wir dafür das Fundament der Objektorientierung in 
 - Sie können Objektattribute von Klassenattributen unterscheiden und einfache Beispiele implementieren.
 ```
 
+```{exercise} Praxisaufgabe (Refactoring): Widerstände als Klassen modellieren
+:label: ex-paufgaben-oop-widerstaende
+
+Sie kennen aus den frühen Praxisaufgaben die Berechnung von Reihen- und Parallelschaltung (Formeln, Einlesen mit `input`).
+
+Refactoring-Aufgabe: Modellieren Sie das als Klassen, so dass sich Schaltungen **komponieren** lassen.
+
+Vorschlag für ein Minimal-Design:
+- `Resistor(R)` speichert einen Widerstandswert.
+- `Series(elements)` berechnet `R_total` als Summe.
+- `Parallel(elements)` berechnet `R_total` über die Kehrwerte.
+
+Zusatz: Validieren Sie Eingaben (keine nicht-positiven Widerstände) und geben Sie bei Fehlern klare Meldungen aus.
+```

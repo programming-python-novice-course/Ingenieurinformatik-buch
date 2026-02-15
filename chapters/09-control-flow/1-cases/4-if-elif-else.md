@@ -74,3 +74,31 @@ match status:
 
 text
 ```
+
+```{exercise} Praxisaufgabe (PA2.1): Stromrechnung mit `if/elif/else`
+:label: ex-paufgaben-a21-stromrechnung-elif
+
+```{figure} ../../../figs/paufgaben/k2/k2_abb1.png
+---
+width: 520px
+name: fig-paufgaben-a21-stromrechnung
+---
+Beispielausgabe (Aufgabensammlung PA2.1).
+```
+
+Implementieren Sie die Preisstaffelung mit einer `if/elif/else`-Kette:
+
+- bis 2500 kWh: 0,40 €/kWh
+- die nächsten 2500 kWh: 0,35 €/kWh
+- darüber: 0,30 €/kWh
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+kwh = float(input("Verbrauch in kWh: "))
+
+# TODO: if/elif/else
+
+print(f"Rechnungsbetrag: {preis:.2f} EUR")
+```
+```

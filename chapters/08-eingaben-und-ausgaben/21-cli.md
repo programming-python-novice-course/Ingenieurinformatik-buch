@@ -52,3 +52,25 @@ mein-trojanerlegtdeinenpclam@hacking.de
 In der Praxis benutzen Endanwender jedoch kein Terminal oder Jupyter Notebook (generell wollen sie von der Programmierung nichts sehen). Vielmehr geben sie ihre Daten in einer grafischen Nutzeroberfläche ein.
 ```
 
+```{exercise} Praxisaufgabe (PA1.5): Widerstände einlesen und prüfen
+:label: ex-paufgaben-a15-input-konvertierung
+
+Schreiben Sie ein Programm, das drei Widerstände \(R_1, R_2, R_3\) (in Ohm) einliest.
+
+- Falls **alle** Werte positiv sind, berechnen Sie:
+  - **Reihenschaltung**: \(R_\\text{Reihe} = R_1 + R_2 + R_3\)
+  - **Parallelschaltung**: \(\\frac{1}{R_\\text{parallel}} = \\frac{1}{R_1} + \\frac{1}{R_2} + \\frac{1}{R_3}\)
+- Andernfalls geben Sie eine Fehlermeldung aus.
+```
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+r1 = float(input("R1 in Ohm: "))
+r2 = float(input("R2 in Ohm: "))
+r3 = float(input("R3 in Ohm: "))
+
+# TODO: prüfen und berechnen
+```
+
+

@@ -48,3 +48,11 @@ Jedes Kapitel verzahnt Theorie und Praxis: Anhand von **ausführbaren Mini‑Pro
 **Prüfungsrelevanz:**
 Sie müssen die Inhalte aus diesem Teil anwenden können.
 
+```{admonition} Warm-up (optional)
+:class: tip
+
+Wenn Sie sofort loslegen möchten: Lösen Sie als Mini-Warm-up die Übung {ref}`ex-paufgaben-a13-temperatur-zuweisung` (Temperatur °C → °F). Sie steht dort, wo wir Variablen/Zuweisung einführen.
+```
+
+
+

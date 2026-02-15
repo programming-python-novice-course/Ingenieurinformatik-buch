@@ -97,3 +97,53 @@ lrange(start=start, stop=10, step=2)
 Diese beiden Variablen mit dem Namen ``start`` sind nicht dieselben Variablen.
 Das linke ``start`` ist der Parameter welches die Funktion schlussendlich verwendet und das rechte ``start`` ist das Argument, welches wir zuvor definiert haben.
 Wir setzten beim Aufruf die Adresse des linken ``start`` auf die Adresse des rechten ``start``.
+
+
+
+
+```{exercise} Praxisaufgabe (PA4.5): Kraftvektor zerlegen (Parameter + Rückgabe)
+:label: ex-paufgaben-a45-kraft
+
+
+Schreiben Sie eine Funktion `kraft(m, alpha_grad)`, die eine Gewichtskraft \(F_G = m \\cdot g\) in zwei Komponenten zerlegt:
+
+- **Senkrecht zur Oberfläche** \(F_N\)
+- **Hangabtriebskraft** \(F_H\)
+
+Dabei ist `alpha_grad` der Winkel in Grad.
+Geben Sie beide Werte zurück (z.B. als Tupel).
+```
+
+```{figure} ../../figs/paufgaben/k4/k4_abb1.png
+---
+width: 520px
+name: fig-paufgaben-a45-kraft
+---
+Zerlegung eines Kraftvektors
+```
+
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+from math import sin, cos, pi
+
+def kraft(m, alpha_grad):
+    g = 9.81
+    # TODO: Grad → Radiant und Komponenten berechnen
+    return fn, fh
+
+m = float(input("Masse in kg: "))
+alpha = float(input("Winkel in Grad: "))
+
+fn, fh = kraft(m, alpha)
+print(f"Senkrecht zur Oberfläche: {fn:.2f} N")
+print(f"Hangabtriebskraft: {fh:.2f} N")
+```
+
+```{exercise} Praxisaufgabe (PA4.5): Kraftvektor zerlegen - Fortsetzung
+
+Nun möchten wir, dass unser Programm auch auf dem Mond angewandt werden kann.
+Ändern Sie die Funnktion kraft() so ab, dass man die Beschleunigung als Übergabeparameter vorgegeben werden kann. Wenn der Nutzer keine Angabe macht, soll 9.81 verwendet werden.
+
+```
