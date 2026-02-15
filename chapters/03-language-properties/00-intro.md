@@ -11,12 +11,14 @@
   - Genauso kann „ähnlich aussehender“ Code je nach Sprache anders funktionieren und andere Stolperstellen haben.
   - Im Berufsalltag begegnen Ihnen mehrere Sprachen; deshalb lohnt sich ein Blick hinter die Oberfläche.
 
+::::{only} html
 ```{figure} ../../figs/01-course-overview/overview/motorhaube.png
 ---
 height: 320px
 name: motorhaube
 ---
 ```
+::::
 
 - Ziel dieses Kapitels ist ein Grundverständnis, das Ihnen beim Anwenden hilft.
   - Sie können typische Fehler schneller erklären und vermeiden.
