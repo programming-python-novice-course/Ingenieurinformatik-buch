@@ -82,9 +82,17 @@ sphinx:
         \chapter*{Vorbemerkung}
         Dieses Buch ist durch Beiträge verschiedener Personen entstanden. 
         Die Herausgeberin allein ist für die Integration der Beiträge und die daraus resultierende Buchfassung verantwortlich. 
-        Eine Übersicht aller beitragenden Personen und ihrer Beiträge findet sich im Anhang unter „Beiträge“. \\
+        Eine Übersicht aller beitragenden Personen und ihrer Beiträge findet sich im Anhang unter „Beiträge“.
+
         \vspace*{10cm}
-        Bei Fragen wenden Sie sich bitte an die Herausgeberin:  \\Christina Maria Mayr  \\ Lehrbeauftragte Hochschule München, FK03 \\www.christinamariamayr.de
+
+        Bei Fragen wenden Sie sich bitte an die Herausgeberin:
+        \\
+        Christina Maria Mayr
+        \\
+        Lehrbeauftragte Hochschule München, FK03
+        \\
+        www.christinamariamayr.de
 
         % weiße Rückseite (leer, ohne Kopf-/Fußzeile)
         \clearpage
