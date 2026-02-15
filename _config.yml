@@ -79,9 +79,9 @@ sphinx:
     latex_elements:
       releasename: "Version"
       tableofcontents: |
-        \chapter*{Vorbemerkung}
+        \chapter*{Vorwort}
         Dieses Buch ist durch Beiträge verschiedener Personen entstanden. 
-        Die Herausgeberin allein ist für die Integration der Beiträge und die daraus resultierende Buchfassung verantwortlich. 
+        Die Herausgeberin allein ist für die Integration der Beiträge und der daraus resultierenden Buchfassung verantwortlich. 
         Eine Übersicht aller beitragenden Personen und ihrer Beiträge findet sich im Anhang unter „Beiträge“.
 
         \vspace*{10cm}
