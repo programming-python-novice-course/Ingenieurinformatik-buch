@@ -51,7 +51,7 @@ Sie suchen numerisch eine Nullstelle einer Funktion \(f(x)\) im Intervall \([x_1
 Hinweis: Das Beispiel aus der Aufgabensammlung verwendet NumPy/Matplotlib; im Buch ist die Zelle standardmäßig nicht zur automatischen Ausführung markiert.
 ```
 
-```{figure} ../../figs/paufgaben/k5/k5_abb8.png
+```{figure} ../../figs/10-functions/paufgaben/k5/k5_abb8.png
 ---
 width: 520px
 name: fig-paufgaben-a56-bisektion

@@ -109,7 +109,7 @@ Warum? Wir rufen `skript2.py` auf (Entrypoint = `skript2.py`). Dabei wird `skrip
 ```{exercise} Praxisaufgabe (PA3.11): Dateiinhalt ausgeben
 :label: ex-paufgaben-a311-datei-lesen
 
-```{figure} ../../../figs/paufgaben/k3/k3_abb10.png
+```{figure} ../../../figs/05-python-ecosystem-and-setup/paufgaben/k3/k3_abb10.png
 ---
 width: 700px
 name: fig-paufgaben-a311-datei-lesen

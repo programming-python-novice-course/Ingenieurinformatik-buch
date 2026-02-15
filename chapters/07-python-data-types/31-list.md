@@ -72,7 +72,7 @@ $$\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}.$$
 ```{exercise} Praxisaufgabe (PA3.10): Fibonacci-Folge als Liste
 :label: ex-paufgaben-a310-fibonacci-list
 
-```{figure} ../../figs/paufgaben/k3/k3_abb9.png
+```{figure} ../../figs/07-python-data-types/paufgaben/k3/k3_abb9.png
 ---
 width: 520px
 name: fig-paufgaben-a310-fibonacci

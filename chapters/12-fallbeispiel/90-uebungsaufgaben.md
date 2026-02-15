@@ -24,7 +24,7 @@ Ziel ist:
 - und anschließend Kennwerte bestimmen (z.B. wann die Spannung unter 90% bzw. 80% der Anfangsspannung fällt).
 ```
 
-```{figure} ../../figs/paufgaben/k5/k5_abb5.png
+```{figure} ../../figs/12-fallbeispiel/paufgaben/k5/k5_abb5.png
 ---
 width: 520px
 name: fig-paufgaben-a54-akku

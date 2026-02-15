@@ -18,7 +18,7 @@ kernelspec:
 Schreiben Sie ein Python-Programm, das Leistungsangaben umrechnet.
 ```
 
-```{figure} ../../../figs/paufgaben/k1/k1_abb1.jpg
+```{figure} ../../figs/08-eingaben-und-ausgaben/paufgaben/k1/k1_abb1.jpg
 ---
 width: 700px
 name: fig-paufgaben-a11-kw-ps

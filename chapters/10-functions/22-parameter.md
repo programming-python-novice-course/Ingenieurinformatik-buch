@@ -114,7 +114,7 @@ Dabei ist `alpha_grad` der Winkel in Grad.
 Geben Sie beide Werte zurück (z.B. als Tupel).
 ```
 
-```{figure} ../../figs/paufgaben/k4/k4_abb1.png
+```{figure} ../../figs/10-functions/paufgaben/k4/k4_abb1.png
 ---
 width: 520px
 name: fig-paufgaben-a45-kraft

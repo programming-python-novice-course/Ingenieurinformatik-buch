@@ -67,7 +67,7 @@ Stützpunkte (für diese Aufgabe relevant: \(0 \le h \le 47\) km):
 |---|---:|---:|---:|---:|---:|
 | Temperatur \(T\) (°C) | 15,0 | -56,5 | -56,5 | -44,5 | -2,5 |
 
-```{figure} ../../figs/paufgaben/k2/k2_abb2.jpg
+```{figure} ../../figs/02-computer-sciences-basics/paufgaben/k2/k2_abb2.jpg
 ---
 width: 700px
 name: fig-paufgaben-icao
@@ -90,7 +90,7 @@ Zusatzaufgaben:
 - Zeichnen Sie Struktogramme zu Ihren Lösungen.
 ```
 
-```{figure} ../../figs/paufgaben/k2/k2_abb3.png
+```{figure} ../../figs/02-computer-sciences-basics/paufgaben/k2/k2_abb3.png
 ---
 width: 700px
 name: fig-paufgaben-icao-beispielausgabe

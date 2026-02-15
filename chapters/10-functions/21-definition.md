@@ -132,7 +132,7 @@ Implementieren Sie eine Funktion `qsolve(a, b, c)`, die die Anzahl reeller Nulls
   - zwei Nullstellen: `n = 2`
 ```
 
-```{figure} ../../figs/paufgaben/k1/k1_abb4.png
+```{figure} ../../figs/10-functions/paufgaben/k1/k1_abb4.png
 ---
 width: 650px
 name: fig-paufgaben-a43-mitternachtsformel
