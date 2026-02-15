@@ -245,11 +245,13 @@ parts:
       - file: chapters/12-fallbeispiel/60-comparison
       - file: chapters/12-fallbeispiel/70-summary
       - file: chapters/12-fallbeispiel/90-uebungsaufgaben
-  - caption: Appendix
+  - caption: Appendix I
     chapters:
     - file: chapters/misc/beitraege
     - file: chapters/misc/downloads
     - file: chapters/misc/bibliography
+  - caption: Appendix II
+    chapters:
     - file: chapters/misc/Expertenwissen/0-intro
       sections:
       - file: chapters/misc/Expertenwissen/interpreter
