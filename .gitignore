@@ -138,3 +138,5 @@ dmypy.json
 
 # Local course material folder
 _material/
+
+*_print.yml
