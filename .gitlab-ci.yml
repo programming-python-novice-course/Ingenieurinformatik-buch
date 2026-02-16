@@ -36,7 +36,6 @@ build_website_html:
     - export MPLCONFIGDIR=/tmp/matplotlib
     - gosu jovyan bash -c "rm -rf _build $HTML_BUILD_DIR"
     - gosu jovyan bash -c "jupyter-book build . --path-output $HTML_BUILD_DIR --verbose"
-    - gosu jovyan bash -c "python3 scripts/patch_thebe_html.py --path-output $HTML_BUILD_DIR"
   artifacts:
     paths:
       - $HTML_BUILD_DIR/_build
