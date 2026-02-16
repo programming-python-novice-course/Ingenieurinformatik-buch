@@ -36,6 +36,7 @@ build_website_html:
     - export MPLCONFIGDIR=/tmp/matplotlib
     - gosu jovyan bash -c "rm -rf _build $HTML_BUILD_DIR"
     - gosu jovyan bash -c "jupyter-book build . --path-output $HTML_BUILD_DIR --verbose"
+    - gosu jovyan bash -c "python3 scripts/patch_thebe_html.py --path-output $HTML_BUILD_DIR"
   artifacts:
     paths:
       - $HTML_BUILD_DIR/_build
@@ -109,7 +110,7 @@ build_book_pdf_print:
 # DEPLOYMENT JOBS
 # ============================================================================
 
-deploy_pdf_in_github:
+deploy_pdf_in_gitlabLRZ:
   image: alpine/git:latest
   stage: deploy
   rules:
@@ -129,14 +130,13 @@ deploy_pdf_in_github:
       VERSION="$(awk -F: '/^[[:space:]]*release:[[:space:]]*/{gsub(/"/,"",$2); gsub(/^[[:space:]]+|[[:space:]]+$/,"",$2); print $2; exit}' _config.yml)" && [ -n "$VERSION" ] || VERSION="unknown"
     - PDF_SOURCE="$PDF_BUILD_DIR/_build/latex/book.pdf"
     - PDF_FILENAME="Skript-${VERSION}.pdf"
-    - GITHUB_DOWNLOAD_REPO="fk03ingenieursinformatik/ingenieurinformatik-download"
-    - GITHUB_DOWNLOAD_BRANCH="main"
-    - GITHUB_REMOTE_PUBLIC="https://github.com/${GITHUB_DOWNLOAD_REPO}.git"
-    - GITHUB_REMOTE_PUSH="https://x-access-token:${GITHUB_DOWNLOAD_REPO_TOKEN}@github.com/${GITHUB_DOWNLOAD_REPO}.git"
+    - DOWNLOAD_REPO="fk03ingenieurinformatik/ingenieurinformatik-download"
+    - DOWNLOAD_BRANCH="main"
+    - DOWNLOAD_REMOTE_PUSH="https://oauth2:${DOWNLOAD_REPO_TOKEN}@gitlab.lrz.de/${DOWNLOAD_REPO}.git"
     - rm -rf _github_download_repo
-    - git clone --depth 1 --branch "$GITHUB_DOWNLOAD_BRANCH" "$GITHUB_REMOTE_PUBLIC" _github_download_repo
+    - git clone --depth 1 --branch "$DOWNLOAD_BRANCH" "$DOWNLOAD_REMOTE_PUSH" _github_download_repo
     - cd _github_download_repo
-    - git remote set-url origin "$GITHUB_REMOTE_PUSH"
+    - git remote set-url origin "$DOWNLOAD_REMOTE_PUSH"
     - mkdir -p Downloads
     - cp "../${PDF_SOURCE}" "Downloads/${PDF_FILENAME}"
     - cp "../${PDF_SOURCE}" "Downloads/Skript-aktuell.pdf"
@@ -146,7 +146,7 @@ deploy_pdf_in_github:
         echo "No changes to push (PDF unchanged)"
       else
         git -c user.name="gitlab-ci" -c user.email="gitlab-ci@localhost" commit -m "Update Skript PDF ${VERSION} from ${CI_PROJECT_PATH}@${CI_COMMIT_SHA}"
-        git push origin "$GITHUB_DOWNLOAD_BRANCH"
+        git push origin "$DOWNLOAD_BRANCH"
       fi
 
 deploy_print_pdf_in_github:
@@ -187,7 +187,7 @@ deploy_print_pdf_in_github:
         git push origin "$GITHUB_DOWNLOAD_BRANCH"
       fi
 
-deploy_notebooks_in_github:
+deploy_notebooks_in_gitlabLRZ:
   image: alpine/git:latest
   stage: deploy
   rules:
@@ -202,15 +202,14 @@ deploy_notebooks_in_github:
     - build_website_html
   script:
     - SOURCE_DIR="_website_html/_build/jupyter_execute/chapters"
-    - GITHUB_DEPLOY_REPO="fk03ingenieursinformatik/ingenieurinformatik-buch-deploy"
-    - GITHUB_DEPLOY_BRANCH="master"
+    - DEPLOY_REPO="fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz"
+    - DEPLOY_BRANCH="master"
     - TARGET_DIR="deployed_notebooks"
-    - GITHUB_REMOTE_PUBLIC="https://github.com/${GITHUB_DEPLOY_REPO}.git"
-    - GITHUB_REMOTE_PUSH="https://x-access-token:${GITHUB_DEPLOY_TOKEN}@github.com/${GITHUB_DEPLOY_REPO}.git"
+    - DEPLOY_REMOTE_PUSH="https://oauth2:${DEPLOY_REPO_TOKEN}@gitlab.lrz.de/${DEPLOY_REPO}.git"
     - rm -rf _github_deploy_repo
-    - git clone --depth 1 --branch "$GITHUB_DEPLOY_BRANCH" "$GITHUB_REMOTE_PUBLIC" _github_deploy_repo
+    - git clone --depth 1 --branch "$DEPLOY_BRANCH" "$DEPLOY_REMOTE_PUSH" _github_deploy_repo
     - cd _github_deploy_repo
-    - git remote set-url origin "$GITHUB_REMOTE_PUSH"
+    - git remote set-url origin "$DEPLOY_REMOTE_PUSH"
     - echo "Syncing notebooks into ${TARGET_DIR}/ ..."
     - rm -rf "$TARGET_DIR"
     - mkdir -p "$TARGET_DIR"
@@ -221,8 +220,8 @@ deploy_notebooks_in_github:
       printf "%s\n" "Diese notebooks wurden automatisiert erzeugt. Der dazugehörige commit ist: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/commit/${CI_COMMIT_SHA} (Release: ${VERSION})" > "$TARGET_DIR/Version.md"
     - git add -A
     - git -c user.name="gitlab-ci" -c user.email="gitlab-ci@localhost" commit -m "Update executed notebooks from ${CI_PROJECT_PATH}@${CI_COMMIT_SHA}"
-    - echo "Pushing to GitHub..."
-    - git push origin "$GITHUB_DEPLOY_BRANCH"
+    - echo "Pushing to GitLab..."
+    - git push origin "$DEPLOY_BRANCH"
 
 update_website:
   stage: deploy

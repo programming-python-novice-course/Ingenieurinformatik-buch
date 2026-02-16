@@ -30,7 +30,7 @@ parts:
         sections:
         - file: chapters/01-course-overview/51-gliederung
         - file: chapters/01-course-overview/52-vorlesung-praktikum
-  - caption: Basiswissen 
+  - caption: Basiswissen
     numbered: True
     chapters:
     - file: chapters/02-computer-sciences-basics/10-intro
@@ -227,7 +227,7 @@ parts:
     chapters:
     - file: chapters/12-fallbeispiel/00-intro
       sections:
-      - file: chapters/12-fallbeispiel/20-se-Prozess        
+      - file: chapters/12-fallbeispiel/20-se-Prozess
       - file: chapters/12-fallbeispiel/30-problemanalyse
         sections:
         - file: chapters/12-fallbeispiel/31-zerlegung

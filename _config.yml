@@ -63,8 +63,8 @@ sphinx:
     html_css_files:
       - theme-overwrite.css
     html_js_files:
-      - js/hub-link-rewrite.js
       - js/thebe-output-fix.js
+      - js/hub-link-rewrite.js
 
     html_show_copyright: false
     language: de
@@ -181,7 +181,7 @@ sphinx:
 # Repository / Edit-Buttons
 # --------------------------------------------------
 repository:
-  url: https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy.git
+  url: https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz.git
   path_to_book: ""
   branch: binder-minimal
 
