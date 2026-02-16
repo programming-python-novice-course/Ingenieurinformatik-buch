@@ -135,3 +135,4 @@ dmypy.json
 
 # Cursor (Editor) settings
 .cursorignore
+_material/
