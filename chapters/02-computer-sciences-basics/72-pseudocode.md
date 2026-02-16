@@ -26,3 +26,11 @@ Pseudocode steht zwischen der natürlichen Sprache und einer Programmiersprache:
 - Er orientiert sich an der Syntax von Programmiersprachen, ist aber sprachenübergreifend verwendbar.
 - Er erlaubt es, sich auf die Logik des Algorithmus zu konzentrieren, ohne sich mit sprachspezifischen Details auseinandersetzen zu müssen.
 
+```{exercise} Praxisaufgabe (PA4.1-Idee): Euklidischer Algorithmus als Pseudocode
+:label: ex-paufgaben-a41-euklid-pseudocode
+
+Schreiben Sie Pseudocode für den euklidischen Algorithmus zur Berechnung des größten gemeinsamen Teilers \(\\mathrm{ggT}(a,b)\).
+
+
+```
+

@@ -3,6 +3,7 @@
 Im folgenden werden die Kursteile genauer vorgestellt.
 
 **Basiswissen (Teil 1)**
+::::{only} html
 ```{figure} ../../figs/01-course-overview/overview/infrastructer-metaphor.png
 ---
 width: 400px
@@ -10,6 +11,7 @@ name: infrastructer-metaphor
 ---
 Basiswissen (Teil 1): Gemeinsames Fundament und „Gerüst“ für die späteren Inhalte.
 ```
+::::
 
 Wir schaffen ein gemeinsames Grundverständnis: Was macht ein Computer eigentlich, wie werden Informationen verarbeitet, und welches Vokabular brauchen wir, um über Programme sauber zu sprechen? Dieses „Gerüst“ hilft, die späteren Inhalte einzuordnen.
 
@@ -33,6 +35,7 @@ Prüfungsrelevante Kapitel bzw. Unterkapitel haben ein „(A)" in der Überschri
 
 **Python verstehen (Teil 2)**
 
+::::{only} html
 ```{figure} ../../figs/01-course-overview/overview/motorhaube.png
 ---
 width: 400px
@@ -40,6 +43,7 @@ name: motorhaube
 ---
 Python verstehen (Teil 2): Blick „unter die Motorhaube“ – Konzepte und Hintergründe.
 ```
+::::
 
 Wir ordnen Python als Programmiersprache ein: Welche Eigenschaften prägen das Programmieren in Python und welche allgemeinen Konzepte stecken dahinter? Das hilft Ihnen, Wissen später auf andere Sprachen zu übertragen (z. B. in Richtung MATLAB).
 
@@ -63,6 +67,7 @@ Für die Prüfung nicht direkt abgefragt – aber sehr wertvoll: das Struktur- u
 
 **Python anwenden (Teil 3)**
 
+::::{only} html
 ```{figure} ../../figs/01-course-overview/overview/bedienung.png
 ---
 width: 400px
@@ -70,6 +75,7 @@ name: bedienung
 ---
 Python anwenden (Teil 3): Bedienung in der Praxis – selbst Programme schreiben und einsetzen.
 ```
+::::
 
 Hier geht es um die praktische Programmierarbeit: Programme schreiben, Daten verarbeiten und Probleme Schritt für Schritt lösen. Das ist der Schwerpunkt der Veranstaltung.
 
@@ -89,6 +95,7 @@ Sehr prüfungsrelevant (viele A-Markierungen!): Hier lernen wir Python anzuwende
 
 **Anwendungsfall (Teil 4)**
 
+::::{only} html
 ```{figure} ../../figs/01-course-overview/overview/fahrt.png
 ---
 width: 400px
@@ -96,6 +103,7 @@ name: fahrt
 ---
 Anwendungsfall (Teil 4): Kompletten Ablauf durchlaufen – von Aufgabe bis Umsetzung.
 ```
+::::
 
 Zum Abschluss laufen wir einen kompletten Ablauf in der Praxis durch: von der Aufgabenstellung über die Planung bis zur Umsetzung. Ziel ist, den Prozess als Ganzes zu sehen (nicht nur einzelne Sprachkonstrukte). 
 

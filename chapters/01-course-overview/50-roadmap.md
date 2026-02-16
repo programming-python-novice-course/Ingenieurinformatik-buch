@@ -6,12 +6,14 @@ Das Ziel ist es, dass Sie Probleme systematisch in Programme übersetzen und lö
 
 Das Modul ist in vier Teile gegliedert. Zur Erinnerung an die Metapher aus der Einleitung (siehe {ref}`sec-intro`): Die vier Teile können Sie als Etappen einer Autofahrt vorstellen.
 
+::::{only} html
 ```{figure} ../../figs/01-course-overview/car-drive2.png
 ---
 height: 300px
 name: journey
 ---
 ```
+::::
 
 Die vier Teile sind: 
 

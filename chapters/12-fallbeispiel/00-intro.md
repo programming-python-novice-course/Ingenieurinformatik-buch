@@ -1,11 +1,13 @@
 # Wie werden Programme entwickelt? 
 
+::::{only} html
 ```{figure} ../../figs/01-course-overview/overview/fahrt.png
 ---
 height: 320px
 name: fahrt
 ---
 ```
+::::
 
 Julia bekommt von einer Kollegin eine CSV-Datei mit echten Messwerten. Die Aufgabe klingt zunächst einfach („einlesen und auswerten“), aber schnell wird klar: Sie muss Anforderungen klären, Teilprobleme erkennen und Entscheidungen treffen. In diesem Kapitel schauen wir ihr über die Schulter – vom ersten Lesen der Aufgabe bis zu zwei möglichen Lösungen.
 

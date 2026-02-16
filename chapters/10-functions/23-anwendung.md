@@ -71,4 +71,3 @@ print(sortiert_nach_laenge)
 sortiert_nach_name = sorted(teile, key=nach_name)
 print(sortiert_nach_name)
 ```
-

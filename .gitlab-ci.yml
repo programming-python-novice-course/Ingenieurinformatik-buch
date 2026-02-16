@@ -74,6 +74,50 @@ build_book_pdf:
     expire_in: 1 week
     when: always
 
+build_book_pdf_print:
+  stage: build
+  rules:
+    - when: manual
+      allow_failure: true
+  variables:
+    PDF_PRINT_BUILD_DIR: "_book_as_pdf_print_version"
+    PYDEVD_DISABLE_FILE_VALIDATION: "1"
+  before_script:
+    # Fix permissions for CI_PROJECT_DIR so non-root user can write
+    # This is safer than running all commands as root
+    - chown -R $(id -u jovyan):$(id -g jovyan) "$CI_PROJECT_DIR" || true
+  script:
+    - export PYDEVD_DISABLE_FILE_VALIDATION=1
+    - export MPLCONFIGDIR=/tmp/matplotlib
+    - gosu jovyan bash -c "rm -rf _build $PDF_PRINT_BUILD_DIR"
+    - gosu jovyan python3 scripts/generate_config_toc_print_version.py --input _toc.yml --output _toc_print.yml --config-input _config.yml --config-output _config_print.yml --stop-after chapters/misc/Expertenwissen/0-intro --latex-targetname book-print.tex
+    - |
+      gosu jovyan sh -c 'find figs -name "*.gif" -print0 | while IFS= read -r -d "" gif; do
+        png="${gif%.gif}.png"
+        if [ ! -f "$png" ]; then
+          convert "${gif}[0]" "$png" && echo "generated: $png"
+        fi
+      done'
+    - gosu jovyan bash -c "export MPLCONFIGDIR=/tmp/matplotlib && export LATEXMKOPTS='-interaction=nonstopmode' && jupyter-book build . --config _config_print.yml --toc _toc_print.yml --builder pdflatex --path-output $PDF_PRINT_BUILD_DIR --verbose"
+    - |
+      echo ""
+      echo "==================== PRINT PDF (reduced script) ===================="
+      echo "This job generates a reduced/print-friendly version of the script."
+      echo "Goal: keep the number of pages LOW."
+      echo ""
+      echo "Differences vs full PDF:"
+      echo "- 'Expertenwissen' is excluded (cut-off in generate_config_toc_print_version.py)."
+      echo "- Uses generated _config_print.yml and _toc_print.yml (created earlier in this job)."
+      echo "- Code cells are not intended to be re-executed; execution is skipped when outputs exist."
+      echo "====================================================================="
+      echo ""
+  artifacts:
+    paths:
+      - $PDF_PRINT_BUILD_DIR/_build/latex/book-print.pdf
+      - $PDF_PRINT_BUILD_DIR/_build/latex/book-print.log
+    expire_in: 1 week
+    when: always
+
 # ============================================================================
 # DEPLOYMENT JOBS
 # ============================================================================
@@ -81,6 +125,7 @@ build_book_pdf:
 deploy_pdf_in_gitlabLRZ:
   image: alpine/git:latest
   stage: deploy
+  resource_group: ingenieurinformatik-download-main
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: on_success
@@ -116,6 +161,52 @@ deploy_pdf_in_gitlabLRZ:
         git -c user.name="gitlab-ci" -c user.email="gitlab-ci@localhost" commit -m "Update Skript PDF ${VERSION} from ${CI_PROJECT_PATH}@${CI_COMMIT_SHA}"
         git push origin "$DOWNLOAD_BRANCH"
       fi
+
+deploy_print_pdf_in_gitlabLRZ:
+  image: alpine/git:latest
+  stage: deploy
+  resource_group: ingenieurinformatik-download-main
+  rules:
+    - when: manual
+      allow_failure: true
+  needs:
+    - job: build_book_pdf_print
+      artifacts: true
+  dependencies:
+    - build_book_pdf_print
+  variables:
+    PDF_PRINT_BUILD_DIR: "_book_as_pdf_print_version"
+  script:
+    - |
+      VERSION="$(awk -F: '/^[[:space:]]*release:[[:space:]]*/{gsub(/"/,"",$2); gsub(/^[[:space:]]+|[[:space:]]+$/,"",$2); print $2; exit}' _config.yml)" && [ -n "$VERSION" ] || VERSION="unknown"
+    - PDF_PRINT_SOURCE="$PDF_PRINT_BUILD_DIR/_build/latex/book-print.pdf"
+    - PDF_PRINT_FILENAME="Skript-print-${VERSION}.pdf"
+    - DOWNLOAD_REPO="fk03ingenieurinformatik/ingenieurinformatik-download"
+    - DOWNLOAD_BRANCH="main"
+    - DOWNLOAD_REMOTE_PUSH="https://oauth2:${DOWNLOAD_REPO_TOKEN}@gitlab.lrz.de/${DOWNLOAD_REPO}.git"
+    - rm -rf _github_download_repo
+    - git clone --depth 1 --branch "$DOWNLOAD_BRANCH" "$DOWNLOAD_REMOTE_PUSH" _github_download_repo
+    - cd _github_download_repo
+    - git remote set-url origin "$DOWNLOAD_REMOTE_PUSH"
+    - mkdir -p Downloads
+    - cp "../${PDF_PRINT_SOURCE}" "Downloads/${PDF_PRINT_FILENAME}"
+    - cp "../${PDF_PRINT_SOURCE}" "Downloads/Skript-print-aktuell.pdf"
+    - git add "Downloads/${PDF_PRINT_FILENAME}" "Downloads/Skript-print-aktuell.pdf"
+    - |
+      if git diff --staged --quiet; then
+        echo "No changes to push (print PDF unchanged)"
+      else
+        git -c user.name="gitlab-ci" -c user.email="gitlab-ci@localhost" commit -m "Update Skript print PDF ${VERSION} from ${CI_PROJECT_PATH}@${CI_COMMIT_SHA}"
+        git push origin "$DOWNLOAD_BRANCH"
+      fi
+    - |
+      echo ""
+      echo "==================== PRINT PDF DEPLOYMENT ===================="
+      echo "Deploys the reduced/print-friendly PDF to the downloads repository."
+      echo "File(s): Downloads/${PDF_PRINT_FILENAME} and Downloads/Skript-print-aktuell.pdf"
+      echo "Goal: keep the number of pages LOW (reduced content, e.g. without 'Expertenwissen')."
+      echo "=============================================================="
+      echo ""
 
 deploy_notebooks_in_gitlabLRZ:
   image: alpine/git:latest

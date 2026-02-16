@@ -14,12 +14,14 @@ kernelspec:
 Ziel dieses Teils ist, dass Sie **einfache Python-Programme schreiben**, **Daten verarbeiten** und **Probleme Schritt für Schritt lösen** können. In Anlehnung an unsere Auto‑Metapher: Sie lernen hier, das Auto selbst zu fahren.
 
 
+::::{only} html
 ```{figure} ../../figs/01-course-overview/overview/bedienung.png
 ---
 height: 320px
 name: bedienung
 ---
 ```
+::::
 
 
 ## Was umfasst dieser Teil?
@@ -47,4 +49,12 @@ Jedes Kapitel verzahnt Theorie und Praxis: Anhand von **ausführbaren Mini‑Pro
 
 **Prüfungsrelevanz:**
 Sie müssen die Inhalte aus diesem Teil anwenden können.
+
+```{admonition} Warm-up (optional)
+:class: tip
+
+Wenn Sie sofort loslegen möchten: Lösen Sie als Mini-Warm-up die Übung {ref}`ex-paufgaben-a13-temperatur-zuweisung` (Temperatur °C → °F). Sie steht dort, wo wir Variablen/Zuweisung einführen.
+```
+
+
 

@@ -200,6 +200,7 @@ for station in data:
     histogram(data[station])
 ```
 
+
 ## Skalierung für große Datenmengen 
 
 Für kleinere Datenmengen funktioniert die unskalierte Ausgabe gut. Bei größeren Datensätzen werden die Balken jedoch schnell so lang, dass sie über die Seitenbreite hinausragen. Julia braucht also eine skalierte Darstellung.

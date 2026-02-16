@@ -81,3 +81,21 @@ Sie müssen PEP 8 in dieser Vorlesung nicht strikt anwenden; hier zählt vor all
 - Nicht jede Formatierung ist semantisch: Leerzeichen um Operatoren sind Stil (z.B. `a=1+2` vs. `a = 1 + 2`).
 - Moderne Tools (IDE, Linter, Formatter) helfen, Einrückung konsistent zu halten – aber die Sprache bleibt dabei strikt.
 ```
+
+```{exercise} Mini-Praxis: Einrückung reparieren
+:label: ex-paufgaben-syntax-indentation-fix
+
+Korrigieren Sie den folgenden Code so, dass er in Python gültig ist und die Ausgabe **nur dann** erfolgt, wenn `x > 0` gilt.
+
+Zusatz: Was ändert sich, wenn Sie die letzte Zeile (`print("fertig")`) einrücken bzw. nicht einrücken?
+```
+
+```{code-cell} python3
+---
+tags: [raises-exception]
+---
+x = 1
+if x > 0:
+print("positiv")
+print("fertig")
+```
