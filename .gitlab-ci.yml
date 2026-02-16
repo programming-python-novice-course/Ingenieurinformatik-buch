@@ -125,6 +125,7 @@ build_book_pdf_print:
 deploy_pdf_in_gitlabLRZ:
   image: alpine/git:latest
   stage: deploy
+  resource_group: ingenieurinformatik-download-main
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: on_success
@@ -164,6 +165,7 @@ deploy_pdf_in_gitlabLRZ:
 deploy_print_pdf_in_gitlabLRZ:
   image: alpine/git:latest
   stage: deploy
+  resource_group: ingenieurinformatik-download-main
   rules:
     - when: manual
       allow_failure: true
