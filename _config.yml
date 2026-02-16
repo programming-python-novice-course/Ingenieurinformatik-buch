@@ -169,8 +169,12 @@ sphinx:
         % (HTML bleibt sauber, da author: "" gesetzt ist)
         % --------------------------------------------------
         \AtBeginDocument{
-          \author{Herausgeberin: Christina Maria Mayr}
+          \author{
+            \makebox[\linewidth][r]{Herausgeberin: Christina Maria Mayr}\\
+            \makebox[\linewidth][r]{Hochschule München – Fakultät 03}
+          }
           \date{SoSe 2026}
+          \title{Ingenieurinformatik 1 - Programmieren \textit{Python}}
         }
 
         % --- Listenpunkte im PDF erzwingen (Bullet) ---
