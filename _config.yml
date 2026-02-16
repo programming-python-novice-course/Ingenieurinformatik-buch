@@ -162,8 +162,9 @@ sphinx:
 # Repository / Edit-Buttons
 # --------------------------------------------------
 repository:
-  url: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git
+  url: https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz.git
   path_to_book: ""
+  branch: binder-minimal
 
 # --------------------------------------------------
 # Launch-Buttons

@@ -118,9 +118,9 @@ def main() -> None:
     parser.add_argument("--html-dir", default=None)
     parser.add_argument(
         "--repo",
-        default="https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git",
+        default="https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz.git",
     )
-    parser.add_argument("--ref", default="test_gitlab_binder_depl")
+    parser.add_argument("--ref", default="binder-minimal")
     parser.add_argument("--binder-url", default="https://mybinder.org")
     args = parser.parse_args()
 
