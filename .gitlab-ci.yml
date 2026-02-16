@@ -99,6 +99,18 @@ build_book_pdf_print:
         fi
       done'
     - gosu jovyan bash -c "export MPLCONFIGDIR=/tmp/matplotlib && export LATEXMKOPTS='-interaction=nonstopmode' && jupyter-book build . --config _config_print.yml --toc _toc_print.yml --builder pdflatex --path-output $PDF_PRINT_BUILD_DIR --verbose"
+    - |
+      echo ""
+      echo "==================== PRINT PDF (reduced script) ===================="
+      echo "This job generates a reduced/print-friendly version of the script."
+      echo "Goal: keep the number of pages LOW."
+      echo ""
+      echo "Differences vs full PDF:"
+      echo "- 'Expertenwissen' is excluded (cut-off in generate_config_toc_print_version.py)."
+      echo "- Uses generated _config_print.yml and _toc_print.yml (created earlier in this job)."
+      echo "- Code cells are not intended to be re-executed; execution is skipped when outputs exist."
+      echo "====================================================================="
+      echo ""
   artifacts:
     paths:
       - $PDF_PRINT_BUILD_DIR/_build/latex/book-print.pdf
@@ -149,7 +161,7 @@ deploy_pdf_in_gitlabLRZ:
         git push origin "$DOWNLOAD_BRANCH"
       fi
 
-deploy_print_pdf_in_github:
+deploy_print_pdf_in_gitlabLRZ:
   image: alpine/git:latest
   stage: deploy
   rules:
@@ -167,14 +179,13 @@ deploy_print_pdf_in_github:
       VERSION="$(awk -F: '/^[[:space:]]*release:[[:space:]]*/{gsub(/"/,"",$2); gsub(/^[[:space:]]+|[[:space:]]+$/,"",$2); print $2; exit}' _config.yml)" && [ -n "$VERSION" ] || VERSION="unknown"
     - PDF_PRINT_SOURCE="$PDF_PRINT_BUILD_DIR/_build/latex/book-print.pdf"
     - PDF_PRINT_FILENAME="Skript-print-${VERSION}.pdf"
-    - GITHUB_DOWNLOAD_REPO="fk03ingenieursinformatik/ingenieurinformatik-download"
-    - GITHUB_DOWNLOAD_BRANCH="main"
-    - GITHUB_REMOTE_PUBLIC="https://github.com/${GITHUB_DOWNLOAD_REPO}.git"
-    - GITHUB_REMOTE_PUSH="https://x-access-token:${GITHUB_DOWNLOAD_REPO_TOKEN}@github.com/${GITHUB_DOWNLOAD_REPO}.git"
+    - DOWNLOAD_REPO="fk03ingenieurinformatik/ingenieurinformatik-download"
+    - DOWNLOAD_BRANCH="main"
+    - DOWNLOAD_REMOTE_PUSH="https://oauth2:${DOWNLOAD_REPO_TOKEN}@gitlab.lrz.de/${DOWNLOAD_REPO}.git"
     - rm -rf _github_download_repo
-    - git clone --depth 1 --branch "$GITHUB_DOWNLOAD_BRANCH" "$GITHUB_REMOTE_PUBLIC" _github_download_repo
+    - git clone --depth 1 --branch "$DOWNLOAD_BRANCH" "$DOWNLOAD_REMOTE_PUSH" _github_download_repo
     - cd _github_download_repo
-    - git remote set-url origin "$GITHUB_REMOTE_PUSH"
+    - git remote set-url origin "$DOWNLOAD_REMOTE_PUSH"
     - mkdir -p Downloads
     - cp "../${PDF_PRINT_SOURCE}" "Downloads/${PDF_PRINT_FILENAME}"
     - cp "../${PDF_PRINT_SOURCE}" "Downloads/Skript-print-aktuell.pdf"
@@ -184,8 +195,16 @@ deploy_print_pdf_in_github:
         echo "No changes to push (print PDF unchanged)"
       else
         git -c user.name="gitlab-ci" -c user.email="gitlab-ci@localhost" commit -m "Update Skript print PDF ${VERSION} from ${CI_PROJECT_PATH}@${CI_COMMIT_SHA}"
-        git push origin "$GITHUB_DOWNLOAD_BRANCH"
+        git push origin "$DOWNLOAD_BRANCH"
       fi
+    - |
+      echo ""
+      echo "==================== PRINT PDF DEPLOYMENT ===================="
+      echo "Deploys the reduced/print-friendly PDF to the downloads repository."
+      echo "File(s): Downloads/${PDF_PRINT_FILENAME} and Downloads/Skript-print-aktuell.pdf"
+      echo "Goal: keep the number of pages LOW (reduced content, e.g. without 'Expertenwissen')."
+      echo "=============================================================="
+      echo ""
 
 deploy_notebooks_in_gitlabLRZ:
   image: alpine/git:latest
