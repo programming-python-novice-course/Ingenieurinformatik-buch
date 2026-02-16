@@ -143,3 +143,34 @@ double_even_numbers(numbers)
 :name: remark-control-structures-for
 Gehen Sie sparsam mit ``break`` und ``continue`` um, oftmals brauchen Sie es nicht!
 ```
+
+```{exercise} Praxisaufgabe (PA3.4): Würfelspiel simulieren
+:label: ex-paufgaben-a34-wuerfelspiel-for
+
+Simulieren Sie \(N=1000\) Würfe eines fairen Würfels.
+Zählen Sie, wie oft 1, 2, …, 6 vorkommen und geben Sie die Zählerstände aus.
+
+Hinweis: Verwenden Sie `randint(1, 6)` aus dem Modul `random`.
+```
+
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+from random import randint
+
+N = 1000
+
+# TODO: Zähler initialisieren und in einer for-Schleife erhöhen
+
+# print(...)
+```
+
+```{exercise} Praxisaufgabe (PA3.4): Würfelspiel simulieren - Teil 2
+:label: ex-paufgaben-a34-2-wuerfelspiel-for
+
+Erweitern Sie das Würfelspiel so, dass es zusätzlich die relative Häufigkeit (in %) ausgibt.
+```
+
+
+

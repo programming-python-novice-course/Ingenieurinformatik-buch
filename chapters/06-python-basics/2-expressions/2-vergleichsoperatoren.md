@@ -49,3 +49,23 @@ So können wir in ``Python`` auch Zeichenketten ``str`` mit den Vergleichsoperat
 
 Generell vergleichen wir Objekte einer Menge immer bezüglich einer (totalen) Ordnung.
 Diese Ordnung muss irgendwo definiert worden sein, ob durch die Standardbibliothek von ``Python``, impliziet, oder durch uns Entwickler\*innen.
+
+
+```{exercise} Praxisaufgabe (PA2.2): Maximum (und Median) aus drei Zahlen
+:label: ex-paufgaben-a22-maximum-median
+
+Bestimmen Sie die größte Zahl aus den drei Werten `a`, `b` und `c`.
+
+- Speichern Sie das Maximum in der Variable `maxi`.
+- Zusatz: Geben Sie zusätzlich den **Median** (den mittleren Wert) aus.
+```
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+# TODO: maxi (und optional median) berechnen
+
+# print(f"Maximum: {maxi}")
+# print(f"Median: {median}")
+```
+

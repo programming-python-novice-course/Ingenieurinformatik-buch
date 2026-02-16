@@ -103,3 +103,32 @@ from skript1 import mal_zwei
 print(mal_zwei(7))
 ```
 Warum? Wir rufen `skript2.py` auf (Entrypoint = `skript2.py`). Dabei wird `skript1.py` importiert, aber `main()` in `skript1.py` wird **nicht** ausgeführt, weil der Guard `if __name__ == "__main__":` nur beim direkten Start von `skript1.py` greift.
+
+## Praxisbeispiel: Textdatei Zeile für Zeile lesen (PA3.11)
+
+```{exercise} Praxisaufgabe (PA3.11): Dateiinhalt ausgeben
+:label: ex-paufgaben-a311-datei-lesen
+
+```{figure} ../../../figs/05-python-ecosystem-and-setup/paufgaben/k3/k3_abb10.png
+---
+width: 700px
+name: fig-paufgaben-a311-datei-lesen
+---
+Beispielausgabe beim Einlesen einer Textdatei (Aufgabensammlung PA3.11).
+```
+
+1. Legen Sie eine Datei `data.txt` an (im selben Ordner wie Ihr Skript), z.B. mit folgendem Inhalt:
+
+```text
+Alpha
+Beta
+Gamma
+```
+
+2. Schreiben Sie ein Skript `read_lines.py`, das die Datei öffnet und **jede Zeile** ausgibt.
+
+Hinweise:
+- Nutzen Sie `with open("data.txt", "r", encoding="utf-8") as f:`
+- Iterieren Sie über die Datei: `for line in f: ...`
+- Achten Sie auf das Zeilenende `\\n` (z.B. `print(line, end="")`)
+```

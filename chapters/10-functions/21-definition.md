@@ -117,3 +117,46 @@ def print42():
     
 print(print42())
 ```
+
+
+
+```{exercise} Praxisaufgabe (PA4.3): Mitternachtsformel als Funktion
+:label: ex-paufgaben-a43-qsolve
+
+Implementieren Sie eine Funktion `qsolve(a, b, c)`, die die Anzahl reeller Nullstellen und die Nullstellen zurückgibt.
+
+- Rückgabe z.B. als Tupel `(n, x1, x2)`
+- Spezialfälle:
+  - keine reellen Nullstellen: `n = 0`
+  - doppelte Nullstelle: `n = 1`, `x1 == x2`
+  - zwei Nullstellen: `n = 2`
+```
+
+```{figure} ../../figs/10-functions/paufgaben/k1/k1_abb4.png
+---
+width: 650px
+name: fig-paufgaben-a43-mitternachtsformel
+---
+Beispielausgabe (Aufgabensammlung PA1.2/PA4.3).
+```
+
+
+Starten Sie mit dieser Zelle:
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+from math import sqrt
+
+def qsolve(a, b, c):
+    # TODO: diskriminante berechnen und Fälle behandeln
+    return n, x1, x2
+
+a = float(input("a: "))
+b = float(input("b: "))
+c = float(input("c: "))
+
+n, x1, x2 = qsolve(a, b, c)
+print(n, x1, x2)
+```
+```

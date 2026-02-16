@@ -120,3 +120,20 @@ for i in range(1,10,2):
 :name: remark-avoid-endless-loop
 Prüfen Sie immer ob Ihre Bedingung ``P`` durch den Schleifenrumpf garantiert irgendwann ``False`` ergibt!
 ```
+
+```{exercise} Praxisaufgabe (PA3.1): Fakultät 
+:label: ex-paufgaben-a31-fakultaet-while
+
+Schreiben Sie ein Programm, das eine Zahl \(n\) einliest und \(n!\) berechnet.
+
+- Akzeptieren Sie nur \(1 \\le n \\le 50\) (Eingabeprüfung mit `while`).
+- Berechnen Sie danach die Fakultät iterativ (ebenfalls mit `while`).
+```
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+n = 22
+
+```
+

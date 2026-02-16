@@ -35,6 +35,7 @@ parts:
     chapters:
     - file: chapters/02-computer-sciences-basics/10-intro
       sections:
+      - file: chapters/02-computer-sciences-basics/20-basics
       - file: chapters/02-computer-sciences-basics/21-neumann-architektur
       - file: chapters/02-computer-sciences-basics/22-betriebssystem
       - file: chapters/02-computer-sciences-basics/30-codierung
@@ -59,6 +60,7 @@ parts:
         - file: chapters/02-computer-sciences-basics/72-pseudocode
         - file: chapters/02-computer-sciences-basics/73-beispiel-darstellungen
       - file: chapters/02-computer-sciences-basics/99-summary
+      - file: chapters/02-computer-sciences-basics/90-uebungsaufgaben
   - caption: Python verstehen
     numbered: True
     chapters:
@@ -101,6 +103,7 @@ parts:
         - file: chapters/05-python-ecosystem-and-setup/4-modules/1-ein-eigenes-modul
         - file: chapters/05-python-ecosystem-and-setup/4-modules/2-modul-suche
         - file: chapters/05-python-ecosystem-and-setup/4-modules/3-pakete
+      - file: chapters/05-python-ecosystem-and-setup/90-uebungsaufgaben
     - file: chapters/06-python-basics/0-intro
       sections:
       - file: chapters/06-python-basics/1-variables
@@ -165,6 +168,7 @@ parts:
         - file: chapters/08-eingaben-und-ausgaben/51-konvertierung
         - file: chapters/08-eingaben-und-ausgaben/52-f-strings
       - file: chapters/08-eingaben-und-ausgaben/70-zusammenfassung
+      - file: chapters/08-eingaben-und-ausgaben/90-uebungsaufgaben
     - file: chapters/09-control-flow/0-intro
       sections:
       - file: chapters/09-control-flow/1-cases
@@ -196,6 +200,7 @@ parts:
         - file: chapters/10-functions/32-mutability
       - file: chapters/10-functions/40-recursion
       - file: chapters/10-functions/50-advanced
+      - file: chapters/10-functions/90-uebungsaufgaben
     - file: chapters/11-object-oriented/00-intro
       sections:
       - file: chapters/11-object-oriented/10-motivation
@@ -216,6 +221,7 @@ parts:
         - file: chapters/11-object-oriented/43-kapselung
         - file: chapters/11-object-oriented/44-polymorphie
       - file: chapters/11-object-oriented/50-critic
+      - file: chapters/11-object-oriented/90-uebungsaufgaben
   - caption: Fallbeispiel
     numbered: True
     chapters:
@@ -238,12 +244,14 @@ parts:
         - file: chapters/12-fallbeispiel/57-statistics
       - file: chapters/12-fallbeispiel/60-comparison
       - file: chapters/12-fallbeispiel/70-summary
-  - caption: Appendix
+      - file: chapters/12-fallbeispiel/90-uebungsaufgaben
+  - caption: Appendix I
     chapters:
-    - file: chapters/misc/contributors
-    - file: chapters/misc/danksagung
+    - file: chapters/misc/beitraege
     - file: chapters/misc/downloads
     - file: chapters/misc/bibliography
+  - caption: Appendix II
+    chapters:
     - file: chapters/misc/Expertenwissen/0-intro
       sections:
       - file: chapters/misc/Expertenwissen/interpreter
@@ -253,7 +261,7 @@ parts:
         - file: chapters/misc/Expertenwissen/datatypes/11-Atomar-zusammen
         - file: chapters/misc/Expertenwissen/datatypes/12-primitiv
         - file: chapters/misc/Expertenwissen/datatypes/13-build
-      - file: chapters/misc/Expertenwissen/functions/00-intro
+      - file: chapters/misc/Expertenwissen/functions/0-intro
         sections:
         - file: chapters/misc/Expertenwissen/functions/00-lambdas
         - file: chapters/misc/Expertenwissen/functions/01-nested-functions

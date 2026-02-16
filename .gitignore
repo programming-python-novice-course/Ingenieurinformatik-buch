@@ -135,4 +135,8 @@ dmypy.json
 
 # Cursor (Editor) settings
 .cursorignore
+
+# Local course material folder
 _material/
+
+*_print.yml

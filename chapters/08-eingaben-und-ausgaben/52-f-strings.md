@@ -1,3 +1,4 @@
+(fstrings-sec)=
 # f-Strings (A)
 
 Formatted String Literals (f-Strings) sind eine elegante Möglichkeit, Variablen und Ausdrücke direkt in Strings einzubinden.
@@ -64,3 +65,26 @@ woerterbuch = {"a": 1, "b": 2}
 print(f"Zahl: {zahl}, Liste: {liste}, Wörterbuch: {woerterbuch}")
 # Ausgabe: Zahl: 42, Liste: [1, 2, 3], Wörterbuch: {'a': 1, 'b': 2}
 ```
+
+```{exercise} Praxisaufgabe (PA2.1): Stromrechnung mit Ausgabeformat `:.2f`
+:label: ex-paufgaben-a21-stromrechnung-fstrings
+
+Implementieren Sie eine Stromrechnung:
+
+- bis 2500 kWh: 0,40 €/kWh
+- die nächsten 2500 kWh: 0,35 €/kWh
+- darüber: 0,30 €/kWh
+
+Geben Sie den Rechnungsbetrag **mit zwei Nachkommastellen** aus (Formatierung in f-Strings).
+```
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+kwh = float(input("Verbrauch in kWh: "))
+
+# TODO: preis berechnen (if/elif/else)
+
+print(f"Rechnungsbetrag: {preis:.2f} EUR")
+```
+

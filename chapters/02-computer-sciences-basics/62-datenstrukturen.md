@@ -1,4 +1,22 @@
-# Datenstrukturen (S)
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+(datenstrukturen-sec)=
+# Datenstrukturen (A)
+
+```{admonition} Hinweis
+:name: def-control-structure
+:class: definition
+
+In diesem Abschnitt geben wir eine Einführung dazu wie Daten in Python strukturiert werden können - falls es mal mehr als nur eine Zahl (a = 21) oder ein Text (name = "Christina") ist. Mit den Informationen aus dem Teilabschnitt [Wie gehts das nun in Python?](sec-wie-in-python-data-) können Sie im Praktikum schon einmal losarbeiten. Details dazu lernen wir dann im Kapitel [Datentypen](sec-python-data-types) kennen.
+```
 
 Programme arbeiten nicht nur mit Anweisungen, sondern ständig mit Daten.
 - Eingaben müssen im Arbeitsspeicher abgelegt werden.
@@ -112,3 +130,99 @@ Beispiel einer verketteten Liste: Knoten enthalten Daten und einen Zeiger auf de
 - Die Wahl der Datenstruktur bestimmt, ob ein Problem einfach oder unnötig kompliziert gelöst werden kann.
 ```
 
+(sec-wie-in-python-data-)=
+## Wie gehts das nun in Python?
+
+- Abstrakte Datenstrukturen (ADT) beschreiben was eine Datenstruktur leisten soll (Semantik), unabhängig von Programmiersprache und Speicher.
+
+- Datentypen (z. B. list, tuple) sind sprachabhängige Umsetzungen eines ADT und legen fest, wie Programme mit den Daten arbeiten können.
+
+- Mehrere Datentypen können denselben ADT umsetzen, sich aber z. B. in Veränderbarkeit, erlaubten Operationen oder Garantien unterscheiden.
+
+- Die Speicherrepräsentation bestimmt, wie ein Datentyp intern abgelegt ist, und beeinflusst Performance, Speicherbedarf und Verhalten.
+
+
+```{figure} ../../figs/02-computer-sciences-basics/adt/algorithmus_comps.png
+---
+width: 700px
+name: fig-algorithmus-comps
+---
+Abstrakte Datenstrukturen - Datentypen - Speicherrepräsentationen.
+```
+
+```{admonition} Wichtig
+:class: important
+
+Gleiche Bedeutung heißt nicht gleiche Umsetzung – wer ADT, Datentyp und Speicherrepräsentation nicht trennt, riskiert ineffiziente oder fehlerhafte Systeme.
+```
+
+Beispiele für Datentypen, die Sie in Python häufig brauchen werden:
+
+### `list` (Sequenz mit Reihenfolge)
+
+**Abstrakte Idee:**  
+
+Wir wollen Elemente in einer festen Reihenfolge abspeichern und die Elemente verändern können:
+
+- Man möchte über die Position in der Liste ("Element an Stelle 2" = "Index = 2") auf die Elemente zugreifen
+- Man kann Elemente anhängen, ändern oder entfernen
+
+```{code-cell} python
+# Eine Liste hält Werte in einer geordneten Reihenfolge.
+zahlen = [9, 7, 8, 4, 7, 2, 1 , 7, 5]
+print("Start:", zahlen)
+
+# Element anhängen
+zahlen.append(5)
+print("Nach append(5):", zahlen)
+
+# Element an Position 1 ändern
+zahlen[1] = 70
+print("Nach Änderung an Index 1:", zahlen)
+
+# Einfügen an einer bestimmten Position
+zahlen.insert(2, 99)
+print("Nach insert(2, 99):", zahlen)
+
+# Zugriff über Index
+print("Element an Index 0:", zahlen[0])
+print("Letztes Element:", zahlen[-1])
+```
+
+### `set` (Menge ohne Duplikate)
+
+**Abstrakte Idee:**  
+
+Ein `set` modelliert eine *mathematische Menge*. Eigenschaften:
+
+- die Reihenfolge der Elemente ist egal 
+- jedes Element kommt höchstens einmal vor
+
+```{code-cell} python
+# Ein Set enthält jedes Element maximal einmal.
+tags = {"python", "daten", "python", "algo"}
+print("Start-Set:", tags)
+
+# Neues Element hinzufügen
+tags.add("strukturen")
+print("Nach add('strukturen'):", tags)
+
+# Duplikat hinzufügen (ändert nichts)
+tags.add("python")
+print("Nach erneutem add('python'):", tags)
+
+# Enthalten-Prüfung
+print("'algo' enthalten?", "algo" in tags)
+print("'java' enthalten?", "java" in tags)
+
+# Mengenoperationen
+andere = {"python", "oop", "algo"}
+print("Schnittmenge:", tags & andere)
+print("Vereinigung:", tags | andere)
+```
+
+```{admonition} Hinweis
+:class: note
+
+Eine umfassende Übersicht zu Datentypen und deren Details lernen wir im [Kapitel Datentypen](sec-python-data-types) kennen.
+```

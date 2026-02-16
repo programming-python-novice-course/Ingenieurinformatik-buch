@@ -126,12 +126,14 @@ Wenn Sie die Ebenen und die damit verbundenen Fehlerursachen nicht unterscheiden
 Denn nur dann können Sie technische Probleme systematisch analysieren – statt zufällig zu experimentieren bis es scheinbar (!!!) funktioniert.
 ```
 
+::::{only} html
 ```{figure} ../../figs/07-python-data-types/hydra-funny.png
 ---
 width: 400px
 name: fig-hydra-funny
 ---
 ```
+::::
 
 ```{admonition} Aufgabe
 ::class: note

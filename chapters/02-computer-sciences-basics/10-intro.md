@@ -1,12 +1,14 @@
 (info-und-se)=
 # Informatik und Software Engineering
 
+::::{only} html
 ```{figure} ../../figs/01-course-overview/overview/infrastructer-metaphor.png
 ---
 height: 320px
 name: infrastructer-metaphor
 ---
 ```
+::::
 **Informatik** beschäftigt sich mit Algorithmen, Rechenmaschinen und damit, wie Information dargestellt, gespeichert, verarbeitet und übertragen wird. In dieser Vorlesung schauen wir vor allem aus der Ingenieurperspektive darauf: Wir wollen verstehen, wie Informationsverarbeitungssysteme aufgebaut sind und welche Prinzipien dahinterstehen.
 
 **Software Engineering** meint, Software als Produkt zu planen, zu entwickeln, zu testen, zu betreiben und weiterzuentwickeln. Ziel ist, Informationsverarbeitungssysteme so zu bauen, dass sie die gewünschten Funktionalitäten zuverlässig bereitstellen. Typische Qualitätsziele sind zum Beispiel:
