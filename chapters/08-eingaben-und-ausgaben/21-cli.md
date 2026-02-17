@@ -1,3 +1,14 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Command-Line-Interface - CLI (A)
 
 Wenn wir in Python Texteingaben über das Command Line Interface (CLI) verarbeiten möchten, verwenden wir die Funktion `input()`.
