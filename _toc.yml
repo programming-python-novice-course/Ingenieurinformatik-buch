@@ -54,6 +54,7 @@ parts:
         sections:
         - file: chapters/02-computer-sciences-basics/61-kontrollstrukturen
         - file: chapters/02-computer-sciences-basics/62-datenstrukturen
+        - file: chapters/02-computer-sciences-basics/63-uebungsaufgaben
       - file: chapters/02-computer-sciences-basics/70-communication
         sections:
         - file: chapters/02-computer-sciences-basics/71-struktogramme
