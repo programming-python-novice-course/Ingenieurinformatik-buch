@@ -1,10 +1,9 @@
 # Softwareentwicklung
 
-Wie auch Hardware hat auch Software einen *Produktlebenszyklus*. Es gibt irgendwann eine Produktidee, dann wird entwickelt, produziert und verkauft.
-
-Um sicherzustellen, dass die Software am Ende das tut was sie soll wird üblicherweise nach einem bestimmten Schema vorgegangen. Je nach Firma und Projekt gibt es unterschiedliche Schemata wie man Software entwickeln kann, die sich darin unterscheiden, wann welche Aufgabe in einem bestimmten Umfang als erledigt betrachtet wird.
-
-Im Rahmen eines Entwicklungsprozesses werden (fast immer) folgenden Phasen durchlaufen:
+- Wie auch Hardware hat auch Software einen *Produktlebenszyklus*. 
+- Um sicherzustellen, dass die Software am Ende das tut was sie soll, wird üblicherweise nach einem bestimmten Schema vorgegangen. 
+- Das Vorgehen (wann welche Aufgabe vorgenommen wird) unterscheidet sich nach Firma und Projekt. 
+- In Variation werden allerdings immer die gleichen Phasen durchlaufen:
 
 
 ```{figure} ../../figs/01-course-overview/overview/development-phases.png
@@ -31,11 +30,11 @@ Phasen-übergreifend wird außerdem
 ```{admonition} Hinweis
 :name: remark-sample
 :class: remark
-Das Software Engineering Compentency Model (SWECOM) der IEEE Computer Society beschreibt welche Kompetenzen ein Softwareentwickler benötigt, um die Phasen-bezogenen und phasen-übergreifenden Aufgaben zu erledigen: [SWECOM (PDF)](https://ieeecs-media.computer.org/media/education/swebok/swecom.pdf).
+Das Software Engineering Compentency Model (SWECOM) der IEEE Computer Society beschreibt welche Kompetenzen ein Softwareentwickler benötigt, um die Phasen-bezogenen und phasen-übergreifenden Aufgaben zu erledigen: [SWECOM](https://ieeecs-media.computer.org/media/education/swebok/swecom.pdf).
 ```
 
 ```{admonition} Fokus dieser Vorlesung
-::class: note
+:class: note
 
 Softwareentwicklung beinhaltet viele Aspekte. In dieser Vorlesung betrachten wir bewusst die Grundlagen des Programmierens, was zu der Phase **„Implementierung und Modultests“** korrespondiert.
 

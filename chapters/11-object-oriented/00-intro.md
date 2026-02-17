@@ -24,7 +24,7 @@ Es gibt zwei sehr typische Situationen:
 Den zweiten Fall wollen wir uns im Folgenden näher ansehen.
 
 ```{admonition} Lernziele
-::class: learngoals
+:class: learngoals
 
 - Nach diesem Kapitel verstehen Sie den Unterschied zwischen prozeduraler und objektorientierter Programmierung und warum OOP als Paradigma in der Praxis so verbreitet ist.
 - Nach diesem Kapitel sind Sie in der Lage, Klassen und Objekte als benutzerdefinierte Datentypen zu erklären und einfache Klassen zu implementieren (Attribute, Methoden, ``__init__``).

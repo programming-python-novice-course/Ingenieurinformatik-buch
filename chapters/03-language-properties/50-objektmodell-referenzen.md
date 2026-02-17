@@ -12,10 +12,17 @@ kernelspec:
 # Datenmodell 
 (sec-object-model)=
 
-Zahlreiche Eigenschaften von Python sind direkte Folgen des Datenmodells. Deshalb gehen wir hier kurz auf Pythons Datenmodell ein. 
+Zahlreiche Eigenschaften von Python sind direkte Folgen von Pythons Datenmodell. Deshalb gehen wir hier kurz auf Pythons Datenmodell ein. 
 
-Für den Computer sind Daten immer **Bits**. Ob eine Bitfolge „eine Zahl“ oder „Text“ bedeutet, hängt von ihrer **Interpretation** ab. Genau hier kommt das Datenmodell ins Spiel: In Python werden Werte als Objekte modelliert. Ein Objekt hat (mindestens) einen Wert, einen Typ und eine Identität.
-Variablennamen sind dann keine „Speicherzellen“, sondern Bindungen auf solche Objekte. Der Typ des Objekts bestimmt, wie die zugrunde liegenden Bits zu interpretieren sind (z.B. als `int` oder als `str`).
+Wie Sie schon wissen, sind Daten für den Computer immer nur **Bits**. Ob eine Bitfolge „eine Zahl“ oder „Text“ bedeutet, hängt von ihrer **Interpretation** ab. 
+
+Genau hier kommt das Datenmodell ins Spiel: In Python werden Werte als Objekte modelliert. Ein Objekt hat
+
+- (mindestens) einen Wert, 
+- einen Typ und 
+- eine Identität.
+
+Variablennamen sind keine „Speicherzellen“, sondern Bindungen auf solche Objekte. Der Typ des Objekts bestimmt, wie die zugrunde liegenden Bits zu interpretieren sind (z.B. als `int` oder als `str`).
 
 Sehen wir uns hierzu das folgende Code‑Beispiel an:
 
@@ -27,14 +34,14 @@ print("x:", x)               # Wert
 ```
 
 Auf den ersten Blick wirkt es so, als würde der Zahlenwert *100* „in“ der Variable `x` abgespeichert werden.
-Unter der Haube passiert aber etwas anderes: `x` ist **nur ein Name**, der an ein `int`‑Objekt **gebunden** wird.
-Dieses Objekt hat einen Wert („100“), einen Typ (`int`) und eine Identität („dieses konkrete Objekt“). Diese Identität können Sie mit `id(...)` sichtbar machen (in CPython ist das oft die Speicheradresse).
+Unter der Haube passiert aber etwas anderes:
 
-- Ein **Objekt** ist ein Wert *mit Identität* (und Typ).
-- Ein **Name** (Variablenname) ist eine **Bindung** auf ein Objekt.
-- Beim Zuweisen wird **kein Speicherbereich „gefüllt“**, sondern ein Name wird **neu gebunden**.
-
-Eine *Variable* ist (vereinfacht) also ein **Name**, mit dem Sie ein Objekt wiederfinden können. Mit dem Zuweisungszeichen `=` wird der Name an ein Objekt „gebunden“.
+- `x` ist **nur ein Name**, der an ein `int`‑Objekt **gebunden** wird.
+- Dieses Objekt hat
+  - einen Wert („100“),
+  - einen Typ (`int`)
+  - und eine Identität („dieses konkrete Objekt“).
+- Diese Identität können Sie mit `id(...)` sichtbar machen (in CPython ist das oft die Speicheradresse).
 
 
 ```{figure} ../../figs/03-language-properties/overview/object.png
@@ -45,19 +52,8 @@ name: fig-python-object-model
 Ein Objekt hat eine Identität (`id`) und einen Wert; Variablennamen sind Bindungen auf Objekte.
 ```
 
-Das Zuweisungszeichen `=` unterscheidet sich damit vom mathematischen \(=\):
-
-$$
-x = 13
-$$
-
-In Python bedeutet
-
-```{code-cell} ipython3
-x = 13
-```
-
-„Binde den Namen `x` an das Objekt `13`“ – nicht „lege 13 in eine Variable ab“.
+Das Zuweisungszeichen `=` ist in Python eine **Zuweisung/Bindung** (kein mathematisches Gleichheitszeichen).
+`x = 13` bedeutet: „Binde den Namen `x` an das Objekt `13`“ – nicht „lege 13 in eine Variable ab“.
 
 ```{figure} ../../figs/03-language-properties/python-tutorial/variables/ram.png
 ---
@@ -69,12 +65,12 @@ Der Arbeitsspeicher ist eine sehr lange Liste bestehend aus Bits.
 
 **Name und Wert**
 
-Eine Variable ist demnach nur ein Name, der auf einen Speicherbereich-Bereich zeigt. Die Zahl 25 entspricht in Binärdarstellung 011001. 
-Beispiel: wir weisen 25 der Variablen x und der Variablen z zu. Im Arbeitsspeicher könnte das wie in {numref}`fig-variable-language-properties` gezeigt aussehen.
+Im Speicher liegen letztlich Bits. Interessant ist dabei: **Mehrere Namen können auf dasselbe Objekt zeigen**.
+Beispiel: Wir weisen `25` den Variablen `x` und `z` zu. Im Arbeitsspeicher könnte das wie in {numref}`fig-variable-language-properties` gezeigt aussehen.
 
 ```{figure} ../../figs/03-language-properties/xzadresse.png
 ---
-width: 800px
+width: 350px
 name: fig-variable-language-properties
 ---
 Initialisierung und Zuweisung der Variablen x und z mit dem Wert 25. Die Adresse beider Variablen ist identisch.
@@ -82,7 +78,7 @@ Initialisierung und Zuweisung der Variablen x und z mit dem Wert 25. Die Adresse
 
 **Identität**
 
-In diesem Beispiel verweisen zwei Namen auf **dasselbe Objekt** (gleiche Identität). Es kann aber auch sein, dass der Wert gleich ist, aber in **zwei verschiedenen Objekten** gespeichert ist - dann spricht man von Gleichheit.
+Das obige Beispiel zeigt **Identität**: mehrere Namen können auf **dasselbe Objekt** verweisen (gleiche Identität). Es kann aber auch sein, dass der Wert gleich ist, aber in **zwei verschiedenen Objekten** gespeichert ist - dann spricht man von Gleichheit.
 
 - `==` prüft (typischerweise) **Wert/Gleichheit**.
 - `is` prüft **Identität** („ist es wirklich dasselbe Objekt?“).
@@ -104,7 +100,7 @@ Wie genau das im Speicher aussieht, kann je nach Datentyp und Implementierung va
 
 ```{figure} ../../figs/03-language-properties/speicheranordnung.png
 ---
-width: 800px
+width: 350px
 name: fig-speicheranordnung-language-properties
 ---
 Speicheranordnung von Werten verschiedener Datentypen. 

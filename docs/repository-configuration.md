@@ -14,7 +14,8 @@ Beispiel:
 
 ```yaml
 repository:
-  url: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git
+  # GitLab project *web* URL (ohne `.git`), damit Issues/Edit-Links korrekt sind.
+  url: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch
 ```
 
 Hinweis: Diese Einstellung betrifft die sichtbaren Repository-Links (z. B. "Quell-Repository").
@@ -29,19 +30,19 @@ Das Repository, das in die finalen Thebe-Binder-Optionen geschrieben wird, wird 
   - `--ref`
   - `--binder-url`
 - Aktuelle Defaults:
-  - `repo`: `https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git`
-  - `ref`: `test_gitlab_binder_depl`
+  - `repo`: `https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz.git`
+  - `ref`: `binder-minimal`
   - `binder-url`: `https://mybinder.org`
 
 Beispiel aus dem Skript:
 
 ```python
-parser.add_argument("--repo", default="https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git")
-parser.add_argument("--ref", default="test_gitlab_binder_depl")
+parser.add_argument("--repo", default="https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz.git")
+parser.add_argument("--ref", default="binder-minimal")
 parser.add_argument("--binder-url", default="https://mybinder.org")
 ```
 
-Empfehlung: Fuer schnelles Starten sollte dieses Repo moeglichst klein gehalten werden (nur Binder-relevante Inhalte wie `binder/environment.yml` und noetige Laufzeitdateien).
+Empfehlung: Fuer schnelles Starten sollte dieses Repo moeglichst klein gehalten werden (nur Binder-relevante Inhalte und noetige Laufzeitdateien).
 
 ## 3) Repository fuer JupyterHub-Start (Notebook-Quelle)
 
@@ -56,8 +57,8 @@ Beispiel:
 
 ```js
 const TARGET = {
-  hubRepoUrl: "https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git",
-  branch: "test_gitlab2",
+  hubRepoUrl: "https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz.git",
+  branch: "master",
 };
 ```
 

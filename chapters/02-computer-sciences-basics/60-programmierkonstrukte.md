@@ -13,6 +13,7 @@ kernelspec:
 # Programmstruktur
 
 In diesem Abschnitt lernen wir die fundamentalen Bausteine der Programmierung kennen: 
+
 - Kontrollstrukturen und
 - Datenstrukturen
 Diese beiden Konzepte bilden zusammen die Grundlage für alle Algorithmen und Programme!
@@ -70,6 +71,7 @@ Adresse   Inhalt   Bedeutung                        Rolle
 ```
 
 Erkennen Sie die Trennung zwischen Kontrollfluss und Daten?
+
 - Einige Bytes sind Befehle (OpCodes), die der CPU sagen, welche Aktion als nächstes ausgeführt wird (Kontrollfluss).
 - Andere Bytes sind Daten, zum Beispiel Adressen oder Zahlenwerte, auf die sich ein Befehl bezieht (Daten).
 - Ohne Befehle passiert nichts, und ohne Daten hat ein Programm nichts, worauf es arbeiten kann.

@@ -20,7 +20,7 @@ Schreiben Sie ein Python-Programm, das Leistungsangaben umrechnet.
 
 ```{figure} ../../figs/08-eingaben-und-ausgaben/paufgaben/k1/k1_abb1.jpg
 ---
-width: 700px
+width: 300px
 name: fig-paufgaben-a11-kw-ps
 ---
 ```

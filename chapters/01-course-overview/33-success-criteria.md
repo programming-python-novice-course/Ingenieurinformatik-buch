@@ -1,7 +1,19 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Python
 
-Python ist eine Universalsprache (General Purpose Language) und damit [Turing-vollständig](info-universal-turing-machine).
-Das bedeutet: Python kann grundsätzlich sehr viele unterschiedliche Problemklassen ausdrücken.
+- Python ist eine Universalsprache (General Purpose Language).
+
+- Python ist *Turing-vollständig*, das bedeutet vereinfacht: "Mit Python kann ein Programmierer theoretisch alle lösbaren Programmieraufgaben umsetzen."
 
 ```{figure} ../../figs/01-course-overview/python-logo.png
 ---
@@ -10,10 +22,11 @@ name: journey
 ---
 ```
 
-Python wurde bereits 1990 entwickelt und ist damit älter als z. B. Java.
-In den letzten Jahren ist Python aber besonders stark gewachsen und heute sehr weit verbreitet.
+- Python wurde bereits 1990 entwickelt und ist damit älter als z. B. Java.
 
-Der Name „Python“ stammt von der Comedy-Gruppe Monty Python.
+- In den letzten Jahren ist Python aber besonders stark gewachsen und heute sehr weit verbreitet.
+
+- Der Name „Python“ stammt von der Comedy-Gruppe Monty Python.
 
 
 ```{figure} ../../figs/01-course-overview/languages/programming-language-popularity.png
@@ -25,12 +38,61 @@ Popularität der Programmiersprachen nach dem [PYPL Index](https://pypl.github.i
 ```
 
 
-**Warum ist Python so populär?**
+## Warum ist Python so populär?
 
 Ein wichtiger Grund ist, dass Python vergleichsweise leicht zu lesen und zu lernen ist.
+
 Viele Aufgaben lassen sich mit wenig Code ausprobieren und schnell ausführen.
 
-Hier ist ein Mini-Beispiel: Eine Datei `sum-squares.py` liest eine Zahl ein und gibt die Summe der Quadratzahlen aus.
+**Beispiel: Gelbe Objekte in einem Bild erkennen**
+
+```{code-cell} python3
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+from matplotlib.patches import Rectangle
+from io import BytesIO
+from urllib.request import urlopen
+
+url = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/master/img/colors.png"
+
+
+# Logo laden (aus URL) und einfügen
+with urlopen(url, timeout=10) as response:
+    data = response.read()
+img = mpimg.imread(BytesIO(data), format="png")
+
+# Bilder sind in Rot-Grün-Blau unterteilt und haben einen Alphakanal (Transparenz)
+
+rgb = img[:, :, :3]
+alpha = img[:, :, 3] if img.shape[2] >= 4 else np.ones(img.shape[:2], dtype=rgb.dtype)
+r, g, b = rgb[:, :, 0], rgb[:, :, 1], rgb[:, :, 2]
+
+# "gelb" = rot & grün hoch, blau niedrig, und nicht transparent
+yellow_mask = ((alpha > 0.05) & (r > 0.80) & (g > 0.80)  & (b < 0.30)  & (np.abs(r - g) < 0.20))
+
+ys, xs = np.where(yellow_mask)
+if len(xs) == 0:
+    raise RuntimeError("Keine gelben Pixel gefunden – Schwellwerte ggf. anpassen.")
+y0, y1 = ys.min(), ys.max()
+x0, x1 = xs.min(), xs.max()
+
+# Ausgabe
+fig, ax = plt.subplots(figsize=(5.2, 3.0))
+ax.imshow(img)
+ax.add_patch(Rectangle((x0, y0), x1 - x0, y1 - y0, fill=False, lw=2, ec="gold"))
+ax.set_title("Bounding Box um gelbe Elemente")
+ax.axis("off")
+plt.show()
+```
+
+**Beispiel: Berechnungen durchführen**
+
+```{admonition} Hinweis
+Das folgende Beispiel ist nicht für die Online-Ausführung gedacht, sondern zeigt ein lokales Skript (Aufruf in der Konsole/Terminal).
+```
+
+Die Summe der Quadratzahlen ausgeben, indem man eine Python-Datei schreibt und diese dann ausführt:
 
 ```python
 import sys
@@ -39,7 +101,7 @@ squares = sum([(i+1)**2 for i in range(n)])
 print(squares)
 ```
 
-So wird das Programm gestartet.
+So wird das Programm gestartet:
 
 ```
 python sum-squares.py 5
@@ -48,14 +110,13 @@ python sum-squares.py 5
 Als Ausgabe erhalten wir die Summe der Quadratzahlen von 1 bis 5.
 
 
-Neben der einfachen Syntax spielt das Ökosystem eine große Rolle.
-- Viele Bibliotheken lösen typische Aufgaben, ohne dass man alles selbst implementieren muss.
-- Für Webentwicklung werden z. B. Django oder Flask genutzt.
-- Für grafische Oberflächen werden z. B. PyQt, Tkinter oder Kivy genutzt.
+Neben der einfachen Syntax spielt das Ökosystem eine große Rolle. Viele Bibliotheken lösen typische Aufgaben, ohne dass man alles selbst implementieren muss:
 
-Python ist außerdem im wissenschaftlichen Umfeld stark, weil viele Standardwerkzeuge verfügbar sind.
-- NumPy, SciPy, Pandas und Matplotlib sind verbreitete Bausteine für Datenanalyse und Visualisierung.
-- Jupyter-Notebooks (auf denen auch diese Website basiert) helfen dabei, Ergebnisse und Code nachvollziehbar zu dokumentieren und zu teilen.
+- Webentwicklung: Django, Flask
+- Grafische Oberflächen: PyQt, Tkinter oder Kivy 
+- Datenanalyse und Visualisierung: NumPy, SciPy, Pandas und Matplotlib 
+- Dokumentation und Teilen von Ergebnissen: Jupyter-Notebooks (auf denen auch diese Website basiert)
+- ...
 
 Ein weiterer Faktor ist die breite Unterstützung aus Industrie und Hochschulen, die Werkzeuge, Tutorials und Weiterentwicklung antreibt.
 

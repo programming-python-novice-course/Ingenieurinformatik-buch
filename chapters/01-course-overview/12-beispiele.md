@@ -32,13 +32,21 @@ Das ist nicht Ihr Name? Dann ändern Sie den Namen einfach ab und führen erneut
 - Bonus: Machen Sie absichtlich einen kleinen Tippfehler und beheben Sie ihn wieder – Fehlermeldungen sind hier Teil des Lernens.
 ```
 
-Wie der Live-Code funktioniert und warum man auf einer Website überhaupt Python-Code ausführen kann, ist technisch relativ komplex, auch wenn es auf den ersten Blick nicht so aussieht. Im Hintergrund laufen viele Prozesse ab. Einen Teil davon werden wir in dieser Vorlesung kennenlernen.
+Wie der Live-Code funktioniert und warum man auf einer Website überhaupt Python-Code ausführen kann, ist technisch ziemlich aufwändig in der Umsetzung. 
 
-Wichtig ist vor allem, was Sie auf der Website konkret tun können: Sie können Python-Programme ausführen und sie direkt verändern.
+Wichtig für Sie ist, was Sie auf der Website konkret tun können: 
+
+- Sie können Python-Programme ausführen und sie direkt verändern.
 
 **Installieren von Paketen**
 
-Zusätzlich können Sie Python-Pakete installieren und nutzen. Pakete stellen Ihnen zusätzliche Funktionalitäten bereit, sodass Sie viele Dinge nicht komplett selbst programmieren müssen. Ein Beispiel ist `pyfiglet`. Damit können Sie Schriftbanner erzeugen. Wenn Sie die folgende Code-Zelle ausführen, wird das Paket installiert. Anschließend „importieren“ wir es und nutzen dann die Banner-Funktion.
+- Sie können Python-Pakete installieren und nutzen. 
+
+- Python-Pakete stellen Ihnen Funktionalitäten bereit, sodass Sie viele Dinge nicht komplett selbst programmieren müssen. 
+
+- Ein Beispiel ist das Paket `pyfiglet`: Damit können Sie Schriftbanner erzeugen. 
+
+Wenn Sie die folgende Code-Zelle ausführen, wird das Paket installiert. Anschließend „importieren“ wir es und nutzen dann die Banner-Funktion.
 
 
 ```{code-cell} python3
@@ -51,18 +59,14 @@ myname = "Christina"
 print(pyfiglet.figlet_format(f"Hello {myname}"))
 ```
 
-```{admonition} Mini-Aufgabe
-:label: hellobanner
 
-- Ändern Sie den Text im Banner (z. B. „Hello“ → „Willkommen“).
-- Bonus: Probieren Sie einen Namen mit Umlaut (z. B. „Jörg“) und schauen Sie, wie die Ausgabe aussieht.
+```{admonition} Hinweis
+Sie müssen den Programmcode hier noch nicht verstehen. Die Beispiele zeigen nur, was auf der Website möglich ist.
 ```
-
-Wichtig: Sie müssen den Programmcode in diesem Beispiel und in den folgenden Beispielen noch nicht verstehen. Es geht hier nur darum zu zeigen, was auf der Website möglich ist. Einige dieser Dinge werden wir im Laufe der Vorlesung aufgreifen. Dazu gehört zum Beispiel, wie man Animationen programmiert und direkt auf der Website ausführt.
 
 **Programmierte Animationen**
 
-Sie können im Live-Code Animationen erstellen und ausführen.
+- Sie können im Live-Code Animationen erstellen und abspielen.
 
 ```{code-cell} python3
 :tags: [skip-execution]
@@ -163,7 +167,9 @@ ani
 
 Oder, falls Ihnen das immer noch zu langweilig ist: Lassen Sie einen Roboter den Ausweg aus einem Labyrinth finden.
 
-Die folgende Welt enthält unseren Roboter (blau), das Ziel (lila), begehbare Zellen (hellgrau) und unbegehbare Hindernisse (dunkelgrau). Wenn Sie auf „Run“ klicken, werden Roboter und Ziel zufällig in einer Umgebung platziert – einem Raster aus 5×7 Kacheln.
+- Die folgende "Welt" enthält einen Roboter (blau), das Ziel (lila), begehbare Zellen (hellgrau) und unbegehbare Hindernisse (dunkelgrau). Wenn Sie auf „Run“ klicken, werden Roboter und Ziel zufällig in einer Umgebung platziert – einem Raster aus 5×7 Kacheln.
+
+- Wir möchten beobachten, wie der Roboter (irgendwann) ans Ziel kommt.
 
 ```{code-cell} python3
 :tags: [skip-execution]
@@ -185,7 +191,6 @@ world.show()
 
 Die Position der Hindernisse, des Roboters und des Ziels wird per Zufall bestimmt. Testen Sie das, indem Sie die Zelle erneut mit „Run“ ausführen.
 ```
-Jetzt möchten wir beobachten, wie der Roboter (irgendwann) ans Ziel kommt.
 
 In den folgenden Code-Zellen wird festgelegt, dass der Roboter nur **nach vorne laufen** und sich **um 90° nach links drehen** kann. Wie oft er sich vor dem nächsten Schritt nach links dreht, entscheidet der Zufall:
 - **0× links**: geradeaus weiter

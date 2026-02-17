@@ -1,10 +1,11 @@
 # Schnittstellen (S)
 
-In der Praxis wird oft davon gesprochen, dass über eine Schnittstelle hinweg kommunziert wird. Das hört sich zunächst so an als wäre die Schnittstelle eine Komponente, die man irgendwie zwischen zwei Partner schaltet.
+In der Praxis wird oft davon gesprochen, dass über eine Schnittstelle hinweg kommuniziert wird.
+Das klingt zunächst so, als wäre die Schnittstelle eine Komponente, die man zwischen zwei Partner „dazwischen schaltet“.
 
-Technisch gesehen ist das falsch!
+Technisch gesehen ist das falsch.
 
-Eine Schnittstelle gehört nie nur einem Kommunikationsparnter.
+Eine Schnittstelle gehört nie nur einem Kommunikationspartner.
 Sie ist immer Teil der konkreten Umsetzung eines Systems:
 
 - ein sendendes System (Außenwelt oder Programm)
@@ -20,14 +21,15 @@ Wie hängen Input, Output, Programm und Schnittstellen zusammen?
 ```
 
 
-Die Schnittstelle des Senders ist dafür zuständig,
-interne Daten in ein übertragbares Format zu bringen
-(z. B. formatieren, serialisieren, kodieren).
-Die Schnittstelle des Empfängers ist dafür zuständig,
-die empfangenen Daten wieder zu interpretieren
-(z. B. dekodieren, parsen, konvertieren, validieren).
-Beide Seiten implementieren ihre Schnittstelle unabhängig,
-müssen sich aber an denselben Vertrag (Protokoll) halten.
+Die Schnittstellen-Aufgaben lassen sich so zusammenfassen:
+
+- **Sender-Schnittstelle**: interne Daten in ein übertragbares Format bringen
+  (z. B. formatieren, serialisieren, kodieren)
+- **Empfänger-Schnittstelle**: empfangene Daten wieder interpretieren
+  (z. B. dekodieren, parsen, konvertieren, validieren)
+
+Beide Seiten implementieren ihre Schnittstelle unabhängig.
+Sie müssen sich aber an denselben Vertrag (Protokoll) halten.
 
 
 

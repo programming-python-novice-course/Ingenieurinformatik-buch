@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Das Kennenlernen (V)
+# Erste Schritte (V)
 
 Programmieren beginnt oft mit dem Durchwühlen von Dokumentationen fremder Module und Pakete.
 Bevor wir loslegen müssen wir erst in Erfahrung bringen **WAS** überhaupt möglich ist.

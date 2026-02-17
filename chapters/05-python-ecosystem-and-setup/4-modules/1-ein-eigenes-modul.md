@@ -11,7 +11,9 @@ kernelspec:
 
 # Ein eigenes Modul (V)
 
-Lassen Sie uns eine Datei ``squaresum.py`` im aktuellen Verzeichnis erstellen und folgenden Code einfügen:
+Wir gehen in kleinen Schritten vor:
+
+1. Legen Sie im aktuellen Verzeichnis die Datei ``squaresum.py`` an und fügen Sie diesen Code ein:
 
 ```python
 def square_sum(n):
@@ -21,15 +23,15 @@ def square_sum(n):
     return result
 ```
 
-Diese Funktion ``square_sum(n)`` gibt die Summe alle Quadratzahlen von 1 bis ``n`` zurück.
-Lassen Sie uns den Kommandozeileninterpreter im gleichen Verzeichnis ausführen:
+Diese Funktion ``square_sum(n)`` gibt die Summe der Quadratzahlen von 1 bis ``n`` zurück.
+
+2. Starten Sie den Kommandozeileninterpreter im gleichen Verzeichnis:
 
 ```sh
 python
 ```
 
-Wie können wir nun unsere Funktion, welche in der Datei ``squaresum.py`` steht, nutzen?
-Wir importieren ``squaresum``, denn der Name unseres eben geschriebenen Moduls ist standardmäßig gleich seinem Dateinamen ohne der Endung ``.py``.
+3. Importieren Sie das Modul und rufen Sie die Funktion auf:
 
 ```python
 >>> import squaresum
@@ -37,7 +39,12 @@ Wir importieren ``squaresum``, denn der Name unseres eben geschriebenen Moduls i
 338350
 ```
 
-Diese Befehle erzeugen folgende Ausgabe
+```{admonition} Merksatz
+:class: remark
+Der Name eines Moduls ist standardmäßig der Dateiname ohne Endung ``.py``.
+```
+
+Diese Befehle erzeugen folgende Ausgabe:
 
 ```{figure} ../../../figs/05-python-ecosystem-and-setup/python-tutorial/environment/square-sum.png
 ---
@@ -46,15 +53,15 @@ name: fig-square-sum
 ---
 ```
 
-Ein Modul ist demnach nichts weiter als eine Datei welche ``Python``-Definitionen und Ausdrücke enthält.
-Den Namen des Moduls erhalten wir auch durch
+- Ein Modul ist demnach nichts weiter als eine Datei, die ``Python``-Definitionen und Ausdrücke enthält.
+- Den Namen des Moduls erhalten wir auch durch:
 
 ```python
 >>> squaresum.__name__
 'squaresum'
 ```
 
-Wir können sowohl den Namen, mit dem wir auf das Modul zugreifen, als auch dessen Funktionen umbenennen.
+Wir können sowohl den Namen, mit dem wir auf das Modul zugreifen, als auch dessen Funktionen umbenennen:
 
 ```python
 >>> import squaresum as ss
@@ -62,7 +69,7 @@ Wir können sowohl den Namen, mit dem wir auf das Modul zugreifen, als auch dess
 338350
 ```
 
-oder 
+Oder wir legen uns direkt eine Referenz auf die Funktion:
 
 ```python
 >>> import squaresum as ss

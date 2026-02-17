@@ -13,7 +13,7 @@ kernelspec:
 
 ```{figure} ../../figs/11-object-oriented/uebung_k4_abb3.jpg
 ---
-width: 700px
+width: 300px
 name: fig-paufgaben-widerstaende-uebung
 ```
 

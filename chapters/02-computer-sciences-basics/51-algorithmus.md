@@ -16,14 +16,17 @@ Ein *Algorithmus* ist eine wohldefinierte Sequenz von Anweisungen, die zu einer 
 
 ```{exercise} Beispiel: Euklidischer Algorithmus
 :label: euclid-exercise
-Problem: 
-Gegeben seien zwei natürliche Zahlen $n, m \in \mathbb{N}$.
-Wir suchen nach dem größten gemeinsamen Teiler $\text{ggT}(n,m)$ von $n$ und $m$, d.h., die größte natürliche Zahl die sowohl $n$ als auch $m$ teilt.
+Gegeben seien zwei natürliche Zahlen \(n, m \in \mathbb{N}\).
+Gesucht ist der größte gemeinsame Teiler \(\mathrm{ggT}(n,m)\), also **die größte natürliche Zahl**, die sowohl \(n\) als auch \(m\) teilt.
 
-Algorithmus:
-Wir starten mit zwei Zahlen, und ziehen solange immer und immer wieder die kleinere von der größeren ab, bis beide Zahlen gleich sind.
-Das Ergebnis ist der größter gemeinsamer Teiler der beiden ursprünglichen Zahlen!
-Warum funktioniert das? -> siehe formalen nachweis.
+Idee des Algorithmus:
+
+- Starten Sie mit zwei Zahlen.
+- Ziehen Sie wiederholt die kleinere von der größeren ab.
+- Stoppen Sie, sobald beide Zahlen gleich sind.
+
+Diese Zahl ist der größte gemeinsame Teiler der beiden ursprünglichen Zahlen.
+Warum das funktioniert, sehen Sie im formalen Nachweis.
 ```
 
 Die Realisierung dieses Algorithmus in Python kann so aussehen:

@@ -12,13 +12,22 @@ kernelspec:
 (sec-expressions)=
 # Ausdrücke (A)
 
-Im Vergleich zu natürlichen Sprachen, sind Programmiersprachen sind viel einfacher aufgebaut.
-Entwickler\*innen der Sprachen versuchen ihre [Syntax](def-syntax) so unmissverständlich, elegant, kurz und ausdrucksstark wie möglich zu gestalten.
-In der Vergangenheit gelang das nicht immer und über die Jahre haben wir viel dazu gelernt.
+Im Vergleich zu natürlichen Sprachen sind Programmiersprachen viel einfacher aufgebaut.
+
+Entwickler:innen versuchen ihre [Syntax](def-syntax) so zu gestalten, dass sie:
+
+- unmissverständlich ist,
+- elegant,
+- kurz,
+- und ausdrucksstark.
+
+In der Vergangenheit gelang das nicht immer.
+Über die Jahre haben wir aber viel dazugelernt.
+
 In diesem Kurs verwenden wir ``Python`` insbesondere deshalb, weil es eine der leserlichsten und zugleich mächtigsten Sprachen unserer Zeit ist.
 
-Jedes Programm, bzw. jeder Algorithmus besteht aus vielen *Ausdrücken*.
-Ein *Ausdruck* beschreibt wie Daten (die Eingabe) verarbeitet werden sollen.
+Jedes Programm (bzw. jeder Algorithmus) besteht aus vielen *Ausdrücken*.
+Ein *Ausdruck* beschreibt, wie Daten (die Eingabe) verarbeitet werden sollen.
 
 Die Multiplikation ``3 * 5`` ist beispielsweise ein Ausdruck der zwei Dezimalzahlen multipliziert.
 Der *Ausdruck* besteht aus dem Symbol ``*`` und zwei nummerischen *Ausdrücken*.
@@ -30,7 +39,7 @@ Die Multiplikation wird durch den Computer, genauer die [CPU](def-cpu) berechnet
 ```
 
 Die [Syntax](def-syntax) einer Programmiersprache ist strikt.
-Sie wird durch eine sog. *Grammatik* definiert.å
+Sie wird durch eine sog. *Grammatik* definiert.
 Zum Beispiel ist folgender *Ausdruck* fehlerhaft, da er nicht durch die *Grammatik* von ``Python`` definiert ist.
 Man sagt auch, dass die Sprache, welche durch die Grammatik definiert ist, den folgenden Ausdruck nicht enthält.
 

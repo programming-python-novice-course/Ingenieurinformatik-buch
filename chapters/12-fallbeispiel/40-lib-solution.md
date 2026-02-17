@@ -13,7 +13,10 @@ kernelspec:
 
 Julia startet im Buy-Pfad: Sie möchte schnell zu einem Ergebnis kommen und nutzt dafür gut gepflegte Bibliotheken. Das ist in der Praxis oft die Standardwahl, solange Abhängigkeiten erlaubt sind und das Paket zuverlässig ist.
 
-> Kernidee: Julia beschreibt eher *was* sie will (Kennzahlen, Histogramm) und überlässt das *wie* der Library.
+```{admonition} Kernidee
+:class: remark
+Julia beschreibt eher *was* sie will (Kennzahlen, Histogramm) und überlässt das *wie* der Library.
+```
 
 
 ```{admonition} Hinweis
@@ -98,7 +101,7 @@ plt.show()
 
 
 ```{admonition} Kurz gefasst
-:::class: note
+:class: note
 
 - Julia löst die Aufgabe im Buy-Pfad mit wenigen, gut getesteten Bibliotheksaufrufen.
 - Julia bekommt Einlesen, Kennzahlen und Histogramme, ohne die Algorithmen selbst zu implementieren.

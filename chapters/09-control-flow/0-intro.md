@@ -22,7 +22,7 @@ Es gibt verschiedene Ausprägungen von Kontrollstrukturen, die wir im Detail in 
 
 
 ```{admonition} Lernziele
-::class: learngoals
+:class: learngoals
 
 - Nach diesem Kapitel verstehen Sie, wozu Kontrollstrukturen dienen und wie sie die sequenzielle Programmausführung gezielt verändern.
 - Nach diesem Kapitel sind Sie in der Lage, Fallunterscheidungen zu implementieren (z. B. mit ``if``/``elif``/``else`` bzw. passenden Sprachmitteln) und Bedingungen korrekt zu formulieren.

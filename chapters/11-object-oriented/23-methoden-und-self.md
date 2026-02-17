@@ -58,8 +58,8 @@ Wir können viele verschiedene und auch gleiche *Objekte* einer *Klasse* erzeuge
 Die Klasse können wir als den Bauplan der Objekte verstehen.
 
 ```{admonition} Objekte
-::class: definition
-::name: def-objects
+:class: definition
+:name: def-objects
 Ein *Objekt* ist eine konkrete Instanz einer Klasse.
 ```
 

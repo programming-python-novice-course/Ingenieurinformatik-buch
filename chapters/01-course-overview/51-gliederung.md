@@ -2,7 +2,7 @@
 
 Im folgenden werden die Kursteile genauer vorgestellt.
 
-**Basiswissen (Teil 1)**
+## Basiswissen (Teil 1)
 ::::{only} html
 ```{figure} ../../figs/01-course-overview/overview/infrastructer-metaphor.png
 ---
@@ -33,7 +33,7 @@ Zum Teil prüfungsrelevant: ca. 40% der Kapitelabschnitte haben eine A-Markierun
 Prüfungsrelevante Kapitel bzw. Unterkapitel haben ein „(A)" in der Überschrift. Mehr dazu im [Kapitelmarker](sec-kapitelmarker).
 ```
 
-**Python verstehen (Teil 2)**
+## Python verstehen (Teil 2)
 
 ::::{only} html
 ```{figure} ../../figs/01-course-overview/overview/motorhaube.png
@@ -65,7 +65,7 @@ Prüfungsrelevanz:
 
 Für die Prüfung nicht direkt abgefragt – aber sehr wertvoll: das Struktur- und Vorgehenswissen schafft die Voraussetzung dafür, dass Sie Teil 3 verstehen können. Sonst müssen Sie in Teil 3 sehr viel "auswendig lernen".
 
-**Python anwenden (Teil 3)**
+## Python anwenden (Teil 3)
 
 ::::{only} html
 ```{figure} ../../figs/01-course-overview/overview/bedienung.png
@@ -93,7 +93,7 @@ Prüfungsrelevanz:
 
 Sehr prüfungsrelevant (viele A-Markierungen!): Hier lernen wir Python anzuwenden, indem wir Programmierkonstrukte kennenlernen und diese in einfachen Beispielen anwenden. 
 
-**Anwendungsfall (Teil 4)**
+## Anwendungsfall (Teil 4)
 
 ::::{only} html
 ```{figure} ../../figs/01-course-overview/overview/fahrt.png
