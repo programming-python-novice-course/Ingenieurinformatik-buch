@@ -1,36 +1,11 @@
 # Softwaretypen
 
-Es gibt verschiedene Softwaretypen:
+Es gibt verschiedene Softwaretypen, die Sie als zukünftige Ingenieure sowohl
 
-- Eingebettete Systeme (embedded software) – z.B. Flugregelung
-- Datenerfassungssysteme – Beispiel: Air Data System
-- Systeme von Systemen – z.B. Air Traffic Management System: Flugzeug, Tower, Luftraum und Infrastruktur
-- Eigenständige Anwendungen (stand-alone) wie Systeme für Modellierung und Simulation – z.B. Geometrieerzeugung (FreeCAD, CATIA) zur Bauteiloptimierung (optiSLang)
+- anwenden
+- und/oder auch selbst entwickeln (d.h. programmieren).
 
-```{figure} ../../figs/01-course-overview/overview/motivation.png
----
-height: 320px
-name: motivation
----
-```
-
-Diese Typen werden unter anderem von Ingenieurinnen entwickelt.
-
-Daneben gibt es weitere Softwaretypen, bei denen Ingenieure weniger häufig beitragen:
-
-- Interaktive transaktionale Anwendungen (z.B. Amazon)
-- Stapelverarbeitende Software (batch processing) – Lohnauszahlungssysteme
-- Unterhaltungssysteme – Beispiel: Computerspiele
-
-Wie ein Softwareprodukt entwickelt wird, hängt stark vom Softwaretyp ab. 
-
-```{admonition} Hinweis
-:name: remark-sample
-:class: remark
-Die Einteilung der Softwaretypen ist nicht trennscharf!
-```
-
-## Beispiel aus der Praxis: Erstellung von CAD-Geometrie mit Python
+## Beispiel: Software zur Erstellung von CAD-Geometrie (Python-Programmierung)
 
 FreeCAD ist eine Software zur Erstellung von Geometrie - ähnlich wie CATIA, das Sie im Rahmen einer anderen Vorlesung kennenlernen werden.
 
@@ -77,15 +52,15 @@ doc.recompute()
 
 - Das bedeutet für uns: wenn wir ein wenig Python verstehen, können wir uns das "Knöpfe drücken" sparen und die Geometrie automatisch generieren lassen (was viel viel schneller ist).
 
-## Projektstudium an der HM, FK03: Laufroboter
+## Beispiel: Software für einen Laufroboter (Programmiersprachen: Matlab, C)
 
-Im Laufe Ihres Bachelorstudiums haben Sie ein Projektstudium. 
+- Im Laufe Ihres Bachelorstudiums an der FK03 haben Sie ein Projektmodul. 
 
-Wir (Berghammer, Ertl, Mayr, Mehlert, Muhl) haben beispielsweise einen Laufrobor entwickelt (Sommersemester 2017).
+- Wir (Berghammer, Ertl, Mayr, Mehlert, Muhl) haben beispielsweise einen Laufrobor entwickelt (Sommersemester 2017).
 
 - Das Bewegungsverhalten haben wir vorher simuliert - in der Programmiersprache Matlab.
 
-- Die eigentliche Programmierung des Roboters erfolgte dann in der Programmiersprache C.
+- Die eigentliche Programmierung des Bewegungsverhaltens (Laufen, Hindernis ausweichen) erfolgte dann in der Programmiersprache C.
 
 ```{figure} ../../figs/01-course-overview/robot/robot_ganz_pic.png
 ---
@@ -103,3 +78,33 @@ name: fig-laufroboter-animation
 ---
 ```
 :::
+
+## Übersicht über Softwarearten
+
+Die folgenden Softwaretypen werden unter anderem von Ingenieurinnen (mit-)entwickelt:
+
+- Eingebettete Systeme (embedded software) – z.B. Flugregelung, Laufrobor
+- Datenerfassungssysteme – Beispiel: Air Data System
+- Systeme von Systemen – z.B. Air Traffic Management System: Flugzeug, Tower, Luftraum und Infrastruktur
+- Eigenständige Anwendungen (stand-alone) wie Systeme für Modellierung und Simulation – z.B. Geometrieerzeugung (FreeCAD, CATIA), Bauteiloptimierung (optiSLang)
+
+```{figure} ../../figs/01-course-overview/overview/motivation.png
+---
+height: 320px
+name: motivation
+---
+```
+
+Daneben gibt es weitere Softwaretypen, bei denen Ingenieure weniger häufig entwickeln (sondern nur anwenden):
+
+- Interaktive transaktionale Anwendungen (z.B. Amazon)
+- Stapelverarbeitende Software (batch processing) – Lohnauszahlungssysteme
+- Unterhaltungssysteme – Beispiel: Computerspiele
+
+Wie ein Softwareprodukt entwickelt wird, hängt stark vom Softwaretyp ab. 
+
+```{admonition} Hinweis
+:name: remark-sample
+:class: remark
+Die Einteilung der Softwaretypen ist nicht trennscharf!
+```
