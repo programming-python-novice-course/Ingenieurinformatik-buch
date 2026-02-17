@@ -40,7 +40,7 @@ Wenn Sie tiefer ins Detail einsteigen möchten, empfehlen wir für die Praktikum
 
 ```{list-table} Praktikumsübersicht
 :header-rows: 1
-:widths: 12 58 30
+:widths: 12 32 40
 
 * - Praktikum
   - Inhalt
