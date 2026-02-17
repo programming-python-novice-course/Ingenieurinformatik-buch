@@ -38,11 +38,43 @@ Beide Abschnitte dienen dazu Ihnen einen konzeptionellen Überblick zu vermittel
 
 Wenn Sie tiefer ins Detail einsteigen möchten, empfehlen wir für die Praktikumsvorbereitung folgende Kapitel durchzuarbeiten:
 
-| Praktikum | Inhalt | Basis-Vorbereitung | Zusatz-Vorbereitung (Kapitel) |
-|-----------|---------------------------|------------|------------|
-| **P1** | Python-Umgebung/IDE, Installation & Module, erstes Skript (Variablen, Rechnen), `input`/`print` & f-Strings | Kapitel 02 ([Kontrollstrukturen](control-struc-sec), [Datenstrukturen](datenstrukturen-sec)) | Kapitel 05, 06, 07 (Grundlagen: `int`, `float`, `bool`, `str`), 08 |
-| **P2** | Verzweigungen (`if`/`elif`/`else`), `bool`/Vergleiche, formatierte Ausgabe (Feldbreite/Nachkommastellen) | Kapitel 02 ([Kontrollstrukturen](control-struc-sec), [Datenstrukturen](datenstrukturen-sec)) | Kapitel 07 (`bool`), 08 (f-Strings/formatierte Ausgabe), 09 (Fallunterscheidungen) |
-| **P3** | Schleifen (v.a. `while`, auch `for`), Listen (`append`), tabellarische Ausgabe, Plotten von Funktionen | Kapitel 02 ([Kontrollstrukturen](control-struc-sec), [Datenstrukturen](datenstrukturen-sec)) | Kapitel 05 (Module/`matplotlib`), 07 (Listen), 08 (formatierte Ausgabe), 09 (Schleifen) |
-| **P4/P4a** | Eigene Funktionen (Definition/Aufruf/Rückgabewerte), Module/Importe (auch eigenes Modul), Debugger, Fehlerbehandlung (`try`/`except`) | Kapitel 02 ([Kontrollstrukturen](control-struc-sec), [Datenstrukturen](datenstrukturen-sec)) | Kapitel 05 (Module), 08 (Eingaben/Ausgaben), 09 (Schleifen), 10 (Funktionen) |
-| **P5** | Listen durchsuchen, verschachtelte Schleifen (Kombinationen), Programm in Funktionen strukturieren | Kapitel 02 ([Kontrollstrukturen](control-struc-sec), [Datenstrukturen](datenstrukturen-sec)) | Kapitel 07 (Listen), 08 (Eingaben/Ausgaben), 09 (verschachtelte Schleifen), 10 (Funktionen) |
-| **P6** | Klausurvorbereitung/Wiederholung: Schleifen & Simulationen, Tabellen, Plotten, Zeichenketten | Kapitel 02 ([Kontrollstrukturen](control-struc-sec), [Datenstrukturen](datenstrukturen-sec)) | Kapitel 04-10 (Wiederholung nach Bedarf) |
+```{list-table} Praktikumsübersicht
+:header-rows: 1
+:widths: 12 58 30
+
+* - Praktikum
+  - Inhalt
+  - Zusatz-Vorbereitung (optional)
+* - **P1**
+  - Python-Umgebung/IDE, Installation & Module, erstes Skript (Variablen, Rechnen), `input`/`print` & f-Strings
+  - - Kapitel 05
+    - Kapitel 06
+    - Kapitel 07 (Grundlagen: `int`, `float`, `bool`, `str`)
+    - Kapitel 08
+* - **P2**
+  - Verzweigungen (`if`/`elif`/`else`), `bool`/Vergleiche, formatierte Ausgabe (Feldbreite/Nachkommastellen)
+  - - Kapitel 07 (`bool`)
+    - Kapitel 08 (f-Strings/formatierte Ausgabe)
+    - Kapitel 09 (Fallunterscheidungen)
+* - **P3**
+  - Schleifen (v.a. `while`, auch `for`), Listen (`append`), tabellarische Ausgabe, Plotten von Funktionen
+  - - Kapitel 05 (Module/`matplotlib`)
+    - Kapitel 07 (Listen)
+    - Kapitel 08 (formatierte Ausgabe)
+    - Kapitel 09 (Schleifen)
+* - **P4/P4a**
+  - Eigene Funktionen (Definition/Aufruf/Rückgabewerte), Module/Importe (auch eigenes Modul), Debugger, Fehlerbehandlung (`try`/`except`)
+  - - Kapitel 05 (Module)
+    - Kapitel 08 (Eingaben/Ausgaben)
+    - Kapitel 09 (Schleifen)
+    - Kapitel 10 (Funktionen)
+* - **P5**
+  - Listen durchsuchen, verschachtelte Schleifen (Kombinationen), Programm in Funktionen strukturieren
+  - - Kapitel 07 (Listen)
+    - Kapitel 08 (Eingaben/Ausgaben)
+    - Kapitel 09 (verschachtelte Schleifen)
+    - Kapitel 10 (Funktionen)
+* - **P6**
+  - Klausurvorbereitung/Wiederholung: Schleifen & Simulationen, Tabellen, Plotten, Zeichenketten
+  - - Kapitel 04–10 (Wiederholung nach Bedarf)
+```

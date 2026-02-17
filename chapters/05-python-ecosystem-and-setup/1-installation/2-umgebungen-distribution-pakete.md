@@ -40,7 +40,7 @@ Die folgende Abbildung zeigt diesen Zusammenhang schematisch:
 
 ```{figure} ../../../figs/05-python-ecosystem-and-setup/distribution_envs_packages.png
 ---
-width: 90%
+width: 500px
 name: fig-distribution-envs-packages
 ---
 Zusammenspiel von Python-Distribution, Umgebungen (Environments) und Paketen.

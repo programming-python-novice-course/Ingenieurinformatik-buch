@@ -288,7 +288,7 @@ Allerdings ändert sich die Adresse des Elements ``numbers[2]`` und somit der **
 
 ```{figure} ../../figs/07-python-data-types/python-tutorial/datatypes/list.png
 ---
-width: 600px
+width: 400px
 name: fig-data-type-list
 ---
 Die Liste aus unserem obigen Beispiel **bevor** wir den Wert ``3`` auf ``-20`` gesetzt haben.
@@ -301,7 +301,7 @@ Vergleichen Sie die {numref}`Abbildung {number} <fig-data-type-list>` und {numre
 
 ```{figure} ../../figs/07-python-data-types/python-tutorial/datatypes/list-2.png
 ---
-width: 600px
+width: 400px
 name: fig-data-type-list-2
 ---
 Die Liste aus unserem obigen Beispiel **nachdem** wir den Wert ``3`` auf ``-20`` gesetzt haben.
@@ -340,7 +340,7 @@ Stattdessen verändern wir die Adresse $adr_{1,0}^*$ der Datenstruktur, welche u
 
 ```{figure} ../../figs/07-python-data-types/python-tutorial/datatypes/list-in-list.png
 ---
-width: 400px
+width: 300px
 name: fig-data-type-list-in-list
 ---
 Die Liste aus unserem obigen Beispiel **bevor** wir den Wert ``'a'`` auf ``'c'`` gesetzt haben.
@@ -351,7 +351,7 @@ Vergleichen Sie die {numref}`Abbildung {number} <fig-data-type-list-in-list>` un
 
 ```{figure} ../../figs/07-python-data-types/python-tutorial/datatypes/list-in-list-2.png
 ---
-width: 400px
+width: 300px
 name: fig-data-type-list-in-list-2
 ---
 Die Liste aus unserem obigen Beispiel **nachdem** wir den Wert ``'a'`` auf ``'c'`` gesetzt haben.

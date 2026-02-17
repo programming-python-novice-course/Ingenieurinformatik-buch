@@ -25,7 +25,7 @@ Ziel ist:
 
 ```{figure} ../../figs/12-fallbeispiel/paufgaben/k5/k5_abb5.png
 ---
-width: 520px
+width: 350px
 name: fig-paufgaben-a54-akku
 ---
 Beispielplot der Messwerte (Aufgabensammlung PA5.4).

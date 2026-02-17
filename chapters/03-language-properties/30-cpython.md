@@ -60,7 +60,7 @@ Wenn eine Sprache wie ``Python`` eine Implementierung wie *CPython* benötigt, d
 
 ```{figure} ../../figs/03-language-properties/funny-image-cpython.png
 ---
-width: 300px
+width: 500px
 name: fig-funny-cpython
 ---
 Wer kompiliert den C-Code von CPython?
