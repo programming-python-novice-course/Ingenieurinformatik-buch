@@ -55,7 +55,8 @@ from matplotlib.axes import Axes
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 from matplotlib.projections import register_projection
 
-LOGO_URL = "https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/blob/master/img/logo-mini.png?raw=true"
+LOGO_URL = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/master/img/logo-mini.png"
+
 
 
 def load_logo(url: str):

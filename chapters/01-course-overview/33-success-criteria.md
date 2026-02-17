@@ -54,7 +54,8 @@ from matplotlib.patches import Rectangle
 from io import BytesIO
 from urllib.request import urlopen
 
-url = "https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/blob/master/img/colors.png?raw=true"
+url = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/master/img/colors.png"
+
 
 # Logo laden (aus URL) und einfügen
 with urlopen(url, timeout=10) as response:
