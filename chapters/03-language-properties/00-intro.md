@@ -6,10 +6,12 @@
 - Jede Programmiersprache hat Eigenschaften, die das Programmieren prägen.
 - Wenn man diese Eigenschaften nicht kennt, entstehen in der Praxis unnötige Umwege, schwer erklärbare Fehler oder ungünstige Strukturen.
 
-- Analogie: Elektroauto vs. Gangschaltung.
-  - Beide haben einen Schalthebel, aber die Bedienlogik ist unterschiedlich.
-  - Genauso kann „ähnlich aussehender“ Code je nach Sprache anders funktionieren und andere Stolperstellen haben.
-  - Im Berufsalltag begegnen Ihnen mehrere Sprachen; deshalb lohnt sich ein Blick hinter die Oberfläche.
+**Analogie: Autofahren lernen**
+
+- Stellen Sie sich vor Sie lernen Auto fahren mit einem Elektroauto.
+- Wenn Ihnen niemand ihnen in der 1. Fahrstunde sagt: das hier ist ein Elektroauto - da gibt es keine Gänge, dann denken Sie es ist "normal", dass es keine Gänge gibt. 
+- Im schlimmsten Fall kaufen Sie dann einen Benziner und wundern sich, dass es im 1. Gang bei 70km/h doch sehr laut ist.
+- Um sicher zu fahren ("Programmieren"), sollten Sie Ihre Programmiersprache ("Auto") kennen! 
 
 ::::{only} html
 ```{figure} ../../figs/01-course-overview/overview/motorhaube.png
@@ -20,10 +22,11 @@ name: motorhaube
 ```
 ::::
 
-- Ziel dieses Kapitels ist ein Grundverständnis, das Ihnen beim Anwenden hilft.
-  - Sie können typische Fehler schneller erklären und vermeiden.
-  - Sie können Lösungen besser beurteilen, statt nur „Code zu kopieren, bis es läuft“.
-  - Sie können Wissen später leichter auf andere Sprachen übertragen (z. B. MATLAB).
+Ziel dieses Kapitels ist ein Grundverständnis von Python, das Ihnen später beim Anwenden hilft.
+
+- Sie können typische Fehler schneller erklären und vermeiden.
+- Sie können Lösungen besser beurteilen, statt nur „Code zu kopieren, bis es läuft“.
+- Sie können Wissen später leichter auf andere Sprachen übertragen (z. B. MATLAB).
 
 
 ```{admonition} Lernziele

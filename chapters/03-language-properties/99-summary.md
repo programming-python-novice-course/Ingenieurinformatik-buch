@@ -22,7 +22,12 @@ kernelspec:
 
 **Das „Zen of Python“**
 
-Das *Zen of Python* ist eine Sammlung kurzer Leitgedanken („Aphorismen“) für **lesbaren, wartbaren Python-Code** (von Tim Peters). Es sind keine harten Regeln, aber ein sehr guter Kompass für Stil- und Designentscheidungen. Sie können es direkt in Python anzeigen lassen:
+Zum Abschluss werden wir noch einen Blick auf das "Zen of Python".
+
+- Es ist eine Sammlung kurzer Leitgedanken („Aphorismen“) für **lesbaren, wartbaren Python-Code** (von Tim Peters). 
+- Es sind keine harten Regeln, aber ein sehr guter Kompass für Stil- und Designentscheidungen. 
+
+Sie können es direkt in Python anzeigen lassen:
 
 ```{code-cell} python3
 import this

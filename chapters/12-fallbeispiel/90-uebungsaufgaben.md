@@ -12,7 +12,6 @@ kernelspec:
 # Übungsaufgaben
 
 
-
 ```{exercise} PA5.4 (Parsing): Zeit/Spannung aus Datei lesen
 :label: ex-paufgaben-a54-akku-parsing
 

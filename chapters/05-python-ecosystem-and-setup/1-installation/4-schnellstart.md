@@ -85,7 +85,7 @@ conda list
 
 ## Schritt 6: Hinterlegen der Umgebung in der IDE
 
-#todo add pictures!!
+Hierzu werden Sie im Rahmen des Praktikums mehr erfahren.
 
 
 

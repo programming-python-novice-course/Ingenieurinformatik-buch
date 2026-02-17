@@ -34,10 +34,11 @@ Die Grundstrukturen von Struktogrammen: Sequenz, Fallunterscheidung und Schleife
 :name: warning-struktogramme
 :class: warning
 
-Struktogramme sind Entwurfswerkzeuge für strukturierte Algorithmen (wenige, nacheinander ablaufende Schritte). Sie werden in der strukturierten Programmierung eingesetzt, eine der drei „Programmierstile“.
+Struktogramme sind Entwurfswerkzeuge für strukturierte Algorithmen (wenige, nacheinander ablaufende Schritte). Sie werden manchmal in einem bestimmten "Programmierstil", der *prozeduralen Programmierung*, verwendet. Mehr zu Programmierstilen finden Sie im [Teil 3](paradigma-sec).
 
-Struktogramme sind weniger geeignet für:
-- Sehr komplexe, tief verschachtelte Algorithmen (werden schnell unübersichtlich).
+Struktogramme sind ungeeignet für:
+- Komplexe, tief verschachtelte Algorithmen (werden schnell unübersichtlich).
+- Darstellung von einem Zusammenspiel von Softwaremodulen
 ```
 
 ```{admonition} Achtung
