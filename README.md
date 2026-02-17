@@ -1,37 +1,59 @@
 # Ingenieurinformatik 1 – Programmieren (Python)
 
-Dieses Repository ist die Grundlage für die interaktive Lern-Website zum Programmierenlernen mit Python: [Zur Website](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html).
-Kernidee ist, dass Studierende im Vorlesungsskript nicht nur lesen, sondern Beispiele direkt ausführen, verändern und die Wirkung unmittelbar beobachten können.
-Ergänzend steht ein PDF-Skript zum Nacharbeiten und zur Prüfungsvorbereitung bereit (Download über die Website).
+Dieses Repository bildet die Grundlage der interaktiven Lern-Website zur Veranstaltung *Ingenieurinformatik 1 – Programmieren (Python)*:  
+-> [Zur Website](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)
+
+Ziel ist es, Studierenden einen praxisnahen und aktiven Zugang zum Programmieren zu ermöglichen.  
+Das Vorlesungsskript ist so gestaltet, dass Beispiele nicht nur gelesen, sondern **direkt ausgeführt, verändert und experimentell erkundet** werden können. 
+
+Ergänzend steht ein PDF-Skript zum Nacharbeiten und zur gezielten Prüfungsvorbereitung zur Verfügung (Download über die Website).
 
 ![Überblick](./README-pic.png)
 
 ## Vorteile für Studierende
 
-Der Einstieg ist bewusst niedrigschwellig: Python-Code kann ohne Installation direkt im Browser im Skript ausgeführt werden. Dadurch wird Lernen zum aktiven Prozess: Beispiele nachvollziehen, Varianten ausprobieren und Ergebnisse überprüfen.
+Der Einstieg ist bewusst niedrigschwellig gestaltet: 
 
-Über den JupyterHub der Hochschule München können Studierende zudem eigene Änderungen an den Code-Beispielen speichern und später weiterbearbeiten. Ergänzend gibt es die Inhalte als Buch im PDF-Format zum Nacharbeiten und Markieren (Download über die Website unter "Downloads").
+- Python-Code kann **ohne lokale Installation direkt im Browser** ausgeführt werden. 
+- Das Ziel ist das aktive Lernen zu fördern: Studierende können Beispiele direkt selbst nachvollziehen, Varianten ausprobieren und Auswirkungen unmittelbar beobachten.
 
-Inhaltlich liegt der Schwerpunkt auf Programmierkompetenzen wie Syntax vs. Semantik, systematischer Methodik, Debugging, Tests sowie dem Lesen und Verstehen von Code.
+Über den JupyterHub der Hochschule München besteht zudem die Möglichkeit, eigene Anpassungen an den Code-Beispielen zu speichern und später weiterzubearbeiten. Damit wird ein kontinuierliches, semesterbegleitendes Arbeiten unterstützt.
+
+Alle Inhalte sind zusätzlich als **PDF-Skript** verfügbar, das sich insbesondere zum Nacharbeiten, Markieren und Wiederholen eignet (Download über die Website unter *Downloads*).
+
+Inhaltlich liegt der Schwerpunkt auf grundlegenden Programmierkompetenzen, die **über Python hinaus** relevant sind und sich auf andere Programmiersprachen übertragen lassen. 
+Dazu zählen unter anderem:
+
+- das strukturierte Entwickeln von Algorithmen, 
+- der bewusste Umgang mit Syntax und Semantik, 
+- systematisches Vorgehen (Debugging, Testing),
+- sowie das Lesen, Verstehen und Bewerten von bestehendem Code.
 
 ## Programmieren lernen in Zeiten von LLMs
 
-LLMs sind beim Programmieren hilfreich – aber robuste Software entsteht nicht „magisch“ aus Prompts: Anforderungen/Randbedingungen, Integration, Tests und Verantwortung bleiben menschliche Aufgaben.
+Große Sprachmodelle (LLMs) können das Programmieren unterstützen, ersetzen jedoch kein fundiertes Verständnis:  
+Robuste Software entsteht nicht allein durch Prompts, sondern erfordert klare Anforderungen, saubere Integration, Tests und fachliche Verantwortung.
 
-Im Kurs nutzen wir KI daher als Lerncoach: Methodik und Verständnis aufbauen (z. B. die richtigen Rückfragen stellen, Lösungen prüfen), statt Verständnis durch fertigen Code zu ersetzen.
+Im Kurs werden KI-Werkzeuge daher gezielt als **Lernunterstützung** eingesetzt – etwa zur Reflexion von Lösungsansätzen, zum Stellen der richtigen Rückfragen oder zur Überprüfung eigener Ergebnisse. Ziel ist es, methodische Kompetenz und Verständnis aufzubauen, statt diese durch automatisch erzeugten Code zu substituieren.
 
-Das ist auch wissenschaftlich gut begründbar: Studien berichten, dass „KI als Lerncoach“ Lernzeit verkürzen kann bei vergleichbarem Lernerfolg (z. B. [Bassner et al., 2025](https://doi.org/10.1016/j.caeai.2025.100537)).
+Dieser Ansatz ist auch wissenschaftlich gut belegt: Studien zeigen, dass der Einsatz von KI als Lerncoach die benötigte Lernzeit reduzieren kann, bei vergleichbarem Lernerfolg (z. B. Bassner et al., 2025).
 
-Mehr dazu im Kurskapitel: [Programmieren lernen in Zeiten von LLMs](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/chapters/01-course-overview/40-learningLLM.html).
+Weiterführende Informationen finden sich im Kurskapitel:  
+[Programmieren lernen in Zeiten von LLMs](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/chapters/01-course-overview/40-learningLLM.html)
 
 ## Für Beitragende
 
-- Kollaborative Weiterentwicklung: Inhalte können gemeinsam gepflegt und ausgebaut werden (Issues/Merge Requests).
-- Bearbeitung im Browser: viele Änderungen lassen sich direkt in GitLab im Webbrowser umsetzen (ohne lokale Installation).
-- CI übernimmt den Rest: Builds und Deployments laufen automatisiert über GitLab CI; lokale Builds sind optional (für Maintainer).
+Das Repository ist auf kollaborative Weiterentwicklung ausgelegt und senkt bewusst die technischen Einstiegshürden:
+
+- **Bearbeitung im Browser**: Viele inhaltliche Änderungen (Text, Aufgaben, Beispiele) können direkt über die GitLab-Weboberfläche vorgenommen werden – ohne lokale Entwicklungsumgebung oder Softwareinstallation.
+- **Automatisierte Builds und Deployments**: GitLab CI übernimmt den Aufbau und die Veröffentlichung der Website. Lokale Builds sind optional und primär für Maintainer relevant.
+
 
 ## Links
 
-- **Website (GitLab Pages)**: [Zur Website](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)
-- **Feedback / Verbesserungsvorschläge**: bitte als [Issue erstellen](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/issues)
-- **Software-Doku für Maintainer (Build/CI/Repos)**: [`docs/README.md`](./docs/README.md)
+- **Website (GitLab Pages)**:  
+  https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html  
+- **Feedback / Verbesserungsvorschläge**:  
+  https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/issues  
+- **Software-Dokumentation für Maintainer (Build / CI / Repositories)**:  
+  [`docs/README.md`](./docs/README.md)
