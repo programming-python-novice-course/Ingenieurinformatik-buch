@@ -71,7 +71,7 @@ Zur Selbstüberprüfung:
 
 In beiden Fällen ist die Konsequenz dieselbe:
 
-**Nicht mehr Beispiele programmieren, sondern das zugrunde liegende Prinzip klären!**
+**Nicht mehr Beispiele programmieren, sondern das zugrunde liegende Prinzip klären! Kommen Sie immer gerne auf uns zu.**
 
 
 
