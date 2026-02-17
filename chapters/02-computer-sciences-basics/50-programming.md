@@ -16,7 +16,7 @@ Als Ingenieur werden Sie nämlich oftmals mehrere Algorithmen zur Lösung eines 
 - Wie erkennen Sie, ob der Algorithmus, den sie programmiert haben "gut" ist?
 - Was bedeutet "gut"?
 
-
+:::::{only} html
 ```{figure} ../../figs/02-computer-sciences-basics/uebersicht-programmieren.png
 ---
 width: 900px
@@ -24,5 +24,6 @@ name: fig-uebersicht-programmieren
 ---
 Übersicht: Programmieren umfasst die Entwicklung von Algorithmen und deren Implementierung als Programmcode im Kontext von Programmen und Software.
 ```
+:::::
 
 

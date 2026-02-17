@@ -40,7 +40,7 @@ Neben den Funktionalität soll Software gewisse Eigenschaften erfüllen, zum Bei
 
 ```{figure} ../../figs/02-computer-sciences-basics/unterscheidung.png
 ---
-width: 650px
+width: 400px
 name: fig-unterscheidung-informatik-se
 ---
 Unterscheidung zwischen Informatik und Software Engineering.

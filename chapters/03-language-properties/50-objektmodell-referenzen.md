@@ -70,7 +70,7 @@ Beispiel: Wir weisen `25` den Variablen `x` und `z` zu. Im Arbeitsspeicher könn
 
 ```{figure} ../../figs/03-language-properties/xzadresse.png
 ---
-width: 800px
+width: 350px
 name: fig-variable-language-properties
 ---
 Initialisierung und Zuweisung der Variablen x und z mit dem Wert 25. Die Adresse beider Variablen ist identisch.
@@ -100,7 +100,7 @@ Wie genau das im Speicher aussieht, kann je nach Datentyp und Implementierung va
 
 ```{figure} ../../figs/03-language-properties/speicheranordnung.png
 ---
-width: 800px
+width: 350px
 name: fig-speicheranordnung-language-properties
 ---
 Speicheranordnung von Werten verschiedener Datentypen. 

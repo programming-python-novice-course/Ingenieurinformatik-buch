@@ -23,7 +23,7 @@ Stützpunkte (für diese Aufgabe relevant: \(0 \le h \le 47\) km):
 
 ```{figure} ../../figs/02-computer-sciences-basics/paufgaben/k2/k2_abb2.jpg
 ---
-width: 700px
+width: 300px
 name: fig-paufgaben-icao
 ```
 

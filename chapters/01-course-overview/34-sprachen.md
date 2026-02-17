@@ -125,7 +125,7 @@ Für das Engineering besonders wichtig:
 
 ```{figure} ../../figs/01-course-overview/languages/ecosystem.png
 ---
-width: 700px
+width: 400px
 name: fig-python-ecosystem
 ---
 Schematische Darstellung des wissenschaftlichen Python-Ökosystems (Jake VanderPlas, PyCon 2017). Quelle: https://www.researchgate.net/figure/Schematic-view-of-the-Python-scientific-software-ecosystem-Figure-taken-from-Jake_fig1_332799309 (Zugriff: 03.02.2026).

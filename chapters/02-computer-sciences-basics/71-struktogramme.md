@@ -24,7 +24,7 @@ Struktogramme verwenden folgende Grundstrukturen:
 
 ```{figure} ../../figs/02-computer-sciences-basics/struktogrammtypen.png
 ---
-width: 600px
+width: 400px
 name: fig-struktogrammtypen
 ---
 Die Grundstrukturen von Struktogrammen: Sequenz, Fallunterscheidung und Schleife.

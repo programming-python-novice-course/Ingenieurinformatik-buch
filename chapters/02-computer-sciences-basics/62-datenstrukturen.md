@@ -87,7 +87,7 @@ In unserem Beispiel ist es die Zahlenfolge 9-7-8-4-5-5-5-0.
 - Variante 1: Platz nebenan ist frei.
 ```{figure} ../../figs/02-computer-sciences-basics/overview/einfuegen.png
 ---
-width: 700px
+width: 400px
 name: fig-static-insert-free
 ---
 Einfügen in eine statische Struktur: rechts daneben ist noch Speicher frei.
@@ -97,7 +97,7 @@ Einfügen in eine statische Struktur: rechts daneben ist noch Speicher frei.
 
 ```{figure} ../../figs/02-computer-sciences-basics/overview/einfuegen-2.png
 ---
-width: 700px
+width: 400px
 name: fig-static-insert-occupied
 ---
 Einfügen in eine statische Struktur: rechts daneben ist kein Speicher frei (Umkopieren/Neuanordnung nötig).
@@ -119,7 +119,7 @@ Ein einfaches Beispiel ist eine verkettete Liste.
 
 ```{figure} ../../figs/02-computer-sciences-basics/overview/linkedlist.png
 ---
-width: 700px
+width: 400px
 name: fig-linked-list
 ---
 Beispiel einer verketteten Liste: Knoten enthalten Daten und einen Zeiger auf den nächsten Knoten.

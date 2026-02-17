@@ -40,7 +40,7 @@ Die Entscheidungen erfolgen schrittweise:
 
 ```{figure} ../../figs/09-control-flow/decisiontree.png
 ---
-width: 700px
+width: 300px
 name: decision-tree
 ---
 Entscheidungsbaum für die Tarifregeln.

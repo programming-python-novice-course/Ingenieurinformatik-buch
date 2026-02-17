@@ -78,7 +78,7 @@ Laufroboter (Projektstudium HM FK03, SoSe 2017): Gesamtansicht.
 :::{only} html
 ```{figure} ../../figs/01-course-overview/robot/robot_ganz.gif
 ---
-width: 300px
+width: 250px
 name: fig-laufroboter-animation
 ---
 ```
@@ -95,7 +95,7 @@ Die folgenden Softwaretypen werden unter anderem von Ingenieurinnen (mit-)entwic
 
 ```{figure} ../../figs/01-course-overview/overview/motivation.png
 ---
-height: 320px
+height: 270px
 name: motivation
 ---
 ```

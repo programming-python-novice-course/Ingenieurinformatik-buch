@@ -33,10 +33,10 @@ Wichtig dabei: Die Schritte erfolgen nacheinander und bauen aufeinander auf.
 
 ```{figure} ../../figs/02-computer-sciences-basics/kontrollstruktur-bieber.png
 ---
-width: 400px
+width: 450px
 name: fig-kontrollstruktur-bieber
 ---
-Kontrollstrukturen – Überblick. Oben: Fallunterscheidung (Verzweigung), Mitte: Schleife. Unten: Match-case.
+Kontrollstrukturen – Überblick. Oben: Fallunterscheidung (Verzweigung), Mitte: Schleife. Unten: Mehrfache Fallunterscheidung.
 ```
 
 Ein einfaches Computerprogramm (ohne Parallelisierung) macht nichts anderes: Es führt nacheinander Schritte aus. Innerhalb dieser Schritte kann es Wiederholungen geben („Zerteile solange, bis …“) oder auch Fallunterscheidungen („Wenn größer, dann …“).
@@ -50,7 +50,7 @@ Wir unterscheiden:
 
 ```{figure} ../../figs/02-computer-sciences-basics/functionbieber.png
 ---
-width: 400px
+width: 450px
 name: fig-function-bieber
 ---
 Funktionen – das Bündeln der Äste (Funktion) folgt immer dem gleichen Ablauf (Äste greifen, anordnen, Schnur herumwickeln, prüfen). Wie groß das resultierende Bündel (Ergebnis) ist, hängt von der Astanzahl (Übergabeparameter) ab.
