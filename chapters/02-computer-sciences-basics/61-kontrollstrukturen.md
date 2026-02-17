@@ -22,7 +22,8 @@ In diesem Abschnitt geben wir eine Einführung zu Kontrollstrukturen, damit Sie 
 
 Kontrollstrukturen sind etwas, das uns im Alltag ständig begegnet. Sie bestimmen, wie ein Ablauf aussieht.
 
-Schauen Sie sich als Beispiel eine Baumstammproduktion an:
+Schauen Sie sich als Beispiel eine Baumscheitproduktion an:
+
 - Im ersten Schritt wird geprüft, ob der Baum lang genug ist. Falls ja, geht es weiter in die Produktion. Falls nein, wird der Baum anderweitig verwertet.
 - Im zweiten Schritt wird der Baum solange in gleich lange Abschnitte zerteilt, bis nur noch ein Reststück übrig bleibt.
 - Im dritten Schritt werden die Abschnitte nach Größe in verschiedene Kisten sortiert.
@@ -157,7 +158,7 @@ Beispiel: `range(5)` bedeutet: 0, 1, 2, 3, 4
 
 
 (sec-functions-control-structures)=
-## Funktionen
+## Funktion
 
 Funktionen kapseln Teilaufgaben: Sie geben einem Ablauf einen Namen, können Parameter annehmen und (typisch) ein Ergebnis zurückgeben. So wird Code wiederverwendbar und Programme werden übersichtlicher.
 

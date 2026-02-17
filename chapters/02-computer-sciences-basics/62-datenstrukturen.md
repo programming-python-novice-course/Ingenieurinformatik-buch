@@ -15,15 +15,22 @@ kernelspec:
 :name: def-control-structure
 :class: definition
 
-In diesem Abschnitt geben wir eine Einführung dazu wie Daten in Python strukturiert werden können - falls es mal mehr als nur eine Zahl (a = 21) oder ein Text (name = "Christina") ist. Mit den Informationen aus dem Teilabschnitt [Wie gehts das nun in Python?](sec-wie-in-python-data-) können Sie im Praktikum schon einmal losarbeiten. Details dazu lernen wir dann im Kapitel [Datentypen](sec-python-data-types) kennen.
+In diesem Abschnitt geben wir eine Einführung dazu wie Daten in Python strukturiert werden können. Mit den Informationen aus dem Teilabschnitt [Wie gehts das nun in Python?](sec-wie-in-python-data-) können Sie im Praktikum schon einmal losarbeiten. Details dazu lernen wir dann im Kapitel [Datentypen](sec-python-data-types) kennen.
 ```
 
-Programme arbeiten nicht nur mit Anweisungen, sondern ständig mit Daten.
-- Eingaben müssen im Arbeitsspeicher abgelegt werden.
-- Zwischenergebnisse müssen wiedergefunden werden können.
-- Ausgaben müssen erzeugt und oft erneut verarbeitet werden.
+Programme arbeiten nicht nur mit Anweisungen, sondern ständig mit Daten. Daten können sehr unterschiedlich aussehen:
 
-> Wie organisiert man Daten so, dass ein Programm sinnvoll und effizient mit ihnen arbeiten kann?
+```{code-cell} python
+my_name = "Christina"
+height = 170
+g = 9.81
+```
+
+Die zentrale Frage ist:
+
+```{admonition} Zentrale Frage
+Wie organisiert man viele und auch zusammenhängende Daten so, dass ein Programm sinnvoll und effizient mit ihnen arbeiten kann?
+```
 
 
 ```{figure} ../../figs/02-computer-sciences-basics/overview/datastructures-funny.png
@@ -60,13 +67,11 @@ Queue, Set, Map und Stack sind abstrakte Datentypen (ADTs).
 Neben Queue, Set, Map und Stack gibt es weitere ADTs, z. B. Trees (Bäume).
 ```
 
+## Speicherrepräsentation
 
-Damit ein Computer diese abstrakten Ordnungen umsetzen kann, müssen sie konkret im Arbeitsspeicher realisiert werden.
-Hier kommt die Speicherrepräsentation ins Spiel.
-
-Alle Daten liegen letztlich als Bits im Arbeitsspeicher.
-Entscheidend ist, wie diese Bits angeordnet sind und wie auf sie zugegriffen wird.
-Eine grundlegende Unterscheidung ist die zwischen statischen und dynamischen Sammlungen.
+- Damit ein Computer diese abstrakten Ordnungen umsetzen kann, müssen sie konkret im Arbeitsspeicher realisiert werden.
+- Entscheidend ist, wie diese Bits angeordnet sind und wie auf sie zugegriffen wird.
+- Eine grundlegende Unterscheidung ist die zwischen statischen und dynamischen Sammlungen.
 
 **Statische Sammlungen**
 
@@ -133,7 +138,7 @@ Beispiel einer verketteten Liste: Knoten enthalten Daten und einen Zeiger auf de
 (sec-wie-in-python-data-)=
 ## Wie gehts das nun in Python?
 
-- Abstrakte Datenstrukturen (ADT) beschreiben was eine Datenstruktur leisten soll (Semantik), unabhängig von Programmiersprache und Speicher.
+- Abstrakte Datenstrukturen (ADT) beschreiben was eine Datenstruktur leisten soll, unabhängig von Programmiersprache und Speicher.
 
 - Datentypen (z. B. list, tuple) sind sprachabhängige Umsetzungen eines ADT und legen fest, wie Programme mit den Daten arbeiten können.
 

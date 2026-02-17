@@ -1,11 +1,7 @@
 (sec-repos-hubs)=
 # Repositories und Hubs (V*)
 
-```{admonition} Verwaltung von Software und Versionen
-:class: hint
-
-Wie wird Software gespeichert und anderen zugänglich gemacht? Siehe dazu das Expertenwissen-Kapitel {ref}`sec-repos-hubs`.
-```
+**Wie wird Software gespeichert und anderen zugänglich gemacht?**
 
 - Ein *Repository* ist eine Ablage für Software in Form von Dateien und Ordnern.
 - Der Inhalt eines Repositories wird typischerweise mit einer *Versionskontrolle* verwaltet, z. B. mit Git.

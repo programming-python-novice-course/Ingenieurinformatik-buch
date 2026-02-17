@@ -50,7 +50,7 @@ Als Programmierin sollten Sie die drei Zahlensysteme kennen, denn:
 - Fehlermeldungen, Bitmasken oder Statusflags sind in binärer oder hexadezimaler Form,
 - in technische Dokumentationen können Werte in verschiedenen Zahlensystemen angeben sein.
 
-Sie sollten in der Lage sein Zahlensysteme zu verstehen und sicher zwischen Darstellungen wechseln zu können. Dabei geht es nicht darum, ständig von Hand umzurechnen, sondern Darstellungen korrekt zu erkennen, einzuordnen und bei Bedarf nachvollziehen zu können.
+Sie sollten in der Lage sein Zahlensysteme zu verstehen und sicher zwischen Darstellungen wechseln zu können. Es geht darum Darstellungen korrekt zu erkennen, einzuordnen und bei Bedarf nachvollziehen zu können.
 
 In Python können Sie Zahlen über `format` unterschiedlich darstellen:
 
@@ -87,7 +87,9 @@ Der Spezialfall ist in {numref}`fig-coding-numbers` dargestellt: Für natürlich
 Für alles andere (Zahlen mit Nachkommastellen, Text, ... ) braucht man eine Codierung!
 ```
 
-Für jede Umrechnung zwischen Zahlensystemen gibt es einen **Algorithmus** – eine feste Rechenvorschrift, die man lernt und dann anwendet. Wie Kochrezepte: Man muss sie nicht erfinden, sondern lediglich anwenden.
+Für jede Umrechnung zwischen Zahlensystemen gibt es einen **Algorithmus** – eine feste Rechenvorschrift, die man lernt und dann anwendet. 
+
+Die Algorithmen können sie sich wie Kochrezepte vorstellen: Man muss sie nicht erfinden, sondern kennen und anwenden.
 
 ## Beispiel: Binär → Dezimal
 

@@ -10,9 +10,10 @@ Sie können später als Ingenieurinnen und Ingenieure sowohl mit Embedded-Softwa
 Ein **Mikrocontroller** ist ebenfalls ein Computer im weiteren Sinne – aber typischerweise für eine *spezielle Aufgabe* optimiert: Er integriert CPU, Speicher und Ein-/Ausgabe (GPIO, Timer, ADC, Kommunikationsschnittstellen) auf einem Chip und arbeitet oft mit deutlich weniger Ressourcen.
 ```
 
-**Was macht ein Betriebssystem?**
+## Was macht ein Betriebssystem?
 
 Ein Betriebssystem ist die Software-Schicht zwischen Hardware und Anwendungsprogrammen. Es verwaltet Ressourcen (z. B. CPU-Zeit, Arbeitsspeicher, Geräte) und stellt Abstraktionen bereit, die das Programmieren und Ausführen von Programmen vereinfachen (z. B. Prozesse, Dateien, Netzwerkzugriffe).
+
 ```{admonition} Betriebssystem
 :name: def-operating-system
 :class: definition
@@ -38,19 +39,21 @@ Der *Bootvorgang* ist der Prozess, bei dem ein Computer nach dem Einschalten ode
 ```
 
 Das *Betriebssystem* wird beim Start des Computers geladen (*Booten*).
-Der Schlüssel hierzu ist ein kleines Programm auf dem *Festwertspeicher (ROM)*, das von der Hardware selbst geladen wird.
-Die Logik zum Laden des ersten Programms ist in den Bauteilen selbst fest verdrahtet.
-Der Festwertspeicher ist nicht flüchtig und bleibt auch nach dem Ausschalten erhalten.
 
-Auf Mikrocontrollern ist der Ablauf oft einfacher: Nach einem Reset startet ein sehr kleiner Bootloader (oder direkt Ihr Programm) und springt dann in Ihre Firmware. Ob dabei ein RTOS beteiligt ist, hängt vom System ab.
+- Der Schlüssel hierzu ist ein kleines Programm auf dem *Festwertspeicher (ROM)*, das von der Hardware selbst geladen wird.
+- Die Logik zum Laden des ersten Programms ist in den Bauteilen selbst fest verdrahtet.
+- Der Festwertspeicher ist nicht flüchtig und bleibt auch nach dem Ausschalten erhalten.
+
+Auf Mikrocontrollern ist der Ablauf oft einfacher: Nach einem Reset startet ein sehr kleiner Bootloader (oder direkt Ihr Programm) und springt dann in Ihre Firmware. Ob dabei ein *Echtzeitbetriebssystem* beteiligt ist, hängt vom System ab.
 
 
-**Programme ausführen (mit Betriebssystem)**
+## Programme ausführen (mit Betriebssystem)
 
-Starten Sie ein Programm, teilen Sie dem [Betriebssystem](def-operating-system) mit, dass Sie dieses Programm ausführen möchten.
-Das *Betriebssystem* lädt es in den Hauptspeicher und teilt ihm entsprechende Ressourcen zu.
-Laut der *[Von-Neumann-Architektur](von-neumann-architecture-2)* liegen **Daten** und **Programme** im gleichen *Hauptspeicher*.
-Das Programm ist eine zusammenhängende Folge von 0 und 1, welche Befehle repräsentieren, z.B.:
+- Starten Sie ein Programm, teilen Sie dem [Betriebssystem](def-operating-system) mit, dass Sie dieses Programm ausführen möchten.
+- Das *Betriebssystem* lädt es in den Hauptspeicher und teilt ihm entsprechende Ressourcen zu.
+- Bei der *[Von-Neumann-Architektur](von-neumann-architecture-2)* liegen **Daten** und **Programme** im gleichen *Hauptspeicher*.
+
+Ein Programm ist eine zusammenhängende Folge von 0 und 1, welche Befehle repräsentieren, z.B.:
 
 - $\text{ADD} \ \$5 \ \$6 \ \$7$: Addiere Zahlen in Register $\$5$ und $\$6$, speichere Ergebnis in Register $\$7$
 - $\text{LOAD} \ \#15 \ \$5$: Lade Daten aus Hauptspeicheradresse $\#15$ ins Register $\$5$
@@ -71,12 +74,15 @@ Der *Befehlszeiger* ist ein spezielles Register der *Kontrolleinheit*, das die A
 Bei der Ausführung eines Programms wird der Befehlszeiger aktualisiert, um auf die nächste Anweisung zu zeigen, die ausgeführt werden soll.
 ```
 
-Die *Kontrolleinheit* liest Befehle aus dem Hauptspeicher, lädt die benötigten Daten in Register, aktiviert die Recheneinheiten und schreibt Ergebnisse zurück.
-Der *Befehlszeiger* zeigt dabei auf die nächste auszuführende Anweisung.
-Register sind deutlich schneller als der Hauptspeicher und befinden sich näher an den Recheneinheiten, weshalb häufig verwendete Werte dort zwischengespeichert werden.
+- Die *Kontrolleinheit* liest Befehle aus dem Hauptspeicher, lädt die benötigten Daten in Register, aktiviert die Recheneinheiten und schreibt Ergebnisse zurück.
+- Der *Befehlszeiger* zeigt dabei auf die nächste auszuführende Anweisung.
+- Register sind deutlich schneller als der Hauptspeicher und befinden sich näher an den Recheneinheiten, weshalb häufig verwendete Werte dort zwischengespeichert werden.
 
-Wenn das Betriebssystem entscheidet, dass ein anderes Programm an der Reihe ist, wird der aktuelle Zustand des laufenden Programms gesichert (z. B. der Befehlszeiger).
-Sobald das Programm wieder aktiv wird, werden alle notwendigen Daten wieder geladen.
+**Multi-Tasking?**
+
+
+- Wenn das Betriebssystem entscheidet, dass ein anderes Programm an der Reihe ist, wird der aktuelle Zustand des laufenden Programms gesichert (z. B. der Befehlszeiger).
+- Sobald das Programm wieder aktiv wird, werden alle notwendigen Daten wieder geladen.
 
 
 ```{admonition} Hinweis: Programmieren mit/ohne Betriebssystem

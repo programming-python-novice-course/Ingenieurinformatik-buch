@@ -21,7 +21,13 @@ name: fig-upc-barcode
 Beispiel eines UPC-Barcodes (Quelle: angelehnt an Petzold, 2000).
 ```
 
-Der Universal Product Code (UPC) ist ein Strichcode, der in den Vereinigten Staaten eingesetzt wird. In Europa wird ein anderer Code eingesetzt, aber das Prinzip ist dasselbe: Schwarze und weiße Felder wechseln sich ab, wobei **schwarz** für 1 steht und **weiß** für 0. Es gibt pro Feld also nur zwei mögliche Zustände (Binärcode).
+Der Universal Product Code (UPC) ist ein Strichcode, der in den Vereinigten Staaten eingesetzt wird. In Europa wird ein anderer Code eingesetzt.
+
+Das Prinzip ist dasselbe: 
+- Schwarze und weiße Felder wechseln sich ab.
+- **Schwarz** steht für 1 steht.
+- **Weiß** für 0.
+- Es gibt pro Feld also nur zwei mögliche Zustände (Binärcode).
 
 ```{figure} ../../figs/02-computer-sciences-basics/codierung/coding.png
 ---
@@ -31,10 +37,8 @@ name: fig-upc-bits
 Der Barcode als Folge von schwarzen (1) und weißen (0) Feldern, also als Bitfolge (Quelle: angelehnt an Petzold, 2000).
 ```
 
-Der gesamte UPC besteht aus 95 Zeichen. Da jedes Zeichen nur 0 oder 1 sein kann, sprechen wir auch von 95 Bits.
 
-
-Das Codierschema des UPC sagt uns, wie wir diese Bits zu interpretieren haben:
+Das *Codierschema* des UPC sagt uns, wie wir diese Bits zu interpretieren haben:
 
 | Bits                                                                       | Bedeutung                                                         |
 | -------------------------------------------------------------------------- | ----------------------------------------------------------------- |
@@ -95,9 +99,12 @@ Das **Komplement** einer Bitfolge erhält man, indem man jedes Bit umdreht: 0 �
 Entschlüsseln (dekodieren) Sie den binären Code!
 ```
 
-**Das war anstrengend?**
+## Programmatische Lösung
 
-Ja – und deswegen gibt es für solche Aufgaben Programme ;-)
+Das war anstrengend + langweilig? 
+- Ja – und deswegen gibt es für solche Aufgaben Programme!
+
+
 Der folgende Python-Code erledigt genau das, was Sie gerade per Hand erledigt haben:
 
 - er bekommt eine Folge von 0 und 1
@@ -106,8 +113,10 @@ Der folgende Python-Code erledigt genau das, was Sie gerade per Hand erledigt ha
 - dann überprüft er, ob das Trennzeichen vorhanden ist
 - dann übersetzt er die nächsten Bitgruppen mit dem R-Code
 
-Wichtig an dieser Stelle: Sie müssen den folgenden Python-Code noch nicht verstehen. Sie sollten lediglich erkennen, dass die Codierung nicht „magisch“ passiert:
+```{important} Wichtig
+Sie müssen den folgenden Python-Code noch nicht verstehen. Sie sollten lediglich erkennen, dass die Codierung nicht „magisch“ passiert:
 Die Tabellen, die Sie bei der manuellen Übersetzung verwendet haben, sind 1:1 als Tabellen im Code hinterlegt!
+```
 
 
 ```{code-cell} python3
