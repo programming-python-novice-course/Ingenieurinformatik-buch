@@ -190,7 +190,8 @@ sphinx:
 # Repository / Edit-Buttons
 # --------------------------------------------------
 repository:
-  url: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git
+  # GitLab project *web* URL (no `.git` suffix); used for repository/issue/edit buttons.
+  url: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch
   path_to_book: ""
   branch: master
 

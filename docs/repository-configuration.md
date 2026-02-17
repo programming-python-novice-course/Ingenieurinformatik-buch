@@ -14,7 +14,8 @@ Beispiel:
 
 ```yaml
 repository:
-  url: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch.git
+  # GitLab project *web* URL (ohne `.git`), damit Issues/Edit-Links korrekt sind.
+  url: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch
 ```
 
 Hinweis: Diese Einstellung betrifft die sichtbaren Repository-Links (z. B. "Quell-Repository").
