@@ -1,115 +1,37 @@
-# Ingenieurinformatik 1 - Programmieren (Python)
+# Ingenieurinformatik 1 – Programmieren (Python)
 
-Dieses Repository enthält die Inhalte für eine interaktive Lern-Website auf Basis von Jupyter Book. Studierende können sich selbstständig durch die Lehrinhalte arbeiten und Python-Code direkt im Browser ausführen.
+Dieses Repository ist die Grundlage für die interaktive Lern-Website zum Programmierenlernen mit Python: [Zur Website](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html).
+Kernidee ist, dass Studierende im Vorlesungsskript nicht nur lesen, sondern Beispiele direkt ausführen, verändern und die Wirkung unmittelbar beobachten können.
+Ergänzend steht ein PDF-Skript zum Nacharbeiten und zur Prüfungsvorbereitung bereit (Download über die Website).
 
-## Website
+![Überblick](./README-pic.png)
 
-Die Website wird automatisch über GitLab LRZ Pages bereitgestellt:
+## Vorteile für Studierende
 
-[Zur Website](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)
+Der Einstieg ist bewusst niedrigschwellig: Python-Code kann ohne Installation direkt im Browser im Skript ausgeführt werden. Dadurch wird Lernen zum aktiven Prozess: Beispiele nachvollziehen, Varianten ausprobieren und Ergebnisse überprüfen.
 
-Die Website basiert auf Jupyter Notebooks und ermöglicht es Studierenden, interaktiv mit den Lehrinhalten zu arbeiten und Python-Code direkt im Browser auszuführen.
+Über den JupyterHub der Hochschule München können Studierende zudem eigene Änderungen an den Code-Beispielen speichern und später weiterbearbeiten. Ergänzend gibt es die Inhalte als Buch im PDF-Format zum Nacharbeiten und Markieren (Download über die Website unter "Downloads").
 
-## Binder / Thebe (interaktive Ausführung)
+Inhaltlich liegt der Schwerpunkt auf Programmierkompetenzen wie Syntax vs. Semantik, systematischer Methodik, Debugging, Tests sowie dem Lesen und Verstehen von Code.
 
-Wenn im Buch Thebe aktiviert ist (`_config.yml`: `thebe: true`), wird im Hintergrund standardmäßig ein Kernel über mybinder.org gestartet.
+## Programmieren lernen in Zeiten von LLMs
 
-- Hinweis (Dependencies): Binder erkennt Konfig-Dateien nur mit festen Namen. Daher liegt die Binder-Umgebung unter `binder/environment.yml` (wird von repo2docker automatisch gefunden).
+LLMs sind beim Programmieren hilfreich – aber robuste Software entsteht nicht „magisch“ aus Prompts: Anforderungen/Randbedingungen, Integration, Tests und Verantwortung bleiben menschliche Aufgaben.
 
+Im Kurs nutzen wir KI daher als Lerncoach: Methodik und Verständnis aufbauen (z. B. die richtigen Rückfragen stellen, Lösungen prüfen), statt Verständnis durch fertigen Code zu ersetzen.
 
-Beispiel-Link (Branch `master`, JupyterLab):
-`https://mybinder.org/v2/git/https%3A%2F%2Fgitlab.lrz.de%2Ffk03ingenieurinformatik%2FIngenieurinformatik-buch.git/master?urlpath=lab`
+Das ist auch wissenschaftlich gut begründbar: Studien berichten, dass „KI als Lerncoach“ Lernzeit verkürzen kann bei vergleichbarem Lernerfolg (z. B. [Bassner et al., 2025](https://doi.org/10.1016/j.caeai.2025.100537)).
 
-## PDF-Version
+Mehr dazu im Kurskapitel: [Programmieren lernen in Zeiten von LLMs](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/chapters/01-course-overview/40-learningLLM.html).
 
-Zusätzlich zur Website kann aus den Inhalten ein PDF-Buch generiert werden. Dies wird über die GitLab CI/CD Pipeline erstellt.
+## Für Beitragende
 
-## Beitragen
+- Kollaborative Weiterentwicklung: Inhalte können gemeinsam gepflegt und ausgebaut werden (Issues/Merge Requests).
+- Bearbeitung im Browser: viele Änderungen lassen sich direkt in GitLab im Webbrowser umsetzen (ohne lokale Installation).
+- CI übernimmt den Rest: Builds und Deployments laufen automatisiert über GitLab CI; lokale Builds sind optional (für Maintainer).
 
+## Links
 
-1. Repository klonen
-2. Änderungen durchführen
-3. Änderungen committen und pushen
-
-### CI/CD Pipeline
-
-Das Projekt nutzt eine Continuous Integration Pipeline, mit der sowohl die Website als auch das PDF-Buch gebaut werden können. Die Pipeline wird auf einem GitLab Runner ausgeführt, der von Christina Mayr auf dem HM Kubernetes Cluster eingerichtet wurde.
-
-Weitere Informationen: [How-To: Get a local Docker Image into Kubernetes](https://collab.dvb.bayern/spaces/~ebke/pages/1494030620/How-To+Get+a+local+Docker+Image+into+Kubernetes)
-
-Wichtig:
-- Das PDF-Buch muss manuell getriggert werden (Job: `build_book_pdf`)
-- Das Update der Website muss ebenfalls manuell getriggert werden (Job: `update_website`)
-- Der Build der Website (`build_website_html`) läuft automatisch bei jedem Push
-
-### Lokales Bauen
-
-Um die Website oder das PDF lokal zu bauen, schauen Sie am besten in die CI-Konfiguration (`.gitlab-ci.yml`). Hier sind alle verwendeten Befehle enthalten.
-
-Voraussetzungen:
-- Docker muss installiert sein, um den Docker-Container lokal auszuführen
-- Das verwendete Docker-Image: `gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest`
-
-
-Beispiel für lokalen Build:
-
-```bash
-# Zuerst ins geklonte Repository-Verzeichnis wechseln
-cd /path/to/ingenieurinformatik-buch
-# Docker-Container starten und in die Bash wechseln
-# -v "$PWD":/home/jovyan/work mountet das aktuelle Verzeichnis in den Container
-docker run --rm -it -v "$PWD":/home/jovyan/work -w /home/jovyan/work \
-  gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest \
-  bash
-```
-
-Innerhalb des Containers können Sie dann die Befehle aus der CI-Konfiguration ausführen (`.gitlab-ci.yml`).
-
-HTML-Website bauen:
-```bash
-jupyter-book build . --all --path-output _website_html
-```
-Hinweis: Es kann vorkommen, dass Bilder nicht korrekt angezeigt werden, wenn Ihr Host-Betriebssystem sich vom dem des Docker-Images (Ubuntu) unterscheidet. Im Zweifel: Bauen Sie erneut in der CI-Pipeline und überprüfen Sie, ob das Bild dort korrekt dargestellt wird. Alternativ deaktivieren Sie die Ausführung der betreffenden Code-Zelle.
-
-PDF-Buch bauen:
-```bash
-# Zuerst GIF-Dateien zu PNG konvertieren (falls nötig)
-# Hinweis: `convert` ist Teil von ImageMagick.
-find figs -name "*.gif" -print0 | while IFS= read -r -d "" gif; do
-  png="${gif%.gif}.png"
-  if [ ! -f "$png" ]; then
-    convert "${gif}[0]" "$png" && echo "generated: $png"
-  fi
-done
-
-# PDF-Buch bauen
-export LATEXMKOPTS='-interaction=nonstopmode'
-jupyter-book build . --builder pdflatex --path-output _book_as_pdf
-```
-
-### Docker-Image bauen (Build-Umgebung)
-
-Das Docker-Image (für CI/Lokales Bauen) kann so gebaut und gepusht werden:
-```bash
-REGISTRY_IMAGE="gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch"
-TAG="$(date +%F)"  # YYYY-MM-DD
-
-# falls nötig:
-docker login gitlab.lrz.de:5005
-
-# robust auf macOS/arm64: linux/amd64 bauen und direkt pushen (2 Tags in einem Build)
-docker buildx build --platform linux/amd64 \
-  -t "${REGISTRY_IMAGE}:${TAG}" \
-  -t "${REGISTRY_IMAGE}:latest" \
-  --push .
-```
-
-
-## Deployment
-
-Das Deployment erfolgt über GitLab LRZ und GitHub:
-
-- In GitLab LRZ wird die interaktive Website in der CI/CD-Pipeline gebaut und über Pages veröffentlicht.
-- Für die Ausführung der Code-Zellen (Thebe) wird eine Binder-Konfiguration benötigt.
-  - Die Binder-Umgebung (Dependencies) liegt in `binder/` (z.B. `binder/environment.yml`). Mehr Infos im [deployment-repo auf GitHub](https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy)
-- Notebooks, die in der GitLab-LRZ-Pipeline gebaut werden, werden ebenfalls nach [GitHub](https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/tree/master/deployed_notebooks) deployed. Diese dienen als Fallback, falls die Live-Code-Ausführung nicht klappt.
+- **Website (GitLab Pages)**: [Zur Website](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)
+- **Feedback / Verbesserungsvorschläge**: bitte als [Issue erstellen](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/issues)
+- **Software-Doku für Maintainer (Build/CI/Repos)**: [`docs/README.md`](./docs/README.md)
