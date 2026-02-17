@@ -16,7 +16,7 @@ In den vorherigen Abschnitten haben wir gesehen, warum Wrapper-Funktionen oft ei
 In diesem Unterkapitel bauen wir dafür das Fundament der Objektorientierung in Python auf: **Klassen** (als selbst definierte Datentypen) und **Objekte** (als konkrete Instanzen).
 
 ```{admonition} Lernziele
-:::class: learngoals
+:class: learngoals
 
 - Sie können erklären, warum Klassen mehr sind als „nur“ Datenstrukturen.
 - Sie können Klassen und Objekte unterscheiden und den Begriff *Instanz* korrekt verwenden.

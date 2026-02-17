@@ -116,7 +116,7 @@ Geben Sie beide Werte zurück (z.B. als Tupel).
 
 ```{figure} ../../figs/10-functions/paufgaben/k4/k4_abb1.png
 ---
-width: 520px
+width: 320px
 name: fig-paufgaben-a45-kraft
 ---
 Zerlegung eines Kraftvektors

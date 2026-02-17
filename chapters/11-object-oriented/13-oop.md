@@ -40,6 +40,7 @@ Der „Hintergrund/Plotbereich“ heißt in Matplotlib `Axes`. Das Logo ist dabe
 Damit unser „Plotbereich mit Logo“ wirklich ein Plotbereich bleibt und überall passt, wo Matplotlib ein `Axes` erwartet, bauen wir die Variante als **neue Klasse, die von `Axes` erbt**. Das ist ein zentrales Verfahren in der Objektorientierung: Eine neue Baugruppe entsteht aus einer vorhandenen – mit **gleichen Anschlüssen nach außen**, aber zusätzlichem Innenleben.
 
 ### Architektur-Kern: Registrierung (wie Matplotlib die neue Klasse kennt)
+
 Woher weiß Matplotlib nun, dass es diese neue Klasse gibt? Dafür gibt es einen **Erweiterungspunkt** in der Bibliothek: Die neue Klasse wird in einer Registry „angemeldet“ (registriert), sodass Matplotlib sie bei Bedarf erzeugen kann. Das ist eher ein Thema von **Software-Architektur** (Erweiterbarkeit/Plugins) als von OOP selbst – hängt aber mit OOP zusammen, weil Matplotlib seine Baugruppen als austauschbare Objekte organisiert.
 
 Wie man Vererbung und Registrierung im Code findet, zeigt das folgende Beispiel (Details sind exemplarisch; wichtig ist die Idee).
@@ -54,7 +55,8 @@ from matplotlib.axes import Axes
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 from matplotlib.projections import register_projection
 
-LOGO_URL = "https://github.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/blob/master/img/logo-mini.png?raw=true"
+LOGO_URL = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/master/img/logo-mini.png"
+
 
 
 def load_logo(url: str):
@@ -134,7 +136,10 @@ Wichtig ist, was gleich bleibt:
 - Die Variante wird über eine **kleine Einstellung** gewählt (opt-in), ohne dass sich die gewohnten Aufrufe ändern.
 
 Die wichtigste Idee hinter objektorientierter Programmierung ist:
-> Große Systeme so bauen, dass man kleine Teile ändern kann, ohne alles andere anzufassen.
+```{admonition} Merksatz
+:class: remark
+Große Systeme so bauen, dass man kleine Teile ändern kann, ohne alles andere anzufassen.
+```
 
 ## Ingenieur-Analogie (Schnittstellen)
 Stellen Sie sich vor, ein Auto besteht aus Baugruppen mit definierten Schnittstellen (Aufhängung, Wellen, Stecker, Befestigungspunkte). Dann kann man **eine Baugruppe austauschen**, ohne das ganze System neu zu konstruieren – solange die Schnittstelle gleich bleibt.
@@ -156,4 +161,7 @@ Aber: OOP ist **kein Garant** für gute Architektur. Es gibt objektorientierte S
 
 
 
-> Die Motivation hinter objektorientierter Programmierung ist, große Systeme so zu bauen, dass man kleine Teile ändern kann, ohne alles andere anzufassen (*Kapselung*). Umgesetzt wird das u.a. mit Klassen.
+```{admonition} Kurz gesagt
+:class: note
+Die Motivation hinter objektorientierter Programmierung ist, große Systeme so zu bauen, dass man kleine Teile ändern kann, ohne alles andere anzufassen (*Kapselung*). Umgesetzt wird das u.a. mit Klassen.
+```

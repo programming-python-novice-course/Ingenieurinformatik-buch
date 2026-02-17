@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-
+(paradigma-sec)=
 # Paradigmen (V)
 
 ```{admonition} Behauptung
@@ -25,7 +25,7 @@ Ein Programmierparadigma kann man sich wie einen Programmierstil vorstellen: ein
 
 Die drei Paradigmen sind (vgl. {cite}`martin:2017clean`):
 
-- Strukturierte/Prozedurale Programmierung
+- Prozedurale Programmierung (auch manchmal "Strukturierte Programmierung" genannt, wobei es genau genommen keine Synomyme sind)
 - Funktionale Programmierung
 - Objektorientierte Programmierung
 
@@ -72,6 +72,6 @@ Wie das Beispiel zeigt, erlaubt uns Python, sowohl prozedural, funktional als au
 :class: note
 
 - **Python ist sehr gut für objektorientierte Programmierung geeignet**, aber nicht darauf beschränkt.
-- **Python ist multiparadigmatisch** (es unterstützt objektorientierte, funktionale und strukturierte Programmierung). Viele Bibliotheken und Konventionen sind jedoch objektorientiert geprägt.
+- **Python ist multiparadigmatisch** (es unterstützt objektorientierte, funktionale und prozedurale Programmierung). Viele Bibliotheken und Konventionen sind jedoch objektorientiert geprägt.
 - In der Praxis ist weniger wichtig, „welches Paradigma richtig ist“, sondern **welches Modell Ihr Problem am klarsten beschreibt**.
 ```

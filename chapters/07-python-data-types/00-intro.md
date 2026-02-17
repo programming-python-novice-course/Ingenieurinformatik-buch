@@ -19,7 +19,7 @@ Der Datentyp einer Variablen gibt an, wie die [Bits](def-bit) und [Bytes](def-by
 Wie Codierung, Datentypen und Datenstrukturen zusammenhängen und wie daraus die Speicherung im Computer entsteht, sehen wir am Ende des Kapitels im [Big picture](sec-pib-picture).
 
 ```{admonition} Lernziele
-::class: learngoals
+:class: learngoals
 
 - Nach diesem Kapitel verstehen Sie, was ein Datentyp in Python bedeutet und warum Typen für korrektes Programmieren wichtig sind.
 - Nach diesem Kapitel können Sie die wichtigsten eingebauten Datentypen gezielt auswählen und anwenden (z. B. ``int``, ``float``, ``bool``, ``str``, ``list``, ``tuple``, ``set``, ``dict``).

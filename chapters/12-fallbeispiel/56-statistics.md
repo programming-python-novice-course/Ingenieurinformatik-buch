@@ -15,9 +15,12 @@ Zur Ermittlung der Quantile muss Julia die Messwerte also erst einmal sortieren.
 
 ## Sortieralgorithmen
 
-Julia startet zunächst einmal damit die Messwerte sortieren. Sie ist ganz Feuer und Flamme, da sie im Studium viel über Sortieralgorithmen gelernt hat.
+Julia startet damit, die Messwerte zu sortieren.
 
-Sie erinnert sich noch dass es zum Sortieren unterschiedliche Algorithmen gibt und findet eine Übersichtstabelle:
+Sie ist ganz Feuer und Flamme, da sie im Studium viel über Sortieralgorithmen gelernt hat.
+Sie erinnert sich: Es gibt viele unterschiedliche Ansätze zum Sortieren.
+
+Sie findet dazu eine Übersichtstabelle:
 
 | Algorithmus / Familie | Kurzidee | Best Case | Average Case | Worst Case | Extra Space | Stabil | In-place | Praxis / Bemerkung |
 |----------------------|----------|-----------|--------------|------------|-------------|--------|----------|--------------------|
@@ -33,9 +36,16 @@ Sie erinnert sich noch dass es zum Sortieren unterschiedliche Algorithmen gibt u
 | PowerSort (Merge-Policy) | Nahezu optimale Merge-Reihenfolge | O(n) | O(n log n) | O(n log n) | O(n) | Ja | Nein | CPython ≥ 3.11 |
 
 
-Sie recherchiert weiter und findet heraus: Python sortiert Listen seit Jahren mit einer sehr ausgefeilten, stabilen Merge-Sort-Familie (Timsort). Ab Python 3.11 wurde vor allem die *Merge-Strategie* verbessert (PowerSort). 
+Sie recherchiert weiter und findet heraus:
 
-Julia würde trotzdem gerne selbst bestimmen können, welcher Algorithmus verwendet wird. Also implementiert sie ein kleines Strategie-Pattern: „Sortieren“ ist austauschbar – der Rest des Programms bleibt gleich.
+- Python sortiert Listen seit Jahren mit einer sehr ausgefeilten, stabilen Merge-Sort-Familie (**Timsort**).
+- Ab Python 3.11 wurde vor allem die *Merge-Strategie* verbessert (**PowerSort**).
+
+Julia würde trotzdem gerne selbst bestimmen können, welcher Algorithmus verwendet wird.
+Also implementiert sie ein kleines Strategie-Pattern:
+
+- „Sortieren“ ist austauschbar.
+- Der Rest des Programms bleibt gleich.
 
 ```{code-cell} python3
 
@@ -107,9 +117,9 @@ Julia muss sich entscheiden, welchen Algorithmus sie jetzt verwendet. Deshalb f�
 **Einfache Zeitmessung in Python**
 
 Die Idee ist folgende:
-- wir messen den startzeitpunkt: start = time.perf_counter()   # alternativ: time.time()
-- wir messen endzeitpunkt: endzeitpunkt = time.perf_counter()
-Die Dauer ist dann entsprechend: dauer = endteitpunkt - start
+- Wir messen den Startzeitpunkt: `start = time.perf_counter()` (alternativ: `time.time()`).
+- Wir messen den Endzeitpunkt: `end = time.perf_counter()`.
+- Die Dauer ist dann entsprechend: `dauer = end - start`.
 
 
 **Profiling**
@@ -124,12 +134,13 @@ Profiling ist mehr als eine einzelne Zeitmessung: Es hilft Ihnen zu verstehen, *
 Tipp: Messen Sie mit **realistischen Eingaben** und achten Sie darauf, ob Ihr Programm eher **CPU-bound** (Rechnung) oder **I/O-bound** (Warten) ist.
 ```
 
-Der Performance-Test ist so aufgebaut, dass jeder Algorithmus 100 mal für die Messdaten der Station Paris getestet wird. Dann werden die Ergebnisse in einem boxplot gegeübergestellt.
+Der Performance-Test ist so aufgebaut, dass jeder Algorithmus 100-mal für die Messdaten der Station Paris getestet wird.
+Dann werden die Ergebnisse in einem Boxplot gegenübergestellt.
 
 
 
 ```{admonition} Hinweis
-::class: remark
+:class: remark
 
 Für die Darstellung verwenden wir `seaborn`. Das ist eine externe Bibliothek. Julia findet das hier in Ordnung, weil der Performance-Test nur der Analyse dient und nicht Teil der ausgelieferten Software ist.
 ```

@@ -1,6 +1,9 @@
 # Einfaches Pythonprojekt (S)
 
-> Im Rahmen dieses Moduls werden wir keine komplexern Python-Projekte erstellen.
+```{admonition} Hinweis
+:class: note
+Im Rahmen dieses Moduls werden wir keine komplexern Python-Projekte erstellen.
+```
 
 Damit Sie sich auf Programmierkonzepte konzentrieren können, arbeiten wir häufig mit **einer Python-Datei**.
 Auch in einer Datei können (und sollten) Sie gedanklich trennen:
@@ -111,7 +114,7 @@ Warum? Wir rufen `skript2.py` auf (Entrypoint = `skript2.py`). Dabei wird `skrip
 
 ```{figure} ../../../figs/05-python-ecosystem-and-setup/paufgaben/k3/k3_abb10.png
 ---
-width: 700px
+width: 350px
 name: fig-paufgaben-a311-datei-lesen
 ---
 Beispielausgabe beim Einlesen einer Textdatei (Aufgabensammlung PA3.11).

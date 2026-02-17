@@ -7,7 +7,10 @@ Das Team entscheidet deshalb: Für dieses Projekt werden keine neuen Abhängigke
 
 Julia merkt sofort: Wenn sie selbst Funktionalität implementiert, muss sie auch selbst festlegen, was „korrekt“ heißt, und das Verhalten absichern. Tests sind damit kein Extra, sondern Teil der Eigenentwicklung.
 
-> Kernidee: Build bedeutet Verantwortung – für Korrektheit, Wartbarkeit und klare Fehlermeldungen.
+```{admonition} Kernidee
+:class: remark
+Build bedeutet Verantwortung – für Korrektheit, Wartbarkeit und klare Fehlermeldungen.
+```
 
 
 Julia geht in drei Schritten vor:

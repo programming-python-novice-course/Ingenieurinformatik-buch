@@ -1,7 +1,7 @@
 # Lernen einer Programmiersprache
 
 ```{admonition} Lernen
-::class: note
+:class: note
 
 Was bedeutet es, eine Programmiersprache zu lernen?
 ```
@@ -109,7 +109,10 @@ Das heißt: Sie wissen, welche Bausteine es bereits gibt, wie man sie findet, wi
 - Wer alles „von Grund auf“ selbst baut, verliert Zeit und riskiert Fehler, die andere bereits gelöst haben.
 - Gleichzeitig muss man Bibliotheken bewusst auswählen: Qualität, Wartung, Sicherheit, Lizenz und Abhängigkeiten spielen eine Rolle.
 
-Bei Python spielt das Kennen und das Anwenden des Ökosystems eine stärkere Rolle als in anderen Programmiersprachen, weil das Ökosystem extrem breit ist:
+Bei Python spielt das Kennen und das Anwenden des Ökosystems eine stärkere Rolle als in anderen Programmiersprachen, weil das Ökosystem extrem breit ist.
+
+Für das Engineering besonders wichtig:
+
 - Signalverarbeitung: [SciPy](https://docs.scipy.org/doc/scipy/) (z. B. Filter, FFT, Spektren, numerische Methoden)
 - Simulationen und Auswertung: [NumPy](https://numpy.org/doc/) und [pandas](https://pandas.pydata.org/docs/) (z. B. Matrizen/Rechnen, Messdaten-Tabellen, CSV/Excel)
 - Optimierung: [scikit-optimize](https://scikit-optimize.github.io/) (z. B. Black-Box-Optimierung und Parameter-/Hyperparameter-Tuning)
@@ -122,7 +125,7 @@ Bei Python spielt das Kennen und das Anwenden des Ökosystems eine stärkere Rol
 
 ```{figure} ../../figs/01-course-overview/languages/ecosystem.png
 ---
-width: 700px
+width: 400px
 name: fig-python-ecosystem
 ---
 Schematische Darstellung des wissenschaftlichen Python-Ökosystems (Jake VanderPlas, PyCon 2017). Quelle: https://www.researchgate.net/figure/Schematic-view-of-the-Python-scientific-software-ecosystem-Figure-taken-from-Jake_fig1_332799309 (Zugriff: 03.02.2026).

@@ -2,7 +2,7 @@
 
 Abhängig von Ihrem Studienbeginn gelten unterschiedliche Prüfungsordnungen. Bitte prüfen Sie, welche Variante für Sie zutrifft.
 
-**Aktuelle Prüfungsordnung (Teilprüfungen)**
+## Aktuelle Prüfungsordnung (Teilprüfungen)
 
 Bei dieser Variante melden Sie sich zu zwei separaten Teilprüfungen an:
 - „Programmierung"
@@ -15,7 +15,7 @@ Wichtige Regelungen:
   - Programmierung: 60%
   - Numerik für Ingenieure: 40%
 
-**Alte Prüfungsordnung (Gesamtprüfung)**
+## Alte Prüfungsordnung (Gesamtprüfung)
 
 Bei dieser Variante melden Sie sich zur Gesamtprüfung „Ingenieurinformatik" an.
 
@@ -27,19 +27,19 @@ Wichtige Regelungen:
 - Es muss nicht jeder Prüfungsteil separat bestanden werden
 
 
-**Prüfungsvorbereitung**
+## Prüfungsvorbereitung
 
-Zur Prüfungsvorbereitung dienen Ihnen die Aufgabenbeispiele aus der Vorlesung und den Praktika. Zusätzlich dazu stellen wir Ihnen Prüfungen aus vorhergehenden Semstern bereit. Die Prüfungen finden Sie unter [Downloads](../misc/downloads.html).
+- Zur Prüfungsvorbereitung dienen Ihnen die Aufgabenbeispiele aus der Vorlesung und den Praktika. 
+
+- Zusätzlich dazu stellen wir Ihnen Prüfungen aus vorhergehenden Semstern bereit. Die Prüfungen finden Sie unter [Downloads](../misc/downloads.html).
 
 **Zugelassene Hilfsmittel**
 
-Bisher waren folgende Unterlagen zugelassen:
-+ Eigene Hilfsmittel (Skripte, ...)
-ausgenommen:
+Bisher waren eigene Hilfsmittel (Skripte, ...) zugelassen, ausgenommen:
 + Taschenrechner
-+ PC/Notebook/Handy/Tablet
++ PC/Notebook/Handy/Tablet/...
 
-Hinweise: Bearbeitung mit Bleistift ist zugelassen. 
+Hinweis: Eine Bearbeitung mit Bleistift was bisher möglich. 
 
 ```{admonition} Hinweis
 :name: hint-pruefung-aenderungen

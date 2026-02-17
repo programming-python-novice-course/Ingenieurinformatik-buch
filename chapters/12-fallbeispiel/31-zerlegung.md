@@ -1,6 +1,9 @@
 # Dekomposition (V)
 
-> Wie viele tatsächliche Probleme stecken in diesem Auftrag?
+```{admonition} Leitfrage
+:class: question
+Wie viele tatsächliche Probleme stecken in diesem Auftrag?
+```
 
 Julia liest die Aufgabenstellung und merkt: „Visualisierung“ und „Statistik-Tabelle“ sind Ziele, aber beide setzen voraus, dass die Daten überhaupt zuverlässig im Programm ankommen. Bevor sie Code schreibt, zerlegt sie die Aufgabe daher in Teilprobleme.
 
@@ -20,10 +23,13 @@ Julia nutzt für jedes Teilproblem denselben Fragenkatalog:
 
 Wenn mehrere Teilprobleme dieselbe Voraussetzung haben, ist das oft ein eigenes Teilproblem.
 
-> Kernidee: Julia schreibt hier noch keinen Code. Sie schafft zuerst Klarheit über Abhängigkeiten, damit sie nicht an der falschen Stelle startet.
+```{admonition} Kernidee
+:class: remark
+Julia schreibt hier noch keinen Code. Sie schafft zuerst Klarheit über Abhängigkeiten, damit sie nicht an der falschen Stelle startet.
+```
 
 ```{admonition} Aufgabe
-:::class: note
+:class: note
 
 Analysieren Sie Input, Output und Abhängigkeiten für die Teilaufgaben „Visualisierung“ und „Statistik-Tabelle“. Was fällt Ihnen auf?
 ```

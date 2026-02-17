@@ -24,7 +24,7 @@ Deshalb springen wir von außen nach innen und werten dann von innen nach außen
 
 ```{figure} ../../../figs/06-python-basics/python-tutorial/variables/eval.png
 ---
-width: 400px
+width: 300px
 name: fig-eval
 ---
 Skizze der Auswertung / Evaluierung des obigen Ausdrucks.

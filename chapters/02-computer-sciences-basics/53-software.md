@@ -20,7 +20,6 @@ Ein *proprietäres Format* ist ein Dateiformat, das nicht offen standardisiert i
 Beispiel: Wenn Sie ein Bauteil in CATIA als `.CATPart` speichern, können Sie die Geometrie in anderen CAD-Tools oft nicht direkt öffnen oder weiterbearbeiten. Häufig müssen Sie das Bauteil dafür erst in ein Austauschformat exportieren, z. B. als STEP-Datei (`.step`/`.stp`). STEP ist ein *offener Standard*.
 ```
 
-
 - *Geschäftslogik (Anwendungslogik)* ist der Teil eines Programms, der fachliche Regeln und Abläufe beschreibt: *Was* soll passieren – und *in welcher Reihenfolge*?
 - Ein *Entrypoint* ist **nicht** die Geschäftslogik selbst, sondern ein Startpunkt, der die Geschäftslogik aufruft (z. B. über GUI oder „headless“ ohne Oberfläche).
 
@@ -39,7 +38,7 @@ Anwendungs-Software besteht meist aus mehreren Programmen, die sowohl programmsp
 
 ```{figure} ../../figs/02-computer-sciences-basics/programming-scripting.png
 ---
-width: 700px
+width: 400px
 name: fig-programming-vs-scripting
 ---
 Skripten beschreibt häufig den Workflow (A → B → C) mit vorhandenen Bausteinen, während Programmieren stärker auf die Entwicklung wiederverwendbarer Bausteine (A/B/C) abzielt.

@@ -48,9 +48,8 @@ Neben Python‑„object references“ gibt es in anderen Sprachen:
 - **Pass by Reference (Referenzübergabe)**: Eine Referenz/Adresse wird so übergeben, dass die Funktion auch den *Aufrufer‑Bezug* direkt verändern kann (z.B. C++ mit `&`).
 ```
 
-Zwei Mini‑Beispiele:
 
-Funktion mit Seiteneffekt (mutiert das Argument)
+## Funktion mit Seiteneffekt (mutiert das Argument)
 
 ```{code-cell} python
 meine_liste = [1, 2, 3]  # Liste außerhalb der Funktion
@@ -65,7 +64,7 @@ print("Ergebnis:", ergebnis)  # Ausgabe: [1, 2, 3, 4]
 print("Originale Liste:", meine_liste)  # Ausgabe: [1, 2, 3, 4] - wurde verändert!
 ```
 
-Funktion ohne Seiteneffekt (arbeitet mit Kopie)
+## Funktion ohne Seiteneffekt (arbeitet mit Kopie)
 
 ```{code-cell} python
 meine_liste = [1, 2, 3]  # Liste außerhalb der Funktion
@@ -83,7 +82,7 @@ print("Originale Liste:", meine_liste)  # Ausgabe: [1, 2, 3] - unverändert!
 
 In diesem Fall bleibt der Zustand außerhalb der Funktion unverändert – es liegt kein Seiteneffekt vor. In der Informatik spricht man hier auch von reinen (ohne Seiteneffekt) bzw. unreinen Funktionen (mit Seiteneffekt).
 
-**Wann tritt ein Seiteneffekt ein?**
+## Wann tritt ein Seiteneffekt ein?
 
 Drei Voraussetzungen müssen erfüllt sein, damit ein Seiteneffekt entstehen kann:
 

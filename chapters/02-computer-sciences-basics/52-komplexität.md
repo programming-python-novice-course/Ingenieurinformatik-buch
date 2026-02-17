@@ -23,7 +23,7 @@ Genau das beschreibt die **Komplexität** (Komplexitätstheorie/Analyse von Algo
 
 Wichtig: In der Regel interessiert uns nicht die genaue Zeit in Sekunden auf einem bestimmten Laptop, sondern wie stark der Aufwand wächst, wenn $n$ größer wird (*Skalierung*).
 
-**Notation**
+## Notation
 
 Wir beschreiben den Aufwand als Funktion $T(n)$ (Zeit) oder $S(n)$ (Speicher).
 Dabei wird der Blick auf große $n$ gerichtet; Konstanten und unwichtige Terme werden „ignoriert“.
@@ -38,7 +38,7 @@ Dabei wird der Blick auf große $n$ gerichtet; Konstanten und unwichtige Terme w
 Beispiel: $T(n)=3n+10$ ist $\Theta(n)$ (und damit auch $O(n)$).
 
 
-**Mini-Beispiel**
+## Mini-Beispiel
 
 Gegeben ist eine Liste `xs`:
 
@@ -140,7 +140,9 @@ Die intuitive Erklärung: Algorithmus A vergleicht sehr viele Element-Paare (fü
 
 Hinweis: Die Kurven hier sind eine **empirische Beobachtung** (Messung). Im Idealfall leitet man die Komplexität **analytisch** (durch eine mathematische Betrachtung) her. Messungen können die Tendenz gut sichtbar machen, hängen aber von Rechner, Implementierung und Messmethode ab.
 
-
+```{admonition} Merke
+Sie vergleichen Algorithmen anhand der "Zeit" und des "Speichers", wobei (meist) nicht die absoluten Werte entscheidend sind, sondern wie sich diese ändern, wenn das Problem "größer" wird.
+```
 
 
 

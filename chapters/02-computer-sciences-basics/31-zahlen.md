@@ -1,11 +1,11 @@
 # Zahlen (S)
 
-Im vorherigen Kapitel haben Sie bereits gesehen, dass beim UPC eine Bitfolge wie `0101111` für die Ziffer 6 steht.
-Das ist ein wichtiges Muster: Eine Bitfolge bedeutet nicht „von selbst“ etwas, sondern erst durch eine Codierung (ein Regelwerk).
+- Im vorherigen Abschnitt haben Sie gesehen, dass eine Bitfolge wie `0101111` für die Ziffer 6 stehen kann.
+- Eine Bitfolge bedeutet nicht „von selbst“ etwas, sondern erst durch eine Codierung (ein Regelwerk).
 
 Bei UPC gab es nicht direkt ein Muster. Sie haben in der Tabelle einfach abgelesen, dass `0101111` für die Ziffer 6 steht. 
 
-**Binary-coded decimal**
+## Binary-coded decimal
 
 Der Binary-coded decimal (BCD) ist eine weitere numerische Codierung.
 Die Zuordnung der Zahlen unterscheidet sich aber von dem, was wir bei UPC gesehen haben.
@@ -70,10 +70,12 @@ Hier noch einmal als Übersicht dargestellt:
 - Ein **Byte** sind **8 Bits** (= **2 Nibbles**, z. B. `0111 0101`).
 ```
 
-Im Vergleich zum UPC ist BCD damit „systematischer“. Wenn Sie das Muster kennen, brauchen Sie für 0–9 keine Tabelle mehr! 
+- Im Vergleich zum UPC ist BCD damit „systematischer“. 
+- Wenn Sie das Muster kennen, brauchen Sie für 0–9 keine Tabelle mehr! 
+
 Bei zwei Ziffern, wird einfach jeder Ziffer einzeln umgerechnet.
 
-Beispiel: **75 in BCD**
+## Beispiel: **75 in BCD**
 
 1. Zerlegen Sie die Zahl in ihre Einzelziffern: $75 \rightarrow$ „7“ und „5“.
 2. Codieren Sie jede Ziffer als 4 Bits (Schalterwerte 8-4-2-1):
@@ -82,8 +84,13 @@ Beispiel: **75 in BCD**
 3. Hängen Sie die Bits aneinander: $75 \rightarrow$ `0111 0101`
 
 
-Problem: BCD codiert jede Dezimalziffer mit 4 Bits. Ab der Zahl 10 haben wir zwei Ziffern (1 und 0) und brauchen deshalb 2 Nibbles = 8 Bits (1 Byte).
-Das ist ineffizient, denn mit 4 Bits gäbe es bereits $2^4 = 16$ mögliche Bitmuster, aber für Dezimalziffern werden nur 10 davon genutzt (0–9) – 6 Muster bleiben ungenutzt.
+**Problem**
+
+- BCD codiert jede Dezimalziffer mit 4 Bits. 
+- Ab der Zahl 10 haben wir zwei Ziffern (1 und 0) und brauchen deshalb 2 Nibbles = 8 Bits (1 Byte).
+- Das ist ineffizient, denn mit 4 Bits gäbe es bereits $2^4 = 16$ mögliche Bitmuster, aber für Dezimalziffern werden nur 10 davon genutzt (0–9) – 6 Muster bleiben ungenutzt.
+
+
 Was wäre also, wenn wir diese ungenutzten Muster einfach zum Weiterzählen verwenden würden?
 
 | Dezimal | BCD-Code        | Alternative??? |

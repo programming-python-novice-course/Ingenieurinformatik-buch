@@ -69,14 +69,22 @@ Am besten probieren Sie den Prompt selbst aus.
 
 
 
-Wichtig ist: Das LLM wird Julia viele Paketvorschläge machen. Das ist hilfreich, aber Julia muss entscheiden, ob diese Pakete für ihr Umfeld wirklich taugen:
+Wichtig ist: Das LLM wird Julia viele Paketvorschläge machen.
+Das ist hilfreich, aber Julia muss entscheiden, ob diese Pakete für ihr Umfeld wirklich taugen.
+
+Zum Beispiel:
 
 - Wie werden die Pakete gewartet?
 - Sind die Pakete gut getestet?
 - Sind sie einfach installierbar?
 - Wie komplex darf das System werden? Reicht eine Minimal-Variante?
 
-Selbst mit Recherche und Beispielskript bleiben meist Fragen offen. Außerdem kann das LLM in der Regel keine Schnittstellenarbeit übernehmen. In diesem Fall heißt das: Julia muss sicherstellen, dass die Datei an einer Stelle liegt (oder erreichbar ist), auf die ihr Programm zugreifen kann.
+Selbst mit Recherche und Beispielskript bleiben meist Fragen offen.
+Außerdem kann das LLM in der Regel keine Schnittstellenarbeit übernehmen.
+
+In diesem Fall heißt das:
+
+- Julia muss sicherstellen, dass die Datei an einer Stelle liegt (oder erreichbar ist), auf die ihr Programm zugreifen kann.
 
 
 ## Julias Entscheidung: Minimal-Stack (V)

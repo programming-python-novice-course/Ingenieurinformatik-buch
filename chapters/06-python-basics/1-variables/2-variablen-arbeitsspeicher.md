@@ -13,7 +13,10 @@ kernelspec:
 # Variablen und der Arbeitsspeicher (S)
 
 Eine *Variable* können wir als Paar von **Wert** und **Arbeitsspeicheradresse** verstehen.
-Der Wert der Variablen steht im [Arbeitsspeicher](def-main-memory) an einer bestimmten Arbeitsspeicheradresse.
+
+- Der **Wert** der Variablen steht im [Arbeitsspeicher](def-main-memory).
+- Die **Arbeitsspeicheradresse** zeigt auf die Stelle im Speicher, an der dieser Wert liegt.
+
 Den Arbeitsspeicher können wir uns als lange Liste von Bits vorstellen:
 
 ```{figure} ../../../figs/03-language-properties/python-tutorial/variables/ram.png
@@ -33,7 +36,8 @@ Eine *Variable* kann demnach als Tripel, bestehend aus
 
 verstanden werden.
 Die **Speicheradresse** der Variable zeigt in den Arbeitsspeicher an eine bestimmte Stelle.
-Dort steht jedoch nicht nur der **Wert** sondern auch der **Datentyp**, d.h. die *Information* wie dieser **Wert** zu interpretieren ist.
+Dort steht jedoch nicht nur der **Wert**.
+Dort steht auch der **Datentyp**, d. h. die *Information*, wie dieser **Wert** zu interpretieren ist.
 
 ```{figure} ../../../figs/07-python-data-types/python-tutorial/datatypes/data-type-key-pair.png
 ---
@@ -157,12 +161,13 @@ print(id(x))
 print(id(z))
 ```
 
-Hmm?? 
-Warum war die ``id`` beim Wert ``25`` identisch aber beim Wert ``2131313`` nicht?
-Hier kommen wir in die tiefen Details von ``Python``, welche fürs erste nicht so wichtig sind.
-Zur Optimierung der Laufzeit legt ``Python`` alle kleinen ganzen Zahlen bei Start der Ausführung in den Speicher, sodass Speicherplatz gespart wird.
+Das Ergebnis wirkt zunächst überraschend:
+Warum war die ``id`` beim Wert ``25`` identisch, aber beim Wert ``2131313`` nicht?
+
+Hier kommen wir in Details von ``Python``, die fürs Erste nicht so wichtig sind.
+Zur Optimierung der Laufzeit legt ``Python`` viele kleine ganze Zahlen beim Start der Ausführung in den Speicher, sodass Speicherplatz gespart wird.
 Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten k kleinsten Zahlen). 
-``2131313`` zählt nicht dazu und somit wird der Wert jedesmal neu in den Speicher geschrieben.
+``2131313`` zählt nicht dazu und somit wird der Wert jedes Mal neu in den Speicher geschrieben.
 
 Folgender Code berechnet die erste Zahl die nicht bereits bei der Ausführung im Speicher liegt:
 

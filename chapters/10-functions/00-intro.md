@@ -79,7 +79,7 @@ In diesem Kapitel lernen Sie die Syntax (``def``, Parameter, ``return``), Namens
 Letztere (Lambdas, verschachtelte Funktionen, First-Class) werden im [Expertenwissen](sec-anonymous-function) vertieft.
 
 ```{admonition} Lernziele
-::class: learngoals
+:class: learngoals
 
 - **Basis:** Eigene Funktionen definieren und aufrufen (Parameter, Argumente, Rückgabewert), sinnvolle Schnittstellen gestalten.
 - **Basis:** Ablauf von Funktionsaufrufen nachvollziehen und typische Fehler systematisch debuggen.

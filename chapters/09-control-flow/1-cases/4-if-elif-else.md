@@ -80,7 +80,7 @@ text
 
 ```{figure} ../../../figs/09-control-flow/paufgaben/k2/k2_abb1.png
 ---
-width: 520px
+width: 420px
 name: fig-paufgaben-a21-stromrechnung
 ---
 Beispielausgabe (Aufgabensammlung PA2.1).

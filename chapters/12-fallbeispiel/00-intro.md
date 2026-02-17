@@ -52,7 +52,7 @@ Nicht „Kann ich das programmieren?“, sondern:
 
 
 ```{admonition} Lernziele
-::class: learngoals
+:class: learngoals
 Nach diesem Kapitel können Sie:
 
 - einen praxisnahen Entwicklungsablauf von der Aufgabenstellung bis zur Lösung nachvollziehen (inkl. Build vs. Buy),

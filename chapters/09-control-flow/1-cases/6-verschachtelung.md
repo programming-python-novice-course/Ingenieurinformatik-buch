@@ -1,3 +1,14 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Verschachtelung (V)
 
 Wir können häufig verschachtelte Fallunterscheidungen auflösen, um Code leserlicher zu machen.

@@ -15,7 +15,10 @@ Ein Zahlensystem ist eine Darstellungsweise von Zahlen.
 Es legt fest, wie Zahlen mit Ziffern notiert werden (z. B. Dezimal, Binär, Hexadezimal).
 ```
 
-> Wie würden Sie \(1/3\) speichern?
+```{admonition} Frage
+:class: question
+Wie würden Sie \(1/3\) speichern?
+```
 Als 1.3333 oder als 1.3333333333333333? Irgendwann muss man abbrechen.
 
 Genau dieses Problem tritt bei der Speicherung vieler Kommazahlen auf: Man muss sie mit endlich vielen Bits repräsentieren.

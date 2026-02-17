@@ -1,4 +1,7 @@
-# Protokoll (S)
+# Protokolle (S)
+
+Ein *Protokoll* legt fest, **wie Daten über eine Schnittstelle übertragen werden** und **was sie bedeuten**.
+Es beschreibt also den Vertrag zwischen Sender und Empfänger (Format, Struktur, Semantik).
 
 Grundsätzlich unterscheidet man:
 
@@ -9,32 +12,30 @@ Grundsätzlich unterscheidet man:
 2. **Binäre Protokolle**  
    Daten werden als Bytes übertragen.  
    Beispiele: TCP/IP
-```
 
-Problem:
+## Wo liegt das Problem?
 
-Wir erhalten Bytes oder Text. Die ursprüngliche Bedeutung in unserem Programm müssen wir selbst hergestellen: 
+Wir erhalten bei der Kommunikation über Schnittstellen **Bytes oder Text**.
+Die ursprüngliche Bedeutung im Programm müssen wir daraus erst wieder herstellen.
 
-Nehmen wir an, wir haben den Text
+Nehmen wir an, wir erhalten den Text:
 
 ```
 "Meine Zahlen: 2,3,4"
 ```
 
-erhalten.
-Die Zeichen "2", "3" und "4" sind hier Text und keine echten Zahlen.
-Zum Rechnen brauchen wir aber echte Zahlen!
+Die Zeichen `"2"`, `"3"` und `"4"` sind hier **Text** und keine echten Zahlen.
+Zum Rechnen brauchen wir aber Zahlenwerte (z. B. `2`, `3`, `4` als `int`).
 
--> wie wir das erreichen besprechen wir im nächsten abschnitt
+Wie wir das erreichen, sehen wir im Abschnitt zur **Konvertierung** (Text → Zahl).
 
+```{admonition} Tipp: Rückfragen bei „Schnittstelle/Protokoll“
+:class: tip
+Wenn jemand sagt „das geht dann über eine Schnittstelle XYZ“, fragen Sie nach:
 
-tipp:
-
-wenn jemand sagt "das geht dann über eine schnittstelle xyz"
-fragen Sie nach:
-- wie ist die schnittstelle beim sender und empfänger implementiert?
-- wie heisst das protkoll?
-- wer kümmert sich darum dass der empfänger empfangen kann ("aktiv ist")? 
-- gibt der empfänger dem sender eine bestätigung, dass er etwas korrekt empfangen hat? 
-- kann der empfänger fehlerhafte sendungen erkennen oder sogar korrigieren?
-
+- Wie ist die Schnittstelle beim **Sender** und beim **Empfänger** implementiert?
+- Wie heißt das **Protokoll** (Format/Regeln), an das sich beide halten?
+- Wer stellt sicher, dass der Empfänger überhaupt **empfangen kann** (z. B. „aktiv ist“)?
+- Gibt der Empfänger dem Sender eine **Bestätigung** (Ack), dass Daten korrekt angekommen sind?
+- Kann der Empfänger **fehlerhafte Sendungen** erkennen oder sogar korrigieren?
+```

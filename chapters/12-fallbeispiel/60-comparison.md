@@ -39,10 +39,13 @@ Die Grafik ordnet Bibliotheken nach Abstraktionsgrad (oben = „mehr erledigt f�
 - Daten/Numerik: Julia nutzt im Buy-Pfad `pandas` (hoch). `pandas` baut intern auf `numpy` auf (niedriger). Für grundlegende Statistik nutzt Julia im Build-Pfad `statistics` (Standardbibliothek), das wiederum auf einfachen mathematischen Bausteinen (z. B. `math`) aufsetzt.
 - Visualisierung: Für Plots nutzt Julia `matplotlib`. Für die Performance-Auswertung (Boxplot) verwendet sie zusätzlich `seaborn` als High-Level-Schicht, die auf `matplotlib` aufbaut.
 
-> Merksatz: Je höher der Abstraktionsgrad, desto schneller kommen Sie zu Ergebnissen – je niedriger, desto mehr bestimmen Sie das „Wie“.
+```{admonition} Merksatz
+:class: remark
+Je höher der Abstraktionsgrad, desto schneller kommen Sie zu Ergebnissen – je niedriger, desto mehr bestimmen Sie das „Wie“.
+```
 
 ```{admonition} Kurz zusammengefasst
-:::class: note
+:class: note
 
 - High-Level-Funktionen beschreiben eher, was berechnet werden soll, und sparen Implementierungsarbeit.
 - Low-Level-Code legt fest, wie gerechnet wird, und bringt mehr Kontrolle (z. B. welche Methode für Quantile verwendet wird), aber auch mehr Aufwand.

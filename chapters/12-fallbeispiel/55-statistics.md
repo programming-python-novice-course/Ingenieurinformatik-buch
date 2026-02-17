@@ -29,7 +29,13 @@ Wir sortieren sie:
 **25 %-Quantil (Q1)**
 
 25% heißt: „Ein Viertel der Werte soll links davon liegen.“
-In unserem Zahlenbeispiel mit 10 Zahlenwerten, wäre das der 2,5. Wert. Den gibt es aber leider nicht. Also was sollen wir tun? Julia entscheidet sich einfach die Zahl an der 3. Position zu nehmen. In der Literatur ist diese Verfahren, bei dem also die nächst höhere Position verwendet wird, als Nearest-Rank-Verfahren bekannt. Es gibt auch andere Strategien.
+
+In unserem Zahlenbeispiel mit 10 Zahlenwerten:
+
+- \(25\\% \\cdot 10 = 2{,}5\) → „2,5. Wert“ (eine halbe Position gibt es nicht)
+- Julia nimmt deshalb den nächsten sinnvollen Rang: **Position 3**
+- Dieses Vorgehen (nächster Rang nach oben) nennt man in der Literatur **Nearest-Rank-Verfahren**
+- Es gibt auch andere Strategien
 
 ```text
 9, 12, [28], 55, 63, 82, 91, 92, 96, 97
@@ -73,6 +79,6 @@ Drei Viertel von 10 sind 7,5 Werte → Nearest-Rank nimmt den nächsten ganzen R
 In unserem Beispiel ist das 75 %-Quantil = 92.
 
 ```{admonition} Versteckte Komplexität
-:::class: note
+:class: note
 Quantile können unterschiedliche definiert sein. Die Ergebnisse hängen von der gewählten Methode ab. Was wohl pandas intern verwendet hat? Finden Sie es heraus!
 ```

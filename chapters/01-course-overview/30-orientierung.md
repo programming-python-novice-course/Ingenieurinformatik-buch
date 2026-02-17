@@ -7,7 +7,5 @@ Die folgenden Inhalte sollen Ihnen dabei helfen, die Kursinhalte und das Vorgehe
 ---
 height: 320px
 name: fig-orientierung
----
-Orientierung: Die Leitfragen dieses Abschnitts im Überblick.
 ```
 ::::

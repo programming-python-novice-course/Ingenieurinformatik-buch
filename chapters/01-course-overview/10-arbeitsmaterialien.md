@@ -21,7 +21,7 @@ Damit Sie die Inhalte der Vorlesung möglichst effizient bearbeiten können, emp
 
 ```{figure} ../../figs/01-course-overview/qr-website.png
 ---
-width: 300px
+width: 200px
 name: fig-qr-interaktive-website
 ---
 Link zur interaktiven Website
@@ -35,7 +35,7 @@ Auf der interaktiven Website können Sie viele der gezeigten Programmierbeispiel
 ```{admonition} Hinweis
 :name: remark-sample
 :class: remark
-Falls noch nicht geschehen: Melden Sie sich zum Moodle-Kurs an. Den Kursnamen auf Moodle sowie das Passwort erhalten Sie in der ersten Vorlesung. Falls Sie dort nicht anwesend sein können, kontaktieren Sie bitte Ihre Dozentin.
+Falls noch nicht geschehen: Melden Sie sich zum Moodle-Kurs an. Den Kursnamen auf Moodle sowie das Passwort erhalten Sie in der ersten Vorlesung. 
 ```
 
 
