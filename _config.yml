@@ -79,12 +79,12 @@ sphinx:
     latex_elements:
       releasename: "Version"
       tableofcontents: |
-        \chapter*{Vorwort}
+        \chapter*{Hinweise}
         Dieses Buch ist durch Beiträge verschiedener Personen entstanden. 
         Die Herausgeberin allein ist für die Integration der Beiträge und der daraus resultierenden Buchfassung verantwortlich. 
-        Eine Übersicht aller beitragenden Personen und ihrer Beiträge findet sich im Anhang unter „Beiträge“.
+        Eine Übersicht aller beitragenden Personen und ihrer Beiträge findet sich im Anhang unter „Beiträge“.\\
 
-        \vspace*{10cm}
+        \vspace*{0.1cm}
 
         Bei Fragen wenden Sie sich bitte an die Herausgeberin:
         \\
@@ -92,7 +92,12 @@ sphinx:
         \\
         Lehrbeauftragte Hochschule München, FK03
         \\
-        www.christinamariamayr.de
+        www.christinamariamayr.de\\
+        \vspace*{9cm}\\
+        Dieses Werk ist lizenziert unter der \\
+        © Creative Commons Namensnennung-Share Alike 4.0 International Lizenz (CC BY-SA 4.0). \\
+        Ausgenommen von dieser Lizenz sind Abbildungen, Grafiken und Fotos, die mit einer gesonderten Quellen- oder Lizenzangabe versehen sind.
+
 
         % weiße Rückseite (leer, ohne Kopf-/Fußzeile)
         \clearpage

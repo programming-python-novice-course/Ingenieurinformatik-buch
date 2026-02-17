@@ -14,6 +14,7 @@ Default behavior:
 Additionally, it generates a print config:
   _config.yml -> _config_print.yml
   with `execute_notebooks: 'off'` (to avoid executing notebooks in print builds)
+  and appends a suffix (default: " (Druckversion)") to the LaTeX `\title{...}`.
 """
 
 from __future__ import annotations
@@ -22,6 +23,48 @@ import argparse
 import re
 import sys
 from pathlib import Path
+
+
+def _append_suffix_to_latex_title(src: str, *, suffix: str) -> tuple[str, bool]:
+    """
+    Append `suffix` to the first LaTeX \\title{...} argument (once).
+
+    Works on the full text and supports nested braces inside the title, e.g.
+    \\title{Foo \\textit{Bar}}.
+    """
+    needle = r"\title{"
+    start = src.find(needle)
+    if start == -1:
+        return src, False
+
+    arg_start = start + len(needle)
+    depth = 1
+    i = arg_start
+    while i < len(src) and depth > 0:
+        c = src[i]
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+        i += 1
+
+    if depth != 0:
+        raise RuntimeError("Unbalanced braces while parsing \\title{...} in config")
+
+    # `i` is positioned right after the matching closing brace.
+    arg_end = i - 1
+    arg = src[arg_start:arg_end]
+
+    # Avoid double-appending if the suffix (or the key marker) is already present.
+    if "(Druckversion)" in arg or suffix in arg:
+        return src, False
+
+    # Insert suffix before any trailing whitespace/newlines inside the argument.
+    m_trailing_ws = re.search(r"\s*\Z", arg)
+    insert_at = m_trailing_ws.start() if m_trailing_ws else len(arg)
+    new_arg = arg[:insert_at] + suffix + arg[insert_at:]
+
+    return src[:arg_start] + new_arg + src[arg_end:], True
 
 
 def generate_toc_print(*, input_path: Path, output_path: Path, stop_after: str) -> None:
@@ -57,6 +100,7 @@ def generate_config_print(
     output_path: Path,
     execute_notebooks_value: str = "'off'",
     latex_targetname_value: str = "book-print.tex",
+    title_suffix: str = " (Druckversion)",
 ) -> None:
     """
     Create a copy of `_config.yml` for the print build.
@@ -102,7 +146,9 @@ def generate_config_print(
     if not found_targetname:
         raise RuntimeError(f"Could not find a 'targetname:' line in {input_path}")
 
-    output_path.write_text("".join(out), encoding="utf-8")
+    text = "".join(out)
+    text, _changed = _append_suffix_to_latex_title(text, suffix=title_suffix)
+    output_path.write_text(text, encoding="utf-8")
 
 
 def main(argv: list[str]) -> int:
@@ -147,6 +193,11 @@ def main(argv: list[str]) -> int:
         default="book-print.tex",
         help="Value to write for latex.latex_documents.targetname (default: book-print.tex)",
     )
+    parser.add_argument(
+        "--title-suffix",
+        default=" (Druckversion)",
+        help="Suffix appended to the first LaTeX \\title{...} in the print config",
+    )
 
     args = parser.parse_args(argv)
     toc_input_path = Path(args.input)
@@ -165,6 +216,7 @@ def main(argv: list[str]) -> int:
             output_path=config_output_path,
             execute_notebooks_value=args.execute_notebooks_value,
             latex_targetname_value=args.latex_targetname,
+            title_suffix=args.title_suffix,
         )
     except Exception as e:
         print(f"ERROR: {e}", file=sys.stderr)
