@@ -75,7 +75,7 @@ Implementieren Sie eine Stromrechnung:
 - die nächsten 2500 kWh: 0,35 €/kWh
 - darüber: 0,30 €/kWh
 
-Geben Sie den Rechnungsbetrag **mit zwei Nachkommastellen** aus (Formatierung in f-Strings).
+Geben Sie den Rechnungsbetrag mit zwei Nachkommastellen aus (Formatierung in f-Strings).
 ```
 
 ```{code-cell} python3

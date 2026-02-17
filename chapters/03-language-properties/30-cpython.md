@@ -52,7 +52,10 @@ Als *Referenzimplementierung* bezeichnen wir eine *Implementierung*, die einen S
 Wie der Name andeutet, ist CPython in ``C`` (und ``Python`` selbst) geschrieben.
 Das mag verwirrend klingen.
 
->Wenn eine Sprache wie ``Python`` eine Implementierung wie *CPython* benötigt, die wiederum in einer anderen Sprache wie ``C`` geschrieben ist, wie kann es dann jemals ausführbaren Code geben?
+```{admonition} Frage
+:class: question
+Wenn eine Sprache wie ``Python`` eine Implementierung wie *CPython* benötigt, die wiederum in einer anderen Sprache wie ``C`` geschrieben ist: Wie kann es dann jemals ausführbaren Code geben?
+```
 
 
 ```{figure} ../../figs/03-language-properties/funny-image-cpython.png
@@ -107,7 +110,7 @@ print("Interpreter:", sys.executable)
 
 
 ```{admonition} Tipp
-::class: tip
+:class: tip
 
 - Wenn Sie über verschiedene Betriebssysteme und Plattformen hinweg mit anderen arbeiten, fragen Sie im Zweifel nach, welches Python (Implemementierung + Version) verwendet wird. Es kann kleine Unterschiede geben (z. B. unterstützte Pakete, Performance, Details der Laufzeit).
 ```

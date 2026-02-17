@@ -18,9 +18,12 @@ In der Praxis müssen Sie sicherstellen, dass Ihr Programm:
 
 Spätestens dann müssen Sie sich mit Fragen beschäftigen wie:
 
-> Wie bekomme ich mein Programm mit einer bestimmten Python-Version und allen benötigten Paketen zum Laufen?  
-> Wie kann ich mehrere Python-Versionen auf einem Rechner verwalten?  
-> Wie stelle ich sicher, dass die installierten Pakete zur Python-Version passen?
+```{admonition} Leitfragen
+:class: question
+- Wie bekomme ich mein Programm mit einer bestimmten Python-Version und allen benötigten Paketen zum Laufen?
+- Wie kann ich mehrere Python-Versionen auf einem Rechner verwalten?
+- Wie stelle ich sicher, dass die installierten Pakete zur Python-Version passen?
+```
 
 Dieses Kapitel erklärt die Begriffe hinter dem Kurs-Setup, damit Sie typische Probleme (falsche Python-Version, Paket fehlt, falsche Umgebung aktiv) schnell einordnen können.
 

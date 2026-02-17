@@ -34,9 +34,14 @@ print("x:", x)               # Wert
 ```
 
 Auf den ersten Blick wirkt es so, als würde der Zahlenwert *100* „in“ der Variable `x` abgespeichert werden.
-Unter der Haube passiert aber etwas anderes: `x` ist **nur ein Name**, der an ein `int`‑Objekt **gebunden** wird.
-Dieses Objekt hat einen Wert („100“), einen Typ (`int`) und eine Identität („dieses konkrete Objekt“).
-Diese Identität können Sie mit `id(...)` sichtbar machen (in CPython ist das oft die Speicheradresse).
+Unter der Haube passiert aber etwas anderes:
+
+- `x` ist **nur ein Name**, der an ein `int`‑Objekt **gebunden** wird.
+- Dieses Objekt hat
+  - einen Wert („100“),
+  - einen Typ (`int`)
+  - und eine Identität („dieses konkrete Objekt“).
+- Diese Identität können Sie mit `id(...)` sichtbar machen (in CPython ist das oft die Speicheradresse).
 
 
 ```{figure} ../../figs/03-language-properties/overview/object.png

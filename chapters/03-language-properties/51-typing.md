@@ -48,8 +48,13 @@ y = 2 + x   // ergibt "25"
 
 ## Type Hints
 
-Softwareentwickler können anderen Entwicklern mithilfe von *Type Hints* einen Hinweis darauf geben, welche Typen hier erwartet sind, z.B. macht es keinen Sinn die Potenz eines Textes zu berechnen.
-Diese Hinweise ändern (standardmäßig) nicht das Laufzeitverhalten, sondern dienen der Dokumentation und Werkzeugunterstützung (IDE, Linter).
+Mit *Type Hints* können Softwareentwickler anderen Entwickler:innen Hinweise geben, welche Typen erwartet sind.
+Zum Beispiel macht es keinen Sinn, die Potenz eines Textes zu berechnen.
+
+Wichtig dabei:
+
+- Type Hints ändern (standardmäßig) nicht das Laufzeitverhalten.
+- Sie dienen der Dokumentation und Werkzeugunterstützung (IDE, Linter).
 
 ```python
 def potenz(basis: float, exponent: float) -> float:

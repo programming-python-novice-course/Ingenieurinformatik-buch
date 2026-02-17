@@ -2,7 +2,10 @@
 
 Julia hat die Aufgabe bereits grob zerlegt (Parsing, Visualisierung, Statistik). Im Buy-Pfad war das einfach, weil `pandas` und `matplotlib` viele Details kapseln. Im Build-Pfad muss Julia diese Bausteine so weiter zerlegen, dass sie kleine, testbare Schritte erhält.
 
-> Kernidee: Julia zerlegt so lange weiter, bis jeder Schritt in 10–30 Zeilen verständlich implementierbar und testbar ist.
+```{admonition} Kernidee
+:class: remark
+Julia zerlegt so lange weiter, bis jeder Schritt in 10–30 Zeilen verständlich implementierbar und testbar ist.
+```
 
 ```{figure} ../../figs/12-fallbeispiel/dekomposition_teilprobleme-further.png
 ---

@@ -22,12 +22,14 @@ Die Mehrfachvererbung, welche wir in diesem Kurs nicht besprechen werden, ist in
 Ob eine Vererbung sinnvoll ist entscheidet sich durch die Datenstrukturen die Sie bauen wollen und nicht unbedingt durch die Realgegenstände, die diese Strukturen modellieren.
 ```
 
-So könnte man schnell zu dem Schluss kommen, dass ein Quadrat ein spezielles Rechteck ist und dass es somit eine gute Idee ist Quadrat von Rechteck erben zu lassen.
-Doch besitzt ein Quadrat lediglich eine Position und eine Breite wohingegen ein Rechteck noch eine zusätzliche Höhe besitzt.
-Vererben wir Rechteck an Quadrat erhält es ein überflüssiges Attribut.
-Das ist erst einmal nicht tragisch, wenn wir dem Rechteck jedoch eine Methode verpassen mit dem es seine Höhe verändern kann, geraten wir in Probleme.
-Denn damit kann ein Rechteck etwas, was ein Quadrat nicht kann -- die Höhe nicht aber die Breite verändern.
-Die Datenstruktur Rechteck ist nicht länger einer Abstraktion von Quadrat.
+Man könnte schnell schließen: Ein Quadrat ist ein spezielles Rechteck → also könnte Quadrat von Rechteck erben.
+
+In der Datenstruktur-Praxis gibt es dabei aber ein Problem:
+
+- Ein Quadrat hat (in diesem Modell) **Position** und **Breite**.
+- Ein Rechteck hat zusätzlich eine **Höhe**.
+- Wenn Quadrat von Rechteck erbt, bekommt es ein **überflüssiges Attribut** (Höhe).
+- Das ist zunächst nicht schlimm.\n  Problematisch wird es, sobald Rechteck eine Methode bekommt, die die Höhe verändern kann.\n- Dann kann ein Rechteck etwas, was ein Quadrat nicht kann: **Höhe ändern, ohne Breite zu ändern**.\n\nDamit ist die Datenstruktur Rechteck nicht länger eine Abstraktion von Quadrat.
 
 Oftmals ist es besser die *Komposition* der *Vererbung* vorzuziehen.
 *Komposition* bedeutet, dass wir eine Klasse definieren, die als Attribute weitere komplexere Klassen beinhaltet.

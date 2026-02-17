@@ -5,13 +5,13 @@ Grafische Benutzeroberflächen werden programmatisch erstellt.
 Man schreibt also Quellcode, der beschreibt, wie ein Fenster aufgebaut ist.
 Hierfür verwendet man in der Regel **GUI-Frameworks**, die fertige Strukturen wie z. B. Eingabefelder und Knöpfe zur Verfügung stellen.
 
-**Wie funktioniert das?**
+Wie funktioniert das?
 Sie sagen dem Framework: "Ich hätte gerne oben ein Bild, daneben ein Eingabefeld für eine E-Mail-Adresse und darunter ein Eingabefeld für eine Zahl."
 Das Framework stellt Ihnen diese Komponenten bereit.
 Sie programmieren nicht das Eingabefeld selbst,  
 sondern nur dessen Verhalten. Die Eingabeverarbeitung übernimmt das Framework für Sie, siehe hierzu das Beispiel unten.
 
-**Beispiel: Zahleneingabe mit GUI-Framework (PySide6)**
+Beispiel: Zahleneingabe mit GUI-Framework (PySide6)
 
 ```python
 from PySide6.QtWidgets import QApplication, QLineEdit
@@ -39,7 +39,7 @@ Wie Sie erkennen können, müssen Sie hierbei keine Typumwandlung und Validierun
 Wenn wir alle Aspekte der Eingabeverarbeitung selbst programmieren, sprechen wir von **Low-Level Programming**. 
 „Low-Level" bedeutet hier **nicht** hardwarenah, sondern:
 
-> Wir kümmern uns um technische Details, obwohl sie nicht zur eigentlichen fachlichen Aufgabe gehören.
+- Wir kümmern uns um technische Details, obwohl sie nicht zur eigentlichen fachlichen Aufgabe gehören.
 
 **Unsere eigentliche Aufgabe (High-Level)** ist zum Beispiel:
 - eine eingelesene **Float-Zahl zu quadrieren**

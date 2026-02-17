@@ -135,7 +135,10 @@ Wichtig ist, was gleich bleibt:
 - Die Variante wird über eine **kleine Einstellung** gewählt (opt-in), ohne dass sich die gewohnten Aufrufe ändern.
 
 Die wichtigste Idee hinter objektorientierter Programmierung ist:
-> Große Systeme so bauen, dass man kleine Teile ändern kann, ohne alles andere anzufassen.
+```{admonition} Merksatz
+:class: remark
+Große Systeme so bauen, dass man kleine Teile ändern kann, ohne alles andere anzufassen.
+```
 
 ## Ingenieur-Analogie (Schnittstellen)
 Stellen Sie sich vor, ein Auto besteht aus Baugruppen mit definierten Schnittstellen (Aufhängung, Wellen, Stecker, Befestigungspunkte). Dann kann man **eine Baugruppe austauschen**, ohne das ganze System neu zu konstruieren – solange die Schnittstelle gleich bleibt.
@@ -157,4 +160,7 @@ Aber: OOP ist **kein Garant** für gute Architektur. Es gibt objektorientierte S
 
 
 
-> Die Motivation hinter objektorientierter Programmierung ist, große Systeme so zu bauen, dass man kleine Teile ändern kann, ohne alles andere anzufassen (*Kapselung*). Umgesetzt wird das u.a. mit Klassen.
+```{admonition} Kurz gesagt
+:class: note
+Die Motivation hinter objektorientierter Programmierung ist, große Systeme so zu bauen, dass man kleine Teile ändern kann, ohne alles andere anzufassen (*Kapselung*). Umgesetzt wird das u.a. mit Klassen.
+```

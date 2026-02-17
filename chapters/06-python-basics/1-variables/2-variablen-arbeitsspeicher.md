@@ -13,7 +13,10 @@ kernelspec:
 # Variablen und der Arbeitsspeicher (S)
 
 Eine *Variable* können wir als Paar von **Wert** und **Arbeitsspeicheradresse** verstehen.
-Der Wert der Variablen steht im [Arbeitsspeicher](def-main-memory) an einer bestimmten Arbeitsspeicheradresse.
+
+- Der **Wert** der Variablen steht im [Arbeitsspeicher](def-main-memory).
+- Die **Arbeitsspeicheradresse** zeigt auf die Stelle im Speicher, an der dieser Wert liegt.
+
 Den Arbeitsspeicher können wir uns als lange Liste von Bits vorstellen:
 
 ```{figure} ../../../figs/03-language-properties/python-tutorial/variables/ram.png
@@ -33,7 +36,8 @@ Eine *Variable* kann demnach als Tripel, bestehend aus
 
 verstanden werden.
 Die **Speicheradresse** der Variable zeigt in den Arbeitsspeicher an eine bestimmte Stelle.
-Dort steht jedoch nicht nur der **Wert** sondern auch der **Datentyp**, d.h. die *Information* wie dieser **Wert** zu interpretieren ist.
+Dort steht jedoch nicht nur der **Wert**.
+Dort steht auch der **Datentyp**, d. h. die *Information*, wie dieser **Wert** zu interpretieren ist.
 
 ```{figure} ../../../figs/07-python-data-types/python-tutorial/datatypes/data-type-key-pair.png
 ---

@@ -18,7 +18,7 @@ Dann notiert Julia offene Fragen, bevor sie sich im Code festlegt:
 - Welche Abhängigkeiten sind erlaubt (dürfen neue Bibliotheken installiert werden oder gilt „Standardbibliothek only“)?
 
 ```{admonition} Wichtig
-:::class: important
+:class: important
 
 Julia kann diese Fragen nicht alle „wegprogrammieren“. Sie muss Annahmen treffen oder Anforderungen klären – und diese Entscheidungen kurz dokumentieren.
 ```
@@ -46,5 +46,8 @@ Aus dieser Analyse folgen für Julia zwei nächste Schritte:
 - Julia zerlegt die Aufgabe (Dekomposition), um Abhängigkeiten sichtbar zu machen und die Umsetzung zu planen (siehe `31-zerlegung.md`).
 - Julia nutzt anschließend ein LLM für die Recherche, um mögliche Libraries/Stacks zu sammeln und eine Build-vs.-Buy-Entscheidung zu begründen (siehe `32-recherche.md`).
 
-> Kernidee: Dekomposition macht die Arbeit planbar, und Recherche macht Entscheidungen begründbar.
+```{admonition} Kernidee
+:class: remark
+Dekomposition macht die Arbeit planbar, und Recherche macht Entscheidungen begründbar.
+```
 

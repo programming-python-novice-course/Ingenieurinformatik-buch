@@ -1,6 +1,9 @@
 # Einfaches Pythonprojekt (S)
 
-> Im Rahmen dieses Moduls werden wir keine komplexern Python-Projekte erstellen.
+```{admonition} Hinweis
+:class: note
+Im Rahmen dieses Moduls werden wir keine komplexern Python-Projekte erstellen.
+```
 
 Damit Sie sich auf Programmierkonzepte konzentrieren können, arbeiten wir häufig mit **einer Python-Datei**.
 Auch in einer Datei können (und sollten) Sie gedanklich trennen:

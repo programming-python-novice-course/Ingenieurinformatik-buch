@@ -10,7 +10,7 @@ Im Kapitel [Basiswissen](info-und-se) sind Sie bereits auf
 
 gestoßen.
 
-**Wie hängt das denn nun alles zusammen?**
+Wie hängt das denn nun alles zusammen?
 
 Das wollen wir uns an einem Beispiel anschauen:
 
@@ -97,7 +97,10 @@ sind nicht exakt darstellbar, da ihre Nenner keine Zweierpotenzen sind.
 - Wird ein solcher Wert über lange Zeit sehr häufig weiterverwendet (z. B. bei wiederholter Zeit-Umrechnung oder als Zeitinkrement), kann sich der kleine Fehler aufsummieren. Dann entsteht mit der Zeit eine messbare Abweichung.
 
 
-> Ursache: Der Fehler entsteht bei der Repräsentation/Codierung: Mit einer endlichen Anzahl an Bits kann 0,1 im Binärsystem nicht exakt dargestellt werden (es muss gerundet/abgeschnitten werden).
+```{admonition} Ursache
+:class: note
+Der Fehler entsteht bei der Repräsentation/Codierung: Mit einer endlichen Anzahl an Bits kann 0,1 im Binärsystem nicht exakt dargestellt werden (es muss gerundet/abgeschnitten werden).
+```
 
 Reale Folge: 
 
@@ -136,7 +139,7 @@ name: fig-hydra-funny
 ::::
 
 ```{admonition} Aufgabe
-::class: note
+:class: note
 
 Wo würden Sie Abstrakte Datentypen wie Queue oder Stack in der Abbildung vermuten?
 ```
