@@ -27,9 +27,9 @@ def addiere(a, b):
 x = addiere(2, 3)
 print("Rückgabewert:", x)
 ```
-In dem Beispiel wird die Funktion `addiere` aufgerufen. Die Werte werden addiert und dann zurückgegeben. Das entspricht im Prinzip der Vorstellung einer mathematischen Funktion: Ich gebe \(x\) hinein und erhalte \(y\) zurück.
+In dem Beispiel wird die Funktion `addiere` aufgerufen. Die Werte werden addiert und dann zurückgegeben. Das entspricht im Prinzip der Vorstellung einer mathematischen Funktion: Ich gebe $x$ hinein und erhalte $y$ zurück.
 
-In Python kann es jetzt zusätzlich vorkommen, dass eine Funktion \(x\) mitverändert. Man spricht davon dass ein Zustand (\(x\) ) außerhalb der Funktion geändert wird ("Es gibt einen Seiteneffekt"). Das passiert aber nur dann, wenn Sie **veränderliche (mutierbare)** Objekte als \(x\) haben. 
+In Python kann es jetzt zusätzlich vorkommen, dass eine Funktion $x$ mitverändert. Man spricht davon dass ein Zustand ($x$) außerhalb der Funktion geändert wird ("Es gibt einen Seiteneffekt"). Das passiert aber nur dann, wenn Sie **veränderliche (mutierbare)** Objekte als $x$ haben. 
 
 ```{admonition} Seiteneffekt
 :name: def-side-effect
@@ -87,7 +87,7 @@ In diesem Fall bleibt der Zustand außerhalb der Funktion unverändert – es li
 Drei Voraussetzungen müssen erfüllt sein, damit ein Seiteneffekt entstehen kann:
 
 1. Es gibt einen Zustand (Speicher, Datei, Objekt)
-2. Der Zustand kann verändert werden - ob das möglich ist hängt von den Eigenschaften ihres \(x\) ab! 
+2. Der Zustand kann verändert werden - ob das möglich ist hängt von den Eigenschaften ihres $x$ ab!
 3. Der Zustand ist geteilt - mehr als ein Programmteil kann denselben Zustand beobachten oder verändern
 
 Stellen Sie sich vor: Wir haben ein Haus (Objekt) in einer Stadt (Speicher). Julia und Hannes haben jeweils einen Zettel, auf dem die Adresse zum Haus steht. Sowohl Julias Zettel (`zettel_julia`) als auch Hannes' Zettel (`zettel_hannes`) referenzieren auf dasselbe Haus. Julia baut das Erdgeschoss um (Seiteneffekt). Hannes kommt zurück und wundert sich, was da passiert ist.

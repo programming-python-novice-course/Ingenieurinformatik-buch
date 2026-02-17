@@ -2,11 +2,7 @@
 
 Es gibt verschiedene Arten von Wissen, deren Stellenwert sich in Zeiten von LLMs stark ändern.
 
-Wir unterscheiden vereinfacht drei Wissensarten:
-
-- (S) Strukturwissen: Warum verbindet eine Schraube zwei Teile (Gewinde → Klemmkraft)? Welche Randbedingungen sind wichtig (Material, Reibung)? Woran erkenne ich „zu locker/zu fest“?
-- (A) Anwendungswissen: Wie drehe ich sie korrekt ein (ansetzen, drehen, kontrollieren)?
-- (V) Vorgehenswissen: Wie gehe ich systematisch vor und treffe Entscheidungen, wenn es nicht „Standard“ ist (z.B. schwer zugänglich, viele Schrauben mit Reihenfolge, Fehlersuche)?
+Wir unterscheiden vereinfacht drei Wissensarten, die wir Ihnen anhand eines Beispiels näher bringen möchten:
 
 ```{figure} ../../figs/01-course-overview/screwexample.png
 ---
@@ -15,13 +11,14 @@ name: fig-screwexample-asv
 ---
 Beispiel aus der Werkstatt als Analogie für Strukturwissen (links), Anwendungswissen (Mitte) und Vorgehenswissen (rechts).
 ```
+- (S) Strukturwissen: Warum verbindet eine Schraube zwei Teile (Gewinde → Klemmkraft)? Welche Randbedingungen sind wichtig (Material, Reibung)? Woran erkenne ich „zu locker/zu fest“?
+- (A) Anwendungswissen: Wie drehe ich sie korrekt ein (ansetzen, drehen, kontrollieren)?
+- (V) Vorgehenswissen: Wie gehe ich systematisch vor und treffe Entscheidungen, wenn es nicht „Standard“ ist (z.B. schwer zugänglich, viele Schrauben mit Reihenfolge, Fehlersuche)?
 
-- Wir wollen Ihnen in diesem Kurs Wissen aus allen drei Kategorien vermitteln.
 
-- Insbesondere Anwendungswissen wird in Zeiten von KI immer stärker wegautomatisiert.
+Anwendungswissen wird in Zeiten von KI immer stärker wegautomatisiert.
 
-- Sie werden in der Praxis die Schraube ein paar mal per Hand eindrehen und danach vermutlich den Akkuschrauber ("KI") nutzen.
-
+Sie werden in der Praxis die Schraube ein paar mal per Hand eindrehen und danach vermutlich den Akkuschrauber ("KI") nutzen.
 
 Das gilt nicht nur für die Programmierpraxis sondern auch für den Lernprozess: 
 

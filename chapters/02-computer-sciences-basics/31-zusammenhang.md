@@ -40,9 +40,9 @@ Es gibt 3 Zahlensysteme, auf die Sie in der Praxis beim Programmieren stoßen k�
 
 Die Zahl „dreizehn“ sieht in diesen drei Zahlensystemen wie folgt aus:
 
-- \(13\) im Dezimalsystem (Basis 10, Alltagsschreibweise)
-- \(1101\) im Binärsystem (Basis 2)
-- \(D\) im Hexadezimalsystem (Basis 16)
+- $13$ im Dezimalsystem (Basis 10, Alltagsschreibweise)
+- $1101$ im Binärsystem (Basis 2)
+- $D$ im Hexadezimalsystem (Basis 16)
 
 Als Programmierin sollten Sie die drei Zahlensysteme kennen, denn: 
 

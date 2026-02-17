@@ -16,7 +16,7 @@ Entweder sind Sie gerade auf der interaktiven Website unterwegs oder Sie haben d
 Damit Sie die Inhalte der Vorlesung möglichst effizient bearbeiten können, empfehle ich Ihnen:
 
 - die interaktive Website zu nutzen.
-- sich das Vorlesungs-Skript (siehe [Downloads](../misc/downloads.html)) zuzulegen.
+- sich das Vorlesungs-Skript (siehe {ref}`Downloads <downloads-sec>`) zuzulegen.
 
 
 ```{figure} ../../figs/01-course-overview/qr-website.png
@@ -33,7 +33,6 @@ Auf der interaktiven Website können Sie viele der gezeigten Programmierbeispiel
 
 
 ```{admonition} Hinweis
-:name: remark-sample
 :class: remark
 Falls noch nicht geschehen: Melden Sie sich zum Moodle-Kurs an. Den Kursnamen auf Moodle sowie das Passwort erhalten Sie in der ersten Vorlesung. 
 ```

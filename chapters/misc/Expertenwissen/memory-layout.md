@@ -249,7 +249,7 @@ Den Anfangsknoten der Liste bezeichnet man als *Kopf/Head*.
 ```{figure} ../../../figs/misc/art-of-programming/linked-list.png
 ---
 width: 800px
-name: fig-linked-list
+name: fig-linked-list-expertenwissen
 ---
 Einer *verkettete Liste* aus Zahlen.
 ```

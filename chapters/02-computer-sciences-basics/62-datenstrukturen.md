@@ -12,7 +12,6 @@ kernelspec:
 # Datenstrukturen (A)
 
 ```{admonition} Hinweis
-:name: def-control-structure
 :class: definition
 
 In diesem Abschnitt geben wir eine Einführung dazu wie Daten in Python strukturiert werden können. Mit den Informationen aus dem Teilabschnitt [Wie gehts das nun in Python?](sec-wie-in-python-data-) können Sie im Praktikum schon einmal losarbeiten. Details dazu lernen wir dann im Kapitel [Datentypen](sec-python-data-types) kennen.
@@ -150,7 +149,7 @@ Beispiel einer verketteten Liste: Knoten enthalten Daten und einen Zeiger auf de
 ```{figure} ../../figs/02-computer-sciences-basics/adt/algorithmus_comps.png
 ---
 width: 700px
-name: fig-algorithmus-comps
+name: fig-adt-datentyp-speicher
 ---
 Abstrakte Datenstrukturen - Datentypen - Speicherrepräsentationen.
 ```

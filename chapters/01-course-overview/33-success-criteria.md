@@ -18,7 +18,7 @@ kernelspec:
 ```{figure} ../../figs/01-course-overview/python-logo.png
 ---
 height: 150px
-name: journey
+name: fig-python-logo
 ---
 ```
 
@@ -55,6 +55,8 @@ from io import BytesIO
 from urllib.request import urlopen
 
 url = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/master/img/colors.png"
+
+#url = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/master/img/colors2.png"
 
 
 # Logo laden (aus URL) und einfügen

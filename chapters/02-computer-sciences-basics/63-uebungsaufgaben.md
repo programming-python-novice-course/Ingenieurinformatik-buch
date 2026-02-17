@@ -14,10 +14,10 @@ kernelspec:
 ```{exercise} Praxisaufgabe (PA2.3): BMI klassifizieren
 :label: ex-paufgaben-a23-bmi-bool
 
-Schreiben Sie ein Programm, das Körpergewicht \(m\) (kg) und Körpergröße \(l\) (m) einliest und den Body-Mass-Index berechnet:
+Schreiben Sie ein Programm, das Körpergewicht $m$ (kg) und Körpergröße $l$ (m) einliest und den Body-Mass-Index berechnet:
 
 $$
-\\mathrm{BMI} = \\frac{m}{l^2}
+\mathrm{BMI} = \frac{m}{l^2}
 $$
 
 Geben Sie anschließend eine Klassifikation aus (z.B. wie in der Aufgabe):

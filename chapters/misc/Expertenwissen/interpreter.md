@@ -146,5 +146,5 @@ Der Python-Interpreter selbst ist als kompiliertes Programm vorhanden und enthä
 ```{admonition} Hinweis: Zusammenhang mit dem Sprachverarbeitenden System
 :name: hinweis-schritte
 :class: tip
-Die Schritte 1-4 entsprechen der Compiler-Funktionalität in der Abbildung {ref}`fig-sprachverarbeitendes-system` (siehe Kapitel [Interpretation](../04-language-properties/1-interpretation.html)). Die Schritte 5-6 entsprechen den Prozessschritten des Interpreters.
+Die Schritte 1-4 entsprechen der Compiler-Funktionalität in der Abbildung {numref}`Abbildung {number} <sprachverarbeitendes-system>` (siehe Kapitel {doc}`Interpretation <chapters/03-language-properties/20-interpretation>`). Die Schritte 5-6 entsprechen den Prozessschritten des Interpreters.
 ``` 

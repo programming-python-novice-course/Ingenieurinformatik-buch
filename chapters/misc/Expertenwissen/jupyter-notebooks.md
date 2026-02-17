@@ -225,7 +225,6 @@ x
 ```
 
 ```{admonition} Auswertungsreihenfolge (Notebooks)
-:name: remark-evaluation-ordering
 :class: remark
 Sie sollten darauf achten, dass ihr Code das gewünschte Resultat erzeugt indem alle Zellen, nach einem Neustart des Kernels, von oben nach unten ausgeführt werden.
 ```

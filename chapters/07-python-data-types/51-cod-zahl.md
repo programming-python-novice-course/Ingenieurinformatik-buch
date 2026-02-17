@@ -31,7 +31,7 @@ Das höchste Bit wird dabei nicht als einfaches Vorzeichenbit, sondern als negat
 Im *Zweierkomplement* wird eine Zahl $b_{n-1} \ldots b_0$ wie folgt interpretiert:
 
 ```{math}
-:label: eq:binary:integer
+:label: eq:binary:integer-simple
   b_{n-1} \ldots b_0 = -b_{n-1} \cdot 2^{n-1} + \sum\limits_{i=0}^{n-2} b_i \cdot 2^i.
 ```
 

@@ -17,12 +17,12 @@
 ```{figure} ../../figs/01-course-overview/overview/motorhaube.png
 ---
 height: 320px
-name: motorhaube
+name: motorhaube-spracheigenschaften
 ---
 ```
 ::::
 
-Ziel dieses Kapitels ist ein Grundverständnis von Python, das Ihnen später beim Anwenden hilft.
+Ziel dieses Kapitels ist es, ein Grundverständnis von Python aufzubauen, das Ihnen später beim Anwenden hilft.
 
 - Sie können typische Fehler schneller erklären und vermeiden.
 - Sie können Lösungen besser beurteilen, statt nur „Code zu kopieren, bis es läuft“.

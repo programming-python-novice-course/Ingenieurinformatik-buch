@@ -18,7 +18,7 @@ Ziel dieses Teils ist, dass Sie **einfache Python-Programme schreiben**, **Daten
 ```{figure} ../../figs/01-course-overview/overview/bedienung.png
 ---
 height: 320px
-name: bedienung
+name: bedienung-anwenden-uebersicht
 ---
 ```
 ::::
