@@ -109,7 +109,10 @@ Das heißt: Sie wissen, welche Bausteine es bereits gibt, wie man sie findet, wi
 - Wer alles „von Grund auf“ selbst baut, verliert Zeit und riskiert Fehler, die andere bereits gelöst haben.
 - Gleichzeitig muss man Bibliotheken bewusst auswählen: Qualität, Wartung, Sicherheit, Lizenz und Abhängigkeiten spielen eine Rolle.
 
-Bei Python spielt das Kennen und das Anwenden des Ökosystems eine stärkere Rolle als in anderen Programmiersprachen, weil das Ökosystem extrem breit ist:
+Bei Python spielt das Kennen und das Anwenden des Ökosystems eine stärkere Rolle als in anderen Programmiersprachen, weil das Ökosystem extrem breit ist.
+
+Für das Engineering besonders wichtig:
+
 - Signalverarbeitung: [SciPy](https://docs.scipy.org/doc/scipy/) (z. B. Filter, FFT, Spektren, numerische Methoden)
 - Simulationen und Auswertung: [NumPy](https://numpy.org/doc/) und [pandas](https://pandas.pydata.org/docs/) (z. B. Matrizen/Rechnen, Messdaten-Tabellen, CSV/Excel)
 - Optimierung: [scikit-optimize](https://scikit-optimize.github.io/) (z. B. Black-Box-Optimierung und Parameter-/Hyperparameter-Tuning)

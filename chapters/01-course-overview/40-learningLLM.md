@@ -5,7 +5,7 @@
 ```{admonition} Aussage gegen Aussage
 :class: note
 
-„Warum sollte ich eine Programmiersprache lernen? ChatGPT erzeugt doch super Programme. Und es gibt sogar Entwicklungsumgebungen mit LLM – dann spare ich mir das Hin‑ und Herkopieren. Prompt eingeben, abschicken - warten - Programmieraufgabe fertig.“
+„Warum sollte ich eine Programmiersprache lernen? ChatGPT erzeugt doch super Programme. Und es gibt sogar Entwicklungsumgebungen mit LLM – dann spare ich mir das Hin‑ und Herkopieren. Prompt eingeben, abschicken, warten, ... Programmieraufgabe fertig.“
 
 „Man muss Programmieren erst ohne KI lernen – sonst lernt man es nie richtig.“
 ```

@@ -50,11 +50,16 @@ doc_obj.Placement.Base = App.Vector(xshift, 0, 0)
 doc.recompute()
 ```
 
-- Das bedeutet für uns: wenn wir ein wenig Python verstehen, können wir uns das "Knöpfe drücken" sparen und die Geometrie automatisch generieren lassen (was viel viel schneller ist).
+Das bedeutet für uns: 
+
+- wenn wir ein wenig Python verstehen, können wir uns das "Knöpfe drücken" sparen.
+
+- Stattdessen schreiben wir Code, der die Geometrie automatisch (und viel schneller) erzeugt.
 
 ## Beispiel: Software für einen Laufroboter (Programmiersprachen: Matlab, C)
 
-- Im Laufe Ihres Bachelorstudiums an der FK03 haben Sie ein Projektmodul. 
+
+Im Laufe Ihres Bachelorstudiums an der FK03 haben Sie ein Fach names "Projektmodul". 
 
 - Wir (Berghammer, Ertl, Mayr, Mehlert, Muhl) haben beispielsweise einen Laufrobor entwickelt (Sommersemester 2017).
 

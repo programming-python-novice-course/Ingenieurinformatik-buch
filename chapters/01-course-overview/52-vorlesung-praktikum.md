@@ -34,7 +34,7 @@ Als Grundlage für das Praktikum dienen die folgenden Abschnitte aus dem Teil Ba
 
 - Zu Beginn jedes Praktikums gibt es außerdem eine kurze Einführung und Einweisung. (Im Sinne unserer Metapher heißt das zum Beispiel: „Heute schalten wir vom 2. in den 3. Gang“, auch wenn wir die Details des „Getriebes“ erst später in der Vorlesung besprechen.)
 
-**Empfohlene Praktikumsvorbereitung**
+## Praktikumsvorbereitung
 
 Als Basis sehen Sie sich bitte die Programmier-Beispiele an in:
 

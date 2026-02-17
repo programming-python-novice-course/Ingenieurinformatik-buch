@@ -1,12 +1,14 @@
 # Modulhandbuch
 
-In diesem Teilmodul lernen Sie Basis-Wissen aus der Informatik und Grundlagen der Programmiersprache Python. 
+Im Teilmodul "Programmieren" (gehört zum Modul "Ingenieurinformatik") lernen Sie :
+- Basis-Wissen aus der Informatik und 
+- Grundlagen der Programmiersprache Python. 
 
-Ein grober Überblick über die Inhalte, die in der Prüfung geprüft werden, finden Sie im Modulhandbuch Ihres Studiengangs. Wie die Inhalte im Rahmen dieser Vorlesung umgesetzt werden, finden Sie im Kapitel [Kurskonzept](chapters/02-course-concept/0-uebersicht). 
+Ein grober Überblick über die Inhalte, die in der Prüfung geprüft werden, finden Sie im Modulhandbuch Ihres Studiengangs. 
 
-Auszug aus dem Modulhandbuch:
+Wie die Inhalte im Rahmen dieser Vorlesung umgesetzt werden, finden Sie im Kapitel [Kurskonzept](chapters/02-course-concept/0-uebersicht). 
 
-```{list-table}
+```{list-table} Auszug aus dem Modulhandbuch
 :header-rows: 1
 :widths: 30 70
 

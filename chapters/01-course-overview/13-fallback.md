@@ -1,6 +1,11 @@
 # Live-Code-Alternative (mit Debugging)
 
-Falls die Einrichtung von „Live Code“ einmal fehlschlägt (oder Sie debuggen möchten – mehr dazu weiter unten), können Sie die Beispiele auf dieser Website alternativ auch als *Jupyter-Notebook* ausführen.
+Falls 
+
+- die Einrichtung von „Live Code“ einmal fehlschlägt oder 
+- Sie debuggen möchten (mehr dazu weiter unten), 
+
+können Sie die Beispiele auf dieser Website alternativ auch als *Jupyter-Notebook* ausführen.
 
 „Das Aussehen“ eines *Jupyter-Notebooks* unterscheidet sich etwas von dem auf der Website. Die Inhalte sind aber identisch!
 
@@ -9,7 +14,7 @@ Falls die Einrichtung von „Live Code“ einmal fehlschlägt (oder Sie debuggen
 ---
 width: 800px
 ---
-Die Inhalte von Website und Jupyter-Notebook sind identisch. 
+Beispiel für ein Jupyter-Notebook
 ```
 
 Wie beim Live Code arbeiten Sie mit Code-Zellen, die Sie ausführen können:
@@ -34,7 +39,7 @@ Sie starten das *Jupyter-Notebook* über die Rakete. Entweder über
 width: 800px
 ---
 
-Sie haben die Wahl zwischen zwei Anbietern.
+Bitte nutzen Sie als Studierende der HM direkt den JupyterHub. Die Binder-Variante ist für externe Interessierte gedacht.
 ```
 
 ```{admonition} Hinweis
@@ -45,9 +50,9 @@ Voraussetzung: Für den Zugriff auf den JupyterHub müssen Sie vorab eine Multi-
 
 ## Debugging
 
-Immer dann, wenn Code „etwas komplizierter wird“, möchte man nicht, dass die ganze Code-Zelle auf einmal ausgeführt wird, sondern dass man die Ausführung des Codes an bestimmten Stellen pausieren kann, um sich anzusehen, was bisher passiert ist und was der aktuelle Stand ist. 
+- Immer dann, wenn Code „etwas komplizierter wird“, möchte man nicht, dass die ganze Code-Zelle auf einmal ausgeführt wird, sondern dass man die Ausführung des Codes an bestimmten Stellen pausieren kann, um sich anzusehen, was bisher passiert ist und was der aktuelle Stand ist. 
 
-Man nennt das Debugging.
+- Man nennt das Debugging.
 
 
 ```{figure} ../../figs/01-course-overview/jupyterhub/debug-3-debug.png

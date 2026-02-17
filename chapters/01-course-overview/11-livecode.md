@@ -1,6 +1,8 @@
 # Live-Code
 
-Die interaktive Website ist so aufgebaut, dass Sie darin direkt Python-Code erstellen, verändern und ausführen können. Damit haben Sie Ihr Skript und ihre Programmier-Werkgzeug an einer Stelle!
+Die interaktive Website ist so aufgebaut, dass Sie darin direkt Python-Code erstellen, verändern und ausführen können. 
+
+Damit haben Sie Ihr Skript und ihre Programmier-Werkgzeug an einer Stelle ohne dass Sie irgendwas installieren müssen!
 
 - Einige Seiten auf dieser Website enthalten nur theoretische Inhalte
 - Einige Seiten auf dieser Website enthalten theoretische Inhalte und Python-Code!
@@ -14,7 +16,7 @@ name: fig-code-ausfuehren1
 ---
 Beispiel einer Seite mit Rakete im Menü (Seite enthält ausführbaren Code).
 ```
-Python-Code erkennen Sie außerdem daran, dass er in einer Code-Zelle steht – einer Art „Box“ mit abgerundeten Ecken.
+Ausführbaren Python-Code erkennen Sie daran, dass er in einer Code-Zelle steht – einer Art „Box“ mit abgerundeten Ecken.
 
 Um Python-Code interaktiv auf der Website auszuführen, klicken Sie zunächst auf die Rakete und wählen dann „Live Code“ aus.
 
@@ -26,7 +28,9 @@ name: fig-code-ausfuehren2
 Die Rakete öffnen und „Live Code“ auswählen, um interaktive Ausführung zu aktivieren.
 ```
 
-Danach müssen Sie einmalig warten (zwischen ca. 5 Sekunden und 2 Minuten). In dieser Zeit wird Python im Hintergrund für Sie eingerichtet. Sie müssen sich um nichts kümmern. Sobald die Einrichtung abgeschlossen ist, können Sie auf der Website zwischen Seiten wechseln und neue Code-Zellen ausführen, ohne noch einmal warten zu müssen.
+Danach müssen Sie einmalig warten (zwischen ca. 5 Sekunden und 2 Minuten). In dieser Zeit wird Python im Hintergrund für Sie eingerichtet - Sie müssen sich um nichts kümmern!
+
+Sobald die Einrichtung abgeschlossen ist, können Sie auf der Website zwischen Seiten wechseln und neue Code-Zellen ausführen, ohne noch einmal zu warten.
 
 ```{figure} ../../figs/01-course-overview/code-ausfuehren3.png
 ---
