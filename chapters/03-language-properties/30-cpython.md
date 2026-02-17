@@ -112,5 +112,5 @@ print("Interpreter:", sys.executable)
 ```{admonition} Tipp
 :class: tip
 
-- Wenn Sie über verschiedene Betriebssysteme und Plattformen hinweg mit anderen arbeiten, fragen Sie im Zweifel nach, welches Python (Implemementierung + Version) verwendet wird. Es kann kleine Unterschiede geben (z. B. unterstützte Pakete, Performance, Details der Laufzeit).
+- Wenn Sie über verschiedene Betriebssysteme und Plattformen hinweg mit anderen arbeiten, fragen Sie im Zweifel nach, welches Python (Implementierung + Version) verwendet wird. Es kann kleine Unterschiede geben (z. B. unterstützte Pakete, Performance, Details der Laufzeit).
 ```

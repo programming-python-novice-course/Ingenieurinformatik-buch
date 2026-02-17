@@ -70,7 +70,7 @@ ipytest.run()
 
 
 ```{admonition} Hinweis
-:::class: remark
+:class: remark
 
 Woher weiß das System, was ein Test ist? Nicht IPython entscheidet das, sondern `pytest`. `ipytest` ist nur die „Brücke“, um `pytest` bequem aus einem Notebook heraus zu starten. `pytest` findet Tests über Konventionen, z. B. Funktionen, deren Name mit `test_` beginnt.
 ```

@@ -117,9 +117,9 @@ Julia muss sich entscheiden, welchen Algorithmus sie jetzt verwendet. Deshalb f�
 **Einfache Zeitmessung in Python**
 
 Die Idee ist folgende:
-- wir messen den startzeitpunkt: start = time.perf_counter()   # alternativ: time.time()
-- wir messen endzeitpunkt: endzeitpunkt = time.perf_counter()
-Die Dauer ist dann entsprechend: dauer = endteitpunkt - start
+- Wir messen den Startzeitpunkt: `start = time.perf_counter()` (alternativ: `time.time()`).
+- Wir messen den Endzeitpunkt: `end = time.perf_counter()`.
+- Die Dauer ist dann entsprechend: `dauer = end - start`.
 
 
 **Profiling**
@@ -134,12 +134,13 @@ Profiling ist mehr als eine einzelne Zeitmessung: Es hilft Ihnen zu verstehen, *
 Tipp: Messen Sie mit **realistischen Eingaben** und achten Sie darauf, ob Ihr Programm eher **CPU-bound** (Rechnung) oder **I/O-bound** (Warten) ist.
 ```
 
-Der Performance-Test ist so aufgebaut, dass jeder Algorithmus 100 mal f체r die Messdaten der Station Paris getestet wird. Dann werden die Ergebnisse in einem boxplot gege체bergestellt.
+Der Performance-Test ist so aufgebaut, dass jeder Algorithmus 100-mal f체r die Messdaten der Station Paris getestet wird.
+Dann werden die Ergebnisse in einem Boxplot gegen체bergestellt.
 
 
 
 ```{admonition} Hinweis
-::class: remark
+:class: remark
 
 F체r die Darstellung verwenden wir `seaborn`. Das ist eine externe Bibliothek. Julia findet das hier in Ordnung, weil der Performance-Test nur der Analyse dient und nicht Teil der ausgelieferten Software ist.
 ```

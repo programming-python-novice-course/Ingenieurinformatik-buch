@@ -161,12 +161,13 @@ print(id(x))
 print(id(z))
 ```
 
-Hmm?? 
-Warum war die ``id`` beim Wert ``25`` identisch aber beim Wert ``2131313`` nicht?
-Hier kommen wir in die tiefen Details von ``Python``, welche fürs erste nicht so wichtig sind.
-Zur Optimierung der Laufzeit legt ``Python`` alle kleinen ganzen Zahlen bei Start der Ausführung in den Speicher, sodass Speicherplatz gespart wird.
+Das Ergebnis wirkt zunächst überraschend:
+Warum war die ``id`` beim Wert ``25`` identisch, aber beim Wert ``2131313`` nicht?
+
+Hier kommen wir in Details von ``Python``, die fürs Erste nicht so wichtig sind.
+Zur Optimierung der Laufzeit legt ``Python`` viele kleine ganze Zahlen beim Start der Ausführung in den Speicher, sodass Speicherplatz gespart wird.
 Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten k kleinsten Zahlen). 
-``2131313`` zählt nicht dazu und somit wird der Wert jedesmal neu in den Speicher geschrieben.
+``2131313`` zählt nicht dazu und somit wird der Wert jedes Mal neu in den Speicher geschrieben.
 
 Folgender Code berechnet die erste Zahl die nicht bereits bei der Ausführung im Speicher liegt:
 

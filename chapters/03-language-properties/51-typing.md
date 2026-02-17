@@ -20,7 +20,7 @@ Dass eine derartige Zuweisung möglich ist, ist eine direkte Konsequenz aus dem 
 
 ## Dynamische und starke Typisierung
 
-Python ist **dynamisch typisiert**: Welche Datenypt ein Objekt hat und welche Operationen damit möglich sind, wird zur Laufzeit entschieden.
+Python ist **dynamisch typisiert**: Welchen Datentyp ein Objekt hat und welche Operationen damit möglich sind, wird zur Laufzeit entschieden.
 
 ```python
 def potenz(basis, exponent):
