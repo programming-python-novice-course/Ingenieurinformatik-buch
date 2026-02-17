@@ -29,7 +29,7 @@ Pseudocode steht zwischen der natürlichen Sprache und einer Programmiersprache:
 ```{exercise} Praxisaufgabe (PA4.1-Idee): Euklidischer Algorithmus als Pseudocode
 :label: ex-paufgaben-a41-euklid-pseudocode
 
-Schreiben Sie Pseudocode für den euklidischen Algorithmus zur Berechnung des größten gemeinsamen Teilers \(\\mathrm{ggT}(a,b)\).
+Schreiben Sie Pseudocode für den euklidischen Algorithmus zur Berechnung des größten gemeinsamen Teilers $\mathrm{ggT}(a,b)$.
 
 
 ```

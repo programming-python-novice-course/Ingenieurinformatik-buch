@@ -72,5 +72,5 @@ Wenn Sie das Debugging (Käfer-Symbol) aktivieren, können Sie die Ausführung d
 ```
 
 
-Mehr Hintergrund zu Jupyter Notebooks finden Sie im Abschnitt [Jupyter Notebooks](../misc/Expertenwissen/jupyter-notebooks.html).
+Mehr Hintergrund zu Jupyter Notebooks finden Sie im Abschnitt {ref}`Jupyter Notebooks <sec-jupyter-notebooks>`.
 

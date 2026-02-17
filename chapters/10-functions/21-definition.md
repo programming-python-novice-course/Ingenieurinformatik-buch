@@ -159,4 +159,3 @@ c = float(input("c: "))
 n, x1, x2 = qsolve(a, b, c)
 print(n, x1, x2)
 ```
-```

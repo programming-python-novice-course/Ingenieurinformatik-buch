@@ -62,9 +62,9 @@ Es ist wichtig, dass Sie die Konzepte und deren Umsetzungen voneinander untersch
 
 **Beispiel: Patriot-System 1991**
 
-Im Patriot-System (1991) spielte ein Zeitinkrement von \(0{,}1\,\mathrm{s}\) eine zentrale Rolle.
+Im Patriot-System (1991) spielte ein Zeitinkrement von $0{,}1\,\mathrm{s}$ eine zentrale Rolle.
 In einem Computer muss dieser Wert jedoch als endliche Binärdarstellung gespeichert bzw. bei der Umrechnung verwendet werden.
-\(0{,}1 = \frac{1}{10}\) besitzt in Basis 2 eine unendliche periodische Darstellung (weil im Nenner ein Faktor \(5\) vorkommt) und kann daher nur gerundet oder abgeschnitten werden.
+$0{,}1 = \frac{1}{10}$ besitzt in Basis 2 eine unendliche periodische Darstellung (weil im Nenner ein Faktor $5$ vorkommt) und kann daher nur gerundet oder abgeschnitten werden.
 
 Im Binärsystem sind nur Brüche der Form
 

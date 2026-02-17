@@ -15,7 +15,7 @@ kernelspec:
 ```{exercise} Praxisaufgabe (PA4.1): Finden des größten gemeinsamen Teilers
 :label: ex-paufgaben-a41-euklid
 
-Implementieren Sie den größten gemeinsamen Teiler \(\\mathrm{ggT}(a,b)\) als Funktion mithilfe des euklidischen Algorithmus (Iterieren, bis der Rest 0 ist).
+Implementieren Sie den größten gemeinsamen Teiler $\mathrm{ggT}(a,b)$ als Funktion mithilfe des euklidischen Algorithmus (Iterieren, bis der Rest 0 ist).
 
 Zusatz: Testen Sie Ihre Funktion an vielen Zufallspaaren und geben Sie eine kleine Tabelle aus.
 ```
@@ -42,11 +42,11 @@ for i in range(10):
 ```{exercise} Praxisaufgabe (PA5.6): Nullstelle finden - Bisektionsverfahren
 :label: ex-paufgaben-a56-bisektion
 
-Sie suchen numerisch eine Nullstelle einer Funktion \(f(x)\) im Intervall \([x_1, x_2]\) (Bisektionsverfahren).
+Sie suchen numerisch eine Nullstelle einer Funktion $f(x)$ im Intervall $[x_1, x_2]$ (Bisektionsverfahren).
 
-- Voraussetzung: \(f(x_1)\\cdot f(x_2) < 0\)
+- Voraussetzung: $f(x_1)\cdot f(x_2) < 0$
 - Wiederholen Sie, bis `abs(f(x0)) <= 1e-3`.
-- Zusatz: Plotten Sie \(f\) und markieren Sie die gefundene Nullstelle.
+- Zusatz: Plotten Sie $f$ und markieren Sie die gefundene Nullstelle.
 
 Hinweis: Das Beispiel aus der Aufgabensammlung verwendet NumPy/Matplotlib; im Buch ist die Zelle standardmäßig nicht zur automatischen Ausführung markiert.
 ```

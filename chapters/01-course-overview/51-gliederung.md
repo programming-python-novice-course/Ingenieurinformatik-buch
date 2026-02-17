@@ -99,7 +99,7 @@ Sehr prüfungsrelevant (viele A-Markierungen!): Hier lernen wir Python anzuwende
 ```{figure} ../../figs/01-course-overview/overview/fahrt.png
 ---
 width: 400px
-name: fahrt
+name: fahrt-gliederung
 ---
 Anwendungsfall (Teil 4): Kompletten Ablauf durchlaufen – von Aufgabe bis Umsetzung.
 ```
@@ -109,7 +109,6 @@ Zum Abschluss laufen wir einen kompletten Ablauf in der Praxis durch: von der Au
 
 
 ```{exercise} Fallbeispiel: Sensordaten statistisch auswerten
-:label: exercise-sensordata
 
 Ausgangslage:
 Julia bekommt von ihrer Kollegin eine Datei, in der mehrere Arten von Messdaten abgelegt sind.

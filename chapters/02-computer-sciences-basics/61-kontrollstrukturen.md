@@ -14,7 +14,6 @@ kernelspec:
 # Kontrollstrukturen (A)
 
 ```{admonition} Hinweis
-:name: def-control-structure
 :class: definition
 
 In diesem Abschnitt geben wir eine Einführung zu Kontrollstrukturen, damit Sie im Praktikum schon einmal losarbeiten können. Details zu Kontrollstrukturen lernen wir dann im Kapitel [Kontrollstrukturen](sec-control-statements) kennen.

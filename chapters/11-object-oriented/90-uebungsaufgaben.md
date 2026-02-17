@@ -20,10 +20,10 @@ name: fig-paufgaben-widerstaende-uebung
 ```{exercise} Praxisaufgabe (PA1.5): Widerstände (Reihe/Parallel)
 :label: ex-paufgaben-a15-widerstaende-formeln
 
-Programmieren Sie ein Skript, das nach Eingabe von drei elektrischen Widerständen \(R_1\), \(R_2\) und \(R_3\)
+Programmieren Sie ein Skript, das nach Eingabe von drei elektrischen Widerständen $R_1$, $R_2$ und $R_3$
 
-- den Gesamtwiderstand \(R_{\text{Reihe}}\) der Reihenschaltung und
-- den Gesamtwiderstand \(R_{\text{parallel}}\) der Parallelschaltung
+- den Gesamtwiderstand $R_{\text{Reihe}}$ der Reihenschaltung und
+- den Gesamtwiderstand $R_{\text{parallel}}$ der Parallelschaltung
 
 berechnet und ausgibt.
 

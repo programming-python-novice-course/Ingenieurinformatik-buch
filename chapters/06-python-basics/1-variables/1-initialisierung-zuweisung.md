@@ -41,7 +41,7 @@ Mit
 x = None
 ```
 
-weisen wir ``x`` den Wert ``None`` ´, d.h. "Nichts" zu. Doch ist dieses "Nichts" nicht nichts ;).
+weisen wir ``x`` den Wert ``None``, d.h. "Nichts" zu. Doch ist dieses "Nichts" nicht nichts ;).
 Es repräsentiert lediglich das Nichts.
 
 Versuchen wir eine *Variable* zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:
@@ -53,7 +53,7 @@ tags: [raises-exception]
 v + 20
 ```
 
-Die Fehlermeldung ``name 'v' is not defined`` weißt uns darauf hin, dass die *Variable* ``v`` noch nicht *initialisiert* wurde.
+Die Fehlermeldung ``name 'v' is not defined`` weist uns darauf hin, dass die *Variable* ``v`` noch nicht *initialisiert* wurde.
 In anderen Worten ``v`` gibt es noch gar nicht und zeigt auch nicht auf eine Stelle im Speicher, hat also keinen Wert.
 In ``Python`` reicht es wenn Sie der *Variablen* einen Wert zuweisen.
 Sie wird automatisch erzeugt, d.h., *initialisiert*.
@@ -70,10 +70,10 @@ Sobald ``z`` *initialisiert* wurde, existiert ``z`` für alle Zellen des Noteboo
 ```{exercise} Praxisaufgabe (PA1.3): Temperatur umrechnen (Variablen + Zuweisung)
 :label: ex-paufgaben-a13-temperatur-zuweisung
 
-Schreiben Sie ein kleines Programm, das eine Temperatur \(C\) in Grad Celsius einliest und in Grad Fahrenheit \(F\) umrechnet:
+Schreiben Sie ein kleines Programm, das eine Temperatur $C$ in Grad Celsius einliest und in Grad Fahrenheit $F$ umrechnet:
 
 \[
-F = \\frac{9}{5} \\cdot C + 32
+F = \frac{9}{5} \cdot C + 32
 \]
 
 Nutzen Sie dafür Variablen (z.B. `celsius`, `fahrenheit`) und geben Sie das Ergebnis aus.

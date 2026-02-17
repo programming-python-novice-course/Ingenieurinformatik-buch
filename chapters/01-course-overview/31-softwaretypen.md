@@ -17,7 +17,7 @@ name: fig-freecad
 Beispiel: CAD-Geometrieerstellung in FreeCAD (automatisierbar mit Python).
 ```
 
-- Sie können in FreeCAD Geoemtrie einfach über das Klicken der entsprechenden "Knöpfe im Menu" erzeugen 
+- Sie können in FreeCAD Geometrie einfach über das Klicken der entsprechenden "Knöpfe im Menü" erzeugen 
 
 - Jeder "Knopfdruck" erzeugt im Hintergrund aber eigentlich nur einen Python-Command.
 
@@ -59,9 +59,9 @@ Das bedeutet für uns:
 ## Beispiel: Software für einen Laufroboter (Programmiersprachen: Matlab, C)
 
 
-Im Laufe Ihres Bachelorstudiums an der FK03 haben Sie ein Fach names "Projektmodul". 
+Im Laufe Ihres Bachelorstudiums an der FK03 haben Sie ein Fach namens "Projektmodul". 
 
-- Wir (Berghammer, Ertl, Mayr, Mehlert, Muhl) haben beispielsweise einen Laufrobor entwickelt (Sommersemester 2017).
+- Wir (Berghammer, Ertl, Mayr, Mehlert, Muhl) haben beispielsweise einen Laufroboter entwickelt (Sommersemester 2017).
 
 - Das Bewegungsverhalten haben wir vorher simuliert - in der Programmiersprache Matlab.
 
@@ -88,7 +88,7 @@ name: fig-laufroboter-animation
 
 Die folgenden Softwaretypen werden unter anderem von Ingenieurinnen (mit-)entwickelt:
 
-- Eingebettete Systeme (embedded software) – z.B. Flugregelung, Laufrobor
+- Eingebettete Systeme (embedded software) – z.B. Flugregelung, Laufroboter
 - Datenerfassungssysteme – Beispiel: Air Data System
 - Systeme von Systemen – z.B. Air Traffic Management System: Flugzeug, Tower, Luftraum und Infrastruktur
 - Eigenständige Anwendungen (stand-alone) wie Systeme für Modellierung und Simulation – z.B. Geometrieerzeugung (FreeCAD, CATIA), Bauteiloptimierung (optiSLang)
@@ -109,7 +109,6 @@ Daneben gibt es weitere Softwaretypen, bei denen Ingenieure weniger häufig entw
 Wie ein Softwareprodukt entwickelt wird, hängt stark vom Softwaretyp ab. 
 
 ```{admonition} Hinweis
-:name: remark-sample
 :class: remark
 Die Einteilung der Softwaretypen ist nicht trennscharf!
 ```

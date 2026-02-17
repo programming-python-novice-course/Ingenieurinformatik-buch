@@ -1,3 +1,4 @@
+(downloads-sec)=
 # Downloads
 
 Alle Unterlagen zum Download sind öffentlich zugänglich über das Download-Verzeichnis des folgenden GitLab-Repositories (LRZ):

@@ -105,10 +105,10 @@ Wir setzten beim Aufruf die Adresse des linken ``start`` auf die Adresse des rec
 :label: ex-paufgaben-a45-kraft
 
 
-Schreiben Sie eine Funktion `kraft(m, alpha_grad)`, die eine Gewichtskraft \(F_G = m \\cdot g\) in zwei Komponenten zerlegt:
+Schreiben Sie eine Funktion `kraft(m, alpha_grad)`, die eine Gewichtskraft $F_G = m \cdot g$ in zwei Komponenten zerlegt:
 
-- **Senkrecht zur Oberfläche** \(F_N\)
-- **Hangabtriebskraft** \(F_H\)
+- **Senkrecht zur Oberfläche** $F_N$
+- **Hangabtriebskraft** $F_H$
 
 Dabei ist `alpha_grad` der Winkel in Grad.
 Geben Sie beide Werte zurück (z.B. als Tupel).
@@ -144,6 +144,6 @@ print(f"Hangabtriebskraft: {fh:.2f} N")
 ```{exercise} Praxisaufgabe (PA4.5): Kraftvektor zerlegen - Fortsetzung
 
 Nun möchten wir, dass unser Programm auch auf dem Mond angewandt werden kann.
-Ändern Sie die Funnktion kraft() so ab, dass man die Beschleunigung als Übergabeparameter vorgegeben werden kann. Wenn der Nutzer keine Angabe macht, soll 9.81 verwendet werden.
+Ändern Sie die Funktion kraft() so ab, dass man die Beschleunigung als Übergabeparameter vorgeben kann. Wenn der Nutzer keine Angabe macht, soll 9.81 verwendet werden.
 
 ```
