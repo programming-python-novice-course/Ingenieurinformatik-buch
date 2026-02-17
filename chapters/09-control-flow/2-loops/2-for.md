@@ -147,7 +147,7 @@ Gehen Sie sparsam mit ``break`` und ``continue`` um, oftmals brauchen Sie es nic
 ```{exercise} Praxisaufgabe (PA3.4): Würfelspiel simulieren
 :label: ex-paufgaben-a34-wuerfelspiel-for
 
-Simulieren Sie \(N=1000\) Würfe eines fairen Würfels.
+Simulieren Sie $N=1000$ Würfe eines fairen Würfels.
 Zählen Sie, wie oft 1, 2, …, 6 vorkommen und geben Sie die Zählerstände aus.
 
 Hinweis: Verwenden Sie `randint(1, 6)` aus dem Modul `random`.

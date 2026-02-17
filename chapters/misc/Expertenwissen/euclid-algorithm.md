@@ -17,7 +17,7 @@ Um 1950 herum deutete der Begriff auf Euklid's berühmten Algorithmus zum finden
 Lassen Sie uns den ersten aller noch heute relevanten Algorithmen betrachten: Den *Euklidischen Algorithmus*.
 
 ```{exercise} Euklidischer Algorithmus
-:label: euclid-exercise
+:label: euclid-exercise-expertenwissen
 
 Gegeben seien zwei natürliche Zahlen $n, m \in \mathbb{N}$.
 Wir suchen nach dem größten gemeinsamen Teiler $\text{ggT}(n,m)$ von $n$ und $m$, d.h., die größte natürliche Zahl die sowohl $n$ als auch $m$ teilt.

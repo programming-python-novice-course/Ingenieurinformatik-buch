@@ -9,7 +9,7 @@ Julia liest die Aufgabenstellung und merkt: „Visualisierung“ und „Statisti
 
 **Wiederholung: Aufgabenstellung**
 
-- Kontext: Julia erhält eine Datei mit Messwerten (NO\(_2\)-Konzentration) zu verschiedenen Flughäfen und Zeitpunkten.
+- Kontext: Julia erhält eine Datei mit Messwerten ($NO_2$-Konzentration) zu verschiedenen Flughäfen und Zeitpunkten.
 - Ziel: Ein Programm, das die Messdaten auswertet:
   - grafisch: Verteilung visualisieren
   - tabellarisch: Übersichtstabelle mit Kennzahlen (z. B. Mittelwert, Median, Quartile (Q1, Median, Q3))

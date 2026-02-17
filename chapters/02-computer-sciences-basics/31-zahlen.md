@@ -40,10 +40,10 @@ Sehen Sie sich die Zuordnungstabelle der BCD-Codierung näher an. Fällt Ihnen e
 
 Die Bitmuster für 0–9 ergeben sich nach einem sehr einfachen Schema:
 
-- **linkes Bit**: steht für 8 (\(2^3\))
-- **zweites Bit**: steht für 4 (\(2^2\))
-- **drittes Bit**: steht für 2 (\(2^1\))
-- **rechtes Bit**: steht für 1 (\(2^0\))
+- **linkes Bit**: steht für 8 ($2^3$)
+- **zweites Bit**: steht für 4 ($2^2$)
+- **drittes Bit**: steht für 2 ($2^1$)
+- **rechtes Bit**: steht für 1 ($2^0$)
 
 Hat das Bit den Wert "1" wird der zugehörige Wert (8,4,2,1) addiert, bei "0" wird nichts addiert.
 

@@ -31,7 +31,7 @@ Wichtige Regelungen:
 
 - Zur Prüfungsvorbereitung dienen Ihnen die Aufgabenbeispiele aus der Vorlesung und den Praktika. 
 
-- Zusätzlich dazu stellen wir Ihnen Prüfungen aus vorhergehenden Semstern bereit. Die Prüfungen finden Sie unter [Downloads](../misc/downloads.html).
+- Zusätzlich dazu stellen wir Ihnen Prüfungen aus vorhergehenden Semestern bereit. Die Prüfungen finden Sie unter {ref}`Downloads <downloads-sec>`.
 
 **Zugelassene Hilfsmittel**
 

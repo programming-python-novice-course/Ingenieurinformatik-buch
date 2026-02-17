@@ -22,15 +22,14 @@ Entwicklungsphasen der Softwareentwicklung nach dem Wasserfallmodell. Bild in An
 
 Phasen-übergreifend wird außerdem
 - die IT-Security berücksichtigt
-- die Safety berüchsichtigt
+- die Safety berücksichtigt
 - Konfigurationsmanagement betrieben 
 - die Softwarequalität monitored
 
 
 ```{admonition} Hinweis
-:name: remark-sample
 :class: remark
-Das Software Engineering Compentency Model (SWECOM) der IEEE Computer Society beschreibt welche Kompetenzen ein Softwareentwickler benötigt, um die Phasen-bezogenen und phasen-übergreifenden Aufgaben zu erledigen: [SWECOM](https://ieeecs-media.computer.org/media/education/swebok/swecom.pdf).
+Das Software Engineering Competency Model (SWECOM) der IEEE Computer Society beschreibt, welche Kompetenzen ein Softwareentwickler benötigt, um die Phasen-bezogenen und phasen-übergreifenden Aufgaben zu erledigen: [SWECOM](https://ieeecs-media.computer.org/media/education/swebok/swecom.pdf).
 ```
 
 ```{admonition} Fokus dieser Vorlesung

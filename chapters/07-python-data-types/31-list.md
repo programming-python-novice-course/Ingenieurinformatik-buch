@@ -80,9 +80,9 @@ name: fig-paufgaben-a310-fibonacci
 Beispielplot der Fibonacci-Folge (Aufgabensammlung PA3.10).
 ```
 
-Erzeugen Sie die ersten \(n\) Fibonacci-Zahlen und speichern Sie sie in einer Liste.
+Erzeugen Sie die ersten $n$ Fibonacci-Zahlen und speichern Sie sie in einer Liste.
 
-- Startwerte: \(0, 1\)
+- Startwerte: $0, 1$
 - Jede weitere Zahl ist die Summe der beiden vorherigen.
 
 Starten Sie mit dieser Zelle (ohne Plot):

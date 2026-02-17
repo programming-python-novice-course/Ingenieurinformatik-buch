@@ -49,7 +49,6 @@ Wie die Inhalte im Rahmen dieser Vorlesung umgesetzt werden, finden Sie im Kapit
 ```
 
 ```{admonition} Hinweis
-:name: remark-sample
 :class: remark
 Eine aktuelle Version des Modulhandbuchs finden Sie auf der [Website der FK03](https://me.hm.edu/studierende/studienablauf/index.de.html).
 ```

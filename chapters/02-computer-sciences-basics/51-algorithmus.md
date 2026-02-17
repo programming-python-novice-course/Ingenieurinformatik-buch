@@ -16,8 +16,8 @@ Ein *Algorithmus* ist eine wohldefinierte Sequenz von Anweisungen, die zu einer 
 
 ```{exercise} Beispiel: Euklidischer Algorithmus
 :label: euclid-exercise
-Gegeben seien zwei natürliche Zahlen \(n, m \in \mathbb{N}\).
-Gesucht ist der größte gemeinsame Teiler \(\mathrm{ggT}(n,m)\), also **die größte natürliche Zahl**, die sowohl \(n\) als auch \(m\) teilt.
+Gegeben seien zwei natürliche Zahlen $n, m \in \mathbb{N}$.
+Gesucht ist der größte gemeinsame Teiler $\mathrm{ggT}(n,m)$, also **die größte natürliche Zahl**, die sowohl $n$ als auch $m$ teilt.
 
 Idee des Algorithmus:
 

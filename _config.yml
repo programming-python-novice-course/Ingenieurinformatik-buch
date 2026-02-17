@@ -47,8 +47,8 @@ sphinx:
     - sphinx_proof
 
   config:
-    version: "2.0"
-    release: "2.5.0"
+    version: "2.5"
+    release: "2.5.1"
 
     myst_enable_extensions:
       - dollarmath
@@ -229,6 +229,6 @@ html:
       <div class="col1">
         Beiträge: <a href="/chapters/misc/beitraege.html">alle anzeigen</a>.
         Lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>.
-        Version 2.5.0
+        Version 2.5.1
       </div>
     </div>

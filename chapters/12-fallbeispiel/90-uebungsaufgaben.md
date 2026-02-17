@@ -15,7 +15,7 @@ kernelspec:
 ```{exercise} PA5.4 (Parsing): Zeit/Spannung aus Datei lesen
 :label: ex-paufgaben-a54-akku-parsing
 
-Aufgabe: eine Messdatei mit zwei Spalten (Zeit \(t\), Spannung \(u\)) einlesen
+Aufgabe: eine Messdatei mit zwei Spalten (Zeit $t$, Spannung $u$) einlesen
 
 Ziel ist:
 
@@ -85,8 +85,8 @@ Sonst stehen Sie schnell – wie Julia – vor dem Problem, dass die Lösung nic
 
 Erweitern Sie das Einlesen aus `PA5.4` so, dass Sie:
 
-- \(u_{90} = 0.9 \\cdot u_0\) und \(u_{80} = 0.8 \\cdot u_0\) bestimmen,
-- den ersten Zeitpunkt finden, an dem \(u < u_{90}\) bzw. \(u < u_{80}\) gilt,
+- $u_{90} = 0.9 \cdot u_0$ und $u_{80} = 0.8 \cdot u_0$ bestimmen,
+- den ersten Zeitpunkt finden, an dem $u < u_{90}$ bzw. $u < u_{80}$ gilt,
 - und alles plotten (Messpunkte + horizontale Schwellenlinien).
 
 ```

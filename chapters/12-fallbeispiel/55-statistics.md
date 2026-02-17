@@ -32,7 +32,7 @@ Wir sortieren sie:
 
 In unserem Zahlenbeispiel mit 10 Zahlenwerten:
 
-- \(25\\% \\cdot 10 = 2{,}5\) → „2,5. Wert“ (eine halbe Position gibt es nicht)
+- $25\% \cdot 10 = 2{,}5$ → „2,5. Wert“ (eine halbe Position gibt es nicht)
 - Julia nimmt deshalb den nächsten sinnvollen Rang: **Position 3**
 - Dieses Vorgehen (nächster Rang nach oben) nennt man in der Literatur **Nearest-Rank-Verfahren**
 - Es gibt auch andere Strategien
@@ -48,7 +48,7 @@ In unserem Beispiel ist das 25 %-Quantil = 28.
 
 Es gibt verschiedene Quantil-Definitionen. Je nach Definition bekommt man auch andere Ergebnisse. Die Idee der Nearest-Rank-Definition ist:
 - Idee: „Es gibt keine halbe Position – wir nehmen den nächsten sinnvollen Messwert.“
-- Regel: Nimm das **kleinste Element**, bei dem „mindestens \(q\) %“ erreicht sind.
+- Regel: Nimm das **kleinste Element**, bei dem „mindestens $q$ %“ erreicht sind.
 Im Zweifel: fragen Sie immer nach, mit welchem Verfahren die Ergebnisse bestimmt wurden.
 ```
 
@@ -70,7 +70,7 @@ In unserem Beispiel ist das 50 %-Quantil (Median) = 72,5.
 **75 %-Quantil (Q3)**
 
 75 % heißt: „Drei Viertel der Werte sollen links davon liegen.“
-Drei Viertel von 10 sind 7,5 Werte → Nearest-Rank nimmt den nächsten ganzen Rang: \(k = \lceil 0{,}75 \cdot 10 \rceil = 8\).
+Drei Viertel von 10 sind 7,5 Werte → Nearest-Rank nimmt den nächsten ganzen Rang: $k = \lceil 0{,}75 \cdot 10 \rceil = 8$.
 
 ```text
 9, 12, 28, 55, 63, 82, 91, [92], 96, 97

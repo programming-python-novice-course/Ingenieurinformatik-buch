@@ -29,7 +29,7 @@ name: fig-paufgaben-a11-kw-ps
 - Zahl (Leistung) 
 - Umrechnungs-Richtung (`1` = kW → PS, `2` = PS → kW)
 
-**Hinweis**: \(1\,\mathrm{kW} = 1.35962\,\mathrm{PS}\)
+**Hinweis**: $1\,\mathrm{kW} = 1.35962\,\mathrm{PS}$
 
 **Ausgabe**: Ergebnis (gerne mit 2 Nachkommastellen)
 

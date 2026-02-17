@@ -5,7 +5,7 @@
 ```{figure} ../../figs/01-course-overview/overview/infrastructer-metaphor.png
 ---
 height: 320px
-name: infrastructer-metaphor
+name: infrastructer-metaphor-info-und-se
 ---
 ```
 ::::

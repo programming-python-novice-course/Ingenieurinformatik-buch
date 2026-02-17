@@ -36,7 +36,7 @@ Die drei Paradigmen sind (vgl. {cite}`martin:2017clean`):
 **Nicht erwartet:** Dass Sie alle drei Stile schon sicher erkennen oder selbst umsetzen können. In der Vorlesung arbeiten wir vor allem strukturiert/prozedural.
 ```
 
-Wir schauen uns anhand eines kurzen Python-Beispiels an, wie sich diese Paradigmen unterscheiden. Entscheidend ist nur die Beobachtung: Wir rechnen dreimal \(5 \cdot 5\) aus – aber der Code ist jeweils anders strukturiert (Funktion, Lambda, Klasse). Diese unterschiedlichen Strukturen stehen für verschiedene Programmierstile.
+Wir schauen uns anhand eines kurzen Python-Beispiels an, wie sich diese Paradigmen unterscheiden. Entscheidend ist nur die Beobachtung: Wir rechnen dreimal $5 \cdot 5$ aus – aber der Code ist jeweils anders strukturiert (Funktion, Lambda, Klasse). Diese unterschiedlichen Strukturen stehen für verschiedene Programmierstile.
 
 Für dieselbe Aufgabe gibt es daher oft mehrere „richtige“ Implementierungen – abhängig vom Stil, den man wählt.
 

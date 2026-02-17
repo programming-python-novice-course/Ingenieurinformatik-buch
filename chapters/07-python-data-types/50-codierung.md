@@ -17,7 +17,7 @@ Es legt fest, wie Zahlen mit Ziffern notiert werden (z. B. Dezimal, Binär, Hexa
 
 ```{admonition} Frage
 :class: question
-Wie würden Sie \(1/3\) speichern?
+Wie würden Sie $1/3$ speichern?
 ```
 Als 1.3333 oder als 1.3333333333333333? Irgendwann muss man abbrechen.
 

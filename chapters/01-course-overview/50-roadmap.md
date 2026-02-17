@@ -12,7 +12,7 @@ Das Modul ist in vier Teile gegliedert.
 ```{figure} ../../figs/01-course-overview/car-drive2.png
 ---
 height: 300px
-name: journey
+name: fig-roadmap-journey
 ---
 ```
 ::::
