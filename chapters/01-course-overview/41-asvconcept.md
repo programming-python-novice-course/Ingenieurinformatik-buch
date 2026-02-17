@@ -16,14 +16,18 @@ name: fig-screwexample-asv
 Beispiel aus der Werkstatt als Analogie für Strukturwissen (links), Anwendungswissen (Mitte) und Vorgehenswissen (rechts).
 ```
 
-Wir wollen Ihnen in diesem Kurs Wissen aus allen drei Kategorien vermitteln, da insbesondere Anwendungswissen in Zeiten von KI immer stärker wegautomatisiert wird.
+- Wir wollen Ihnen in diesem Kurs Wissen aus allen drei Kategorien vermitteln.
 
-In der Praxis werden Sie die Schraube ein paar mal per Hand eindrehen und danach den Akkuschrauber ("KI") nutzen.
+- Insbesondere Anwendungswissen wird in Zeiten von KI immer stärker wegautomatisiert.
+
+- Sie werden in der Praxis die Schraube ein paar mal per Hand eindrehen und danach vermutlich den Akkuschrauber ("KI") nutzen.
+
 
 Das gilt nicht nur für die Programmierpraxis sondern auch für den Lernprozess: 
-Sie sollen keine „10 000 Schrauben per Hand eindrehen“, sondern das Prinzip verstehen (S), es selbst umsetzen können (A) und zuverlässig zu guten Lösungen kommen (V). 
 
-Im Strukturwissen und Vorgehenswissen entsteht Verständnis, und genau dort liegt der Teil, der sich nicht einfach „wegautomatisieren“ lässt!
+- Sie sollen keine „10 000 Schrauben per Hand eindrehen“, sondern das Prinzip verstehen (S), es selbst umsetzen können (A) und zuverlässig zu guten Lösungen kommen (V). 
+
+- Im Strukturwissen und Vorgehenswissen entsteht Verständnis, und genau dort liegt der Teil, der sich nicht einfach „wegautomatisieren“ lässt!
 
 
 

@@ -11,11 +11,9 @@ kernelspec:
 
 # Python
 
-Python ist eine Universalsprache (General Purpose Language) und damit [Turing-vollständig](info-universal-turing-machine).
+- Python ist eine Universalsprache (General Purpose Language).
 
-Das bedeutet: 
-
-- Mit Python kann ein Programmierer theoretisch alle lösbaren Programmieraufgaben umsetzen.
+- Python ist *Turing-vollständig*, das bedeutet vereinfacht: "Mit Python kann ein Programmierer theoretisch alle lösbaren Programmieraufgaben umsetzen."
 
 ```{figure} ../../figs/01-course-overview/python-logo.png
 ---
@@ -87,7 +85,7 @@ ax.axis("off")
 plt.show()
 ```
 
-**Beispiel: Gelbe Objekte in einem Bild erkennen**
+**Beispiel: Berechnungen durchführen**
 
 ```{admonition} Hinweis
 Das folgende Beispiel ist nicht für die Online-Ausführung gedacht, sondern zeigt ein lokales Skript (Aufruf in der Konsole/Terminal).

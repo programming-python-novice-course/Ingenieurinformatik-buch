@@ -10,7 +10,7 @@
 „Man muss Programmieren erst ohne KI lernen – sonst lernt man es nie richtig.“
 ```
 
-Wenn es um KI geht, dann ist das Diskussionspotential groß!
+**Wenn es um KI geht, dann ist das Diskussionspotential groß!**
 
 In diesem Kapitel gehen wir darauf ein, was es heißt eine Programmiersprache in Zeiten von LLMs zu lernen.  
 

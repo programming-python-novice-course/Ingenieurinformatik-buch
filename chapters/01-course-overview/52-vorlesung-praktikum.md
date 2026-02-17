@@ -24,26 +24,19 @@ Das Konzept ist wie folgt:
 - In der Vorlesung lernen wir parallel dazu die Hintergründe und ordnen ein, was wir dabei gerade tun.
 ```
 
-Es kann deshalb vorkommen, dass Inhalte, die im Praktikum benötigt werden, in der Vorlesung noch nicht im Detail behandelt wurden.
+- Es kann vorkommen, dass Inhalte, die im Praktikum benötigt werden, in der Vorlesung noch nicht im Detail behandelt wurden.
+
+- Zu Beginn jedes Praktikums gibt es eine kurze Einführung und Einweisung. (Im Sinne unserer Metapher heißt das zum Beispiel: „Heute schalten wir vom 2. in den 3. Gang“, auch wenn wir die Details des „Getriebes“ erst später in der Vorlesung besprechen.)
+
+## Praktikumsvorbereitung
 
 Als Grundlage für das Praktikum dienen die folgenden Abschnitte aus dem Teil Basiswissen:
 - [Kontrollstrukturen](control-struc-sec)
 - [Datenstrukturen](datenstrukturen-sec)
 
-- Wir sehen uns in diesen Abschnitten anhand von Beispiel an, wie wir einfache Programme entwickeln können - Sie springen im Praktikum also nicht „ins kalte Wasser“.
+Beide Abschnitte dienen dazu Ihnen einen konzeptionellen Überblick zu vermitteln und Beispiel zu zeigen, wie Sie selber Python-Code schreiben können.
 
-- Zu Beginn jedes Praktikums gibt es außerdem eine kurze Einführung und Einweisung. (Im Sinne unserer Metapher heißt das zum Beispiel: „Heute schalten wir vom 2. in den 3. Gang“, auch wenn wir die Details des „Getriebes“ erst später in der Vorlesung besprechen.)
-
-## Praktikumsvorbereitung
-
-Als Basis sehen Sie sich bitte die Programmier-Beispiele an in:
-
-- [Kontrollstrukturen](control-struc-sec)
-- [Datenstrukturen](datenstrukturen-sec)
-
-Beide Abschnitte dienen dazu Ihnen einen konzeptionellen Überblick zu vermitteln.
-
-Wenn Sie tiefer einsteigen möchten, empfehlen wir für die Praktikumsvorbereitung bitte folgende Kapitel:
+Wenn Sie tiefer ins Detail einsteigen möchten, empfehlen wir für die Praktikumsvorbereitung folgende Kapitel durchzuarbeiten:
 
 | Praktikum | Inhalt | Basis-Vorbereitung | Zusatz-Vorbereitung (Kapitel) |
 |-----------|---------------------------|------------|------------|

@@ -106,17 +106,17 @@ Viele Codebeispiele zu bearbeiten kann beim Einstieg helfen. Es ersetzt jedoch k
 - Entscheidend ist, wie gut Sie die zugrunde liegenden Konzepte verstehen.
 - Erst wenn Sie erklären können, warum eine Lösung funktioniert, entsteht nachhaltiges Lernen.
 
-```{important} Qualität vor Quantität
-Qualität vor Quantität – wenige Übungen gründlich verstanden sind wertvoller als viele ohne echtes Verständnis.
+```{important} 
+**Qualität vor Quantität**
+
+Wenige Übungen gründlich verstanden sind wertvoller als viele ohne echtes Verständnis.
 ```
 
 ## Selbstüberprüfung beim Programmieren
 
 Wenn sich ein Programm anders verhält als erwartet, ist das ein wichtiges Warnsignal.
 
-**Warum macht das Programm das?**
-
-Wenn Sie sich diese Frage stellen, dann:
+Wenn Sie sich die Frage **Warum macht das Programm das?** stellen, dann:
 
 - liegt entweder ein Programmierfehler vor, den Sie bei echtem Verständnis gezielt finden und beheben können.
 - Oder es wurde ein grundlegendes Konzept nicht verstanden – ein typisches Anzeichen für Surface Learning.
@@ -128,7 +128,8 @@ Zur Selbstüberprüfung:
 - Welche Annahme steckt in meinem Code, die hier gerade nicht stimmt?
 - Welche kleinste Änderung/Probe trennt die zwei wahrscheinlichsten Ursachen?
 
-In beiden Fällen ist die Konsequenz dieselbe:
+**In beiden Fällen ist die Konsequenz dieselbe:**
 
-**Nicht mehr Beispiele programmieren, sondern das zugrunde liegende Prinzip klären! Kommen Sie immer gerne auf uns zu.**
+- Nicht mehr Beispiele programmieren, sondern das zugrunde liegende Prinzip klären! 
+- Kommen Sie immer gerne auf uns zu.
 
