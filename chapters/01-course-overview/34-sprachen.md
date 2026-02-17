@@ -1,7 +1,7 @@
 # Lernen einer Programmiersprache
 
 ```{admonition} Lernen
-::class: note
+:class: note
 
 Was bedeutet es, eine Programmiersprache zu lernen?
 ```

@@ -27,8 +27,8 @@ name: fig-datatypes-hierarchy-class
 Eine *Klasse* ist die Blaupause ihrer *Objekte*.
 
 ```{admonition} Klassen
-::class: definition
-::name: def-class
+:class: definition
+:name: def-class
 Eine Klasse ist ein *zusammengesetzter Datentyp*, der *Methoden* definiert, die allesamt auf Werte des eigenen Typs angewendet werden können.
 Eine *Klasse* definiert eine Blaupause für ein Bündel aus **Daten** und **Funktionen**, welche wir *Methoden* nennen.
 ```
@@ -36,8 +36,8 @@ Eine *Klasse* definiert eine Blaupause für ein Bündel aus **Daten** und **Funk
 Und ein *Objekt* ist eine konkrete *Instanz* einer *Klasse*, d.h. eine Variable eines *zusammengesetzten Datentyps* belegt mit bestimmten Werten und ausgestattet mit Methoden der Klasse.
 
 ```{admonition} Objekte in Python
-::class: attention
-::name: attention-objects-in-python
+:class: attention
+:name: attention-objects-in-python
 In `Python` ist alles (auch Werte von atomaren Datentypen) ein Objekt.
 ```
 
@@ -73,8 +73,8 @@ In `Python` definieren wir den Konstruktor nicht explizit.
 `__init__()` füllt das Objekt mit seinen Daten, bevor das Objekt benutzt wird.
 
 ```{admonition} Konstruktor
-::name: def-constructor
-::class: definition
+:name: def-constructor
+:class: definition
 Als *Konstruktor* bezeichnen wir eine spezielle Methode einer Klasse, die beim Erzeugen des Objekts der Klasse aufgerufen wird.
 Die Methode erzeugt das Objekt, d.h., diese Methode reserviert Speicher und legt es das Objekt in den Arbeitsspeicher, an die entsprechende Speicheradresse.
 ```

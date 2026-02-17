@@ -34,7 +34,7 @@ Das Software Engineering Compentency Model (SWECOM) der IEEE Computer Society be
 ```
 
 ```{admonition} Fokus dieser Vorlesung
-::class: note
+:class: note
 
 Softwareentwicklung beinhaltet viele Aspekte. In dieser Vorlesung betrachten wir bewusst die Grundlagen des Programmierens, was zu der Phase **„Implementierung und Modultests“** korrespondiert.
 

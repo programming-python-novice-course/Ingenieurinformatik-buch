@@ -12,7 +12,7 @@ kernelspec:
 # Eingaben, Ausgaben, Schnittstellen
 
 ```{admonition} Lernziele
-::class: learngoals
+:class: learngoals
 
 - Nach diesem Kapitel verstehen Sie, warum Programme Ein- und Ausgaben benötigen und welche Rolle Datentyp-Konvertierung dabei spielt.
 - Nach diesem Kapitel sind Sie in der Lage, Nutzereingaben (z. B. über ``input()``) einzulesen, in passende Datentypen umzuwandeln und einfache Validierungen durchzuführen.

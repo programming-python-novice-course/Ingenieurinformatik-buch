@@ -63,8 +63,8 @@ Bei der Erzeugung der Klasse wird `n_instances` auf den Wert `0` gesetzt.
 Immer wenn wir ein `Student`-Objekt erzeugen, erhöht sich das *Klassenattribut* `n_instances` um eins.
 
 ```{admonition} Klassenattribute
-::class: attention
-::name: attention-class-attributes
+:class: attention
+:name: attention-class-attributes
 *Klassenattribute* sollten sparsam eingesetzt werden und sollten niemals dazu verwendet werden um das Verhalten eines Objekts zu beeinflussen!
 Das *Verhalten* muss sich stets aus der Kombination von Objektattributen und Methoden ergeben.
 ```

@@ -79,8 +79,8 @@ Die `__init__()`-Methode initialisiert das Objekt mit seinen Daten.
 Diese Methode wird aufgerufen sobald wir das Objekt durch `Rectangle(x=10, y=10, width=100, height=20)` erzeugt haben.
 
 ```{admonition} Objektorientierte Programmierung (OOP)
-::class: definition
-::name: def-oop
+:class: definition
+:name: def-oop
 Die *objektorientierte Programmierung* ist ein Programmierparadigma, welches auf *Objekten* aufgebaut ist.
 Diese *Objekte* beinhalten und kapseln *Daten* und deren dazugehörige *Methoden*.
 ```

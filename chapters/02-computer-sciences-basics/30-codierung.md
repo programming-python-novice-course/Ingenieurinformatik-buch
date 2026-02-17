@@ -32,7 +32,7 @@ Es kann genau zwei Werte annehmen: **0** oder **1** (entspricht zwei unterscheid
 - Eine Codierung legt fest, wie eine Bitfolge zu interpretieren ist.
 
 ```{admonition} Merksatz
-::class: tip
+:class: tip
 
 Merksatz: Ohne Codierung ist eine Bitfolge nur eine Folge von 0 und 1.
 ```

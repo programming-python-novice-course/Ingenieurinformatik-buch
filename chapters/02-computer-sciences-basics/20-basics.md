@@ -44,8 +44,8 @@ $f$ und $g$ sind mathematische Funktionen.
 
 
 ```{admonition} Informationskreislauf
-::name: def-information-cycle
-::class: definition
+:name: def-information-cycle
+:class: definition
 Der *Informationskreislauf* beschreibt den grundlegenden Ablauf der Informationsverarbeitung in einem Computer: **Eingabe** (Input) → **Verarbeitung** (Processing) → **Ausgabe** (Output). Häufig wird der Kreislauf um **Speichern** (Storage) ergänzt, weil Daten und Programme zwischengespeichert, wiederverwendet und weiterverarbeitet werden.
 ```
 

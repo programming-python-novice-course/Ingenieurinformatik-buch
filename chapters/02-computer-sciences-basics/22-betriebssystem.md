@@ -86,7 +86,7 @@ Bei der Ausführung eines Programms wird der Befehlszeiger aktualisiert, um auf 
 
 
 ```{admonition} Hinweis: Programmieren mit/ohne Betriebssystem
-::class: remark
+:class: remark
 
 Je nachdem, ob Ihr Zielsystem ein Betriebssystem hat oder nicht, unterscheiden sich typische Aufgaben beim Programmieren:
 
