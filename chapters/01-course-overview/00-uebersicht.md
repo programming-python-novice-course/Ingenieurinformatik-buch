@@ -1,6 +1,6 @@
 # Kursübersicht
 
-Bevor wir in die fachlichen Inhalten gehen, finden Sie in den folgenden Abschnitten eine Übersicht zu den Kursinhalten und Ihren Arbeitsmaterialien.
+Bevor wir in die fachlichen Inhalte gehen, finden Sie in den folgenden Abschnitten eine Übersicht zu den Kursinhalten und Ihren Arbeitsmaterialien.
 
 ::::{only} html
 ```{figure} ../../figs/01-course-overview/0-overview.png

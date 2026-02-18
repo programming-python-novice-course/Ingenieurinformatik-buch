@@ -1,7 +1,7 @@
 # Softwareentwicklung
 
 - Wie auch Hardware hat auch Software einen *Produktlebenszyklus*. 
-- Um sicherzustellen, dass die Software am Ende das tut was sie soll, wird üblicherweise nach einem bestimmten Schema vorgegangen. 
+- Um sicherzustellen, dass die Software am Ende das tut, was sie soll, wird üblicherweise nach einem bestimmten Schema vorgegangen. 
 - Das Vorgehen (wann welche Aufgabe vorgenommen wird) unterscheidet sich nach Firma und Projekt. 
 - In Variation werden allerdings immer die gleichen Phasen durchlaufen:
 
