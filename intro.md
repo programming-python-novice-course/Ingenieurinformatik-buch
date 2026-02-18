@@ -1,9 +1,20 @@
 (sec-intro)=
 # Ingenieurinformatik 1 - Programmieren (Python)
 
+```{admonition} Keine Vorkenntnisse nötig
+:class: tip
+
+Diese Veranstaltung setzt **keine** Programmiererfahrung voraus. Sie müssen vor Beginn weder programmiert haben noch Python kennen.
+```
+
 Willkommen im Teilmodul „Programmieren“ (FK03, Hochschule München). In Ihrem Ingenieursalltag werden Sie immer wieder Aufgaben lösen, bei denen Programmiertechniken helfen – etwa bei der Auswertung großer Sensordatenmengen, beim Entwurf einer Flugregelung oder bei der Konstruktion eines Bauteils. In den nächsten Wochen lernen Sie dafür die Grundlagen des Programmierens.
 
-> Ziel der Veranstaltung ist es, dass Sie Programmieren als Ingenieurwerkzeug verstehen und sicher anwenden können.
+
+```{admonition} Ziel der Veranstaltung
+:class: important
+
+Sie sollen Programmieren als Ingenieurwerkzeug verstehen und schrittweise sicher anwenden können.
+```
 
 Wir lernen das Programmieren anhand der **Programmiersprache Python**. Zur Orientierung nutzen wir dabei eine Metapher: Programmieren lernen ist ein wenig wie Autofahren lernen. Python ist das konkrete Auto (mit „Gangschaltung“) — Programmieren ist die Fähigkeit, damit sicher von A nach B zu kommen.
 
@@ -31,14 +42,16 @@ name: journey
   Zum Abschluss machen wir eine komplette „Fahrt“: Wir planen die Route, packen den Kofferraum und fahren los. Dabei sehen Sie den gesamten Prozess am Stück und lernen, wie man in der Praxis strukturiert vorgeht.
 
 
+**Wie starten Sie?** 
+
+Beginnen Sie mit der {ref}`Kursübersicht <übersicht-sec>`.  
+Alles, was Sie brauchen (Laptop, Internetzugang, Skript), wird dort erklärt.  
+Sie müssen nichts vorbereiten und nichts vorab installieren.
+
+
 ```{admonition} Programmieren lernen in Zeiten von KI
 :class: hint
-
-KI verändert, wie wir programmieren und auch wie wir Programmieren lernen. In vielen klassischen Programmierkursen steht die Programmiersprache im Vordergrund: Man lernt ihre Grammatik und übt vor allem an typischen Beispielen.
-
-Wir nutzen Beispiele ebenfalls, aber mit einem anderen Schwerpunkt: Wir machen Konzepte und systematisches Vorgehen sichtbar. Dazu nutzen wir Live-Code direkt hier auf der Website; im Praktikum arbeiten wir in einer Entwicklungsumgebung und programmieren wie in der Praxis üblich.
-
-Damit zielt die Veranstaltung bewusst auf Kompetenzen ab, die auch langfristig im Zeitalter von KI relevant bleiben. Die Grammatik von Programmiersprachen wird durch LLMs nämlich zunehmend "wegautomatisiert". In der Praxis zählt jedoch, dass ein Programm das Richtige tut. Erreicht wird das durch Systemverständnis und sauberes Vorgehen - unabhängig (!) von der Sprache.
+Diese Veranstaltung zielt bewusst auf Programmier-Kompetenzen ab, die insbesondere im Zeitalter von KI relevant sind. 
 
 Mehr zum Kurskonzept: [Programmieren lernen in Zeiten von LLMs](chapters/01-course-overview/40-learningLLM).
 ```

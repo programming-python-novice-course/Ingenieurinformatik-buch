@@ -12,9 +12,14 @@
 
 **Wenn es um KI geht, dann ist das Diskussionspotential groß!**
 
-In diesem Kapitel gehen wir darauf ein, was es heißt eine Programmiersprache in Zeiten von LLMs zu lernen.  
+KI verändert, wie wir programmieren und auch wie wir Programmieren lernen. In vielen klassischen Programmierkursen steht die Programmiersprache im Vordergrund: Man lernt ihre Grammatik und übt vor allem an typischen Beispielen.
 
-Wir besprechen 
+Wir nutzen Beispiele ebenfalls, aber mit einem anderen Schwerpunkt: Wir machen Konzepte und systematisches Vorgehen sichtbar. Dazu nutzen wir Live-Code direkt hier auf der Website; im Praktikum arbeiten wir in einer Entwicklungsumgebung und programmieren wie in der Praxis üblich.
+
+Damit zielt die Veranstaltung bewusst auf Kompetenzen ab, die auch langfristig im Zeitalter von KI relevant bleiben. Die Grammatik von Programmiersprachen wird durch LLMs nämlich zunehmend "wegautomatisiert". In der Praxis zählt jedoch, dass ein Programm das Richtige tut. Erreicht wird das durch Systemverständnis und sauberes Vorgehen - unabhängig (!) von der Sprache.
+
+
+In diesem Abschnitt besprechn wir: 
 
 - welche Programmier-Kompentenzen mehr denn je in Zeiten von KI unerlässlich für die Erstellung robuster Programme sind.
 - ob die Aussage "Programmieren lernen kann man nur ohne KI" wissenschaftlich stand hält. (Spoiler: nein!)
