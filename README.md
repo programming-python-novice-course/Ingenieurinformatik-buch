@@ -3,10 +3,9 @@
 Dieses Repository bildet die Grundlage der interaktiven Lern-Website zur Veranstaltung *Ingenieurinformatik 1 – Programmieren (Python)*:  
 -> [Zur Website](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)
 
-Ziel ist es, Studierenden einen praxisnahen und aktiven Zugang zum Programmieren zu ermöglichen.  
-Das Vorlesungsskript ist so gestaltet, dass Beispiele nicht nur gelesen, sondern **direkt ausgeführt, verändert und experimentell erkundet** werden können. 
+Ziel ist es, Studierenden einen praxisnahen und einfachen Zugang zum Programmieren zu ermöglichen.  
 
-Ergänzend steht ein PDF-Skript zum Nacharbeiten und zur gezielten Prüfungsvorbereitung zur Verfügung (Download über die Website).
+Die Lern-Website ist interaktiv gestaltet, d.h. Studierende können die in der Vorlesung gezeigten Beispiele **direkt ausführen und experimentell erkunden**. 
 
 ![Überblick](./README-pic.png)
 
@@ -31,15 +30,18 @@ Dazu zählen unter anderem:
 
 ## Programmieren lernen in Zeiten von LLMs
 
-Große Sprachmodelle (LLMs) können das Programmieren unterstützen, ersetzen jedoch kein fundiertes Verständnis:  
-Robuste Software entsteht nicht allein durch Prompts, sondern erfordert klare Anforderungen, saubere Integration, Tests und fachliche Verantwortung.
+Large Language Models verändern nicht nur das Vorgehen beim Programmieren, sondern auch das Erlernen von Programmiertechniken und -sprachen.
 
-Im Kurs werden KI-Werkzeuge daher gezielt als **Lernunterstützung** eingesetzt – etwa zur Reflexion von Lösungsansätzen, zum Stellen der richtigen Rückfragen oder zur Überprüfung eigener Ergebnisse. Ziel ist es, methodische Kompetenz und Verständnis aufzubauen, statt diese durch automatisch erzeugten Code zu substituieren.
+Im Kurs werden KI-Werkzeuge als **Lernunterstützung** eingesetzt, um z. B. Lösungsansätze zu reflektieren. Ziel ist es, methodische Kompetenz und Verständnis aufzubauen – nicht (!) automatisch Code zu erzeugen.
 
-Dieser Ansatz ist auch wissenschaftlich gut belegt: Studien zeigen, dass der Einsatz von KI als Lerncoach die benötigte Lernzeit reduzieren kann, bei vergleichbarem Lernerfolg (z. B. Bassner et al., 2025).
 
-Weiterführende Informationen finden sich im Kurskapitel:  
+Dass KI beim Erlernen von Programmiertechniken hilfreich sein kann, ist inzwischen auch wissenschaftlich belegt: Bassner et al. (2025, [doi:10.1016/j.caeai.2025.100537](https://doi.org/10.1016/j.caeai.2025.100537)) zeigen anhand universitärer Lehrveranstaltungen, dass der Einsatz von KI als Lerncoach die benötigte Lernzeit reduzieren kann – bei vergleichbarem Lernerfolg.
+
+Wir kennzeichnen Kursinhalte danach, ob sie konzeptionelles Wissen (derzeit nur schwer mit LLMs automatisierbar) oder die Anwendung der Programmiersprache (gut automatisierbar) betreffen. Diese Transparenz soll helfen, den Stellenwert der Inhalte einzuordnen und Akzeptanz dafür zu schaffen, warum es auch in Zeiten von LLMs sinnvoll bleibt, Programmieren zu lernen. Wenn klar ist, dass das Gelernte nachhaltig ist, steigt oft auch die Motivation beim Lernen.
+
+Damit wollen wir das Wesentliche in den Fokus rücken: Systemverständnis und systematisches Vorgehen und weniger Sprachgrammatik. Weiterführende Informationen finden sich im Kurskapitel:  
 [Programmieren lernen in Zeiten von LLMs](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/chapters/01-course-overview/40-learningLLM.html)
+
 
 ## Für Beitragende
 
