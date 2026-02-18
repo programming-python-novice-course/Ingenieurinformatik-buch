@@ -1,4 +1,5 @@
-(übersicht-sec=)
+(übersicht-sec)=
+(uebersicht-sec)=
 # Kursübersicht
 
 Bevor wir in die fachlichen Inhalte gehen, finden Sie in den folgenden Abschnitten eine Übersicht zu den Kursinhalten und Ihren Arbeitsmaterialien.

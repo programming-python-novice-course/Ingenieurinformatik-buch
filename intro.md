@@ -44,9 +44,7 @@ name: journey
 
 **Wie starten Sie?** 
 
-Beginnen Sie mit der {ref}`Kursübersicht <übersicht-sec>`.  
-Alles, was Sie brauchen (Laptop, Internetzugang, Skript), wird dort erklärt.  
-Sie müssen nichts vorbereiten und nichts vorab installieren.
+Beginnen Sie mit der {ref}`Kursübersicht <uebersicht-sec>`. Alles, was Sie brauchen (Laptop, Internetzugang, Skript), wird dort erklärt. Sie müssen nichts vorbereiten und nichts vorab installieren.
 
 
 ```{admonition} Programmieren lernen in Zeiten von KI
