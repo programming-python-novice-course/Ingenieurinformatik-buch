@@ -17,7 +17,7 @@ Ein Betriebssystem ist die Software-Schicht zwischen Hardware und Anwendungsprog
 ```{admonition} Betriebssystem
 :name: def-operating-system
 :class: definition
-Das *Betriebssystem* eines Computers ist ein spezielles Hauptprogramm, welches alle anderen Programme und die Rechnerressourcen des Computers verwaltet.
+Das *Betriebssystem* eines Computers ist ein spezielles Hauptprogramm, das alle anderen Programme und die Rechnerressourcen des Computers verwaltet.
 ```
 
 Das *Betriebssystem* (z. B. Ubuntu, Windows, macOS) bestimmt, wann welches Programm welche Hardware nutzen darf und auf welchen Speicherbereich das jeweilige Programm zugreifen darf.
