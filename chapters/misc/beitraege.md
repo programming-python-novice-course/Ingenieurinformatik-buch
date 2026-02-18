@@ -9,23 +9,23 @@ Dieses Buch wurde durch Beiträge verschiedener Personen ermöglicht.
 Ursprüngliche Fassung (Modul „Computational Thinking“)
 
 - Benedikt Zönnchen: Entwicklung des interaktiven Lehrbuchs „Computational Thinking“. Die ursprüngliche Fassung ist auf GitHub verfügbar.
-  - Profil: https://mucdai.hm.edu/kontakte_de/phonebook_detailseite_18243.de.html
-  - Buch: https://bzoennchen.github.io/ct-book/intro.html
+  - Profil: [mucdai.hm.edu (Phonebook)](https://mucdai.hm.edu/kontakte_de/phonebook_detailseite_18243.de.html)
+  - Buch: [ct-book (Intro)](https://bzoennchen.github.io/ct-book/intro.html)
 
 - Mathias Schwaller: kleinere textuelle Verbesserungsvorschläge und Korrekturen.
-  - Profil: https://github.com/mathias-schwaller
+  - Profil: [github.com/mathias-schwaller](https://github.com/mathias-schwaller)
 
 Neue Fassung (Modul „Ingenieurinformatik – Programmieren“)
 
 - Christina Maria Mayr: Anpassung, Erweiterung und Neustrukturierung der Inhalte für das Modul „Ingenieurinformatik – Programmieren“.
   Insbesondere wurden Teile des Buches neu entwickelt und bestehende Inhalte/Beispiele/Grafiken kuratiert und integriert.
-  - Profil: https://christinamaria-mayr.userweb.mwn.de/
+  - Profil: [christinamaria-mayr.userweb.mwn.de](https://christinamaria-mayr.userweb.mwn.de/)
 
 Ein Teil der Übungsaufgaben stammt aus den Übungsmaterialien von Tilman Küpper:
 
 - Tilman Küpper: Konzeption der PA*-Praxisaufgaben
-   - Profil: https://hm.edu/kontakte_de/contact_detail_978.de.html
-   - Quelle: https://kuepper.userweb.mwn.de/informatik/python-aufgabensammlung.pdf
+   - Profil: [hm.edu (Kontakt)](https://hm.edu/kontakte_de/contact_detail_978.de.html)
+   - Quelle: [python-aufgabensammlung.pdf](https://kuepper.userweb.mwn.de/informatik/python-aufgabensammlung.pdf)
    - Einverständnis: Tilman Küpper hat sein Einverständnis gegeben, dass wir Übungsbeispiele wiederverwenden dürfen.
 - Christina Maria Mayr: Integration der PA*-Praxisaufgaben in das Skript, Entwicklung eigener Aufgabenbeispiele (nicht explizit gekennzeichnet)
 
@@ -66,14 +66,13 @@ Die folgende Tabelle zeigt, welche PA*-Übungsaufgaben im Skript (Kapitel 01–1
 **Technologische Beiträge**
 
 - Christina Maria Mayr: Software-Architektur des Buchprojekts, Strukturierung, Build-/PDF-Pipeline und Pflege des Deployments.
-- Johannes Ebke: Infrastrukturarbeit (u.a. JupyterHub-Anbindung, automatisierter Build/Deployment-Workflow, Bereitstellung von Ressourcen).
-  Vielen Dank für die Einrichtung, den Betrieb und die Wartung der Infrastruktur an der Hochschule München sowie die Ermöglichung des Zugangs zu Kubernetes-Clustern für HM-Angehörige.
+- Johannes Ebke: Bereitstellung der Infrastruktur (JupyterHub, Kubernetes-Cluster im Rahmen des Deployment-Konzepts)
 
 **Einsatz von KI**
 
 Zur Illustration und zur Überarbeitung von Textpassagen wurde ein KI-gestütztes Werkzeug eingesetzt:
 
-- OpenAI (2026). ChatGPT (Version GPT-5.2) [Large language model]. https://chat.openai.com/
+- OpenAI (2026). ChatGPT (Version GPT-5.2) [Large language model]. [chat.openai.com](https://chat.openai.com/)
 
 Die Inhalte wurden redaktionell geprüft und angepasst.
 
