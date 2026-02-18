@@ -1,6 +1,7 @@
 # Modulhandbuch
 
-Im Teilmodul "Programmieren" (gehört zum Modul "Ingenieurinformatik") lernen Sie :
+Im Teilmodul "Programmieren" (gehört zum Modul "Ingenieurinformatik") lernen Sie:
+
 - Basis-Wissen aus der Informatik und 
 - Grundlagen der Programmiersprache Python. 
 

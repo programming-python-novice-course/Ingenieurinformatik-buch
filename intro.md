@@ -5,7 +5,7 @@ Willkommen im Teilmodul „Programmieren“ (FK03, Hochschule München). In Ihre
 
 > Ziel der Veranstaltung ist es, dass Sie Programmieren als Ingenieurwerkzeug verstehen und sicher anwenden können.
 
-Wir lernen Programmieren anhand der **Programmiersprache Python**. Zur Orientierung nutzen wir dabei eine Metapher: Programmieren lernen ist ein wenig wie Autofahren lernen. Python ist das konkrete Auto (mit „Gangschaltung“) — Programmieren ist die Fähigkeit, damit sicher von A nach B zu kommen.
+Wir lernen das Programmieren anhand der **Programmiersprache Python**. Zur Orientierung nutzen wir dabei eine Metapher: Programmieren lernen ist ein wenig wie Autofahren lernen. Python ist das konkrete Auto (mit „Gangschaltung“) — Programmieren ist die Fähigkeit, damit sicher von A nach B zu kommen.
 
 
 

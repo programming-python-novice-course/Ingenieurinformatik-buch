@@ -39,7 +39,7 @@ Bisher waren eigene Hilfsmittel (Skripte, ...) zugelassen, ausgenommen:
 + Taschenrechner
 + PC/Notebook/Handy/Tablet/...
 
-Hinweis: Eine Bearbeitung mit Bleistift was bisher möglich. 
+Hinweis: Eine Bearbeitung mit Bleistift war bisher möglich. 
 
 ```{admonition} Hinweis
 :name: hint-pruefung-aenderungen
