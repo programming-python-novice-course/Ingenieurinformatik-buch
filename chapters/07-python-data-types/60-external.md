@@ -118,13 +118,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-```{exercise} Optional (C_Vektoren_Matrizen): NumPy-Arrays erzeugen
-:label: ex-paufgaben-c-vektoren-matrizen
 
-Erzeugen Sie mit NumPy ein paar typische Vektoren/Matrizen (aus der Aufgabensammlung, Teil „NumPy“):
-
-- `np.array([...])`, `np.arange(...)`, `np.zeros(...)`, `np.linspace(...)`
-- `np.eye(...)` (Einheitsmatrix), `np.zeros((m,n))`, `np.random.random((m,n))`
 
 ```{code-cell} python3
 :tags: [skip-execution]
@@ -151,7 +145,7 @@ print("M2 =\n", M2)
 print("M3 =\n", M3)
 print("M4 =\n", M4)
 ```
-```
+
 
 Matrizen eignen sich z.B. dafür, **binäre Bilder** (Schwarz-Weiß) oder Rasterdaten darzustellen. Eine Matrix mit 0 und 1 kann mit `imshow` als Pixelbild gezeichnet werden:
 
@@ -191,4 +185,14 @@ Es gibt Datenstrukturen wie Zeitreihen oder numerische Arrays, die in der Praxis
 - in der numerischen Simulation: `numpy.ndarray`
 
 Diese Datentypen sollten Sie zumindest vom Namen her kennen. In der Praxis treffen Sie sonst auf Verwirrung, wenn jemand z.B. eine Zeitreihe aus Listen oder Dicts aufbaut – das kostet Zeit, ist schwerer lesbar und oft fehleranfälliger als die passende Bibliothek zu nutzen.
+```
+
+```{exercise} Optional (C_Vektoren_Matrizen): NumPy-Arrays erzeugen
+:label: ex-paufgaben-c-vektoren-matrizen
+
+Erzeugen Sie mit NumPy ein paar typische Vektoren/Matrizen (aus der Aufgabensammlung, Teil „NumPy“):
+
+- `np.array([...])`, `np.arange(...)`, `np.zeros(...)`, `np.linspace(...)`
+- `np.eye(...)` (Einheitsmatrix), `np.zeros((m,n))`, `np.random.random((m,n))`
+
 ```

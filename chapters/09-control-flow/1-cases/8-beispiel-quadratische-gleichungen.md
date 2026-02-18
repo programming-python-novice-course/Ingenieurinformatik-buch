@@ -54,7 +54,7 @@ ticket
 In diesem Beispiel **gewinnt die Altersregel**: Sobald `alter >= 65` ist, landen wir im `else`-Zweig und bekommen immer `"senior"`, egal welcher `status` angegeben wurde.
 ```
 
-```{exercise} Ticketpreis als `match`/`case`
+```{exercise} Ticketpreis als match/case
 :label: exercise-ticketpreis-match-case
 
 Schreiben Sie die gleiche Logik als `match`/`case` (Pattern Matching).

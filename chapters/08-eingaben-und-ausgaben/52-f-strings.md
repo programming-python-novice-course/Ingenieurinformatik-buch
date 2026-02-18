@@ -77,7 +77,7 @@ print(f"Zahl: {zahl}, Liste: {liste}, Wörterbuch: {woerterbuch}")
 # Ausgabe: Zahl: 42, Liste: [1, 2, 3], Wörterbuch: {'a': 1, 'b': 2}
 ```
 
-```{exercise} Praxisaufgabe (PA2.1): Stromrechnung mit Ausgabeformat `:.2f`
+```{exercise} Praxisaufgabe (PA2.1): Stromrechnung mit Ausgabeformat :.2f
 :label: ex-paufgaben-a21-stromrechnung-fstrings
 
 Implementieren Sie eine Stromrechnung:

@@ -47,7 +47,7 @@ ergibt ``0``.
 *Arithmetische Operationen* werden von der *arithmetischen Einheit* der [CPU](def-cpu) ausgewertet.
 Mit ihnen können wir numerische Gleichungen lösen aber auch Indices manipulieren.
 
-```{exercise} Praxisaufgabe (PA-Kurz): `%`, `//` und `**` ausprobieren
+```{exercise} Praxisaufgabe (PA-Kurz): %, // und ** ausprobieren
 :label: ex-paufgaben-kurz-operatoren
 
 1. Berechnen Sie für `a = 1999` und `b = 4` den **Rest** (`%`) und die **ganzzahlige Division** (`//`).

@@ -75,7 +75,7 @@ match status:
 text
 ```
 
-```{exercise} Praxisaufgabe (PA2.1): Stromrechnung mit `if/elif/else`
+```{exercise} Praxisaufgabe (PA2.1): Stromrechnung mit if/elif/else
 :label: ex-paufgaben-a21-stromrechnung-elif
 
 ```{figure} ../../../figs/09-control-flow/paufgaben/k2/k2_abb1.png

@@ -11,7 +11,7 @@ kernelspec:
 
 # Übungsaufgabe
 
-```{exercise} Praxisaufgabe (PA1.4): Kreisberechnung mit `math`
+```{exercise} Praxisaufgabe (PA1.4): Kreisberechnung mit dem Modul math
 :label: ex-paufgaben-a14-kreis-math
 
 Schreiben Sie ein kleines Skript, das nach Eingabe eines Radius $r$ den **Umfang** $u$ und die **Fläche** $A$ berechnet und ausgibt:
