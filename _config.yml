@@ -48,7 +48,7 @@ sphinx:
 
   config:
     version: "2.5"
-    release: "2.5.2"
+    release: "2.5.3"
 
     myst_enable_extensions:
       - dollarmath
@@ -94,9 +94,10 @@ sphinx:
         \\
         www.christinamariamayr.de\\
         \vspace*{9cm}\\
-        Dieses Werk ist lizenziert unter der \\
-        © Creative Commons Namensnennung-Share Alike 4.0 International Lizenz (CC BY-SA 4.0). \\
-        Ausgenommen von dieser Lizenz sind Abbildungen, Grafiken und Fotos, die mit einer gesonderten Quellen- oder Lizenzangabe versehen sind.
+        Dieses Werk ist lizenziert unter der\\
+        Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).\\
+        \href{https://creativecommons.org/licenses/by-sa/4.0/}{https://creativecommons.org/licenses/by-sa/4.0/}\\
+        Sofern nicht anders angegeben, gilt diese Lizenz auch für Abbildungen, Grafiken und Fotos.
 
 
         % weiße Rückseite (leer, ohne Kopf-/Fußzeile)
@@ -228,7 +229,7 @@ html:
       </div>
       <div class="col1">
         Beiträge: <a href="/chapters/misc/beitraege.html">alle anzeigen</a>.
-        Lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" target="_blank">CC BY-SA 4.0</a>.
-        Version 2.5.2
+        Lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer">CC BY-SA 4.0</a>.
+        Version 2.5.3
       </div>
     </div>

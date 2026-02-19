@@ -50,6 +50,10 @@ Das Repository ist auf kollaborative Weiterentwicklung ausgelegt und senkt bewus
 - **Bearbeitung im Browser**: Viele inhaltliche Änderungen (Text, Aufgaben, Beispiele) können direkt über die GitLab-Weboberfläche vorgenommen werden – ohne lokale Entwicklungsumgebung oder Softwareinstallation.
 - **Automatisierte Builds und Deployments**: GitLab CI übernimmt den Aufbau und die Veröffentlichung der Website. Lokale Builds sind optional und primär für Maintainer relevant.
 
+## Lizenz
+
+Sofern nicht anders angegeben, ist dieses Werk lizenziert unter der [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/). Siehe auch [`LICENSE`](./LICENSE).
+
 
 ## Links
 

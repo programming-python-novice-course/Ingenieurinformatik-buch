@@ -1,9 +1,7 @@
 
 # Beiträge
 
-Dieses Werk und damit verbundende Inhalte sind jeweils lizensiert unter der Lizenz 
-
-© Creative Commons Namensnennung-Share Alike 4.0 International Lizenz (CC BY-SA 4.0) 
+Dieses Werk und damit verbundene Inhalte sind – sofern nicht anders angegeben – lizenziert unter der [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
 
 Dieses Werk wurde durch Beiträge verschiedener Personen ermöglicht.
 
