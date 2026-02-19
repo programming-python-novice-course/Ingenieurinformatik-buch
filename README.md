@@ -18,7 +18,7 @@ Der Einstieg ist bewusst niedrigschwellig gestaltet:
 
 Über den JupyterHub der Hochschule München besteht zudem die Möglichkeit, eigene Anpassungen an den Code-Beispielen zu speichern und später weiterzubearbeiten. Damit wird ein kontinuierliches, semesterbegleitendes Arbeiten unterstützt.
 
-Alle Inhalte sind zusätzlich als **PDF-Skript** verfügbar, das sich insbesondere zum Nacharbeiten, Markieren und Wiederholen eignet (Download über die Website unter *Downloads*).
+Alle Inhalte sind zusätzlich als [PDF-Skript](https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-download/-/blob/main/Downloads/Skript-aktuell.pdf) verfügbar, das sich zum Nacharbeiten, Markieren und Wiederholen eignet.
 
 Inhaltlich liegt der Schwerpunkt auf grundlegenden Programmierkompetenzen, die **über Python hinaus** relevant sind und sich auf andere Programmiersprachen übertragen lassen. 
 Dazu zählen unter anderem:

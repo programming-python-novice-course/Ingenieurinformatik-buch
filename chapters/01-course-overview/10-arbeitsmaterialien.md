@@ -24,8 +24,10 @@ Damit Sie die Inhalte der Vorlesung möglichst effizient bearbeiten können, emp
 width: 200px
 name: fig-qr-interaktive-website
 ---
-Link zur interaktiven Website
+Link zur interaktiven Website: [https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)
 ```
+
+https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html
 
 Die Website und das Skript sind thematisch identisch.
 
