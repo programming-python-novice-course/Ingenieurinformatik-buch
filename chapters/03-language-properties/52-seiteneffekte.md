@@ -38,7 +38,7 @@ Ein *Seiteneffekt* liegt vor, wenn die Ausführung einer isolierten Funktionalit
 ```
 
 Python übergibt beim Funktionsaufruf **keine Kopien von Objekten**, sondern **Referenzen auf Objekte** (auch: *call‑by‑sharing*, *object references*).
-Das heißt: Parameter sind **neue Namen**, die auf **dieselben Objekte** gebunden werden können wie beim Aufrufer. Der Grund dafür wiederum liegt im Python‑Datenmodell: **Namen referenzieren Objekte** und Funktionsaufrufe übergeben nicht die Objekte selbst sondern ebeen die Referenz.
+Das heißt: Parameter sind **neue Namen**, die auf **dieselben Objekte** gebunden werden können wie beim Aufrufer. Der Grund dafür wiederum liegt im Python‑Datenmodell: **Namen referenzieren Objekte** und Funktionsaufrufe übergeben nicht die Objekte selbst sondern eben die Referenz.
 
 ```{admonition} Profiwissen
 :name: uebergabemechanismen

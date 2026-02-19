@@ -9,7 +9,7 @@ kernelspec:
   name: python3
 ---
 
-# Einfache Verzweifung (A)
+# Einfache Verzweigung (A)
 
 ``if`` 
 

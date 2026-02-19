@@ -2,7 +2,7 @@
 
 Die interaktive Website ist so aufgebaut, dass Sie darin direkt Python-Code erstellen, verändern und ausführen können. 
 
-Damit haben Sie Ihr Skript und Ihr Programmier-Werkgzeug an einer Stelle ohne dass Sie irgendetwas installieren müssen!
+Damit haben Sie Ihr Skript und Ihr Programmier-Werkzeug an einer Stelle ohne dass Sie irgendetwas installieren müssen!
 
 - Einige Seiten auf dieser Website enthalten nur theoretische Inhalte
 - Einige Seiten auf dieser Website enthalten theoretische Inhalte und Python-Code!
