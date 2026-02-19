@@ -15,6 +15,8 @@ kernelspec:
 ---
 width: 300px
 name: fig-paufgaben-widerstaende-uebung
+---
+Foto: Tilman Küpper
 ```
 
 ```{exercise} Praxisaufgabe (PA1.5): Widerstände (Reihe/Parallel)

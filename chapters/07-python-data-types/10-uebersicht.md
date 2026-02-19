@@ -50,7 +50,7 @@ print(type(3.1))
 width: 500px
 name: fig-python-datatypes-hierarchy
 ---
-Die Standard-Typ-Hierarchie von Python (Quelle: Wikimedia Commons, basierend auf „Python 3. The standard type hierarchy“, CC BY-SA 4.0, Urheber: Maxim Ne).
+Built-in-Datentypen
 ```
 
 

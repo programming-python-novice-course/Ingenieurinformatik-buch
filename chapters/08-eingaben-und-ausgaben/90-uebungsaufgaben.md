@@ -23,6 +23,7 @@ Schreiben Sie ein Python-Programm, das Leistungsangaben umrechnet.
 width: 300px
 name: fig-paufgaben-a11-kw-ps
 ---
+Foto: Tilman Küpper
 ```
 
 **Eingabe**: 

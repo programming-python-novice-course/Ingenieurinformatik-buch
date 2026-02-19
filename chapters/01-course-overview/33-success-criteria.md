@@ -20,6 +20,7 @@ kernelspec:
 height: 150px
 name: fig-python-logo
 ---
+Python-Logo
 ```
 
 - Python wurde bereits 1990 entwickelt und ist damit älter als z. B. Java.

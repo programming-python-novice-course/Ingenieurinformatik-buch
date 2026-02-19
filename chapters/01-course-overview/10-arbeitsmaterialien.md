@@ -24,12 +24,15 @@ Damit Sie die Inhalte der Vorlesung möglichst effizient bearbeiten können, emp
 width: 200px
 name: fig-qr-interaktive-website
 ---
-Link zur interaktiven Website
+Link zur interaktiven Website: [https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)
 ```
 
+https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html
+
 Die Website und das Skript sind thematisch identisch.
-Das Skript dient Ihnen dazu, während der Vorlesung Notizen zu machen.
-Auf der interaktiven Website können Sie viele der gezeigten Programmierbeispiele direkt im Webbrowser ausführen. Sie können also entweder live während der Vorlesung mitmachen oder die Beispiele später in Ruhe zu Hause nacharbeiten, verändern und erweitern.
+
+- Das Skript dient Ihnen dazu, während der Vorlesung Notizen zu machen.
+- Auf der interaktiven Website können Sie viele der gezeigten Programmierbeispiele direkt im Webbrowser ausführen. Sie können also entweder live während der Vorlesung mitmachen oder die Beispiele später in Ruhe zu Hause nacharbeiten, verändern und erweitern.
 
 
 ```{admonition} Hinweis

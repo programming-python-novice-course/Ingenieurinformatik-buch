@@ -105,12 +105,13 @@ print("Interpreter:", sys.executable)
 
 - Die Aussage, dass es mehrere Python-Implementierungen und -Versionen gibt, ist korrekt.
 - Die Referenzimplementierung von Python (CPython) ist in der Programmiersprache C geschrieben.
-
 ```
 
 
-```{admonition} Tipp
+```{admonition} Tipps
 :class: tip
 
 - Wenn Sie über verschiedene Betriebssysteme und Plattformen hinweg mit anderen arbeiten, fragen Sie im Zweifel nach, welches Python (Implementierung + Version) verwendet wird. Es kann kleine Unterschiede geben (z. B. unterstützte Pakete, Performance, Details der Laufzeit).
+- Sie können sich den Bytecode anzeigen lassen und analysieren. Wie genau erfahren Sie im Expertenwissen unter {ref}`Analyse von Bytecode <analyse-bytecode>`.
+- Da CPython in C/C++ geschrieben ist, können Sie auch direkt C-Code in Python hinterlegen. Mehr dazu im Expertenwissen unter {ref}`CPython erweitern <python-extending-sec>`.
 ```

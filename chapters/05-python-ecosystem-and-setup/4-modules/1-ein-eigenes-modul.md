@@ -51,6 +51,7 @@ Diese Befehle erzeugen folgende Ausgabe:
 width: 800px
 name: fig-square-sum
 ---
+Ausgabebeispiel
 ```
 
 - Ein Modul ist demnach nichts weiter als eine Datei, die ``Python``-Definitionen und Ausdrücke enthält.

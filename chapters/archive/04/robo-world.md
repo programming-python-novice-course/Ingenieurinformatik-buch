@@ -513,6 +513,7 @@ In visueller Form, ist das Spiel sehr einfach zu verstehen:
 width: 200px
 name: fig-tic-tac-toe
 ---
+Tic tac toe
 ```
 
 Gewisse Konsistenzen können wir nicht selbst wählen, da wir an einer Gemeinschaft teilnehmen.
@@ -1280,6 +1281,7 @@ Nehmen wir das $3 \times 3$-Zellen Gebiet:
 width: 80px
 name: fig-roboworld-3-times-3
 ---
+dummy
 ```
 
 In diesem Fall können wir nach Westen laufen und dann einmal rund herum und haben jede Zelle nur einmal besucht.
@@ -1304,6 +1306,7 @@ Ein einfaches Gegenbeispiel ist jedes $1 \times n$ für $n \geq 2$ Gebiet.
 width: 240px
 name: fig-1-times-n
 ---
+dummy
 ```
 
 ````

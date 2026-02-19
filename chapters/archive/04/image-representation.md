@@ -23,6 +23,7 @@ Wir werden eine bestimmte Interpretation nutzten um aus einer Folge von 0 und 1 
 width: 200px
 name: fig-zero-and-one-to-bw-picture
 ---
+dummy
 ```
 
 und Animationen zu generieren.
@@ -33,6 +34,7 @@ und Animationen zu generieren.
 width: 200px
 name: fig-flower
 ---
+dummy
 ```
 ```
 
@@ -42,6 +44,7 @@ name: fig-flower
 width: 200px
 name: fig-flower
 ---
+dummy
 ```
 ```
 
@@ -486,6 +489,7 @@ Diese Übersetzung bezeichnet man auch als **Rasterisierung** (siehe Abschnitt [
 height: 350px
 name: fig-point-to-pixel
 ---
+dummy
 ```
 
 Unsere geometrischen Objekte haben reelle Koordinaten z.B. können wir einen Kreis durch seinen Mittelpunkt $c = (x,y)$ und Radius $r$ eindeutig beschreiben.
@@ -530,6 +534,7 @@ Zum Beispiel, lässt sich ein Segment was parallel zur $y$-Achse verläuft nicht
 width: 300px
 name: fig-midpoint
 ---
+dummy
 ```
 
 Was sagt uns folgende Beobachtung:
@@ -824,6 +829,7 @@ Generieren Sie folgendes GIF/Daumenkino bzw. Animation:
 height: 150px
 name: fig-daumenkino
 ---
+dummy
 ```
 ```
 
@@ -833,6 +839,7 @@ name: fig-daumenkino
 height: 150px
 name: fig-daumenkino
 ---
+dummy
 ```
 ```
 
@@ -870,6 +877,7 @@ Generieren Sie eine Animation eines Balls, welcher sich in einer Box bewegt, d.h
 height: 150px
 name: fig-daumenkino-ball
 ---
+dummy
 ```
 ```
 
@@ -879,6 +887,7 @@ name: fig-daumenkino-ball
 height: 150px
 name: fig-daumenkino-ball
 ---
+dummy
 ```
 ```
 
@@ -980,6 +989,7 @@ ergibt
 height: 150px
 name: fig-fourier-drawing
 ---
+dummy
 ```
 
 ````

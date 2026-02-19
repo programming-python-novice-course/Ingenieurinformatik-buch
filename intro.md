@@ -1,7 +1,7 @@
 (sec-intro)=
 # Ingenieurinformatik 1 - Programmieren (Python)
 
-```{admonition} Keine Vorkenntnisse nötig
+```{admonition} Zielgruppe: Studierende des 1. Semesters Bachelor, Hochschule München (FK03)
 :class: tip
 
 Diese Veranstaltung setzt **keine** Programmiererfahrung voraus. Sie müssen vor Beginn weder programmiert haben noch Python kennen.
@@ -11,7 +11,7 @@ Willkommen im Teilmodul „Programmieren“ (FK03, Hochschule München). In Ihre
 
 
 ```{admonition} Ziel der Veranstaltung
-:class: important
+:class: tip
 
 Sie sollen Programmieren als Ingenieurwerkzeug verstehen und schrittweise sicher anwenden können.
 ```
