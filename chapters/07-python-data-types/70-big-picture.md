@@ -135,7 +135,7 @@ Denn nur dann können Sie technische Probleme systematisch analysieren – statt
 width: 400px
 name: fig-hydra-funny
 ---
-dummy
+Programmierung kann schwierig sein
 ```
 ::::
 

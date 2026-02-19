@@ -1,3 +1,4 @@
+(python-extending-sec)=
 # CPython erweitern
 
 CPython lässt sich selbstverständlich durch ``Python``-Code erweitern.

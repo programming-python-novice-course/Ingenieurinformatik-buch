@@ -7,7 +7,7 @@
 height: 320px
 name: infrastructer-metaphor-info-und-se
 ---
-dummy
+Informatik vs. Software Engineering
 ```
 ::::
 

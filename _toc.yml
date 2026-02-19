@@ -257,6 +257,8 @@ parts:
       sections:
       - file: chapters/misc/Expertenwissen/interpreter
       - file: chapters/misc/Expertenwissen/compilation
+      - file: chapters/misc/Expertenwissen/CPython/4-disassembly
+      - file: chapters/misc/Expertenwissen/CPython/5-extending
       - file: chapters/misc/Expertenwissen/datatypes/00-properties
         sections:
         - file: chapters/misc/Expertenwissen/datatypes/11-Atomar-zusammen

@@ -1,8 +1,7 @@
 # Roadmap
 
-In diesem Teilmodul lernen Sie Programmieren anhand der Programmiersprache Python. 
-
-Das Ziel ist es, dass Sie Probleme systematisch in Programme übersetzen und lösen können.
+- In diesem Teilmodul lernen Sie Programmieren anhand der Programmiersprache Python. 
+- Das Ziel ist es, dass Sie Probleme systematisch in Programme übersetzen und lösen können.
 
 Das Modul ist in vier Teile gegliedert. 
 
@@ -14,7 +13,7 @@ Das Modul ist in vier Teile gegliedert.
 height: 300px
 name: fig-roadmap-journey
 ---
-dummy
+Programmieren ist die Fähigkeit sicher von A nach B zu kommen. Python ist das Auto.
 ```
 ::::
 

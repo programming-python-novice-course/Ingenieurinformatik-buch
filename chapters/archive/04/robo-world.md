@@ -513,7 +513,7 @@ In visueller Form, ist das Spiel sehr einfach zu verstehen:
 width: 200px
 name: fig-tic-tac-toe
 ---
-dummy
+Tic tac toe
 ```
 
 Gewisse Konsistenzen können wir nicht selbst wählen, da wir an einer Gemeinschaft teilnehmen.

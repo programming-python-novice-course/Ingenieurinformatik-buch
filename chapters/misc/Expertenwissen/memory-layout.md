@@ -126,7 +126,7 @@ Die grauen Bereiche sind ebenfalls belegt jedoch nicht von unserer Datenstruktur
 width: 800px
 name: list-list-indexing
 ---
-dummy
+Listen-Index
 ```
 
 Was aber wenn Sie einen weiteren Gegenstand in den Zusammenschluss aus Schließfächern einfügen wollen und zwar mitten drinnen?
@@ -138,7 +138,7 @@ Folgende Abbildung skizziert diesen aufwendigen Vorgang:
 width: 800px
 name: list-insert
 ---
-dummy
+Einfügen eines Elements
 ```
 
 Und was passiert wenn das darauffolgende Schließfach von jemandem anderen belegt ist?
@@ -151,7 +151,7 @@ Die folgende Abbildung skizziert diesen Vorgang:
 width: 800px
 name: list-insert-fail
 ---
-dummy
+Kein Platz
 ```
 
 Wenn Sie einen Gegenstand inmitten der Schließfächer löschen, müssen Sie ebenfalls viele Gegenstände bewegen.
@@ -162,7 +162,7 @@ Dieser Vorgang ähnelt dem Einfügen inmitten der Datenstruktur.
 width: 800px
 name: list-delete
 ---
-dummy
+Löschen 
 ```
 
 Die Vorteile zeigen Effizienz beim Zugriff über einen Index.

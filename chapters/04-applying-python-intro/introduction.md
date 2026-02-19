@@ -20,7 +20,7 @@ Ziel dieses Teils ist, dass Sie **einfache Python-Programme schreiben**, **Daten
 height: 320px
 name: bedienung-anwenden-uebersicht
 ---
-dummy
+Python in der Anwendung
 ```
 ::::
 

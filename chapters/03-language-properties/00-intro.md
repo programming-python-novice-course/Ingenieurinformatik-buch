@@ -19,7 +19,7 @@
 height: 320px
 name: motorhaube-spracheigenschaften
 ---
-dummy
+Python's Eigenschaften
 ```
 ::::
 

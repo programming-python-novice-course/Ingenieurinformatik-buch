@@ -6,7 +6,7 @@
 height: 320px
 name: fahrt
 ---
-dummy
+Anwendungsfall: wir führen eine gemeinsame Probefahrt durch.
 ```
 ::::
 

@@ -81,7 +81,7 @@ Laufroboter (Projektstudium HM FK03, SoSe 2017): Gesamtansicht.
 width: 250px
 name: fig-laufroboter-animation
 ---
-dummy
+Laufroboter in Bewegung
 ```
 :::
 
@@ -99,7 +99,7 @@ Die folgenden Softwaretypen werden unter anderem von Ingenieurinnen (mit-)entwic
 height: 270px
 name: motivation
 ---
-dummy
+Software kommt überall vor und es gibt verschiedene Typen
 ```
 
 Daneben gibt es weitere Softwaretypen, bei denen Ingenieure weniger häufig entwickeln (sondern nur anwenden):
