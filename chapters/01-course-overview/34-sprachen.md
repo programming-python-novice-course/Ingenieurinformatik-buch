@@ -128,7 +128,7 @@ Für das Engineering besonders wichtig:
 width: 400px
 name: fig-python-ecosystem
 ---
-Schematische Darstellung des wissenschaftlichen Python-Ökosystems (Jake VanderPlas, PyCon 2017). Quelle: https://www.researchgate.net/figure/Schematic-view-of-the-Python-scientific-software-ecosystem-Figure-taken-from-Jake_fig1_332799309 (Zugriff: 03.02.2026).
+Python Ecosystem: Python (unten) stellt intern viele Funktionalitäten bereit. Externe Bibliotheken (oben) stellen zusätzliche Funktionalitäten bereit.
 ```
 
 ```{admonition} Tipp
