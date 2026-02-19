@@ -8,7 +8,7 @@
 
 ```{figure} ../../figs/01-course-overview/overview/development-phases.png
 ---
-width: 600px
+width: 400px
 name: fig-development-phases
 ---
 Entwicklungsphasen der Softwareentwicklung nach dem Wasserfallmodell. Bild in Anlehnung an Sommerville, 2011.
