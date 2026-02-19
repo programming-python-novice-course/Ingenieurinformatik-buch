@@ -1,13 +1,15 @@
 (sec-intro)=
 # Ingenieurinformatik 1 - Programmieren (Python)
 
+Willkommen im Teilmodul „Programmieren“ an der Fakultät 03 der Hochschule München.
+
 ```{admonition} Zielgruppe: Studierende des 1. Semesters Bachelor, Hochschule München (FK03)
 :class: tip
 
 Diese Veranstaltung setzt **keine** Programmiererfahrung voraus. Sie müssen vor Beginn weder programmiert haben noch Python kennen.
 ```
 
-Willkommen im Teilmodul „Programmieren“ (FK03, Hochschule München). In Ihrem Ingenieursalltag werden Sie immer wieder Aufgaben lösen, bei denen Programmiertechniken helfen – etwa bei der Auswertung großer Sensordatenmengen, beim Entwurf einer Flugregelung oder bei der Konstruktion eines Bauteils. In den nächsten Wochen lernen Sie dafür die Grundlagen des Programmierens.
+In Ihrem Ingenieursalltag werden Sie immer wieder Aufgaben lösen, bei denen Programmiertechniken helfen – etwa bei der Auswertung großer Sensordatenmengen, beim Entwurf einer Flugregelung oder bei der Konstruktion eines Bauteils. In den nächsten Wochen lernen Sie dafür die Grundlagen des Programmierens.
 
 
 ```{admonition} Ziel der Veranstaltung
