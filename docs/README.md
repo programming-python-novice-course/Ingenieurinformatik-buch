@@ -1,6 +1,6 @@
 # Software-Doku (Maintainer)
 
-Diese `docs/`-Seiten sind **für Maintainer/Autor*innen** gedacht (Build, CI/CD, Repos, Konfiguration).  
+Diese `docs/`-Seiten sind **für Maintainer/Autorinnen** gedacht (Build, CI/CD, Repos, Konfiguration).  
 Sie sind **nicht** Teil der Jupyter-Book-Website.
 
 ## Inhalte

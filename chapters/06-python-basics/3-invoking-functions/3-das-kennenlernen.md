@@ -33,7 +33,7 @@ Ständig werden neue nützliche Module programmiert und auch Sie werden noch irg
 Einer der wichtigsten Fähigkeiten ist es, Dokumentationen zu finden und richtig zu lesen.
 
 Mit zunehmender Erfahrung klappt auch dies immer besser.
-Zum Beispiel würden erfahrene Programmierer*innen richtigerweise vermuten, dass das Modul ``random`` auch eine Funktion bieten wird, welche eine zufällige natürliche Zahl zurückliefert.
+Zum Beispiel würden erfahrene Programmiererinnen richtigerweise vermuten, dass das Modul ``random`` auch eine Funktion bieten wird, welche eine zufällige natürliche Zahl zurückliefert.
 Durchforsten wir das Internet nach diesem Modul so stoßen wir möglicherweise auf [diese Seite](https://docs.python.org/3/library/random.html).
 Dort finden wir eine Funktion ``random.randint``.
 

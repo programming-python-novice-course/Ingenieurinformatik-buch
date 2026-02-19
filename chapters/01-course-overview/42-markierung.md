@@ -1,7 +1,7 @@
 (sec-kapitelmarker)=
 # Kapitelmarker (A/S/V) und * 
 
-In diesem Skript finden Sie an vielen Kapiteln eine Markierung **(A)**, **(S)** oder **(V)** oder ein *. 
+In diesem Skript finden Sie in den inhaltlichen Kapiteln (Kapitel 02-12) die Markierungen **(A)**, **(S)**, **(V)** und *. 
 
 ## Wissensarten (A/S/V)
 
