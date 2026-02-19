@@ -72,7 +72,7 @@ Folgende Abbildung verdeutlicht die Situation:
 
 ```{figure} ../../../figs/03-language-properties/python-tutorial/variables/variable.png
 ---
-width: 800px
+width: 400px
 name: fig-variable
 ---
 Initialisierung und Zuweisung einer Variable ``x``  mit dem Wert ``25``. Der Wert steht im Arbeitsspeicher (rechts) an der Speicheradresse 6. Die Variable zeigt auf diese Adresse im Speicher.
@@ -93,7 +93,7 @@ Diese Situation sieht demnach wie folgt aus:
 
 ```{figure} ../../../figs/06-python-basics/python-tutorial/variables/variable-equal-id.png
 ---
-width: 800px
+width: 400px
 name: fig-variable-equal-id
 ---
 Initialisierung und Zuweisung einer Variablen ``x`` und ``z``  mit dem Wert ``25``. Die Adresse beider Variablen ist identisch.
@@ -125,7 +125,7 @@ Die Situation könnte in etwa wie folgt aussehen:
 
 ```{figure} ../../../figs/06-python-basics/python-tutorial/variables/variable-unequal-id.png
 ---
-width: 800px
+width: 400px
 name: fig-variable-unequal-id
 ---
 Initialisierung und Zuweisung einer Variablen ``x`` und ``z``  mit dem Wert ``25`` und ``24``. Die Adresse beider Variablen ist nicht identisch.
