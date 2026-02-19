@@ -79,7 +79,9 @@ sphinx:
     latex_elements:
       releasename: "Version"
       tableofcontents: |
-        \chapter*{Hinweise}
+        \pagenumbering{roman}   % optional, aber üblich vorne
+        \pagestyle{empty}
+        \chapter*{Hinweise}\thispagestyle{empty}
         Dieses Buch ist durch Beiträge verschiedener Personen entstanden. 
         Die Herausgeberin allein ist für die Integration der Beiträge und der daraus resultierenden Buchfassung verantwortlich. 
         Eine Übersicht aller beitragenden Personen und ihrer Beiträge findet sich im Anhang unter „Beiträge“.\\
@@ -97,16 +99,26 @@ sphinx:
         Dieses Werk ist lizenziert unter der\\
         Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).\\
         \href{https://creativecommons.org/licenses/by-sa/4.0/}{https://creativecommons.org/licenses/by-sa/4.0/}\\
-        Sofern nicht anders angegeben, gilt diese Lizenz auch für Abbildungen, Grafiken und Fotos.
+        Sofern nicht anders angegeben, gilt diese Lizenz auch für Abbildungen, Grafiken und Fotos.\\
 
 
-        % weiße Rückseite (leer, ohne Kopf-/Fußzeile)
-        \clearpage
+        % weiße Rückseite
         \thispagestyle{empty}
         \null
         \clearpage
 
+        % ===== TOC =====
+        \cleardoublepage
+        \pagenumbering{arabic}
+        \setcounter{page}{3}   % <-- HIER
+        \pagestyle{plain}
         \sphinxtableofcontents
+        
+        \setcounter{page}{0}
+        \pagestyle{headings}
+        \pagenumbering{arabic}
+        \setcounter{page}{1}     % statt 0 (0 wirkt oft “komisch” in PDF/Ref)
+        \chapter*{Vorwort}
       # Admonition-Styling im PDF (note/hint/important/tip + warning/caution/attention/danger/error)
       sphinxsetup: |
         noteborder=1pt,

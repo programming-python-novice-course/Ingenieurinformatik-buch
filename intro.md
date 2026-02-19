@@ -2,6 +2,8 @@
 # Ingenieurinformatik 1 - Programmieren (Python)
 
 Willkommen im Teilmodul „Programmieren“ an der Fakultät 03 der Hochschule München.
+In Ihrem Ingenieursalltag werden Sie immer wieder Aufgaben lösen, bei denen Programmiertechniken helfen – etwa bei der Auswertung großer Sensordatenmengen, beim Entwurf einer Flugregelung oder bei der Konstruktion eines Bauteils. In den nächsten Wochen lernen Sie dafür die Grundlagen des Programmierens.
+
 
 ```{admonition} Zielgruppe: Studierende des 1. Semesters Bachelor, Hochschule München (FK03)
 :class: tip
@@ -9,17 +11,17 @@ Willkommen im Teilmodul „Programmieren“ an der Fakultät 03 der Hochschule M
 Diese Veranstaltung setzt **keine** Programmiererfahrung voraus. Sie müssen vor Beginn weder programmiert haben noch Python kennen.
 ```
 
-In Ihrem Ingenieursalltag werden Sie immer wieder Aufgaben lösen, bei denen Programmiertechniken helfen – etwa bei der Auswertung großer Sensordatenmengen, beim Entwurf einer Flugregelung oder bei der Konstruktion eines Bauteils. In den nächsten Wochen lernen Sie dafür die Grundlagen des Programmierens.
-
-
 ```{admonition} Ziel der Veranstaltung
 :class: tip
 
 Sie sollen Programmieren als Ingenieurwerkzeug verstehen und schrittweise sicher anwenden können.
 ```
 
-Wir lernen das Programmieren anhand der **Programmiersprache Python**. Zur Orientierung nutzen wir dabei eine Metapher: Programmieren lernen ist ein wenig wie Autofahren lernen. Python ist das konkrete Auto (mit „Gangschaltung“) — Programmieren ist die Fähigkeit, damit sicher von A nach B zu kommen.
+Wir lernen das Programmieren anhand der **Programmiersprache Python**. Zur Orientierung nutzen wir dabei eine Metapher: 
 
+*Programmieren lernen ist ein wenig wie Autofahren lernen!*
+
+Python ist das konkrete Auto (mit „Gangschaltung“) — Programmieren ist die Fähigkeit, damit sicher von A nach B zu kommen.
 
 
 ```{figure} ./figs/00-general/landing-page.png
@@ -28,6 +30,7 @@ width: 300px
 name: journey
 ---
 ```
+
 
 **Orientierung: Die Veranstaltung in 4 Teilen**
 
@@ -57,3 +60,4 @@ Mehr zum Kurskonzept: [Programmieren lernen in Zeiten von LLMs](chapters/01-cour
 ```
 
 *Hinweis: Abbildungen wurden teilweise mithilfe generativer KI erstellt und dienen der Illustration.*
+
