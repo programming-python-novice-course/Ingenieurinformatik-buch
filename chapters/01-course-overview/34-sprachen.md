@@ -125,7 +125,7 @@ Für das Engineering besonders wichtig:
 
 ```{figure} ../../figs/01-course-overview/languages/ecosystem.png
 ---
-width: 400px
+width: 600px
 name: fig-python-ecosystem
 ---
 Python Ecosystem: Python (unten) stellt intern viele Funktionalitäten bereit. Externe Bibliotheken (oben) stellen zusätzliche Funktionalitäten bereit.
