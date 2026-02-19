@@ -72,7 +72,7 @@ Im Laufe Ihres Bachelorstudiums an der FK03 haben Sie ein Fach namens "Projektmo
 width: 400px
 name: fig-laufroboter-gesamt
 ---
-Laufroboter (Projektstudium HM FK03, SoSe 2017): Gesamtansicht.
+Laufroboter (Projektstudium HM FK03, SoSe 2017). Privates Foto, Christina Maria Mayr.
 ```
 
 :::{only} html
@@ -81,6 +81,7 @@ Laufroboter (Projektstudium HM FK03, SoSe 2017): Gesamtansicht.
 width: 250px
 name: fig-laufroboter-animation
 ---
+Laufroboter in Bewegung. Privates Video, Christina Maria Mayr.
 ```
 :::
 
@@ -98,6 +99,7 @@ Die folgenden Softwaretypen werden unter anderem von Ingenieurinnen (mit-)entwic
 height: 270px
 name: motivation
 ---
+Software kommt überall vor und es gibt verschiedene Typen
 ```
 
 Daneben gibt es weitere Softwaretypen, bei denen Ingenieure weniger häufig entwickeln (sondern nur anwenden):

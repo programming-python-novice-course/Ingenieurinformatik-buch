@@ -26,7 +26,7 @@ Ein Computer erweitert das EVA-Prinzip um den **Speicher** und damit um einen **
 
 ```{figure} ../../figs/02-computer-sciences-basics/digital-computer/basics/dfa.png
 ---
-width: 600px
+width: 500px
 name: fig-dfa
 ---
 Ein Modell eines Computers mit 4 Zuständen. 

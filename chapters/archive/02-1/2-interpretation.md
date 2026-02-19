@@ -46,6 +46,7 @@ Die Zeichenfolge ``23.10.2022`` interpretieren wir normalerweise als Datum und f
 width: 200px
 name: fig-stop-sign
 ---
+Stoppschild
 ```
 
 interpretieren wir als Anweisung beim Autofahren.

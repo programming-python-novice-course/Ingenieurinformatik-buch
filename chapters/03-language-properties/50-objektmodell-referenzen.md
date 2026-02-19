@@ -46,7 +46,7 @@ Unter der Haube passiert aber etwas anderes:
 
 ```{figure} ../../figs/03-language-properties/overview/object.png
 ---
-width: 550px
+width: 250px
 name: fig-python-object-model
 ---
 Ein Objekt hat eine Identität (`id`) und einen Wert; Variablennamen sind Bindungen auf Objekte.

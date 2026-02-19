@@ -192,10 +192,10 @@ deploy_print_pdf_in_gitlabLRZ:
     - git clone --depth 1 --branch "$DOWNLOAD_BRANCH" "$DOWNLOAD_REMOTE_PUSH" _github_download_repo
     - cd _github_download_repo
     - git remote set-url origin "$DOWNLOAD_REMOTE_PUSH"
-    - mkdir -p Downloads
-    - cp "../${PDF_PRINT_SOURCE}" "Downloads/${PDF_PRINT_FILENAME}"
-    - cp "../${PDF_PRINT_SOURCE}" "Downloads/Skript-print-aktuell.pdf"
-    - git add "Downloads/${PDF_PRINT_FILENAME}" "Downloads/Skript-print-aktuell.pdf"
+    - mkdir -p "Downloads/Skript-Version-Printausgabe"
+    - cp "../${PDF_PRINT_SOURCE}" "Downloads/Skript-Version-Printausgabe/${PDF_PRINT_FILENAME}"
+    - cp "../${PDF_PRINT_SOURCE}" "Downloads/Skript-Version-Printausgabe/Skript-print-aktuell.pdf"
+    - git add "Downloads/Skript-Version-Printausgabe/${PDF_PRINT_FILENAME}" "Downloads/Skript-Version-Printausgabe/Skript-print-aktuell.pdf"
     - |
       if git diff --staged --quiet; then
         echo "No changes to push (print PDF unchanged)"
@@ -207,7 +207,7 @@ deploy_print_pdf_in_gitlabLRZ:
       echo ""
       echo "==================== PRINT PDF DEPLOYMENT ===================="
       echo "Deploys the reduced/print-friendly PDF to the downloads repository."
-      echo "File(s): Downloads/${PDF_PRINT_FILENAME} and Downloads/Skript-print-aktuell.pdf"
+      echo "File(s): Downloads/Skript-Version-Printausgabe/${PDF_PRINT_FILENAME} and Downloads/Skript-Version-Printausgabe/Skript-print-aktuell.pdf"
       echo "Goal: keep the number of pages LOW (reduced content, e.g. without 'Expertenwissen')."
       echo "=============================================================="
       echo ""

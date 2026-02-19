@@ -25,6 +25,8 @@ Stützpunkte (für diese Aufgabe relevant: $0 \le h \le 47$ km):
 ---
 width: 300px
 name: fig-paufgaben-icao
+---
+Foto: Tilman Küpper.
 ```
 
 ```{exercise} Praxisaufgabe (PA2.4): ICAO-Standardatmosphäre (Interpolation)

@@ -8,8 +8,8 @@ kernelspec:
   language: python
   name: python3
 ---
-
-# Zerlegung
+(analyse-bytecode)=
+# Analyse von Bytecode
 
 Das Standard-Modul [dis](https://docs.python.org/3/library/dis.html) erlaubt die Analyse von CPython *Bytecode* durch *Zerlegung* (engl. disassembling).
 Das Modul erlaubt es uns kleine ``Python``-Codeblöcke in den entsprechenden *Bytecode* zu überführen und diesen dann in verständlicher Form anzuzeigen.

@@ -13,7 +13,20 @@ kernelspec:
 
 Programmieren beginnt oft mit dem Durchwühlen von Dokumentationen fremder Module und Pakete.
 Bevor wir loslegen müssen wir erst in Erfahrung bringen **WAS** überhaupt möglich ist.
-Welche vordefinierten Funktionen und welche Module gibt es bzw. welche dieser Module könnten für meine Zwecke nützlich sein.
+
+```{admonition} Leitfrage
+:class: question
+
+Welche vordefinierten Funktionen und Module gibt es – und welche davon könnten für meine Zwecke nützlich sein?
+```
+
+Bevor Sie etwas implementieren: 
+
+- Sehen Sie sich zunächst an, was Python an internen Funktionalitäten bereitstellt in der [Python-Dokumentation] (https://docs.python.org/3.10/library/index.html) 
+
+- Wenn Sie dort nicht fündig werden: recherchieren Sie in den externen Bibliotheken im [Python Package index](https://pypi.org/)
+
+- ERST wenn Sie dort nicht fündig werden, programmieren Sie!
 
 Selbst nach Jahren an Programmierkenntnissen hört dieser Lernprozess nie auf.
 Ständig werden neue nützliche Module programmiert und auch Sie werden noch irgendwann Ihre eigenen Module implementieren und nutzten.

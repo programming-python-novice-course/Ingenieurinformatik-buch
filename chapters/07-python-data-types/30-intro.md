@@ -20,4 +20,5 @@ Diese zusammengesetzten Datentypen ermöglichen es, Sammlungen von Elementen zu 
 width: 500px
 name: fig-datatypes-hierarchy-seq
 ---
+Übersicht: Sequenzen in Python.
 ```
