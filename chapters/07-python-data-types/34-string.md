@@ -32,7 +32,7 @@ print(text)
 ```
 
 Um Variablen oder Werte anderer Datentypen mit ``print`` auszugeben, mussten wir diese immer mit der *built-in Funktion* ``str`` in eine Zeichenkette umwandeln.
-Da dies so häufig gemacht werden muss, haben die Entwickler\*innen von ``Python`` sich etwas einfallen lassen.
+Da dies so häufig gemacht werden muss, haben die Entwicklerinnen von ``Python`` sich etwas einfallen lassen.
 Stellen wir vor unsere Zeichenkette ein ``f``, so handelt es sich um eine sog. *formatierte Zeichenkette*.
 Diese helfen uns Variablen oder Werte direkt in eine Zeichenkette einzufügen.
 Vergleichen Sie folgenden Code:

@@ -481,7 +481,7 @@ Besser wäre, z.B., ``move_left_corner()`` oder ``take_left_turn()``.
 
 Es ist ein Abwägen zwischen: Wie viel Wissen können wir bei der Leserschaft vorraussetzen und wie lange sollte der Name maximal werden.
 Das Wissen bezieht sich zum einen auf die Codebasis, also wie viel von unserem Code hat der Leser bereits verstanden, aber zum anderen auch auf das Anwendungsgebiet.
-Für Klimaforscher\*innen ist vermutlich klar was
+Für Klimaforscherinnen ist vermutlich klar was
 
 ```python
 ocean.mean_temperature()
@@ -521,12 +521,12 @@ Zum Beispiel trennen wir in ``Python`` die Wörter, die einen Variablen- oder Fu
 In ``Java`` verwendet man hingegen die sogenannte Camel-Caps-Schreibweise: ``isWallInFront()``.
 
 Solche Normen erleichtern die Zusammenarbeit ungemein.
-Es lohnt sich frühzeitig diese Normen nachzuschlagen oder den Code von anderen Programmierer\*innen, auch wegen der Benennung von Variablen und Funktionen/Methoden, zu betrachten.
+Es lohnt sich frühzeitig diese Normen nachzuschlagen oder den Code von anderen Programmiererinnen, auch wegen der Benennung von Variablen und Funktionen/Methoden, zu betrachten.
 
 (sec-roboworld-reusability)=
 #### Wiederverwendbarkeit
 
-Gute Programmierer\*innen sind faul.
+Gute Programmiererinnen sind faul.
 Faul in dem Sinne, dass wir Maschinen für uns arbeiten lassen.
 Und faul in dem Sinne, dass wir keine Aufgabe zweimal lösen, egal wie klein die Aufgabe auch war!
 
@@ -534,7 +534,7 @@ Finden Sie in Ihrem Code an mehreren Stellen das gleiche **Muster** wird es Zeit
 Das obige Beispiel verdeutlicht wie 'klein/kurz' dieses Muster sein kann.
 
 Selbst wenn Sie den Code noch nicht an mehreren Stellen verwenden, dieser aber eine bestimmte Aufgabe löst, sollten Sie darüber nachdenken diesen in eine eigene Funktion zu kapseln.
-Denken Sie an Ihr zukünftiges ich oder an andere Programmierer\*innen, die auf ihrem Code aufbauen.
+Denken Sie an Ihr zukünftiges ich oder an andere Programmiererinnen, die auf ihrem Code aufbauen.
 Je kleiner die Aufgabe ist, die gekapselt werden kann, desto kleiner sind Ihre Schritte hin zur Lösung einer größeren Aufgabe und desto leichter wird es Ihnen fallen.
 Sie befreien sich von der kleinen Aufgabe, können diese abhaken und voranschreiten.
 
@@ -1018,7 +1018,7 @@ Beim Suchen einer analytischen Lösung kann dies auch ein sehr hilfreiches Mitte
 Ganz nach dem Motto: Habe ich mich verrechnet?
 
 Den *Erwartungswert* der notwendigen Schritte des Zufallslaufs zu bestimmen ist eine schwierige Aufgabe, der Sie wahrscheinlich noch nicht gewachsen sind.
-Dennoch können wir als *Computational Thinker\*innen* den Computer verwenden um durch (oft massiv viele) Berechnungen einen guten Schätzwert zu bestimmen.
+Dennoch können wir als *Computational Thinkerinnen* den Computer verwenden um durch (oft massiv viele) Berechnungen einen guten Schätzwert zu bestimmen.
 Die oben durchgeführte Methode gehört zu den sog. [Monte-Carlo-Simulationen](https://de.wikipedia.org/wiki/Monte-Carlo-Simulation).
 
 Natürlich brauchen wir für derartige Berechnungen viel Rechenleistung und damit auch viel **Energie** - sie sind nicht kostenlos!

@@ -23,7 +23,7 @@ Wollen wir eine bestimmte Abfolge von [Ausdrücken](sec-expressions) wieder und 
 Diese Funktion erfüllt einen bestimmten Zweck.
 
 Benutzten wir bereits existierende Funktionen, so kennen wir (jedenfalls sollte das so sein) das **WAS** aber nicht unbedingt das **WIE**.
-Das bedeutet für geübte Programmierer\*innen, dass diese sich viel mit Dokumentationen diverser Module beschäftigen.
+Das bedeutet für geübte Programmiererinnen, dass diese sich viel mit Dokumentationen diverser Module beschäftigen.
 Einerseits um das **WAS** in Erfahrung zu bringen und andererseits um eine Vorstellung vom **WIE** zu erhalten.
 
 Wir rufen eine Funktion mit dem Namen ``name`` auf, indem wir an den Namen runde Klammern anfügen: ``name(par1, par2)``.

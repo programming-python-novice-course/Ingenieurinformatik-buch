@@ -264,7 +264,7 @@ Uns ist klar, dass es sich dabei um ein sehr theoretisches Konstrukt handelt.
 Wir ersparen Ihnen die formale Definition und möchten Sie dennoch bestärken ein intuitives Verständnis über die Turingmaschine während Ihres Studiums aufzubauen.
 
 Die Turingmaschine kommt mit erstaunlich wenig Hardware aus.
-Pfiffige Bastler\*innen können diese Maschine als Heimwerkerprojekt im Keller bauen.
+Pfiffige Bastlerinnen können diese Maschine als Heimwerkerprojekt im Keller bauen.
 Es steht ihnen zwar kein unendliches Band zur Verfügung, doch falls ein Algorithmus terminiert, kann der Schreib-/Lesekopf nur eine endliche Distanz fahren und somit ist ein endliches Band ausreichend.
 Wie lange dies jedoch sein muss ist im Vornhinein unklar.
 
@@ -308,7 +308,7 @@ Eine *universelle Turingmaschine* $U$ ist eine Turingmaschine, die eine beliebig
 ## Das Halteproblem
 
 Das Halteproblem ist eines der bekanntesten Probleme der Informatik, da es wesentliche Implikationen über die Mächtigkeit von Computern offenlegt.
-Wir würden uns als Programmierer\*innen wünschen, dass es ein Programm gäbe, welches uns für ein anderes beliebiges Programm, mit einer bestimmten Eingabe, verrät, ob dieses auch halten wird oder ob wir in einer Endlosschleife laufen.
+Wir würden uns als Programmiererinnen wünschen, dass es ein Programm gäbe, welches uns für ein anderes beliebiges Programm, mit einer bestimmten Eingabe, verrät, ob dieses auch halten wird oder ob wir in einer Endlosschleife laufen.
 Gäbe es ein solches Programm könnten sie es verwenden um sicherzustellen, dass sie niemals eine Endlosschleife programmieren.
 
 ```{admonition} Das Halteproblem

@@ -33,7 +33,7 @@ Zum Beispiel können Sie in ``Python`` keinen Speicher direkt adressieren, desha
 In ``C`` oder ``C++`` haben Sie die Möglichkeit mit Speicheradressen direkt zu arbeiten, jedoch müssen Sie in diesen Sprachen Speicher selbst explizit reservieren und vor allem wieder freigeben.
 
 Ein weiterer wesentlicher Punkt ist, dass Hardware in Stein gegossenes *Computational Thinking* ist.
-Viele Forscher\*innen und Entwickler\*innen haben Hardware immer weiter optimiert und neue innovative Ideen entwickelt um noch mehr aus den Bauteilen herauszuholen.
+Viele Forscherinnen und Entwicklerinnen haben Hardware immer weiter optimiert und neue innovative Ideen entwickelt um noch mehr aus den Bauteilen herauszuholen.
 Durch den Blick in die Funktionsweise der Hardware können Sie demnach viele nützliche algorithmische Denkmuster studieren.
 Von *Branch-Prediction* über *Paging-Strategien* oder dem vollziehen einer Art von Berechnung auf vielen Datensätzen (*Single Instruction Multiple Data*) bis hin zu *Caching-Techniken*, Hardware bietet eine Sammlung wichtiger Algorithmen die ineinander wirken.
 

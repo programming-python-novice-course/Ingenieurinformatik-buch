@@ -143,8 +143,8 @@ Der ``Python``-Interpreter nutzt die *Endrekursion* nicht aus.
 ```
 
 Der ``Python``-Interpreter optimiert dies nicht.
-Die Entwickler\*innen von Python haben sich aus verschiedenen Gründen gegen Tail Recursion Elimination (TRE) entschieden:
+Die Entwicklerinnen von Python haben sich aus verschiedenen Gründen gegen Tail Recursion Elimination (TRE) entschieden:
 
 + TRE zerstört den sog. Stack Trace (wichtig für Fehlermeldungen)
-+ TRE als Option würde Entwickler\*innen motivieren die Rekursion häufiger zu verwenden, doch würde der Code dann nicht überall gleich effizient laufen
++ TRE als Option würde Entwicklerinnen motivieren die Rekursion häufiger zu verwenden, doch würde der Code dann nicht überall gleich effizient laufen
 + In Python wäre die Realisierung durch dessen Dynamik äußerst kompliziert

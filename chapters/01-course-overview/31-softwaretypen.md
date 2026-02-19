@@ -102,7 +102,7 @@ name: motivation
 Software kommt überall vor und es gibt verschiedene Typen
 ```
 
-Daneben gibt es weitere Softwaretypen, bei denen Ingenieure weniger häufig entwickeln (sondern nur anwenden):
+Daneben gibt es weitere Softwaretypen, bei denen Ingenieurinnen und Ingenieure weniger häufig entwickeln (sondern nur anwenden):
 
 - Interaktive transaktionale Anwendungen (z.B. Amazon)
 - Stapelverarbeitende Software (batch processing) – Lohnauszahlungssysteme

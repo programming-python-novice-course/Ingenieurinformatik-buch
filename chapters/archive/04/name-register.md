@@ -217,14 +217,14 @@ Der Komparator $f_E$ wird passend zur Menge der möglichen Listenelemente $E$ de
 Zum Beispiel ist für die Klausuren $f_E(e_i, e_j)$ gleich $-1$ wenn der Name des Studierenden der Klausur $e_i$ lexikographisch kleiner ist als der Name des Studierenden der Klausur $e_j$.
 $f_E$ **abstrahiert** alle unwichtigen Eigenschaften der Elemente der gegebenen Liste $\mathcal{L}$.
 
-Wie das passende $f_E$ definiert ist, wissen wir als Entwickler\*innen des Suchalgorithmus nicht und müssen es auch nicht wissen.
+Wie das passende $f_E$ definiert ist, wissen wir als Entwicklerinnen des Suchalgorithmus nicht und müssen es auch nicht wissen.
 Durch $f_E$ haben wir das Problem in zwei Teilprobleme zerlegt:
 
 1. Die Definition des **Komparators** $f_E$, der zur Sortierung der Elemente passt und
 2. die Suche unter der Annahme eines wohldefinierten **Komparators**.
 
 Wir lösen lediglich das zweite **Teilproblem**.
-Um ersteres müssen sich die Anwender\*innen unseres Suchalgorithmus kümmern.
+Um ersteres müssen sich die Anwenderinnen unseres Suchalgorithmus kümmern.
 Durch diese **Abstraktion** schaffen wir es einen Suchalgorithmus zu entwickeln, der **jede beliebige sortierte Liste** durchsuchen kann!
 
 Wir haben aber noch ein Problem!
@@ -293,7 +293,7 @@ def binary_search(key, mylist, f, g = lambda x : x):
 ```
 
 In unserer Lösung belegen wir ``g`` mit der Identität als Standardargument.
-Das heißt, wenn die Anwender\*innen kein ``g`` spezifizieren, gehen wir davon aus, dass 
+Das heißt, wenn die Anwenderinnen kein ``g`` spezifizieren, gehen wir davon aus, dass 
 
 $$\mathcal{K} = E$$
 
@@ -627,7 +627,7 @@ Befindet sich eine bestimmte Art von Dingen in einem *Fach* so können wir uns e
 
 Es ist kein Zufall, dass wir Menschen Dinge durch *Fächer* ordnen.
 Wir passen uns auch im Alltag den algorithmischen Strukturen an, die uns durch die Natur gegeben sind.
-Besonders bei den simpleren Datenstrukturen wird klar, dass es nicht die Informatiker\*innen waren, die diese Strukturen erfunden haben.
+Besonders bei den simpleren Datenstrukturen wird klar, dass es nicht die Informatikerinnen waren, die diese Strukturen erfunden haben.
 Sie haben diese lediglich aus der Natur *abstrahiert*, in ein imaginäres Objekt umgewandelt und schließlich wieder als reales Objekt auf den Computer gebracht.
 
 In der *abstrakten Welt* modellieren wir mehrere *Fächer* meist durch eine einfache Liste.

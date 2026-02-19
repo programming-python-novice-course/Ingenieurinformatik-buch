@@ -19,12 +19,12 @@ Sie erlernen den Unterschied zwischen *Information*, *Daten* und *Codierung* und
 
 Wir entwerfen und verbessern Algorithmen zur Kommunikation und diskutieren, wie sich Algorithmen vergleichen lassen.
 
-In dieser Übung beschäftigen wir uns mit der [linearen](def-linear-search) und [binären Suche](def-binary-search), Codierungsbäumen, künstlicher Intelligenz und welche Fragen zur Technik wir uns Entwickler\*innen möglicherweise widmen sollten.
+In dieser Übung beschäftigen wir uns mit der [linearen](def-linear-search) und [binären Suche](def-binary-search), Codierungsbäumen, künstlicher Intelligenz und welche Fragen zur Technik wir uns Entwicklerinnen möglicherweise widmen sollten.
 ```
 
 Beim sogenannten Locked-in-Syndrom ist man infolge eines Schlaganfalls vollständig gelähmt.
 Man kann zwar weiterhin ganz normal denken, sehen und hören, kann aber oft lediglich die Augenlider bewegen (und manchmal auch das nicht).
-Oft sind die Heilmöglichkeiten sehr begrenzt und es bleibt den Mediziner\*innen nur die Möglichkeit den Patient\*innen das Leben so angenehm wie möglich zu gestalten.
+Oft sind die Heilmöglichkeiten sehr begrenzt und es bleibt den Medizinerinnen nur die Möglichkeit den Patientinnen das Leben so angenehm wie möglich zu gestalten.
 
 Sich mitzuteilen, sich zu verständigen, sich auszudrücken ist ein Grundbedürfnis eines jeden Menschen.
 Eingeschlossen in unseren Körpern gelangen Ideen und Gefühle über Körperregungen in die Welt und deren Reaktion wieder zurück zu uns.
@@ -51,7 +51,7 @@ Im alter von 44 Jahren, zwei Tage nach der Veröffentlichung seines Buchs, verst
 
 In diesem Abschnitt werden wir uns ansehen wie er die Kommunikation aufbaute und wesentlich verbesserte.
 Wir werden jedoch noch einen Schritt weiter gehen und eine weitere Verbesserung entwickeln.
-Dabei werden wir uns selbst in Dominique und seinen Helfer\*innen hineinversetzen, um seine Techniken frisch zu entdecken und zu praktizieren.
+Dabei werden wir uns selbst in Dominique und seinen Helferinnen hineinversetzen, um seine Techniken frisch zu entdecken und zu praktizieren.
 
 ## Blinzelnd sprechen
 
@@ -92,7 +92,7 @@ Sie verzählen sich niemals!
 Früher waren menschliche Computer ebenfalls darauf trainiert bei sich wiederholenden Aufgaben möglichst wenig Fehler zu machen.
 Passiert sind diese verständlicherweise dennoch immer wieder.
 
-Testen Sie den *Algorithmus* mit ihren Kommiliton\*innen.
+Testen Sie den *Algorithmus* mit ihren Kommilitoninnen.
 
 ```{exercise} Name blinzeln
 :label: blinking-name-exercise
@@ -133,7 +133,7 @@ Sie werden beobachten, dass wann immer Menschen Teil der Informationsverarbeitun
 Wir machen einfach gerne Fehler.
 In unserem Fall könnten wir uns darauf einigen, dass zweimal schnell blinzeln bedeutet, dass das letzte Zeichen zurückgenommen wird.
 
-Im Grunde schicken sich die beiden Teilnehmer\*innen der Kommunikation bestimmte Informationen hin und her.
+Im Grunde schicken sich die beiden Teilnehmerinnen der Kommunikation bestimmte Informationen hin und her.
 Der oder die Sprecher\*in beginnt mit ``A`` und Dominique blinzelt oder wartet.
 Der oder die Sprecher\*in wartet eine kurze Weile und falls kein Blinzeln kommt spricht sie/er das ``B`` aus.
 Notiert sie/er versehentlich den falschen Buchstaben, so kann Dominique mit einem zweifachen Binzeln dies korrigieren.
@@ -206,24 +206,24 @@ Wir könnten uns darauf einigen, dass wann immer der Sprecher oder die Sprecheri
 Dominique hört sich den Vorschlag an und blinzelt falls dieser korrekt ist.
 ```
 
-Im Falle der Sprecher\*innen und Dominique müssen die Sprecher\*innen abschätzen, wann es sich lohnt ein Wort vorzuschlagen.
+Im Falle der Sprecherinnen und Dominique müssen die Sprecherinnen abschätzen, wann es sich lohnt ein Wort vorzuschlagen.
 Hierbei aktiviert die Person ihre **Mustererkennung**.
 Sie wird, je länger sie mit Dominique kommuniziert, sehr wahrscheinlich immer besser.
 Das liegt nicht nur daran, dass sie im Wörterraten an sich besser wird, sondern auch daran, dass sie Dominique's Wortschatz aufnimmt.
-In der Sprache des *maschinellen Lernens* sagt man: Die Sprecher\*innen verbessern ihr Modell von Dominique's Wortschatz und bevorzugter Satzstruktur.
+In der Sprache des *maschinellen Lernens* sagt man: Die Sprecherinnen verbessern ihr Modell von Dominique's Wortschatz und bevorzugter Satzstruktur.
 
 Jeder Mensch verwendet Wörter in einer anderen Häufigkeit und so lernt der oder die Sprecher\*in (sofern es immer die gleiche Person ist), wie Dominique spricht.
-Durch Daten (den Wörtern) und deren Struktur (Kombination, Reihenfolge, Sätze bzw. Grammatik) lernen die Sprecher\*innen genau jene Struktur bzw. Häufigkeiten.
+Durch Daten (den Wörtern) und deren Struktur (Kombination, Reihenfolge, Sätze bzw. Grammatik) lernen die Sprecherinnen genau jene Struktur bzw. Häufigkeiten.
 Kommen neue Daten bei ihnen an, können sie die gelernte Struktur nutzen.
 Algorithmen die derartige Lernverfahren realisieren stammen aus dem Bereich der *künstlichen Intelligenz (KI)*.
 
 Dominique hatte nicht nur eine(n) Sprecher\*in.
-Ärtz\*innen und auch Pfleger\*innen wechselten durch und hin und wieder kamen neue Sprecher\*innen hinzu.
-Wie könnten wir das gelernte Wissen der Sprecher\*innen weitergeben?
+Ärtzinnen und auch Pflegerinnen wechselten durch und hin und wieder kamen neue Sprecherinnen hinzu.
+Wie könnten wir das gelernte Wissen der Sprecherinnen weitergeben?
 
 ```{exercise} Maschinelles Lernen
 :label: blinking-learning-exercise
-Nehmen Sie an, dass die Sprecher\*innen immer wieder durchwechseln bzw. ihr gelerntes Wissen verlieren.
+Nehmen Sie an, dass die Sprecherinnen immer wieder durchwechseln bzw. ihr gelerntes Wissen verlieren.
 Beschreiben Sie wie man die Häufigkeit der von Dominique verwendeten Wörter festhalten und weitergeben kann.
 ```
 
@@ -357,7 +357,7 @@ Im obigen Code verwenden wir eine sog. [anonyme Funktion](sec-anonymous-function
 
 Wenn Sie die bisher entwickelten Algorithmen ohne technischen Hilfsmittel selbst angewendet haben, werden Sie feststellen, dass wir immer und immer *schneller* geworden sind, oder?
 Haben wir mehrere Algorithmen für den Informationsaustausch zwischen Sprecher\*in und Dominique entwickelt, stellt sich die Frage, welche der *beste* Algorithmus ist.
-Mit *besser* meinen Informatiker\*innen meistens *schneller*, doch gibt es auch andere Kriterien, zum Beispiel, die *Energieeffizienz*, *Parallelisierbarkeit*, *Verständlichkeit* oder auch *Ästhetik*.
+Mit *besser* meinen Informatikerinnen meistens *schneller*, doch gibt es auch andere Kriterien, zum Beispiel, die *Energieeffizienz*, *Parallelisierbarkeit*, *Verständlichkeit* oder auch *Ästhetik*.
 
 Gehen wir also zurück in die Zeit von Dominique.
 Lassen Sie uns die beiden interaktiven Algorithmen vergleichen.
@@ -418,7 +418,7 @@ In der Komplexitätsbetrachtung bedeutet *in etwa gleich lang*, dass es eine Kon
 
 Das klingt natürlich absolut unbrauchbar, denn wir können $c$ beliebig groß wählen.
 Wenn $c$ zum Beispiel gleich $1000$ ist, wie kann man dann noch von *in etwa gleich lange* sprechen?
-Nun den Theoretiker\*innen ist nur wichtig, dass $c$ nicht von der Eingabe des Algorithmus abhängt.
+Nun den Theoretikerinnen ist nur wichtig, dass $c$ nicht von der Eingabe des Algorithmus abhängt.
 In unserem Fall heißt das, dass $c$ nicht von der Länge und Art des Textes abhängt, den Dominique uns mitteilen will.
 
 Denken Sie an eine komplizierte Aufgabe, wie das Sortieren!
@@ -987,11 +987,11 @@ Oder dass Dominique zwischen 18:00 und 19:00 Uhr über das Essen redet.
 Zuerst hätte diese Software bzw. Maschine die einfache Arbeit des Zählens des Blinzeln übernommen.
 Doch aus dieser Automatisierung ergeben sich vielerlei neue Möglichkeiten.
 Natürlich entwerfen sich diese cleveren Algorithmen nicht von alleine.
-Sie als *Computational Thinker\*innen* kommen auf solche Ideen und machen aus ihnen Realität.
+Sie als *Computational Thinkerinnen* kommen auf solche Ideen und machen aus ihnen Realität.
 
 Zu Zeiten in denen Dominique im Krankenbett lag, gab es diese technischen Möglichkeiten noch nicht.
 Es gab keine Smartphone-Apps oder eine Maschine die das Blinzeln erkennt.
-Nichtsdestotrotz haben sich bereits viele Jahre zuvor *Computational Thinker\*innen* und *Mathematiker\*innen* mit solchen cleveren Algorithmen beschäftigt.
+Nichtsdestotrotz haben sich bereits viele Jahre zuvor *Computational Thinkerinnen* und *Mathematikerinnen* mit solchen cleveren Algorithmen beschäftigt.
 Die Grundlagen des heute in aller Munde klingenden *maschinellen Lernens* wurden bereits vor langer Zeit erschlossen.
 Doch hatte man damals schlicht nicht die Rechnerressourcen um derartig kostenintensive Algorithmen auszuführen.
 Die Arbeiten blieben fast schon unbeachtet - heute ist die breite Datenanalyse von sehr sehr vielen Daten (*BigData*) an allen Ecken unserer (Informations-)Welt anzutreffen.
@@ -1000,7 +1000,7 @@ Neben der Rechnerressourcen ist die Datenerhebung heute deutlich einfacher und h
 ### Der verlängerte Arm
 
 An diesem Beispiel sehen wir, dass Algorithmen das Leben vereinfachen können und unnötige Erschwernisse eliminieren können.
-Im besten Fall, wie im Fall des Dominique, **emanzipieren** sie Anwender\*innen.
+Im besten Fall, wie im Fall des Dominique, **emanzipieren** sie Anwenderinnen.
 Aber selbst in seinem Fall hätte diese Erleichterung womöglich auch Nachteile für ihn gehabt.
 Hätte Dominique durch die Maschine im Endeffekt weniger menschlichen Kontakt erfahren?
 Er hätte schließlich die Möglichkeit gehabt ganze Briefe/E-Mails zu schreiben oder sich durch soziale Medien auszutauschen.

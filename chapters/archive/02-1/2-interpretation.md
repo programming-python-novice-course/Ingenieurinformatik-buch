@@ -15,7 +15,7 @@ kernelspec:
 In diesem Abschnitt unternehmen wir einen Versuch die Begriffe **Interpretation**, **Repräsentation**, **Bedeutung**, **Semantik** und **Syntax** zu erklären.
 Dadurch möchten wir ein theoretisches Fundament vorausschicken.
 Danach folgen im Abschnitt [Repräsentation](sec-representation) verschiedene wichtige Beispiele, die verdeutlichen wie der Computer Information interpretiert und repräsentiert.
-Es mag für viele Leser\*innen sinnvoll sein mit den Beispielen zu starten, um danach die theoretische Diskussion besser nachvollziehen zu können.
+Es mag für viele Leserinnen sinnvoll sein mit den Beispielen zu starten, um danach die theoretische Diskussion besser nachvollziehen zu können.
 
 (sec-semiotik)=
 ## Semiotik
@@ -331,7 +331,7 @@ Ein *Übersetzer*  (engl. *Compiler*) ist ein Programm welches ein anderes Progr
 ```
 
 Übertragen wir dieses Prinzip des [Interpreters](def-interpreter) auf das Beispiel mit dem gezeichneten Apfel, so interpretiert der Bleistift den Druck und den Winkel als Anzahl und Positionierung von Graphitteilchen.
-Wir als Zeichner\*innen verlassen die Welt der Graphitteilchen und begeben uns stattdessen in die Welt der Zeichentechniken.
+Wir als Zeichnerinnen verlassen die Welt der Graphitteilchen und begeben uns stattdessen in die Welt der Zeichentechniken.
 Dieser Kontextwechsel wird durch den [Interpreter](def-interpreter)---den Bleistift---ermöglicht!
 
 ```{admonition} Interpreter
@@ -344,11 +344,11 @@ Ein *Interpreter* ist ein Programm, welches Befehle, geschriebenen in einer Hoch
 Ein [Übersetzer](def-compiler) wandelt hingegen ein gesamtes Kunstwerk in einem Stück in ein anderes Werk um.
 Zum Beispiel eine Folge von Bildern in ein Video.
 Der Vorteil dabei ist, dass der Übersetzer Optimierungen durchführen kann, da ihm das gesamte zu übersetzende Werk zur Verfügung steht.
-Dafür ist er für die Anwender\*innen weniger flexibel, denn diese müssen ihm immer ein gesamtes Werk übergeben.
+Dafür ist er für die Anwenderinnen weniger flexibel, denn diese müssen ihm immer ein gesamtes Werk übergeben.
 
 Ok, das ist noch nicht die ganze Wahrheit.
 In der Praxis wenden Compiler oder Interpreter eine hintereinandergeschaltete Kette an Interpretationen $I_0, \ldots, I_n$ an.
-Wir als Programmierer\*innen möchten zum Beispiel zwei Zahlen addieren und schreiben folgenden ``Python``-Code:
+Wir als Programmiererinnen möchten zum Beispiel zwei Zahlen addieren und schreiben folgenden ``Python``-Code:
 
 ```python
 x = 4 + 9
@@ -370,7 +370,7 @@ STORE $2 # 16
 
 Diese Befehle sprechen direkt bestimmte Hardwarekomponenten an und werden im letzten Schritt in reinen Binärcode übersetzt.
 Jeder Compiler erhält als Eingabe einen Programmcode, geschrieben in einer bestimmten Vorschrift ([Syntax](def-syntax)) und wandelt diesen anhand seiner [Interpretation](def-interpretation) in einen anderen Programmcode einer anderen Vorschrift ([Syntax](def-syntax)), um.
-So wird es möglich, dass sich Entwickler\*innen nicht mehr in einer Welt der Bits und Bytes befinden sondern in einer Welt aus Dezimalzahlen, Zeichenketten, Listen, Webservices, Webseiten, Apps und so weiter.
+So wird es möglich, dass sich Entwicklerinnen nicht mehr in einer Welt der Bits und Bytes befinden sondern in einer Welt aus Dezimalzahlen, Zeichenketten, Listen, Webservices, Webseiten, Apps und so weiter.
 Die [Semantik](def-semantik) der unterschiedlichen Programmcodes sollte (im Gesamten) unverändert bleiben.
 
 ```{admonition} Undefiniertes Verhalten
@@ -419,7 +419,7 @@ Der Apfel als Bild auf dem Bildschirm hat für uns eine "tatsächliche" Bedeutun
 Und es mag so sein, dass gerade aus der Erfahrung heraus eben jene abstrakten Konzepte, wie etwa Zahlen, entstanden sind. 
 
 Wir sollten uns fragen ob sich die Interpreter einmal in Form des Bleistifts, den wir als Werkzeug verwenden, und in Form des Menschen, der den Apfel erkennt, nicht fundamental unterscheiden.
-Der Stift ist lediglich ein verlängerter Arm der Künstler\*innen.
+Der Stift ist lediglich ein verlängerter Arm der Künstlerinnen.
 Er denkt nicht, hat keinerlei Intelligenz oder Bewusstsein.
 Der Mensch hingegen, der die Graphitteilchen als Apfel interpretiert, ist ein bewusstes, denkendes, historisches, biologisches Wesen.
 

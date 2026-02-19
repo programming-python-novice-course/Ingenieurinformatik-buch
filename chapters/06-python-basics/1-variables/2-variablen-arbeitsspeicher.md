@@ -112,7 +112,7 @@ Zwei *Variablen* ``x`` und ``y`` sind *gleich* genau dann wenn der Speicherberei
 ```
 
 ``Python``-erkennt, dass es ausreicht, wenn beide *Variablen* auf den gleichen Speicherbereich zeigen.
-Wir als Programmierer\*innen bekommen davon gar nichts mit. Verändern wir den Wert von ``z`` dann verändert sich auch die ``id``:
+Wir als Programmiererinnen bekommen davon gar nichts mit. Verändern wir den Wert von ``z`` dann verändert sich auch die ``id``:
 
 ```{code-cell} python3
 x = 25

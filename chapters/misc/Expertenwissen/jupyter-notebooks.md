@@ -28,11 +28,11 @@ Das erdachte und verwirklichte Konzept war recht einfach: Code (Computermodell) 
 Der Code sollte die Modellbeschreibung und die Modellbeschreibung den Code erklären.
 
 Wir glauben, dass sich Notebooks für den Einstieg eignen, da durch die zellenweise Auswertung (dazu kommen wir gleich) und die Zellenausgabe ein ständiges Feedback während des Lernen des Programmierens gewährleistet werden kann.
-Anfänger\*innen können kleinteilig unterschiedliche Befehle ausprobieren und erhalten für jede Zelle eine Ausgabe/Feedback.
+Anfängerinnen können kleinteilig unterschiedliche Befehle ausprobieren und erhalten für jede Zelle eine Ausgabe/Feedback.
 Man könnte auch sagen, dass sich Notebooks einfach debuggen lassen.
 Notebooks bieten eine hohe Interaktion zwischen Programmierer/*in und Code bzw. der Maschine.
 Das verringert die Hürde um einfach mal loszulegen und kann zudem motivieren, Sie möglicherweise zum sog. *Live Programming* zu führen.
-(Beim Live Programming schreiben Sie Code in Echtzeit und führen diesen auch gleich aus, während Ihre Kolleg\*innen zusehen.)
+(Beim Live Programming schreiben Sie Code in Echtzeit und führen diesen auch gleich aus, während Ihre Kolleginnen zusehen.)
 
 ## Starten
 

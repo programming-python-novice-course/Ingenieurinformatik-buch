@@ -48,7 +48,7 @@ So können wir in ``Python`` auch Zeichenketten ``str`` mit den Vergleichsoperat
 ```
 
 Generell vergleichen wir Objekte einer Menge immer bezüglich einer (totalen) Ordnung.
-Diese Ordnung muss irgendwo definiert worden sein, ob durch die Standardbibliothek von ``Python``, impliziet, oder durch uns Entwickler\*innen.
+Diese Ordnung muss irgendwo definiert worden sein, ob durch die Standardbibliothek von ``Python``, impliziet, oder durch uns Entwicklerinnen.
 
 
 ```{exercise} Praxisaufgabe (PA2.2): Maximum (und Median) aus drei Zahlen

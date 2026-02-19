@@ -18,7 +18,7 @@ Wir denken gerne in Objekten wie Bäume, Häuser, Personen, Rechtecken, und so w
 
 Deshalb kann die OOP dabei helfen die Komplexität einer Software besser zu begreifen.
 
-Dazu ist es notwendig, dass alle beteiligten Entwickler\*innen dem OOP-Paradigma folgen und die gleiche Sprache sprechen.
+Dazu ist es notwendig, dass alle beteiligten Entwicklerinnen dem OOP-Paradigma folgen und die gleiche Sprache sprechen.
 
 Neben dem Strukturieren der Programmierlogik durch Objekte bietet die OOP weitere drei wichtige Konzepte an:
 

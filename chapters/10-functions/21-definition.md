@@ -63,7 +63,7 @@ subtract(5, 6)
 Die erste Benennung erschwert das Lesen und Verstehen der Funktion.
 Für die zweite Version müssen wir lediglich auf den Namen ``subtract`` und den kurzen ``docstring`` blicken um zu verstehen was die Funktion tut.
 
-Den ``docstring`` könnten wir uns auch schenken, doch bedenken Sie dass andere Entwickler\*innen, welche Ihren Code benutzten, oft nicht in den Code blicken sondern sich lediglich den ``docstring`` ausgeben lassen.
+Den ``docstring`` könnten wir uns auch schenken, doch bedenken Sie dass andere Entwicklerinnen, welche Ihren Code benutzten, oft nicht in den Code blicken sondern sich lediglich den ``docstring`` ausgeben lassen.
 
 ```{admonition} Docstrings und Kommentare
 :class: attention

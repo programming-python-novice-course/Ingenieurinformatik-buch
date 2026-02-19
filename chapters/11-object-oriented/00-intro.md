@@ -14,7 +14,7 @@ In den letzten 15 Jahren hat sich in vielen Bereichen der Softwareentwicklung im
 Sie werden in der Programmierpraxis daher immer wieder mit diesem Programmierparadigma in Berührung kommen.
 
 
-**Wo begegnet uns OOP als Ingenieure?**
+**Wo begegnet uns OOP im Engineering?**
 
 Es gibt zwei sehr typische Situationen:
 

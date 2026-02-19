@@ -36,9 +36,9 @@ print(large_float)
 ``1e-10`` bedeutet hierbei $1.0 \cdot 10^{-10}$.
 Diese Darstellung liefert uns bereits Hinweise auf die Antwort.
 
-Physiker\*innen kennen das Problem der Zahlen aus sehr unterschiedlichen Skalen.
+Physikerinnen kennen das Problem der Zahlen aus sehr unterschiedlichen Skalen.
 Die Lichtgeschwindigkeit in km/h ist eine sehr große Zahl, wohingegen die Ladung eines Elektrons in Coulomb eine sehr kleine Zahl ist.
-Physiker\*innen möchten ebenfalls in einem riesigen Zahlenbereich rechnen und dabei Zahlen kompakt notieren können.
+Physikerinnen möchten ebenfalls in einem riesigen Zahlenbereich rechnen und dabei Zahlen kompakt notieren können.
 Deshalb haben sie die wissenschaftliche Notation eingeführt.
 Fließkommazahlen sind aus dieser Notation entstanden.
 In dieser Notation schreiben wir 

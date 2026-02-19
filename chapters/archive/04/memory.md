@@ -85,7 +85,7 @@ Die konkrete Welt ist kleinlich und technisch.
 Programmieren Sie in ``Python`` bewegen Sie sich bereits in einer abstrakten Welt.
 Vergleichen Sie {numref}`Abbildung {number} <fig-program-run-memory>`.
 Jede Welt lässt sich jedoch weiter abstrahieren.
-Für die ``Assembler``-Programmierer\*innen bietet ``C`` eine hohe Abstraktion und für die ``C``-Programmierer\*innen ist ``Python`` abstrakt.
+Für die ``Assembler``-Programmiererinnen bietet ``C`` eine hohe Abstraktion und für die ``C``-Programmiererinnen ist ``Python`` abstrakt.
 Bauen Sie Programme mit ``Pyhton``, so sind diese eine weitere Abstraktion.
 Die Fähigkeit des Abstrahierens bleibt auf allen Ebenen essenziell.
 Von wo aus wir mit der Abstraktion starten und wo wir hinaufsteigen, ist für das Lernen dieses Prozesses weniger wichtig.

@@ -23,7 +23,7 @@ Alle drei Wissensarten sind fachlich wichtig. Die Markierung dient der **Orienti
 | **(V)** | **Vorgehenswissen** | systematische Vorgehensweisen, Variantenbildung, Entscheidungen | „Wie gehe ich strukturiert vor?“, „Welche Lösung ist unter welchen Randbedingungen geeignet?“ |
 
 
-Werkzeuge wie KI-gestützte Programmierhilfen können bei **(A)**-Aufgaben oft unterstützen (z.B. Code-Snippets, Standard-Workflows). Für gutes Ingenieur:innen-Handeln bleiben jedoch zwei Dinge entscheidend:
+Werkzeuge wie KI-gestützte Programmierhilfen können bei **(A)**-Aufgaben oft unterstützen (z.B. Code-Snippets, Standard-Workflows). Für gutes Handwerk bleiben jedoch zwei Dinge entscheidend:
 
 **(S)**: Sie müssen beurteilen können, **ob** ein Ergebnis unter den gegebenen Annahmen sinnvoll ist.
 
