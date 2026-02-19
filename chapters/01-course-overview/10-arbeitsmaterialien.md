@@ -27,8 +27,6 @@ name: fig-qr-interaktive-website
 Link zur interaktiven Website: [https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)
 ```
 
-https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html
-
 Die Website und das Skript sind thematisch identisch.
 
 - Das Skript dient Ihnen dazu, während der Vorlesung Notizen zu machen.
