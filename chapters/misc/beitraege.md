@@ -1,16 +1,19 @@
 
 # Beiträge
 
+Dieses Werk und damit verbundende Inhalte sind jeweils lizensiert unter der Lizenz 
 
-Dieses Buch wurde durch Beiträge verschiedener Personen ermöglicht.
+© Creative Commons Namensnennung-Share Alike 4.0 International Lizenz (CC BY-SA 4.0) 
+
+Dieses Werk wurde durch Beiträge verschiedener Personen ermöglicht.
 
 **Inhaltliche Beiträge**
 
 Ursprüngliche Fassung (Modul „Computational Thinking“)
 
 - Benedikt Zönnchen: Entwicklung des interaktiven Lehrbuchs „Computational Thinking“. Die ursprüngliche Fassung ist auf GitHub verfügbar.
-  - Profil: [mucdai.hm.edu (Phonebook)](https://mucdai.hm.edu/kontakte_de/phonebook_detailseite_18243.de.html)
-  - Buch: [ct-book (Intro)](https://bzoennchen.github.io/ct-book/intro.html)
+  - Profil: [Benedikt Zönnchen](https://mucdai.hm.edu/kontakte_de/phonebook_detailseite_18243.de.html)
+  - Buch: [Computational Thinking](https://bzoennchen.github.io/ct-book/intro.html)
 
 - Mathias Schwaller: kleinere textuelle Verbesserungsvorschläge und Korrekturen.
   - Profil: [github.com/mathias-schwaller](https://github.com/mathias-schwaller)
@@ -19,13 +22,13 @@ Neue Fassung (Modul „Ingenieurinformatik – Programmieren“)
 
 - Christina Maria Mayr: Anpassung, Erweiterung und Neustrukturierung der Inhalte für das Modul „Ingenieurinformatik – Programmieren“.
   Insbesondere wurden Teile des Buches neu entwickelt und bestehende Inhalte/Beispiele/Grafiken kuratiert und integriert.
-  - Profil: [christinamaria-mayr.userweb.mwn.de](https://christinamaria-mayr.userweb.mwn.de/)
+  - Profil: [christinamariamayr.de](https://christinamaria-mayr.userweb.mwn.de/)
 
 Ein Teil der Übungsaufgaben stammt aus den Übungsmaterialien von Tilman Küpper:
 
 - Tilman Küpper: Konzeption der PA*-Praxisaufgaben
-   - Profil: [hm.edu (Kontakt)](https://hm.edu/kontakte_de/contact_detail_978.de.html)
-   - Quelle: [python-aufgabensammlung.pdf](https://kuepper.userweb.mwn.de/informatik/python-aufgabensammlung.pdf)
+   - Profil: [Tilman Küpper](https://hm.edu/kontakte_de/contact_detail_978.de.html)
+   - Quelle: [Aufgabensammlung - Tilmann Küpper](https://kuepper.userweb.mwn.de/informatik/python-aufgabensammlung.pdf)
    - Einverständnis: Tilman Küpper hat sein Einverständnis gegeben, dass wir Übungsbeispiele wiederverwenden dürfen.
 - Christina Maria Mayr: Integration der PA*-Praxisaufgaben in das Skript, Entwicklung eigener Aufgabenbeispiele (nicht explizit gekennzeichnet)
 
@@ -34,7 +37,6 @@ Die folgende Tabelle zeigt, welche PA*-Übungsaufgaben im Skript (Kapitel 01–1
 
 | Kapitelname | Übungsaufgabe (PA*) |
 |---|---|
-| Übersicht | — |
 | 2 Basiswissen | PA2.3: BMI klassifizieren |
 | 2 Basiswissen | PA2.4: ICAO-Standardatmosphäre (Interpolation) |
 | 2 Basiswissen | PA4.1 (Idee): Euklidischer Algorithmus als Pseudocode |
@@ -61,7 +63,8 @@ Die folgende Tabelle zeigt, welche PA*-Übungsaufgaben im Skript (Kapitel 01–1
 **Herausgabe von Buch und Website**
 
 - Herausgeberin: Christina Maria Mayr.
-  Sie ist für die Integration und redaktionelle Abstimmung der einzelnen Autor:innenbeiträge verantwortlich.
+
+Sie ist für die Integration und redaktionelle Abstimmung der inhaltlichen Beiträge verantwortlich.
 
 **Technologische Beiträge**
 
