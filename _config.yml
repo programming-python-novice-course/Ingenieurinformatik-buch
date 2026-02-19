@@ -48,7 +48,7 @@ sphinx:
 
   config:
     version: "2.5"
-    release: "2.5.3"
+    release: "2.5.4"
 
     myst_enable_extensions:
       - dollarmath
@@ -230,6 +230,6 @@ html:
       <div class="col1">
         Beiträge: <a href="/chapters/misc/beitraege.html">alle anzeigen</a>.
         Lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer">CC BY-SA 4.0</a>.
-        Version 2.5.3
+        Version 2.5.4
       </div>
     </div>
