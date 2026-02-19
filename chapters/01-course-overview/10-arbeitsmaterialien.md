@@ -28,8 +28,9 @@ Link zur interaktiven Website
 ```
 
 Die Website und das Skript sind thematisch identisch.
-Das Skript dient Ihnen dazu, während der Vorlesung Notizen zu machen.
-Auf der interaktiven Website können Sie viele der gezeigten Programmierbeispiele direkt im Webbrowser ausführen. Sie können also entweder live während der Vorlesung mitmachen oder die Beispiele später in Ruhe zu Hause nacharbeiten, verändern und erweitern.
+
+- Das Skript dient Ihnen dazu, während der Vorlesung Notizen zu machen.
+- Auf der interaktiven Website können Sie viele der gezeigten Programmierbeispiele direkt im Webbrowser ausführen. Sie können also entweder live während der Vorlesung mitmachen oder die Beispiele später in Ruhe zu Hause nacharbeiten, verändern und erweitern.
 
 
 ```{admonition} Hinweis

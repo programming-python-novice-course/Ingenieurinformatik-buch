@@ -18,4 +18,6 @@ Während ``set`` ungeordnete Sammlungen eindeutiger Elemente repräsentiert, erm
 ```{figure} ../../figs/07-python-data-types/python-tutorial/datatypes/datatypes-hierachy-dict.png
 width: 500px
 name: fig-datatypes-hierarchy-dict
+---
+Übersicht: Sets und Mengen in Python.
 ```

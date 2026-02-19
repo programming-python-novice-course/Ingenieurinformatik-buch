@@ -22,7 +22,7 @@ Welche vordefinierten Funktionen und Module gibt es – und welche davon könnte
 
 Bevor Sie etwas implementieren: 
 
-- Sehen Sie sich zunächst an, was Python an internen Funktionalitäten bereitstellt in der [Python-Dokumentation] (https://docs.python.org/3.10/library/index.html)
+- Sehen Sie sich zunächst an, was Python an internen Funktionalitäten bereitstellt in der [Python-Dokumentation] (https://docs.python.org/3.10/library/index.html) 
 
 - Wenn Sie dort nicht fündig werden: recherchieren Sie in den externen Bibliotheken im [Python Package index](https://pypi.org/)
 
