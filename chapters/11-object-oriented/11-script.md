@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 
-LOGO_URL = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/master/img/logo-mini.png"
+LOGO_URL = "https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz/-/raw/master/img/logo-mini.png"
 
 
 fig, ax = plt.subplots()
@@ -31,7 +31,11 @@ ax.set_title("Messreihe (mit Logo)")
 # Logo laden (aus URL) und einfügen
 with urlopen(LOGO_URL, timeout=10) as response:
     data = response.read()
-logo = mpimg.imread(BytesIO(data), format="png")
+
+image_file = BytesIO(data)
+
+
+logo = mpimg.imread(image_file, format="png")
 imagebox = OffsetImage(logo, zoom=0.07)
 ab = AnnotationBbox(imagebox, (0.92, 0.88), xycoords="axes fraction", frameon=False)
 ax.add_artist(ab)

@@ -33,7 +33,11 @@ Hinweis: die Variable `csv_file_path` liefert die Messdaten im Textformat.
 
 
 ```{code-cell} python3
-csv_file_path = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/refs/heads/master/data/air_quality_no2.csv"
+csv_file_path = "https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz/-/raw/master/data/air_quality_no2.csv"
+
+# fallback, falls gitlab LRZ down:
+# csv_file_path = "data/air_quality_no2.csv" # live code (fallback)
+# image_file = "../air_quality_no2.csv" jupyterhub/binderhub
 
 print(f"Die Datei wird bezogen über: {csv_file_path}")
 ```
