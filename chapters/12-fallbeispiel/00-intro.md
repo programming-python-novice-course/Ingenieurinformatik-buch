@@ -28,7 +28,7 @@ Julia soll ein Programm erstellen, das die Messdaten auswertet:
 
 Die Messdatei liegt online. Julia arbeitet (wie später in den Codebeispielen) mit dieser Quelle:
 
-`https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/air_quality_no2.csv`
+[https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz/-/raw/master/data/air_quality_no2.csv](https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz/-/raw/master/data/air_quality_no2.csv)
 
 Die Daten sind reale Messdaten zur Stickstoffdioxid-Konzentration (NO₂) in der Umgebungsluft:
 

@@ -55,7 +55,7 @@ from matplotlib.axes import Axes
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 from matplotlib.projections import register_projection
 
-LOGO_URL = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/master/img/logo-mini.png"
+LOGO_URL = "https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz/-/raw/master/img/logo-mini.png"
 
 
 

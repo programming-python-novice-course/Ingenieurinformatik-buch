@@ -55,15 +55,19 @@ from matplotlib.patches import Rectangle
 from io import BytesIO
 from urllib.request import urlopen
 
-url = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/master/img/colors.png"
+url = "https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz/-/raw/master/img/colors.png"
+# url = "https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz/-/raw/master/img/colors2.png"
 
-#url = "https://raw.githubusercontent.com/fk03ingenieursinformatik/ingenieurinformatik-buch-deploy/master/img/colors2.png"
-
-
-# Logo laden (aus URL) und einfügen
 with urlopen(url, timeout=10) as response:
     data = response.read()
-img = mpimg.imread(BytesIO(data), format="png")
+image_file = BytesIO(data)
+# Logo laden (aus URL) und einfügen
+
+# fallback, falls gitlab LRZ down:
+# image_file = "img/colors.png" # live code (fallback)
+# image_file = "../../img/colors.png" jupyterhub/binderhub
+
+img = mpimg.imread(image_file, format="png")
 
 # Bilder sind in Rot-Grün-Blau unterteilt und haben einen Alphakanal (Transparenz)
 
@@ -83,7 +87,9 @@ x0, x1 = xs.min(), xs.max()
 # Ausgabe
 fig, ax = plt.subplots(figsize=(5.2, 3.0))
 ax.imshow(img)
-ax.add_patch(Rectangle((x0, y0), x1 - x0, y1 - y0, fill=False, lw=2, ec="gold"))
+
+#TODO: entfernen Sie den Kommentar (#) in der nächsten Zeile, um die bounding box zu sehen
+# ax.add_patch(Rectangle((x0, y0), x1 - x0, y1 - y0, fill=False, lw=2, ec="gold"))
 ax.set_title("Bounding Box um gelbe Elemente")
 ax.axis("off")
 plt.show()

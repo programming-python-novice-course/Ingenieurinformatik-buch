@@ -104,12 +104,13 @@ def parse_air_quality_csv_v3(csv_text):
 
 ## Daten einlesen 
 
-Zunächst liest Julia die Datei ein. Dafür verwendet sie `urllib` aus der Standardbibliothek. Es muss also nichts installiert werden (was aus Compliance-Gründen nicht immer möglich ist).
+Zunächst liest Julia die Datei ein. Dafür verwendet sie `urllib` aus der Standardbibliothek. Es muss also nichts installiert werden (was aus Compliance-Gründen ja nicht möglich ist).
 
 ```{code-cell} python3
 from urllib.request import urlopen
 
-url = "https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/air_quality_no2.csv"
+url = "https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz/-/raw/master/data/air_quality_no2.csv"
+
 with urlopen(url) as response:
     csv_text = response.read().decode("utf-8")
 
