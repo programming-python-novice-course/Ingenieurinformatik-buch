@@ -1,11 +1,27 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Live-Code-Alternative (mit Debugging)
 
 Falls 
-
 - die Einrichtung von „Live Code“ einmal fehlschlägt oder 
 - Sie debuggen möchten (mehr dazu weiter unten), 
 
 können Sie die Beispiele auf dieser Website alternativ auch als *Jupyter-Notebook* ausführen.
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+print("Hello World!") # Hinweis: Das Ausgeben von Hello World ist ein bekanntes Code-Beispiel
+```
 
 „Das Aussehen“ eines *Jupyter-Notebooks* unterscheidet sich etwas von dem auf der Website. Die Inhalte sind aber identisch!
 
@@ -29,18 +45,27 @@ Im Gegensatz zum Live Code hat nicht jede Zelle einen eigenen „Run“-Button. 
 
 ## Wie startet man das Notebook?
 
-Sie starten das *Jupyter-Notebook* über die Rakete. Entweder über
+- Sie starten das *Jupyter-Notebook* über den Jupyter-Notebook-Button. 
+- Sie werden automatisch an den DataHub der Hochschule München weitergeleitet, wo Sie das zur aktuellen Website passende Notebook finden.
 
-- die Hochschule München ("JupyterHub") ODER
-- die Plattform Binder ("Binder").
 
-```{figure} ../../figs/01-course-overview/jupyterhub/livecodealternative.png
+```{figure} ../../figs/01-course-overview/jupyterhub/notebook-button.png
 ---
 width: 800px
 ---
-
-Bitte nutzen Sie als Studierende der HM direkt den JupyterHub. Die Binder-Variante ist für externe Interessierte gedacht.
+Starten eines Jupyter-Notebooks
 ```
+
+Für externe Interessierte besteht die Möglichkeit die Jupyter-Notebooks auf dem BinderHub von mybinder.org auszuführen. Hierfür kann in den Einstellungen "Binder" ausgewählt werden.
+
+```{figure} ../../figs/01-course-overview/jupyterhub/binderhub-for-external.png
+---
+width: 800px
+---
+Externe Interessierte können mybinder.org zum Ausführen der Notebooks nutzen. 
+```
+
+
 
 ```{admonition} Hinweis
 :class: remark

@@ -27,10 +27,13 @@ SCRIPT_SRC_RE = re.compile(r'<script src="(?P<src>[^"]+)"></script>')
 DEDUP_SCRIPT_SRCS = {
     "_static/js/thebe-output-fix.js",
     "_static/js/hub-link-rewrite.js",
+    "_static/js/user-settings.js",
     "../_static/js/thebe-output-fix.js",
     "../_static/js/hub-link-rewrite.js",
+    "../_static/js/user-settings.js",
     "../../_static/js/thebe-output-fix.js",
     "../../_static/js/hub-link-rewrite.js",
+    "../../_static/js/user-settings.js",
 }
 
 
