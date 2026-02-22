@@ -63,7 +63,7 @@
 
   function readSettings() {
     try {
-      const raw = window.sessionStorage.getItem(STORAGE_KEY);
+      const raw = window.localStorage.getItem(STORAGE_KEY);
       if (!raw) return { ...DEFAULT_SETTINGS };
       const parsed = safeParse(raw, {});
       return {
@@ -78,9 +78,9 @@
   function writeSettings(settings) {
     STATE.settings = settings;
     try {
-      window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
     } catch {
-      // sessionStorage can be blocked in hardened browser/privacy settings.
+      // localStorage can be blocked in hardened browser/privacy settings.
     }
   }
 
@@ -390,9 +390,45 @@
   }
 
   function observeDomChanges(root) {
-    const obs = new MutationObserver(() => {
-      hideDefaultLaunchUi();
-      refreshUiState(root);
+    let refreshScheduled = false;
+
+    function shouldHandleMutations(mutations) {
+      for (const mutation of mutations) {
+        const target = mutation.target;
+        const targetIsInsideControls = target instanceof Node && root.contains(target);
+
+        if (mutation.type === "childList") {
+          const changedNodes = [...mutation.addedNodes, ...mutation.removedNodes];
+          if (changedNodes.length === 0) {
+            if (!targetIsInsideControls) return true;
+            continue;
+          }
+
+          for (const node of changedNodes) {
+            if (!(node instanceof Node)) return true;
+            if (!root.contains(node)) return true;
+          }
+          continue;
+        }
+
+        if (!targetIsInsideControls) return true;
+      }
+      return false;
+    }
+
+    function scheduleRefresh() {
+      if (refreshScheduled) return;
+      refreshScheduled = true;
+      window.requestAnimationFrame(() => {
+        refreshScheduled = false;
+        hideDefaultLaunchUi();
+        refreshUiState(root);
+      });
+    }
+
+    const obs = new MutationObserver((mutations) => {
+      if (!shouldHandleMutations(mutations)) return;
+      scheduleRefresh();
     });
     obs.observe(document.body, { childList: true, subtree: true });
   }
@@ -400,13 +436,6 @@
   function init() {
     if (window.__iiUserSettingsLoaded) return;
     window.__iiUserSettingsLoaded = true;
-
-    // Cleanup legacy persistent settings from earlier localStorage-based versions.
-    try {
-      window.localStorage.removeItem(STORAGE_KEY);
-    } catch {
-      // Ignore if localStorage is not available.
-    }
 
     STATE.settings = readSettings();
     hideDefaultLaunchUi();
