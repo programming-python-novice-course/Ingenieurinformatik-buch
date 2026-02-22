@@ -3,6 +3,9 @@
 Die CI wird über `.gitlab-ci.yml` gesteuert und verwendet als Build-Umgebung:
 
 - `image: gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest`
+- Der Container-basierte CI-Build wird erst **ab Repo-Version `v2`** unterstützt.
+- Standardmäßig verwendet die CI das Tag **`latest`**.
+- Für Versionen **`v2.*`** entspricht **`latest`** dem **v2-Container-Image** (siehe Container Registry: `https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/container_registry/11892`).
 
 ## Build-Jobs
 
