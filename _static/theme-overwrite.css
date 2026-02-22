@@ -208,8 +208,15 @@
 }
 
 .ii-btn:disabled {
-  opacity: 0.55;
+  opacity: 0.95;
   cursor: not-allowed;
+}
+
+.ii-btn-primary:disabled,
+.ii-btn-secondary:disabled {
+  background: #c7ced8;
+  border-color: #c7ced8;
+  color: #6b7280;
 }
 
 .ii-btn-primary {

@@ -360,17 +360,23 @@
     const hasLaunchTarget = !!getPreferredLaunchHref();
 
     if (launchBtn instanceof HTMLButtonElement) {
-      launchBtn.style.display = hasLaunchTarget ? "" : "none";
+      launchBtn.style.display = "";
       launchBtn.disabled = !hasLaunchTarget;
       launchBtn.title = hasLaunchTarget ? "Launch Jupyter Notebook" : "Kein Launch-Link auf dieser Seite gefunden";
     }
 
     if (liveBtn instanceof HTMLButtonElement) {
       const manual = STATE.settings.liveCodeMode === "manual";
-      const showLiveBtn = manual && hasLaunchTarget;
-      liveBtn.style.display = showLiveBtn ? "" : "none";
-      liveBtn.disabled = !showLiveBtn;
-      liveBtn.title = showLiveBtn ? "Starte Live Code auf dieser Seite" : "Kein Live Code auf dieser Seite";
+      const enabled = manual && hasLaunchTarget;
+      liveBtn.style.display = "";
+      liveBtn.disabled = !enabled;
+      if (enabled) {
+        liveBtn.title = "Starte Live Code auf dieser Seite";
+      } else if (!manual) {
+        liveBtn.title = "Live Code wird automatisch gestartet";
+      } else {
+        liveBtn.title = "Kein Live Code auf dieser Seite";
+      }
     }
   }
 
