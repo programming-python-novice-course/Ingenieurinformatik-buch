@@ -14,7 +14,7 @@ Ob eine Seite ausführbaren Code enthält, erkennen Sie daran, ob auf der entspr
 width: 700px
 name: fig-code-ausfuehren1
 ---
-Beispiel einer Seite mit ausführbaren Code: Das Live-Code-Symbol ist grün eingefärbt.
+Beispiel einer Seite mit ausführbaren Code: Der Live-Code-Button ist grün eingefärbt. Ansonsten ist der Button grau hinterlegt und nicht aktivierbar.
 ```
 - Ausführbaren Python-Code erkennen Sie daran, dass er in einer Code-Zelle steht – einer Art „Box“ mit abgerundeten Ecken.
 
