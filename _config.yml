@@ -47,8 +47,8 @@ sphinx:
     - sphinx_proof
 
   config:
-    version: "2.5"
-    release: "2.5.7"
+    version: "2.6"
+    release: "2.6.0"
 
     myst_enable_extensions:
       - dollarmath
@@ -65,6 +65,7 @@ sphinx:
     html_js_files:
       - js/thebe-output-fix.js
       - js/hub-link-rewrite.js
+      - js/user-settings.js
       - js/nav-shortcuts.js
 
     html_show_copyright: false
@@ -243,6 +244,6 @@ html:
       <div class="col1">
         Beiträge: <a href="/chapters/misc/beitraege.html">alle anzeigen</a>.
         Lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer">CC BY-SA 4.0</a>.
-        Version 2.5.7
+        Version 2.6.0
       </div>
     </div>

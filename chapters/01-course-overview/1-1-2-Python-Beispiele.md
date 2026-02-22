@@ -12,7 +12,7 @@ kernelspec:
 
 # Python-Beispiele
 
-Am besten testen Sie den Live-Code gleich selbst aus: Aktivieren Sie „Live Code“ über die Rakete und klicken Sie anschließend auf „Run“.
+Am besten testen Sie den Live-Code gleich selbst aus: Aktivieren Sie „Live Code“ über den Button und klicken Sie anschließend auf „Run“.
 
 
 ```{code-cell} python3

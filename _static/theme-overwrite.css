@@ -176,3 +176,140 @@
   background: #272822 !important;
   opacity: 1 !important;
 }
+
+/* --------------------------------------------------
+   User settings / launch controls
+   -------------------------------------------------- */
+
+.ii-hidden-launch-ui {
+  display: none !important;
+}
+
+.ii-user-controls {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1100;
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ii-btn {
+  border: 1px solid var(--pst-color-border, #bfc6d1);
+  background: var(--pst-color-surface, #fff);
+  color: var(--pst-color-text-base, #222);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.82rem;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.ii-btn:disabled {
+  opacity: 0.95;
+  cursor: not-allowed;
+}
+
+.ii-btn-primary:disabled,
+.ii-btn-secondary:disabled {
+  background: #c7ced8;
+  border-color: #c7ced8;
+  color: #6b7280;
+}
+
+.ii-btn-primary {
+  background: #2e8b57;
+  color: #fff;
+  border-color: #2e8b57;
+}
+
+.ii-btn-launch-icon {
+  width: 2.7rem;
+  height: 2.7rem;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ii-btn-secondary {
+  background: #2e8b57;
+  color: #fff;
+  border-color: #2e8b57;
+}
+
+.ii-btn-live-icon {
+  width: 2.7rem;
+  height: 2.7rem;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ii-btn-ghost {
+  background: transparent;
+}
+
+.ii-btn-gear {
+  width: 2.7rem;
+  height: 2.7rem;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ii-settings-panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 0.55rem);
+  width: min(18.5rem, 92vw);
+  border: 1px solid var(--pst-color-border, #bfc6d1);
+  border-radius: 0.6rem;
+  background: var(--pst-color-surface, #fff);
+  color: var(--pst-color-text-base, #222);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 0.7rem 0.75rem 0.55rem;
+  display: none;
+}
+
+.ii-settings-open .ii-settings-panel {
+  display: block;
+}
+
+.ii-settings-title {
+  font-weight: 600;
+  margin-bottom: 0.55rem;
+}
+
+.ii-settings-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.84rem;
+}
+
+.ii-settings-row select {
+  width: 100%;
+  border: 1px solid var(--pst-color-border, #bfc6d1);
+  border-radius: 0.35rem;
+  background: var(--pst-color-surface, #fff);
+  color: var(--pst-color-text-base, #222);
+  padding: 0.25rem 0.4rem;
+}
+
+.ii-settings-note {
+  margin: 0.2rem 0 0;
+  font-size: 0.72rem;
+  opacity: 0.8;
+}
