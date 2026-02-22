@@ -1,10 +1,46 @@
 ## Version 2.6 - 2026-02-22
 
 ### Changed
-- User interface elements:
-  - Change icon for launch button to a more modern icon
-  - Change icon for gear button to a more modern icon
-  - Change icon for dropdown menu to a more modern icon
+- Launch and Live-Code controls:
+  - Replace default launch dropdown behavior with a custom controls bar (`📓`, `▶`/`A`, `⚙`).
+  - Add user settings panel for:
+    - Jupyter notebook execution environment (`Datahub HM` / `Binder`)
+    - Live Code activation mode (`manual` / `auto`)
+  - Keep settings persisted in browser storage (`localStorage`).
+  - Default settings:
+    - JupyterHub selection: `Datahub HM`
+    - Live Code mode: `manual`
+  - Keep launch controls visible and represent unavailable states as disabled buttons (instead of hiding controls).
+  - Use unified green active styling for both `📓` and `▶`; disabled states remain grey.
+  - Use `A` (disabled) badge on pages where live code is in automatic mode and executable content is available.
+
+- Launch behavior:
+  - Show `📓` as enabled only when a valid launch target is available (Binder or Datahub link found on page).
+  - Keep `📓` disabled when no launch target exists.
+  - Update launch target dynamically when hub preference changes in settings.
+
+- Live Code behavior:
+  - In `manual` mode, show `▶` enabled only when a launch target is available.
+  - In `auto` mode, disable `▶`; auto-bootstrap live code on page load.
+  - Restrict auto-bootstrap attempts to pages with launch targets to avoid unnecessary load on Binder/Datahub.
+  - Ensure hub switch does not interrupt an already running live-code session.
+
+- UI/UX details:
+  - Upgrade settings button from text to larger gear icon (`⚙`).
+  - Upgrade launch action from text button to icon (`📓`).
+  - Upgrade manual live-code action from text button to icon (`▶`).
+  - Close settings panel on click outside and on `Escape`.
+  - Improve accessibility labels/tooltips for control states.
+
+- Stability and performance:
+  - Prevent mutation-observer feedback loops in `user-settings.js`.
+  - Throttle DOM refresh work via animation-frame scheduling to avoid timeout-related page stalls.
+
+- Documentation alignment (content update pending in chapter text):
+  - Planned wording/UI alignment in:
+    - `chapters/01-course-overview/1-1-1-Live-Code.md`
+    - `chapters/01-course-overview/1-1-2-Python-Beispiele.md`
+    - `chapters/01-course-overview/1-1-3-Live-Code-Alternative-mit-Debugging.md`
 
 
 ## Version 2.5.7 – 2026-02-22
