@@ -2,6 +2,7 @@
 ## Version 2.5.7 – 2026-02-22
 
 ### Added
+- Include documentation for build dependencies (Docker images) to docs
 - Add robust navigation shortcuts for Jupyter Book:
   - Desktop: Alt+← / Alt+→ for previous/next page
   - Mobile: swipe right/left for previous/next page (main-content-only, editor-safe)
