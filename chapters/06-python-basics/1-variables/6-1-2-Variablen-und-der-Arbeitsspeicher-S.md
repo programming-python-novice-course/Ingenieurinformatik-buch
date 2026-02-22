@@ -62,7 +62,7 @@ In ``Python`` kommen wir mit der eigentlichen Speicheradresse normalerweise gar 
 
 Mit
 
-```{code-cell} ipython3
+```{code-cell} python3
 x = 25
 ```
 
@@ -80,7 +80,7 @@ Initialisierung und Zuweisung einer Variable ``x``  mit dem Wert ``25``. Der Wer
 
 Mit der *built-in*-Funktion ``id`` können Sie sich eine Identifikationsnummer einer Variablen ausgeben lassen. Für zwei *Variablen* ist diese genau dann gleich, wenn deren **Arbeitsspeicheradressen** gleich sind.
 
-```{code-cell} ipython3
+```{code-cell} python3
 x = 25
 z = 25
 print(id(x))
@@ -154,7 +154,7 @@ Zwei Variablen können jedoch den gleichen Wert haben, allerdings auf verschiede
 
 Ein Beispiel für zwei Variablen mit gleichem Wert und unterschiedlicher Identität ist leicht konstruiert:
 
-```{code-cell} ipython3
+```{code-cell} python3
 x = 2131313
 z = 2131313
 print(id(x))
@@ -171,7 +171,7 @@ Das geht jedoch nur für eine endliche Anzahl an Zahlen (deshalb für die ersten
 
 Folgender Code berechnet die erste Zahl die nicht bereits bei der Ausführung im Speicher liegt:
 
-```{code-cell} ipython3
+```{code-cell} python3
 x = 0
 z = 0
 while(id(x) == id(z)):
@@ -182,7 +182,7 @@ x
 
 Wie sieht es mit negativen Zahlen aus?:
 
-```{code-cell} ipython3
+```{code-cell} python3
 x = 0
 z = 0
 while(id(x) == id(z)):

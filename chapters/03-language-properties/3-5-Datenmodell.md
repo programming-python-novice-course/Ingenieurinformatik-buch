@@ -26,7 +26,7 @@ Variablennamen sind keine „Speicherzellen“, sondern Bindungen auf solche Obj
 
 Sehen wir uns hierzu das folgende Code‑Beispiel an:
 
-```{code-cell} ipython3
+```{code-cell} python3
 x = 100
 identitaet = id(x)
 print("id(x):", identitaet)  # Identität (Adresse/Referenzwert)

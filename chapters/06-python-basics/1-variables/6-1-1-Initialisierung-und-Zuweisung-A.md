@@ -15,7 +15,7 @@ kernelspec:
 Durch das ``=`` Zeichen weisen wir einer *Variablen* (auf der linken Seite) den Wert des *Ausdrucks* (auf der rechten Seite) zu.
 Zum Beispiel, weist
 
-```{code-cell} ipython3
+```{code-cell} python3
 x = 3 + 10
 ```
 
@@ -26,7 +26,7 @@ $$x = 13$$
 
 bedeutet, dass $x$ gleich $13$ ist, wohingegen
 
-```{code-cell} ipython3
+```{code-cell} python3
 x = 13
 ```
 
@@ -37,7 +37,7 @@ $$x \leftarrow 13.$$
 
 Mit
 
-```{code-cell} ipython3
+```{code-cell} python3
 x = None
 ```
 
@@ -46,7 +46,7 @@ Es repräsentiert lediglich das Nichts.
 
 Versuchen wir eine *Variable* zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:
 
-```{code-cell} ipython3
+```{code-cell} python3
 ---
 tags: [raises-exception]
 ---

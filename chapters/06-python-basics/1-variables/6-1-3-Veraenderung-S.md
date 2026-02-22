@@ -32,7 +32,7 @@ Das Ursprungsobjekt bleibt *unverändert*.
 Eine *Variable* kann immer nur einen **Wert** bzw. auf einen bestimmten Speicherbereich *zeigen*.
 Weisen wir einer *Variablen* erneut einen **Wert** zu, wird dieser **Wert** in den Speicher an eine freie **Adresse** geschrieben und die **Adresse** der Variablen auf jene neue **Adresse** gesetzt.
 
-```{code-cell} ipython3
+```{code-cell} python3
 half = 1/2
 print(f'value of half = {half}')
 print(f'id of half = {id(half)}')
@@ -54,7 +54,7 @@ Veränderungen der einen *Variablen* haben keinen Effekt auf die **Adresse** bzw
 ````
 
 
-```{code-cell} ipython3
+```{code-cell} python3
 print(f'value of half = {half}')
 print(f'id of half = {id(half)}')
 ```
@@ -65,7 +65,7 @@ Verändern wir *Variablen* nicht, so behalten sie ihre **Adresse** über das ges
 
 Weisen wir einer Variablen ``x`` eine andere Variable ``y`` zu, so ändern wir die **Adresse** von ``x`` auf jene von ``y``. Das heißt, nach der *Zuweisung* zeigen beide Variablen auf den gleichen Speicherbereich und damit auf den gleichen **Wert**.
 
-```{code-cell} ipython3
+```{code-cell} python3
 x = 2131313
 y = 10
 z = 2131313
