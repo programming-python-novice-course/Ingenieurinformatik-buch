@@ -1,11 +1,11 @@
 # Lokal bauen (HTML/PDF)
 
-Empfehlung: **Builds lokal im gleichen Docker-Image ausführen wie in der CI**, um OS-/LaTeX-/Abhängigkeits-Probleme zu vermeiden.
+Empfehlung: **Builds lokal im gleichen dev-image ausführen wie in der CI**, um OS-/LaTeX-/Abhängigkeits-Probleme zu vermeiden.
 
 ## Voraussetzungen
 
 - Docker installiert
-- CI-Image verfügbar: `gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest`
+- dev-image verfügbar: `gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest`
 
 ## Container starten
 
@@ -37,7 +37,7 @@ Im Container:
 rm -rf _build _book_as_pdf
 
 # Falls GIFs vorhanden sind: erstes Frame nach PNG konvertieren.
-# `convert` ist Teil von ImageMagick (im CI-Image bereits installiert).
+# `convert` ist Teil von ImageMagick (im dev-image bereits installiert).
 find figs -name "*.gif" -print0 | while IFS= read -r -d "" gif; do
   png="${gif%.gif}.png"
   if [ ! -f "$png" ]; then
