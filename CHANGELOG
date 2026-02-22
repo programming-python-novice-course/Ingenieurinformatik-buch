@@ -2,6 +2,7 @@
 ## Version 2.5.6 – 2026-02-22
 
 ### Changed
+- decide to allow executed cells in print version
 - Clean jupyter notebooks: remove kernel header from files without code cells
 - Rename chapter files to match their chapter titles and numbering (derived from `_toc.yml`).
 - remove unnecessary directories: figs/archive and chapters/archive

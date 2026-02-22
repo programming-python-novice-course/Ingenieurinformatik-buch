@@ -13,7 +13,7 @@ Default behavior:
 
 Additionally, it generates a print config:
   _config.yml -> _config_print.yml
-  with `execute_notebooks: 'off'` (to avoid executing notebooks in print builds)
+  with `execute_notebooks: auto` (same behavior as the main build)
   and appends a suffix (default: " (Druckversion)") to the LaTeX `\title{...}`.
 """
 
@@ -98,7 +98,7 @@ def generate_config_print(
     *,
     input_path: Path,
     output_path: Path,
-    execute_notebooks_value: str = "'off'",
+    execute_notebooks_value: str = "auto",
     latex_targetname_value: str = "book-print.tex",
     title_suffix: str = " (Druckversion)",
 ) -> None:
@@ -185,8 +185,8 @@ def main(argv: list[str]) -> int:
     )
     parser.add_argument(
         "--execute-notebooks-value",
-        default="'off'",
-        help="Value to write for execute_notebooks (default: 'off')",
+        default="auto",
+        help="Value to write for execute_notebooks (default: auto)",
     )
     parser.add_argument(
         "--latex-targetname",
