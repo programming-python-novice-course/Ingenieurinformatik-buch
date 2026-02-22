@@ -57,6 +57,24 @@
     return false;
   }
 
+  function isImageTarget(element) {
+    var el = asElement(element);
+    if (!el) return false;
+    if (el.tagName === "IMG") return true;
+    try {
+      return !!el.closest("img");
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function isInteractiveTargetForSwipe(element) {
+    // Many Jupyter Book images are wrapped in <a> (zoom/open). We still want swipe
+    // navigation to work when the gesture starts on the image itself.
+    if (isImageTarget(element)) return false;
+    return isInteractiveTarget(element);
+  }
+
   function getPrevNextHref(direction) {
     // Primary: footer prev/next links
     // prev: footer.prev-next-footer a.left-prev
@@ -173,7 +191,7 @@
     swipeState.startY = pt.clientY;
     swipeState.startT = Date.now();
     swipeState.startedInMain = startedInMainContent(target);
-    swipeState.startedOnInteractive = isInteractiveTarget(target);
+    swipeState.startedOnInteractive = isInteractiveTargetForSwipe(target);
     swipeState.startedInTyping = isTypingContext(target);
   }
 
