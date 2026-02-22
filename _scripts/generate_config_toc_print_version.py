@@ -9,7 +9,7 @@ This script intentionally works *line-based* (not YAML-based) so it:
 Default behavior:
   _toc.yml    ->  _toc_print.yml
   stopping after the first occurrence of:
-    - file: chapters/misc/Expertenwissen/0-intro
+    - file: chapters/misc/Expertenwissen/16-Expertenwissen
 
 Additionally, it generates a print config:
   _config.yml -> _config_print.yml
@@ -71,7 +71,7 @@ def generate_toc_print(*, input_path: Path, output_path: Path, stop_after: str) 
     src = input_path.read_text(encoding="utf-8").splitlines(keepends=True)
 
     # Match YAML entries like:
-    #   - file: chapters/misc/Expertenwissen/0-intro
+    #   - file: chapters/misc/Expertenwissen/16-Expertenwissen
     # with arbitrary indentation / extra spaces.
     pattern = re.compile(r"^\s*-\s*file:\s*" + re.escape(stop_after) + r"\s*$")
 
@@ -170,8 +170,8 @@ def main(argv: list[str]) -> int:
     )
     parser.add_argument(
         "--stop-after",
-        default="chapters/misc/Expertenwissen/0-intro",
-        help="Stop after first '- file: <value>' match (default: chapters/misc/Expertenwissen/0-intro)",
+        default="chapters/misc/Expertenwissen/16-Expertenwissen",
+        help="Stop after first '- file: <value>' match (default: chapters/misc/Expertenwissen/16-Expertenwissen)",
     )
     parser.add_argument(
         "--config-input",

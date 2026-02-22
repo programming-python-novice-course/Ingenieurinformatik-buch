@@ -92,7 +92,7 @@ build_book_pdf_print:
     - export PYDEVD_DISABLE_FILE_VALIDATION=1
     - export MPLCONFIGDIR=/tmp/matplotlib
     - gosu jovyan bash -c "rm -rf _build $PDF_PRINT_BUILD_DIR"
-    - gosu jovyan python3 _scripts/generate_config_toc_print_version.py --input _toc.yml --output _toc_print.yml --config-input _config.yml --config-output _config_print.yml --stop-after chapters/misc/Expertenwissen/0-intro --latex-targetname book-print.tex
+    - gosu jovyan python3 _scripts/generate_config_toc_print_version.py --input _toc.yml --output _toc_print.yml --config-input _config.yml --config-output _config_print.yml --stop-after chapters/misc/Expertenwissen/16-Expertenwissen --latex-targetname book-print.tex
     - |
       gosu jovyan sh -c 'find figs -name "*.gif" -print0 | while IFS= read -r -d "" gif; do
         png="${gif%.gif}.png"
