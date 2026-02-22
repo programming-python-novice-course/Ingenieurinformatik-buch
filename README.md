@@ -62,4 +62,4 @@ Sofern nicht anders angegeben, ist dieses Werk lizenziert unter der [Creative Co
 - **Feedback / Verbesserungsvorschläge**:  
   https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/issues  
 - **Software-Dokumentation für Maintainer (Build / CI / Repositories)**:  
-  [`docs/README.md`](./docs/README.md)
+  [`_docs/README.md`](./_docs/README.md)
