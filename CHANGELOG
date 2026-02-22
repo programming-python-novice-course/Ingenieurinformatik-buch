@@ -2,13 +2,15 @@
 ## Version 2.5.6 – 2026-02-22
 
 ### Changed
+- Clean jupyter notebooks: remove kernel header from files without code cells
+- Rename chapter files to match their chapter titles and numbering (derived from `_toc.yml`).
+- remove unnecessary directories: figs/archive and chapters/archive
 - Rename build/dependency folders for clarity:
   - `docker/` → `dev-image/` → `_dev-image/`
   - `scripts/` → `_scripts/`
   - `docs/` → `_docs/`
 - Update documentation under `_docs/` to consistently reference **dev-image** and the new folder paths.
 - Update CI (`.gitlab-ci.yml`) to use `_scripts/...`.
-- Rename chapter files to match their chapter titles and numbering (derived from `_toc.yml`).
 - Normalize MyST code cell directives: replace {code-cell} ipython3 with {code-cell} python3 across chapter sources.
 
 ### Removed
