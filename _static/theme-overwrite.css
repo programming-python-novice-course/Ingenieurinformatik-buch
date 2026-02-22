@@ -220,9 +220,9 @@
 }
 
 .ii-btn-primary {
-  background: var(--pst-color-primary, #1f6feb);
+  background: #2e8b57;
   color: #fff;
-  border-color: var(--pst-color-primary, #1f6feb);
+  border-color: #2e8b57;
 }
 
 .ii-btn-launch-icon {
@@ -237,7 +237,9 @@
 }
 
 .ii-btn-secondary {
-  background: var(--pst-color-secondary-bg, #f3f6fb);
+  background: #2e8b57;
+  color: #fff;
+  border-color: #2e8b57;
 }
 
 .ii-btn-live-icon {
