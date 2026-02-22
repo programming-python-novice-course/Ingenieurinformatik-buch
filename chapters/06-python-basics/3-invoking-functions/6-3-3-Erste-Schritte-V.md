@@ -40,7 +40,9 @@ Dort finden wir eine Funktion ``random.randint``.
 Wir finden diese auch in der Hilfe, die wir duch ``help`` ausgeben können.
 
 ```{code-cell} python3
-:tags: [output_scroll]
+---
+:tags: [skip-execution]
+---
 import random
 help(random)
 ```
