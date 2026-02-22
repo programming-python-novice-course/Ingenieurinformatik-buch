@@ -134,7 +134,7 @@ Implementieren Sie eine Funktion `qsolve(a, b, c)`, die die Anzahl reeller Nulls
 
 ```{figure} ../../figs/10-functions/paufgaben/k1/k1_abb4.png
 ---
-width: 650px
+width: 400px
 name: fig-paufgaben-a43-mitternachtsformel
 ---
 Beispielausgabe (Aufgabensammlung PA1.2/PA4.3).
