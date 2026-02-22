@@ -63,7 +63,7 @@
 
   function readSettings() {
     try {
-      const raw = window.localStorage.getItem(STORAGE_KEY);
+      const raw = window.sessionStorage.getItem(STORAGE_KEY);
       if (!raw) return { ...DEFAULT_SETTINGS };
       const parsed = safeParse(raw, {});
       return {
@@ -78,9 +78,9 @@
   function writeSettings(settings) {
     STATE.settings = settings;
     try {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+      window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
     } catch {
-      // localStorage can be blocked in hardened browser/privacy settings.
+      // sessionStorage can be blocked in hardened browser/privacy settings.
     }
   }
 
@@ -400,6 +400,13 @@
   function init() {
     if (window.__iiUserSettingsLoaded) return;
     window.__iiUserSettingsLoaded = true;
+
+    // Cleanup legacy persistent settings from earlier localStorage-based versions.
+    try {
+      window.localStorage.removeItem(STORAGE_KEY);
+    } catch {
+      // Ignore if localStorage is not available.
+    }
 
     STATE.settings = readSettings();
     hideDefaultLaunchUi();
