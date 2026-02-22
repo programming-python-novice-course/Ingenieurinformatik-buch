@@ -4,7 +4,7 @@ parts:
   - caption: Übersicht
     numbered: True
     chapters:
-    - file: chapters/01-course-overview/1-Kursübersicht
+    - file: chapters/01-course-overview/1-Kursuebersicht
       sections:
       - file: chapters/01-course-overview/1-1-Arbeitsmaterialien
         sections:
@@ -13,7 +13,7 @@ parts:
         - file: chapters/01-course-overview/1-1-3-Live-Code-Alternative-mit-Debugging
       - file: chapters/01-course-overview/1-2-Kursrahmen
         sections:
-        - file: chapters/01-course-overview/1-2-1-Prüfung
+        - file: chapters/01-course-overview/1-2-1-Pruefung
         - file: chapters/01-course-overview/1-2-2-Modulhandbuch
       - file: chapters/01-course-overview/1-3-Orientierung
         sections:
@@ -47,21 +47,21 @@ parts:
       - file: chapters/02-computer-sciences-basics/2-5-Programmieren
         sections:
         - file: chapters/02-computer-sciences-basics/2-5-1-Algorithmus-S
-        - file: chapters/02-computer-sciences-basics/2-5-2-Komplexität-S
+        - file: chapters/02-computer-sciences-basics/2-5-2-Komplexitaet-S
         - file: chapters/02-computer-sciences-basics/2-5-3-Software-vs-Programm-S
         - file: chapters/02-computer-sciences-basics/2-5-4-Repositories-und-Hubs-V
       - file: chapters/02-computer-sciences-basics/2-6-Programmstruktur
         sections:
         - file: chapters/02-computer-sciences-basics/2-6-1-Kontrollstrukturen-A
         - file: chapters/02-computer-sciences-basics/2-6-2-Datenstrukturen-A
-        - file: chapters/02-computer-sciences-basics/2-6-3-Übungsaufgabe-BMI-A
+        - file: chapters/02-computer-sciences-basics/2-6-3-Uebungsaufgabe-BMI-A
       - file: chapters/02-computer-sciences-basics/2-7-Kommunikation-von-Software
         sections:
         - file: chapters/02-computer-sciences-basics/2-7-1-Nassi-Shneiderman-Diagramme-A
         - file: chapters/02-computer-sciences-basics/2-7-2-Pseudocode-V
         - file: chapters/02-computer-sciences-basics/2-7-3-Vergleich-Pseudocode-Struktogramm-V
       - file: chapters/02-computer-sciences-basics/2-8-Takeaways
-      - file: chapters/02-computer-sciences-basics/2-9-Übungsaufgabe-ICAO-Standardatmosphäre-A
+      - file: chapters/02-computer-sciences-basics/2-9-Uebungsaufgabe-ICAO-Standardatmosphaere-A
   - caption: Python verstehen
     numbered: True
     chapters:
@@ -81,15 +81,15 @@ parts:
   - caption: Python anwenden
     numbered: True
     chapters:
-    - file: chapters/04-applying-python-intro/4-Übersicht
-    - file: chapters/05-python-ecosystem-and-setup/5-Das-Python-Ökosystem
+    - file: chapters/04-applying-python-intro/4-Uebersicht
+    - file: chapters/05-python-ecosystem-and-setup/5-Das-Python-Oekosystem
       sections:
       - file: chapters/05-python-ecosystem-and-setup/5-1-Installation-Kurs-Setup
         sections:
         - file: chapters/05-python-ecosystem-and-setup/1-installation/5-1-1-Interaktive-Website-und-JupyterHub-V
         - file: chapters/05-python-ecosystem-and-setup/1-installation/5-1-2-Python-Umgebungen-Distribution-Umgebungen-Pakete-S
         - file: chapters/05-python-ecosystem-and-setup/1-installation/5-1-3-Praktikum-Setup-V
-      - file: chapters/05-python-ecosystem-and-setup/5-2-Python-ausführen
+      - file: chapters/05-python-ecosystem-and-setup/5-2-Python-ausfuehren
         sections:
         - file: chapters/05-python-ecosystem-and-setup/2-run/5-2-1-REPL-V
         - file: chapters/05-python-ecosystem-and-setup/2-run/5-2-2-Jupyter-Notebook-V
@@ -104,17 +104,17 @@ parts:
         - file: chapters/05-python-ecosystem-and-setup/4-modules/5-4-1-Ein-eigenes-Modul-V
         - file: chapters/05-python-ecosystem-and-setup/4-modules/5-4-2-Pythons-Modulpriorisierung-S
         - file: chapters/05-python-ecosystem-and-setup/4-modules/5-4-3-Pakete-S
-      - file: chapters/05-python-ecosystem-and-setup/5-5-Übungsaufgabe
+      - file: chapters/05-python-ecosystem-and-setup/5-5-Uebungsaufgabe
     - file: chapters/06-python-basics/6-Grundlagen
       sections:
       - file: chapters/06-python-basics/6-1-Variablen-S
         sections:
         - file: chapters/06-python-basics/1-variables/6-1-1-Initialisierung-und-Zuweisung-A
         - file: chapters/06-python-basics/1-variables/6-1-2-Variablen-und-der-Arbeitsspeicher-S
-        - file: chapters/06-python-basics/1-variables/6-1-3-Veränderung-S
+        - file: chapters/06-python-basics/1-variables/6-1-3-Veraenderung-S
         - file: chapters/06-python-basics/1-variables/6-1-4-Das-Nichts-A
         - file: chapters/06-python-basics/1-variables/6-1-5-Namenskonvention-V
-      - file: chapters/06-python-basics/6-2-Ausdrücke-A
+      - file: chapters/06-python-basics/6-2-Ausdruecke-A
         sections:
         - file: chapters/06-python-basics/2-expressions/6-2-1-Arithmetische-Operatoren-A
         - file: chapters/06-python-basics/2-expressions/6-2-2-Vergleichsoperatoren-A
@@ -127,12 +127,12 @@ parts:
         - file: chapters/06-python-basics/3-invoking-functions/6-3-3-Erste-Schritte-V
     - file: chapters/07-python-data-types/7-Datentypen
       sections:
-      - file: chapters/07-python-data-types/7-1-Übersicht-Built-in-Datentypen-A
+      - file: chapters/07-python-data-types/7-1-Uebersicht-Built-in-Datentypen-A
       - file: chapters/07-python-data-types/7-2-Zahlenwerte-Built-in
         sections:
         - file: chapters/07-python-data-types/7-2-1-Ganze-Zahlen-int-A
         - file: chapters/07-python-data-types/7-2-2-Wahrheitswerte-bool-A
-        - file: chapters/07-python-data-types/7-2-3-Fließkommazahlen-float-A
+        - file: chapters/07-python-data-types/7-2-3-Fliesskommazahlen-float-A
         - file: chapters/07-python-data-types/7-2-4-int-und-float-in-Kombination-V
       - file: chapters/07-python-data-types/7-3-Sequenzen-Built-in
         sections:
@@ -143,7 +143,7 @@ parts:
       - file: chapters/07-python-data-types/7-4-Sets-und-Mengen-Built-in
         sections:
         - file: chapters/07-python-data-types/7-4-1-Mengen-set-A
-        - file: chapters/07-python-data-types/7-4-2-Wörterbücher-dict-A
+        - file: chapters/07-python-data-types/7-4-2-Woerterbuecher-dict-A
       - file: chapters/07-python-data-types/7-5-Wichtige-Datentypen-von-externen-Bibliotheken-V
       - file: chapters/07-python-data-types/7-6-Codierung
         sections:
@@ -152,7 +152,7 @@ parts:
       - file: chapters/07-python-data-types/7-7-Big-picture-S
     - file: chapters/08-eingaben-und-ausgaben/8-Eingaben-Ausgaben-Schnittstellen
       sections:
-      - file: chapters/08-eingaben-und-ausgaben/8-1-I-O-Überblick
+      - file: chapters/08-eingaben-und-ausgaben/8-1-I-O-Ueberblick
         sections:
         - file: chapters/08-eingaben-und-ausgaben/8-1-1-Schnittstellen-S
         - file: chapters/08-eingaben-und-ausgaben/8-1-2-Protokolle-S
@@ -169,7 +169,7 @@ parts:
         - file: chapters/08-eingaben-und-ausgaben/8-4-1-Explizite-Konvertierung-A
         - file: chapters/08-eingaben-und-ausgaben/8-4-2-f-Strings-A
       - file: chapters/08-eingaben-und-ausgaben/8-5-Takeaways
-      - file: chapters/08-eingaben-und-ausgaben/8-6-Übungsaufgaben
+      - file: chapters/08-eingaben-und-ausgaben/8-6-Uebungsaufgaben
     - file: chapters/09-control-flow/9-Kontrollstrukturen
       sections:
       - file: chapters/09-control-flow/9-1-Fallunterscheidungen
@@ -192,16 +192,16 @@ parts:
       sections:
       - file: chapters/10-functions/10-1-Definition-und-Aufruf-A
         sections:
-        - file: chapters/10-functions/10-1-1-Definition-und-Rückgabewerte-A
+        - file: chapters/10-functions/10-1-1-Definition-und-Rueckgabewerte-A
         - file: chapters/10-functions/10-1-2-Standardargumente-und-Keyword-Argumente-A
         - file: chapters/10-functions/10-1-3-Anwendungsbeispiele-A
-      - file: chapters/10-functions/10-2-Namensräume-und-Seiteneffekte
+      - file: chapters/10-functions/10-2-Namensraeume-und-Seiteneffekte
         sections:
-        - file: chapters/10-functions/10-2-1-Namensräume-und-Sichtbarkeit-A
+        - file: chapters/10-functions/10-2-1-Namensraeume-und-Sichtbarkeit-A
         - file: chapters/10-functions/10-2-2-Seiteneffekte-und-Mutability-A
       - file: chapters/10-functions/10-3-Rekursion-A
-      - file: chapters/10-functions/10-4-Fortgeschrittene-Konzepte-Überblick-V
-      - file: chapters/10-functions/10-5-Übungsaufgaben
+      - file: chapters/10-functions/10-4-Fortgeschrittene-Konzepte-Ueberblick-V
+      - file: chapters/10-functions/10-5-Uebungsaufgaben
     - file: chapters/11-object-oriented/11-Objektorientierte-Programmierung
       sections:
       - file: chapters/11-object-oriented/11-1-Anwendungsbeispiel
@@ -209,7 +209,7 @@ parts:
         - file: chapters/11-object-oriented/11-1-1-Skript-V
         - file: chapters/11-object-oriented/11-1-2-Wrapper-Funktion-V
         - file: chapters/11-object-oriented/11-1-3-OOP-Variante-V
-      - file: chapters/11-object-oriented/11-2-Überblick
+      - file: chapters/11-object-oriented/11-2-Ueberblick
         sections:
         - file: chapters/11-object-oriented/11-2-1-Datenstrukturen-vs-Klassen-V
         - file: chapters/11-object-oriented/11-2-2-Klasse-vs-Objekt-S
@@ -222,7 +222,7 @@ parts:
         - file: chapters/11-object-oriented/11-3-3-Kapselung-V
         - file: chapters/11-object-oriented/11-3-4-Polymorphie-V
       - file: chapters/11-object-oriented/11-4-Objektorientiert-vs-prozedural-S
-      - file: chapters/11-object-oriented/11-5-Übungsaufgaben
+      - file: chapters/11-object-oriented/11-5-Uebungsaufgaben
   - caption: Fallbeispiel
     numbered: True
     chapters:
@@ -233,7 +233,7 @@ parts:
         sections:
         - file: chapters/12-fallbeispiel/12-2-1-Dekomposition-V
         - file: chapters/12-fallbeispiel/12-2-2-Recherche-V
-      - file: chapters/12-fallbeispiel/12-3-Lösung-mit-Library-V
+      - file: chapters/12-fallbeispiel/12-3-Loesung-mit-Library-V
       - file: chapters/12-fallbeispiel/12-4-Eigenentwicklung-V
         sections:
         - file: chapters/12-fallbeispiel/12-4-1-Test-Frameworks-V
@@ -245,10 +245,10 @@ parts:
         - file: chapters/12-fallbeispiel/12-4-7-Bibliothek-statistics-V
       - file: chapters/12-fallbeispiel/12-5-Abstraktionsgrad-S
       - file: chapters/12-fallbeispiel/12-6-Takeaways
-      - file: chapters/12-fallbeispiel/12-7-Übungsaufgaben
+      - file: chapters/12-fallbeispiel/12-7-Uebungsaufgaben
   - caption: Appendix I
     chapters:
-    - file: chapters/misc/13-Beiträge
+    - file: chapters/misc/13-Beitraege
     - file: chapters/misc/14-Downloads
     - file: chapters/misc/15-Literaturverzeichnis
   - caption: Appendix II
@@ -262,7 +262,7 @@ parts:
       - file: chapters/misc/Expertenwissen/datatypes/16-5-Datentypen-Eigenschaften
         sections:
         - file: chapters/misc/Expertenwissen/datatypes/16-5-1-Zerteilbarkeit
-        - file: chapters/misc/Expertenwissen/datatypes/16-5-2-Komplexität
+        - file: chapters/misc/Expertenwissen/datatypes/16-5-2-Komplexitaet
         - file: chapters/misc/Expertenwissen/datatypes/16-5-3-Herkunft
       - file: chapters/misc/Expertenwissen/functions/16-6-Funktionen-fortgeschrittene-Konzepte
         sections:
