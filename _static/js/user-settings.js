@@ -175,8 +175,10 @@
 
     const liveBtn = document.createElement("button");
     liveBtn.type = "button";
-    liveBtn.className = "ii-btn ii-btn-secondary";
-    liveBtn.textContent = "Live Code";
+    liveBtn.className = "ii-btn ii-btn-secondary ii-btn-live-icon";
+    liveBtn.setAttribute("aria-label", "Starte Live Code auf dieser Seite");
+    liveBtn.title = "Starte Live Code auf dieser Seite";
+    liveBtn.textContent = "▶";
 
     const settingsBtn = document.createElement("button");
     settingsBtn.type = "button";
@@ -190,19 +192,19 @@
     panel.setAttribute("aria-hidden", "true");
 
     panel.innerHTML = `
-      <div class="ii-settings-title">Notebook Settings</div>
+      <div class="ii-settings-title">Einstellungen</div>
       <label class="ii-settings-row">
         <span>JupyterHub</span>
         <select id="ii-launch-provider">
-          <option value="binder">Binder</option>
           <option value="datahub">Datahub HM</option>
+          <option value="binder">Binder</option>
         </select>
       </label>
       <label class="ii-settings-row">
-        <span>Live Code Start</span>
+        <span>Live Code aktivieren</span>
         <select id="ii-live-mode">
-          <option value="manual">Per Klick auf Live Code</option>
-          <option value="auto">Automatisch beim Seitenladen</option>
+          <option value="manual">Manuell (Klick auf Live Code)</option>
+          <option value="auto">Automatisch</option>
         </select>
       </label>
       <p class="ii-settings-note">Einstellungen werden im Browser gespeichert.</p>
@@ -263,7 +265,7 @@
 
   function refreshUiState(root) {
     const launchBtn = root.querySelector(".ii-btn-launch-icon");
-    const liveBtn = root.querySelector(".ii-btn-secondary");
+    const liveBtn = root.querySelector(".ii-btn-live-icon");
 
     if (launchBtn instanceof HTMLButtonElement) {
       refreshLaunchTargets();
@@ -275,7 +277,10 @@
 
     if (liveBtn instanceof HTMLButtonElement) {
       const manual = STATE.settings.liveCodeMode === "manual";
-      liveBtn.style.display = manual ? "" : "none";
+      const hasLiveCode = !!findThebeLaunchButton();
+      liveBtn.style.display = manual && hasLiveCode ? "" : "none";
+      liveBtn.disabled = !hasLiveCode;
+      liveBtn.title = hasLiveCode ? "Starte Live Code auf dieser Seite" : "Kein Live Code auf dieser Seite";
     }
   }
 

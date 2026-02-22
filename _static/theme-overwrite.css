@@ -233,6 +233,17 @@
   background: var(--pst-color-secondary-bg, #f3f6fb);
 }
 
+.ii-btn-live-icon {
+  width: 2.7rem;
+  height: 2.7rem;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .ii-btn-ghost {
   background: transparent;
 }
