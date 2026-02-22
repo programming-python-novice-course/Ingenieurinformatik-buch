@@ -11,17 +11,17 @@ kernelspec:
 
 # Live-Code-Alternative (mit Debugging)
 
-```{code-cell} python3
-:tags: [skip-execution]
-
-print("Hello World!") # Hinweis: Das Ausgeben von Hello World ist ein bekanntes Code-Beispiel
-```
-
 Falls 
 - die Einrichtung von „Live Code“ einmal fehlschlägt oder 
 - Sie debuggen möchten (mehr dazu weiter unten), 
 
 können Sie die Beispiele auf dieser Website alternativ auch als *Jupyter-Notebook* ausführen.
+
+```{code-cell} python3
+:tags: [skip-execution]
+
+print("Hello World!") # Hinweis: Das Ausgeben von Hello World ist ein bekanntes Code-Beispiel
+```
 
 „Das Aussehen“ eines *Jupyter-Notebooks* unterscheidet sich etwas von dem auf der Website. Die Inhalte sind aber identisch!
 
