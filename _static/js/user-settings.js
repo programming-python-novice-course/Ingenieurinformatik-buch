@@ -21,8 +21,27 @@
       ".btn-launch-thebe-button",
       "#launch-thebe",
       '[data-event="thebe-launch"]',
+      '[onclick*="initThebeSBT"]',
+      '[data-bs-toggle="button"][id*="thebe"]',
       'button[title*="Live Code"]',
       'button[aria-label*="Live Code"]',
+    ],
+    executableCellCandidates: [
+      ".cell.tag_thebe",
+      ".cell.thebe",
+      ".cell[data-executable='true']",
+      ".thebe-source",
+      ".thebe-input",
+      ".thebe",
+      ".thebelab-cell",
+      '[data-executable="true"]',
+      ".jp-Cell",
+    ],
+    bootstrappedLiveCodeCandidates: [
+      ".thebelab-cell",
+      ".cell .CodeMirror",
+      ".jp-InputArea .CodeMirror",
+      ".jp-OutputArea",
     ],
   };
 
@@ -119,20 +138,54 @@
 
   function findThebeLaunchButton() {
     for (const selector of SELECTORS.thebeLaunchCandidates) {
-      const btn = document.querySelector(selector);
-      if (btn instanceof HTMLElement) return btn;
+      const candidates = document.querySelectorAll(selector);
+      for (const btn of candidates) {
+        if (!(btn instanceof HTMLElement)) continue;
+        // Never return our own control buttons.
+        if (btn.closest(".ii-user-controls")) continue;
+        return btn;
+      }
     }
     // Last resort: text-based lookup, because theme markup differs by version.
     const candidates = document.querySelectorAll("button, a");
     for (const node of candidates) {
       if (!(node instanceof HTMLElement)) continue;
-      const txt = (node.textContent || "").trim().toLowerCase();
-      if (txt === "live code" || txt === "activate live code") return node;
+      if (node.closest(".ii-user-controls")) continue;
+      const txt = (node.textContent || "").trim().toLowerCase().replace(/\s+/g, " ");
+      if (txt.includes("live code") || txt.includes("live-code") || txt.includes("activate live code")) return node;
     }
     return null;
   }
 
+  function triggerThebeViaApi() {
+    try {
+      if (typeof window.initThebeSBT === "function") {
+        window.initThebeSBT();
+        return true;
+      }
+    } catch {
+      // Fallback to button click below.
+    }
+    return false;
+  }
+
+  function hasExecutableCodeCells() {
+    for (const selector of SELECTORS.executableCellCandidates) {
+      if (document.querySelector(selector)) return true;
+    }
+    return false;
+  }
+
+  function isLiveCodeBootstrapped() {
+    for (const selector of SELECTORS.bootstrappedLiveCodeCandidates) {
+      if (document.querySelector(selector)) return true;
+    }
+    return false;
+  }
+
   function triggerLiveCode() {
+    // Try API first, but do not treat invocation itself as success.
+    triggerThebeViaApi();
     const launch = findThebeLaunchButton();
     if (!(launch instanceof HTMLElement)) return false;
     launch.click();
@@ -148,9 +201,13 @@
     const stepMs = 400;
 
     const tryStart = () => {
+      if (isLiveCodeBootstrapped()) {
+        window.__iiThebeAutoBootDone = true;
+        return;
+      }
       attempts += 1;
       const started = triggerLiveCode();
-      if (started) {
+      if (started || isLiveCodeBootstrapped()) {
         window.__iiThebeAutoBootDone = true;
         return;
       }
@@ -194,17 +251,17 @@
     panel.innerHTML = `
       <div class="ii-settings-title">Einstellungen</div>
       <label class="ii-settings-row">
-        <span>JupyterHub</span>
+        <span>Jupyter-Notebook Ausführungsumgebung</span>
         <select id="ii-launch-provider">
           <option value="datahub">Datahub HM</option>
           <option value="binder">Binder</option>
         </select>
       </label>
       <label class="ii-settings-row">
-        <span>Live Code aktivieren</span>
+        <span>Live Code Aktivierung</span>
         <select id="ii-live-mode">
           <option value="manual">Manuell (Klick auf Live Code)</option>
-          <option value="auto">Automatisch</option>
+          <option value="auto">Automatisch (experimentelle Test-Version)</option>
         </select>
       </label>
       <p class="ii-settings-note">Einstellungen werden im Browser gespeichert.</p>
@@ -221,12 +278,17 @@
     if (launchProviderSelect instanceof HTMLSelectElement) {
       launchProviderSelect.value = STATE.settings.launchProvider;
       launchProviderSelect.addEventListener("change", () => {
+        const nextProvider = launchProviderSelect.value === "binder" ? "binder" : "datahub";
         STATE.settings = {
           ...STATE.settings,
-          launchProvider: launchProviderSelect.value === "binder" ? "binder" : "datahub",
+          launchProvider: nextProvider,
         };
         writeSettings(STATE.settings);
+        // Hub selection must not interrupt a running Live Code session.
         refreshUiState(root);
+        // Run delayed refreshes because launch links can be rewritten asynchronously.
+        window.setTimeout(() => refreshUiState(root), 50);
+        window.setTimeout(() => refreshUiState(root), 250);
       });
     }
 
@@ -266,21 +328,23 @@
   function refreshUiState(root) {
     const launchBtn = root.querySelector(".ii-btn-launch-icon");
     const liveBtn = root.querySelector(".ii-btn-live-icon");
+    refreshLaunchTargets();
+    const hasLaunchTarget = !!getPreferredLaunchHref();
 
     if (launchBtn instanceof HTMLButtonElement) {
-      refreshLaunchTargets();
-      const hasTarget = !!getPreferredLaunchHref();
-      launchBtn.style.display = hasTarget ? "" : "none";
-      launchBtn.disabled = !hasTarget;
-      launchBtn.title = hasTarget ? "Launch Jupyter Notebook" : "Kein Launch-Link auf dieser Seite gefunden";
+      launchBtn.style.display = hasLaunchTarget ? "" : "none";
+      launchBtn.disabled = !hasLaunchTarget;
+      launchBtn.title = hasLaunchTarget ? "Launch Jupyter Notebook" : "Kein Launch-Link auf dieser Seite gefunden";
     }
 
     if (liveBtn instanceof HTMLButtonElement) {
       const manual = STATE.settings.liveCodeMode === "manual";
-      const hasLiveCode = !!findThebeLaunchButton();
-      liveBtn.style.display = manual && hasLiveCode ? "" : "none";
-      liveBtn.disabled = !hasLiveCode;
-      liveBtn.title = hasLiveCode ? "Starte Live Code auf dieser Seite" : "Kein Live Code auf dieser Seite";
+      const hasExecutableCells = hasExecutableCodeCells();
+      // Use launch-target presence as robust fallback signal for executable notebook pages.
+      const showLiveBtn = manual && (hasExecutableCells || hasLaunchTarget);
+      liveBtn.style.display = showLiveBtn ? "" : "none";
+      liveBtn.disabled = !showLiveBtn;
+      liveBtn.title = showLiveBtn ? "Starte Live Code auf dieser Seite" : "Kein Live Code auf dieser Seite";
     }
   }
 
