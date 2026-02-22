@@ -367,11 +367,20 @@
 
     if (liveBtn instanceof HTMLButtonElement) {
       const manual = STATE.settings.liveCodeMode === "manual";
+      const hasExecutableCells = hasExecutableCodeCells();
       const enabled = manual && hasLaunchTarget;
       liveBtn.style.display = "";
       liveBtn.disabled = !enabled;
+      const showAutoBadge = !manual && hasExecutableCells;
+      liveBtn.textContent = showAutoBadge ? "A" : "▶";
+      liveBtn.setAttribute(
+        "aria-label",
+        showAutoBadge ? "Live Code wird auf dieser Seite automatisch aktiviert" : "Starte Live Code auf dieser Seite"
+      );
       if (enabled) {
         liveBtn.title = "Starte Live Code auf dieser Seite";
+      } else if (showAutoBadge) {
+        liveBtn.title = "Live Code wird automatisch aktiviert";
       } else if (!manual) {
         liveBtn.title = "Live Code wird automatisch gestartet";
       } else {
