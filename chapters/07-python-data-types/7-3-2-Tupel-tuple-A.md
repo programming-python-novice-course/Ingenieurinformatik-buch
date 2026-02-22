@@ -41,9 +41,7 @@ Was wir jedoch nicht verändern können sind die **Adressen** bzw. ``id``s seine
 Folgender Code führt zu einem Fehler:
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 numbers = (1, 2, 3, 4, 5)
 numbers[2] = -10
 ```
@@ -62,9 +60,7 @@ Um beispielsweise das sich nicht ändernde Alphabet zu modellieren, eignet sich 
 
 
 ```{code-cell} python3
----
-tags: [output_scroll]
----
+:tags: [output_scroll]
 alphabet = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z')
 alphabet
 ```
@@ -125,9 +121,7 @@ Ist er definiert?
 Testen wir es aus:
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 numbers = (1, 2, 3, 4, 5)
 numbers += (6,7,8)
 numbers
@@ -139,9 +133,7 @@ Ja und nein.
 Der Speicherbereich des ursprünglichen Tupels bleibt unverändert, stattdessen wird eine Kopie angelegt.
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 numbers = (1, 2, 3, 4, 5)
 numbers_copy = numbers
 print(f'id before += {id(numbers)}')

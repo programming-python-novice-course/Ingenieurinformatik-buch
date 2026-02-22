@@ -95,9 +95,7 @@ Zusatz: Was ändert sich, wenn Sie die letzte Zeile (`print("fertig")`) einrück
 ```
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 x = 1
 if x > 0:
 print("positiv")

@@ -73,9 +73,7 @@ print(circle)
 Versuchen wir auf die geschützten Attribute zuzugreifen, erhalten wir einen Fehler:
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 
 circle.center = (6, 6)
 print(circle)

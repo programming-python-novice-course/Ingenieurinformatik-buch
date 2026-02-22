@@ -69,9 +69,7 @@ Die maximale Tiefe des *Stacks* ist an eine bestimmte Zahl gebunden.
 Ist unsere Rekursion zu tief, läuft der Stacks voll:
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 _ = fac(1000)
 ```
 

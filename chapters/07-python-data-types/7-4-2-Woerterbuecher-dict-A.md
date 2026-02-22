@@ -80,9 +80,7 @@ print(f' key = {213131}, value = {students[213131]}')
 Gibt es den Schlüssel nicht im Wörterbuch, so erhalten wir einen Fehler beim Zugriff.
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 print(f' key = {00000}, value = {students[00000]}')
 ```
 
@@ -159,9 +157,7 @@ Es scheint so als wären dies alles Listen ``list``, doch das ist nicht korrekt.
 Zwar werden Sie wie Listen ausgegeben, doch sind sie **unveränderlich**.
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 students = dict([(123451, 'Huber'), (123451, 'Langer'), (213131, 'Schmidt'), (4131129, 'Langer')])
 
 values = students.values()

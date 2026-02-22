@@ -74,9 +74,7 @@ Da Mengen ungeordnet sind, können wir diese nicht indexieren.
 Folgender Code führt zu einem Fehler.
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 numbers = {0, 1, 2, 3, 4, 5}
 numbers[2]
 ```
@@ -160,9 +158,7 @@ Eine Menge ist **veränderlich** darf jedoch lediglich **unveränderliche** Elem
 ```
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 myset = {0, 1, [2, 3, 4]}
 ```
 
@@ -191,9 +187,7 @@ Deshalb bekommt die Menge von dieser Änderung nichts mit und somit hätten wir 
 Wir können mit den Funktionen ``add()`` und ``remove()`` Elemente zu einer Menge hinzufügen und von ihr entfernen.
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 numbers = {0, 1, 2}
 numbers.add(0)    # add duplicate, silently ignored
 print(numbers)
@@ -291,9 +285,7 @@ Unsere leere Menge enthält 30 'Lücken'.
 Wir verwenden hierfür das Symbol für das Nichts, d.h., ``None``.
 
 ```{code-cell} python3
----
-tags: [output_scroll]
----
+:tags: [output_scroll]
 emptyset = [None for i in range(30)]
 emptyset
 ```
@@ -304,9 +296,7 @@ Um ein Element ``k`` hinzuzufügen müssen wir
 2. und es hinzufügen.
 
 ```{code-cell} python3
----
-tags: [output_scroll]
----
+:tags: [output_scroll]
 myset = [None for i in range(30)]
 k = 122
 index = k - 100

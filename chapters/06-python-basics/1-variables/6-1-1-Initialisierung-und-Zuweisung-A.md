@@ -47,9 +47,7 @@ Es repräsentiert lediglich das Nichts.
 Versuchen wir eine *Variable* zu verarbeiten, die noch nicht initialisiert wurde, so erhalten wir einen Fehler:
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 v + 20
 ```
 

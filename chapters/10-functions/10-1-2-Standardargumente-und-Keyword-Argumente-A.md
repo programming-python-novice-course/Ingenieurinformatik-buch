@@ -32,9 +32,7 @@ Die Funktion ``lrange()`` verhält sich wie ``range()``, jedoch gibt Sie eine Li
 Ohne Standardargumente können wir die Funktion jedoch nicht mit nur einem Argument aufrufen.
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 lrange(10)
 ```
 
@@ -46,9 +44,7 @@ Dabei müssen alle Parameter mit Standardargumenten **hinten stehen!**
 Folgender Code wird ebenfalls zu einem Fehler führen:
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 def lrange(start=0, stop, step=1):
     numbers = list(range(start, stop, step))
     return numbers

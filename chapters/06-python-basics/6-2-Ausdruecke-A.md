@@ -44,9 +44,7 @@ Zum Beispiel ist folgender *Ausdruck* fehlerhaft, da er nicht durch die *Grammat
 Man sagt auch, dass die Sprache, welche durch die Grammatik definiert ist, den folgenden Ausdruck nicht enthält.
 
 ```{code-cell} python3
----
-tags: [raises-exception]
----
+:tags: [raises-exception]
 3 * * 5
 ```
 
