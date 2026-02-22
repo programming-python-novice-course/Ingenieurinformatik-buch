@@ -48,7 +48,9 @@ Jedes Objekt einer bestimmten Klasse beinhaltet andere Werte, doch sind die Meth
 Eine *Klasse* ist eine Definition eines [zusammengesetzten Datentyps](sec-datastructures) angereichert mit *Methoden*, die auf dem Datentyp ausgeführt werden sollen.
 Sie ist ein Codeblock der mit dem `class`-Ausdruck beginnt:
 
-```python
+```{code-cell} python3
+:tags: [skip-execution]
+
 class ClassName(Superclass):
     def __init__(self, arguments):
         # define or assign object attributes

@@ -15,7 +15,7 @@ Um einer *Variablen* "keinen" Wert zuzuweisen gibt es das Signalwort ``None``.
 Dies [repräsentiert](sec-representation) "keinen Wert" bzw. das Nichts.
 Dennoch besitzt die *Variable* einen Wert, eben den Wert ``None``.
 
-```{code-cell} ipython3
+```{code-cell} python3
 z = 0
 z + 20
 z = None
@@ -24,7 +24,7 @@ z
 
 Die Ausgabemechanik des Notebooks ignoriert ``None``, jedoch können wir die *Variable* in eine Zeichenkette umwandeln und dann ausgeben:
 
-```{code-cell} ipython3
+```{code-cell} python3
 z = None
 print(id(z))
 print(z)

@@ -31,6 +31,8 @@ Pseudocode steht zwischen der natürlichen Sprache und einer Programmiersprache:
 
 Schreiben Sie Pseudocode für den euklidischen Algorithmus zur Berechnung des größten gemeinsamen Teilers $\mathrm{ggT}(a,b)$.
 
-
 ```
 
+```{code-cell} python3
+#todo solve exercise here
+```

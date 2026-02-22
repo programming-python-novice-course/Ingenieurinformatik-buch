@@ -53,3 +53,7 @@ name: fig-paufgaben-icao-beispielausgabe
 ---
 Beispielausgabe im Terminal.
 ```
+
+```{code-cell} python3
+#todo solve exercise here
+```

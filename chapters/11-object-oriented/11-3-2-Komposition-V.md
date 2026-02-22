@@ -35,14 +35,12 @@ Oftmals ist es besser die *Komposition* der *Vererbung* vorzuziehen.
 *Komposition* bedeutet, dass wir eine Klasse definieren, die als Attribute weitere komplexere Klassen beinhaltet.
 So könnten wir uns als Klasse ein Auto vorstellen, welches aus den Attributen Rad, Motor, usw. besteht. 
 
-```python
+```{code-cell} python3
 class Car():
     def __init__(self, wheel, engine):
         self.wheel = wheel
         self.engine = engine
-        ...
 
-    ...
 ```
 
 Rad und Motor könnten Klassen sein, die mit Funktionalität ausgestattet sind.

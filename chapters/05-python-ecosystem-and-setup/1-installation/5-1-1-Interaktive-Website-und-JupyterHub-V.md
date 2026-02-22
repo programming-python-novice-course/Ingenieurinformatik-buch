@@ -18,7 +18,7 @@ Wenn Sie später lokal arbeiten, unterscheidet sich vor allem eines: Sie müssen
 
 Wenn Sie wissen möchten, welche Python-Version und welche Pakete dort installiert sind, können Sie das in Python abfragen:
 
-```python
+```{code-cell} python3
 import sys
 
 print("Python-Version:", sys.version)

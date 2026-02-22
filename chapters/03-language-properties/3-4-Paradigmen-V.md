@@ -42,23 +42,22 @@ Für dieselbe Aufgabe gibt es daher oft mehrere „richtige“ Implementierungen
 
 **Beispiel: Quadrat einer Zahl berechnen**
 
-```python
-def quadrat_strukturiert(x: int) -> int:
+```{code-cell} python3
+def quadrat_strukturiert(x):
     return x * x
 
 quadrat_funktional = lambda x: x * x
 
 class QuadratRechner:
-    def __init__(self, x: int):
+    def __init__(self, x):
         self.x = x
 
     def berechne(self) -> int:
         return self.x * self.x
 
-if __name__ == "__main__":
-    print(quadrat_strukturiert(5))        # 25
-    print(quadrat_funktional(5))          # 25
-    print(QuadratRechner(5).berechne())   # 25
+print(quadrat_strukturiert(5))        # 25
+print(quadrat_funktional(5))          # 25
+print(QuadratRechner(5).berechne())   # 25
 ```
 
 ```{admonition} Wichtig

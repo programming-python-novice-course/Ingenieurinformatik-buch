@@ -22,13 +22,13 @@ Zum Beispiel, ist [roboworld](https://github.com/BZoennchen/robo-world) ein Pake
 
 Um nur ein Teilmodul eines Pakets einzubinden, um es nutzbar zu machen, verwenden wir die ``.`` Dot-Notation:
 
-```python
+```{code-cell} python3
 import roboworld.world
 ```
 
 oder 
 
-```python
+```{code-cell} python3
 from roboworld import world
 ```
 

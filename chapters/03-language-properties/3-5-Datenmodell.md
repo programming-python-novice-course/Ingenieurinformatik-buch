@@ -83,7 +83,7 @@ Das obige Beispiel zeigt **Identität**: mehrere Namen können auf **dasselbe Ob
 - `==` prüft (typischerweise) **Wert/Gleichheit**.
 - `is` prüft **Identität** („ist es wirklich dasselbe Objekt?“).
 
-```{code-cell} ipython3
+```{code-cell} python3
 a = [1, 2, 3]
 b = a
 c = [1, 2, 3]

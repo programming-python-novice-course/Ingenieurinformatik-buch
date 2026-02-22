@@ -1,14 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 # Arbeitsmaterialien
 
 Entweder sind Sie gerade auf der interaktiven Website unterwegs oder Sie haben das Skript vor sich liegen. So oder so: Schritt 1 ist geschafft – Sie haben bereits mindestens einen Teil Ihrer Arbeitsmaterialien erfolgreich im Einsatz.

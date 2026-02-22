@@ -20,7 +20,7 @@ Eine *Funktion* ist ein benannter Codeblock, den Sie aufrufen können. Typischer
 
 Sehen Sie sich das folgende Beispiel an:
 
-```{code-cell} python
+```{code-cell} python3
 def addiere(a, b):
     return a + b  
 
@@ -51,7 +51,7 @@ Neben Python‑„object references“ gibt es in anderen Sprachen:
 
 ## Funktion mit Seiteneffekt (mutiert das Argument)
 
-```{code-cell} python
+```{code-cell} python3
 meine_liste = [1, 2, 3]  # Liste außerhalb der Funktion
 
 def erweitere_liste_mit_seiteneffekt(liste, element):
@@ -66,7 +66,7 @@ print("Originale Liste:", meine_liste)  # Ausgabe: [1, 2, 3, 4] - wurde verände
 
 ## Funktion ohne Seiteneffekt (arbeitet mit Kopie)
 
-```{code-cell} python
+```{code-cell} python3
 meine_liste = [1, 2, 3]  # Liste außerhalb der Funktion
 
 def erweitere_liste_ohne_seiteneffekt(liste, element):
@@ -94,7 +94,7 @@ Stellen Sie sich vor: Wir haben ein Haus (Objekt) in einer Stadt (Speicher). Jul
 
 **Wichtig an dieser Stelle:** Beide Zettel zeigen auf dasselbe Objekt (sie referenzieren auf dasselbe). Wenn Julia das Haus verändert, sieht Hannes die Änderung auch, weil beide auf dasselbe Objekt verweisen. Das ist genau das, was bei Python-Objekten passiert, wenn sie per Referenz übergeben werden.
 
-```{code-cell} python
+```{code-cell} python3
 # Analogie: Haus (Objekt) in der Stadt (Speicher)
 haus = {"stockwerke": 2, "farbe": "weiß"}  # Das Haus
 

@@ -51,7 +51,7 @@ Wenn Sie eine Bitbreite bewusst vorgeben wollen, passiert das in Python typische
 
 Beispiel mit `numpy` (feste Bitbreite + Überlauf):
 
-```{code-cell} python
+```{code-cell} python3
 import numpy as np
 
 # feste Bitbreite: 32-bit signed integer
