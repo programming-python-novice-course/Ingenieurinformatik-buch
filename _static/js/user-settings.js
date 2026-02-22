@@ -205,7 +205,19 @@
         window.__iiThebeAutoBootDone = true;
         return;
       }
+
+      // Avoid bootstrapping on pages without notebook launch targets.
+      refreshLaunchTargets();
+      const hasLaunchTarget = !!getPreferredLaunchHref();
+
       attempts += 1;
+      if (!hasLaunchTarget) {
+        if (attempts < maxAttempts) {
+          window.setTimeout(tryStart, stepMs);
+        }
+        return;
+      }
+
       const started = triggerLiveCode();
       if (started || isLiveCodeBootstrapped()) {
         window.__iiThebeAutoBootDone = true;
@@ -310,6 +322,22 @@
       panel.setAttribute("aria-hidden", open ? "false" : "true");
     });
 
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+      if (!root.classList.contains("ii-settings-open")) return;
+      if (root.contains(target)) return;
+      root.classList.remove("ii-settings-open");
+      panel.setAttribute("aria-hidden", "true");
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      if (!root.classList.contains("ii-settings-open")) return;
+      root.classList.remove("ii-settings-open");
+      panel.setAttribute("aria-hidden", "true");
+    });
+
     launchBtn.addEventListener("click", () => {
       refreshLaunchTargets();
       const href = getPreferredLaunchHref();
@@ -339,9 +367,7 @@
 
     if (liveBtn instanceof HTMLButtonElement) {
       const manual = STATE.settings.liveCodeMode === "manual";
-      const hasExecutableCells = hasExecutableCodeCells();
-      // Use launch-target presence as robust fallback signal for executable notebook pages.
-      const showLiveBtn = manual && (hasExecutableCells || hasLaunchTarget);
+      const showLiveBtn = manual && hasLaunchTarget;
       liveBtn.style.display = showLiveBtn ? "" : "none";
       liveBtn.disabled = !showLiveBtn;
       liveBtn.title = showLiveBtn ? "Starte Live Code auf dieser Seite" : "Kein Live Code auf dieser Seite";
