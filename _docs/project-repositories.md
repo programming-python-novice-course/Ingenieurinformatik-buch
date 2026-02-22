@@ -21,7 +21,7 @@ Zweck:
 Wichtige Branches:
 
 - `master`: Quelle für JupyterHub-Links (siehe `_static/js/hub-link-rewrite.js`)
-- `binder-minimal`: schlanke Basis für Thebe/Binder (siehe `scripts/patch_thebe_html.py`)
+- `binder-minimal`: schlanke Basis für Thebe/Binder (siehe `_scripts/patch_thebe_html.py`)
 
 ## 3) Download-Repository (PDFs)
 

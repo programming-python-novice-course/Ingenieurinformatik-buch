@@ -24,7 +24,7 @@ Hinweis: Diese Einstellung betrifft die sichtbaren Repository-Links (z. B. "Quel
 
 Das Repository, das in die finalen Thebe-Binder-Optionen geschrieben wird, wird im Build-Postprocessing gesetzt:
 
-- Datei: `scripts/patch_thebe_html.py`
+- Datei: `_scripts/patch_thebe_html.py`
 - Argumente:
   - `--repo`
   - `--ref`
@@ -73,6 +73,6 @@ Wirkung:
 Die finale Thebe-Konfiguration in den HTML-Seiten entsteht in zwei Schritten:
 
 1. `jupyter-book build ...`
-2. `python3 scripts/patch_thebe_html.py --path-output <output_dir>`
+2. `python3 _scripts/patch_thebe_html.py --path-output <output_dir>`
 
 In der CI ist Schritt 2 bereits im Job `build_website_html` hinterlegt (`.gitlab-ci.yml`).

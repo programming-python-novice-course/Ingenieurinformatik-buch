@@ -2,8 +2,8 @@
 """Patch Jupyter Book HTML Thebe config for GitLab Binder usage.
 
 Usage:
-  python3 scripts/patch_thebe_html.py --path-output _website11
-  python3 scripts/patch_thebe_html.py --html-dir _website11/_build/html
+  python3 _scripts/patch_thebe_html.py --path-output _website11
+  python3 _scripts/patch_thebe_html.py --html-dir _website11/_build/html
 """
 
 from __future__ import annotations

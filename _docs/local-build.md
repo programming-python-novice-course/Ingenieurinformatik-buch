@@ -26,7 +26,7 @@ Im Container:
 ```bash
 rm -rf _build _website_html
 jupyter-book build . --path-output _website_html --verbose
-python3 scripts/patch_thebe_html.py --path-output _website_html
+python3 _scripts/patch_thebe_html.py --path-output _website_html
 ```
 
 ## PDF bauen

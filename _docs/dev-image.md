@@ -4,10 +4,10 @@ Die CI (und empfohlene lokale Builds) verwenden das dev-image (Docker-Image) aus
 
 - `gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest`
 
-Quellen dafür liegen im Ordner `dev-image/`:
+Quellen dafür liegen im Ordner `_dev-image/`:
 
-- `dev-image/Dockerfile`
-- `dev-image/doc-requirements.txt`
+- `_dev-image/Dockerfile`
+- `_dev-image/doc-requirements.txt`
 
 ## Bauen & Pushen (Buildx, linux/amd64)
 
@@ -18,13 +18,13 @@ TAG="$(date +%F)" # YYYY-MM-DD
 # falls nötig:
 docker login gitlab.lrz.de:5005
 
-# Wichtig: Build-Kontext ist der Ordner `dev-image/`, da dort `doc-requirements.txt` liegt.
+# Wichtig: Build-Kontext ist der Ordner `_dev-image/`, da dort `doc-requirements.txt` liegt.
 docker buildx build --platform linux/amd64 \
-  -f dev-image/Dockerfile \
+  -f _dev-image/Dockerfile \
   -t "${REGISTRY_IMAGE}:${TAG}" \
   -t "${REGISTRY_IMAGE}:latest" \
   --push \
-  dev-image
+  _dev-image
 ```
 
 ## Hinweise

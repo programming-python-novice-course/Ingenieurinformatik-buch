@@ -8,7 +8,7 @@ Die CI wird über `.gitlab-ci.yml` gesteuert und verwendet als Build-Umgebung:
 
 - **`build_website_html`** (Stage `build`)
   - Baut die HTML-Website mit Jupyter Book.
-  - Post-Processing: `scripts/patch_thebe_html.py` (Thebe/Binder-Optionen in HTML patchen, doppelte Script-Tags entfernen).
+  - Post-Processing: `_scripts/patch_thebe_html.py` (Thebe/Binder-Optionen in HTML patchen, doppelte Script-Tags entfernen).
   - Artefakt: `"_website_html/_build"`
 
 - **`build_book_pdf`** (Stage `build`)
