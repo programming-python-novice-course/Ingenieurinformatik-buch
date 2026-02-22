@@ -45,16 +45,15 @@ Im Gegensatz zum Live Code hat nicht jede Zelle einen eigenen „Run“-Button. 
 
 ## Wie startet man das Notebook?
 
-Sie starten das *Jupyter-Notebook* über den Jupyter-Notebook-Button. 
-
-- Sie werden automatisch an den DataHub der Hochschule München weitergeleitet.
+- Sie starten das *Jupyter-Notebook* über den Jupyter-Notebook-Button. 
+- Sie werden automatisch an den DataHub der Hochschule München weitergeleitet, wo Sie das zur aktuellen Website passende Notebook finden.
 
 
 ```{figure} ../../figs/01-course-overview/jupyterhub/notebook-button.png
 ---
 width: 800px
 ---
-Externe Interessierte können mybinder.org zum Ausführen der Notebooks nutzen. 
+Starten eines Jupyter-Notebooks
 ```
 
 Für externe Interessierte besteht die Möglichkeit die Jupyter-Notebooks auf dem BinderHub von mybinder.org auszuführen. Hierfür kann in den Einstellungen "Binder" ausgewählt werden.
@@ -63,7 +62,7 @@ Für externe Interessierte besteht die Möglichkeit die Jupyter-Notebooks auf de
 ---
 width: 800px
 ---
-
+Externe Interessierte können mybinder.org zum Ausführen der Notebooks nutzen. 
 ```
 
 
