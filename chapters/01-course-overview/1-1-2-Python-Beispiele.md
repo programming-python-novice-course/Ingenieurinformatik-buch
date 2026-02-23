@@ -12,26 +12,6 @@ kernelspec:
 
 # Python-Beispiele
 
-Am besten testen Sie den Live-Code gleich selbst aus: Aktivieren Sie „Live Code“ über den Button und klicken Sie anschließend auf „Run“.
-
-
-```{code-cell} python3
-:tags: [skip-execution]
-
-myname = "Christina"
-print("hello")
-print(myname)
-```
-Das ist nicht Ihr Name? Dann ändern Sie den Namen einfach ab und führen erneut „Run“ aus.
-
-```{admonition} Mini-Aufgabe
-:label: namechange
-
-- Ändern Sie `myname` und führen Sie die Zelle erneut aus.
-- Fügen Sie eine weitere Zeile `print(...)` hinzu (z. B. Ihren Studiengang oder ein Emoji als Text) und beobachten Sie den Unterschied.
-- Bonus: Machen Sie absichtlich einen kleinen Tippfehler und beheben Sie ihn wieder – Fehlermeldungen sind hier Teil des Lernens.
-```
-
 Wie der Live-Code funktioniert und warum man auf einer Website überhaupt Python-Code ausführen kann, ist technisch ziemlich aufwändig in der Umsetzung. 
 
 Wichtig für Sie ist, was Sie auf der Website konkret tun können: 
