@@ -32,8 +32,8 @@ Das Diagramm zeigt zwei getrennte Konzepte:
 
 | Variante | Anbieter | Runtime-dependencies Definition | Image build Vorgang | Zugang zu image | Notebooks |
 |---|---|---|---|---|---|
-| **Live Code** | mybinder.org | Deployment-Repo (Branch: `binder-minimal`) | mybinder baut Image basierend auf Definition (oder Cache) | nicht direkt von euch gebaut/verwaltet; mybinder.org betreibt/verwaltet | keine Notebooks notwendig (läuft unabhängig von Notebooks) |
-| **JupyterHub über mybinder.org** | mybinder.org | Deployment-Repo (Branch: `master`, Ordner/Definition z. B. „docker“) | mybinder baut Image basierend auf Definition (oder Cache) | nicht direkt von euch gebaut/verwaltet; mybinder.org betreibt/verwaltet | Notebooks aus Deployment-Repo (Branch: `master`, Ordner: `deployed_notebooks`) |
+| **Live Code** | mybinder.org | Deployment-Repo (Branch: `binder-minimal`) | mybinder baut Image basierend auf Definition (oder Cache) | nicht direkt von uns gebaut/verwaltet; mybinder.org betreibt/verwaltet | keine Notebooks notwendig (läuft unabhängig von Notebooks) |
+| **JupyterHub über mybinder.org** | mybinder.org | Deployment-Repo (Branch: `master`, Ordner/Definition z. B. „docker“) | mybinder baut Image basierend auf Definition (oder Cache) | nicht direkt von uns gebaut/verwaltet; mybinder.org betreibt/verwaltet | Notebooks aus Deployment-Repo (Branch: `master`, Ordner: `deployed_notebooks`) |
 | **JupyterHub der Hochschule München (Datahub)** | HM | Definition von der HM verwaltet (kein Zugriff) | manueller Build neuer Images auf Anfrage möglich | Bereitstellung erfolgt über HM | Notebooks aus Deployment-Repo (Branch: `master`, Ordner: `deployed_notebooks`); Ordner „docker“ im `master` wird ignoriert |
 
 ## Branch-Strategie und Sicherheits-/Betriebsgründe
