@@ -1,7 +1,7 @@
 ## Version 2.6.3 - 2026-02-24
 
 ### Changed
-- Removed the visual separator line between content and footer via footer border override in `/_static/theme-overwrite.css`.
+- Adjust the positition of the visual separator line between content and footer via footer border override in `/_static/theme-overwrite.css`.
 
 
 ## Version 2.6.2 - 2026-02-24

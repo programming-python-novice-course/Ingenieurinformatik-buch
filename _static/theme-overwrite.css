@@ -325,12 +325,29 @@
 }
 
 /* Keep footer content (logo/text) above the FAB overlay zone across theme variants. */
-footer,
 .bd-footer,
+.bd-footer-article,
+.bd-footer-content,
+footer,
 .footer {
   border-top: 0 !important;
-  padding-top: 0 !important;
+  box-shadow: none !important;
+}
+
+.bd-footer::before,
+.bd-footer-article::before,
+.bd-footer-content::before,
+footer::before,
+.footer::before {
+  content: none !important;
+}
+
+.bd-footer,
+footer,
+.footer {
+  padding-top: 1.2rem !important;
   padding-bottom: calc(var(--ii-fab-overlay-safezone) + env(safe-area-inset-bottom, 0px));
+  border-bottom: 1px solid var(--pst-color-border, #d9dde4) !important;
 }
 
 @media (max-width: 768px) {
