@@ -1,3 +1,6 @@
+[![Latest Release](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/badges/release.svg)](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/releases)
+[![pipeline status](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/badges/master/pipeline.svg)](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/commits/master)
+
 # Ingenieurinformatik 1 – Programmieren (Python)
 
 Dieses Repository bildet die Grundlage der interaktiven Lern-Website zur Veranstaltung *Ingenieurinformatik 1 – Programmieren (Python)*:  
