@@ -1,9 +1,17 @@
-## Version 2.6.2 - 2026-02-2024
+## Version 2.6.3 - 2026-02-24
 
-- Extend documenation:
-  - Add interface/dependency description
+### Changed
+- Removed the visual separator line between content and footer via footer border override in `/_static/theme-overwrite.css`.
 
-## Version 2.6.1 - 2026-02-2024
+
+## Version 2.6.2 - 2026-02-24
+
+### Changed
+- Extended documentation with architecture/interface dependency details.
+  - Added `/_docs/architecture.md`.
+  - Added `/_docs/figs/architecture.png`.
+
+## Version 2.6.1 - 2026-02-24
 
 ### Changed
 - minor: Updated wording in `intro.md` ("Kofferraum packen").
