@@ -44,7 +44,7 @@ name: journey
   Jetzt üben wir das Fahren: Sie schreiben Schritt für Schritt eigene Programme und lernen typische Abläufe und Regeln der Programmierpraxis. Das ist der Schwerpunkt der Veranstaltung.
 
 - **Teil 4: Anwendungsfall** (ca. 10% der Modulinhalte)\
-  Zum Abschluss machen wir eine komplette „Fahrt“: Wir planen die Route, packen den Kofferraum und fahren los. Dabei sehen Sie den gesamten Prozess am Stück und lernen, wie man in der Praxis strukturiert vorgeht.
+  Zum Abschluss machen wir eine komplette „Fahrt“: Wir planen die Route, packen den Koffer und fahren los. Dabei sehen Sie den gesamten Prozess am Stück und lernen, wie man in der Praxis strukturiert vorgeht.
 
 
 **Wie starten Sie?** 

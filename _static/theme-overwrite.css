@@ -313,3 +313,27 @@
   font-size: 0.72rem;
   opacity: 0.8;
 }
+
+/* --------------------------------------------------
+   Overlay Safe Zone for fixed FABs
+   -------------------------------------------------- */
+
+:root {
+  --ii-fab-overlay-safezone-desktop: 5rem;
+  --ii-fab-overlay-safezone-mobile: 7rem;
+  --ii-fab-overlay-safezone: var(--ii-fab-overlay-safezone-desktop);
+}
+
+/* Keep footer content (logo/text) above the FAB overlay zone across theme variants. */
+footer,
+.bd-footer,
+.footer {
+  padding-top: 0 !important;
+  padding-bottom: calc(var(--ii-fab-overlay-safezone) + env(safe-area-inset-bottom, 0px));
+}
+
+@media (max-width: 768px) {
+  :root {
+    --ii-fab-overlay-safezone: var(--ii-fab-overlay-safezone-mobile);
+  }
+}

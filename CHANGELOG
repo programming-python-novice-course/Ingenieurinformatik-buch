@@ -1,3 +1,11 @@
+## Version 2.6.1 - 2026-02-2024
+
+### Changed
+- minor: Updated wording in `intro.md` ("Kofferraum packen").
+- minor: Updated wording in `chapters/01-course-overview/1-1-Arbeitsmaterialien.md`.
+- Removed duplicate images from the repository root.
+- Added footer bottom padding to prevent overlap between the HM logo/footer content and fixed action buttons.
+
 ## Version 2.6 - 2026-02-22
 
 ### Changed
