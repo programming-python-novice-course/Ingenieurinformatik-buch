@@ -5,6 +5,7 @@ Sie sind **nicht** Teil der Jupyter-Book-Website.
 
 ## Inhalte
 
+- **Systemarchitektur (Übersicht & Laufzeitpfade)**: [`architecture.md`](./architecture.md)
 - **Repository- & Launch-Konfiguration**: [`repository-configuration.md`](./repository-configuration.md)
 - **Lokal bauen (HTML/PDF) via dev-image**: [`local-build.md`](./local-build.md)
 - **CI/CD (Jobs, Trigger, Artefakte, Deployments)**: [`ci-cd.md`](./ci-cd.md)
