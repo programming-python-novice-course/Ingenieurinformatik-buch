@@ -1,6 +1,12 @@
 ## Version 2.6.3 - 2026-02-24
 
 ### Changed
+- fix broken link to contributions page in html footer
+- Add `CONTRIBUTING.md` with reference to `chapters/misc/13-Beitraege.md` as single source of truth for repository, book script, and website contributions.
+
+## Version 2.6.3 - 2026-02-24
+
+### Changed
 - Adjust the positition of the visual separator line between content and footer via footer border override in `/_static/theme-overwrite.css`.
 
 
