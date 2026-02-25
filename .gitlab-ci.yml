@@ -268,8 +268,7 @@ update_website_test:
   stage: deploy
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-      when: manual
-      allow_failure: true
+      when: on_success
     - when: never
   needs:
     - job: build_website_html
