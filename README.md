@@ -34,7 +34,7 @@ This project serves different needs.
 
 Large language models change how people write code and how they learn programming. This course uses them as learning support, but it does not outsource understanding to them. We distinguish conceptual knowledge from language-specific practice to keep the course goals transparent and durable.
 
-More details are in the course chapter: [Learning programming in the age of large language models](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/chapters/01-course-overview/40-learningLLM.html)
+More details are in the course chapter: [Learning programming in the age of large language models](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/chapters/01-course-overview/1-4-Programmieren-lernen-in-Zeiten-von-LLMs.html)
 
 - The course concept distinguishes competencies that can be automated by large language models from those that cannot. This transparency helps students steer their learning and builds trust and motivation.
 - The barrier to entry is intentionally low. Learners use interactive code cells and Jupyter notebooks in the cloud, so no local installation is required.
