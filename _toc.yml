@@ -1,5 +1,5 @@
 format: jb-book
-root: chapters/00-intro
+root: intro
 parts:
   - caption: Übersicht
     numbered: True
