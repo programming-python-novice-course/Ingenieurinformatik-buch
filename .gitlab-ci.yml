@@ -242,7 +242,7 @@ deploy_notebooks_in_gitlabLRZ:
     - |
       VERSION="$(awk -F: '/^[[:space:]]*release:[[:space:]]*/{gsub(/"/,"",$2); gsub(/^[[:space:]]+|[[:space:]]+$/,"",$2); print $2; exit}' ../_config.yml)" && [ -n "$VERSION" ] || VERSION="unknown"
     - |
-      printf "%s\n" "Diese notebooks wurden automatisiert erzeugt. Der dazugehörige commit ist: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/commit/${CI_COMMIT_SHA} (Release: ${VERSION})" > "$TARGET_DIR/Version.md"
+      printf "%s\n" "These notebooks were generated automatically. Source commit: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/commit/${CI_COMMIT_SHA} (Release: ${VERSION})" > "$TARGET_DIR/Version.md"
     - git add -A
     - git -c user.name="gitlab-ci" -c user.email="gitlab-ci@localhost" commit -m "Update executed notebooks from ${CI_PROJECT_PATH}@${CI_COMMIT_SHA}"
     - echo "Pushing to GitLab..."

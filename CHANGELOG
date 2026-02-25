@@ -1,7 +1,15 @@
 ## Version 2.6.5 - 2026-02-25
 ### Changed
 - Clean repo:
-  - move intro into chapters to seperate book contents clearly from repo contents
+  - move intro into chapters to separate book contents clearly from repository infrastructure
+  - translate and restructure repository-facing documentation to English:
+    - update `README.md` (clear target audiences by needs, add course concept USP, emphasize Jupyter notebooks and interactive execution, keep it concise)
+    - update `CONTRIBUTING.md` (English, keep `chapters/misc/13-Beitraege.md` as single source of truth)
+    - update `_docs/*` (English, remove duplication, add consistent cross-links, and split entry points for maintainers vs book developers)
+  - translate remaining German maintainer-facing technical strings:
+    - `.gitlab-ci.yml` (notebook deployment `Version.md` message)
+    - `_config.yml` (technical section headers/comments; keep book/PDF-visible text in German)
+
 ## Version 2.6.4 - 2026-02-24
 
 ### Changed

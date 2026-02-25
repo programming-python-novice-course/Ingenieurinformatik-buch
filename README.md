@@ -1,78 +1,62 @@
 [![Latest Release](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/badges/release.svg)](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/releases)
 [![pipeline status](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/badges/master/pipeline.svg)](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/commits/master)
 
-# Ingenieurinformatik 1 – Programmieren (Python)
+# Open educational resources for Python programming in non-computer-science degree programs
 
-Dieses Repository bildet die Grundlage der interaktiven Lern-Website zur Veranstaltung *Ingenieurinformatik 1 – Programmieren (Python)*:  
--> [Zur Website](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)
+This repository contains Jupyter notebooks and Markdown sources for an introductory Python programming course. Jupyter Book builds these sources into an interactive course website and a book script in Portable Document Format (PDF). The repository also contains configuration and automation for building and deploying these artifacts.
 
-Ziel ist es, Studierenden einen praxisnahen und einfachen Zugang zum Programmieren zu ermöglichen.  
+The materials are designed for students outside of computer science, for example in mechanical engineering degree programs where programming is a supporting subject.
 
-Die Lern-Website ist interaktiv gestaltet, d.h. Studierende können die in der Vorlesung gezeigten Beispiele **direkt ausführen und experimentell erkunden**. 
+The project was originally developed for first-semester students at Munich University of Applied Sciences. It is used in Faculty 03 (Mechanical, Automotive and Aeronautical Engineering) for the course *Ingenieurinformatik 1 – Programmieren (Python)*.
 
-![Überblick](./_docs/figs/README-pic.png)
+Most course content is written in German because the course language is German. In particular, `chapters/`, `figs/`, and `bibliography/` contain the German-language teaching materials.
 
-## Vorteile für Studierende
+## Quick start
 
-Der Einstieg ist bewusst niedrigschwellig gestaltet: 
+![Overview screenshot](./_docs/figs/README-pic.png)
 
-- Python-Code kann **ohne lokale Installation direkt im Browser** ausgeführt werden. 
-- Das Ziel ist das aktive Lernen zu fördern: Studierende können Beispiele direkt selbst nachvollziehen, Varianten ausprobieren und Auswirkungen unmittelbar beobachten.
+- Website: [ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)
+- Current PDF script: [`Skript-aktuell.pdf`](https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-download/-/blob/main/Downloads/Skript-aktuell.pdf)
 
-Über den JupyterHub der Hochschule München besteht zudem die Möglichkeit, eigene Anpassungen an den Code-Beispielen zu speichern und später weiterzubearbeiten. Damit wird ein kontinuierliches, semesterbegleitendes Arbeiten unterstützt.
+The website is built around Jupyter notebooks. Code cells can be executed in the browser by connecting to a Jupyter runtime. The project supports launches through services such as Binder and the [JupyterHub of Munich University of Applied Sciences](https://datahub.cs.hm.edu).
 
-Alle Inhalte sind zusätzlich als [PDF-Skript](https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-download/-/blob/main/Downloads/Skript-aktuell.pdf) verfügbar, das sich zum Nacharbeiten, Markieren und Wiederholen eignet.
+## Target audience
 
-Inhaltlich liegt der Schwerpunkt auf grundlegenden Programmierkompetenzen, die **über Python hinaus** relevant sind und sich auf andere Programmiersprachen übertragen lassen. 
-Dazu zählen unter anderem:
+This project serves different needs.
 
-- das strukturierte Entwickeln von Algorithmen, 
-- der bewusste Umgang mit Syntax und Semantik, 
-- systematisches Vorgehen (Debugging, Testing),
-- sowie das Lesen, Verstehen und Bewerten von bestehendem Code.
-
-## Programmieren lernen in Zeiten von LLMs
-
-Large Language Models verändern nicht nur das Vorgehen beim Programmieren, sondern auch das Erlernen von Programmiertechniken und -sprachen.
-
-Im Kurs werden KI-Werkzeuge als **Lernunterstützung** eingesetzt, um z. B. Lösungsansätze zu reflektieren. Ziel ist es, methodische Kompetenz und Verständnis aufzubauen – nicht (!) automatisch Code zu erzeugen.
+- Educators who want to use the materials can use the published website and the PDF script.
+- Educators who want to adapt content or publish their own version can use this repository and the connected deployment and download repositories as a starting point. For build and maintenance documentation, see [`_docs/README.md`](./_docs/README.md).
+- Students typically use the published website and optionally the PDF script.
 
 
-Dass KI beim Erlernen von Programmiertechniken hilfreich sein kann, ist inzwischen auch wissenschaftlich belegt: Bassner et al. (2025, [doi:10.1016/j.caeai.2025.100537](https://doi.org/10.1016/j.caeai.2025.100537)) zeigen anhand universitärer Lehrveranstaltungen, dass der Einsatz von KI als Lerncoach die benötigte Lernzeit reduzieren kann – bei vergleichbarem Lernerfolg.
 
-Wir kennzeichnen Kursinhalte danach, ob sie konzeptionelles Wissen (derzeit nur schwer mit LLMs automatisierbar) oder die Anwendung der Programmiersprache (gut automatisierbar) betreffen. Diese Transparenz soll helfen, den Stellenwert der Inhalte einzuordnen und Akzeptanz dafür zu schaffen, warum es auch in Zeiten von LLMs sinnvoll bleibt, Programmieren zu lernen. Wenn klar ist, dass das Gelernte nachhaltig ist, steigt oft auch die Motivation beim Lernen.
+## Course concept and unique features
 
-Damit wollen wir das Wesentliche in den Fokus rücken: Systemverständnis und systematisches Vorgehen und weniger Sprachgrammatik. Weiterführende Informationen finden sich im Kurskapitel:  
-[Programmieren lernen in Zeiten von LLMs](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/chapters/01-course-overview/40-learningLLM.html)
+Large language models change how people write code and how they learn programming. This course uses them as learning support, but it does not outsource understanding to them. We distinguish conceptual knowledge from language-specific practice to keep the course goals transparent and durable.
+
+More details are in the course chapter: [Learning programming in the age of large language models](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/chapters/01-course-overview/40-learningLLM.html)
+
+- The course concept distinguishes competencies that can be automated by large language models from those that cannot. This transparency helps students steer their learning and builds trust and motivation.
+- The barrier to entry is intentionally low. Learners use interactive code cells and Jupyter notebooks in the cloud, so no local installation is required.
+- The course focuses on core programming competencies that engineers need, including implementing and testing algorithms.
+
+## License
+
+The repository contents, the published website, and the PDF book script are licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). See [`LICENSE`](./LICENSE).
+We want to make knowledge freely accessible. We chose this license to encourage reuse, adaptation, and sharing of improvements. The license also permits use in commercial settings under the specified conditions.
+
+## Deployment overview
+
+- The website is published via GitLab Pages from this repository.
+- Executed notebooks are deployed to a separate repository for notebook launches.
+- PDF files are deployed to a separate downloads repository.
+- Details: [`_docs/project-repositories.md`](./_docs/project-repositories.md)
 
 
-## Für Beitragende
+## Contributing and feedback
 
-Das Repository ist auf kollaborative Weiterentwicklung ausgelegt und senkt bewusst die technischen Einstiegshürden:
-
-- **Bearbeitung im Browser**: Viele inhaltliche Änderungen (Text, Aufgaben, Beispiele) können direkt über die GitLab-Weboberfläche vorgenommen werden – ohne lokale Entwicklungsumgebung oder Softwareinstallation.
-- **Automatisierte Builds und Deployments**: GitLab CI übernimmt den Aufbau und die Veröffentlichung der Website. Lokale Builds sind optional und primär für Maintainer relevant.
-
-## Repository-Struktur (kurz)
-
-- `chapters/`, `figs/`, `bibliography/`: Inhalte des Buchs und der Website.
-- `_...`-Verzeichnisse (z. B. `_docs/`, `_scripts/`, `_static/`): technische Infrastruktur für Build, Ausführung und Dokumentation der Website.
-
-## Lizenz
-
-Sofern nicht anders angegeben, ist dieses Werk lizenziert unter der [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/). Siehe auch [`LICENSE`](./LICENSE).
+- Software documentation for maintainers and book developers: [`_docs/README.md`](./_docs/README.md)
+- Contributing: [`CONTRIBUTING.md`](./CONTRIBUTING.md)
+- Feedback and issues: [GitLab issues](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/issues)
 
 
-## Links
-
-- **Website (GitLab Pages)**:  
-  https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html  
-- **Feedback / Verbesserungsvorschläge**:  
-  https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/issues  
-- **Software-Dokumentation für Maintainer (Build / CI / Repositories)**:  
-  [`_docs/README.md`](./_docs/README.md)
-
-## Deployment
-
-- Deployment-Repository: Enthält die ausführbaren Artefakte -> link: https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz
-- Download-Repository : PDF-Downloads-> https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-download
