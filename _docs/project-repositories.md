@@ -1,34 +1,40 @@
-# Projekt-Repositories (Übersicht)
+# Project repositories (overview)
 
-Im Projekt werden mehrere Git-Repositories mit klar getrennten Rollen verwendet.
+This project uses multiple Git repositories with clearly separated responsibilities.
 
-## 1) Arbeits-Repository (dieses Repo)
+See also:
 
-Zweck:
+- System overview: [`architecture.md`](./architecture.md)
+- Where launch/repo config lives: [`repository-configuration.md`](./repository-configuration.md)
+- CI/CD overview: [`ci-cd.md`](./ci-cd.md)
 
-- Quellen für Website und Skript (Markdown, Notebooks, Abbildungen, Konfiguration).
-- CI baut daraus HTML (GitLab Pages) und PDFs.
+## 1) Source (working) repository (this repo)
 
-## 2) Deployment-Repository (ausführbare Inhalte)
+Purpose:
+
+- Source files for website and script (MyST/Markdown, notebooks, figures, configuration).
+- GitLab CI builds the HTML website (GitLab Pages) and the PDF(s).
+
+## 2) Deployment repository (executable artifacts)
 
 - Repo: `fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz`
 
-Zweck:
+Purpose:
 
-- Enthält **ausgeführte** Jupyter-Notebooks unter `deployed_notebooks/`.
-- Dient als Notebook-Quelle für JupyterHub-Launch-Links (git-pull) und als Basis für Binder/Thebe.
+- Stores **executed** Jupyter notebooks under `deployed_notebooks/`.
+- Serves as notebook source for JupyterHub launch links (via `git-pull`) and as the base repo for Binder/Thebe.
 
-Wichtige Branches:
+Important branches:
 
-- `master`: Quelle für JupyterHub-Links (siehe `_static/js/hub-link-rewrite.js`)
-- `binder-minimal`: schlanke Basis für Thebe/Binder (siehe `_scripts/patch_thebe_html.py`)
+- `master`: source for JupyterHub links (see `_static/js/hub-link-rewrite.js`)
+- `binder-minimal`: minimal base for Thebe/Binder (see `_scripts/patch_thebe_html.py`)
 
-## 3) Download-Repository (PDFs)
+## 3) Downloads repository (PDFs)
 
-- Repo: `fk03ingenieurinformatik/ingenieurinformatik-download` (Branch `main`)
+- Repo: `fk03ingenieurinformatik/ingenieurinformatik-download` (branch `main`)
 
-Zweck:
+Purpose:
 
-- Stabile Download-Quelle für PDFs.
-- Wird aus der CI befüllt (siehe `.gitlab-ci.yml`: `deploy_pdf_in_gitlabLRZ`, `deploy_print_pdf_in_gitlabLRZ`).
+- Stable download location for PDFs.
+- Populated by CI (see `.gitlab-ci.yml`: `deploy_pdf_in_gitlabLRZ`, `deploy_print_pdf_in_gitlabLRZ`).
 

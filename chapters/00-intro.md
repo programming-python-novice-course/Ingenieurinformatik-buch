@@ -24,7 +24,7 @@ Wir lernen das Programmieren anhand der **Programmiersprache Python**. Zur Orien
 Python ist das konkrete Auto (mit „Gangschaltung“) — Programmieren ist die Fähigkeit, damit sicher von A nach B zu kommen.
 
 
-```{figure} ./figs/00-general/landing-page.png
+```{figure} ../figs/00-general/landing-page.png
 ---
 width: 300px
 name: journey
@@ -56,7 +56,7 @@ Beginnen Sie mit der {ref}`Kursübersicht <uebersicht-sec>`. Alles, was Sie brau
 :class: hint
 Diese Veranstaltung zielt bewusst auf Programmier-Kompetenzen ab, die insbesondere im Zeitalter von KI relevant sind. 
 
-Mehr zum Kurskonzept: [Programmieren lernen in Zeiten von LLMs](chapters/01-course-overview/40-learningLLM).
+Mehr zum Kurskonzept: [Programmieren lernen in Zeiten von LLMs](./01-course-overview/1-4-Programmieren-lernen-in-Zeiten-von-LLMs).
 ```
 
 *Hinweis: Abbildungen wurden teilweise mithilfe generativer KI erstellt und dienen der Illustration.*

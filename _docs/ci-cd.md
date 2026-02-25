@@ -1,48 +1,53 @@
 # CI/CD (GitLab)
 
-Die CI wird über `.gitlab-ci.yml` gesteuert und verwendet als Build-Umgebung:
+CI is configured via `.gitlab-ci.yml` and uses the following build environment:
 
 - `image: gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest`
-- Der Container-basierte CI-Build wird erst **ab Repo-Version `v2`** unterstützt.
-- Standardmäßig verwendet die CI das Tag **`latest`**.
-- Für Versionen **`v2.*`** entspricht **`latest`** dem **v2-Container-Image** (siehe Container Registry: `https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/container_registry/11892`).
+- The container-based CI build is supported starting from **repo version `v2`**.
+- By default CI uses the **`latest`** tag.
+- For versions **`v2.*`**, **`latest`** refers to the **v2 container image** (see Container Registry: `https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/container_registry/11892`).
 
-## Build-Jobs
+See also:
+
+- Dev image details: [`dev-image.md`](./dev-image.md)
+- Project repository roles: [`project-repositories.md`](./project-repositories.md)
+
+## Build jobs
 
 - **`build_website_html`** (Stage `build`)
-  - Baut die HTML-Website mit Jupyter Book.
-  - Post-Processing: `_scripts/patch_thebe_html.py` (Thebe/Binder-Optionen in HTML patchen, doppelte Script-Tags entfernen).
-  - Artefakt: `"_website_html/_build"`
+  - Builds the HTML website with Jupyter Book.
+  - Post-processing: `_scripts/patch_thebe_html.py` (patch Thebe/Binder options into HTML, remove duplicate script tags).
+  - Artifact: `"_website_html/_build"`
 
 - **`build_book_pdf`** (Stage `build`)
-  - Baut das vollständige PDF (LaTeX/pdflatex).
-  - Auf `master`: automatisch, sonst manuell (allow_failure).
-  - Artefakte: PDF + Log unter `"_book_as_pdf/_build/latex/"`
+  - Builds the full PDF (LaTeX/pdflatex).
+  - On `master`: automatic, otherwise manual (allow_failure).
+  - Artifacts: PDF + log under `"_book_as_pdf/_build/latex/"`
 
 - **`build_book_pdf_print`** (Stage `build`)
-  - Baut eine reduzierte/print-freundliche PDF-Version (separates `_config_print.yml` / `_toc_print.yml`).
-  - Auf `master`: automatisch, sonst manuell (allow_failure).
+  - Builds a reduced/print-friendly PDF version (separate `_config_print.yml` / `_toc_print.yml`).
+  - On `master`: automatic, otherwise manual (allow_failure).
 
-## Deploy-Jobs
+## Deploy jobs
 
 - **`update_website`**
-  - Veröffentlicht GitLab Pages aus dem HTML-Artefakt.
-  - Läuft auf `master` automatisch.
+  - Publishes GitLab Pages from the HTML artifact.
+  - Runs automatically on `master`.
 
 - **`update_website_test`**
-  - Pages-Deploy für Nicht-`master` Branches.
-  - Manuell, mit `path_prefix: "test"`.
+  - Pages deploy for non-`master` branches.
+  - Manual, with `path_prefix: "test"`.
 
 - **`deploy_notebooks_in_gitlabLRZ`**
-  - Kopiert ausgeführte Notebooks aus `"_website_html/_build/jupyter_execute/chapters"` in das Deploy-Repo
-    `fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz` unter `deployed_notebooks/`.
+  - Copies executed notebooks from `"_website_html/_build/jupyter_execute/chapters"` into the deploy repo
+    `fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz` under `deployed_notebooks/`.
 
-- **`deploy_pdf_in_gitlabLRZ`** und **`deploy_print_pdf_in_gitlabLRZ`**
-  - Kopieren die PDFs in das Download-Repo `fk03ingenieurinformatik/ingenieurinformatik-download` (Branch `main`).
-  - Dateinamen beinhalten die Version aus `_config.yml` (`sphinx.config.release`), zusätzlich wird ein „aktuell“-Alias erzeugt.
+- **`deploy_pdf_in_gitlabLRZ`** and **`deploy_print_pdf_in_gitlabLRZ`**
+  - Copy PDFs into the downloads repo `fk03ingenieurinformatik/ingenieurinformatik-download` (branch `main`).
+  - Filenames include the version from `_config.yml` (`sphinx.config.release`); additionally a “current” alias is created (`Skript-aktuell.pdf` / `Skript-print-aktuell.pdf`).
 
-## Trigger / Regeln (kurz)
+## Triggers / rules (short)
 
-- Pipelines werden für Push/MR/Web angestoßen (siehe `workflow.rules` in `.gitlab-ci.yml`).
-- PDF-Jobs sind für Branches ≠ `master` in der Regel manuell.
+- Pipelines run for push/MR/web triggers (see `workflow.rules` in `.gitlab-ci.yml`).
+- PDF jobs are usually manual for branches ≠ `master`.
 
