@@ -131,8 +131,7 @@ deploy_pdf_in_gitlabLRZ:
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: on_success
-    - when: manual
-      allow_failure: true
+    - when: never
   needs:
     - job: build_book_pdf
       artifacts: true
@@ -171,8 +170,7 @@ deploy_print_pdf_in_gitlabLRZ:
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: on_success
-    - when: manual
-      allow_failure: true
+    - when: never
   needs:
     - job: build_book_pdf_print
       artifacts: true
@@ -218,8 +216,7 @@ deploy_notebooks_in_gitlabLRZ:
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: on_success
-    - when: manual
-      allow_failure: true
+    - when: never
   needs:
     - job: build_website_html
       artifacts: true
