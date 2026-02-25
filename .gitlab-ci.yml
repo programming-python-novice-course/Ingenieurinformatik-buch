@@ -131,8 +131,7 @@ deploy_pdf_in_gitlabLRZ:
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: on_success
-    - when: manual
-      allow_failure: true
+    - when: never
   needs:
     - job: build_book_pdf
       artifacts: true
@@ -171,8 +170,7 @@ deploy_print_pdf_in_gitlabLRZ:
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: on_success
-    - when: manual
-      allow_failure: true
+    - when: never
   needs:
     - job: build_book_pdf_print
       artifacts: true
@@ -218,8 +216,7 @@ deploy_notebooks_in_gitlabLRZ:
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: on_success
-    - when: manual
-      allow_failure: true
+    - when: never
   needs:
     - job: build_website_html
       artifacts: true
@@ -242,7 +239,7 @@ deploy_notebooks_in_gitlabLRZ:
     - |
       VERSION="$(awk -F: '/^[[:space:]]*release:[[:space:]]*/{gsub(/"/,"",$2); gsub(/^[[:space:]]+|[[:space:]]+$/,"",$2); print $2; exit}' ../_config.yml)" && [ -n "$VERSION" ] || VERSION="unknown"
     - |
-      printf "%s\n" "Diese notebooks wurden automatisiert erzeugt. Der dazugehörige commit ist: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/commit/${CI_COMMIT_SHA} (Release: ${VERSION})" > "$TARGET_DIR/Version.md"
+      printf "%s\n" "These notebooks were generated automatically. Source commit: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/commit/${CI_COMMIT_SHA} (Release: ${VERSION})" > "$TARGET_DIR/Version.md"
     - git add -A
     - git -c user.name="gitlab-ci" -c user.email="gitlab-ci@localhost" commit -m "Update executed notebooks from ${CI_PROJECT_PATH}@${CI_COMMIT_SHA}"
     - echo "Pushing to GitLab..."
@@ -271,8 +268,7 @@ update_website_test:
   stage: deploy
   rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
-      when: manual
-      allow_failure: true
+      when: on_success
     - when: never
   needs:
     - job: build_website_html

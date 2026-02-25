@@ -1,40 +1,45 @@
-# Software-Dokumentation: Repositories und Launch-Links
+# Repository & launch configuration
 
-Diese Datei beschreibt, wo im Projekt welche Repository-Einstellungen vorgenommen werden.
+This page documents **where** repository- and launch-related configuration lives in this project.
 
-## 1) Repository-Button auf der Website
+See also:
 
-Der Link hinter dem Repository-Button in der Website-Navigation wird in `_config.yml` gesetzt:
+- Project repository roles: [`project-repositories.md`](./project-repositories.md)
+- System overview: [`architecture.md`](./architecture.md)
 
-- Bereich: `repository`
-- Relevanter Key: `url`
-- Aktueller Ort: `_config.yml`
+## 1) Repository button in the website UI
 
-Beispiel:
+The link behind the repository button in the website navigation is configured in `_config.yml`:
+
+- Section: `repository`
+- Relevant key: `url`
+- Location: `_config.yml`
+
+Example:
 
 ```yaml
 repository:
-  # GitLab project *web* URL (ohne `.git`), damit Issues/Edit-Links korrekt sind.
+  # GitLab project *web* URL (no `.git`) so issue/edit links work correctly.
   url: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch
 ```
 
-Hinweis: Diese Einstellung betrifft die sichtbaren Repository-Links (z. B. "Quell-Repository").
+Note: this affects the visible repository links in the website UI.
 
-## 2) Minimal-Repository fuer BinderHub (Thebe-Backend)
+## 2) Minimal repository for BinderHub (Thebe backend)
 
-Das Repository, das in die finalen Thebe-Binder-Optionen geschrieben wird, wird im Build-Postprocessing gesetzt:
+The repository that is written into the final Thebe/Binder configuration is set during build post-processing:
 
-- Datei: `_scripts/patch_thebe_html.py`
-- Argumente:
+- File: `_scripts/patch_thebe_html.py`
+- Arguments:
   - `--repo`
   - `--ref`
   - `--binder-url`
-- Aktuelle Defaults:
+- Current defaults:
   - `repo`: `https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz.git`
   - `ref`: `binder-minimal`
   - `binder-url`: `https://mybinder.org`
 
-Beispiel aus dem Skript:
+Example from the script:
 
 ```python
 parser.add_argument("--repo", default="https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz.git")
@@ -42,18 +47,18 @@ parser.add_argument("--ref", default="binder-minimal")
 parser.add_argument("--binder-url", default="https://mybinder.org")
 ```
 
-Empfehlung: Fuer schnelles Starten sollte dieses Repo moeglichst klein gehalten werden (nur Binder-relevante Inhalte und noetige Laufzeitdateien).
+Recommendation: keep this repo as small as possible for fast startup (only Binder-relevant content and required runtime files).
 
-## 3) Repository fuer JupyterHub-Start (Notebook-Quelle)
+## 3) Repository for JupyterHub launch (notebook source)
 
-Das Repo fuer den JupyterHub `git-pull`-Link wird in folgendem JavaScript konfiguriert:
+The repository for the JupyterHub `git-pull` link is configured in the following JavaScript:
 
-- Datei: `_static/js/hub-link-rewrite.js`
-- Relevante Keys:
+- File: `_static/js/hub-link-rewrite.js`
+- Relevant keys:
   - `hubRepoUrl`
   - `branch`
 
-Beispiel:
+Example:
 
 ```js
 const TARGET = {
@@ -62,17 +67,17 @@ const TARGET = {
 };
 ```
 
-Wirkung:
+Effect:
 
-- `repo`-Query-Parameter im JupyterHub-Link wird auf `hubRepoUrl` gesetzt.
-- `branch`-Query-Parameter im JupyterHub-Link wird auf `branch` gesetzt.
-- `urlpath` wird auf ein `.ipynb` unter `deployed_notebooks/...` umgeschrieben.
+- The JupyterHub link’s `repo` query parameter is set to `hubRepoUrl`.
+- The JupyterHub link’s `branch` query parameter is set to `branch`.
+- `urlpath` is rewritten to point to a `.ipynb` under `deployed_notebooks/...`.
 
-## Build-Ablauf (wichtig)
+## Build flow (important)
 
-Die finale Thebe-Konfiguration in den HTML-Seiten entsteht in zwei Schritten:
+The final Thebe configuration in the HTML output is produced in two steps:
 
 1. `jupyter-book build ...`
 2. `python3 _scripts/patch_thebe_html.py --path-output <output_dir>`
 
-In der CI ist Schritt 2 bereits im Job `build_website_html` hinterlegt (`.gitlab-ci.yml`).
+In CI, step 2 is already included in the `build_website_html` job (`.gitlab-ci.yml`).

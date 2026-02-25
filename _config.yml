@@ -1,5 +1,5 @@
 # --------------------------------------------------
-# Basis-Metadaten
+# Basic metadata
 # --------------------------------------------------
 title: Ingenieurinformatik 1 - Programmieren (Python)
 logo: figs/00-general/logo-cardrive.png
@@ -16,7 +16,7 @@ exclude_patterns:
 only_build_toc_files: true
 
 # --------------------------------------------------
-# Notebook-Ausführung
+# Notebook execution
 # --------------------------------------------------
 execute:
   execute_notebooks: auto  # off
@@ -24,13 +24,13 @@ execute:
   timeout: 25
 
 # --------------------------------------------------
-# Literatur
+# Bibliography
 # --------------------------------------------------
 bibtex_bibfiles:
-  - references.bib
+  - bibliography/references.bib
 
 # --------------------------------------------------
-# PDF: behalte den funktionierenden Jupyter-Book-Wrapper
+# PDF: keep the working Jupyter Book wrapper
 # --------------------------------------------------
 latex:
   latex_documents:
@@ -48,7 +48,7 @@ sphinx:
 
   config:
     version: "2.6"
-    release: "2.6.4"
+    release: "2.6.5"
 
     myst_enable_extensions:
       - dollarmath
@@ -202,7 +202,7 @@ sphinx:
         \setlist[itemize]{label=\textbullet}
 
 # --------------------------------------------------
-# Repository / Edit-Buttons
+# Repository / edit buttons
 # --------------------------------------------------
 repository:
   # GitLab project *web* URL (no `.git` suffix); used for repository/issue/edit buttons.
@@ -211,7 +211,7 @@ repository:
   branch: master
 
 # --------------------------------------------------
-# Launch-Buttons
+# Launch buttons
 # --------------------------------------------------
 launch_buttons:
   binderhub_url: "https://mybinder.org"
@@ -220,7 +220,7 @@ launch_buttons:
   thebe: true
 
 # --------------------------------------------------
-# HTML Darstellung
+# HTML rendering
 # --------------------------------------------------
 html:
   navbar_number_sections: true
@@ -244,6 +244,6 @@ html:
       <div class="col1">
         Beiträge: <a href="/chapters/misc/13-Beitraege.html">alle anzeigen</a>.
         Lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer">CC BY-SA 4.0</a>.
-        Version 2.6.4
+        Version 2.6.5
       </div>
     </div>
