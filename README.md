@@ -10,7 +10,7 @@ Ziel ist es, Studierenden einen praxisnahen und einfachen Zugang zum Programmier
 
 Die Lern-Website ist interaktiv gestaltet, d.h. Studierende können die in der Vorlesung gezeigten Beispiele **direkt ausführen und experimentell erkunden**. 
 
-![Überblick](./README-pic.png)
+![Überblick](./_docs/figs/README-pic.png)
 
 ## Vorteile für Studierende
 
@@ -53,6 +53,11 @@ Das Repository ist auf kollaborative Weiterentwicklung ausgelegt und senkt bewus
 - **Bearbeitung im Browser**: Viele inhaltliche Änderungen (Text, Aufgaben, Beispiele) können direkt über die GitLab-Weboberfläche vorgenommen werden – ohne lokale Entwicklungsumgebung oder Softwareinstallation.
 - **Automatisierte Builds und Deployments**: GitLab CI übernimmt den Aufbau und die Veröffentlichung der Website. Lokale Builds sind optional und primär für Maintainer relevant.
 
+## Repository-Struktur (kurz)
+
+- `chapters/`, `figs/`, `bibliography/`: Inhalte des Buchs und der Website.
+- `_...`-Verzeichnisse (z. B. `_docs/`, `_scripts/`, `_static/`): technische Infrastruktur für Build, Ausführung und Dokumentation der Website.
+
 ## Lizenz
 
 Sofern nicht anders angegeben, ist dieses Werk lizenziert unter der [Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/). Siehe auch [`LICENSE`](./LICENSE).
@@ -66,3 +71,8 @@ Sofern nicht anders angegeben, ist dieses Werk lizenziert unter der [Creative Co
   https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/issues  
 - **Software-Dokumentation für Maintainer (Build / CI / Repositories)**:  
   [`_docs/README.md`](./_docs/README.md)
+
+## Deployment
+
+- Deployment-Repository: Enthält die ausführbaren Artefakte -> link: https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz
+- Download-Repository : PDF-Downloads-> https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-download

@@ -7,8 +7,8 @@
 Die Plattform besteht aus drei Git-Repositories mit klar getrennten Verantwortlichkeiten:
 
 - **Arbeits-Repository (`Ingenieurinformatik-buch`)**: Enthält die Quellen (MyST/Markdown, Konfiguration, Skripte, Assets) und baut per GitLab CI die Website sowie PDF-Artefakte. Zusätzlich werden aus den Quellen **ausgeführte Notebooks** erzeugt.
-- **Deployment-Repository (`ingenieurinformatik-buch-deploy-lrz`)**: Enthält die **ausführbaren Artefakte** (Notebooks und Runtime-Definitionen) für Binder/Thebe und Notebook-Workflows. Es wird automatisiert vom Arbeits-Repository befüllt und ist **kein** Arbeits-Repo.
-- **Download-Repository (`ingenieurinformatik-download`)**: Stabile Ablage für **PDF-Downloads** (u. a. „Skript-aktuell.pdf“). Es wird automatisiert aus der CI des Arbeits-Repos aktualisiert. Das **aktuelle PDF-Skript ist auf der Website verlinkt**.
+- **Deployment-Repository (`ingenieurinformatik-buch-deploy-lrz`)**: Enthält die **ausführbaren Artefakte** (Notebooks und Runtime-Definitionen) für Binder/Thebe und Notebook-Workflows. Es wird automatisiert vom Arbeits-Repository befüllt und ist **kein** Arbeits-Repo. -> link: https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz
+- **Download-Repository (`ingenieurinformatik-download`)**: Stabile Ablage für **PDF-Downloads** (u. a. „Skript-aktuell.pdf“). Es wird automatisiert aus der CI des Arbeits-Repos aktualisiert. Das **aktuelle PDF-Skript ist auf der Website verlinkt**. -> https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-download
 
 Die Website bietet beim „Notebook öffnen“ eine Auswahl, zu welchem JupyterHub der Nutzer weitergeleitet wird:
 - **mybinder.org** (aktuelle Pakete, Image aus Repo-Definition gebaut/aus Cache)

@@ -27,7 +27,7 @@ execute:
 # Literatur
 # --------------------------------------------------
 bibtex_bibfiles:
-  - references.bib
+  - bibliography/references.bib
 
 # --------------------------------------------------
 # PDF: behalte den funktionierenden Jupyter-Book-Wrapper
