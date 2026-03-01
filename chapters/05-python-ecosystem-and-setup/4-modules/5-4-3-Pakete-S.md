@@ -69,7 +69,7 @@ import sys
 # Das Paket liegt in:  python-pkg/
 # resolve() macht aus einem relativen Pfad einen absoluten, "aufgelösten" Pfad
 # (z.B. werden ".."-Anteile normalisiert).
-python_pkg = Path("../../python-pkg").resolve()
+python_pkg = Path("../../../python-pkg").resolve()
 python_pkg_str = str(python_pkg)
 print("python-pkg liegt bei:", python_pkg)
 
