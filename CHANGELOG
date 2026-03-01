@@ -1,3 +1,12 @@
+## Version 2.6.6 - 2026-03-01
+### Changed
+- Chapter update: improve understanding of Python modules and packages.
+  - Update `chapters/05-python-ecosystem-and-setup/5-4-Module-und-Pakete.md`:
+    - Keep the original storyline, but make it notebook-friendly with proper code cells.
+    - Add a `sys.path` demo using the existing course path conventions (for the `python-pkg` directory).
+    - Clarify import name collisions and how to resolve them with aliases and `__all__`.
+    - Add an explicit exercise referencing the demo package files (stored in the deployment repository).
+
 ## Version 2.6.5 - 2026-02-25
 ### Changed
 - Clean repo:
