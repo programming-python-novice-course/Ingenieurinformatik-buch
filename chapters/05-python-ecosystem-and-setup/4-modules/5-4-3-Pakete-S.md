@@ -69,6 +69,7 @@ Wir wollen uns den Fall anschauen, wenn die Funktionalitäten lokal auf Ihrem Re
 ## Demo: Lokales Paket über `sys.path` einbinden
 
 ```{code-cell} python3
+:tags: [skip-execution]
 from pathlib import Path
 import sys
 
@@ -99,6 +100,7 @@ if len(sys.path) > N:
 ## Demo: Imports, Namenskonflikte und `__all__`
 
 ```{code-cell} python3
+:tags: [skip-execution]
 # In Jupyter werden Imports gecached. Falls Sie `ii_import_demo` gerade geändert haben,
 # Kernel neu starten oder das Paket neu laden:
 import importlib
@@ -113,6 +115,7 @@ hello("Ada"), square(3), hello_beta("Ada"), cube(3)
 ```
 
 ```{code-cell} python3
+:tags: [skip-execution]
 # "Nach außen" exportieren: das Paket re-exportiert ausgewählte Namen.
 # (Auf Paketebene lösen wir den `hello`-Namensclash per Alias `hello_beta`.)
 from ii_import_demo import hello, hello_beta, square, cube
@@ -120,6 +123,7 @@ hello("Ada"), hello_beta("Ada"), square(4), cube(4)
 ```
 
 ```{code-cell} python3
+:tags: [skip-execution]
 # `import *` importiert NUR die Namen aus `__all__`.
 from ii_import_demo import *
 print("\nNach `from ii_import_demo import *` sind z.B. verfügbar:")
@@ -145,6 +149,7 @@ Wir wollen sehen, was passiert, wenn in `ii_import_demo/__init__.py` der Alias `
 Zusatz: Sehen Sie den Konflikt direkt im Notebook-Namensraum.
 
 ```{code-cell} python3
+:tags: [skip-execution]
 # Namenskollision: Dieser Import überschreibt den Namen `hello` im Notebook.
 from ii_import_demo.beta import hello
 hello("Ada")
@@ -153,6 +158,7 @@ hello("Ada")
 Und so vermeiden Sie den Konflikt sauber, indem Sie Aliase verwenden.
 
 ```{code-cell} python3
+:tags: [skip-execution]
 from ii_import_demo.alpha import hello as hello_alpha
 from ii_import_demo.beta import hello as hello_beta_module
 
