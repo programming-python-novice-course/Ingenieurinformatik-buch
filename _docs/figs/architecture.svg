@@ -25,9 +25,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="0.40855058"
-     inkscape:cx="707.37875"
-     inkscape:cy="252.11076"
+     inkscape:zoom="2.3111111"
+     inkscape:cx="791.39424"
+     inkscape:cy="434.85577"
      inkscape:window-width="1710"
      inkscape:window-height="1073"
      inkscape:window-x="0"
@@ -2809,6 +2809,19 @@
        width="76"
        height="76"
        xlink:href="data:image/png;base64,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" />
+    <clipPath
+       id="clip12-4">
+      <path
+         d="M 410.023438 396 L 427 396 L 427 413 L 410.023438 413 Z M 410.023438 396 "
+         id="path303-8" />
+    </clipPath>
+    <mask
+       id="mask9-3">
+      <use
+         xlink:href="#image61"
+         transform="matrix(1,0,0,1,0.000000000000113687,0)"
+         id="use304-9" />
+    </mask>
   </defs>
   <g
      id="surface1">
@@ -6459,171 +6472,12 @@
        id="path721" />
     <g
        style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g722">
-      <use
-         xlink:href="#glyph8-27"
-         x="544.711522"
-         y="270.199817"
-         id="use722" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g723">
-      <use
-         xlink:href="#glyph8-4"
-         x="549.746914"
-         y="270.199817"
-         id="use723" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g724">
-      <use
-         xlink:href="#glyph8-15"
-         x="552.617088"
-         y="270.199817"
-         id="use724" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g725">
-      <use
-         xlink:href="#glyph8-2"
-         x="554.772236"
-         y="270.199817"
-         id="use725" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g726">
-      <use
-         xlink:href="#glyph8-28"
-         x="560.512582"
-         y="270.199817"
-         id="use726" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
        id="g727">
       <use
          xlink:href="#glyph8-8"
          x="564.832949"
          y="270.199817"
          id="use727" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g728">
-      <use
-         xlink:href="#glyph8-9"
-         x="566.978026"
-         y="270.199817"
-         id="use728" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g729">
-      <use
-         xlink:href="#glyph8-29"
-         x="569.85827"
-         y="270.199817"
-         id="use729" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g731">
-      <use
-         xlink:href="#glyph8-30"
-         x="574.178636"
-         y="270.199817"
-         id="use730" />
-      <use
-         xlink:href="#glyph8-11"
-         x="577.05888"
-         y="270.199817"
-         id="use731" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g732">
-      <use
-         xlink:href="#glyph8-28"
-         x="582.799227"
-         y="270.199817"
-         id="use732" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g733">
-      <use
-         xlink:href="#glyph8-31"
-         x="587.824549"
-         y="270.199817"
-         id="use733" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g735">
-      <use
-         xlink:href="#glyph8-32"
-         x="592.144915"
-         y="270.199817"
-         id="use734" />
-      <use
-         xlink:href="#glyph8-8"
-         x="595.025159"
-         y="270.199817"
-         id="use735" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g736">
-      <use
-         xlink:href="#glyph8-29"
-         x="597.170236"
-         y="270.199817"
-         id="use736" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g738">
-      <use
-         xlink:href="#glyph8-30"
-         x="601.490602"
-         y="270.199817"
-         id="use737" />
-      <use
-         xlink:href="#glyph8-33"
-         x="604.370847"
-         y="270.199817"
-         id="use738" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g739">
-      <use
-         xlink:href="#glyph8-5"
-         x="610.111194"
-         y="270.199817"
-         id="use739" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g740">
-      <use
-         xlink:href="#glyph8-23"
-         x="615.146586"
-         y="270.199817"
-         id="use740" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g741">
-      <use
-         xlink:href="#glyph8-17"
-         x="620.171907"
-         y="270.199817"
-         id="use741" />
     </g>
     <path
        style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;"
@@ -6848,11 +6702,12 @@
     <g
        clip-path="url(#clip9)"
        clip-rule="nonzero"
-       id="g766">
+       id="g766"
+       transform="translate(-2.6979583,-9.3458261)">
       <use
          xlink:href="#image42"
          mask="url(#mask6)"
-         transform="matrix(0.719342,0,0,0.719342,520.084059,255.573202)"
+         transform="matrix(0.719342,0,0,0.719342,520.08406,255.5732)"
          id="use766" />
     </g>
     <g
@@ -7351,6 +7206,17 @@
          mask="url(#mask9)"
          transform="matrix(0.719342,0,0,0.719342,410.024777,395.824855)"
          id="use821" />
+    </g>
+    <g
+       clip-path="url(#clip12-4)"
+       clip-rule="nonzero"
+       id="g821-5"
+       transform="translate(107.82243,-126.45285)">
+      <use
+         xlink:href="#image60"
+         mask="url(#mask9-3)"
+         transform="matrix(0.719342,0,0,0.719342,410.02478,395.82486)"
+         id="use821-2" />
     </g>
     <g
        clip-path="url(#clip13)"
@@ -10938,5 +10804,48 @@
          y="438.495806"
          id="use1219" />
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;font-family:'.Beirut PUA';-inkscape-font-specification:'.Beirut PUA, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#000000;stroke-width:0.535748;stroke-miterlimit:3.9"
+       x="608.14905"
+       y="253.12503"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan12"
+         x="608.14905"
+         y="253.12503">Files</tspan><tspan
+         sodipodi:role="line"
+         id="tspan13"
+         x="608.14905"
+         y="263.12503" /><tspan
+         sodipodi:role="line"
+         id="tspan14"
+         x="608.14905"
+         y="273.12503" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;font-family:'.Beirut PUA';-inkscape-font-specification:'.Beirut PUA, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#000000;stroke-width:0.535748;stroke-miterlimit:3.9"
+       x="540.40973"
+       y="248.09119"
+       id="text3-8"><tspan
+         sodipodi:role="line"
+         id="tspan12-7"
+         x="540.40973"
+         y="248.09119" /><tspan
+         sodipodi:role="line"
+         id="tspan13-8"
+         x="540.40973"
+         y="258.8009"
+         style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:8px;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Thin';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Data (*.csv, *.png)</tspan><tspan
+         sodipodi:role="line"
+         id="tspan14-0"
+         x="540.40973"
+         y="269.51059"
+         style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:8px;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Thin';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"></tspan><tspan
+         sodipodi:role="line"
+         x="540.40973"
+         y="280.22031"
+         style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:8px;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue, Thin';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         id="tspan15">Executables (*.py)</tspan></text>
   </g>
 </svg>
