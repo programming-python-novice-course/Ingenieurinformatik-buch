@@ -5,6 +5,7 @@
 ### Changed
 - Update Praktikumsübersicht in `chapters/01-course-overview/1-5-2-Praktikum.md`.
 - Notebook formatting: convert some fenced Python snippets to MyST `{code-cell}` blocks and fix `skip-execution` tag syntax.
+- improved logging of _scripts/patch_thebe_html.py
 
 ## Version 2.6.6 - 2026-03-01
 ### Changed
