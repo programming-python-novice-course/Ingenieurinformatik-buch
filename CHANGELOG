@@ -1,3 +1,11 @@
+## Version 2.6.7 - 2026-03-07
+### Added
+- Add contributor: David Straub (Praktikumsübersicht / `chapters/01-course-overview/1-5-2-Praktikum.md`).
+
+### Changed
+- Update Praktikumsübersicht in `chapters/01-course-overview/1-5-2-Praktikum.md`.
+- Notebook formatting: convert some fenced Python snippets to MyST `{code-cell}` blocks and fix `skip-execution` tag syntax.
+
 ## Version 2.6.6 - 2026-03-01
 ### Changed
 - Chapter update: improve understanding of Python modules and packages.

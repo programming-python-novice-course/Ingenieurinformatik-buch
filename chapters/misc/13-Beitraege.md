@@ -22,6 +22,9 @@ Neue Fassung (Modul „Ingenieurinformatik – Programmieren“)
   Insbesondere wurden Teile des Buches neu entwickelt und bestehende Inhalte/Beispiele/Grafiken kuratiert und integriert.
   - Profil: [christinamariamayr.de](https://christinamaria-mayr.userweb.mwn.de/)
 
+- David Straub: Praktikumsübersicht (verantwortlich; Kapitel „Praktikum“, `chapters/01-course-overview/1-5-2-Praktikum.md`).
+  - Profil: [David Straub](https://me.hm.edu/kontakte_de/phonebook_detailseite_106049.de.html)
+
 Ein Teil der Übungsaufgaben stammt aus den Übungsmaterialien von Tilman Küpper:
 
 - Tilman Küpper: Konzeption der PA*-Praxisaufgaben
