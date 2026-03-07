@@ -147,6 +147,7 @@ def main() -> None:
         )
         if changed_blocks > 0 or removed_tags > 0:
             path.write_text(patched, encoding="utf-8")
+            print(f"patched {path}")
             touched_files += 1
             touched_blocks += changed_blocks
             removed_script_tags += removed_tags

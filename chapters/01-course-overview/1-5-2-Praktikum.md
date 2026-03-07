@@ -35,35 +35,32 @@ Wenn Sie tiefer ins Detail einsteigen möchten, empfehlen wir für die Praktikum
   - Inhalt
   - Zusatz-Vorbereitung (optional)
 * - **P1**
-  - Python-Umgebung/IDE, Installation & Module, erstes Skript (Variablen, Rechnen), `input`/`print` & f-Strings
+  - Variablen & Datentypen (`int`, `float`, `str`, `bool`), Typumwandlung, Operatoren, `input`/`print`, f-Strings, Verzweigungen (`if`/`elif`/`else`)
   - - Kapitel 05
     - Kapitel 06
     - Kapitel 07 (Grundlagen: `int`, `float`, `bool`, `str`)
     - Kapitel 08
-* - **P2**
-  - Verzweigungen (`if`/`elif`/`else`), `bool`/Vergleiche, formatierte Ausgabe (Feldbreite/Nachkommastellen)
-  - - Kapitel 07 (`bool`)
-    - Kapitel 08 (f-Strings/formatierte Ausgabe)
     - Kapitel 09 (Fallunterscheidungen)
+* - **P2**
+  - Formatierte Ausgabe (Feldbreite/Nachkommastellen), eigene Funktionen (Definition/Aufruf/Rückgabewerte)
+  - - Kapitel 08 (f-Strings/formatierte Ausgabe)
+    - Kapitel 10 (Funktionen)
 * - **P3**
-  - Schleifen (v.a. `while`, auch `for`), Listen (`append`), tabellarische Ausgabe, Plotten von Funktionen
-  - - Kapitel 05 (Module/`matplotlib`)
-    - Kapitel 07 (Listen)
+  - Schleifen (`while`, `for`/`range()`), Listen (`append`, Indexzugriff)
+  - - Kapitel 07 (Listen)
     - Kapitel 08 (formatierte Ausgabe)
     - Kapitel 09 (Schleifen)
-* - **P4/P4a**
-  - Eigene Funktionen (Definition/Aufruf/Rückgabewerte), Module/Importe (auch eigenes Modul), Debugger, Fehlerbehandlung (`try`/`except`)
+* - **P4**
+  - Funktionen vertieft (Standardwerte, mehrere Rückgabewerte), Module/Importe (`math`, `random`), Fehlerbehandlung (`try`/`except`)
   - - Kapitel 05 (Module)
-    - Kapitel 08 (Eingaben/Ausgaben)
     - Kapitel 09 (Schleifen)
     - Kapitel 10 (Funktionen)
 * - **P5**
-  - Listen durchsuchen, verschachtelte Schleifen (Kombinationen), Programm in Funktionen strukturieren
+  - Listen durchsuchen & filtern, verschachtelte Schleifen, List Comprehensions, Programm in Funktionen strukturieren
   - - Kapitel 07 (Listen)
-    - Kapitel 08 (Eingaben/Ausgaben)
     - Kapitel 09 (verschachtelte Schleifen)
     - Kapitel 10 (Funktionen)
 * - **P6**
-  - Klausurvorbereitung/Wiederholung: Schleifen & Simulationen, Tabellen, Plotten, Zeichenketten
+  - Klausurvorbereitung/Wiederholung: Schleifen & Simulationen, Fallunterscheidungen, Strings
   - - Kapitel 04–10 (Wiederholung nach Bedarf)
 ```

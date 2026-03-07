@@ -26,7 +26,7 @@ Python nutzt die sogenannte **Off-side rule**:
 
 Mini‑Beispiel: Einrückung ändert Bedeutung
 
-```python
+```{code-cell} python3
 x = 1
 if x > 0:
     print("positiv")
@@ -38,7 +38,8 @@ Wenn Sie die Einrückung verändern, ändern Sie den Block – und damit die Pro
 
 Typischer Fehler: `IndentationError`
 
-```python
+```{code-cell} python3
+:tags: [raises-exception]
 if True:
 print("oops")
 ```
@@ -48,7 +49,7 @@ Das ist in Python **Syntaxfehler**, nicht nur „schlecht formatiert“.
 **Ausnahmen**
 Es gibt aber auch Ausnahmen: Leerzeichen um Operatoren (z.B. `+`, `=`, `.`) sind **Stil**. Hier haben die Leerzeichen **keine Bedeutung** für die Programmlogik.
 
-```python
+```{code-cell} python3
 a=1+2
 b = 1 + 2
 print(a)  # 3
@@ -65,7 +66,7 @@ print(b)  # 3
 
 Durch den „Zwang zur Einrückung“ ist Python-Code meist schon relativ gut lesbar. Trotzdem gibt es viele Freiheiten bei der Benennung von Variablen, Funktionen und Klassen:
 
-```python
+```{code-cell} python3
 x = 3
 zahl = 4
 name = "Christina"
