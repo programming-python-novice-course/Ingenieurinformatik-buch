@@ -13,7 +13,8 @@ kernelspec:
 
 Wenn wir in Python Texteingaben über das Command Line Interface (CLI) verarbeiten möchten, verwenden wir die Funktion `input()`.
 
-```python
+```{code-cell} python3
+:tags: [skip-execution]
 text = input("Eingabe: ")
 ```
 
@@ -24,7 +25,8 @@ text = input("Eingabe: ")
 - der Rückgabewert ist **immer vom Typ `str`**
 - `input()` nutzt eine **textbasierte Eingabe-Schnittstelle**, die vom Betriebssystem bereitgestellt wird
 
-```python
+```{code-cell} python3
+:tags: [skip-execution]
 text = input("Bitte eine Zahl eingeben: ")
 zahl = int(text)
 print("Quadrat:", zahl ** 2)
@@ -34,7 +36,8 @@ print("Quadrat:", zahl ** 2)
 - Typumwandlung kann fehlschlagen (`ValueError`)
 - Fehlerbehandlung ist notwendig!!
 
-```python
+```{code-cell} python3
+:tags: [skip-execution]
 email = input("Bitte E-Mail-Adresse eingeben: ")
 
 if "@" in email:
