@@ -123,6 +123,45 @@
     }
   }
 
+  function setNfdiStatus(text, level) {
+    // level: "info" | "warn" | "error"
+    try {
+      const panel = document.querySelector(".ii-user-controls .ii-settings-panel");
+      if (!(panel instanceof HTMLElement)) return;
+      const el = panel.querySelector("#ii-nfdi-status");
+      if (!(el instanceof HTMLElement)) return;
+
+      if (!text) {
+        el.textContent = "";
+        el.style.display = "none";
+        return;
+      }
+
+      el.textContent = text;
+      el.style.display = "block";
+      el.style.padding = "8px 10px";
+      el.style.borderRadius = "8px";
+      el.style.marginTop = "10px";
+      el.style.fontSize = "0.9em";
+
+      if (level === "error") {
+        el.style.background = "rgba(200, 80, 80, 0.12)";
+        el.style.border = "1px solid rgba(200, 80, 80, 0.35)";
+        el.style.color = "inherit";
+      } else if (level === "warn") {
+        el.style.background = "rgba(200, 200, 80, 0.14)";
+        el.style.border = "1px solid rgba(200, 200, 80, 0.35)";
+        el.style.color = "inherit";
+      } else {
+        el.style.background = "rgba(0, 0, 0, 0.04)";
+        el.style.border = "1px solid rgba(0, 0, 0, 0.08)";
+        el.style.color = "inherit";
+      }
+    } catch {
+      // ignore
+    }
+  }
+
   function readSettings() {
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY);
@@ -375,6 +414,11 @@
               launchRetryCount: NFDI_DEBUG.sse.launchRetryCount,
               hint: "BinderHub could not start the user server yet (not a client-side parsing issue).",
             });
+            setNfdiStatus(
+              `NFDI Live Code: Server-Start fehlgeschlagen (Retry ${NFDI_DEBUG.sse.launchRetryCount}). ` +
+                `Bitte später erneut versuchen oder im Menü auf „Binder“ wechseln.`,
+              "warn"
+            );
           }
         } catch {
           // ignore
@@ -444,6 +488,11 @@
                 lastEvents: [...NFDI_DEBUG.sse.items].slice(-10),
                 hint: "BinderHub is not emitting (or not reaching) a `ready` event with `url`+`token`. This points to server spawn issues rather than client parsing.",
               });
+              setNfdiStatus(
+                "NFDI Live Code: BinderHub bleibt bei „launching“ hängen (kein „ready“-Event). " +
+                  "Das ist sehr wahrscheinlich ein Server/Spawner-Problem. Bitte später erneut versuchen oder auf „Binder“ wechseln.",
+                "error"
+              );
             }
           }, 60000);
         }
@@ -815,6 +864,7 @@
         </select>
       </label>
       <p class="ii-settings-note">Einstellungen werden im Browser gespeichert.</p>
+      <p id="ii-nfdi-status" class="ii-settings-note" style="display:none"></p>
     `;
 
     root.appendChild(launchBtn);
@@ -991,12 +1041,108 @@
       if (!shouldHandleMutations(mutations)) return;
       scheduleRefresh();
     });
+    // Avoid leaking observers across re-inits (e.g. Safari bfcache restore).
+    try {
+      const prev = window.__iiUserControlsObserver;
+      if (prev && typeof prev.disconnect === "function") prev.disconnect();
+    } catch {
+      // ignore
+    }
     obs.observe(document.body, {
       childList: true,
       subtree: true,
       attributes: true,
       attributeFilter: ["href"],
     });
+    try {
+      window.__iiUserControlsObserver = obs;
+    } catch {
+      // ignore
+    }
+  }
+
+  function getNavigationType() {
+    try {
+      const nav = performance.getEntriesByType?.("navigation")?.[0];
+      if (nav && typeof nav.type === "string") return nav.type;
+    } catch {
+      // ignore
+    }
+    // Fallback for older browsers.
+    try {
+      // eslint-disable-next-line no-undef
+      const legacy = performance?.navigation?.type;
+      // 2 == TYPE_BACK_FORWARD
+      if (legacy === 2) return "back_forward";
+    } catch {
+      // ignore
+    }
+    return null;
+  }
+
+  function rehydrateUiAfterRestore(reason) {
+    // BFCache can restore DOM + JS heap, but timers/observers/3rd party code may be in a stale state.
+    // We keep this rehydrate routine idempotent and low-risk.
+    try {
+      STATE.settings = readSettings();
+    } catch {
+      // ignore
+    }
+
+    try {
+      enableNfdiDebugLoggingIfNeeded();
+      logNfdiDebug("pageshow rehydrate", reason);
+    } catch {
+      // ignore
+    }
+
+    try {
+      applyLiveCodeProviderConfig();
+    } catch {
+      // ignore
+    }
+
+    try {
+      hideDefaultLaunchUi();
+    } catch {
+      // ignore
+    }
+
+    const root = document.querySelector(".ii-user-controls");
+    if (root instanceof HTMLElement) {
+      try {
+        // Ensure panel can't block focus/click flows after restore.
+        root.classList.remove("ii-settings-open");
+        const panel = root.querySelector(".ii-settings-panel");
+        if (panel instanceof HTMLElement) panel.setAttribute("aria-hidden", "true");
+      } catch {
+        // ignore
+      }
+      try {
+        refreshUiState(root);
+      } catch {
+        // ignore
+      }
+      try {
+        observeDomChanges(root);
+      } catch {
+        // ignore
+      }
+      try {
+        window.setTimeout(() => refreshUiState(root), 50);
+        window.setTimeout(() => refreshUiState(root), 250);
+      } catch {
+        // ignore
+      }
+    }
+
+    try {
+      // If auto mode is enabled, try again after restore.
+      window.__iiThebeAutoBootDone = false;
+      autoStartLiveCodeIfEnabled();
+    } catch {
+      // ignore
+    }
   }
 
   function init() {
@@ -1018,6 +1164,15 @@
     }
     autoStartLiveCodeIfEnabled();
   }
+
+  // Safari BFCache: when navigating back/forward, the page is restored without rerunning JS.
+  // `pageshow` fires on restore; `event.persisted === true` indicates BFCache.
+  window.addEventListener("pageshow", (event) => {
+    const navType = getNavigationType();
+    const restored = !!event?.persisted || navType === "back_forward";
+    if (!restored) return;
+    rehydrateUiAfterRestore({ persisted: !!event?.persisted, navType });
+  });
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);

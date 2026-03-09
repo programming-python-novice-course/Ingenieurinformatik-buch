@@ -182,11 +182,37 @@
     rewriteHubGitPullLinks();
   }
 
+  function isBackForwardRestore(event) {
+    if (event?.persisted) return true;
+    try {
+      const nav = performance.getEntriesByType?.("navigation")?.[0];
+      if (nav && nav.type === "back_forward") return true;
+    } catch {
+      // ignore
+    }
+    try {
+      // 2 == TYPE_BACK_FORWARD (legacy)
+      // eslint-disable-next-line no-undef
+      if (performance?.navigation?.type === 2) return true;
+    } catch {
+      // ignore
+    }
+    return false;
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", runRewrites);
   } else {
     runRewrites();
   }
+
+  // Safari BFCache: rerun rewrites after back/forward restore.
+  window.addEventListener("pageshow", (event) => {
+    if (!isBackForwardRestore(event)) return;
+    // Run immediately and once more shortly after in case theme code mutates links on restore.
+    runRewrites();
+    setTimeout(runRewrites, 50);
+  });
   // Run again shortly after load in case theme scripts alter launch links.
   setTimeout(runRewrites, 100);
 
