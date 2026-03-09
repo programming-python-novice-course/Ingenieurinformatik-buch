@@ -2,7 +2,25 @@
   const STORAGE_KEY = "ii-user-settings-v1";
   const DEFAULT_SETTINGS = {
     launchProvider: "datahub", // "binder" | "datahub"
+    liveCodeProvider: "binder", // "binder" | "nfdi"
     liveCodeMode: "manual", // "manual" | "auto"
+  };
+
+  // Central registry for Live Code backends (BinderHub-compatible).
+  // Keep this as the single source of truth so adding more providers stays local to this file.
+  const LIVE_CODE_PROVIDERS = {
+    binder: {
+      id: "binder",
+      label: "Binder",
+      binderUrl: "https://mybinder.org",
+    },
+    nfdi: {
+      id: "nfdi",
+      label: "NFDI",
+      // Important: this is the BinderHub base path used for background builds/launches:
+      // https://hub.nfdi-jupyter.de/services/binder/build/<provider>/<spec>
+      binderUrl: "https://hub.nfdi-jupyter.de/services/binder",
+    },
   };
 
   const SELECTORS = {
@@ -68,6 +86,7 @@
       const parsed = safeParse(raw, {});
       return {
         launchProvider: parsed.launchProvider === "binder" ? "binder" : DEFAULT_SETTINGS.launchProvider,
+        liveCodeProvider: parsed.liveCodeProvider === "nfdi" ? "nfdi" : DEFAULT_SETTINGS.liveCodeProvider,
         liveCodeMode: parsed.liveCodeMode === "auto" ? "auto" : DEFAULT_SETTINGS.liveCodeMode,
       };
     } catch {
@@ -176,6 +195,68 @@
     return false;
   }
 
+  function normalizeBaseUrl(url) {
+    return (url || "").replace(/\/+$/, "");
+  }
+
+  function getSelectedLiveCodeProvider() {
+    const id = STATE.settings?.liveCodeProvider;
+    return LIVE_CODE_PROVIDERS[id] || LIVE_CODE_PROVIDERS.binder;
+  }
+
+  function patchThebeConfigScriptText(scriptText, binderUrl) {
+    const base = normalizeBaseUrl(binderUrl);
+    if (!base) return scriptText;
+
+    const binderBlockRe =
+      /((?:^|\r?\n)(?<indent>[ \t]*)binderOptions:\s*\{\r?\n)(?<body>[\s\S]*?)(\r?\n(?<indent2>[ \t]*)\},)/m;
+    const match = binderBlockRe.exec(scriptText);
+    if (!match || !match.groups) return scriptText;
+
+    const indent = match.groups.indent || "";
+    const entryIndent = `${indent}    `;
+    const body = match.groups.body || "";
+
+    const kept = [];
+    for (const line of body.split(/\r?\n/)) {
+      const stripped = line.trim();
+      if (stripped.startsWith("binderUrl:")) continue;
+      kept.push(line);
+    }
+    const newBody = [`${entryIndent}binderUrl: "${base}",`, ...kept].join("\n");
+
+    const start = match.index + match[1].length;
+    const end = start + body.length;
+    return scriptText.slice(0, start) + newBody + scriptText.slice(end);
+  }
+
+  function applyLiveCodeProviderConfig() {
+    const provider = getSelectedLiveCodeProvider();
+    const binderUrl = normalizeBaseUrl(provider.binderUrl);
+    if (!binderUrl) return;
+
+    // 1) Patch already-parsed config (preferred when available).
+    try {
+      const cfg = window.thebe_config;
+      if (cfg && typeof cfg === "object") {
+        if (!cfg.binderOptions || typeof cfg.binderOptions !== "object") {
+          cfg.binderOptions = {};
+        }
+        cfg.binderOptions.binderUrl = binderUrl;
+      }
+    } catch {
+      // Fail-safe: do not break the page.
+    }
+
+    // 2) Patch raw config block so future initializations pick up the selected provider too.
+    document.querySelectorAll('script[type="text/x-thebe-config"]').forEach((node) => {
+      if (!(node instanceof HTMLScriptElement)) return;
+      const original = node.textContent || "";
+      const patched = patchThebeConfigScriptText(original, binderUrl);
+      if (patched !== original) node.textContent = patched;
+    });
+  }
+
   function isLiveCodeBootstrapped() {
     for (const selector of SELECTORS.bootstrappedLiveCodeCandidates) {
       if (document.querySelector(selector)) return true;
@@ -184,6 +265,7 @@
   }
 
   function triggerLiveCode() {
+    applyLiveCodeProviderConfig();
     // Try API first, but do not treat invocation itself as success.
     triggerThebeViaApi();
     const launch = findThebeLaunchButton();
@@ -270,6 +352,13 @@
         </select>
       </label>
       <label class="ii-settings-row">
+        <span>Live Code Provider</span>
+        <select id="ii-live-provider">
+          <option value="binder">Binder</option>
+          <option value="nfdi">NFDI</option>
+        </select>
+      </label>
+      <label class="ii-settings-row">
         <span>Live Code Aktivierung</span>
         <select id="ii-live-mode">
           <option value="manual">Manuell (Klick auf Live Code)</option>
@@ -285,6 +374,7 @@
     root.appendChild(panel);
 
     const launchProviderSelect = panel.querySelector("#ii-launch-provider");
+    const liveProviderSelect = panel.querySelector("#ii-live-provider");
     const liveModeSelect = panel.querySelector("#ii-live-mode");
 
     if (launchProviderSelect instanceof HTMLSelectElement) {
@@ -304,6 +394,21 @@
       });
     }
 
+    if (liveProviderSelect instanceof HTMLSelectElement) {
+      liveProviderSelect.value = STATE.settings.liveCodeProvider;
+      liveProviderSelect.addEventListener("change", () => {
+        const nextProvider = liveProviderSelect.value === "nfdi" ? "nfdi" : "binder";
+        STATE.settings = {
+          ...STATE.settings,
+          liveCodeProvider: nextProvider,
+        };
+        writeSettings(STATE.settings);
+        applyLiveCodeProviderConfig();
+        // Do not interrupt running sessions; selection applies to the next Live Code start.
+        refreshUiState(root);
+      });
+    }
+
     if (liveModeSelect instanceof HTMLSelectElement) {
       liveModeSelect.value = STATE.settings.liveCodeMode;
       liveModeSelect.addEventListener("change", () => {
@@ -312,6 +417,7 @@
           liveCodeMode: liveModeSelect.value === "auto" ? "auto" : "manual",
         };
         writeSettings(STATE.settings);
+        applyLiveCodeProviderConfig();
         refreshUiState(root);
         autoStartLiveCodeIfEnabled();
       });
@@ -438,6 +544,7 @@
     window.__iiUserSettingsLoaded = true;
 
     STATE.settings = readSettings();
+    applyLiveCodeProviderConfig();
     hideDefaultLaunchUi();
     createControlBar();
     const root = document.querySelector(".ii-user-controls");
