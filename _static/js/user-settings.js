@@ -35,6 +35,15 @@
       sawFailed: false,
       sawPossibleServerUrl: false,
     },
+    sse: {
+      // Ring buffer of recent raw SSE messages to make post-mortem analysis easy.
+      max: 50,
+      items: [],
+      launchRetryCount: 0,
+      lastPhase: null,
+      lastReadyPayload: null,
+      lastFailedPayload: null,
+    },
   };
 
   const SELECTORS = {
@@ -101,6 +110,16 @@
       console.log(`[ii-nfdi-debug] ${message}`, ...args);
     } catch {
       // Never throw because of logging.
+    }
+  }
+
+  function rememberNfdiSseEvent(entry) {
+    try {
+      const buf = NFDI_DEBUG.sse.items;
+      buf.push(entry);
+      if (buf.length > NFDI_DEBUG.sse.max) buf.splice(0, buf.length - NFDI_DEBUG.sse.max);
+    } catch {
+      // ignore
     }
   }
 
@@ -328,13 +347,48 @@
         const summary = summarizeBinderSsePayload(dataText);
 
         if (summary.kind === "json") {
+          if (summary.phase) {
+            NFDI_DEBUG.sse.lastPhase = summary.phase;
+          }
           if (summary.phase === "building") NFDI_DEBUG.step.sawBuilding = true;
           if (summary.phase === "built") NFDI_DEBUG.step.sawBuilt = true;
           if (summary.phase === "launching") NFDI_DEBUG.step.sawLaunching = true;
-          if (summary.phase === "ready") NFDI_DEBUG.step.sawReady = true;
-          if (summary.phase === "failed") NFDI_DEBUG.step.sawFailed = true;
+          if (summary.phase === "ready") {
+            NFDI_DEBUG.step.sawReady = true;
+            NFDI_DEBUG.sse.lastReadyPayload = summary.raw;
+          }
+          if (summary.phase === "failed") {
+            NFDI_DEBUG.step.sawFailed = true;
+            NFDI_DEBUG.sse.lastFailedPayload = summary.raw;
+          }
           if (summary.url) NFDI_DEBUG.step.sawPossibleServerUrl = true;
         }
+
+        // Detect explicit retry messages during launching.
+        try {
+          const msgText = summary.kind === "json" && typeof summary.message === "string" ? summary.message : null;
+          if (msgText && /launch attempt\s+\d+\s+failed/i.test(msgText)) {
+            NFDI_DEBUG.sse.launchRetryCount += 1;
+            console.error("[ii-nfdi-debug] binder launch retry detected", {
+              url: esUrl,
+              message: msgText.trim(),
+              launchRetryCount: NFDI_DEBUG.sse.launchRetryCount,
+              hint: "BinderHub could not start the user server yet (not a client-side parsing issue).",
+            });
+          }
+        } catch {
+          // ignore
+        }
+
+        rememberNfdiSseEvent({
+          t: Date.now(),
+          esUrl,
+          type: ev.type,
+          lastEventId: ev.lastEventId || null,
+          origin: ev.origin || null,
+          data: dataText,
+          parsed: summary.kind === "json" ? { phase: summary.phase, message: summary.message, url: summary.url } : { kind: summary.kind },
+        });
 
         logNfdiDebug("SSE event", {
           url: esUrl,
@@ -356,6 +410,20 @@
         logNfdiDebug("EventSource error", { url: esUrl, readyState: es.readyState });
       });
 
+      // Log explicit close calls (Thebe closes on ready/failed).
+      try {
+        if (!es.__iiNfdiCloseWrapped && typeof es.close === "function") {
+          es.__iiNfdiCloseWrapped = true;
+          const nativeClose = es.close.bind(es);
+          es.close = function () {
+            logNfdiDebug("EventSource close() called", { url: esUrl, readyState: es.readyState, step: { ...NFDI_DEBUG.step } });
+            return nativeClose();
+          };
+        }
+      } catch {
+        // ignore
+      }
+
       // Log both generic and named events to detect format differences.
       ["message", "building", "built", "launching", "ready", "failed"].forEach((t) => {
         es.addEventListener(t, logSseEvent);
@@ -371,7 +439,10 @@
               console.error("[ii-nfdi-debug] timeout: launching without ready", {
                 url: esUrl,
                 step: { ...NFDI_DEBUG.step },
-                hint: "Likely stuck after launch: check whether a `ready` event with `url`+`token` is emitted/parsed.",
+                lastPhase: NFDI_DEBUG.sse.lastPhase,
+                launchRetryCount: NFDI_DEBUG.sse.launchRetryCount,
+                lastEvents: [...NFDI_DEBUG.sse.items].slice(-10),
+                hint: "BinderHub is not emitting (or not reaching) a `ready` event with `url`+`token`. This points to server spawn issues rather than client parsing.",
               });
             }
           }, 60000);
