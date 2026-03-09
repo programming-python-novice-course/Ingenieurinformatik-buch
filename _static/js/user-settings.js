@@ -274,93 +274,207 @@
 
   function enableNfdiDebugLoggingIfNeeded() {
     if (NFDI_DEBUG.enabled) return;
-    if (STATE.settings?.liveCodeProvider !== "nfdi") return;
+    // Allow forcing debug even if settings aren't persisted (privacy modes).
+    const force =
+      (() => {
+        try {
+          const q = new URLSearchParams(window.location.search);
+          if (q.get("ii-nfdi-debug") === "1") return true;
+        } catch {
+          // ignore
+        }
+        try {
+          return window.localStorage.getItem("ii-nfdi-debug") === "1";
+        } catch {
+          return false;
+        }
+      })() || false;
+
+    if (STATE.settings?.liveCodeProvider !== "nfdi" && !force) return;
 
     NFDI_DEBUG.enabled = true;
-    logNfdiDebug("Debug logging enabled (provider=nfdi).");
+    // Use a direct console call so we still see this even if logNfdiDebug is misconfigured.
+    try {
+      console.warn("[ii-nfdi-debug] enabled", {
+        provider: STATE.settings?.liveCodeProvider,
+        forced: force,
+      });
+      window.__iiNfdiDebug = NFDI_DEBUG;
+    } catch {
+      // ignore
+    }
 
-    // --- Instrument EventSource (BinderHub build event stream) ---
-    if (!window.__iiNfdiEventSourceWrapped && typeof window.EventSource === "function") {
-      window.__iiNfdiEventSourceWrapped = true;
+    function isNfdiBuildUrl(urlStr) {
+      const s = String(urlStr || "");
+      return s.includes("hub.nfdi-jupyter.de") && s.includes("/services/binder/") && s.includes("/build/");
+    }
 
-      const NativeEventSource = window.EventSource;
-      window.EventSource = function (...args) {
-        const url = args[0];
-        const urlStr = typeof url === "string" ? url : String(url);
-        const isNfdiBuild = urlStr.includes("hub.nfdi-jupyter.de") && urlStr.includes("/services/binder/") && urlStr.includes("/build/");
-        if (isNfdiBuild) {
-          logNfdiDebug("EventSource created", { url: urlStr, args: args.slice(1) });
+    function attachEventSourceLogging(es) {
+      if (!es || es.__iiNfdiLogged) return;
+      let esUrl = null;
+      try {
+        // EventSource.url is standard; some browsers may not expose it.
+        esUrl = es.url || null;
+      } catch {
+        // ignore
+      }
+      if (!esUrl || !isNfdiBuildUrl(esUrl)) return;
+
+      es.__iiNfdiLogged = true;
+      logNfdiDebug("EventSource detected", { url: esUrl });
+
+      const logSseEvent = (ev) => {
+        const dataText = typeof ev.data === "string" ? ev.data : String(ev.data ?? "");
+        const summary = summarizeBinderSsePayload(dataText);
+
+        if (summary.kind === "json") {
+          if (summary.phase === "building") NFDI_DEBUG.step.sawBuilding = true;
+          if (summary.phase === "built") NFDI_DEBUG.step.sawBuilt = true;
+          if (summary.phase === "launching") NFDI_DEBUG.step.sawLaunching = true;
+          if (summary.phase === "ready") NFDI_DEBUG.step.sawReady = true;
+          if (summary.phase === "failed") NFDI_DEBUG.step.sawFailed = true;
+          if (summary.url) NFDI_DEBUG.step.sawPossibleServerUrl = true;
         }
-        const es = new NativeEventSource(...args);
 
-        if (!isNfdiBuild) return es;
-
-        // Ensure we see everything (both named events and generic message).
-        NFDI_DEBUG.step.eventSourceOpened = false;
-
-        es.addEventListener("open", (ev) => {
-          NFDI_DEBUG.step.eventSourceOpened = true;
-          logNfdiDebug("EventSource open", { type: ev.type });
+        logNfdiDebug("SSE event", {
+          url: esUrl,
+          type: ev.type,
+          lastEventId: ev.lastEventId || null,
+          origin: ev.origin || null,
+          data: dataText,
+          parsed: summary,
+          step: { ...NFDI_DEBUG.step },
         });
+      };
 
-        es.addEventListener("error", (ev) => {
-          NFDI_DEBUG.step.eventSourceErrored = true;
-          // Note: browsers give limited details for SSE errors.
-          logNfdiDebug("EventSource error", { type: ev.type, readyState: es.readyState });
-        });
+      es.addEventListener("open", () => {
+        NFDI_DEBUG.step.eventSourceOpened = true;
+        logNfdiDebug("EventSource open", { url: esUrl, readyState: es.readyState });
+      });
+      es.addEventListener("error", () => {
+        NFDI_DEBUG.step.eventSourceErrored = true;
+        logNfdiDebug("EventSource error", { url: esUrl, readyState: es.readyState });
+      });
 
-        const logSseEvent = (ev) => {
-          const dataText = typeof ev.data === "string" ? ev.data : String(ev.data ?? "");
-          const summary = summarizeBinderSsePayload(dataText);
+      // Log both generic and named events to detect format differences.
+      ["message", "building", "built", "launching", "ready", "failed"].forEach((t) => {
+        es.addEventListener(t, logSseEvent);
+      });
 
-          if (summary.kind === "json") {
-            if (summary.phase === "building") NFDI_DEBUG.step.sawBuilding = true;
-            if (summary.phase === "built") NFDI_DEBUG.step.sawBuilt = true;
-            if (summary.phase === "launching") NFDI_DEBUG.step.sawLaunching = true;
-            if (summary.phase === "ready") NFDI_DEBUG.step.sawReady = true;
-            if (summary.phase === "failed") NFDI_DEBUG.step.sawFailed = true;
-            if (summary.url) NFDI_DEBUG.step.sawPossibleServerUrl = true;
-          } else if (summary.kind === "text") {
-            // Some BinderHubs may send non-JSON plain text messages; keep visible.
-          }
+      // Watchdog: if we see launching but no ready, surface a clear error.
+      try {
+        if (!NFDI_DEBUG.__watchdogStarted) {
+          NFDI_DEBUG.__watchdogStarted = true;
+          window.setTimeout(() => {
+            if (!NFDI_DEBUG.enabled) return;
+            if (NFDI_DEBUG.step.sawLaunching && !NFDI_DEBUG.step.sawReady && !NFDI_DEBUG.step.sawFailed) {
+              console.error("[ii-nfdi-debug] timeout: launching without ready", {
+                url: esUrl,
+                step: { ...NFDI_DEBUG.step },
+                hint: "Likely stuck after launch: check whether a `ready` event with `url`+`token` is emitted/parsed.",
+              });
+            }
+          }, 60000);
+        }
+      } catch {
+        // ignore
+      }
+    }
 
-          logNfdiDebug("SSE event", {
-            type: ev.type,
-            lastEventId: ev.lastEventId || null,
-            origin: ev.origin || null,
-            data: dataText,
-            parsed: summary,
-            step: { ...NFDI_DEBUG.step },
-          });
-        };
+    // --- Instrument EventSource robustly (prototype hook; works even if window.EventSource is non-writable) ---
+    if (!window.__iiNfdiEventSourceProtoWrapped && typeof window.EventSource === "function") {
+      window.__iiNfdiEventSourceProtoWrapped = true;
 
-        es.addEventListener("message", logSseEvent);
-        // Common BinderHub phases (log even if they never occur, to detect format differences).
-        es.addEventListener("building", logSseEvent);
-        es.addEventListener("built", logSseEvent);
-        es.addEventListener("launching", logSseEvent);
-        es.addEventListener("ready", logSseEvent);
-        es.addEventListener("failed", logSseEvent);
+      const proto = window.EventSource.prototype;
+      const onmessageDesc = Object.getOwnPropertyDescriptor(proto, "onmessage");
+      const onerrorDesc = Object.getOwnPropertyDescriptor(proto, "onerror");
 
-        // Also patch onmessage/onerror if the library assigns directly.
-        const origOnMessage = es.onmessage;
-        Object.defineProperty(es, "onmessage", {
-          get() {
-            return origOnMessage;
+      if (onmessageDesc && typeof onmessageDesc.set === "function" && typeof onmessageDesc.get === "function") {
+        Object.defineProperty(proto, "onmessage", {
+          get: function () {
+            return onmessageDesc.get.call(this);
           },
-          set(handler) {
-            const wrapped = (ev) => {
-              logSseEvent(ev);
-              return typeof handler === "function" ? handler(ev) : undefined;
-            };
-            // eslint-disable-next-line no-param-reassign
-            origOnMessage = wrapped;
+          set: function (handler) {
+            try {
+              attachEventSourceLogging(this);
+            } catch {
+              // ignore
+            }
+            const wrapped =
+              typeof handler === "function"
+                ? (ev) => {
+                    try {
+                      attachEventSourceLogging(this);
+                    } catch {
+                      // ignore
+                    }
+                    return handler.call(this, ev);
+                  }
+                : handler;
+            return onmessageDesc.set.call(this, wrapped);
           },
           configurable: true,
+          enumerable: onmessageDesc.enumerable,
         });
+      }
 
-        return es;
-      };
+      if (onerrorDesc && typeof onerrorDesc.set === "function" && typeof onerrorDesc.get === "function") {
+        Object.defineProperty(proto, "onerror", {
+          get: function () {
+            return onerrorDesc.get.call(this);
+          },
+          set: function (handler) {
+            try {
+              attachEventSourceLogging(this);
+            } catch {
+              // ignore
+            }
+            const wrapped =
+              typeof handler === "function"
+                ? (ev) => {
+                    try {
+                      attachEventSourceLogging(this);
+                    } catch {
+                      // ignore
+                    }
+                    logNfdiDebug("EventSource onerror (assigned handler)", { readyState: this.readyState });
+                    return handler.call(this, ev);
+                  }
+                : handler;
+            return onerrorDesc.set.call(this, wrapped);
+          },
+          configurable: true,
+          enumerable: onerrorDesc.enumerable,
+        });
+      }
+
+      // If a browser exposes EventSource constructor as writable, keep the extra "created" log.
+      try {
+        if (!window.__iiNfdiEventSourceCtorWrapped) {
+          const desc = Object.getOwnPropertyDescriptor(window, "EventSource");
+          if (!desc || desc.writable) {
+            window.__iiNfdiEventSourceCtorWrapped = true;
+            const NativeEventSource = window.EventSource;
+            window.EventSource = function (...args) {
+              const es = new NativeEventSource(...args);
+              try {
+                const urlStr = String(args?.[0] || "");
+                if (isNfdiBuildUrl(urlStr)) logNfdiDebug("EventSource created", { url: urlStr });
+              } catch {
+                // ignore
+              }
+              try {
+                attachEventSourceLogging(es);
+              } catch {
+                // ignore
+              }
+              return es;
+            };
+          }
+        }
+      } catch {
+        // ignore
+      }
     }
 
     // --- Instrument fetch ---

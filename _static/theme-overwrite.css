@@ -205,16 +205,19 @@
   font-size: 0.82rem;
   line-height: 1.2;
   cursor: pointer;
+  transition: box-shadow 120ms ease, filter 120ms ease, transform 120ms ease;
 }
 
 .ii-btn:hover:not(:disabled),
 .ii-btn:focus-visible:not(:disabled) {
-  filter: brightness(1.06);
-  box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.25);
+  filter: brightness(1.08) saturate(1.05) !important;
+  box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.35), 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-1px);
 }
 
 .ii-btn:active:not(:disabled) {
-  filter: brightness(0.98);
+  filter: brightness(0.98) !important;
+  transform: translateY(0px);
 }
 
 .ii-btn:disabled {
@@ -339,7 +342,8 @@ a.btn:focus-visible,
 [role="button"][aria-disabled="false"]:hover,
 [role="button"][aria-disabled="false"]:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.18);
+  box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.25) !important;
+  filter: brightness(1.03) !important;
   transition: box-shadow 120ms ease, filter 120ms ease;
 }
 
