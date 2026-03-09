@@ -207,6 +207,16 @@
   cursor: pointer;
 }
 
+.ii-btn:hover:not(:disabled),
+.ii-btn:focus-visible:not(:disabled) {
+  filter: brightness(1.06);
+  box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.25);
+}
+
+.ii-btn:active:not(:disabled) {
+  filter: brightness(0.98);
+}
+
 .ii-btn:disabled {
   opacity: 0.95;
   cursor: not-allowed;
@@ -312,6 +322,25 @@
   margin: 0.2rem 0 0;
   font-size: 0.72rem;
   opacity: 0.8;
+}
+
+/* --------------------------------------------------
+   Global hover affordance for buttons (site-wide)
+   -------------------------------------------------- */
+
+button:not(:disabled):hover,
+button:not(:disabled):focus-visible,
+.btn:not(:disabled):hover,
+.btn:not(:disabled):focus-visible,
+.pst-button:not(:disabled):hover,
+.pst-button:not(:disabled):focus-visible,
+a.btn:hover,
+a.btn:focus-visible,
+[role="button"][aria-disabled="false"]:hover,
+[role="button"][aria-disabled="false"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.18);
+  transition: box-shadow 120ms ease, filter 120ms ease;
 }
 
 /* --------------------------------------------------

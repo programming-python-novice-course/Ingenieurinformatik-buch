@@ -503,6 +503,12 @@
         const target = mutation.target;
         const targetIsInsideControls = target instanceof Node && root.contains(target);
 
+        if (mutation.type === "attributes") {
+          // React to async link rewrites (e.g. href mutations) so buttons don't stay disabled.
+          if (!targetIsInsideControls) return true;
+          continue;
+        }
+
         if (mutation.type === "childList") {
           const changedNodes = [...mutation.addedNodes, ...mutation.removedNodes];
           if (changedNodes.length === 0) {
@@ -536,7 +542,12 @@
       if (!shouldHandleMutations(mutations)) return;
       scheduleRefresh();
     });
-    obs.observe(document.body, { childList: true, subtree: true });
+    obs.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["href"],
+    });
   }
 
   function init() {
@@ -550,6 +561,10 @@
     const root = document.querySelector(".ii-user-controls");
     if (root instanceof HTMLElement) {
       observeDomChanges(root);
+      // Also refresh shortly after load because some themes rewrite launch hrefs without
+      // changing the DOM tree (only attributes).
+      window.setTimeout(() => refreshUiState(root), 150);
+      window.setTimeout(() => refreshUiState(root), 600);
     }
     autoStartLiveCodeIfEnabled();
   }
