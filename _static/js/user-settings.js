@@ -23,6 +23,20 @@
     },
   };
 
+  const NFDI_DEBUG = {
+    enabled: false,
+    step: {
+      eventSourceOpened: false,
+      eventSourceErrored: false,
+      sawBuilding: false,
+      sawBuilt: false,
+      sawLaunching: false,
+      sawReady: false,
+      sawFailed: false,
+      sawPossibleServerUrl: false,
+    },
+  };
+
   const SELECTORS = {
     binderAnchors: 'a[href*="mybinder.org"]',
     datahubAnchors: 'a[href*="/hub/user-redirect/git-pull"]',
@@ -76,6 +90,17 @@
       return JSON.parse(json);
     } catch {
       return fallback;
+    }
+  }
+
+  function logNfdiDebug(message, ...args) {
+    // Keep logs recognizable and filterable in the console.
+    // Only enabled when the user selects the NFDI provider.
+    if (!NFDI_DEBUG.enabled) return;
+    try {
+      console.log(`[ii-nfdi-debug] ${message}`, ...args);
+    } catch {
+      // Never throw because of logging.
     }
   }
 
@@ -199,9 +224,245 @@
     return (url || "").replace(/\/+$/, "");
   }
 
+  function normalizeHttpUrlMaybe(url) {
+    if (!url || typeof url !== "string") return null;
+    const trimmed = url.trim();
+    if (!trimmed) return null;
+    try {
+      const u = new URL(trimmed, window.location.href);
+      if (u.protocol !== "http:" && u.protocol !== "https:") return null;
+      return u.toString();
+    } catch {
+      return null;
+    }
+  }
+
   function getSelectedLiveCodeProvider() {
     const id = STATE.settings?.liveCodeProvider;
     return LIVE_CODE_PROVIDERS[id] || LIVE_CODE_PROVIDERS.binder;
+  }
+
+  function classifyUrlForJupyterTraffic(urlString) {
+    try {
+      const u = new URL(urlString, window.location.href);
+      const p = u.pathname || "";
+      // Typical post-launch traffic patterns (Jupyter Server / JupyterLab).
+      if (p.includes("/api/sessions")) return "api/sessions";
+      if (p.includes("/api/kernels")) return "api/kernels";
+      if (p.includes("/api/contents")) return "api/contents";
+      if (p.includes("/api/status")) return "api/status";
+      if (p.includes("/channels")) return "ws/channels";
+      if (p.includes("/user/")) return "user/*";
+      return null;
+    } catch {
+      return null;
+    }
+  }
+
+  function summarizeBinderSsePayload(dataText) {
+    const s = (dataText || "").trim();
+    if (!s) return { kind: "empty" };
+    const json = safeParse(s, null);
+    if (!json || typeof json !== "object") return { kind: "text", text: s.slice(0, 300) };
+
+    const phase = typeof json.phase === "string" ? json.phase : null;
+    const message = typeof json.message === "string" ? json.message : null;
+    const url = normalizeHttpUrlMaybe(json.url) || normalizeHttpUrlMaybe(json.serverUrl) || normalizeHttpUrlMaybe(json.origin);
+    const imageName = typeof json.imageName === "string" ? json.imageName : null;
+    return { kind: "json", phase, message, url, imageName, raw: json };
+  }
+
+  function enableNfdiDebugLoggingIfNeeded() {
+    if (NFDI_DEBUG.enabled) return;
+    if (STATE.settings?.liveCodeProvider !== "nfdi") return;
+
+    NFDI_DEBUG.enabled = true;
+    logNfdiDebug("Debug logging enabled (provider=nfdi).");
+
+    // --- Instrument EventSource (BinderHub build event stream) ---
+    if (!window.__iiNfdiEventSourceWrapped && typeof window.EventSource === "function") {
+      window.__iiNfdiEventSourceWrapped = true;
+
+      const NativeEventSource = window.EventSource;
+      window.EventSource = function (...args) {
+        const url = args[0];
+        const urlStr = typeof url === "string" ? url : String(url);
+        const isNfdiBuild = urlStr.includes("hub.nfdi-jupyter.de") && urlStr.includes("/services/binder/") && urlStr.includes("/build/");
+        if (isNfdiBuild) {
+          logNfdiDebug("EventSource created", { url: urlStr, args: args.slice(1) });
+        }
+        const es = new NativeEventSource(...args);
+
+        if (!isNfdiBuild) return es;
+
+        // Ensure we see everything (both named events and generic message).
+        NFDI_DEBUG.step.eventSourceOpened = false;
+
+        es.addEventListener("open", (ev) => {
+          NFDI_DEBUG.step.eventSourceOpened = true;
+          logNfdiDebug("EventSource open", { type: ev.type });
+        });
+
+        es.addEventListener("error", (ev) => {
+          NFDI_DEBUG.step.eventSourceErrored = true;
+          // Note: browsers give limited details for SSE errors.
+          logNfdiDebug("EventSource error", { type: ev.type, readyState: es.readyState });
+        });
+
+        const logSseEvent = (ev) => {
+          const dataText = typeof ev.data === "string" ? ev.data : String(ev.data ?? "");
+          const summary = summarizeBinderSsePayload(dataText);
+
+          if (summary.kind === "json") {
+            if (summary.phase === "building") NFDI_DEBUG.step.sawBuilding = true;
+            if (summary.phase === "built") NFDI_DEBUG.step.sawBuilt = true;
+            if (summary.phase === "launching") NFDI_DEBUG.step.sawLaunching = true;
+            if (summary.phase === "ready") NFDI_DEBUG.step.sawReady = true;
+            if (summary.phase === "failed") NFDI_DEBUG.step.sawFailed = true;
+            if (summary.url) NFDI_DEBUG.step.sawPossibleServerUrl = true;
+          } else if (summary.kind === "text") {
+            // Some BinderHubs may send non-JSON plain text messages; keep visible.
+          }
+
+          logNfdiDebug("SSE event", {
+            type: ev.type,
+            lastEventId: ev.lastEventId || null,
+            origin: ev.origin || null,
+            data: dataText,
+            parsed: summary,
+            step: { ...NFDI_DEBUG.step },
+          });
+        };
+
+        es.addEventListener("message", logSseEvent);
+        // Common BinderHub phases (log even if they never occur, to detect format differences).
+        es.addEventListener("building", logSseEvent);
+        es.addEventListener("built", logSseEvent);
+        es.addEventListener("launching", logSseEvent);
+        es.addEventListener("ready", logSseEvent);
+        es.addEventListener("failed", logSseEvent);
+
+        // Also patch onmessage/onerror if the library assigns directly.
+        const origOnMessage = es.onmessage;
+        Object.defineProperty(es, "onmessage", {
+          get() {
+            return origOnMessage;
+          },
+          set(handler) {
+            const wrapped = (ev) => {
+              logSseEvent(ev);
+              return typeof handler === "function" ? handler(ev) : undefined;
+            };
+            // eslint-disable-next-line no-param-reassign
+            origOnMessage = wrapped;
+          },
+          configurable: true,
+        });
+
+        return es;
+      };
+    }
+
+    // --- Instrument fetch ---
+    if (!window.__iiNfdiFetchWrapped && typeof window.fetch === "function") {
+      window.__iiNfdiFetchWrapped = true;
+      const nativeFetch = window.fetch.bind(window);
+      window.fetch = async (input, init) => {
+        const url = typeof input === "string" ? input : input?.url;
+        const urlStr = url ? String(url) : "";
+        const klass = classifyUrlForJupyterTraffic(urlStr);
+        if (klass) {
+          logNfdiDebug("fetch ->", { url: urlStr, klass, method: init?.method || "GET" });
+        }
+        try {
+          const res = await nativeFetch(input, init);
+          if (klass) {
+            logNfdiDebug("fetch <-", { url: urlStr, klass, status: res.status, ok: res.ok });
+          }
+          return res;
+        } catch (err) {
+          if (klass) {
+            logNfdiDebug("fetch !! error", { url: urlStr, klass, error: String(err) });
+          }
+          throw err;
+        }
+      };
+    }
+
+    // --- Instrument XMLHttpRequest (some Jupyter clients still use XHR) ---
+    if (!window.__iiNfdiXhrWrapped && typeof window.XMLHttpRequest === "function") {
+      window.__iiNfdiXhrWrapped = true;
+      const NativeXHR = window.XMLHttpRequest;
+      window.XMLHttpRequest = function () {
+        const xhr = new NativeXHR();
+        let trackedUrl = null;
+        let trackedMethod = null;
+
+        const nativeOpen = xhr.open;
+        xhr.open = function (method, url, ...rest) {
+          trackedMethod = method;
+          trackedUrl = typeof url === "string" ? url : String(url);
+          const klass = classifyUrlForJupyterTraffic(trackedUrl);
+          if (klass) {
+            logNfdiDebug("xhr open ->", { url: trackedUrl, klass, method: trackedMethod });
+          }
+          return nativeOpen.call(xhr, method, url, ...rest);
+        };
+
+        xhr.addEventListener("loadend", () => {
+          const klass = trackedUrl ? classifyUrlForJupyterTraffic(trackedUrl) : null;
+          if (klass) {
+            logNfdiDebug("xhr loadend <-", { url: trackedUrl, klass, status: xhr.status });
+          }
+        });
+
+        xhr.addEventListener("error", () => {
+          const klass = trackedUrl ? classifyUrlForJupyterTraffic(trackedUrl) : null;
+          if (klass) {
+            logNfdiDebug("xhr error !!", { url: trackedUrl, klass, status: xhr.status });
+          }
+        });
+
+        return xhr;
+      };
+    }
+
+    // --- Instrument WebSocket (kernel channels) ---
+    if (!window.__iiNfdiWebSocketWrapped && typeof window.WebSocket === "function") {
+      window.__iiNfdiWebSocketWrapped = true;
+      const NativeWS = window.WebSocket;
+      window.WebSocket = function (url, protocols) {
+        const urlStr = typeof url === "string" ? url : String(url);
+        const klass = classifyUrlForJupyterTraffic(urlStr);
+        if (klass) {
+          logNfdiDebug("ws new ->", { url: urlStr, klass, protocols: protocols || null });
+        }
+        const ws = protocols ? new NativeWS(url, protocols) : new NativeWS(url);
+        if (!klass) return ws;
+
+        ws.addEventListener("open", () => logNfdiDebug("ws open <-", { url: urlStr, klass }));
+        ws.addEventListener("close", (ev) =>
+          logNfdiDebug("ws close <-", { url: urlStr, klass, code: ev.code, reason: ev.reason })
+        );
+        ws.addEventListener("error", () => logNfdiDebug("ws error !!", { url: urlStr, klass }));
+        // Messages can be very noisy; still log type/size.
+        ws.addEventListener("message", (ev) => {
+          const size = typeof ev.data === "string" ? ev.data.length : ev.data?.byteLength;
+          logNfdiDebug("ws message", { url: urlStr, klass, dataType: typeof ev.data, size: size ?? null });
+        });
+
+        return ws;
+      };
+    }
+
+    // Surface config state to debug mismatches without digging into minified libs.
+    try {
+      logNfdiDebug("thebe_config snapshot", window.thebe_config);
+      const scripts = [...document.querySelectorAll('script[type="text/x-thebe-config"]')].map((s) => (s.textContent || "").trim());
+      logNfdiDebug("raw thebe config scripts", { count: scripts.length, scripts: scripts.slice(0, 3) });
+    } catch {
+      // ignore
+    }
   }
 
   function patchThebeConfigScriptText(scriptText, binderUrl) {
@@ -234,6 +495,9 @@
     const provider = getSelectedLiveCodeProvider();
     const binderUrl = normalizeBaseUrl(provider.binderUrl);
     if (!binderUrl) return;
+
+    enableNfdiDebugLoggingIfNeeded();
+    logNfdiDebug("Applying live code provider config", { binderUrl, providerId: provider.id });
 
     // 1) Patch already-parsed config (preferred when available).
     try {
@@ -555,6 +819,7 @@
     window.__iiUserSettingsLoaded = true;
 
     STATE.settings = readSettings();
+    enableNfdiDebugLoggingIfNeeded();
     applyLiveCodeProviderConfig();
     hideDefaultLaunchUi();
     createControlBar();

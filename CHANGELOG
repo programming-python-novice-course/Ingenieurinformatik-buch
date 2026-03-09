@@ -1,6 +1,7 @@
 ## Version 2.7.0 - 2026-03-09
 ### Added
 - Live Code: add selectable Live Code provider (`Binder` / `NFDI`) in the website settings panel.
+- Live Code (NFDI): add detailed debug logging for BinderHub SSE events and post-launch Jupyter traffic (sessions/kernels/channels) to pinpoint launch failures.
 
 ### Changed
 - Live Code: refactor Thebe startup configuration to use a central provider registry and override `binderUrl` at runtime based on user settings (default remains `mybinder.org`).
