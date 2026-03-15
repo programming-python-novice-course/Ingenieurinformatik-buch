@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use these materials, please cite them as below."
+type: software
+title: "Source files for the deployment of the Website and the PDF-Script for the course Ingenieurinformatik 1 - Programmieren"
+authors:
+  - family-names: "Mayr"
+    given-names: "Christina Maria"
+    orcid: "https://orcid.org/0000-0003-1686-3460"
+doi: "10.5281/zenodo.19029460"
+url: "https://doi.org/10.5281/zenodo.19029460"
+year: 2026

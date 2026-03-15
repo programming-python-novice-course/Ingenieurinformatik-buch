@@ -48,7 +48,7 @@ sphinx:
 
   config:
     version: "2.6"
-    release: "2.6.7"
+    release: "2.6.8"
 
     myst_enable_extensions:
       - dollarmath
@@ -97,11 +97,12 @@ sphinx:
         Lehrbeauftragte Hochschule München, FK03
         \\
         www.christinamariamayr.de\\
-        \vspace*{9cm}\\
+        \vspace*{8cm}\\
         Dieses Werk ist lizenziert unter der\\
         Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).\\
         \href{https://creativecommons.org/licenses/by-sa/4.0/}{https://creativecommons.org/licenses/by-sa/4.0/}\\
         Sofern nicht anders angegeben, gilt diese Lizenz auch für Abbildungen, Grafiken und Fotos.\\
+        DOI: \href{https://doi.org/10.5281/zenodo.19028868}{10.5281/zenodo.19028868} \\
 
 
         % weiße Rückseite
@@ -244,6 +245,6 @@ html:
       <div class="col1">
         Beiträge: <a href="/chapters/misc/13-Beitraege.html">alle anzeigen</a>.
         Lizenziert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer">CC BY-SA 4.0</a>.
-        Version 2.6.7
+        Version 2.6.8. DOI: <a href="https://doi.org/10.5281/zenodo.19029195">10.5281/zenodo.19029195</a>
       </div>
     </div>

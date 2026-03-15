@@ -1,3 +1,13 @@
+
+## Version 2.6.8 - 2026-03-09
+### Added
+- Add citation metadata (`CITATION.cff`) and reference the Zenodo concept DOI `10.5281/zenodo.19029460`.
+
+### Changed
+- Safari: rehydrate/remount the floating user controls on BFCache back/forward restores to avoid non-responsive buttons.
+- Live Code: fix sporadically unresponsive Live-Code button by reacting to async launch-link rewrites (observe `href` mutations + delayed UI refresh).
+- UI: add hover/focus-visible highlighting for buttons (including the floating user controls) to improve affordance and feedback.
+
 ## Version 2.6.7 - 2026-03-07
 ### Added
 - Add contributor: David Straub (Praktikumsübersicht / `chapters/01-course-overview/1-5-2-Praktikum.md`).
