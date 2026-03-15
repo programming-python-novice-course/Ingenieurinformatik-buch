@@ -45,6 +45,14 @@ More details are in the course chapter: [Learning programming in the age of larg
 The repository contents, the published website, and the PDF book script are licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). See [`LICENSE`](./LICENSE).
 We want to make knowledge freely accessible. We chose this license to encourage reuse, adaptation, and sharing of improvements. The license also permits use in commercial settings under the specified conditions.
 
+## How to cite
+
+Please cite this repository via the Zenodo concept DOI [`10.5281/zenodo.19029460`](https://doi.org/10.5281/zenodo.19029460). Citation metadata is available in [`CITATION.cff`](./CITATION.cff).
+
+Suggested citation:
+
+> Mayr, C. M. (2026). *Source files for the deployment of the Website and the PDF-Script for the course Ingenieurinformatik 1 - Programmieren*. Zenodo. https://doi.org/10.5281/zenodo.19029460
+
 ## Deployment overview
 
 - The website is published via GitLab Pages from this repository.
