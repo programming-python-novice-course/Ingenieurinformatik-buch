@@ -210,3 +210,41 @@ python3 _scripts/merge_label_tables.py \
   -o evalution_result.md
 ```
 
+## Generate marker distribution plots
+
+The marker distribution plots are generated from the merged result table `evalution_result.md`.
+The script aggregates page counts and section counts by course part and marker (`A`, `S`, `P`, `-`) for both human and LLM labels.
+
+Install `matplotlib` if it is not available in the current Python environment:
+
+```bash
+python3 -m pip install matplotlib
+```
+
+Then generate the plots:
+
+```bash
+python3 _scripts/plot_marker_distributions.py
+```
+
+By default, the script writes PDF and PNG files to `plots_paper/`:
+
+- `plots_paper/marker_distributions_human.pdf`
+- `plots_paper/marker_distributions_human.png`
+- `plots_paper/marker_distributions_llm.pdf`
+- `plots_paper/marker_distributions_llm.png`
+- `plots_paper/marker_distribution_summary.csv`
+
+Useful options:
+
+```bash
+# Only generate the LLM plot
+python3 _scripts/plot_marker_distributions.py --label-source llm
+
+# Change the output directory
+python3 _scripts/plot_marker_distributions.py --output-dir plots_paper
+
+# Generate only PDF files
+python3 _scripts/plot_marker_distributions.py --formats pdf
+```
+
