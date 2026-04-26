@@ -207,8 +207,11 @@ After the human has filled `Label (human)` in the CSV and the LLM has filled `La
 python3 _scripts/merge_label_tables.py \
   --human-csv evaluation-human/book-print-toc-table.csv \
   --llm-md evaluation-LLM/book-print-toc-table.md \
-  -o evalution_result.md
+  -o evalution_result.md \
+  --also-pdf evalution_result.pdf
 ```
+
+The primary output can be `.csv`, `.md`, or `.pdf`. Use `--also-pdf` when you want to keep the Markdown result and create a PDF copy in the same run.
 
 ## Generate marker distribution plots
 

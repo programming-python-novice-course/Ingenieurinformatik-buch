@@ -1,4 +1,4 @@
-| Name | Zahl | Seitenanzahl | Label (human) | Label (LLM) | Diff |
+| Name | Number | Page count | Human label | LLM label | Diff |
 |---|---:|---:|---|---|---|
 | I Übersicht |  | 2 | - | - |  |
 | I Übersicht / Kursübersicht | 1 | 0.5 | - | - |  |
@@ -200,27 +200,27 @@
 | VII Appendix II |  | 2 | - | - |  |
 | VII Appendix II / Expertenwissen | 16 | 0 | - | S | x |
 
-## Zusammenfassung
+## Summary
 
-- Identisch: 156 von 199 (78.4%)
-- Unterschiedlich: 43 von 199 (21.6%)
+- Identical: 156 of 199 (78.4%)
+- Different: 43 of 199 (21.6%)
 
-### Unterschiede nach Gliederungsebene
+### Differences by hierarchy level
 
-- Subsections: 23 von 113 unterschiedlich (20.4% der Gruppe, 53.5% aller Unterschiede)
-- Nicht-Subsections: 20 von 86 unterschiedlich (23.3% der Gruppe, 46.5% aller Unterschiede)
+- Subsections: 23 of 113 different (20.4% of this group, 53.5% of all differences)
+- Non-subsections: 20 of 86 different (23.3% of this group, 46.5% of all differences)
 
-### Häufigste Marker-Unterschiede
+### Most frequent marker differences
 
-- `P -> S`: 10 (23.3% dieser Marker-Unterschiede)
-- `- -> S`: 7 (16.3% dieser Marker-Unterschiede)
-- `A -> S`: 7 (16.3% dieser Marker-Unterschiede)
-- `S -> A`: 6 (14.0% dieser Marker-Unterschiede)
-- `- -> A`: 5 (11.6% dieser Marker-Unterschiede)
-- `- -> P`: 3 (7.0% dieser Marker-Unterschiede)
-- `P -> A`: 3 (7.0% dieser Marker-Unterschiede)
-- `S -> P`: 2 (4.7% dieser Marker-Unterschiede)
-- `A -> -`: 0 (0.0% dieser Marker-Unterschiede)
-- `A -> P`: 0 (0.0% dieser Marker-Unterschiede)
-- `P -> -`: 0 (0.0% dieser Marker-Unterschiede)
-- `S -> -`: 0 (0.0% dieser Marker-Unterschiede)
+- `P -> S`: 10 (23.3% of marker differences)
+- `- -> S`: 7 (16.3% of marker differences)
+- `A -> S`: 7 (16.3% of marker differences)
+- `S -> A`: 6 (14.0% of marker differences)
+- `- -> A`: 5 (11.6% of marker differences)
+- `- -> P`: 3 (7.0% of marker differences)
+- `P -> A`: 3 (7.0% of marker differences)
+- `S -> P`: 2 (4.7% of marker differences)
+- `A -> -`: 0 (0.0% of marker differences)
+- `A -> P`: 0 (0.0% of marker differences)
+- `P -> -`: 0 (0.0% of marker differences)
+- `S -> -`: 0 (0.0% of marker differences)

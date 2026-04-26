@@ -71,7 +71,7 @@ def read_result_table(path: Path) -> List[Row]:
         if not cells:
             continue
         normalized = [normalize_header(cell) for cell in cells]
-        if "name" in normalized and "zahl" in normalized:
+        if "name" in normalized and ("zahl" in normalized or "number" in normalized):
             header = cells
             data_start = idx + 1
             break
@@ -83,9 +83,12 @@ def read_result_table(path: Path) -> List[Row]:
 
     column_index = {normalize_header(name): idx for idx, name in enumerate(header)}
 
-    def cell(cells: Sequence[str], name: str) -> str:
-        idx = column_index[normalize_header(name)]
-        return cells[idx].strip() if idx < len(cells) else ""
+    def cell(cells: Sequence[str], *names: str) -> str:
+        for name in names:
+            idx = column_index.get(normalize_header(name))
+            if idx is not None and idx < len(cells):
+                return cells[idx].strip()
+        return ""
 
     rows: List[Row] = []
     for line in lines[data_start:]:
@@ -95,15 +98,15 @@ def read_result_table(path: Path) -> List[Row]:
         if all(set(cell) <= {"-", ":", " "} for cell in cells):
             continue
 
-        pages_text = cell(cells, "Seitenanzahl").replace(",", ".")
+        pages_text = cell(cells, "Seitenanzahl", "Page count", "Pages").replace(",", ".")
         pages = float(pages_text) if pages_text else 0.0
         rows.append(
             Row(
                 name=cell(cells, "Name"),
-                number=cell(cells, "Zahl"),
+                number=cell(cells, "Zahl", "Number"),
                 pages=pages,
-                label_human=cell(cells, "Label (human)"),
-                label_llm=cell(cells, "Label (LLM)"),
+                label_human=cell(cells, "Label (human)", "Human label"),
+                label_llm=cell(cells, "Label (LLM)", "LLM label"),
             )
         )
     return rows
