@@ -1,3 +1,38 @@
+# Course script evaluation using knowledge markers
+_Exported on 26/04/2026 at 11:44:57 CEST from Cursor (3.1.15)_
+
+---
+
+**User**
+
+You are evaluating a course script using the concept of "knowledge markers".
+
+Definitions:
+- Read and use @evaluation-LLM/definition.txt  to understand the markers.
+
+Decision procedure:
+- Apply the decision tree from @evaluation-LLM/decision-tree-LLM.txt  to decide the primary learning emphasis of each unit.
+
+Material to label:
+- The script is @evaluation-LLM/book-print.pdf .
+- The list of units to label is @evaluation-LLM/book-print-toc-table.md .
+
+Task:
+- For each row in @evaluation-LLM/book-print-toc-table.md  , assign exactly one marker: A, S, P or -.
+- Return the SAME Markdown table, but fill the column 'Label (LLM)' for every row.
+- Do not change any other colums.
+
+Constraints:
+- Use only the provided files @evaluation-LLM . Ignore any other information.
+
+---
+
+**Cursor**
+
+I’ll use only the files under `evaluation-LLM`, first reading the marker definitions, decision tree, and unit list, then sampling the corresponding PDF text enough to label each row consistently.
+
+The unit list is 199 table rows, so I’m going to combine the explicit section titles with targeted PDF text checks for ambiguous areas, especially course setup, exercises, and the case study where the label depends on emphasis rather than topic.
+
 | Name | Zahl | Seitenanzahl | Label (human) | Label (LLM) |
 |---|---:|---:|---|---|
 | I Übersicht |  | 2 |  | - |
@@ -199,3 +234,20 @@
 | VI Appendix I / Literaturverzeichnis | 15 | 4 |  | - |
 | VII Appendix II |  | 2 |  | - |
 | VII Appendix II / Expertenwissen | 16 |  |  | S |
+
+---
+
+**User**
+
+please replace the table in @evaluation-LLM/book-print-toc-table.md  with your table
+
+---
+
+**Cursor**
+
+I’ll update `evaluation-LLM/book-print-toc-table.md` in place with the labeled table from the previous result, leaving the other columns unchanged.
+
+I’m replacing the existing empty `Label (LLM)` cells with the selected markers now, keeping the Markdown table structure and all other cells as-is.
+
+Done. I replaced the table in `evaluation-LLM/book-print-toc-table.md` with the labeled version and verified there are no empty `Label (LLM)` cells remaining.
+

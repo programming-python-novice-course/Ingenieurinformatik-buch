@@ -178,6 +178,8 @@ Constraints:
 - Use only the provided files `evaluation-LLM`. Ignore any other information.
 ```
 
+Please find `evaluation-LLM/transcript_of_chat.md` where the chat with the agent is stored.
+
 **LLM execution environment**
 
 For the LLM-based labelling run, we used:
