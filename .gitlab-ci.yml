@@ -47,7 +47,7 @@ build_book_pdf_print:
     - gosu jovyan python3 _scripts/toc_to_markdown_table.py "$PDF_PRINT_BUILD_DIR/_build/latex/book-print.toc" --also-md "_label_assignment/inputs/book-print-toc-table.md" --also-csv "_label_assignment/inputs/book-print-toc-table.csv" -o "_label_assignment/inputs/book-print-toc-table.csv"
     - |
       echo ""
-      echo "==================== PRINT PDF (reduced script) ===================="
+      echo "==================== PRINT PDF (cleaned 2.6.8 for label analysis) ===================="
       echo "This job generates a reduced/print-friendly version of the script."
       echo "Goal: keep the number of pages LOW."
       echo ""

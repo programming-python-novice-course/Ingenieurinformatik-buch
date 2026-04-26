@@ -14,7 +14,7 @@ Default behavior:
 Additionally, it generates a print config:
   _config.yml -> _config_print.yml
   with `execute_notebooks: auto` (same behavior as the main build)
-  and appends a suffix (default: " (Druckversion)") to the LaTeX `\title{...}`.
+  and appends a suffix (default: " (cleaned 2.6.8 version for label analysis)") to the LaTeX `\title{...}`.
 """
 
 from __future__ import annotations
@@ -55,7 +55,7 @@ def _append_suffix_to_latex_title(src: str, *, suffix: str) -> tuple[str, bool]:
     arg_end = i - 1
     arg = src[arg_start:arg_end]
 
-    # Avoid double-appending if the suffix (or the key marker) is already present.
+    # Avoid double-appending if the suffix (or the legacy key marker) is already present.
     if "(Druckversion)" in arg or suffix in arg:
         return src, False
 
@@ -100,7 +100,7 @@ def generate_config_print(
     output_path: Path,
     execute_notebooks_value: str = "auto",
     latex_targetname_value: str = "book-print.tex",
-    title_suffix: str = " (Druckversion)",
+    title_suffix: str = " (cleaned 2.6.8 version for label analysis)",
 ) -> None:
     """
     Create a copy of `_config.yml` for the print build.
@@ -195,7 +195,7 @@ def main(argv: list[str]) -> int:
     )
     parser.add_argument(
         "--title-suffix",
-        default=" (Druckversion)",
+        default=" (cleaned version for label analysis)",
         help="Suffix appended to the first LaTeX \\title{...} in the print config",
     )
 

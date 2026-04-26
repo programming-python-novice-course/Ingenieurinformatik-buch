@@ -42,7 +42,7 @@ docker run --rm -it \
   bash
 ```
 
-### Build the reduced/print-friendly PDF (paper version)
+### Build the reduced/print-friendly PDF (cleaned 2.6.8 version for label analysis)
 
 Inside the container:
 
