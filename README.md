@@ -8,13 +8,23 @@ This repository contains a cleaned version of the material used for the A/S/P an
 For the evaluation we assign the labels **A**, **S**, and **P**, plus **`-`** for organisational units (“no marker” in the decision tree).
 In the original teaching artefact, some units additionally carry an **A\*** marker (self-study). This is not relevant for the evaluation, therefore all `*` markers were removed in this cleaned version.
 
-The original version is used as a teaching artefact. In that original version:
-- some labels were missing
-- only the finest-grained units were labelled, which is not useful when higher-level sections provide mental models
+## Important note on labels
 
-For the paper analysis, we changed the labelling procedure to also allow higher-level sections to be labelled.
+The marker labels in this repository are not a direct copy of the labels in the original teaching artefact. They were created specifically for the paper analysis.
 
-As a consequence, we re-labelled the chapters, sections, and units.
+| Aspect | Original teaching artefact | Cleaned analysis version |
+|---|---|---|
+| Purpose | Course material for teaching | Reproducible A/S/P analysis for the paper |
+| Decision tree | Not yet defined when the original labels were added | Final decision tree applied systematically |
+| Label coverage | Some labels were missing | Every listed unit receives exactly one label |
+| Label granularity | Mostly finest-grained units | Chapters, sections, and units can be labelled |
+| Marker set | Included teaching-specific variants such as `A*` | Uses only `A`, `S`, `P`, and `-` |
+
+Higher-level sections are included because they can contribute to the development of learners' mental models. Even when such sections do not contain executable code or step-by-step procedures, they may introduce conceptual structure, context, or orientation that is relevant for the A/S/P analysis.
+
+In the original teaching artefact, `*` marked content intended for self-study, for example `A*`. This teaching-specific distinction is irrelevant for the paper evaluation, so all `*` markers were removed and only the underlying marker (`A`, `S`, or `P`) is considered.
+
+As a consequence, marker labels in the original teaching artefact can differ from the labels in this cleaned analysis version. For the analysis, the labels in this repository are authoritative.
 
 ## Contents
 
