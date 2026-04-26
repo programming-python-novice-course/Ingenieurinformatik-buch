@@ -1,0 +1,59 @@
+\begin{tikzpicture}[
+      font=\scriptsize,
+      node distance=4mm and 10mm,
+      start/.style={draw, rounded corners, fill=gray!5, align=center, inner sep=2pt, text width=7.0cm},
+      decision/.style={draw, diamond, aspect=3.0, fill=gray!5, align=center, inner sep=1pt, text width=5.4cm},
+      label/.style={draw, rounded corners, fill=gray!15, align=center, inner sep=2.5pt, text width=2.7cm},
+      note/.style={draw, rounded corners, align=left, inner sep=2pt, text width=7.0cm},
+      arrow/.style={-Latex, thick}
+  ]
+
+    % Main question
+    \node[start] (st) {What is the primary learning emphasis reflected in the unit contents?};
+
+    % Main classification questions
+    \node[decision, below=of st] (d0) {Is the unit mainly organisational?};
+
+    \node[decision, below=of d0] (d1) {Does the unit primarily cover programming-language-specific information?};
+
+    \node[decision, below=of d1] (d2) {Does the unit primarily explain or compare why something behaves the way it does?};
+
+    \node[decision, below=of d2] (d3) {Does the unit primarily cover how one develops a program (requirements, coding, testing)?};
+
+    % Refinement questions
+    \node[decision, below=of d3] (d4) {Is the concept or information transferable across languages?};
+
+    \node[decision, below=of d4] (d5) {Is the unit about choosing between alternative solution approaches or methodologies?};
+
+    % Note
+    \node[note, below=of d5] (tie) {If multiple answers apply, choose the marker for the component that is most critical for learning and would be most harmful to omit from instruction, feedback, or reflection.};
+
+    % Labels
+    \node[label, right=75mm of d0] (N) {\textbf{(-)}\\No marker};
+    \node[label, right=60mm of d1] (A) {\textbf{(A)}\\Application};
+    \node[label, right=40mm of d2] (S) {\textbf{(S)}\\Structure};
+    \node[label, right=20mm of d3] (P) {\textbf{(P)}\\Procedure};
+
+    % Main flow
+    \draw[arrow] (st) -- (d0);
+
+    \draw[arrow] (d0.east) -- node[above] {Yes} (N.west);
+    \draw[arrow] (d0) -- node[left] {No} (d1);
+
+    \draw[arrow] (d1.east) -- node[above] {Yes} (A.west);
+    \draw[arrow] (d1) -- node[left] {No} (d2);
+
+    \draw[arrow] (d2.east) -- node[above] {Yes} (S.west);
+    \draw[arrow] (d2) -- node[left] {No} (d3);
+
+    \draw[arrow] (d3.east) -- node[above] {Yes} (P.west);
+    \draw[arrow] (d3) -- node[left] {No / mixed} (d4);
+
+    % Refinement flow
+    \draw[arrow] (d4.east) -- ++(10mm,0) node[midway, above] {Yes} -| (S.south);
+    \draw[arrow] (d4) -- node[left] {No / mixed} (d5);
+
+    \draw[arrow] (d5.east) -- ++(10mm,0) node[midway, above] {Yes} -| (P.south);
+    \draw[arrow] (d5) -- node[left] {No / mixed} (tie);
+
+  \end{tikzpicture}

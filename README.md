@@ -101,6 +101,38 @@ python3 _scripts/toc_to_markdown_table.py \
   -o _label_assignment/inputs/book-print-toc-table.csv
 ```
 
+
+## Evaluation
+
+The assignment of the markers is done as follows:
+
+### Human evaluation
+
+The human receives 
+- the definition.txt
+- the decision tree decision-tree/decision-tree-human.png
+- the pdf script
+- the book-print-toc-table.csv file
+
+They go through the pdf and evaluate each unit containted in the csv file in column 4.
+
+### LLM evaluation
+
+The LLM
+- the definition.txt
+- the decision tree decision-tree/decision-tree-LLM.txt that contains the tikzpicture where the decision tree is written in text form.
+- the pdf script
+- the book-print-toc-table.md file
+
+The prompt for the LLM is:
+- the background is that there is a new concept that is called knowledge markers, see the definition.txt.
+- Your task is to label the contents of a course script according to the decisiton tree contained in decision-tree-LLM.txt in tikzformat.
+- book-print-toc-table.md contains the units which you shall label with A, S or P. Each row in book-print-toc-table.md refers to either a part, a chapter, a section or a subsection in book-print.pdf - the script that you shall label.P
+
+- please use only the specified files for your evaluation. Ignore any other file.
+
+
+decision 
 ## Merge human + LLM labels into one result table
 
 After the human has filled `Label (human)` in the CSV and the LLM has filled `Label (LLM)` in the Markdown table, you can merge both into a single result table:
