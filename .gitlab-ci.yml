@@ -22,7 +22,7 @@ workflow:
 # ============================================================================
 
 build_book_pdf_print:
-  stage: build
+  stage: build-paper-version
   variables:
     PDF_PRINT_BUILD_DIR: "_book_as_pdf_print_version"
     PYDEVD_DISABLE_FILE_VALIDATION: "1"
@@ -43,6 +43,8 @@ build_book_pdf_print:
         fi
       done'
     - gosu jovyan bash -c "export MPLCONFIGDIR=/tmp/matplotlib && export LATEXMKOPTS='-interaction=nonstopmode' && jupyter-book build . --config _config_print.yml --toc _toc_print.yml --builder pdflatex --path-output $PDF_PRINT_BUILD_DIR --verbose"
+    - gosu jovyan bash -c "mkdir -p _label_assignment/inputs"
+    - gosu jovyan python3 _scripts/toc_to_markdown_table.py "$PDF_PRINT_BUILD_DIR/_build/latex/book-print.toc" --also-md "_label_assignment/inputs/book-print-toc-table.md" --also-csv "_label_assignment/inputs/book-print-toc-table.csv" -o "_label_assignment/inputs/book-print-toc-table.csv"
     - |
       echo ""
       echo "==================== PRINT PDF (reduced script) ===================="
@@ -59,5 +61,7 @@ build_book_pdf_print:
     paths:
       - $PDF_PRINT_BUILD_DIR/_build/latex/book-print.pdf
       - $PDF_PRINT_BUILD_DIR/_build/latex/book-print.log
+      - _label_assignment/inputs/book-print-toc-table.csv
+      - _label_assignment/inputs/book-print-toc-table.md
     expire_in: 1 week
     when: always
