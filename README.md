@@ -5,7 +5,7 @@
 
 This repository contains a cleaned version of the material used for the A/S/P analysis in the paper *Knowledge Markers: An AI-Agnostic Concept for the Design of Programming Courses*.
 
-For the evaluation we only assign the labels **A**, **S**, and **P**.
+For the evaluation we assign the labels **A**, **S**, and **P**, plus **`-`** for organisational units (“no marker” in the decision tree).
 In the original teaching artefact, some units additionally carry an **A\*** marker (self-study). This is not relevant for the evaluation, therefore all `*` markers were removed in this cleaned version.
 
 The original version is used as a teaching artefact. In that original version:
@@ -104,43 +104,107 @@ python3 _scripts/toc_to_markdown_table.py \
 
 ## Evaluation
 
-The assignment of the markers is done as follows:
+We assign knowledge markers (**A/S/P** or **`-`**) to each unit listed in the generated TOC table. The procedure is the same for human and LLM evaluation: use the marker definition, apply the decision tree, and record exactly one marker per unit.
+
+For the actual evaluation, we prepare two self-contained folders:
+
+- `evaluation-human/` contains the files used by the human rater.
+- `evaluation-LLM/` contains the files provided to the LLM.
+
+This avoids ambiguity because the relevant files are copied from their generated/source locations into one folder per evaluation mode.
+
+```bash
+rm -rf evaluation-human evaluation-LLM
+mkdir -p evaluation-human evaluation-LLM
+
+# Human evaluation package
+cp decision-tree/definition.txt evaluation-human/definition.txt
+cp decision-tree/decision-tree-human.png evaluation-human/decision-tree-human.png
+cp _book_as_pdf_print_version/_build/latex/book-print.pdf evaluation-human/book-print.pdf
+cp _label_assignment/inputs/book-print-toc-table.csv evaluation-human/book-print-toc-table.csv
+
+# LLM evaluation package
+cp decision-tree/definition.txt evaluation-LLM/definition.txt
+cp decision-tree/decision-tree-LLM.txt evaluation-LLM/decision-tree-LLM.txt
+cp _book_as_pdf_print_version/_build/latex/book-print.pdf evaluation-LLM/book-print.pdf
+cp _label_assignment/inputs/book-print-toc-table.md evaluation-LLM/book-print-toc-table.md
+```
 
 ### Human evaluation
 
-The human receives 
-- the definition.txt
-- the decision tree decision-tree/decision-tree-human.png
-- the pdf script
-- the book-print-toc-table.csv file
+**Inputs**
+- Marker definition: `evaluation-human/definition.txt`
+- Decision tree (visual): `evaluation-human/decision-tree-human.png`
+- Script to be labelled: `evaluation-human/book-print.pdf`
+- Units to label (CSV for Excel): `evaluation-human/book-print-toc-table.csv`
 
-They go through the pdf and evaluate each unit containted in the csv file in column 4.
+**Procedure**
+- Open `book-print-toc-table.csv` in Excel (or another spreadsheet editor).
+- For each row/unit, locate the corresponding unit in `book-print.pdf`.
+- Use the decision tree to decide whether the unit’s primary emphasis is **A**, **S**, or **P** (see `definition.txt` for the marker meanings).
+- Write the chosen marker into column **`Label (human)`** (exactly one of: `A`, `S`, `P`, `-`).
 
 ### LLM evaluation
 
-The LLM
-- the definition.txt
-- the decision tree decision-tree/decision-tree-LLM.txt that contains the tikzpicture where the decision tree is written in text form.
-- the pdf script
-- the book-print-toc-table.md file
+**Inputs**
+- Marker definition: `evaluation-LLM/definition.txt`
+- Decision tree (text/TikZ): `evaluation-LLM/decision-tree-LLM.txt`
+- Script to be labelled: `evaluation-LLM/book-print.pdf`
+- Units to label (Markdown): `evaluation-LLM/book-print-toc-table.md`
 
-The prompt for the LLM is:
-- the background is that there is a new concept that is called knowledge markers, see the definition.txt.
-- Your task is to label the contents of a course script according to the decisiton tree contained in decision-tree-LLM.txt in tikzformat.
-- book-print-toc-table.md contains the units which you shall label with A, S or P. Each row in book-print-toc-table.md refers to either a part, a chapter, a section or a subsection in book-print.pdf - the script that you shall label.P
+**Procedure / prompt requirements**
 
-- please use only the specified files for your evaluation. Ignore any other file.
+We give the LLM the following prompt (attach/provide the four input files listed above):
 
+```text
+You are evaluating a course script using the concept of “knowledge markers”.
 
-decision 
+Definitions:
+- Read and use `definition.txt` to understand the markers.
+
+Decision procedure:
+- Apply the decision tree from `decision-tree-LLM.txt` to decide the primary learning emphasis of each unit.
+
+Material to label:
+- The script is `book-print.pdf`.
+- The list of units to label is `book-print-toc-table.md`.
+
+Task:
+- For each row in `book-print-toc-table.md`, assign exactly one marker: `A`, `S`, `P`, or `-`.
+- Return the SAME Markdown table, but fill the column `Label (LLM)` for every row.
+- Do not change any other columns.
+
+Constraints:
+- Use only the provided files. Ignore any other information.
+```
+
+**LLM execution environment**
+
+For the LLM-based labelling run, we used:
+
+- Model used for label assignment: `GPT-5.5`
+- Agentic AI / prompt forwarding environment: `Cursor`
+- Cursor version: `3.1.15`
+- VSCode version: `1.105.1`
+- Cursor commit: `3a67af7b780e0bfc8d32aefa96b8ff1cb8817f80`
+- Cursor build date: `2026-04-15T01:46:06.515Z`
+- Layout: `editor`
+- Build type: `Stable`
+- Release track: `Default`
+- Electron: `39.8.1`
+- Chromium: `142.0.7444.265`
+- Node.js: `22.22.1`
+- V8: `14.2.231.22-electron.0`
+- OS: `Darwin arm64 25.3.0`
+
 ## Merge human + LLM labels into one result table
 
 After the human has filled `Label (human)` in the CSV and the LLM has filled `Label (LLM)` in the Markdown table, you can merge both into a single result table:
 
 ```bash
 python3 _scripts/merge_label_tables.py \
-  --human-csv _label_assignment/inputs/book-print-toc-table.csv \
-  --llm-md _label_assignment/inputs/book-print-toc-table.md \
+  --human-csv evaluation-human/book-print-toc-table.csv \
+  --llm-md evaluation-LLM/book-print-toc-table.md \
   -o _label_assignment/result.md
 ```
 
