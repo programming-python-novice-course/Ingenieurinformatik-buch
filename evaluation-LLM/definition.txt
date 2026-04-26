@@ -1,0 +1,37 @@
+
+Knowledge markers distinguish three complementary emphases that recur in programming education: Application (A), Structure (S), and Procedure (P). 
+\footnote{The concept was developed for a German-language course; in the original materials, Procedure was labelled (V) for \emph{Vorgehenswissen}. In this paper, we use (P) to match the English term Procedure.}
+
+(A) \emph{Application} emphasises producing a working artefact: selecting language constructs and writing or modifying code to meet a specification. Typical units ask students to implement a function from a docstring, refactor a loop into a helper function, or complete a partially given program so that it passes a set of tests.\par
+
+(S) \emph{Structure} emphasises explaining and predicting program behaviour using conceptual models. Typical units focus on ideas such as control flow, state, scope, and data abstraction, for example by having students trace a recursive call stack, explain why a particular variable is out of scope, or justify why two seemingly similar programs produce different outputs.\par
+
+(P) \emph{Procedure} emphasises a systematic way of working: choosing and executing a method to make progress and to check correctness. Typical units ask students to debug by forming and testing hypotheses, to design edge-case tests for a function, or to apply a stepwise process (e.g., reproduce--isolate--fix--regression test) when a program fails.\par
+
+The key idea is that A/S/P do not classify topics themselves, but the intended learning emphasis: understanding, implementing, or systematically deciding and verifying. Instead, they classify what a unit primarily asks learners to do. The same programming problem can involve different types of knowledge depending on the perspective taken.\par
+
+To illustrate this, consider the representation of ordered data. At the conceptual level, learners encounter abstract data types such as sequences or queues and must understand their properties (e.g., ordering, access patterns). This constitutes Structure knowledge (S), as the focus is on mental models and explanations.\par
+
+At the implementation level, learners work with concrete programming constructs such as Python lists and syntax (e.g., []). This corresponds to Application knowledge (A), as the focus is on producing working code.\par
+
+At the decision level, learners must choose which data structure is appropriate for a given problem. This requires reasoning about trade-offs and constraints and therefore constitutes Procedure knowledge (P).\par
+
+Finally, learners may also study how these constructs are realised internally (e.g., how Python lists are implemented as dynamic arrays). This again falls under Structure knowledge (S), as it deepens conceptual understanding rather than changing how code is written.\par
+
+\Cref{tab:asv-taxonomy} summarises these emphases and illustrates typical questions in programming.\par
+
+
+\begin{table}[hbt!]
+  \centering
+  \caption{Mapping of A/S/P to the knowledge types in Krathwohl's revised taxonomy \citep{Krathwohl2002}. The goal is orientation, not ranking: all three knowledge types matter.}
+  \label{tab:asv-taxonomy}
+  \begin{tabularx}{\linewidth}{@{}lXX@{}}
+  \toprule
+  \textbf{Marker} & \textbf{Primary knowledge type (Krathwohl)} & \textbf{Typical questions (programming)} \\
+  \midrule
+  (A) Application & procedural knowledge plus factual elements (syntax/steps) & How do I implement or modify this so it works? Which construct/API should I use? \\
+  (S) Structure & conceptual knowledge (models, relationships, assumptions) & What is happening in this program, and why? What does this output or error imply about scope, state, or control flow? \\
+  (P) Procedure & procedural plus metacognitive knowledge (strategy, decisions, verification) & How do I proceed systematically? Which checks (tests, invariants, traces) help me verify correctness and robustness? \\
+  \bottomrule
+  \end{tabularx}
+  \end{table}
