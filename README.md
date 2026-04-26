@@ -5,6 +5,25 @@
 
 This repository contains a cleaned version of the material used for the A/S/P analysis in the paper *Knowledge Markers: An AI-Agnostic Concept for the Design of Programming Courses*.
 
+## Repository contents
+
+This repository contains:
+
+- the source files needed to build a clean, print-friendly PDF script without embedded knowledge-marker annotations
+- scripts for deriving the evaluation tables, merging human and LLM labels, and generating analysis plots
+- the evaluation inputs and results used for the paper analysis
+
+The most important artefacts are:
+
+- `evaluation-human/`: input package for the human labelling process
+- `evaluation-LLM/`: input package for the LLM labelling process
+- `evalution_result.md`: merged human/LLM label table with agreement summary
+- `evalution_result.pdf`: PDF rendering of the merged evaluation result
+- `plots_paper/`: generated marker-distribution plots and summary data
+- `_scripts/`: reproducibility scripts for table generation, merging, and plotting
+
+The chapter/section hierarchy in the evaluation table is derived from the generated table of contents of the clean PDF script.
+
 For the evaluation we assign the labels **A**, **S**, and **P**, plus **`-`** for organisational units (“no marker” in the decision tree).
 In the original teaching artefact, some units additionally carry an **A\*** marker (self-study). This is not relevant for the evaluation, therefore all `*` markers were removed in this cleaned version.
 
@@ -25,14 +44,6 @@ Higher-level sections are included because they can contribute to the developmen
 In the original teaching artefact, `*` marked content intended for self-study, for example `A*`. This teaching-specific distinction is irrelevant for the paper evaluation, so all `*` markers were removed and only the underlying marker (`A`, `S`, or `P`) is considered.
 
 As a consequence, marker labels in the original teaching artefact can differ from the labels in this cleaned analysis version. For the analysis, the labels in this repository are authoritative.
-
-## Contents
-
-This repository contains:
-- the source files for the PDF script **without** knowledge markers (used as input for the evaluation)
-- a table that summarises how instructors and an LLM labelled the content according to the decision tree introduced in Section 3 of the paper
-
-The chapter/section hierarchy in the table is derived from the table of contents.
 
 ## CI / reproducibility
 
