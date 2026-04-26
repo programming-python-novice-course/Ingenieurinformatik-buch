@@ -54,6 +54,7 @@ build_book_pdf_print:
     paths:
       - $PDF_PRINT_BUILD_DIR/_build/latex/book-print.pdf
       - $PDF_PRINT_BUILD_DIR/_build/latex/book-print.log
+      - $PDF_PRINT_BUILD_DIR/_build/latex/book-print.toc
       - _label_assignment/inputs/book-print-toc-table.csv
       - _label_assignment/inputs/book-print-toc-table.md
     expire_in: 1 week
