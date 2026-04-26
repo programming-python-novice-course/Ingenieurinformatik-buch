@@ -41,6 +41,9 @@ class Row:
     def key(self) -> KEY:
         return (self.name.strip(), self.zahl.strip())
 
+    def differs(self) -> bool:
+        return self.label_human.strip() != self.label_llm.strip()
+
 
 def _norm_header(h: str) -> str:
     return re.sub(r"\s+", " ", h.strip().lower())
@@ -136,8 +139,45 @@ def read_llm_markdown_table(path: Path) -> Dict[KEY, Row]:
     return out
 
 
+def _roman_prefix(name: str) -> Optional[str]:
+    m = re.match(r"^\s*([IVXLCDM]+)\b", name)
+    return m.group(1) if m else None
+
+
+def _parse_zahl(zahl: str) -> Tuple[int, ...]:
+    if not zahl.strip():
+        return ()
+    try:
+        return tuple(int(part) for part in zahl.strip().split("."))
+    except ValueError:
+        return ()
+
+
+def _sort_key(row: Row) -> Tuple[object, ...]:
+    parts = _parse_zahl(row.zahl)
+    if parts:
+        # Numbered chapters sort by numeric hierarchy, e.g. 5.3.1 before 5.3.2.
+        return (parts[0] * 2, parts, row.name)
+
+    # Part headings do not have a chapter number. Place them before their first
+    # numbered chapter according to the course structure.
+    part_starts = {
+        "I": 1,
+        "II": 2,
+        "III": 3,
+        "IV": 4,
+        "V": 12,
+        "VI": 13,
+        "VII": 16,
+    }
+    roman = _roman_prefix(row.name)
+    if roman in part_starts:
+        return (part_starts[roman] * 2 - 1, (), row.name)
+    return (10_000, (), row.name)
+
+
 def merge(human: Dict[KEY, Row], llm: Dict[KEY, Row]) -> List[Row]:
-    keys = sorted(set(human.keys()) | set(llm.keys()))
+    keys = set(human.keys()) | set(llm.keys())
     merged: List[Row] = []
     for k in keys:
         h = human.get(k)
@@ -149,28 +189,90 @@ def merge(human: Dict[KEY, Row], llm: Dict[KEY, Row]) -> List[Row]:
         label_h = (h.label_human if h else "")
         label_l = (l.label_llm if l else "")
         merged.append(Row(name=name, zahl=zahl, pages=pages, label_human=label_h, label_llm=label_l))
-    return merged
+    return sorted(merged, key=_sort_key)
 
 
 def write_csv(rows: Iterable[Row], path: Path) -> None:
     with path.open("w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["Name", "Zahl", "Seitenanzahl", "Label (human)", "Label (LLM)"])
+        w.writerow(["Name", "Zahl", "Seitenanzahl", "Label (human)", "Label (LLM)", "Diff"])
         for r in rows:
-            w.writerow([r.name, r.zahl, r.pages, r.label_human, r.label_llm])
+            w.writerow([r.name, r.zahl, r.pages, r.label_human, r.label_llm, "x" if r.differs() else ""])
 
 
 def _md_escape(s: str) -> str:
     return s.replace("|", r"\|")
 
 
+def _diff_summary(rows: List[Row]) -> Tuple[int, int, int]:
+    total = len(rows)
+    different = sum(1 for r in rows if r.differs())
+    identical = total - different
+    return total, identical, different
+
+
+def _is_subsection(row: Row) -> bool:
+    return len(_parse_zahl(row.zahl)) >= 3
+
+
+def _group_diff_summary(rows: List[Row], *, subsections: bool) -> Tuple[int, int]:
+    group = [r for r in rows if _is_subsection(r) == subsections]
+    different = sum(1 for r in group if r.differs())
+    return len(group), different
+
+
+def _marker_pair_counts(rows: List[Row]) -> Dict[Tuple[str, str], int]:
+    labels = ("A", "S", "P", "-")
+    pairs = {(human, llm) for human in labels for llm in labels if human != llm}
+    counts = {pair: 0 for pair in pairs}
+    for r in rows:
+        pair = (r.label_human.strip(), r.label_llm.strip())
+        if pair in counts:
+            counts[pair] += 1
+    return counts
+
+
 def write_markdown(rows: Iterable[Row], path: Path) -> None:
+    rows = list(rows)
     lines: List[str] = []
-    lines.append("| Name | Zahl | Seitenanzahl | Label (human) | Label (LLM) |")
-    lines.append("|---|---:|---:|---|---|")
+    lines.append("| Name | Zahl | Seitenanzahl | Label (human) | Label (LLM) | Diff |")
+    lines.append("|---|---:|---:|---|---|---|")
     for r in rows:
         lines.append(
-            f"| {_md_escape(r.name)} | {r.zahl} | {r.pages} | {r.label_human} | {r.label_llm} |"
+            f"| {_md_escape(r.name)} | {r.zahl} | {r.pages} | {r.label_human} | {r.label_llm} | {'x' if r.differs() else ''} |"
+        )
+    total, identical, different = _diff_summary(rows)
+    identical_pct = identical / total * 100 if total else 0
+    different_pct = different / total * 100 if total else 0
+    lines.append("")
+    lines.append("## Zusammenfassung")
+    lines.append("")
+    lines.append(f"- Identisch: {identical} von {total} ({identical_pct:.1f}%)")
+    lines.append(f"- Unterschiedlich: {different} von {total} ({different_pct:.1f}%)")
+    lines.append("")
+    lines.append("### Unterschiede nach Gliederungsebene")
+    lines.append("")
+    for label, subsections in (("Subsections", True), ("Nicht-Subsections", False)):
+        group_total, group_different = _group_diff_summary(rows, subsections=subsections)
+        group_pct = group_different / group_total * 100 if group_total else 0
+        share_pct = group_different / different * 100 if different else 0
+        lines.append(
+            f"- {label}: {group_different} von {group_total} unterschiedlich "
+            f"({group_pct:.1f}% der Gruppe, {share_pct:.1f}% aller Unterschiede)"
+        )
+    lines.append("")
+    lines.append("### Häufigste Marker-Unterschiede")
+    lines.append("")
+    marker_pair_counts = _marker_pair_counts(rows)
+    marker_pair_total = sum(marker_pair_counts.values())
+    for human_label, llm_label in sorted(
+        marker_pair_counts,
+        key=lambda pair: (-marker_pair_counts[pair], pair[0], pair[1]),
+    ):
+        count = marker_pair_counts[(human_label, llm_label)]
+        pct = count / marker_pair_total * 100 if marker_pair_total else 0
+        lines.append(
+            f"- `{human_label} -> {llm_label}`: {count} ({pct:.1f}% dieser Marker-Unterschiede)"
         )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 

@@ -207,6 +207,6 @@ After the human has filled `Label (human)` in the CSV and the LLM has filled `La
 python3 _scripts/merge_label_tables.py \
   --human-csv evaluation-human/book-print-toc-table.csv \
   --llm-md evaluation-LLM/book-print-toc-table.md \
-  -o _label_assignment/result.md
+  -o evalution_result.md
 ```
 
