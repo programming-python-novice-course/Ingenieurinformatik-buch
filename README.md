@@ -1,5 +1,5 @@
-[![Latest Release](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/badges/release.svg)](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/releases)
-[![pipeline status](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/badges/master/pipeline.svg)](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/commits/master)
+[![Latest Release](https://img.shields.io/github/v/release/programming-python-novice-course/Ingenieurinformatik-buch)](https://github.com/programming-python-novice-course/Ingenieurinformatik-buch/releases)
+[![pipeline status](https://github.com/programming-python-novice-course/Ingenieurinformatik-buch/actions/workflows/book.yml/badge.svg?branch=master)](https://github.com/programming-python-novice-course/Ingenieurinformatik-buch/commits/master)
 
 # Open educational resources for Python programming in non-computer-science degree programs
 
@@ -15,8 +15,8 @@ Most course content is written in German because the course language is German. 
 
 ![Overview screenshot](./_docs/figs/README-pic.png)
 
-- Website: [ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)
-- Current PDF script: [`Skript-aktuell.pdf`](https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-download/-/blob/main/Downloads/Skript-aktuell.pdf)
+- Website: [programming-python-novice-course.github.io/Ingenieurinformatik-buch](https://programming-python-novice-course.github.io/Ingenieurinformatik-buch/intro.html)
+- Current PDF script: [`Skript-aktuell.pdf`](https://github.com/programming-python-novice-course/ingenieurinformatik-download/blob/main/Downloads/Skript-aktuell.pdf)
 
 The website is built around Jupyter notebooks. Code cells can be executed in the browser by connecting to a Jupyter runtime. The project supports launches through services such as Binder and the [JupyterHub of Munich University of Applied Sciences](https://datahub.cs.hm.edu).
 
@@ -34,7 +34,7 @@ This project serves different needs.
 
 Large language models change how people write code and how they learn programming. This course uses them as learning support, but it does not outsource understanding to them. We distinguish conceptual knowledge from language-specific practice to keep the course goals transparent and durable.
 
-More details are in the course chapter: [Learning programming in the age of large language models](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/chapters/01-course-overview/1-4-Programmieren-lernen-in-Zeiten-von-LLMs.html)
+More details are in the course chapter: [Learning programming in the age of large language models](https://programming-python-novice-course.github.io/Ingenieurinformatik-buch/chapters/01-course-overview/1-4-Programmieren-lernen-in-Zeiten-von-LLMs.html)
 
 - The course concept distinguishes competencies that can be automated by large language models from those that cannot. This transparency helps students steer their learning and builds trust and motivation.
 - The barrier to entry is intentionally low. Learners use interactive code cells and Jupyter notebooks in the cloud, so no local installation is required.
@@ -55,7 +55,7 @@ Suggested citation:
 
 ## Deployment overview
 
-- The website is published via GitLab Pages from this repository.
+- The website is published via GitHub Pages from this repository.
 - Executed notebooks are deployed to a separate repository for notebook launches.
 - PDF files are deployed to a separate downloads repository.
 - Details: [`_docs/project-repositories.md`](./_docs/project-repositories.md)
@@ -65,6 +65,6 @@ Suggested citation:
 
 - Software documentation for maintainers and book developers: [`_docs/README.md`](./_docs/README.md)
 - Contributing: [`CONTRIBUTING.md`](./CONTRIBUTING.md)
-- Feedback and issues: [GitLab issues](https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/-/issues)
+- Feedback and issues: [GitHub issues](https://github.com/programming-python-novice-course/Ingenieurinformatik-buch/issues)
 
 

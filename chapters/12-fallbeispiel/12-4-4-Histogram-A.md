@@ -109,7 +109,7 @@ Zunächst liest Julia die Datei ein. Dafür verwendet sie `urllib` aus der Stand
 ```{code-cell} python3
 from urllib.request import urlopen
 
-url = "https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz/-/raw/master/data/air_quality_no2.csv"
+url = "https://raw.githubusercontent.com/programming-python-novice-course/ingenieurinformatik-buch-deploy-lrz/master/data/air_quality_no2.csv"
 
 with urlopen(url) as response:
     csv_text = response.read().decode("utf-8")

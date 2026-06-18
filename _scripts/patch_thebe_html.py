@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Patch Jupyter Book HTML Thebe config for GitLab Binder usage.
+"""Patch Jupyter Book HTML Thebe config for GitHub Binder usage.
 
 Usage:
   python3 _scripts/patch_thebe_html.py --path-output _website11
@@ -121,7 +121,7 @@ def main() -> None:
     parser.add_argument("--html-dir", default=None)
     parser.add_argument(
         "--repo",
-        default="https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz.git",
+        default="https://github.com/programming-python-novice-course/ingenieurinformatik-buch-deploy-lrz.git",
     )
     parser.add_argument("--ref", default="binder-minimal")
     parser.add_argument("--binder-url", default="https://mybinder.org")

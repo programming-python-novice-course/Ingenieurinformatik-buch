@@ -20,7 +20,7 @@ only_build_toc_files: true
 # --------------------------------------------------
 execute:
   execute_notebooks: auto  # off
-  allow_errors: true       # due to CI setup in Gitlab
+  allow_errors: true       # tolerate selected notebook failures in CI
   timeout: 25
 
 # --------------------------------------------------
@@ -70,7 +70,7 @@ sphinx:
 
     html_show_copyright: false
     language: de
-    html_baseurl: https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/
+    html_baseurl: https://programming-python-novice-course.github.io/Ingenieurinformatik-buch/
     html_favicon: figs/favicon/favicon.ico
     html_search_language: de
 
@@ -206,8 +206,8 @@ sphinx:
 # Repository / edit buttons
 # --------------------------------------------------
 repository:
-  # GitLab project *web* URL (no `.git` suffix); used for repository/issue/edit buttons.
-  url: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch
+  # GitHub project web URL (no `.git` suffix); used for repository/issue/edit buttons.
+  url: https://github.com/programming-python-novice-course/Ingenieurinformatik-buch
   path_to_book: ""
   branch: master
 

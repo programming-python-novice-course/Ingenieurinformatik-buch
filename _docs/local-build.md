@@ -10,7 +10,7 @@ See also:
 ## Prerequisites
 
 - Docker installed
-- Dev image available: `gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest`
+- Dev image available: `ghcr.io/programming-python-novice-course/ingenieurinformatik-buch:latest`
 
 ## Start the container
 
@@ -18,7 +18,7 @@ See also:
 docker run --rm -it \
   -v "$PWD":/home/jovyan/work \
   -w /home/jovyan/work \
-  gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest \
+  ghcr.io/programming-python-novice-course/ingenieurinformatik-buch:latest \
   bash
 ```
 

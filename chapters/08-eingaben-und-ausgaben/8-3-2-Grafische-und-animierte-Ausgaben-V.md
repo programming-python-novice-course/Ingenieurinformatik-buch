@@ -58,7 +58,7 @@ rw.animate(world)           # Grafische/animierte Ausgabe
 | Grafik (`plt.show()` mit GUI-Backend) | Display-Server (X11, Wayland) | Eigenes Fenster | Nein – fehlgeschlagen |
 | Grafik/Animation (inline im Notebook) | Notebook-Rich-Output (PNG/HTML eingebettet) | Unter der Zelle | Ja, wenn korrekt konfiguriert |
 
-**Headless** bedeutet: Die Umgebung hat keinen Bildschirm und keinen Display-Server (z.B. Docker-Container, GitLab CI, Server im Rechenzentrum).
+**Headless** bedeutet: Die Umgebung hat keinen Bildschirm und keinen Display-Server (z.B. Docker-Container, GitHub Actions, Server im Rechenzentrum).
 
 Dann gilt:
 

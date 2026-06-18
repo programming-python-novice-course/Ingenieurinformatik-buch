@@ -55,8 +55,8 @@ from matplotlib.patches import Rectangle
 from io import BytesIO
 from urllib.request import urlopen
 
-url = "https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz/-/raw/master/img/colors.png"
-# url = "https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz/-/raw/master/img/colors2.png"
+url = "https://raw.githubusercontent.com/programming-python-novice-course/ingenieurinformatik-buch-deploy-lrz/master/img/colors.png"
+# url = "https://raw.githubusercontent.com/programming-python-novice-course/ingenieurinformatik-buch-deploy-lrz/master/img/colors2.png"
 
 with urlopen(url, timeout=10) as response:
     data = response.read()

@@ -1,53 +1,50 @@
-# CI/CD (GitLab)
+# CI/CD (GitHub Actions)
 
-CI is configured via `.gitlab-ci.yml` and uses the following build environment:
+CI is configured via `.github/workflows/` and uses the following build environment:
 
-- `image: gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest`
+- `image: ghcr.io/programming-python-novice-course/ingenieurinformatik-buch:latest`
 - The container-based CI build is supported starting from **repo version `v2`**.
 - By default CI uses the **`latest`** tag.
-- For versions **`v2.*`**, **`latest`** refers to the **v2 container image** (see Container Registry: `https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch/container_registry/11892`).
+- For versions **`v2.*`**, **`latest`** refers to the **v2 container image** (see Container Registry: `https://github.com/programming-python-novice-course/Ingenieurinformatik-buch/pkgs/container/ingenieurinformatik-buch`).
 
 See also:
 
 - Dev image details: [`dev-image.md`](./dev-image.md)
 - Project repository roles: [`project-repositories.md`](./project-repositories.md)
+- GitHub migration cutover: [`github-migration-cutover.md`](./github-migration-cutover.md)
 
 ## Build jobs
 
-- **`build_website_html`** (Stage `build`)
+- **`build_website_html`**
   - Builds the HTML website with Jupyter Book.
   - Post-processing: `_scripts/patch_thebe_html.py` (patch Thebe/Binder options into HTML, remove duplicate script tags).
   - Artifact: `"_website_html/_build"`
 
-- **`build_book_pdf`** (Stage `build`)
+- **`build_book_pdf`**
   - Builds the full PDF (LaTeX/pdflatex).
-  - On `master`: automatic, otherwise manual (allow_failure).
+  - Runs automatically on `master`; pull requests build for validation.
   - Artifacts: PDF + log under `"_book_as_pdf/_build/latex/"`
 
-- **`build_book_pdf_print`** (Stage `build`)
+- **`build_book_pdf_print`**
   - Builds a reduced/print-friendly PDF version (separate `_config_print.yml` / `_toc_print.yml`).
-  - On `master`: automatic, otherwise manual (allow_failure).
+  - Runs automatically on `master`; pull requests build for validation.
 
 ## Deploy jobs
 
-- **`update_website`**
-  - Publishes GitLab Pages from the HTML artifact.
+- **`deploy_pages`**
+  - Publishes GitHub Pages from the HTML artifact.
   - Runs automatically on `master`.
 
-- **`update_website_test`**
-  - Pages deploy for non-`master` branches.
-  - Manual, with `path_prefix: "test"`.
-
-- **`deploy_notebooks_in_gitlabLRZ`**
+- **`deploy_notebooks`**
   - Copies executed notebooks from `"_website_html/_build/jupyter_execute/chapters"` into the deploy repo
-    `fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz` under `deployed_notebooks/`.
+    `programming-python-novice-course/ingenieurinformatik-buch-deploy-lrz` under `deployed_notebooks/`.
 
-- **`deploy_pdf_in_gitlabLRZ`** and **`deploy_print_pdf_in_gitlabLRZ`**
-  - Copy PDFs into the downloads repo `fk03ingenieurinformatik/ingenieurinformatik-download` (branch `main`).
+- **`deploy_pdf`** and **`deploy_print_pdf`**
+  - Copy PDFs into the downloads repo `programming-python-novice-course/ingenieurinformatik-download` (branch `main`).
   - Filenames include the version from `_config.yml` (`sphinx.config.release`); additionally a “current” alias is created (`Skript-aktuell.pdf` / `Skript-print-aktuell.pdf`).
 
 ## Triggers / rules (short)
 
-- Pipelines run for push/MR/web triggers (see `workflow.rules` in `.gitlab-ci.yml`).
-- PDF jobs are usually manual for branches ≠ `master`.
+- Workflows run for push, pull request, and manual `workflow_dispatch` triggers.
+- Cross-repo deploy jobs run only for `master` pushes and require `DEPLOY_REPO_TOKEN` / `DOWNLOAD_REPO_TOKEN` GitHub secrets.
 

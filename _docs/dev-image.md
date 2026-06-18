@@ -1,8 +1,8 @@
 # Dev image (CI/local builds)
 
-CI (and recommended local builds) use the dev image (Docker image) from the GitLab registry:
+CI (and recommended local builds) use the dev image (Docker image) from the GitHub Container Registry:
 
-- `gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch:latest`
+- `ghcr.io/programming-python-novice-course/ingenieurinformatik-buch:latest`
 
 The sources live in `_dev-image/`:
 
@@ -12,11 +12,11 @@ The sources live in `_dev-image/`:
 ## Build & push (Buildx, linux/amd64)
 
 ```bash
-REGISTRY_IMAGE="gitlab.lrz.de:5005/fk03ingenieurinformatik/ingenieurinformatik-buch"
+REGISTRY_IMAGE="ghcr.io/programming-python-novice-course/ingenieurinformatik-buch"
 TAG="$(date +%F)" # YYYY-MM-DD
 
 # If needed:
-docker login gitlab.lrz.de:5005
+echo "$GITHUB_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
 
 # Important: the build context is `_dev-image/` because `doc-requirements.txt` lives there.
 docker buildx build --platform linux/amd64 \

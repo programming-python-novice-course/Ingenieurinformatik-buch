@@ -7,22 +7,21 @@
 - Der Inhalt eines Repositories wird typischerweise mit einer *Versionskontrolle* verwaltet, z. B. mit Git.
 - Ein *Hub* hostet Repositories, sodass man sie teilen und gemeinsam daran arbeiten kann (z. B. GitHub oder GitLab).
 - Der wohl bekannteste Hub ist [GitHub](https://github.com).
-- Als Studierende der Hochschule München, der LMU oder der TUM können Sie kostenfrei und ohne zusätzliche Registrierung [GitLab LRZ](https://gitlab.lrz.de) nutzen.
+- Manche Hochschulen stellen zusätzlich institutionelle Git-Hubs bereit, zum Beispiel GitLab-Instanzen für Studierende.
 
 ```{figure} ../../figs/02-computer-sciences-basics/gitlablrz.png
 ---
 width: 700px
 name: fig-gitlablrz
 ---
-Snapshot des Repositories auf GitLab LRZ, das den Quellcode des interaktiven Lehrbuchs enthält.
+Snapshot eines Repository-Hubs mit dem Quellcode des interaktiven Lehrbuchs.
 ```
 
 ```{admonition} Tipp
 :class: tip
 
-- Legen Sie Ihren Quellcode auf GitLab LRZ ab, damit Sie ihn zentral versionieren und mit anderen teilen können.
-- Sie haben über Ihren Studierenden-Account automatisch Zugang und müssen sich nicht separat registrieren.
-- Für den Login nutzen Sie Ihre HM-Kennung (Benutzername `hm-…`) und Ihr normales Accountpasswort.
+- Legen Sie Ihren Quellcode auf einem Git-Hub ab, damit Sie ihn zentral versionieren und mit anderen teilen können.
+- Wenn Ihre Hochschule einen eigenen Hub betreibt, können Sie dafür häufig Ihren Studierenden-Account nutzen.
 
 Voraussetzung für die Nutzung: Sie müssen lernen, wie man das Versionskontrollsystem Git bedient.
 

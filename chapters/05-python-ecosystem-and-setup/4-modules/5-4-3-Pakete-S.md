@@ -46,7 +46,7 @@ Um zu verstehen, was ein Paket und ein Modul sind, müssen wir verstehen, wie Co
 :class: tip
 Im Live-Code können wir zwar auf Dateien zugreifen, diese sind allerdings etwas versteckt. Wir wechseln daher in einen Jupyter-Hub.
 
-Empfehlung: Klonen Sie das Deployment-Repository [`ingenieurinformatik-buch-deploy-lrz`](https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz) und führen Sie die Beispiele in VS Code (mit Jupyter-Extension) lokal aus, wie im `README.md` des Deployment-Repositories beschrieben.
+Empfehlung: Klonen Sie das Deployment-Repository [`ingenieurinformatik-buch-deploy-lrz`](https://github.com/programming-python-novice-course/ingenieurinformatik-buch-deploy-lrz) und führen Sie die Beispiele in VS Code (mit Jupyter-Extension) lokal aus, wie im `README.md` des Deployment-Repositories beschrieben.
 ```
 
 Hier haben wir Zugriff auf Dateien. Das Wichtigste zuerst: Wenn wir Python installieren, dann sagen wir unserem Betriebssystem: „Hier an dieser Stelle liegen Python-Pakete.“ Wenn jemand Python-Code schreibt, dann kann er diese Pakete nutzen, indem er sie importiert. Das kennen Sie bereits:

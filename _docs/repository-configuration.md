@@ -19,8 +19,8 @@ Example:
 
 ```yaml
 repository:
-  # GitLab project *web* URL (no `.git`) so issue/edit links work correctly.
-  url: https://gitlab.lrz.de/fk03ingenieurinformatik/Ingenieurinformatik-buch
+  # GitHub project web URL (no `.git`) so issue/edit links work correctly.
+  url: https://github.com/programming-python-novice-course/Ingenieurinformatik-buch
 ```
 
 Note: this affects the visible repository links in the website UI.
@@ -35,14 +35,14 @@ The repository that is written into the final Thebe/Binder configuration is set 
   - `--ref`
   - `--binder-url`
 - Current defaults:
-  - `repo`: `https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz.git`
+  - `repo`: `https://github.com/programming-python-novice-course/ingenieurinformatik-buch-deploy-lrz.git`
   - `ref`: `binder-minimal`
   - `binder-url`: `https://mybinder.org`
 
 Example from the script:
 
 ```python
-parser.add_argument("--repo", default="https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz.git")
+parser.add_argument("--repo", default="https://github.com/programming-python-novice-course/ingenieurinformatik-buch-deploy-lrz.git")
 parser.add_argument("--ref", default="binder-minimal")
 parser.add_argument("--binder-url", default="https://mybinder.org")
 ```
@@ -62,7 +62,7 @@ Example:
 
 ```js
 const TARGET = {
-  hubRepoUrl: "https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz.git",
+  hubRepoUrl: "https://github.com/programming-python-novice-course/ingenieurinformatik-buch-deploy-lrz.git",
   branch: "master",
 };
 ```
@@ -80,4 +80,4 @@ The final Thebe configuration in the HTML output is produced in two steps:
 1. `jupyter-book build ...`
 2. `python3 _scripts/patch_thebe_html.py --path-output <output_dir>`
 
-In CI, step 2 is already included in the `build_website_html` job (`.gitlab-ci.yml`).
+In CI, step 2 is already included in the `build_website_html` job (`.github/workflows/book.yml`).

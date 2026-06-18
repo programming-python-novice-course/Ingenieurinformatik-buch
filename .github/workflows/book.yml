@@ -1,0 +1,325 @@
+name: Build and publish book
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: book-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DEPLOY_REPO: ${{ vars.DEPLOY_REPO || format('{0}/ingenieurinformatik-buch-deploy-lrz', github.repository_owner) }}
+  DOWNLOAD_REPO: ${{ vars.DOWNLOAD_REPO || format('{0}/ingenieurinformatik-download', github.repository_owner) }}
+  DEPLOY_BRANCH: ${{ vars.DEPLOY_BRANCH || 'master' }}
+  DOWNLOAD_BRANCH: ${{ vars.DOWNLOAD_BRANCH || 'main' }}
+  THEBE_REPO_URL: ${{ vars.THEBE_REPO_URL || format('https://github.com/{0}/ingenieurinformatik-buch-deploy-lrz.git', github.repository_owner) }}
+  THEBE_REF: ${{ vars.THEBE_REF || 'binder-minimal' }}
+  MPLCONFIGDIR: /tmp/matplotlib
+  PYDEVD_DISABLE_FILE_VALIDATION: "1"
+
+jobs:
+  build_website_html:
+    name: Build website HTML
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ vars.BOOK_CI_IMAGE || format('ghcr.io/{0}/ingenieurinformatik-buch:latest', github.repository_owner) }}
+      options: --user root
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Build Jupyter Book HTML
+        run: |
+          set -euo pipefail
+          chown -R "$(id -u jovyan):$(id -g jovyan)" "$GITHUB_WORKSPACE" || true
+          gosu jovyan bash -lc '
+            rm -rf _build _website_html
+            export MPLCONFIGDIR=/tmp/matplotlib
+            jupyter-book build . --path-output _website_html --verbose
+            python3 _scripts/patch_thebe_html.py \
+              --path-output _website_html \
+              --repo "${THEBE_REPO_URL}" \
+              --ref "${THEBE_REF}"
+          '
+
+      - name: Upload website build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-build
+          path: _website_html/_build
+          retention-days: 7
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _website_html/_build/html
+
+  deploy_pages:
+    name: Deploy GitHub Pages
+    needs: build_website_html
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  build_book_pdf:
+    name: Build full PDF
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ vars.BOOK_CI_IMAGE || format('ghcr.io/{0}/ingenieurinformatik-buch:latest', github.repository_owner) }}
+      options: --user root
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Build full PDF
+        run: |
+          set -euo pipefail
+          chown -R "$(id -u jovyan):$(id -g jovyan)" "$GITHUB_WORKSPACE" || true
+          gosu jovyan bash -lc '
+            rm -rf _build _book_as_pdf
+            export MPLCONFIGDIR=/tmp/matplotlib
+            for gif in $(find figs -name "*.gif"); do
+              png="${gif%.gif}.png"
+              if [ ! -f "$png" ]; then
+                convert "${gif}[0]" "$png"
+              fi
+            done
+            export LATEXMKOPTS="-interaction=nonstopmode"
+            jupyter-book build . --builder pdflatex --path-output _book_as_pdf --verbose
+          '
+
+      - name: Upload full PDF artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: book-pdf
+          path: |
+            _book_as_pdf/_build/latex/book.pdf
+            _book_as_pdf/_build/latex/book.log
+          retention-days: 7
+
+  build_book_pdf_print:
+    name: Build print PDF
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ vars.BOOK_CI_IMAGE || format('ghcr.io/{0}/ingenieurinformatik-buch:latest', github.repository_owner) }}
+      options: --user root
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Build print PDF
+        run: |
+          set -euo pipefail
+          chown -R "$(id -u jovyan):$(id -g jovyan)" "$GITHUB_WORKSPACE" || true
+          gosu jovyan bash -lc '
+            rm -rf _build _book_as_pdf_print_version
+            export MPLCONFIGDIR=/tmp/matplotlib
+            python3 _scripts/generate_config_toc_print_version.py \
+              --input _toc.yml \
+              --output _toc_print.yml \
+              --config-input _config.yml \
+              --config-output _config_print.yml \
+              --stop-after chapters/misc/Expertenwissen/16-Expertenwissen \
+              --execute-notebooks-value auto \
+              --latex-targetname book-print.tex
+            export LATEXMKOPTS="-interaction=nonstopmode"
+            jupyter-book build . \
+              --config _config_print.yml \
+              --toc _toc_print.yml \
+              --builder pdflatex \
+              --path-output _book_as_pdf_print_version \
+              --verbose
+            mkdir -p _label_assignment/inputs
+            python3 _scripts/toc_to_markdown_table.py \
+              _book_as_pdf_print_version/_build/latex/book-print.toc \
+              --also-md _label_assignment/inputs/book-print-toc-table.md \
+              --also-csv _label_assignment/inputs/book-print-toc-table.csv \
+              -o _label_assignment/inputs/book-print-toc-table.csv
+          '
+
+      - name: Upload print PDF artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: book-print-pdf
+          path: |
+            _book_as_pdf_print_version/_build/latex/book-print.pdf
+            _book_as_pdf_print_version/_build/latex/book-print.log
+            _book_as_pdf_print_version/_build/latex/book-print.toc
+            _label_assignment/inputs/book-print-toc-table.csv
+            _label_assignment/inputs/book-print-toc-table.md
+          retention-days: 7
+
+  deploy_notebooks:
+    name: Deploy executed notebooks
+    needs: build_website_html
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Download website build
+        uses: actions/download-artifact@v4
+        with:
+          name: website-build
+          path: _website_html/_build
+
+      - name: Push notebooks to deployment repository
+        env:
+          DEPLOY_REPO_TOKEN: ${{ secrets.DEPLOY_REPO_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${DEPLOY_REPO_TOKEN:-}" ]; then
+            echo "DEPLOY_REPO_TOKEN is required to push notebooks." >&2
+            exit 1
+          fi
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git clone --branch "${DEPLOY_BRANCH}" "https://x-access-token:${DEPLOY_REPO_TOKEN}@github.com/${DEPLOY_REPO}.git" _deploy_repo
+          rm -rf _deploy_repo/deployed_notebooks
+          mkdir -p _deploy_repo/deployed_notebooks
+          cp -R _website_html/_build/jupyter_execute/chapters/. _deploy_repo/deployed_notebooks/
+          printf 'These notebooks were generated automatically. Source commit: https://github.com/%s/commit/%s (Release: %s)\n' \
+            "${GITHUB_REPOSITORY}" \
+            "${GITHUB_SHA}" \
+            "$(python3 - <<'PY'
+          from pathlib import Path
+          import re
+          text = Path("_config.yml").read_text(encoding="utf-8")
+          match = re.search(r"^\s*release:\s*[\"']?([^\"'\n]+)", text, re.M)
+          print(match.group(1) if match else "unknown")
+          PY
+          )" > _deploy_repo/deployed_notebooks/Version.md
+          cd _deploy_repo
+          git add deployed_notebooks
+          if git diff --cached --quiet; then
+            echo "No notebook changes to deploy."
+            exit 0
+          fi
+          git commit -m "Update executed notebooks from ${GITHUB_REPOSITORY}@${GITHUB_SHA}"
+          git push origin "${DEPLOY_BRANCH}"
+
+  deploy_pdf:
+    name: Deploy full PDF
+    needs: build_book_pdf
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ingenieurinformatik-download-main
+      cancel-in-progress: false
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Download full PDF
+        uses: actions/download-artifact@v4
+        with:
+          name: book-pdf
+          path: _book_as_pdf/_build/latex
+
+      - name: Push full PDF to download repository
+        env:
+          DOWNLOAD_REPO_TOKEN: ${{ secrets.DOWNLOAD_REPO_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${DOWNLOAD_REPO_TOKEN:-}" ]; then
+            echo "DOWNLOAD_REPO_TOKEN is required to push PDFs." >&2
+            exit 1
+          fi
+          sudo apt-get update
+          sudo apt-get install -y git-lfs
+          git lfs install
+          VERSION="$(python3 - <<'PY'
+          from pathlib import Path
+          import re
+          text = Path("_config.yml").read_text(encoding="utf-8")
+          match = re.search(r"^\s*release:\s*[\"']?([^\"'\n]+)", text, re.M)
+          print(match.group(1) if match else "unknown")
+          PY
+          )"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git clone --branch "${DOWNLOAD_BRANCH}" "https://x-access-token:${DOWNLOAD_REPO_TOKEN}@github.com/${DOWNLOAD_REPO}.git" _download_repo
+          mkdir -p _download_repo/Downloads
+          cp _book_as_pdf/_build/latex/book.pdf "_download_repo/Downloads/Skript-${VERSION}.pdf"
+          cp _book_as_pdf/_build/latex/book.pdf "_download_repo/Downloads/Skript-aktuell.pdf"
+          cd _download_repo
+          git lfs install
+          git add Downloads
+          if git diff --cached --quiet; then
+            echo "No full PDF changes to deploy."
+            exit 0
+          fi
+          git commit -m "Update Skript PDF ${VERSION} from ${GITHUB_REPOSITORY}@${GITHUB_SHA}"
+          git push origin "${DOWNLOAD_BRANCH}"
+
+  deploy_print_pdf:
+    name: Deploy print PDF
+    needs: build_book_pdf_print
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ingenieurinformatik-download-main
+      cancel-in-progress: false
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Download print PDF
+        uses: actions/download-artifact@v4
+        with:
+          name: book-print-pdf
+          path: _book_as_pdf_print_version/_build/latex
+
+      - name: Push print PDF to download repository
+        env:
+          DOWNLOAD_REPO_TOKEN: ${{ secrets.DOWNLOAD_REPO_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${DOWNLOAD_REPO_TOKEN:-}" ]; then
+            echo "DOWNLOAD_REPO_TOKEN is required to push PDFs." >&2
+            exit 1
+          fi
+          sudo apt-get update
+          sudo apt-get install -y git-lfs
+          git lfs install
+          VERSION="$(python3 - <<'PY'
+          from pathlib import Path
+          import re
+          text = Path("_config.yml").read_text(encoding="utf-8")
+          match = re.search(r"^\s*release:\s*[\"']?([^\"'\n]+)", text, re.M)
+          print(match.group(1) if match else "unknown")
+          PY
+          )"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git clone --branch "${DOWNLOAD_BRANCH}" "https://x-access-token:${DOWNLOAD_REPO_TOKEN}@github.com/${DOWNLOAD_REPO}.git" _download_repo
+          mkdir -p _download_repo/Downloads/Skript-Version-Printausgabe
+          cp _book_as_pdf_print_version/_build/latex/book-print.pdf "_download_repo/Downloads/Skript-Version-Printausgabe/Skript-print-${VERSION}.pdf"
+          cp _book_as_pdf_print_version/_build/latex/book-print.pdf "_download_repo/Downloads/Skript-Version-Printausgabe/Skript-print-aktuell.pdf"
+          cd _download_repo
+          git lfs install
+          git add Downloads
+          if git diff --cached --quiet; then
+            echo "No print PDF changes to deploy."
+            exit 0
+          fi
+          git commit -m "Update print Skript PDF ${VERSION} from ${GITHUB_REPOSITORY}@${GITHUB_SHA}"
+          git push origin "${DOWNLOAD_BRANCH}"

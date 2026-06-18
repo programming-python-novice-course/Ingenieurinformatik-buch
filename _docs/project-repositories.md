@@ -13,11 +13,11 @@ See also:
 Purpose:
 
 - Source files for website and script (MyST/Markdown, notebooks, figures, configuration).
-- GitLab CI builds the HTML website (GitLab Pages) and the PDF(s).
+- GitHub Actions builds the HTML website (GitHub Pages) and the PDF(s).
 
 ## 2) Deployment repository (executable artifacts)
 
-- Repo: `fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz`
+- Repo: `programming-python-novice-course/ingenieurinformatik-buch-deploy-lrz`
 
 Purpose:
 
@@ -31,10 +31,10 @@ Important branches:
 
 ## 3) Downloads repository (PDFs)
 
-- Repo: `fk03ingenieurinformatik/ingenieurinformatik-download` (branch `main`)
+- Repo: `programming-python-novice-course/ingenieurinformatik-download` (branch `main`)
 
 Purpose:
 
 - Stable download location for PDFs.
-- Populated by CI (see `.gitlab-ci.yml`: `deploy_pdf_in_gitlabLRZ`, `deploy_print_pdf_in_gitlabLRZ`).
+- Populated by CI (see `.github/workflows/book.yml`: `deploy_pdf`, `deploy_print_pdf`).
 

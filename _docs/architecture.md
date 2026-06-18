@@ -6,9 +6,9 @@
 
 The platform consists of three Git repositories with clearly separated responsibilities:
 
-- **Source repository (`Ingenieurinformatik-buch`)**: contains the sources (MyST/Markdown, configuration, scripts, assets) and builds the website and PDF artifacts via GitLab CI. It also generates **executed notebooks** from the sources.
-- **Deployment repository (`ingenieurinformatik-buch-deploy-lrz`)**: contains the **executable artifacts** for Binder/Thebe and notebook workflows. This includes executed notebooks and the files required by the examples, such as data and assets (for example CSV and PNG files) and Python modules that are imported from within notebooks. The latter enables students to work with packages and modules in JupyterHub and Binder environments. It is populated automatically from the source repository and is **not** a working repo. See: https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz
-- **Downloads repository (`ingenieurinformatik-download`)**: stable storage for **PDF downloads** (e.g. `Skript-aktuell.pdf`). It is updated automatically from the source repo’s CI. See: https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-download
+- **Source repository (`Ingenieurinformatik-buch`)**: contains the sources (MyST/Markdown, configuration, scripts, assets) and builds the website and PDF artifacts via GitHub Actions. It also generates **executed notebooks** from the sources.
+- **Deployment repository (`ingenieurinformatik-buch-deploy-lrz`)**: contains the **executable artifacts** for Binder/Thebe and notebook workflows. This includes executed notebooks and the files required by the examples, such as data and assets (for example CSV and PNG files) and Python modules that are imported from within notebooks. The latter enables students to work with packages and modules in JupyterHub and Binder environments. It is populated automatically from the source repository and is **not** a working repo. See: https://github.com/programming-python-novice-course/ingenieurinformatik-buch-deploy-lrz
+- **Downloads repository (`ingenieurinformatik-download`)**: stable storage for **PDF downloads** (e.g. `Skript-aktuell.pdf`). It is updated automatically from the source repo’s CI. See: https://github.com/programming-python-novice-course/ingenieurinformatik-download
 
 For a maintained list of repositories/branches and their responsibilities, see [`project-repositories.md`](./project-repositories.md).
 
@@ -23,7 +23,7 @@ The diagram separates two concepts:
 
 1. **Artifact flow (CI/CD)**  
    Content is maintained in the source repo and CI produces:
-   - Website (GitLab Pages)
+   - Website (GitHub Pages)
    - PDFs (full & print) → deployed to the downloads repo
    - Executed notebooks → deployed to the deployment repo
 

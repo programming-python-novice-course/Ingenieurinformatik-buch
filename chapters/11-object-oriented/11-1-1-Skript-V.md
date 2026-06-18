@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 
-LOGO_URL = "https://gitlab.lrz.de/fk03ingenieurinformatik/ingenieurinformatik-buch-deploy-lrz/-/raw/master/img/logo-mini.png"
+LOGO_URL = "https://raw.githubusercontent.com/programming-python-novice-course/ingenieurinformatik-buch-deploy-lrz/master/img/logo-mini.png"
 
 
 fig, ax = plt.subplots()

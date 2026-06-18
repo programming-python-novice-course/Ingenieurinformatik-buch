@@ -13,7 +13,7 @@ Damit Sie die Inhalte der Vorlesung möglichst effizient bearbeiten können, emp
 width: 200px
 name: fig-qr-interaktive-website
 ---
-Falls Sie gerade das Vorlesungs-Skript (pdf) nutzen und zur Website wollen - das ist der Link zur Website: [https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html](https://ingenieurinformatik-buch-fcbc5c.pages.gitlab.lrz.de/intro.html)
+Falls Sie gerade das Vorlesungs-Skript (pdf) nutzen und zur Website wollen - das ist der Link zur Website: [https://programming-python-novice-course.github.io/Ingenieurinformatik-buch/intro.html](https://programming-python-novice-course.github.io/Ingenieurinformatik-buch/intro.html)
 ```
 
 Die Website und das Skript sind thematisch identisch.
