@@ -149,12 +149,6 @@ jobs:
               --builder pdflatex \
               --path-output _book_as_pdf_print_version \
               --verbose
-            mkdir -p _label_assignment/inputs
-            python3 _scripts/toc_to_markdown_table.py \
-              _book_as_pdf_print_version/_build/latex/book-print.toc \
-              --also-md _label_assignment/inputs/book-print-toc-table.md \
-              --also-csv _label_assignment/inputs/book-print-toc-table.csv \
-              -o _label_assignment/inputs/book-print-toc-table.csv
           '
 
       - name: Upload print PDF artifact
@@ -166,8 +160,6 @@ jobs:
             _book_as_pdf_print_version/_build/latex/book-print.pdf
             _book_as_pdf_print_version/_build/latex/book-print.log
             _book_as_pdf_print_version/_build/latex/book-print.toc
-            _label_assignment/inputs/book-print-toc-table.csv
-            _label_assignment/inputs/book-print-toc-table.md
           retention-days: 7
 
   deploy_notebooks:
